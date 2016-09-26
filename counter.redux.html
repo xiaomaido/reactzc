@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+    <title>计数器 ES6 Redux</title>
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+  </head>
+  <body>
+    <div>
+        <button id="minus">自减</button>
+        <button id="plus">自增</button>
+        <button id="plus_when_odd">逢奇自增</button>
+        <button id="plus_after_delay">延迟1秒自增</button>
+    </div>
+    <p>计数：<span id="count">0</span></p>
+    <script>
+      // variables
+      const _minus=document.getElementById("minus"),
+            _plus=document.getElementById("plus"),
+            _plus_when_odd=document.getElementById("plus_when_odd"),
+            _plus_after_delay=document.getElementById("plus_after_delay"),
+            _count=document.getElementById("count");
+      const PLUS="PLUS",MINUS="MINUS";
+      const store = Redux.createStore(counter);
+      store.subscribe(render);  // 订阅state的变化并执行render函数
+
+      // func
+      function render() {
+         _count.innerText=store.getState();
+      }
+
+      // actions
+      function plusOrMinus(type){
+          return store.dispatch({
+              type: type
+          });
+      }
+      function plusWhenOdd(){
+          if(store.getState()%2==0) return;
+          plusOrMinus(PLUS);
+      }
+      //包含一个默认参数delay,返回一个方法,一秒后加一
+      function plusAsync(delay=1000) {
+          return setTimeout(() => {
+              plusOrMinus(PLUS);
+          }, delay);
+      }
+
+      // reducers
+      function counter(state=0,action){
+          switch(action.type){
+            case PLUS:
+              return ++state;
+            case MINUS:
+              return --state;
+            default:
+              return state
+          }
+      }
+
+      // events
+      _minus.addEventListener('click',(e)=>{
+          plusOrMinus(MINUS);
+      });
+      _plus.addEventListener('click',(e)=>{
+          plusOrMinus(PLUS);
+      });
+      _plus_when_odd.addEventListener('click',(e)=>{
+          plusWhenOdd();
+      });
+      _plus_after_delay.addEventListener('click',(e)=>{
+          plusAsync();
+      });
+    </script>
+  </body>
+</html>

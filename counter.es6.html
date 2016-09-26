@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+    <title>计数器 ES6</title>
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+  </head>
+  <body>
+    <div>
+        <button id="minus">自减</button>
+        <button id="plus">自增</button>
+        <button id="plus_when_odd">逢奇自增</button>
+        <button id="plus_after_delay">延迟1秒自增</button>
+    </div>
+    <p>计数：<span id="count">0</span></p>
+    <script>
+      let value=0;
+      const _minus=document.getElementById("minus"),
+      _plus=document.getElementById("plus"),
+      _plus_when_odd=document.getElementById("plus_when_odd"),
+      _plus_after_delay=document.getElementById("plus_after_delay"),
+      _count=document.getElementById("count");
+
+      _minus.addEventListener('click',(e)=>{
+          value--; 
+          _count.innerText=value;
+      });
+      _plus.addEventListener('click',(e)=>{
+          value++;
+          _count.innerText=value;
+      });
+      _plus_when_odd.addEventListener('click',(e)=>{
+          if(value%2==0) return;
+          value++; 
+          _count.innerText=value;
+      });
+      _plus_after_delay.addEventListener('click',(e)=>{
+          plusAsync();
+      });
+      //包含一个默认参数delay,返回一个方法,一秒后加一
+      function plusAsync(delay=1000) {
+          return setTimeout(() => {
+              _plus.click();
+          }, delay);
+      }
+    </script>
+  </body>
+</html>
