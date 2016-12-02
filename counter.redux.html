@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" >
     <title>计数器 ES6 Redux</title>
-    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+   <!--  <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
     <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
-    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script> -->
     <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
   </head>
   <body>
@@ -23,11 +23,17 @@
             _plus_when_odd=document.getElementById("plus_when_odd"),
             _plus_after_delay=document.getElementById("plus_after_delay"),
             _count=document.getElementById("count");
-      const PLUS="PLUS",MINUS="MINUS";
-      const store = Redux.createStore(counter);
-      store.subscribe(render);  // 订阅state的变化并执行render函数
 
-      // func
+      // 声明action的类型
+      const PLUS="PLUS",MINUS="MINUS";
+      // 创建store容器
+      const store = Redux.createStore(counter);
+      // store.subscribe(render);  // 订阅state的变化并执行render函数
+      store.subscribe(()=>{
+          _count.innerText=store.getState();
+      });  // 订阅state的变化并执行render函数
+
+      
       function render() {
          _count.innerText=store.getState();
       }
@@ -53,9 +59,9 @@
       function counter(state=0,action){
           switch(action.type){
             case PLUS:
-              return ++state;
+              return state+1;
             case MINUS:
-              return --state;
+              return state-1;
             default:
               return state
           }

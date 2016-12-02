@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" >
-    <title>TEST ES6</title>
+    <title>ES6</title>
     <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
     <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
     <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
@@ -21,13 +21,24 @@
         }
       }
 
-      var car = new Car("奔驰",'C200')
+      const car = new Car("奔驰","商务型")
       console.log(car.sayName())
       console.log(car.hasOwnProperty("type"))
       console.log(car.hasOwnProperty("brand"))
       console.log(car.hasOwnProperty("sayName"))
       console.log(car.__proto__.hasOwnProperty("sayName"))
 
+      class Benz extends Car {
+        constructor(type,style){
+          super("奔驰",type) // 有了super() 才能使用this，不然会undefined
+          this.style=style
+        }
+      }
+      const suv = new Benz("家庭型","GLK200")
+      console.log(suv instanceof Benz)
+      console.log(suv instanceof Car)
+      console.log(Benz.__proto__ === Car);
+      console.log(Benz.prototype.__proto__ == Car.prototype)
 
       // => 后面 expression 和 statement 有区别
       const datas=[1,2,3,4]
