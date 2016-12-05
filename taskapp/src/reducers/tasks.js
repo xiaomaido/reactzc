@@ -32,16 +32,16 @@ const tasks=(state=[
                 ...state,
                 task({}, action)
             ]
-        case T.DELETE_TASK:
-            return state.filter((d)=>{
-                return d.id!==action.data.id;
-            })
         case T.COMPLETED_TASK:
             return state.map((d)=>{
                 if(d.id===action.data.id){
                     d.completed=!d.completed;
                 }
                 return d;
+            })
+        case T.DELETE_TASK:
+            return state.filter((d)=>{
+                return d.id!==action.data.id;
             })
         default:
           return state

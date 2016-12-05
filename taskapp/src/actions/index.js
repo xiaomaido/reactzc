@@ -20,7 +20,5 @@ export const completeTask=(id)=>({
 })
 export const fliterTask=(fliter)=>({
 	type: T.FILTER_TASK,
-	data: {
-		fliter
-	}
+	data: fliter
 })

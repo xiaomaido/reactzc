@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 
 // 容器组件
 class ListTaskItem extends Component {

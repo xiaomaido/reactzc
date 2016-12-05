@@ -4,9 +4,10 @@ import ListTaskItems from '../components/ListTaskItems'
 import * as TaskActions from '../actions'
 
 const mapStateToProps=(state)=>({
-    tasks:state.tasks
+    tasks:state.tasks.filter((d)=>{
+		return d.completed!==state.filters;
+	})
 })
-
 const mapDispatchToProps=(dispatch)=>{
   return bindActionCreators(TaskActions, dispatch)
 }
