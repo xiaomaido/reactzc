@@ -9,7 +9,7 @@ const App = () => (
 	<div className="container">
 		<div className="col-md-6 col-md-offset-3">
 			<div className="well">
-				<h1 className="text-center">登登的一天</h1>
+				<h1 className="text-center">萌登的一天</h1>
 		        <ListTask />
 		        <div>
 		        	<FilterTask classExtra="btn-warning" btnText="全部任务" filter={T.FILTERS.ALL} />
