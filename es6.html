@@ -3,16 +3,12 @@
   <head>
     <meta charset="utf-8" >
     <title>ES6</title>
-    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
-    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
-    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
   </head>
   <body>
     <script>
       class Car {
         constructor(brand,type){
           console.log('Car的构造函数,将创建一个实例')
-          console.log(this)
           this.type=type
           this.brand=brand
         }

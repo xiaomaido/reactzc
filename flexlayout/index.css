@@ -1,0 +1,63 @@
+.main{
+	height: 500px;
+	margin:10px;
+	border: 1px solid #ccc;
+	display: flex;
+	display: -webkit-flex;
+	/*
+	flex-direction是用来定义项目的排列方向
+	flex-direction: row | row-reverse | column | column-reverse;
+	row（默认值）：主轴为水平方向，起点在左端。
+	row-reverse：主轴为水平方向，起点在右端。
+	column：主轴为垂直方向，起点在上沿。
+	column-reverse：主轴为垂直方向，起点在下沿。
+	*/
+
+	/*
+	flex-wrap是用来定义如果一条轴线排不下，如何换行。
+	flex-wrap: nowrap | wrap | wrap-reverse;
+	nowrap（默认值）：不换行。
+	wrap：换行，第一行在上方。
+	wrap-reverse：换行，第一行在下方。
+	*/
+	
+	/*
+	flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+	flex-flow: <flex-direction> || <flex-wrap>;
+	flex-flow:row nowrap;
+	*/
+	
+	/*
+	justify-content: flex-start | flex-end | center | space-between | space-around;
+	justify-content属性定义了项目在主轴上的对齐方式。
+	flex-start（默认值）：左对齐
+	flex-end：右对齐
+	center： 居中
+	space-between：两端对齐，项目之间的间隔都相等。
+	space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+	*/
+
+	/*
+	align-items属性定义项目在交叉轴上如何对齐。
+	align-items: flex-start | flex-end | center | baseline | stretch;
+	flex-end：交叉轴的终点对齐。
+	center：交叉轴的中点对齐。
+	baseline: 项目的第一行文字的基线对齐。
+	stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+	*/
+
+	/*
+	align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+	*/
+
+}
+.title{
+	order: 2;
+	/*
+	flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+	该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
+	*/
+}
+img{
+	order: 1
+}
