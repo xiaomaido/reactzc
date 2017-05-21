@@ -28,10 +28,10 @@
       const PLUS="PLUS",MINUS="MINUS";
       // 创建store容器
       const store = Redux.createStore(counter);
-      // store.subscribe(render);  // 订阅state的变化并执行render函数
-      store.subscribe(()=>{
-          _count.innerText=store.getState();
-      });  // 订阅state的变化并执行render函数
+      store.subscribe(render);  // 订阅state的变化并执行render函数
+      // store.subscribe(()=>{
+      //     _count.innerText=store.getState();
+      // });  // 订阅state的变化并执行render函数
 
       
       function render() {
@@ -40,7 +40,7 @@
 
       // actions
       function plusOrMinus(type){
-          return store.dispatch({
+          store.dispatch({
               type: type
           });
       }
@@ -50,7 +50,7 @@
       }
       //包含一个默认参数delay,返回一个方法,一秒后加一
       function plusAsync(delay=1000) {
-          return setTimeout(() => {
+          setTimeout(() => {
               plusOrMinus(PLUS);
           }, delay);
       }

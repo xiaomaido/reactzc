@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Count from '../components/Count'
 import * as CountActions from '../actions/count'
+import Count from '../components/Count'
 
 function mapStateToProps(state) {
   return {

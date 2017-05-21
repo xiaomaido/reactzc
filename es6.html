@@ -6,6 +6,37 @@
   </head>
   <body>
     <script>
+      //动物类
+      class Animal{ 
+          constructor(name){
+              this.name=name
+          }
+          mynameis(){
+              console.log('my name is '+this.name)
+              console.log('pizza1 这个对象有 name 这个属性')
+              console.log('pizza1 这个对象没有 mynameis 这个属性（函数）')
+              console.log('pizza1 这个对象为什么能运行 mynameis 这个属性（函数）？')
+              console.log('因为 pizza1 这个对象所继承的类Animal有声明 mynameis 这个属性（函数）')
+          }
+      }
+      const pizza1=new Animal('Pizza')
+      pizza1.mynameis()
+
+      //犬类
+      class Dog extends Animal{
+          constructor(age){
+              super('PP') // 用了extends继承某父类，必须调用函数super()，否则调用this会报错，因为this=undefined
+              this.age=age
+          }
+      }
+      const pizza2=new Dog(1)
+
+
+
+      console.log('\n')
+      console.log('\n')
+      console.log('\n')
+
       class Car {
         constructor(brand,type){
           console.log('Car的构造函数,将创建一个实例')
@@ -38,7 +69,11 @@
 
       // => 后面 expression 和 statement 有区别
       const datas=[1,2,3,4]
+      // datas.map(function(data,index){return 2*data})
+      // => + 无{} = function { return } 相同
       console.log(datas.map((data,index)=>2*data)) // expression [2, 4, 6, 8] 
+      // datas.map(function(data,index){ 2*data})
+      // => + {} = function {  } 相同
       console.log(datas.map((data,index)=>{ 2*data })) // statement [undefined, undefined, undefined, undefined]
       const arr=[];
       datas.forEach((data,index)=>{
