@@ -108,7 +108,6 @@ export default class MapApp extends Component{
 	selectChange(e){
 		const nextSubreddit=e.target.value
 		console.log(nextSubreddit)
-		debugger
 		this.dispatch(this.props.selectSubreddit(nextSubreddit))
 	}
 	refreshClick(e){
