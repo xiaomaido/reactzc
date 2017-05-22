@@ -37,12 +37,12 @@ const postsBySubreddit=(state={},action)=>{
 			let nextState={
 				[action.subreddit]:posts(state[action.subreddit],action)
 			}
-			return Object.assign({},state,nextState)
+			// return Object.assign({},state,nextState)
 			// 与上面的写法等价
-			// return [
-   //              ...state,
-   //              nextState
-   //          ]
+			return {
+                ...state,
+                ...nextState
+            }
 		default:
 			return state
 	}
