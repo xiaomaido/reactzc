@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-
-const avatarImg = require('../images/logo.png')
+import avatarImg from '../images/logo.png'
+// const avatarImg = require('../images/logo.png')
+// import或者require都可以
 
 export default class User extends Component{
 	constructor(props){

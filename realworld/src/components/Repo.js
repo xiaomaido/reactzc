@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-// require('../styles/repo.scss')
-// import '../styles/repo.scss'
+import '../styles/repo.scss'
 
 export default class Repo extends Component {
     render() {
@@ -10,7 +9,7 @@ export default class Repo extends Component {
         const { login } = owner
         const { name, description } = repo
         return (
-          <li className="RepoInfo">
+          <li className="repoInfo">
             <h3>
               <Link to={`/${login}/${name}`}>
                 {name}

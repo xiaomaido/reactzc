@@ -1,3 +1,7 @@
-.RepoInfo{
-    background-color: #000;
+@import "vars.scss";
+
+.repoInfo{
+    border: 1px solid $color_ccc;
+    margin-top: $rem_1;
+    padding: $rem_0_5;
 }

@@ -2,6 +2,8 @@ import { connect } from 'react-redux'
 import { pushState } from 'redux-router'
 import React, { Component } from 'react'
 import ExploreArea from '../components/ExploreArea'
+import '../styles/share.scss'
+
 class App extends Component{
 	constructor(props){
 		super(props)
@@ -11,7 +13,7 @@ class App extends Component{
 	render(){
 		const { keyword,children } = this.props //调用children就是加载子路由里面的组件  
 		return (
-			<div>
+			<div className="maxWidth">
 				<h1>Real World</h1>
 				<hr />
 				<ExploreArea keyword={keyword} handleChange={this.handleChange}/>
