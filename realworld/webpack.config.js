@@ -16,6 +16,14 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
+    ,new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false,
+        },
+        output: {
+            comments: false,
+        },
+    })
   ],
   module: {
     loaders: [
@@ -25,6 +33,11 @@ module.exports = {
         exclude: /node_modules/,
         include: __dirname
       }
+      ,{ 
+        test: /\.(png|jpg|gif)$/, 
+        loader: 'file-loader?name=./images/[name].[ext]' 
+      }
     ]
+
   }
 }

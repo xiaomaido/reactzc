@@ -13,11 +13,11 @@ class UserList extends Component {
         if(!items.length && isFetching)
             return (<h2>{loadingFlag}</h2>)
         if(!items.length && !nextPageUrl) 
-            return (<h2>{没有数据哦}</h2>)
+            return (<h2>没有人打星哦！</h2>)
         return (
             <div>
                 <ol style={{paddingLeft:'15px'}}>
-                    { items.map(user=>(<User user={user}></User>)) }
+                    { items.map(user=>(<User user={user} key={user.login} ></User>)) }
                 </ol>
                 {pageCount && nextPageUrl && this.renderLoadMore()}
             </div>

@@ -13,7 +13,7 @@ class RepoList extends Component {
         if(!items.length && isFetching)
             return (<h2>{loadingFlag}</h2>)
         if(!items.length && !nextPageUrl) 
-            return (<h2>{没有数据哦}</h2>)
+            return (<h2>你还没有给任何项目打星哦</h2>)
         return (
             <div>
                 <ol style={{paddingLeft:'15px'}}>
