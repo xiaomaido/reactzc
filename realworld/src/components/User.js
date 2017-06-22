@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import '../styles/user.scss'
 import avatarImg from '../images/logo.png'
 // const avatarImg = require('../images/logo.png')
 // import或者require都可以
@@ -15,10 +16,10 @@ export default class User extends Component{
    	 	// 如果没有target="_blank"会报错，因为组建里面的路由必须是：A path must be pathname + search + hash only, not a fully qualified URL like "https://github.com/xiaomaido"
         		// <Link target="_blank" to={`https://github.com/${login}`}>
 		return (
-			<li className="User" key="{name}"> 
+			<li className="UserInfo" key="{name}"> 
         		<Link target="_blank" to={`/${login}`}>
-					<img src={avatarUrl} onError={this.loadImageError} width="50" height="50" />
-          			<h3>{login} { name && <span>({name})</span> }</h3>
+					<img src={avatarUrl} onError={this.loadImageError} />
+          			<h3 className="textElip">{login} { name && <span>({name})</span> }</h3>
         		</Link>
 			</li>
 		)

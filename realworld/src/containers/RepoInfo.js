@@ -72,8 +72,7 @@ class RepoInfo extends Component{
 				<ul>
                 	<Repo repo={repo} owner={owner} />
                 </ul>
-       			--------- 我是分割线 ----------
-				<br/>
+       			<div className="gapLine">------- 我是分割线 -------</div>
 				<UserList handleLoadMore={this.handleLoadMore} items={stargazers} {...stargazersPagination} /> 
 			</div>
 		)

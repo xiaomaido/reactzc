@@ -30,6 +30,7 @@ class UserList extends Component {
             ,width:'220px'
             ,textAlign: 'center'
             ,padding: '10px 0'
+            ,margin: '1rem auto'
         }
         const {
             isFetching

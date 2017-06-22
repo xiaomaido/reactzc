@@ -1,0 +1,19 @@
+@import "vars.scss";
+
+.UserInfo{
+	height:$rem_4;
+	img{
+		width:$rem_4;
+		height:$rem_4;
+		float:left;
+	}
+	h3{
+		float: left;
+		width: $rem_10;
+		height: $rem_4;
+		padding-left: $rem_1;
+		font: $font;
+		line-height: $rem_4;
+		margin: 0;
+	}
+}

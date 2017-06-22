@@ -13,7 +13,7 @@ class App extends Component{
 	render(){
 		const { keyword,children } = this.props //调用children就是加载子路由里面的组件  
 		return (
-			<div className="maxWidth">
+			<div className="maxWidth marginAuto">
 				<h1>Real World</h1>
 				<hr />
 				<ExploreArea keyword={keyword} handleChange={this.handleChange}/>

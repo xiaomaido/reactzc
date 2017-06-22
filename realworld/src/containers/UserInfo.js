@@ -97,8 +97,7 @@ class UserInfo extends Component{
 				<ul>
 					<User user={user}></User>
 				</ul>
-       			--------- 我是分割线 ----------
-				<br/>
+       			<div className="gapLine">------- 我是分割线 -------</div>
 				<RepoList handleLoadMore={this.handleLoadMore} items={zip(starredRepos,starredRepoOwners)} {...starredPagination} /> 
 			</div>
 		)

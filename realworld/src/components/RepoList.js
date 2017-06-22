@@ -32,7 +32,7 @@ class RepoList extends Component {
             ,width:'220px'
             ,textAlign: 'center'
             ,padding: '10px 20px'
-            ,margin: '0 auto'
+            ,margin: '1rem auto'
         }
         const {
             isFetching

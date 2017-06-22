@@ -26,16 +26,56 @@ export default class MapApp extends Component{
 				name:"NBA"
 			}
 			,{
-				id:"houstonrockets",
-				name:"休斯顿火箭队"
+				id:"rockets",
+				name:"休斯顿火箭"
 			}
 			,{
 				id:"goldenstatewarriors",
-				name:"金州勇士队"
+				name:"金州勇士"
 			}
 			,{
 				id:"losangeleslakers",
-				name:"洛杉矶湖人队"
+				name:"洛杉矶湖人"
+			}
+			,{
+				id:"chicagobulls",
+				name:"芝加哥公牛"
+			}
+			,{
+				id:"indianapacers",
+				name:"印第安纳步行者"
+			}
+			,{
+				id:"sanantoniospurs",
+				name:"圣安东尼奥马刺"
+			}
+			,{
+				id:"jamesharden",
+				name:"哈登（The Beard）"
+			}
+			// ,{
+			// 	id:"tmactime",
+			// 	name:"麦迪（T-MAC）"
+			// }
+			,{
+				id:"kobebryant",
+				name:"科比·布兰恩特（唠嗑）"
+			}
+			// ,{
+			// 	id:"paulgeorge",
+			// 	name:"保罗·乔治（泡椒）"
+			// }
+			,{
+				id:"dwyanewade",
+				name:"德怀恩·韦德（骚韦）"
+			}
+			,{
+				id:"kevindurant",
+				name:"凯文·杜兰特（杜四娘）"
+			}
+			,{
+				id:"lebronjames",
+				name:"勒布朗·詹姆斯（猩猩）"
 			}
 		]
 	}

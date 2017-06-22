@@ -1,6 +1,6 @@
 import { REQUEST_API, SchemaObj } from '../middlewares/api'
 import * as T from '../types'
-const per_page=2
+const per_page=5
 const requestUser=(name)=>({
 	[REQUEST_API]:{
 		types:[

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../styles/explore.scss'
 
 export default class Explore extends Component{
 	constructor(props){
@@ -8,9 +9,9 @@ export default class Explore extends Component{
 	}
 	render(){
 		return (
-			<div>
+			<div className="inputButton">
 				<input ref="keyword_input" onKeyUp={this.handleKeyUp} defaultValue={this.props.keyword} />
-				<button style={{marginLeft:'5px'}} onClick={this.handleClick}>搜索</button>
+				<div className="button" onClick={this.handleClick} >搜索</div>
 			</div>
 		)
 	}
