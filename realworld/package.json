@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "extract-text-webpack-plugin": "^2.1.2",
     "history": "^1.17.0",
     "humps": "^0.6.0",
     "isomorphic-fetch": "^2.1.1",
@@ -25,6 +26,7 @@
     "redux-thunk": "^0.1.0"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.6",
     "babel-core": "^5.6.18",
     "babel-loader": "^5.1.4",
     "babel-plugin-react-transform": "^1.1.0",
@@ -33,6 +35,7 @@
     "css-loader": "^0.23.0",
     "expect": "^1.6.0",
     "express": "^4.13.3",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.4",
     "jsdom": "^5.6.1",
     "mocha": "^2.2.5",
@@ -40,8 +43,9 @@
     "node-sass": "^3.4.2",
     "react-addons-test-utils": "^0.14.0",
     "react-transform-hmr": "^1.0.0",
-    "sass-loader": "^3.1.2",
+    "sass-loader": "^3.2.3",
     "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
     "webpack": "^1.9.11",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0"

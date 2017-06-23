@@ -1,0 +1,12 @@
+@import "vars.scss";
+.waiting{
+	width:px2rem(240px);
+	height:auto;
+	border:1px solid $color_cc;
+}
+.izhaocai{
+	text-align:center;
+	width:px2rem(26px);
+	height:px2rem(57px);
+	background-image: url("../images/izhaocai.png");
+}

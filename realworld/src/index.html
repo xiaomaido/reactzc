@@ -13,12 +13,12 @@
 		const normalV=375
 		const maxV=500;
 		const docEl=document.documentElement
-        window.onload=window.onresize = function(){
-			window.clientWidth=docEl.clientWidth
-			clientWidth=(clientWidth>maxV)?maxV:clientWidth
-			window.fontSize=rootV*(clientWidth/normalV)
-			docEl.style.fontSize = fontSize+'px'
-        }
+    window.onload=window.onresize = function(){
+    		window.clientWidth=docEl.clientWidth
+    		clientWidth=(clientWidth>maxV)?maxV:clientWidth
+    		window.fontSize=rootV*(clientWidth/normalV)
+    		docEl.style.fontSize = fontSize+'px'
+    }
     </script>
     <script src="/static/bundle.js"></script>
   </body>

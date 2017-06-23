@@ -2,7 +2,18 @@ import { connect } from 'react-redux'
 import { pushState } from 'redux-router'
 import React, { Component } from 'react'
 import ExploreArea from '../components/ExploreArea'
+
 import '../styles/share.scss'
+import '../styles/app.scss'
+
+import waitingImg from '../images/waiting.jpg'
+import izhaocaiImg from '../images/izhaocai.png'
+import icloseImg from '../images/iclose.png'
+const izhaocaiStyle={
+	marginLeft:'15px',
+	marginRight:'15px',
+ 	backgroundImage: 'url(' + icloseImg + ')'
+}
 
 class App extends Component{
 	constructor(props){
@@ -11,11 +22,17 @@ class App extends Component{
 		this.handleClear=this.handleClear.bind(this)
 	}
 	render(){
-		const { keyword,children } = this.props //调用children就是加载子路由里面的组件  
+		const { keyword,children } = this.props //调用children就是加载子路由里面的组件
 		return (
 			<div className="maxWidth marginAuto">
 				<h1>Real World</h1>
-				<hr />
+				<div>
+					<img className="fleft" src={izhaocaiImg} />
+					<div className="fleft icon izhaocai" style={izhaocaiStyle}>1</div>
+					<img className="fleft waiting" src={waitingImg} />
+				</div>
+				<br className="clearBoth"/>
+				<hr className="clearBoth" />
 				<ExploreArea keyword={keyword} handleChange={this.handleChange}/>
 				{children}
 			</div>
