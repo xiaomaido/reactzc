@@ -1,4 +1,7 @@
 @import "vars.scss";
+html, body {
+  -webkit-tap-highlight-color: transparent;
+}
 .maxWidth{
 	max-width: $rem_25;
 }

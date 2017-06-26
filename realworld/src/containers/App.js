@@ -3,6 +3,9 @@ import { pushState } from 'redux-router'
 import React, { Component } from 'react'
 import ExploreArea from '../components/ExploreArea'
 
+import initReactFastclick from 'react-fastclick';
+initReactFastclick()
+
 import '../styles/share.scss'
 import '../styles/app.scss'
 
@@ -28,7 +31,7 @@ class App extends Component{
 				<h1>Real World</h1>
 				<div>
 					<img className="fleft" src={izhaocaiImg} />
-					<div className="fleft icon izhaocai" style={izhaocaiStyle}>1</div>
+					<div className="fleft icon izhaocai" style={izhaocaiStyle}></div>
 					<img className="fleft waiting" src={waitingImg} />
 				</div>
 				<br className="clearBoth"/>
