@@ -20,23 +20,10 @@ html, body {
 .textCenter{
 	text-align: center;
 }
-ul{
-	list-style: none;
-	margin:0;
-	padding:0;
-}
-li{
-	clear: both;
-	margin-top: $rem_0_5;
-}
 .gapLine{
 	padding: $rem_1 0;
 	text-align: center;
 	clear:both;
-}
-ol{
-	width: 84%;
-    margin: 0 auto;
 }
 .fleft{
 	float:left;	

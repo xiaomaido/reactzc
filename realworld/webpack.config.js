@@ -4,7 +4,6 @@ var webpack = require('webpack')
 //把css样式从js文件中分离出来,需要通过命令行安装 extract-text-webpack-plugin 依赖包
 
 module.exports = {
-  // devtool: 'inline-source-map',
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
@@ -12,11 +11,9 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: '/static/',
-    // filename: 'bundle.js' // 不生成哈希值版本号
-    filename: 'bundle.[hash].js' // bundle-[id]-[name]-[hash].js，默认16位哈希值
-    // filename: 'bundle.[hash:8].js' // 8位哈希值
-    // chunkFilename: 'bundle.[chunkhash:16].js'
+    publicPath: '/static/'
+    ,filename: 'bundle.js'
+    // ,filename: 'bundle.[hash].js' // bundle-[id]-[name]-[hash].js，默认16位哈希值
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin()

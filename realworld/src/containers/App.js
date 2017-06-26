@@ -2,8 +2,9 @@ import { connect } from 'react-redux'
 import { pushState } from 'redux-router'
 import React, { Component } from 'react'
 import ExploreArea from '../components/ExploreArea'
-
-import initReactFastclick from 'react-fastclick';
+import TouchSlideBox from '../partials/TouchSlideBox'
+import echo from '../vendors/echo'
+import initReactFastclick from 'react-fastclick'
 initReactFastclick()
 
 import '../styles/share.scss'
@@ -17,6 +18,11 @@ const izhaocaiStyle={
 	marginRight:'15px',
  	backgroundImage: 'url(' + icloseImg + ')'
 }
+const imgSlideList=[
+	'http://127.0.0.1:8020/shoplooksh5svn/v1.1.20170303_a/static/images/module/invitation/sample1_en.jpg'
+	,'http://127.0.0.1:8020/shoplooksh5svn/v1.1.20170303_a/static/images/module/invitation/sample2_en.jpg'
+	,'http://127.0.0.1:8020/shoplooksh5svn/v1.1.20170303_a/static/images/module/invitation/sample3_en.jpg'
+]
 
 class App extends Component{
 	constructor(props){
@@ -36,10 +42,27 @@ class App extends Component{
 				</div>
 				<br className="clearBoth"/>
 				<hr className="clearBoth" />
+				<TouchSlideBox imgSlideList={imgSlideList}/>
+				<br className="clearBoth"/>
+				<hr className="clearBoth" />
+				<div>
+					<img width="359" src="http://st-prod.b0.upaiyun.com/zeus/2017/06/13/aa0f9e895d3931572c5db54c5dbbf2c9!/format/jpg" />
+					<img width="359" data-echo="http://st-prod.b0.upaiyun.com/zeus/2017/06/07/f79a51a49e85c0caeb5011e31ae9070a!/format/jpg" />
+					<div style={{width:'359px',height:'252px'}} className="icon" data-echo-background="http://st-prod.b0.upaiyun.com/zeus/2017/06/13/a2751f74a31f0fc23793cfe146761458!/format/jpg"></div>
+				</div>
+				<br className="clearBoth"/>
+				<hr className="clearBoth" />
 				<ExploreArea keyword={keyword} handleChange={this.handleChange}/>
 				{children}
 			</div>
 		)
+	}
+	componentDidMount(){
+		const { echo } = this.props 
+		echo.init({
+		    offset: 0, 
+		    throttle: 0 
+		})
 	}
 	handleChange(nextKeyword){
 		this.props.pushState(null,`/${nextKeyword}`)
@@ -55,6 +78,7 @@ const mapStateToProps=(state)=>{
 	// /xiaomaido/reactzc 搜索我创建Created的项目
 	return {
 	    keyword: state.router.location.pathname.substring(1)
+		,echo:echo
 	}
 }
 const mapDispatchToProps={

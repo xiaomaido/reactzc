@@ -1,8 +1,14 @@
-(function(root, factory) {
+// 注释的地方是所做的修改
+// Author: Martin.Zeng
+export default (function(root, factory) {
 	if (typeof define === "function" && define.amd) {
-		define(function() {
+		// define(function() {
+		// 	return factory(root)
+		// })
+		define('echo',function() {
 			return factory(root)
 		})
+		return require('echo')
 	} else {
 		if (typeof exports === "object") {
 			module.exports = factory
@@ -10,7 +16,8 @@
 			root.echo = factory(root)
 		}
 	}
-})(this, function(root) {
+})(window, function(root) {
+// })(this, function(root) {
 	var echo = {};
 	var callback = function() {};
 	var offset, poll, delay, useDebounce, unload;
@@ -34,6 +41,7 @@
 				poll = null
 			}, delay)
 		};
+	// 处理加载成功，加载失败的情况
 	echo.doImage = function(imgUrl, index, loadSucc, loadFail, imgOrigin) {
 		var newImg = new Image();
 		newImg.onload = loadSucc;

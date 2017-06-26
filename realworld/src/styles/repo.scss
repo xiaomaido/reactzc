@@ -6,3 +6,17 @@
     padding: $rem_0_5;
     box-shadow: 0 2px 6px 0 $color_00
 }
+
+ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+li{
+	clear: both;
+	margin-top: $rem_0_5;
+}
+ol{
+	width: 84%;
+    margin: 0 auto;
+}

@@ -6,20 +6,22 @@
     <title>real world application</title>
   </head>
   <body>
-    <div id="IndexBox"></div>
     <script type="text/javascript">
-    	// rem layout
-		const rootV=20
-		const normalV=375
-		const maxV=500;
-		const docEl=document.documentElement
-    window.onload=window.onresize = function(){
-    		window.clientWidth=docEl.clientWidth
-    		clientWidth=(clientWidth>maxV)?maxV:clientWidth
-    		window.fontSize=rootV*(clientWidth/normalV)
-    		docEl.style.fontSize = fontSize+'px'
+      // rem layout
+    const rootV=20
+    const normalV=375
+    const maxV=500;
+    const docEl=document.documentElement
+    const fontSizeSet=()=>{
+        window.clientWidth=docEl.clientWidth
+        clientWidth=(clientWidth>maxV)?maxV:clientWidth
+        window.fontSize=rootV*(clientWidth/normalV)
+        docEl.style.fontSize = fontSize+'px'
     }
+    fontSizeSet()
+    window.onload=window.onresize=fontSizeSet
     </script>
+    <div id="IndexBox"></div>
     <script src="/static/bundle.js"></script>
   </body>
 </html>
