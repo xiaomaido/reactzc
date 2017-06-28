@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>webpack demo</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // rem layout
+    const rootV=20
+    const normalV=375
+    const maxV=500;
+    const docEl=document.documentElement
+    const fontSizeSet=()=>{
+        window.clientWidth=docEl.clientWidth
+        clientWidth=(clientWidth>maxV)?maxV:clientWidth
+        window.fontSize=rootV*(clientWidth/normalV)
+        docEl.style.fontSize = fontSize+'px'
+    }
+    fontSizeSet()
+    window.onload=window.onresize=fontSizeSet
+    </script>
+    <div class="btns">官网直购</div>
+    <div class="header">顶部</div>
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>
