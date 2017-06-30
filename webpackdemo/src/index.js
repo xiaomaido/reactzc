@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import './styles/share.scss'
 
 // 同步加载 
 // import Button from './components/Button'
