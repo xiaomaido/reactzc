@@ -36,3 +36,11 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
 }
+a {
+    display: flex;
+    box-shadow: 0 2px 4px 0 #000;
+    transform: rotate(180deg)
+}
+div{
+	border-radius:.5rem;
+}

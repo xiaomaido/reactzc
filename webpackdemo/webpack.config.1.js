@@ -6,11 +6,11 @@ const CleanPlugin=require('clean-webpack-plugin') // 构建生产环境的时候
 const ExtractTextPlugin=require('extract-text-webpack-plugin') // 提取合并的CSS，但是没有被压缩
 const HtmlWebpackPlugin=require('html-webpack-plugin')
 const CopyWebpackPlugin=require('copy-webpack-plugin')
-const OpenBrowserPlugin=require('open-browser-webpack-plugin')
 const autoprefixer=require('autoprefixer') // 补充前缀
 const precss=require('precss') // 补充前缀
-const port=8088
 const is_production=process.env.NODE_ENV === 'production'
+// var is_production=process.env.NODE_ENV === 'production'
+// is_production=!is_production
 const entry=[
     './src/index'
 ]
@@ -20,29 +20,30 @@ const output={
 	,chunkFilename: '[name].asyncchunk.[chunkhash].js'
 	,filename: 'bundle'+(is_production?'.[hash]':'')+'.js'
 }
-const rules=[
+const loaders=[
 	{
         test: /\.js/,
-        use: [ 'babel-loader' ],
+        loaders: [ 'babel-loader' ],
         exclude: /node_modules/,
         include: __dirname
     }
     ,{
     	test: /\.html/,
-        use: [ 'html-loader' ]
+        loaders: [ 'html-loader' ]
     }
     ,{
         test: /\.css$/, 
-        use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!postcss-loader' })
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!postcss-loader' })
+        // loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
     }
     ,{
         test: /\.scss/,
-        use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader!postcss-loader' }) //必须css、sass loader都有，缺一不可，缺sass没法处理sass语法，缺sass没办法转成css
-
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' }) //必须css、sass loader都有，缺一不可，缺sass没法处理sass语法，缺sass没办法转成css
+        // loaders: [ 'style-loader','css-loader','sass-loader' ]
     }
     ,{ 
     	test: /\.(png|gif|jpe?g|svg)$/i, //解析图片
-        use: 'url-loader?limit='+(8*1024)+'&name=./images/[name].[ext]' //这样在小于8K的图片将直接以base64的形式内联在代码中，可以减少一次http请求。
+        loader: 'url-loader?limit='+(8*1024)+'&name=./images/[name].[ext]' //这样在小于8K的图片将直接以base64的形式内联在代码中，可以减少一次http请求。
     }
 ]
 let plugins=[]
@@ -51,8 +52,18 @@ if(!is_production){
     plugins=plugins.concat([ 
 	    new CleanPlugin(path_output) // Cleanup the plugins in dist folder builds before
     	,new webpack.LoaderOptionsPlugin({ // 可以用UglifyJSPlugin可以对js进行压缩，那么css怎么进行压缩呢？就用插件cssnano加这个配置
-	      	minimize: true
-        })
+	      	options:{
+				// postcss:()=>[autoprefixer({browsers:['last 2 versions']})]
+				// postcss:()=>[precss,autoprefixer]
+			    // ,devServer: {
+			    //     contentBase: "./dist", //本地服务器所加载的页面所在的目录
+			    //     colors: true, //终端中输出结果为彩色
+			    //     historyApiFallback: true, //不跳转
+			    //     inline: true //实时刷新
+			    // }
+	      	}
+	      	,minimize: true
+	    })
 	    ,new webpack.optimize.UglifyJsPlugin({ // 丑化
 	        mangle: true,
 	        compress: {
@@ -92,16 +103,11 @@ plugins=plugins.concat([
 	// ,new CopyWebpackPlugin([{
 	//     from: __dirname + '/src'
 	// }])
-	,new OpenBrowserPlugin({
-      url: 'http://localhost:'+port+'/'
-    })
-    ,new webpack.HotModuleReplacementPlugin()
-
 ])
 // Webpack 2 之后的config里不能直接包含自定义配置项
 module.exports={
 	// debug:!is_production
-	devtool:'eval' // 7种sourcemap
+	devtool:'eval'
 	// devtool:'source-map'
 	// devtool:'hidden-source-map'
 	// devtool:'inline-source-map'
@@ -109,36 +115,17 @@ module.exports={
 	// devtool:'cheap-source-map'
 	// devtool:'cheap-module-source-map' //绝大多数情况下都会是最好的选择，这也是下版本 webpack 的默认选项。
 	,module:{
-		rules
+		loaders
 		// ,preLoaders:[{
 	 //        test: /\.js/,
 	 //        loader: 'eslint',
 	 //    }]
 	}
-	,resolve: {
-		extensions: [".js", ".json"],
-		modules: ['node_modules']
-	}
 	,entry
 	,output
 	,plugins
-	,devServer: {
-		historyApiFallback: true, //不跳转
-		contentBase: "./", //本地服务器所加载的页面所在的目录
-		quiet: false, //控制台中不输出打包的信息
-		noInfo: false,
-		hot: true, //开启热点
-		inline: true, //开启页面自动刷新
-		lazy: false, //不启动懒加载
-		watchOptions: {
-		aggregateTimeout: 300
-		},
-		host: 'localhost',
-		port: port, //设置端口号
-		//代理其实很简单的，只要配置这个参数就可以了
-		proxy: {
-
-		}
-	}
+	// ,devServer: {
+	//     hot: true
+	// }
 	// ,postcss:()=>[AutoPrefixer({browsers:['last 2 versions']})]
 }
