@@ -45,6 +45,7 @@
     "react-addons-test-utils": "^0.14.0",
     "react-transform-hmr": "^1.0.0",
     "react-fastclick": "^3.0.2",
+    "react-lazyload":"2.2.7",
     "sass-loader": "^3.2.3",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",

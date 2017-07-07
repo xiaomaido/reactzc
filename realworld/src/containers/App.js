@@ -3,9 +3,8 @@ import { pushState } from 'redux-router'
 import React, { Component } from 'react'
 import ExploreArea from '../components/ExploreArea'
 import TouchSlideBox from '../partials/TouchSlideBox'
+import LazyLoad from 'react-lazyload';
 import echo from '../vendors/echo'
-import initReactFastclick from 'react-fastclick'
-initReactFastclick()
 
 import '../styles/share.scss'
 import '../styles/app.scss'
@@ -13,15 +12,19 @@ import '../styles/app.scss'
 import waitingImg from '../images/waiting.jpg'
 import izhaocaiImg from '../images/izhaocai.png'
 import icloseImg from '../images/iclose.png'
+
+import initReactFastclick from 'react-fastclick'
+initReactFastclick()
+
 const izhaocaiStyle={
 	marginLeft:'15px',
 	marginRight:'15px',
  	backgroundImage: 'url(' + icloseImg + ')'
 }
 const imgSlideList=[
-	'http://127.0.0.1:8020/shoplooksh5svn/v1.1.20170303_a/static/images/module/invitation/sample1_en.jpg'
-	,'http://127.0.0.1:8020/shoplooksh5svn/v1.1.20170303_a/static/images/module/invitation/sample2_en.jpg'
-	,'http://127.0.0.1:8020/shoplooksh5svn/v1.1.20170303_a/static/images/module/invitation/sample3_en.jpg'
+	'http://aff.shoplooks.com:8080/static/images/module/invitation/sample1_en.jpg'
+	,'http://aff.shoplooks.com:8080/static/images/module/invitation/sample2_en.jpg'
+	,'http://aff.shoplooks.com:8080/static/images/module/invitation/sample3_en.jpg'
 ]
 
 class App extends Component{
@@ -46,12 +49,30 @@ class App extends Component{
 				<br className="clearBoth"/>
 				<hr className="clearBoth" />
 				<div>
-					<img width="359" src="http://st-prod.b0.upaiyun.com/zeus/2017/06/13/aa0f9e895d3931572c5db54c5dbbf2c9!/format/jpg" />
-					<img width="359" data-echo="http://st-prod.b0.upaiyun.com/zeus/2017/06/07/f79a51a49e85c0caeb5011e31ae9070a!/format/jpg" />
-					<div style={{width:'359px',height:'252px'}} className="icon" data-echo-background="http://st-prod.b0.upaiyun.com/zeus/2017/06/13/a2751f74a31f0fc23793cfe146761458!/format/jpg"></div>
+					<img width="100%" src="http://st-prod.b0.upaiyun.com/zeus/2017/06/13/aa0f9e895d3931572c5db54c5dbbf2c9!/format/jpg" />
+					<img width="100%" data-echo="http://st-prod.b0.upaiyun.com/zeus/2017/06/07/f79a51a49e85c0caeb5011e31ae9070a!/format/jpg" />
+					<div style={{width:'100%',height:'230px'}} className="icon" data-echo-background="http://st-prod.b0.upaiyun.com/zeus/2017/06/13/a2751f74a31f0fc23793cfe146761458!/format/jpg"></div>
+					<LazyLoad height={230} offset={100}>
+				    	<img width="100%" src="https://st-prod.b0.upaiyun.com/prodimage/23dc14a654954e71.jpg!/fh/750" />
+				    </LazyLoad>
 				</div>
 				<br className="clearBoth"/>
 				<hr className="clearBoth" />
+				<LazyLoad once>
+			    	<ol>
+			    		<li></li>
+			    		<li></li>
+			    		<li></li>
+			    		<li></li>
+			    		<li></li>
+			    		<li></li>
+			    		<li></li>
+			    		<li></li>
+			    		<li></li>
+			    		<li></li>
+			    		<li></li>
+			    	</ol>
+			    </LazyLoad>
 				<ExploreArea keyword={keyword} handleChange={this.handleChange}/>
 				{children}
 			</div>
@@ -63,6 +84,9 @@ class App extends Component{
 		    offset: 0, 
 		    throttle: 0 
 		})
+	}
+	componentDidUpdate(){
+		debugger
 	}
 	handleChange(nextKeyword){
 		this.props.pushState(null,`/${nextKeyword}`)
