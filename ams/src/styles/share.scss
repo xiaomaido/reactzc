@@ -1,0 +1,46 @@
+@import "vars.scss";
+html, body {
+  -webkit-tap-highlight-color: transparent;
+}
+.maxWidth{
+	max-width: 25rem;
+}
+.marginAuto{
+	margin: 0 auto;
+}
+.textElip {
+    word-wrap: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.clearBoth{
+	clear:both;
+}
+.textCenter{
+	text-align: center;
+}
+.gapLine{
+	padding: 1rem 0;
+	text-align: center;
+	clear:both;
+}
+.fleft{
+	float:left;	
+}
+.fright{
+	float:right;
+}
+.icon {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+a {
+    display: flex;
+    box-shadow: 0 2px 4px 0 #000;
+    transform: rotate(180deg)
+}
+div{
+	border-radius:.5rem;
+}
