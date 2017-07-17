@@ -1,0 +1,13 @@
+@import "../vars.scss";
+
+.app{
+	background-color: $color_f5;
+	padding: $rem_1;
+	.title{
+		height: $rem_2;
+	 	width: $rem_2;
+	 	outline:red solid 1px;
+	    text-align: center;
+	 	margin:0 auto;
+	}
+}

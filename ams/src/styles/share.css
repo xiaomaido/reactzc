@@ -1,0 +1,65 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, pre, dl, dt, dd, ul, ol, li, th, td, form, fieldset, legend, button, input, textarea, figure, figcaption, nav, footer, menu {
+	margin: 0;
+	padding: 0
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal
+}
+address, em, i, b {
+	font-style: normal
+}
+a, a:hover {
+	color: #666;
+	text-decoration: none
+}
+ul, ol, li {
+	list-style: none
+}
+fieldset, img {
+	border: 0
+}
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: none
+}
+button, input, select, textarea {
+	font: 16px/1.5 Helvetica, Arial;
+	outline: none
+}
+select {
+	background: none;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none
+}
+textarea, input {
+	background: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-appearance: none
+}
+body {
+	word-wrap: break-word;
+	font: 16px/1.5 Helvetica, Arial;
+	color: #666;
+	background: #fff
+}
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, Sans-serif
+}
+.clear {
+	height: 0px;
+	clear: both
+}
+body {
+	word-wrap: break-word;
+	word-break: break-all;
+	width: 100%;
+	min-height: 320px;
+	-webkit-overflow-scrolling: touch
+}
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
