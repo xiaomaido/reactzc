@@ -5,6 +5,11 @@ import Loading from '../components/Loading'
 import '../styles/normalize.css'
 import '../styles/share.css'
 import '../styles/basic.scss'
+
+import initReactFastclick from 'react-fastclick'
+initReactFastclick()
+
+
 class Index extends Component {
 	constructor(props){
 		super(props)

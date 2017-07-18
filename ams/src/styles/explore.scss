@@ -1,0 +1,27 @@
+@import "vars.scss";
+.inputButton{
+	height: $rem_2;
+	input{
+		float:left;
+		border: 1px solid $color_cc;
+	    height: $rem_1;
+	    padding: $rem_0_5;
+	    font: $font;
+	    font-size: .85rem;
+	}
+	.button{
+		float:left;
+		margin-left: .15rem;
+	    height: $rem_2;
+	    background: $color_20;
+	    border: 0;
+	    text-align: center;
+	    color: $color_ff;
+	    display: block;
+		border: 1px solid $color_20;
+	    padding: 0 $rem_1;
+	    font: $font;
+	    font-size: .85rem;
+	    line-height: 2rem;
+	}
+}
