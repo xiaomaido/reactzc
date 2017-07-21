@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import misc from '../vendors/misc'
-import App from './App'
 import Loading from '../components/Loading'
+import App from './App'
 import '../styles/normalize.css'
 import '../styles/share.css'
 import '../styles/basic.scss'
 
 import initReactFastclick from 'react-fastclick'
-initReactFastclick()
+initReactFastclick() // 手机端使用
 
+import misc from '../vendors/misc'
 
 class Index extends Component {
 	constructor(props){
@@ -20,7 +20,7 @@ class Index extends Component {
 		this.requestStatus=0 // 0:请求中，1:成功，2:失败
   		this.requestStatus=1
 	}
-	remLayOut(){
+	remLayOut(){ 
 	    const rootV=20
 	    const normalV=375
 	    const maxV=500;
@@ -35,11 +35,11 @@ class Index extends Component {
 	    window.onload=window.onresize=fontSizeSet
 	}
 	checkLogin(){
-		misc.currentUser=JSON.parse(misc.getCookie('payload'))
+		misc.currentUser=JSON.parse(misc.getCookie('payload'))||{}
 		return misc.currentUser
 	}
   	componentWillMount() {
-  		this.remLayOut()
+  		this.remLayOut() // 手机端使用
   		this.checkLogin()
   	}
 	render(){
