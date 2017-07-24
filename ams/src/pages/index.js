@@ -1,9 +1,11 @@
 import Dashboard from './Dashboard'
-import Products from './Products'
 import Users from './Users'
+import Products from './Products'
+import Product from './Product'
 
 export { 
 	Dashboard
-	,Products
 	,Users
+	,Products
+	,Product
 }

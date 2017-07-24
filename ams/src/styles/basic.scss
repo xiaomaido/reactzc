@@ -37,11 +37,13 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
 }
+/* 
 a {
     display: flex;
     box-shadow: 0 2px 4px 0 #000;
     transform: rotate(180deg)
 }
+ */
 
 .loading {
     background: #e6e6e6;
@@ -66,10 +68,4 @@ a {
     height: 2.5rem;
     margin: 1rem 2rem;
     display: block;
-}
-
-
-.app-loader{
-  width: 100%;
-  height: 1000px;
 }

@@ -1,0 +1,54 @@
+@import "../vars.scss";
+
+.header{
+	width: 100%;
+	height: $int_50;
+	background-color: $color_F0734F;
+	.account{
+		cursor: pointer;
+		background:#D76646;
+		padding: 0 $int_20;
+		color: #F8E81C;
+		font-weight: $font_w_400;
+		line-height: $int_50;
+		font-size: $int_14;
+	    font-family: $font_m;
+		span{
+			color: $color_ff;
+	    	font-family: $font_m;
+		}
+		.arrow-up {
+		    width: 0;
+		    height: 0;
+		    border-left: $int_5 solid transparent;
+		    border-right: $int_5 solid transparent;
+		    border-top: 8px solid $color_ff;
+			opacity: 0.6;
+		    position: relative;
+			top: $int_12;
+		    margin-left: $int_10;
+		}
+	}
+	.logo{
+		margin: $int_10;
+		width: $int_30;
+		height: $int_30;
+		background-image: url(http://zhigou.55haitao.com/static/images/module/info/iapp.png);
+	}
+	.name{
+		color: $color_ff;
+		font-weight: $font_w_400;
+		line-height: $int_50;
+		font-size: $int_18;
+	    font-family: $font_m;
+	}
+	.version{
+		color: $color_ff;
+		font-weight: $font_w_400;
+		line-height: $int_50;
+		font-size: $int_12;
+		margin-left: $int_10;
+		opacity: 0.4;
+	    font-family: $font_m;
+	}
+}
