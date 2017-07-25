@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 import Header from './Header'
+import Footer from './Footer'
 import * as Pages from '../pages';
 import '../styles/containers/app.scss'
 import idashboard from '../images/icon/idashboard.png'
@@ -12,15 +13,21 @@ const pageMapRoute={
 }
 class AppPanel extends Component{
 	render(){
-		const { children } = this.props //调用children就是加载子路由里面的组件
 		const minHeight=(window.screen.height-200)+'px'
+		const { children } = this.props //调用children就是加载子路由里面的组件
+		// { children } 可以直接这么用
+		// 也可以用 React.cloneElement(ReactElement,Props,ChildrenReactElement)
+		// React.cloneElement(children,{
+  //           key: this.props.location.pathname,
+  //           b:2
+  //       }, <a href="#">Github</a>)
 		return (
 			<div className="app">
 				<Header />
 				<div className="panel">
 					<ul className="menus">
-						<li>
-							<div className="menu">
+						<li className="">
+							<div className="menu active">
 								<div className="icon" style={{ backgroundImage: 'url('+idashboard+')' }}></div>
 								<div className="name">工作概览</div>
 							</div>
@@ -28,26 +35,37 @@ class AppPanel extends Component{
 						<li>
 							<div className="menu">
 								<div className="icon" style={{ backgroundImage: 'url('+iuser+')' }}></div>
+								<div className="name">活动管理</div>
+								<div className="arrow-up"></div>
+							</div>
+						</li>
+						<li className="subshow">
+							<div className="menu">
+								<div className="icon" style={{ backgroundImage: 'url('+iuser+')' }}></div>
 								<div className="name">用户管理</div>
+								<div className="arrow-up"></div>
 							</div>
 							<div className="submenus">
-								<a href="">用户列表</a>
-								<a href="">用户积分</a>
-								<a href="">用户积分</a>
+								<div>用户列表</div>
+								<div className="active">用户分析</div>
+								<div>用户积分</div>
 							</div>
 						</li>
 						<li>
 							<div className="menu">
 								<div className="icon" style={{ backgroundImage: 'url('+idashboard+')' }}></div>
 								<div className="name">帖子管理</div>
+								<div className="arrow-up"></div>
 							</div>
 						</li>
 					</ul>
 					<div className="main" style={{minHeight:minHeight}}>
-						{children}
+					{ 
+						children
+					} 
 					</div>
 				</div>
-				<div className="footer clearboth">五五海淘科技（股份）有限公司 © 版权所有</div>
+				<Footer />
 			</div>
 		)
 	}

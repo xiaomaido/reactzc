@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
-class Dashboard extends Component{
+import { Base } from './Base'
+class Dashboard extends Base{
+	constructor(props) {
+	    super(props)
+	}
 	render(){
 		return (
-			<div style={{ 'height':'1000px'}}> Dashboard </div>
+			<div>
+				<div>Dashboard</div>
+				<div>
+				</div>
+			</div>
 		)
 	}
 }
