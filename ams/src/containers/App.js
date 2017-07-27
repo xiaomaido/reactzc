@@ -2,15 +2,66 @@ import React, { Component } from 'react'
 import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 import Header from './Header'
 import Footer from './Footer'
+import Menus from './Menus'
 import * as Pages from '../pages';
 import '../styles/containers/app.scss'
+
 import idashboard from '../images/icon/idashboard.png'
 import iuser from '../images/icon/iuser.png'
 
 const pageMapRoute={
-      '/users': Pages.Users
-      ,'/products': Pages.Products
+	users: {
+		url:'/users',
+		page:Pages.Users
+	},
+	products: {
+		url:'/products',
+		page:Pages.Products
+	},
+	brands: {
+		url:'/brands',
+		page:Pages.Brands
+	},
+	sellers: {
+		url:'/sellers',
+		page:Pages.Sellers
+	}
 }
+const menusMapRoute=[
+	{
+		name: '工作概览',
+	    url: '/',
+	    icon: idashboard,
+	    submenus:[]
+	},{
+		name: '电商运营',
+	    url: '',
+	    icon: iuser,
+	    submenus:[
+		    {
+				name: '商家列表',
+			    url: pageMapRoute.sellers.url,
+		    },{
+				name: '商品列表',
+			    url: pageMapRoute.products.url,
+		    },{
+				name: '品牌列表',
+			    url: pageMapRoute.brands.url,
+		    },
+	    ]
+	},{
+		name: '社区运营',
+	    url: '',
+	    icon: iuser,
+	    submenus:[
+		    {
+				name: '用户列表',
+			    url: pageMapRoute.users.url,
+		    }
+	    ]
+	}
+]
+window.menusMapRoute=menusMapRoute
 class AppPanel extends Component{
 	render(){
 		const minHeight=(window.screen.height-200)+'px'
@@ -25,40 +76,7 @@ class AppPanel extends Component{
 			<div className="app">
 				<Header />
 				<div className="panel">
-					<ul className="menus">
-						<li className="">
-							<div className="menu active">
-								<div className="icon" style={{ backgroundImage: 'url('+idashboard+')' }}></div>
-								<div className="name">工作概览</div>
-							</div>
-						</li>
-						<li>
-							<div className="menu">
-								<div className="icon" style={{ backgroundImage: 'url('+iuser+')' }}></div>
-								<div className="name">活动管理</div>
-								<div className="arrow-up"></div>
-							</div>
-						</li>
-						<li className="subshow">
-							<div className="menu">
-								<div className="icon" style={{ backgroundImage: 'url('+iuser+')' }}></div>
-								<div className="name">用户管理</div>
-								<div className="arrow-up"></div>
-							</div>
-							<div className="submenus">
-								<div>用户列表</div>
-								<div className="active">用户分析</div>
-								<div>用户积分</div>
-							</div>
-						</li>
-						<li>
-							<div className="menu">
-								<div className="icon" style={{ backgroundImage: 'url('+idashboard+')' }}></div>
-								<div className="name">帖子管理</div>
-								<div className="arrow-up"></div>
-							</div>
-						</li>
-					</ul>
+					<Menus ds={menusMapRoute} />
 					<div className="main" style={{minHeight:minHeight}}>
 					{ 
 						children
@@ -73,8 +91,6 @@ class AppPanel extends Component{
 class App extends Component{
 	constructor(props){
 		super(props)
-		this.handleChange=this.handleChange.bind(this)
-		this.handleClear=this.handleClear.bind(this)
 	}
 	componentDidMount(){
 
@@ -82,18 +98,12 @@ class App extends Component{
 	componentDidUpdate(){
 		
 	}
-	handleChange(nextKeyword){
-
-	}
-	handleClear(e){
-    	e.preventDefault()
-	}
 	render(){
 		return ( 
 			<Router history={browserHistory}>
 			    <Route path="/" component={AppPanel} >
 	            	<IndexRoute component={Pages.Dashboard} />
-	            	{ Object.keys(pageMapRoute).map(d=><Route key={d} path={d} component={pageMapRoute[d]} />) }
+	            	{ Object.keys(pageMapRoute).map(d=><Route key={d} path={pageMapRoute[d]["url"]} component={pageMapRoute[d]["page"]} />) }
 	          	</Route>
 			</Router>
 		)

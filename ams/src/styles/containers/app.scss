@@ -7,68 +7,7 @@
 		padding-left: 210px;
 		position:relative;
 		background-color: $color_636462;
-		.menus{
-			position:absolute;
-			left:0;
-			width:210px;
-			height: 100%;
-			cursor:pointer;
-			.menu{
-				position: relative;
-				height:50px;
-				border-bottom:1px solid $color_e6_02;
-				.icon{
-					margin: 13px 20px;
-					width:24px;
-					height:24px;
-					float:left;
-				}
-				.name{
-					float:left;
-				}
-				.arrow-up {
-				    width: 0;
-				    height: 0;
-				    border-left: 4px solid transparent;
-				    border-right: 4px solid transparent;
-				    border-top: 6px solid $color_e6;
-					opacity: 0.6;
-				    position: absolute;
-				    right: 16px;
-				    top: 22px;
-				    transform:rotate(90deg)
-				}
-			}
-			.name{
-				color: $color_ff;
-				font-weight: $font_w_400;
-				line-height: $int_50;
-				font-size: $int_12;
-    			font-family: $font_m;
-			}
-			.submenus{
-				display:none;
-				div{
-					@extend .name;
-					padding-left:64px;
-				}
-			}
-			.subshow{
-				.submenus{
-					display:block;
-					color: $color_ff;
-				}
-				.arrow-up {
-					transform:none; 
-				}	
-				.active{
-					background-color: $color_e6_02;
-				}
-				.menu.active{
-					border-bottom: 1px solid transparent;
-				}
-			}
-		}
+		
 		.main{
 			background-color: $color_ff;
 		}

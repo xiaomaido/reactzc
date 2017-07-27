@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-class Products extends Component{
+import { Base } from './Base'
+class Products extends Base{
 	render(){
 		return (
 			<div> Products </div>

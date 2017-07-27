@@ -1,10 +1,10 @@
 import React from 'react'
 import { Base } from './Base'
-class Users extends Base{
+class Sellers extends Base{
 	render(){
 		return (
-			<div> Users </div>
+			<div> Sellers </div>
 		)
 	}
 }
-export default Users
+export default Sellers
