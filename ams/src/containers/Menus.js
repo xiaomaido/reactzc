@@ -3,6 +3,10 @@ import '../styles/containers/menus.scss'
 import idashboard from '../images/icon/idashboard.png'
 import iuser from '../images/icon/iuser.png'
 
+const _rootNodeName="LI"
+const _subshow="subshow"
+const _javascript="javascript:;"
+
 class Submenus extends Component{
 	render(){
 		const { ds } = this.props
@@ -16,11 +20,38 @@ class Submenus extends Component{
 	}
 }
 class Menu extends Component{
+	constructor(props){
+		super(props)
+		this.handleClickLi=this.handleClickLi.bind(this)
+	}
+	getRootNode(_node,_rootNodeName){
+		let node=_node
+	    while(node) {
+	        if (node.nodeName===_rootNodeName) {
+	            return node
+	        }
+	        node=node.parentNode;
+	    }
+	    return null
+	}
+	handleClickLi(e){
+		const rootNode=(e.target.nodeName==_rootNodeName)?e.target:this.getRootNode(e.target,_rootNodeName)
+		this.handleFoldMenu(rootNode,e)
+	}
+	handleFoldMenu(node,e){
+		if(~node.className.indexOf(_subshow)) {
+			if(node.firstElementChild.href==_javascript){
+				node.className=""
+			}
+		}else{
+			node.className=_subshow
+		}
+	}
 	render(){
 		const { d,i } = this.props
-		const subshow=d.url==location.pathname?"subshow":(menusMapRoute[i].submenus.filter(d=>d.url==location.pathname).length?"subshow":null)
+		const subshow=d.url==location.pathname?_subshow:(menusMapRoute[i].submenus.filter(d=>d.url==location.pathname).length?_subshow:null)
 		return (
-			<li className={subshow}>
+			<li className={subshow} onClick={this.handleClickLi} >
 				<a href={d.url||"javascript:;"} className={d.url==location.pathname?"menu active":"menu"}>
 					<div className="icon" style={{ backgroundImage: 'url('+d.icon+')' }}></div>
 					<div className="name">{d.name}</div>
