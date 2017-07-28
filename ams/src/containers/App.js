@@ -8,6 +8,7 @@ import '../styles/containers/app.scss'
 
 import idashboard from '../images/icon/idashboard.png'
 import iuser from '../images/icon/iuser.png'
+import ibusy from '../images/icon/ibusy.png'
 
 const pageMapRoute={
 	users: {
@@ -52,7 +53,7 @@ const menusMapRoute=[
 	},{
 		name: '社区运营',
 	    url: '',
-	    icon: iuser,
+	    icon: ibusy,
 	    submenus:[
 		    {
 				name: '用户列表',

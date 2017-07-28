@@ -13,7 +13,7 @@ class Submenus extends Component{
 		return ds.length?(
 			<div className="submenus">
 				{
-					ds.map((d,i)=><a key={i} href={d.url} className={d.url==location.pathname?"active":null} >{d.name}</a>)
+					ds.map((d,i)=><a key={i} href={d.url} className={d.url==location.pathname?"active":null} onClick={e=>{e.stopPropagation()}} >{d.name}</a>)
 				}
 			</div>
 		):null

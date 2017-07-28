@@ -5,8 +5,8 @@ import '../styles/normalize.css'
 import '../styles/share.css'
 import '../styles/basic.scss'
 
-import initReactFastclick from 'react-fastclick'
-initReactFastclick() // 手机端使用
+// import initReactFastclick from 'react-fastclick'
+// initReactFastclick() // 手机端使用
 
 import misc from '../vendors/misc'
 
