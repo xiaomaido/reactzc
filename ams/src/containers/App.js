@@ -65,7 +65,7 @@ const menusMapRoute=[
 window.menusMapRoute=menusMapRoute
 class AppPanel extends Component{
 	render(){
-		const minHeight=(window.screen.height-200)+'px'
+		const minHeight=(window.innerHeight-90)+'px'
 		const { children } = this.props //调用children就是加载子路由里面的组件
 		// { children } 可以直接这么用
 		// 也可以用 React.cloneElement(ReactElement,Props,ChildrenReactElement)

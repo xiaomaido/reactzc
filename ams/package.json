@@ -1,7 +1,6 @@
 {
   "name": "ams",
   "version": "1.0.0",
-  "description": "",
   "main": "postcss.config.js",
   "dependencies": {
     "autoprefixer": "^7.1.2",
@@ -42,5 +41,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }
