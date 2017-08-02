@@ -26,6 +26,10 @@ const pageMapRoute={
 	sellers: {
 		url:'/sellers',
 		page:Pages.Sellers
+	},
+	contextmenureact: {
+		url:'/contextmenureact',
+		page:Pages.ContextMenuReact
 	}
 }
 const menusMapRoute=[
@@ -48,16 +52,19 @@ const menusMapRoute=[
 		    },{
 				name: '品牌列表',
 			    url: pageMapRoute.brands.url,
-		    },
+		    },{
+				name: '用户列表',
+			    url: pageMapRoute.users.url,
+		    }
 	    ]
 	},{
-		name: '社区运营',
+		name: '其他插件',
 	    url: '',
 	    icon: ibusy,
 	    submenus:[
 		    {
-				name: '用户列表',
-			    url: pageMapRoute.users.url,
+				name: '右键菜单',
+			    url: pageMapRoute.contextmenureact.url,
 		    }
 	    ]
 	}

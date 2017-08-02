@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Base } from './Base'
+
 class Products extends Base{
 	render(){
 		return (
@@ -8,3 +9,9 @@ class Products extends Base{
 	}
 }
 export default Products
+
+
+		
+ 
+
+ 

@@ -4,6 +4,7 @@ import Brands from './Brands'
 import Users from './Users'
 import Products from './Products'
 import Product from './Product'
+import ContextMenuReact from './ContextMenuReact'
 
 export { 
 	Dashboard
@@ -12,4 +13,5 @@ export {
 	,Users
 	,Products
 	,Product
+	,ContextMenuReact
 }
