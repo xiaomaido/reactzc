@@ -5,6 +5,7 @@ import Users from './Users'
 import Products from './Products'
 import Product from './Product'
 import ContextMenuReact from './ContextMenuReact'
+import DraggableReact from './DraggableReact'
 
 export { 
 	Dashboard
@@ -14,4 +15,5 @@ export {
 	,Products
 	,Product
 	,ContextMenuReact
+	,DraggableReact
 }

@@ -30,6 +30,10 @@ const pageMapRoute={
 	contextmenureact: {
 		url:'/contextmenureact',
 		page:Pages.ContextMenuReact
+	},
+	draggablereact: {
+		url:'/draggablereact',
+		page:Pages.DraggableReact
 	}
 }
 const menusMapRoute=[
@@ -65,6 +69,9 @@ const menusMapRoute=[
 		    {
 				name: '右键菜单',
 			    url: pageMapRoute.contextmenureact.url,
+		    },{
+				name: '拖拽示例',
+			    url: pageMapRoute.draggablereact.url,
 		    }
 	    ]
 	}

@@ -32,8 +32,4 @@ class ContextMenuReact extends Base{
 }
 export default ContextMenuReact
 
-
-		
- 
-
  
