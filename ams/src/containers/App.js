@@ -34,6 +34,10 @@ const pageMapRoute={
 	draggablereact: {
 		url:'/draggablereact',
 		page:Pages.DraggableReact
+	},
+	selectrc: {
+		url:'/selectrc',
+		page:Pages.SelectRC
 	}
 }
 const menusMapRoute=[
@@ -72,6 +76,9 @@ const menusMapRoute=[
 		    },{
 				name: '拖拽示例',
 			    url: pageMapRoute.draggablereact.url,
+		    },{
+				name: '下拉选择',
+			    url: pageMapRoute.selectrc.url,
 		    }
 	    ]
 	}

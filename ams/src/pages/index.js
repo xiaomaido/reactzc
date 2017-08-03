@@ -6,6 +6,7 @@ import Products from './Products'
 import Product from './Product'
 import ContextMenuReact from './ContextMenuReact'
 import DraggableReact from './DraggableReact'
+import SelectRC from './SelectRC'
 
 export { 
 	Dashboard
@@ -16,4 +17,5 @@ export {
 	,Product
 	,ContextMenuReact
 	,DraggableReact
+	,SelectRC
 }
