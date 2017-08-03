@@ -8,19 +8,21 @@ class SelectRC extends Component{
 		super(props)
 		this.state = {
 		    destroy: false,
-		    value: String(9)
+		    value: '9',
+		    array: ['1','2', '3', '4', '5', '6', '7', '8', '9']
 		}
 		this.onChange = (e) => {
-			// let value;
-			// if (e && e.target) {
-			// 	value = e.target.value;
-			// } else {
-			//   	value = e;
-			// }
-			// console.log('onChange', value);
-			// this.setState({
-			// 	value,
-			// })
+			let value;
+			debugger
+			if (e && e.target) {
+				value = e.target.value;
+			} else {
+			  	value = e;
+			}
+			console.log('onChange', value);
+			this.setState({
+				value,
+			})
 		};
 
 		this.onDestroy = () => {
@@ -44,18 +46,18 @@ class SelectRC extends Component{
 		}
 		return (
 			<div style={{ height: 150,padding:40 }} >
-				<h2>Single Select</h2>
+				<h2>插件下拉</h2>
 				<div style={{ width: 300 }}>
 					<Select
 					    value={this.state.value}
 					    placeholder="placeholder"
-					    dropdownMenuStyle={{ maxHeight: 200, overflow: 'auto' }}
 					    style={{ width: 500 }}
-					    onBlur={this.onBlur}
-					    onFocus={this.onFocus}
 					    allowClear
+					    dropdownMenuStyle={{ maxHeight: 200, overflow: 'auto' }}
 					    optionLabelProp="children"
 					    optionFilterProp="text"
+					    onBlur={this.onBlur}
+					    onFocus={this.onFocus}
 					    onChange={this.onChange} >
 					    <Option value="01" text="jack" title="jack">
 					      	<b style={{ color: 'red' }}>jack</b>
@@ -63,13 +65,15 @@ class SelectRC extends Component{
 					    <Option value="11" text="lucy">lucy</Option>
 					    <Option value="21" disabled text="disabled">disabled</Option>
 					    <Option value="31" text="yiminghe">yiminghe</Option>
-					    {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => {
-					      return <Option key={i} text={String(i)}>{i}</Option>
-					    })}
+					    {
+					    	this.state.array.map((i) => {
+					    		return <Option key={i} text={i}>{i}</Option>
+					    	})
+					    }
 					</Select>
 				</div>
 
-				<h2>native select</h2>
+				<h2>普通下拉</h2>
 				<select
 				  value={this.state.value}
 				  style={{ width: 500 }}
@@ -79,8 +83,8 @@ class SelectRC extends Component{
 					<option value="21" disabled>disabled</option>
 					<option value="31">yiminghe</option>
 					{
-						[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => {
-							return <option value={i} key={i}>{i}</option>
+						this.state.array.map((i) => {
+							return <option key={i} value={i}>{i}</option>
 						})
 					}
 				</select>

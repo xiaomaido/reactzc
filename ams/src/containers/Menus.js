@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../styles/containers/menus.scss'
 import idashboard from '../images/icon/idashboard.png'
 import iuser from '../images/icon/iuser.png'
+// import {Link} from 'react-router'
 
 const _rootNodeName="LI"
 const _subshow="subshow"
@@ -13,7 +14,8 @@ class Submenus extends Component{
 		return ds.length?(
 			<div className="submenus">
 				{
-					ds.map((d,i)=><a key={i} href={d.url} className={d.url==location.pathname?"active":null} onClick={e=>{e.stopPropagation()}} >{d.name}</a>)
+					ds.map((d,i)=><a key={i} href={(('#'+d.url))} className={d.url==location.pathname?"active":null} onClick={e=>{e.stopPropagation()}} >{d.name}</a>)
+					// ds.map((d,i)=><Link key={i} to={d.url} className={d.url==location.pathname?"active":null} onClick={e=>{e.stopPropagation()}} >{d.name}</Link>)
 				}
 			</div>
 		):null
@@ -52,7 +54,7 @@ class Menu extends Component{
 		const subshow=d.url==location.pathname?_subshow:(menusMapRoute[i].submenus.filter(d=>d.url==location.pathname).length?_subshow:null)
 		return (
 			<li className={subshow} onClick={this.handleClickLi} >
-				<a href={d.url||"javascript:;"} className={d.url==location.pathname?"menu active":"menu"}>
+				<a href={('#'+d.url)||"javascript:;"} className={d.url==location.pathname?"menu active":"menu"}>
 					<div className="icon" style={{ backgroundImage: 'url('+d.icon+')' }}></div>
 					<div className="name">{d.name}</div>
 					{

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Router, Route, IndexRoute, browserHistory} from 'react-router'
+import {Router, Route, IndexRoute, browserHistory, hashHistory} from 'react-router'
 import Header from './Header'
 import Footer from './Footer'
 import Menus from './Menus'
@@ -120,9 +120,10 @@ class App extends Component{
 	componentDidUpdate(){
 		
 	}
+			// <Router history={browserHistory}>
 	render(){
 		return ( 
-			<Router history={browserHistory}>
+			<Router history={hashHistory}>
 			    <Route path="/" component={AppPanel} >
 	            	<IndexRoute component={Pages.Dashboard} />
 	            	{ Object.keys(pageMapRoute).map(d=><Route key={d} path={pageMapRoute[d]["url"]} component={pageMapRoute[d]["page"]} />) }
