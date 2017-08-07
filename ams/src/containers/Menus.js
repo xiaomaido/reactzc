@@ -10,7 +10,7 @@ const _javascript="javascript:;"
 
 class Submenus extends Component{
 	render(){
-		const { ds } = this.props
+		const { ds,location } = this.props
 		return ds.length?(
 			<div className="submenus">
 				{
@@ -50,29 +50,29 @@ class Menu extends Component{
 		}
 	}
 	render(){
-		const { d,i } = this.props
+		const { d,i,location } = this.props
 		const subshow=d.url==location.pathname?_subshow:(menusMapRoute[i].submenus.filter(d=>d.url==location.pathname).length?_subshow:null)
 		return (
 			<li className={subshow} onClick={this.handleClickLi} >
-				<a href={('#'+d.url)||"javascript:;"} className={d.url==location.pathname?"menu active":"menu"}>
+				<a href={d.url?('#'+d.url):"javascript:;"} className={d.url==location.pathname?"menu active":"menu"}>
 					<div className="icon" style={{ backgroundImage: 'url('+d.icon+')' }}></div>
 					<div className="name">{d.name}</div>
 					{
 						d.submenus.length?<div className="arrow-up"></div>:null
 					}
 				</a>
-				<Submenus ds={d.submenus} />
+				<Submenus ds={d.submenus} location={location} />
 			</li>
 		)
 	}
 }
 class Menus extends Component{
 	render(){
-		const { ds } = this.props
+		const { ds,location } = this.props
 		return (
 			<ul className="menus">
 				{
-					ds.map((d,i)=><Menu key={i} d={d} i={i}/>)
+					ds.map((d,i)=><Menu key={i} d={d} i={i} location={location} />)
 				}
 			</ul>
 		)

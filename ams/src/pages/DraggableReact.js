@@ -4,13 +4,26 @@ import Draggable from 'react-draggable'
 class DraggableReact extends Component{
 
 	handleStart(e) {
-		console.log(1)
+		console.log('Start')
 	}
 	handleDrag(e) {
-		console.log(2)
+		console.log('Draging')
 	}
 	handleStop(e) {
-		console.log(3)
+		console.log('Stop')
+	}
+	handleEnter(e){
+		console.log('Enter')
+	}
+	handleOver(e){
+		console.log('Over')
+	}
+	handleLeave(e){
+		console.log('Leave')
+	}
+	handleDrop(e){
+		debugger
+		console.log('Drop')
 	}
 	render(){
 
@@ -61,27 +74,38 @@ class DraggableReact extends Component{
 		// disabled: boolean,
 
 		return (
-			<Draggable
-				// axis="x"
-				// axis="y"
-				// grid={[100, 50]}
-				grid={[25, 25]}
-				// bounds="parent"
-				// bounds=".main"
-				// disabled={true}
-				cancel=".desc"
-				handle=".car"
-				defaultPosition={{x: 0, y: 0}}
-				// position={{x: 100, y: 100}}
-				// position={null}
-				onStart={this.handleStart}
-				onDrag={this.handleDrag}
-				onStop={this.handleStop}>
-				<div style={{padding:'10px',color:'red'}}>
-					<div className="desc">请尝试拖走下面一排车</div>
-					<div className="car">🚗🚗🚗🚗🚗🚗🚗🚗</div>
-				</div>
-			</Draggable>
+			<div>
+				<div>&nbsp;</div>
+				<div className="desc" style={{margin:30,width:300,height:300,background:'#eee'}}
+					onDragEnter={this.handleEnter}
+					onDragOver={this.handleOver}
+					onDrop={this.handleDrop}
+					// onDrop={(e) => { e.preventDefault();alert(1) }}
+					onDragLeave={this.handleLeave}
+					></div>
+				<Draggable
+					// axis="x"
+					// axis="y"
+					// grid={[100, 50]}
+					grid={[25, 25]}
+					// bounds="parent"
+					// bounds=".main"
+					// disabled={true}
+					cancel=".desc"
+					handle=".car"
+					defaultPosition={{x: 0, y: 0}}
+					// position={{x: 100, y: 100}}
+					// position={null}
+					onStart={this.handleStart}
+					onDrag={this.handleDrag}
+					onStop={this.handleStop}>
+
+					<div style={{padding:'10px',color:'red'}}>
+						<div className="desc">请尝试拖走下面一排车</div>
+						<div className="car">🚗🚗🚗🚗🚗🚗🚗🚗</div>
+					</div>
+				</Draggable>
+			</div>
 	    )
 	}
 }
