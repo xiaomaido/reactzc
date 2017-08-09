@@ -35,8 +35,8 @@ class ListTaskItem extends Component {
         }
         return (
             <li className={classSucc} onMouseOver={mouseOverEvnet} onMouseOut={mouseOutEvent}>
-                <input type="checkbox" className="pull-left" checked={_props.completed} onChange={completeTaskEvent}/>
-                <span>{taskName}</span>
+                <div style={{cursor:'pointer'}} className="pull-left" onClick={completeTaskEvent}>{_props.completed?"✅":"☑️"} </div>
+                <span style={{paddingLeft:5}}>{taskName}</span>
                 <div className="pull-right">
                     <button type="button" className="btn btn-xs close" ref={deleteBtnRef} onClick={deleteTaskEvent}>删除</button>
                 </div>
@@ -138,12 +138,18 @@ const mapDispatchToPropsAddTask=(dispatch)=>{
 const AddTask=connect(null, mapDispatchToPropsAddTask)(AddTaskForm)
 
 class TaskApp extends Component{
+    componentDidMount(){
+        var linkStyle = document.createElement('link') //异步延迟加载样式  
+        linkStyle.setAttribute('href','http://127.0.0.1:8020/reactzc/todos/css/bootstrap.min.css')
+        linkStyle.setAttribute('rel', 'stylesheet')
+        document.body.appendChild(linkStyle)
+    }
 	render(){
 		return (
 			<div className="container">
 				<div className="col-md-6 col-md-offset-3">
 					<div className="well">
-						<h1 className="text-center">萌登的待办事项</h1>
+						<h1 className="text-center">待办事项</h1>
 				        <div>
 				        	<FilterTask classExtra="btn-warning" btnText="全部任务" filter={T.FILTERS.ALL} />
 				        	<FilterTask classExtra="btn-success" btnText="已完成" filter={T.FILTERS.DONE} />
