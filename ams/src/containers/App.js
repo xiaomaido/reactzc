@@ -114,8 +114,8 @@ class App extends Component{
 	constructor(props){
 		super(props)
 	}
-			// <Router history={browserHistory}>
 	render(){
+			// <Router history={browserHistory}>
 		return ( 
 			<Router history={hashHistory}>
 			    <Route path="/" component={AppPanel} >

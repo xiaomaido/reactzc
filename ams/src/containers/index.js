@@ -13,12 +13,12 @@ import misc from '../vendors/misc'
 class Index extends Component {
 	constructor(props){
 		super(props)
-		window.misc=misc
 		this.state={
 			requestStatus:0
 		}
 		this.requestStatus=0 // 0:请求中，1:成功，2:失败
   		this.requestStatus=1
+		window.misc=misc
 	}
 	remLayOut(){ 
 	    const rootV=20
