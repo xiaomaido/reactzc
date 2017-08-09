@@ -95,11 +95,9 @@ class FilterTaskButton extends Component {
   }
 }
 
-const mapDispatchToPropsFilterTask=(dispatch)=>{
-  return bindActionCreators(TaskActions, dispatch)
-}
-
-const FilterTask=connect(null, mapDispatchToPropsFilterTask)(FilterTaskButton)
+const FilterTask=connect(null, {
+    fliterTask:TaskActions.fliterTask
+})(FilterTaskButton)
 
 // 容器组件
 class AddTaskForm extends Component {
@@ -131,19 +129,12 @@ class AddTaskForm extends Component {
     )
   }
 }
-const mapDispatchToPropsAddTask=(dispatch)=>{
-  return bindActionCreators(TaskActions, dispatch)
-}
 
-const AddTask=connect(null, mapDispatchToPropsAddTask)(AddTaskForm)
+const AddTask=connect(null, {
+  createTask:TaskActions.createTask
+})(AddTaskForm)
 
 class TaskApp extends Component{
-    componentDidMount(){
-        var linkStyle = document.createElement('link') //异步延迟加载样式  
-        linkStyle.setAttribute('href','http://127.0.0.1:8020/reactzc/todos/css/bootstrap.min.css')
-        linkStyle.setAttribute('rel', 'stylesheet')
-        document.body.appendChild(linkStyle)
-    }
 	render(){
 		return (
 			<div className="container">
@@ -164,5 +155,11 @@ class TaskApp extends Component{
 			</div>
 		)
 	}
+    componentDidMount(){
+        const linkStyle = document.createElement('link') //异步延迟加载样式  
+        linkStyle.setAttribute('href','http://127.0.0.1:8020/reactzc/todos/css/bootstrap.min.css')
+        linkStyle.setAttribute('rel', 'stylesheet')
+        document.body.appendChild(linkStyle)
+    }
 }
 export default TaskApp
