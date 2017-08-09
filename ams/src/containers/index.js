@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Loading from '../components/Loading'
 import App from './App'
+import Loading from '../components/Loading'
 import '../styles/normalize.css'
 import '../styles/share.css'
 import '../styles/basic.scss'
@@ -39,7 +39,7 @@ class Index extends Component {
 		return misc.currentUser
 	}
   	componentWillMount() {
-  		this.remLayOut() // 手机端使用
+  		// this.remLayOut() // 手机端使用
   		this.checkLogin()
   	}
 	render(){

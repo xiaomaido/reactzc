@@ -25,18 +25,3 @@ const createStoreWithMiddleware = compose(
     reduxReactRouter({ routes, createHistory })
 )(createStore)
 
-
-const configureStore=(preloadedState)=>{
-    const store = createStoreWithMiddleware(rootReducer, preloadedState)
-    //热替换选项
-    if (module.hot) {
-        // Enable Webpack hot module replacement for reducers
-        module.hot.accept('../reducers', () => {
-          const nextReducer = require('../reducers')
-          store.replaceReducer(nextReducer)
-        })
-    }
-    return store
-}
-
-export default configureStore 

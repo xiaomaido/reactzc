@@ -56,9 +56,10 @@ rules=[
 
     }
     ,{ 
-        test: /\.(png|gif|jpe?g|svg)$/i, //解析图片
-        use: 'url-loader?limit='+(8*1024)+'&name=./images/[name].[ext]' //这样在小于8K的图片将直接以base64的形式内联在代码中，可以减少一次http请求。
+        test: /\.(png|gif|jpe?g|eot|ttf|woff|woff2|svg)$/i, //解析图片
+        use: 'url-loader?limit='+(8*1024)+'&name=./images/[name].[hash].[ext]' //这样在小于8K的图片将直接以base64的形式内联在代码中，可以减少一次http请求。
     }
+
 ]
 module.exports={
     devtool: 'eval'

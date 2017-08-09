@@ -38,6 +38,10 @@ const pageMapRoute={
 	selectrc: {
 		url:'/selectrc',
 		page:Pages.SelectRC
+	},
+	taskapp: {
+		url:'/taskapp',
+		page:Pages.TaskApp
 	}
 }
 const menusMapRoute=[
@@ -79,6 +83,16 @@ const menusMapRoute=[
 		    },{
 				name: '下拉选择',
 			    url: pageMapRoute.selectrc.url,
+		    }
+	    ]
+	},{
+		name: '项目示例',
+	    url: '',
+	    icon: ibusy,
+	    submenus:[
+		    {
+				name: '待办事项',
+			    url: pageMapRoute.taskapp.url,
 		    }
 	    ]
 	}

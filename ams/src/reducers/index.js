@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux'
-import { routerStateReducer as router } from 'redux-router'
-import entities from './entities'
-import paginations from './paginations'
+import tasks from './tasks'
+import filters from './filters'
+// import { routerStateReducer as router } from 'redux-router'
 
 const rootReducer=combineReducers({
-	router
-	,entities
-	,paginations
+	tasks,
+	filters,
 })
 export default rootReducer
