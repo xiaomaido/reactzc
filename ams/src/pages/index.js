@@ -9,6 +9,7 @@ import DraggableReact from './DraggableReact'
 import SelectRC from './SelectRC'
 import TaskApp from './TaskApp'
 import SuperAgent from './SuperAgent'
+import FetchAPI from './FetchAPI'
 
 
 export { 
@@ -23,4 +24,5 @@ export {
 	,SelectRC
 	,TaskApp
 	,SuperAgent
+	,FetchAPI
 }

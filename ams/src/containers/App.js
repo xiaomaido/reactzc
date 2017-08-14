@@ -46,6 +46,10 @@ const pageMapRoute={
 	superagent:{
 		url:'/superagent',
 		page:Pages.SuperAgent
+	},
+	fetchapi:{
+		url:'/fetchapi',
+		page:Pages.FetchAPI
 	}
 }
 const menusMapRoute=[
@@ -90,6 +94,9 @@ const menusMapRoute=[
 		    },{
 				name: 'SuperAgent',
 			    url: pageMapRoute.superagent.url,
+		    },{
+				name: 'FetchAPI',
+			    url: pageMapRoute.fetchapi.url,
 		    }
 	    ]
 	},{
