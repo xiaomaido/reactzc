@@ -42,6 +42,10 @@ const pageMapRoute={
 	taskapp: {
 		url:'/taskapp',
 		page:Pages.TaskApp
+	},
+	superagent:{
+		url:'/superagent',
+		page:Pages.SuperAgent
 	}
 }
 const menusMapRoute=[
@@ -83,6 +87,9 @@ const menusMapRoute=[
 		    },{
 				name: '下拉选择',
 			    url: pageMapRoute.selectrc.url,
+		    },{
+				name: 'SuperAgent',
+			    url: pageMapRoute.superagent.url,
 		    }
 	    ]
 	},{

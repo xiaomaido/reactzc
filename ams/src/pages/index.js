@@ -8,6 +8,8 @@ import ContextMenuReact from './ContextMenuReact'
 import DraggableReact from './DraggableReact'
 import SelectRC from './SelectRC'
 import TaskApp from './TaskApp'
+import SuperAgent from './SuperAgent'
+
 
 export { 
 	Dashboard
@@ -20,4 +22,5 @@ export {
 	,DraggableReact
 	,SelectRC
 	,TaskApp
+	,SuperAgent
 }
