@@ -1,8 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import rootReducer from '../reducers'
+import apiMiddleware from '../middlewares/api_superagent'
 import { routerMiddleware } from 'react-router-redux'
 import { hashHistory } from 'react-router'
+import rootReducer from '../reducers'
 
 // applyMiddleware是redux里面的，可以封装store里面的dispatch
 // thunkMiddleware作用是使action创建函数可以返回一个function代替一个action对象

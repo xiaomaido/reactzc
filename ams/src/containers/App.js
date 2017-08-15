@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {Router, Route, IndexRoute, browserHistory, hashHistory} from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import { connect } from 'react-redux'
 import configureStore from '../store'
 
 
