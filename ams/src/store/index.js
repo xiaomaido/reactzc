@@ -9,7 +9,7 @@ import { hashHistory } from 'react-router'
 const createStoreWithMiddleware = compose(
     applyMiddleware(
         thunkMiddleware
-        // ,routerMiddleware(hashHistory)
+        ,routerMiddleware(hashHistory)
     )
 )(createStore)
 

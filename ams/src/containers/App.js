@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import {Router, Route, IndexRoute, browserHistory, hashHistory} from 'react-router'
-// import { syncHistoryWithStore } from 'react-router-redux'
+import { syncHistoryWithStore } from 'react-router-redux'
 import { connect } from 'react-redux'
 import configureStore from '../store'
 
-window.store=configureStore()
-window.unsubscribe=store.subscribe(() =>
-  console.log(store.getState())
-)
+
 
 import AppPanel from './AppPanel'
 import * as Pages from '../pages';
@@ -17,7 +14,11 @@ import idashboard from '../images/icon/idashboard.png'
 import iuser from '../images/icon/iuser.png'
 import ibusy from '../images/icon/ibusy.png'
 
-const pageMapRoute={
+window.store=configureStore()
+window.unsubscribe=store.subscribe(() =>
+  console.log(store.getState())
+)
+window.pageMapRoute={
 	users: {
 		url:'/users',
 		page:Pages.Users
@@ -118,8 +119,8 @@ window.menusMapRoute=[
 	    ]
 	}
 ]
-// const history=syncHistoryWithStore(hashHistory, window.store);
 
+const history=syncHistoryWithStore(hashHistory, window.store);
 
 const routes = (
 	<Route path="/" component={AppPanel} >
@@ -134,6 +135,8 @@ class App extends Component{
 	render(){
 		// <Router history={browserHistory}>
 		// <Router history={hashHistory}>
+		return <Router history={history} routes={routes} />
+		
 		// return ( 
 		// 	<Router history={hashHistory}>
 		// 	    <Route path="/" component={AppPanel} >
@@ -142,7 +145,6 @@ class App extends Component{
 	 //          	</Route>
 		// 	</Router>
 		// )
-		return <Router history={hashHistory} routes={routes} />
 	}
 }
 export default App
