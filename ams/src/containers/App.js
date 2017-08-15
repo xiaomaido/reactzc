@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
 import {Router, Route, IndexRoute, browserHistory, hashHistory} from 'react-router'
+// import { syncHistoryWithStore } from 'react-router-redux'
+import { connect } from 'react-redux'
+import configureStore from '../store'
+
+window.store=configureStore()
+window.unsubscribe=store.subscribe(() =>
+  console.log(store.getState())
+)
+
 import Header from './Header'
 import Footer from './Footer'
 import Menus from './Menus'
@@ -52,7 +61,7 @@ const pageMapRoute={
 		page:Pages.FetchAPI
 	}
 }
-const menusMapRoute=[
+window.menusMapRoute=[
 	{
 		name: '工作概览',
 	    url: '/',
@@ -111,7 +120,9 @@ const menusMapRoute=[
 	    ]
 	}
 ]
-window.menusMapRoute=menusMapRoute
+// const history=syncHistoryWithStore(hashHistory, window.store);
+
+
 class AppPanel extends Component{
 	render(){
 		const minHeight=(window.innerHeight-90)+'px'
@@ -138,20 +149,29 @@ class AppPanel extends Component{
 		)
 	}
 }
+
+const routes = (
+	<Route path="/" component={AppPanel} >
+		<IndexRoute component={Pages.Dashboard} />
+		{ Object.keys(pageMapRoute).map(d=><Route key={d} path={pageMapRoute[d]["url"]} component={pageMapRoute[d]["page"]} />) }
+	</Route>
+)
 class App extends Component{
 	constructor(props){
 		super(props)
 	}
 	render(){
-			// <Router history={browserHistory}>
-		return ( 
-			<Router history={hashHistory}>
-			    <Route path="/" component={AppPanel} >
-	            	<IndexRoute component={Pages.Dashboard} />
-	            	{ Object.keys(pageMapRoute).map(d=><Route key={d} path={pageMapRoute[d]["url"]} component={pageMapRoute[d]["page"]} />) }
-	          	</Route>
-			</Router>
-		)
+		// <Router history={browserHistory}>
+		// <Router history={hashHistory}>
+		// return ( 
+		// 	<Router history={hashHistory}>
+		// 	    <Route path="/" component={AppPanel} >
+	 //            	<IndexRoute component={Pages.Dashboard} />
+	 //            	{ Object.keys(pageMapRoute).map(d=><Route key={d} path={pageMapRoute[d]["url"]} component={pageMapRoute[d]["page"]} />) }
+	 //          	</Route>
+		// 	</Router>
+		// )
+		return <Router history={hashHistory} routes={routes} />
 	}
 }
 export default App

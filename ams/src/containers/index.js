@@ -43,10 +43,10 @@ class Index extends Component {
   		this.checkLogin()
   	}
 	render(){
-  		const showApp=()=><App key="app"/>
-		const showLoading=()=><Loading key="loading" />
+  		const showApp=<App key="app"/>
+		const showLoading=<Loading key="loading" />
 		const showLogin=()=>location.replace('http://aff.shoplooks.com:8080/templates/signin/')
-		const element=this.checkLogin()?(this.requestStatus?showApp():showLoading()):showLogin()
+		const element=this.checkLogin()?(this.requestStatus?showApp:showLoading):showLogin()
 		return (<div>{element}</div>)
 	}
 }

@@ -2,14 +2,10 @@ import React from 'react'
 import { render } from 'react-dom'
 import Index from './containers'
 import { Provider } from 'react-redux'
-import configureStore from './store'
 
-window.store=configureStore()
-window.unsubscribe=store.subscribe(() =>
-  console.log(store.getState())
-)
+// 先进入Index和App主组件，在渲染到页面，所以window.store在 
 render(
-  	<Provider store={store}>
+  	<Provider store={window.store}>
 		<Index />
 	</Provider>
 	,document.getElementById("index")
