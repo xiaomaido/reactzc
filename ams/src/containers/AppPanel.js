@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 
 class AppPanel extends Component{
 	render(){
-		debugger
 		const minHeight=(window.innerHeight-90)+'px'
 		const { children,location } = this.props //调用children就是加载子路由里面的组件
 		return (
