@@ -14,7 +14,8 @@ class Submenus extends Component{
 		return ds.length?(
 			<div className="submenus">
 				{
-					ds.map((d,i)=><a key={i} href={(('#'+d.url))} className={d.url==location.pathname?"active":null} onClick={e=>{e.stopPropagation()}} >{d.name}</a>)
+					ds.map((d,i)=><a key={i} href={(('#'+d.url))} className={d.url==(location.pathname)?"active":null} onClick={e=>{e.stopPropagation()}} >{d.name}</a>)
+					// ds.map((d,i)=><a key={i} href={(('#'+d.url))} className={~d.url.indexOf(location.pathname)?"active":null} onClick={e=>{e.stopPropagation()}} >{d.name}</a>)
 					// ds.map((d,i)=><Link key={i} to={d.url} className={d.url==location.pathname?"active":null} onClick={e=>{e.stopPropagation()}} >{d.name}</Link>)
 				}
 			</div>
@@ -51,7 +52,9 @@ class Menu extends Component{
 	}
 	render(){
 		const { d,i,location } = this.props
+		// const subshow=~d.url.indexOf(location.pathname)?_subshow:(menusMapRoute[i].submenus.filter(d=>~d.url.indexOf(location.pathname)).length?_subshow:null)
 		const subshow=d.url==location.pathname?_subshow:(menusMapRoute[i].submenus.filter(d=>d.url==location.pathname).length?_subshow:null)
+
 		return (
 			<li className={subshow} onClick={this.handleClickLi} >
 				<a href={d.url?('#'+d.url):"javascript:;"} className={d.url==location.pathname?"menu active":"menu"}>

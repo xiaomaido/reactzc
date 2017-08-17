@@ -17,6 +17,7 @@ window.store=configureStore()
 window.unsubscribe=store.subscribe(() =>
   console.log(store.getState())
 )
+// 页面路由配置
 window.pageMapRoute={
 	users: {
 		url:'/users',
@@ -25,6 +26,10 @@ window.pageMapRoute={
 	products: {
 		url:'/products',
 		page:Pages.Products
+	},
+	product: {
+		url:'/product',
+		page:Pages.Product
 	},
 	brands: {
 		url:'/brands',
@@ -59,6 +64,7 @@ window.pageMapRoute={
 		page:Pages.FetchAPI
 	}
 }
+// 左侧菜单栏配置
 window.menusMapRoute=[
 	{
 		name: '工作概览',
