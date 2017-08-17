@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import request from 'superagent'
 
 
 export const REQUEST_API=Symbol('REQUEST API')
@@ -10,12 +10,14 @@ const requestAPI=(endpoint)=>{
 	return fetch(url)
 	.then(response=>response.json().then(json => ({ json, response })))
 	.then(({ json, response }) => {
+		debugger
     	if (!response.ok) {
         	return Promise.reject(json)
       	}
     	return Object.assign({},json)
     })
 }
+
 const ApiMiddleware=store=>next=>action=>{
 	const REQ_API=action[REQUEST_API]
 	if (typeof REQ_API === 'undefined') {

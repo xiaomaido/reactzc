@@ -21,7 +21,7 @@ const API=store=>next=>action=>{
 	if (typeof REQ_API === 'undefined') {
     	return next(action)
   	}
-  	let { endpoint, schema, types } = REQ_API
+  	let { endpoint, types } = REQ_API
   	if(typeof endpoint === 'function') {
     	endpoint = endpoint(store.getState())
   	}
@@ -44,15 +44,16 @@ const API=store=>next=>action=>{
 
 	next(actionWith({ type: REQUEST })) 
 
-	return requestAPI(endpoint).then(
-		response => next(actionWith({
-			response,
-			type: SUCCESS
-		})),
-		error => next(actionWith({
-    		error: error,
-			type: FAILURE
-		}))
-	)
+	return requestAPI(endpoint)
+			.then(
+				response => next(actionWith({
+					response,
+					type: SUCCESS
+				})),
+				error => next(actionWith({
+		    		error: error,
+					type: FAILURE
+				}))
+			)
 }
 export default API

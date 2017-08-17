@@ -62,6 +62,10 @@ window.pageMapRoute={
 	fetchapi:{
 		url:'/fetchapi',
 		page:Pages.FetchAPI
+	},
+	mygithub:{
+		url:'/mygithub',
+		page:Pages.MyGithub
 	}
 }
 // 左侧菜单栏配置
@@ -120,6 +124,9 @@ window.menusMapRoute=[
 		    {
 				name: '待办事项',
 			    url: pageMapRoute.taskapp.url,
+		    },{
+				name: 'MyGithub',
+			    url: pageMapRoute.mygithub.url,
 		    }
 	    ]
 	}

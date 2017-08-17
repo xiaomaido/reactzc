@@ -10,7 +10,7 @@ import SelectRC from './SelectRC'
 import TaskApp from './TaskApp'
 import SuperAgent from './SuperAgent'
 import FetchAPI from './FetchAPI'
-
+import MyGithub from './MyGithub'
 
 export { 
 	Dashboard
@@ -25,4 +25,5 @@ export {
 	,TaskApp
 	,SuperAgent
 	,FetchAPI
+	,MyGithub
 }

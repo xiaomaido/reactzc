@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 import { Base } from './Base'
+
 class Dashboard extends Base{
-	constructor(props) {
-	    super(props)
-	}
 	render(){
 		return (
-			<div>
+			<div style={{'padding':10}}>
 				<div>Dashboard</div>
-				<div>
-				</div>
 			</div>
 		)
 	}

@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import apiMiddleware from '../middlewares/api_superagent'
+import { FetchAPI as apiMiddleware } from '../middlewares'
 import { routerMiddleware } from 'react-router-redux'
 import { hashHistory } from 'react-router'
 import rootReducer from '../reducers'
@@ -10,6 +10,7 @@ import rootReducer from '../reducers'
 const createStoreWithMiddleware = compose(
     applyMiddleware(
         thunkMiddleware
+        ,apiMiddleware
         ,routerMiddleware(hashHistory)
     )
 )(createStore)
