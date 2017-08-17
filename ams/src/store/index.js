@@ -2,8 +2,8 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 // import apiMiddleware from '../middlewares/api'
 import rootReducer from '../reducers'
-import routes from '../routes'
-import { createHashHistory } from 'history'
+// import routes from '../routes'
+// import { createHashHistory } from 'history'
 import { reduxReactRouter } from 'redux-router'
 
 const createStoreWithMiddleware = compose(
@@ -11,7 +11,7 @@ const createStoreWithMiddleware = compose(
         thunkMiddleware
         // ,apiMiddleware
     ),
-    reduxReactRouter({ routes, createHashHistory })
+    // reduxReactRouter({ routes, createHashHistory })
 )(createStore)
 
 const configureStore=(preloadedState)=>{
