@@ -22,14 +22,13 @@ class MyGithub extends Base{
 							<div>加入时间：{user.created_at}</div>
 						</div>
 					 ):<Loading key="loading" />
-					// ):(<div><img style={{'float':left}} src="" />&nbsp;加载中....</div>)
 				}
 			</div>
 		)
 	}
 	componentWillMount(){
 		const { requestUserIfNeed } = this.props
-		requestUserIfNeed('xiaomaido')
+		requestUserIfNeed('users/xiaomaido')
 	}
 }
 const mapStateToProps=(state)=>{
