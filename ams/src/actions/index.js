@@ -1,6 +1,8 @@
 import { REQUEST_API } from '../middlewares/FetchAPI'
 import * as T from '../types'
 
+import { Schema, arrayOf, normalize } from 'normalizr'
+
 const API_ROOT = 'https://api.github.com/'
 
 // const requestUser=(endpoint)=>({
@@ -14,10 +16,14 @@ const API_ROOT = 'https://api.github.com/'
 // 	}
 // })
 
-
+// const USER = new Schema('users',{
+// 	idAttribute: 'login'
+// })
+// const USER = new Schema('users')
 
 import { RSAA } from 'redux-api-middleware' // RSAA=Redux Standard API-calling Actions
-
+// var normalizr = require('normalizr')
+// debugger
 const requestUser=(endpoint)=>({
 	[RSAA]: {
 		types:[
@@ -31,7 +37,7 @@ const requestUser=(endpoint)=>({
 					if (contentType && ~contentType.indexOf('json')) {
 						// Just making sure response.json() does not raise an error 
 						return response.json().then((json) => Object.assign({},json));
-						// return response.json().then((json) => normalize(json, { users: arrayOf(userSchema) }));
+						// return response.json().then((json) => normalize(json, { users: arrayOf(USER) }));
 					}
 				}
 			},
