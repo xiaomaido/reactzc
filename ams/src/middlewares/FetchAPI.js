@@ -16,7 +16,7 @@ const requestAPI=(endpoint)=>{
     	return Object.assign({},json)
     })
 }
-const API=store=>next=>action=>{
+const apiMiddleware=store=>next=>action=>{
 	const REQ_API=action[REQUEST_API]
 	if (typeof REQ_API === 'undefined') {
     	return next(action)
@@ -56,4 +56,4 @@ const API=store=>next=>action=>{
 				}))
 			)
 }
-export default API
+export default apiMiddleware
