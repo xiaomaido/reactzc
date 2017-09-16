@@ -9,7 +9,7 @@ class SuperAgent extends Component{
 			userinfo:{},
 		}
 	}
-	componentWillMount(){
+	componentDidMount(){
 		// ES6 promises are supported. Instead of .end() you can call .then():
 		request
 			.get('http://www.subreddit.com/r/rockets.json')

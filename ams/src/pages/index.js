@@ -9,8 +9,10 @@ import DraggableReact from './DraggableReact'
 import SelectRC from './SelectRC'
 import TaskApp from './TaskApp'
 import SuperAgent from './SuperAgent'
+import Axios from './Axios'
 import FetchAPI from './FetchAPI'
 import MyGithub from './MyGithub'
+
 
 export { 
 	Dashboard
@@ -26,4 +28,5 @@ export {
 	,SuperAgent
 	,FetchAPI
 	,MyGithub
+	,Axios
 }

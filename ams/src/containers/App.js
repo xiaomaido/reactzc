@@ -63,6 +63,10 @@ window.pageMapRoute={
 		url:'/fetchapi',
 		page:Pages.FetchAPI
 	},
+	axios:{
+		url:'/axios',
+		page:Pages.Axios
+	},
 	mygithub:{
 		url:'/mygithub',
 		page:Pages.MyGithub
@@ -114,6 +118,10 @@ window.menusMapRoute=[
 		    },{
 				name: 'FetchAPI',
 			    url: pageMapRoute.fetchapi.url,
+		    },{
+				name: 'axios',
+			    url: pageMapRoute.axios.url,
+		    	
 		    }
 	    ]
 	},{
