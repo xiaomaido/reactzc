@@ -3,8 +3,6 @@ import {Router, Route, IndexRoute, browserHistory, hashHistory} from 'react-rout
 import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from '../store'
 
-
-
 import AppPanel from './AppPanel'
 import * as Pages from '../pages';
 import '../styles/containers/app.scss'
@@ -13,7 +11,10 @@ import idashboard from '../images/icon/idashboard.png'
 import iuser from '../images/icon/iuser.png'
 import ibusy from '../images/icon/ibusy.png'
 
-window.store=configureStore()
+import Immutable from 'immutable'
+const preloadedState = Immutable.Map()
+
+window.store=configureStore(preloadedState)
 window.unsubscribe=store.subscribe(() =>
   console.log(store.getState())
 )
@@ -140,7 +141,12 @@ window.menusMapRoute=[
 	}
 ]
 
-const history=syncHistoryWithStore(hashHistory, window.store);
+// const history=syncHistoryWithStore(hashHistory, window.store)
+const history=syncHistoryWithStore(hashHistory, window.store, {
+	selectLocationState (state) {
+		return state.get('routing').toJS()
+	}
+})
 
 const routes = (
 	<Route path="/" component={AppPanel} >

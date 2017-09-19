@@ -23,9 +23,7 @@ class AppPanel extends Component{
 	}
 }
 const mapStateToProps=(state)=>{
-	// routerReducer as routing里面也能拿到路由
 	return {
-	    keyword: state.routing.locationBeforeTransitions.pathname.substring(1) 
 	}
 }
 export default connect(mapStateToProps)(AppPanel)
