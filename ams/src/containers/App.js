@@ -3,8 +3,6 @@ import {Router, Route, IndexRoute, browserHistory, hashHistory} from 'react-rout
 import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from '../store'
 
-
-
 import AppPanel from './AppPanel'
 import * as Pages from '../pages';
 import '../styles/containers/app.scss'
@@ -70,6 +68,14 @@ window.pageMapRoute={
 	mygithub:{
 		url:'/mygithub',
 		page:Pages.MyGithub
+	},
+	datepicker:{
+		url:'/datepicker',
+		page:Pages.DatePickerDemo
+	},
+	button:{
+		url:'/button',
+		page:Pages.ButtonDemo
 	}
 }
 // 左侧菜单栏配置
@@ -135,6 +141,20 @@ window.menusMapRoute=[
 		    },{
 				name: 'MyGithub',
 			    url: pageMapRoute.mygithub.url,
+		    }
+	    ]
+	},{
+		name: 'AntDesign',
+	    url: '',
+	    icon: iuser,
+	    submenus:[
+		    {
+				name: 'DatePickerDemo',
+			    url: pageMapRoute.datepicker.url,
+			},
+			{
+				name: 'ButtonDemo',
+			    url: pageMapRoute.button.url,
 		    }
 	    ]
 	}

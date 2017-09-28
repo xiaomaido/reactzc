@@ -13,7 +13,6 @@ class SelectRC extends Component{
 		}
 		this.onChange = (e) => {
 			let value;
-			debugger
 			if (e && e.target) {
 				value = e.target.value;
 			} else {

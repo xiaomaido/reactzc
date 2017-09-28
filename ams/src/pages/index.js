@@ -12,7 +12,8 @@ import SuperAgent from './SuperAgent'
 import Axios from './Axios'
 import FetchAPI from './FetchAPI'
 import MyGithub from './MyGithub'
-
+import DatePickerDemo from './antd/DatePickerDemo'
+import ButtonDemo from './antd/ButtonDemo'
 
 export { 
 	Dashboard
@@ -29,4 +30,6 @@ export {
 	,FetchAPI
 	,MyGithub
 	,Axios
+	,DatePickerDemo
+	,ButtonDemo
 }

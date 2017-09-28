@@ -3,6 +3,8 @@ import Header from './Header'
 import Footer from './Footer'
 import Menus from './Menus'
 import { connect } from 'react-redux'
+import { BackTop } from 'antd'
+import '../styles/antdesign.scss'
 
 class AppPanel extends Component{
 	render(){
@@ -18,6 +20,7 @@ class AppPanel extends Component{
 					</div>
 				</div>
 				<Footer />
+				<BackTop />
 			</div>
 		)
 	}
