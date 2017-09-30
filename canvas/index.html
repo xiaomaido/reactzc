@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>Canvas</title>
+        <style type="text/css">
+            canvas { border: 1px solid black; }
+        </style>
+    </head>
+    <body style="background: rgba(109, 106, 106, 0.1);">
+        <canvas id="tutorial" width="500" height="500"></canvas>
+        <br />
+        <canvas id="palette" width="150" height="150" style="border:none"></canvas>
+        <script type="text/javascript">
+            var canvasContext = {
+                fillStyle: "#000000",
+                filter: "none",
+                font: "10px sans-serif",
+                globalAlpha: 1,
+                globalCompositeOperation: "source-over",
+                imageSmoothingEnabled: true,
+                imageSmoothingQuality: "low",
+                lineCap: "butt",
+                lineDashOffset: 0,
+                lineJoin: "miter",
+                lineWidth: 1,
+                miterLimit: 10,
+                shadowBlur: 0,
+                shadowColor: "rgba(0, 0, 0, 0)",
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                strokeStyle: "#000000",
+                textAlign: "start",
+                textBaseline: "alphabetic"
+            }
+            function draw(){
+                var canvas = document.getElementById('tutorial')
+                if (canvas.getContext){
+                    var ctx = canvas.getContext('2d')
+                    ctx.fillStyle = "rgb(200,0,0)"
+                    ctx.fillRect (0, 0, 75, 75)
+
+                    ctx.fillStyle = "rgba(0, 0, 200, 0.5)"
+                    ctx.fillRect (274, 40, 60, 60)
+
+                    ctx.fillStyle = "rgba(0, 100, 100, 0.6)"
+                    ctx.fillRect(125,125,100,100)
+                    ctx.clearRect(135,135,100,100)
+                    ctx.strokeStyle = "red"
+                    ctx.strokeRect(125,125,100,100)
+
+                    ctx.fillStyle = "rgba(0, 0, 0, 1)"
+                    ctx.beginPath()
+                    ctx.moveTo(300,300)
+                    ctx.lineTo(300,350)
+                    ctx.lineTo(240,325)
+                    ctx.fill() // 完成闭合图形
+                    ctx.closePath() // 如果是一个图形闭合后，路径关闭函数不写也没关系
+
+                    ctx.beginPath();
+                    ctx.arc(400,100,50,0,Math.PI*2,true); // 绘制头
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(420,90,8,0,Math.PI*2,true); // 绘制右眼
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(380,90,8,0,Math.PI*2,true); // 绘制左眼
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(400,110,20,0.1*Math.PI,0.9*Math.PI,false); // 绘制笑脸
+                    ctx.stroke();
+
+                    // 二次贝尔赛曲线
+                    ctx.beginPath()
+                    ctx.moveTo(75,25)
+                    ctx.quadraticCurveTo(25,25,25,62.5)
+                    ctx.quadraticCurveTo(25,100,50,100)
+                    ctx.quadraticCurveTo(50,120,30,125)
+                    ctx.quadraticCurveTo(60,120,65,100)
+                    ctx.quadraticCurveTo(125,100,125,62.5)
+                    ctx.quadraticCurveTo(125,25,75,25)
+                    ctx.stroke()
+
+                    //三次贝塞尔曲线
+                    ctx.beginPath();
+                    ctx.moveTo(275,40);
+                    ctx.bezierCurveTo(275,37,270,25,250,25);
+                    ctx.fill();
+
+                }
+            }
+            function palette() { // 调色板
+                var ctx = document.getElementById('palette').getContext('2d');
+                // 画背景
+                ctx.fillStyle = '#FD0';
+                ctx.fillRect(0,0,75,75);
+                ctx.fillStyle = '#6C0';
+                ctx.fillRect(75,0,75,75);
+                ctx.fillStyle = '#09F';
+                ctx.fillRect(0,75,75,75);
+                ctx.fillStyle = '#F30';
+                ctx.fillRect(75,75,75,75);
+                ctx.fillStyle = '#FFF';
+
+                // 设置透明度值
+                ctx.globalAlpha = 0.2;
+
+                // 画半透明圆
+                for (var i=1;i<8;i++){
+                    ctx.beginPath();
+                    ctx.arc(75,75,10*i,0,Math.PI*2,true);
+                    ctx.fill();
+                }
+            }
+            window.onload=function(){
+                draw()
+                palette()
+            }
+        </script>
+    </body>
+</html>
