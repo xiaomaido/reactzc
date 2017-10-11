@@ -1,0 +1,54 @@
+@import "../vars.scss";
+.season-hot{
+    .banner{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .list{
+        padding: 0 px2rem(36px);
+        .item{
+            width: 100%;
+            float: left;
+            position: relative;
+            padding-top: px2rem(36px);
+            margin-bottom: px2rem(36px);
+            height: px2rem(156px)+px2rem(36px);
+            .cover{
+                float: left;
+                width: px2rem(240px);
+                height: px2rem(156px);
+                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                background-size: cover;
+            }
+            .box{
+                float: left;
+                height: px2rem(156px);
+                padding-left: px2rem(36px);
+                .name{
+                    color: $color_42484e
+                }
+                .shop{
+                    color: $color_fe932b
+                }
+                .address{
+                    color: $color_5d666e
+                }
+            }
+            .good{
+                position: absolute;
+                right: 0;
+                i{
+                    display: block;
+                    width: px2rem(26px);
+                    height: px2rem(30px);
+                    background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                }
+                div{
+                    color: #a4b4c2;
+                    font-size: 0.5rem;
+                }
+            }
+        }
+    }
+}

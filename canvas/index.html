@@ -155,14 +155,15 @@
                 ctx.arc(70, 80, 10, 0, 2 * Math.PI, false);
                 ctx.fill();
                 canvas.addEventListener("click", function(event){
-                    if(event.region) {
+                    if(event.region === 'circle') {
                         alert("hit region: " + event.region);
                     }
                 });
                 try {
                     ctx.addHitRegion({id: "circle"});
                 } catch (e) {
-                     alert("请在chrome://flags中启用【Experimental canvas features 实验性画布功能】或在firefox中输入about:config使canvas.hitregions.enabled值为true以开启更多功能~~~///(^v^)\\\~~~");
+                    // 注意：该接口目前尚在实验中，在未来版本的浏览器中其语法和行为可能有所改变
+                    alert("请在chrome://flags中启用【Experimental canvas features 实验性画布功能】或在firefox中输入about:config使canvas.hitregions.enabled值为true以开启更多功能~~~///(^v^)\\\~~~");
                 }
                 
             }

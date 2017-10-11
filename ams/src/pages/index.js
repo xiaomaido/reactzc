@@ -14,7 +14,7 @@ import FetchAPI from './FetchAPI'
 import MyGithub from './MyGithub'
 import DatePickerDemo from './antd/DatePickerDemo'
 import ButtonDemo from './antd/ButtonDemo'
-
+import SeasonHot from './quyou/SeasonHot'
 export { 
 	Dashboard
 	,Sellers
@@ -32,4 +32,5 @@ export {
 	,Axios
 	,DatePickerDemo
 	,ButtonDemo
+	,SeasonHot
 }

@@ -6,6 +6,9 @@ node_modules
 # production
 build
 
+canvas/hightopo
+canvas/hightopo-master
+
 # misc
 .project
 .DS_Store
