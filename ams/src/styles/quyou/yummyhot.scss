@@ -1,0 +1,72 @@
+@import "../vars.scss";
+.yummy-hot{
+    .list{
+        background-color: $color_f5;
+        .item{
+            background-color: $color_ff;
+            width: 100%;
+            float: left;
+            margin-top: px2rem(20px);
+            .avatar-name{
+                margin: px2rem(30px) auto;
+                padding: 0 px2rem(50px);
+                height: px2rem(82px);
+                i{
+                    border-radius: 50%;
+                    background-image: url('https://img.xiaohongshu.com/avatar/59cfbaecb46c5d515aa83eee.jpg@80w_80h_90q_1e_1c_1x.jpg');
+                    width: px2rem(82px);
+                    height: px2rem(82px);
+                    float: left;
+                }
+                span{
+                    float: left;
+                    font-size: px2rem(24px);
+                    line-height: px2rem(82px);
+                    color: $color_5d666e;
+                    padding-left: px2rem(30px);
+                }
+            }
+            .content{
+                color: $color_5d666e;
+                font-size: px2rem(30px);
+                line-height: px2rem(30px);
+                width: 100%;
+                float: left;
+                padding: 0 px2rem(50px);
+            }
+            .cover{
+                float: left;
+                margin: px2rem(28px) px2rem(50px);
+                width: px2rem(650px);
+                height: px2rem(320px);
+                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                background-size: cover;
+            }
+            .dos{
+                float: left;
+                width: 100%;
+                height: px2rem(42px);
+                margin-bottom: px2rem(30px);
+                .do{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    width: 50%;
+                    float: left;
+                    i{
+                        width: px2rem(32px);
+                        height: px2rem(32px);
+                        background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                    }
+                    span{
+                        float: left;
+                        height: px2rem(42px);
+                        line-height: px2rem(42px);
+                        font-size: px2rem(28px);
+                    }
+                }
+            }
+        }
+    }
+}

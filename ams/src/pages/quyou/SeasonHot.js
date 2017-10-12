@@ -1,9 +1,10 @@
 import React from 'react'
 import { Quyou } from './Quyou'
 import '../../styles/quyou/seasonhot.scss'
-import banner from '../../images/quyou/seasonhot/banner.jpg'
+import banner from '../../images/quyou/banner/seasonhot.jpg'
 class SeasonHot extends Quyou{
 	render(){
+        document.title='当季推荐'
 		return (
 			<div className="season-hot"> 
                 <img className="banner" src={banner} />

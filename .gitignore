@@ -6,8 +6,8 @@ node_modules
 # production
 build
 
-canvas/hightopo
-canvas/hightopo-master
+svgcanvas/hightopo
+svgcanvas/hightopo-master
 
 # misc
 .project

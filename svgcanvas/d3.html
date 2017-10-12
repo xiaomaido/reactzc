@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>D3</title>
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script type="text/javascript">
+          var a = d3.select("body")
+                    .selectAll("p")
+                    .style("color", function() {
+                        return "hsl(" + Math.random() * 360 + ",100%,50%)"
+                    })
+                    .style("background-color", function(d, i) {
+                        return i % 2 ? "#ccc" : "#eee"
+                    })
+                    .data([12, 14, 16, 18, 20, 22, 24, 26])
+                    .style("font-size", function(d) { 
+                        return d + "px" 
+                    })
+                    .text(function(d) { 
+                        return d 
+                    })
+          // Enter… 
+          a.enter()
+           .append("p")
+           .text(function(d) { 
+               return "I’m number " + d + "!" 
+            })
+          // Exit…
+          a.exit()
+           .remove()
+        
+           d3
+           .select("body")
+           .transition()
+           .style("background-color", "rgba(0,0,0,.4)")
+        </script>
+    </body>
+</html>

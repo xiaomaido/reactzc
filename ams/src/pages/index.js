@@ -15,22 +15,24 @@ import MyGithub from './MyGithub'
 import DatePickerDemo from './antd/DatePickerDemo'
 import ButtonDemo from './antd/ButtonDemo'
 import SeasonHot from './quyou/SeasonHot'
+import YummyHot from './quyou/YummyHot'
 export { 
-	Dashboard
-	,Sellers
-	,Brands
-	,Users
-	,Products
-	,Product
-	,ContextMenuReact
-	,DraggableReact
-	,SelectRC
-	,TaskApp
-	,SuperAgent
-	,FetchAPI
-	,MyGithub
-	,Axios
-	,DatePickerDemo
-	,ButtonDemo
-	,SeasonHot
+	Dashboard,
+	Sellers,
+	Brands,
+	Users,
+	Products,
+	Product,
+	ContextMenuReact,
+	DraggableReact,
+	SelectRC,
+	TaskApp,
+	SuperAgent,
+	FetchAPI,
+	MyGithub,
+	Axios,
+	DatePickerDemo,
+	ButtonDemo,
+	SeasonHot,
+	YummyHot,
 }
