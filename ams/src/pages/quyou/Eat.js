@@ -13,22 +13,26 @@ class SeasonHot extends Quyou{
         document.title='趣游崇明'
 		return (
 			<div className="eat">
-                <TouchSlideBox imgSlideList={imgSlideList} />
-                <img className="bar" src={bar} />
-                <ul className="quick">
-                    <li>
-                        <img src={quick0} style={{float:'left'}} />
-                        <div style={{textAlign:'left'}}>人气商家</div>
-                    </li>
-                    <li>
-                        <img src={quick1} />
-                        <div>人气商家</div>
-                    </li>
-                    <li>
-                        <img src={quick2} style={{float:'right'}} />
-                        <div style={{textAlign:'right'}}>人气商家</div>
-                    </li>
-                </ul>
+                <div className="top">
+                    <TouchSlideBox imgSlideList={imgSlideList} />
+                    <img className="bar" src={bar} />
+                    <ul className="quick">
+                        <li>
+                            <img src={quick0} style={{float:'left'}} />
+                            <div style={{textAlign:'left'}}>人气商家</div>
+                        </li>
+                        <li>
+                            <img src={quick1} />
+                            <div>人气商家</div>
+                        </li>
+                        <li>
+                            <img src={quick2} style={{float:'right'}} />
+                            <div style={{textAlign:'right'}}>人气商家</div>
+                        </li>
+                    </ul>
+                </div>
+                <div className="yummy clearboth"></div>
+                <div style={{height: 500,background:'#fff'}}></div>
             </div>
 		)
 	}

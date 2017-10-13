@@ -1,5 +1,9 @@
 @import "../vars.scss";
 .eat{
+    background-color: $color_f5;
+    .top{
+        background-color: $color_ff;
+    }
     .bar{
         display: block;
         margin: px2rem(24px) auto px2rem(30px);
@@ -7,9 +11,10 @@
         width: px2rem(630px);
     }
     .quick{
+        background-color: $color_ff;
         display: block;
         width: px2rem(550px);
-        height: px2rem(96px)+px2rem(14px)+px2rem(24px);
+        height: px2rem(96px)+px2rem(14px)+px2rem(24px)+px2rem(28px);
         margin: 0 auto;
         li{
             float: left;
@@ -28,5 +33,10 @@
                 line-height: px2rem(24px);
             }
         }
+    }
+    .yummy{
+        margin: px2rem(18px) 0;
+        height: px2rem(152px);
+        background-color: $color_ff;
     }
 }
