@@ -16,6 +16,7 @@ import DatePickerDemo from './antd/DatePickerDemo'
 import ButtonDemo from './antd/ButtonDemo'
 import SeasonHot from './quyou/SeasonHot'
 import YummyHot from './quyou/YummyHot'
+import Eat from './quyou/Eat'
 export { 
 	Dashboard,
 	Sellers,
@@ -35,4 +36,5 @@ export {
 	ButtonDemo,
 	SeasonHot,
 	YummyHot,
+	Eat,
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Quyou } from './Quyou'
 import '../../styles/quyou/seasonhot.scss'
-import banner from '../../images/quyou/banner/seasonhot.jpg'
+import banner from '../../images/quyou/banner/seasonhot.png'
 class SeasonHot extends Quyou{
 	render(){
         document.title='当季推荐'

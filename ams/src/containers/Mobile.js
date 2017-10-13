@@ -13,6 +13,10 @@ window.unsubscribe=store.subscribe(() =>
 )
 // 页面路由配置
 window.pageMapRoute={
+	eat: {
+		url:'/eat',
+		page:Pages.Eat
+	},
 	seasonhot: {
 		url:'/seasonhot',
 		page:Pages.SeasonHot
