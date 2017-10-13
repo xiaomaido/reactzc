@@ -88,18 +88,30 @@ d3.csv("curve.csv", function(error, data) {
     y.domain(d3.extent(data, function(d) { return d.close; }));
 
     // Add the paths with different curves.
-    svg.append("path")
-      .datum(data)
-      .attr("class", "line")
-      .style("stroke", function() { // Add the colours dynamically
-              return daCurve.color = color(daCurve.curveTitle); })
-      .attr("id", 'tag'+i) // assign ID
-      .attr("d", d3.line()
-                   .curve(daCurve.d3Curve)
-                   .x(function(d) { return x(d.date); })
-                   .y(function(d) { return y(d.close); })
-               );
+    // svg.append("path")
+    //   .datum(data)
+    //   .attr("class", "line")
+    //   .style("stroke", function() { // Add the colours dynamically
+    //           return daCurve.color = color(daCurve.curveTitle); 
+    //     })
+    //   .attr("id", 'tag'+i) // assign ID
+    //   .attr("d", d3.line()
+    //                .curve(daCurve.d3Curve)
+    //                .x(function(d) { return x(d.date); })
+    //                .y(function(d) { return y(d.close); })
+    //            );
 
+    // Add the X Axis
+    svg.append("g")
+        .attr("class", "axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+    // Add the Y Axis
+    svg.append("g")
+        .attr("class", "axis")
+        .call(d3.axisLeft(y));
+        
     // Add the Legend
     svg.append("text")
         .attr("x", width+5)  // space legend
@@ -107,38 +119,28 @@ d3.csv("curve.csv", function(error, data) {
         .attr("class", "legend")    // style the legend
         .style("fill", function() { // Add the colours dynamically
             return daCurve.color = color(daCurve.curveTitle); })
-        .on("click", function(){
-            // Determine if current line is visible 
-            var active   = daCurve.active ? false : true,
-            newOpacity = active ? 0 : 1; 
-            // Hide or show the elements based on the ID
-            d3.select("#tag"+i)
-                .transition().duration(100) 
-                .style("opacity", newOpacity); 
-            // Update whether or not the elements are active
-            daCurve.active = active;
-            })  
-        .text(daCurve.curveTitle);
+//         .on("click", function(){
+//             // Determine if current line is visible 
+//             var active   = daCurve.active ? false : true,
+//             newOpacity = active ? 0 : 1; 
+//             // Hide or show the elements based on the ID
+//             d3.select("#tag"+i)
+//                 .transition().duration(100) 
+//                 .style("opacity", newOpacity); 
+//             // Update whether or not the elements are active
+//             daCurve.active = active;
+//             })  
+//         .text(daCurve.curveTitle);
   });
 
   // Add the scatterplot
-  svg.selectAll("dot")
-      .data(data)
-    .enter().append("circle")
-      .attr("r", 4)
-      .attr("cx", function(d) { return x(d.date); })
-      .attr("cy", function(d) { return y(d.close); });
+//   svg.selectAll("dot")
+//       .data(data)
+//     .enter().append("circle")
+//       .attr("r", 4)
+//       .attr("cx", function(d) { return x(d.date); })
+//       .attr("cy", function(d) { return y(d.close); });
 
-  // Add the X Axis
-  svg.append("g")
-      .attr("class", "axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
-
-  // Add the Y Axis
-  svg.append("g")
-      .attr("class", "axis")
-      .call(d3.axisLeft(y));
 });
 
 </script>
