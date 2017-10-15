@@ -1,0 +1,84 @@
+@import "../vars.scss";
+.food-hot{
+    .banner{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .list{
+        padding: 0 px2rem(36px);
+        .item{
+            width: 100%;
+            float: left;
+            position: relative;
+            padding-top: px2rem(36px);
+            margin-bottom: px2rem(36px);
+            height: px2rem(156px)+px2rem(36px);
+            .cover{
+                float: left;
+                width: px2rem(240px);
+                height: px2rem(156px);
+                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                background-size: cover;
+            }
+            .box{
+                float: left;
+                height: px2rem(156px);
+                padding-left: px2rem(36px);
+                .name{
+                    color: $color_42484e
+                }
+                .permoney{
+                    float: left;
+                    font-size: px2rem(22px); 
+                    line-height: px2rem(22px); 
+                    margin-left: px2rem(22px); 
+                }
+                ul{
+                    clear: both;
+                    padding-top: px2rem(14px); 
+                }
+                li:last-child{
+                    margin-right: 0 !important;
+                }
+                li{
+                    float: left;
+                    font-size: px2rem(20px);
+                }
+                .tags{
+                    li{
+                        color: $color_5d666e;
+                        height: px2rem(36px);
+                        line-height: px2rem(34px);
+                        padding: 0 px2rem(14px);
+                        margin-right: px2rem(18px);
+                        border: 1px solid #e5e5e5;
+                        border-radius: px2rem(18px);
+                    }
+                }
+                .discount{
+                    li{
+                        color: $color_fe932b;
+                        line-height: px2rem(20px);
+                        margin-right: px2rem(30px);
+                    }
+                }
+            }
+            .good{
+                position: absolute;
+                right: 0;
+                i{
+                    display: block;
+                    width: px2rem(26px);
+                    height: px2rem(30px);
+                    // background-image: url(../../images/quyou/good.png);
+                    // background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                }
+                div{
+                    color: #a4b4c2;
+                    font-size: 0.5rem;
+                }
+            }
+        }
+    }
+}

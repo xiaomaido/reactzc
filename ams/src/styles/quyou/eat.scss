@@ -38,5 +38,100 @@
         margin: px2rem(18px) 0;
         height: px2rem(152px);
         background-color: $color_ff;
+        .picture{
+            float: right;
+            margin-top: px2rem(18px);
+            margin-right: px2rem(30px);
+            width: px2rem(170px);
+            height: px2rem(116px);
+            background-size: cover;
+            background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg')
+        }
+        .logo{
+            float: left;
+            margin: px2rem(38px) px2rem(35px);
+            width: px2rem(76px);
+            height: px2rem(76px);
+            background-size: cover;
+            background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg')
+        }
+        .content{
+            float: left;
+            color: $color_5d666e;
+            font-size: px2rem(22px);
+            line-height: px2rem(38px);
+            margin: px2rem(40px) 0 0;
+            width: px2rem(374px)
+        }
+    }
+    .video{
+        background-color: $color_ff;
+        .title-box{
+            position: relative;
+            height: px2rem(98px);
+            .title{
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+                font-weight: 300;
+                font-size: px2rem(30px);
+                width: px2rem(174px);
+                text-align: center;
+                line-height: px2rem(30px);
+                color: #ffce1a;
+                background-color: $color_ff;
+                margin: 0 auto;
+                padding: px2rem(30px) 0;
+            }
+            .line:before{
+                border-color: $color_00;
+            }
+            .line{
+                position: relative;
+                top: px2rem(48px);
+                margin: 0 auto;
+                width: px2rem(288px);
+                border-bottom: 1px solid $color_00;
+            }
+        }
+        .vlist{
+            clear: both;
+            padding-left: px2rem(30px);
+            height: px2rem(198px);
+            overflow: hidden;
+            .ul-box{
+                height: px2rem(198px) + px2rem(18px);
+                overflow-y: hidden;
+                overflow-x: auto;
+                ul{
+                    li{
+                        float: left;
+                        width: px2rem(240px);
+                        margin-right: px2rem(30px);
+                        .poster{
+                            position:relative;
+                            width: px2rem(240px);
+                            height: px2rem(152px);
+                            background-size: cover;
+                            background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                            img{
+                                position:absolute;
+                                transform: translate(-50%,-50%);
+                                left: 50%;
+                                top: 50%;
+                                width: px2rem(54px);
+                                height: auto;
+                            }
+                        }
+                        .text{
+                            color: $color_42484e;
+                            margin-top: px2rem(22px);
+                            font-size: px2rem(22px);
+                            line-height: px2rem(22px);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

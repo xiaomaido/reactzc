@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TouchSlide from '../../vendors/touchslide'
-import './index.scss'
+import './index.css'
 export default class TouchSlideBox extends Component{
 	constructor(props){
 		super(props)

@@ -14,9 +14,12 @@ import FetchAPI from './FetchAPI'
 import MyGithub from './MyGithub'
 import DatePickerDemo from './antd/DatePickerDemo'
 import ButtonDemo from './antd/ButtonDemo'
-import SeasonHot from './quyou/SeasonHot'
 import YummyHot from './quyou/YummyHot'
+import SeasonHot from './quyou/SeasonHot'
+import FoodHot from './quyou/FoodHot'
+import ShopHot from './quyou/ShopHot'
 import Eat from './quyou/Eat'
+
 export { 
 	Dashboard,
 	Sellers,
@@ -34,7 +37,9 @@ export {
 	Axios,
 	DatePickerDemo,
 	ButtonDemo,
-	SeasonHot,
 	YummyHot,
+	SeasonHot,
+	FoodHot,
+	ShopHot,
 	Eat,
 }

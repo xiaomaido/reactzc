@@ -17,6 +17,14 @@ window.pageMapRoute={
 		url:'/eat',
 		page:Pages.Eat
 	},
+	shophot: {
+		url:'/shophot',
+		page:Pages.ShopHot
+	},
+	foodhot: {
+		url:'/foodhot',
+		page:Pages.FoodHot
+	},
 	seasonhot: {
 		url:'/seasonhot',
 		page:Pages.SeasonHot

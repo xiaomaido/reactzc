@@ -3,6 +3,7 @@ import { Quyou } from './Quyou'
 import '../../styles/quyou/eat.scss'
 import bar from '../../images/quyou/banner/bar.png'
 import banner1 from '../../images/quyou/banner/banner1.png'
+import play from '../../images/quyou/icon/play.png'
 import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
@@ -31,8 +32,40 @@ class SeasonHot extends Quyou{
                         </li>
                     </ul>
                 </div>
-                <div className="yummy clearboth"></div>
-                <div style={{height: 500,background:'#fff'}}></div>
+                <div className="yummy clearboth">
+                    <div className="icon picture"></div>
+                    <div className="icon logo"></div>
+                    <div className="content">崇明岛两天三夜游，我的朋友的觅食之旅，良心推荐之旅。。。</div>
+                </div>
+                <div className="video clearboth">
+                    <div className="title-box">
+                        <div className="line thinner-border clearboth"></div>
+                        <div className="title">视频推荐</div>
+                    </div>
+                    <div className="vlist">
+                        <div className="ul-box">
+                            <ul style={{width:(4*fontSize*(240+30)/40)}}>
+                                <li>
+                                    <div className="icon poster"><img src={play} /></div>
+                                    <div className="text">崇明特色美食</div>
+                                </li>
+                                <li>
+                                    <div className="icon poster"><img src={play} /></div>
+                                    <div className="text">崇明特色美食</div>
+                                </li>
+                                <li>
+                                    <div className="icon poster"><img src={play} /></div>
+                                    <div className="text">崇明特色美食</div>
+                                </li>
+                                <li>
+                                    <div className="icon poster"><img src={play} /></div>
+                                    <div className="text">崇明特色美食</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style={{height: 100,background:'#fff'}}></div>
             </div>
 		)
 	}
