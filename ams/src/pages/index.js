@@ -18,9 +18,10 @@ import YummyHot from './quyou/YummyHot'
 import SeasonHot from './quyou/SeasonHot'
 import FoodHot from './quyou/FoodHot'
 import ShopHot from './quyou/ShopHot'
+import ShopDetail from './quyou/ShopDetail'
 import XianShiFuLi from './quyou/XianShiFuLi'
 import Eat from './quyou/Eat'
-
+import TencentLocation from './quyou/TencentLocation'
 export { 
 	Dashboard,
 	Sellers,
@@ -42,6 +43,8 @@ export {
 	SeasonHot,
 	FoodHot,
 	ShopHot,
+	ShopDetail,
 	XianShiFuLi,
 	Eat,
+	TencentLocation,
 }

@@ -1,6 +1,10 @@
 import React from 'react'
 import { Quyou } from './Quyou'
 import '../../styles/quyou/yummyhot.scss'
+import goodActive from '../../images/quyou/icon/good-active.png'
+import good from '../../images/quyou/icon/good.png'
+import comment from '../../images/quyou/icon/comment.png'
+
 export default class YummyHot extends Quyou{
 	render(){
         document.title='美食攻略'
@@ -15,10 +19,13 @@ export default class YummyHot extends Quyou{
                         <div className="content">驴肉火烧简直是人间美味~~~</div>
                         <div className="icon cover"></div>
                         <div className="dos">
-                            <div className="do">1</div>
                             <div className="do">
-                                <i className="icon"></i>
-                                <span>2</span>
+                                <i className="icon" style={{backgroundImage:'url('+good+')'}}></i>
+                                <span>1088</span>
+                            </div>
+                            <div className="do">
+                                <i className="icon" style={{backgroundImage:'url('+comment+')'}}></i>
+                                <span>2058</span>
                             </div>
                         </div>
                     </div>
@@ -30,6 +37,16 @@ export default class YummyHot extends Quyou{
                         </div>
                         <div className="content">驴肉火烧简直是人间美味~~~</div>
                         <div className="icon cover"></div>
+                        <div className="dos">
+                            <div className="do">
+                                <i className="icon" style={{backgroundImage:'url('+goodActive+')'}}></i>
+                                <span>1088</span>
+                            </div>
+                            <div className="do">
+                                <i className="icon" style={{backgroundImage:'url('+comment+')'}}></i>
+                                <span>2058</span>
+                            </div>
+                        </div>
                     </div>
                     <div className="clearboth"></div>
                 </div>

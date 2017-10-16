@@ -13,6 +13,10 @@ window.unsubscribe=store.subscribe(() =>
 )
 // 页面路由配置
 window.pageMapRoute={
+	tencentlocation: {
+		url:'/tencentlocation',
+		page:Pages.TencentLocation
+	},
 	eat: {
 		url:'/eat',
 		page:Pages.Eat
@@ -20,6 +24,10 @@ window.pageMapRoute={
 	xianshifuli: {
 		url:'/xianshifuli',
 		page:Pages.XianShiFuLi
+	},
+	shopdetail: {
+		url:'/shopdetail',
+		page:Pages.ShopDetail
 	},
 	shophot: {
 		url:'/shophot',
