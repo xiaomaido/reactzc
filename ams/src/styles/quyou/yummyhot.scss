@@ -47,6 +47,9 @@
                 width: 100%;
                 height: px2rem(42px);
                 margin-bottom: px2rem(30px);
+                .thin-border-verical{
+                    float: left;
+                }
                 .do{
                     display: flex;
                     flex-direction: row;
@@ -55,16 +58,26 @@
                     align-items: center;
                     width: 50%;
                     float: left;
-                    i{
-                        width: px2rem(32px);
-                        height: px2rem(32px);
-                        background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                    i.good{
+                        width: px2rem(38px);
+                        height: px2rem(36px);
+                    }
+                    i.comment{
+                        width: px2rem(42px);
+                        height: px2rem(40px);
+                        position:relative;
+                        top:0.06rem;
                     }
                     span{
                         height: px2rem(42px);
-                        line-height: px2rem(42px);
-                        font-size: px2rem(28px);
-                        margin-left: px2rem(20px);
+                        line-height: px2rem(20px);
+                        font-size: px2rem(20px);
+                        margin-left: px2rem(16px);
+                        position: relative;
+                        top: .4rem;
+                    }
+                    span.active{
+                        color: $color_ffc913
                     }
                 }
             }

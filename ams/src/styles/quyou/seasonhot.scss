@@ -26,13 +26,29 @@
                 height: px2rem(156px);
                 padding-left: px2rem(36px);
                 .name{
-                    color: $color_42484e
+                    color: $color_42484e;
+                    font-size: px2rem(30px);
+                    line-height: px2rem(30px);
                 }
                 .shop{
-                    color: $color_fe932b
+                    position:relative;
+                    left: -1 * px2rem(12px); 
+                    color: $color_fe932b;
+                    font-size: px2rem(22px);
+                    line-height: px2rem(22px);
+                    margin-top: px2rem(22px);
                 }
                 .address{
-                    color: $color_5d666e
+                    color: $color_5d666e;
+                    font-size: px2rem(22px);
+                    line-height: px2rem(22px);
+                    margin-top: px2rem(22px);
+                    i{
+                        float: left;
+                        width: px2rem(18px);
+                        height: px2rem(22px);
+                        margin-right: px2rem(10px);
+                    }
                 }
             }
             .good{
@@ -42,11 +58,12 @@
                     display: block;
                     width: px2rem(26px);
                     height: px2rem(30px);
-                    background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
                 }
                 div{
                     color: #a4b4c2;
-                    font-size: 0.5rem;
+                    margin-top: px2rem(16px);
+                    font-size: px2rem(18px);
+                    line-height: px2rem(18px);
                 }
             }
         }

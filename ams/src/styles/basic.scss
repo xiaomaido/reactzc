@@ -78,7 +78,32 @@ a {
     position: absolute !important;
     width: 200%;
     height: 200%;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #dcdcdc;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -o-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.thin-border-verical {
+    height: 100%;
+    position: relative !important;
+}
+
+.thin-border-verical:before {
+    content: '';
+    position: absolute !important;
+    width: 200%;
+    height: 200%;
+    border-left: 1px solid #dcdcdc;
     -webkit-transform-origin: 0 0;
     -moz-transform-origin: 0 0;
     -ms-transform-origin: 0 0;

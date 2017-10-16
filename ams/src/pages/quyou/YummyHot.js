@@ -20,11 +20,12 @@ export default class YummyHot extends Quyou{
                         <div className="icon cover"></div>
                         <div className="dos">
                             <div className="do">
-                                <i className="icon" style={{backgroundImage:'url('+good+')'}}></i>
-                                <span>1088</span>
+                                <i className="icon good" style={{backgroundImage:'url('+goodActive+')'}}></i>
+                                <span className="active">1088</span>
                             </div>
+                            <div className="thin-border-verical"></div>
                             <div className="do">
-                                <i className="icon" style={{backgroundImage:'url('+comment+')'}}></i>
+                                <i className="icon comment" style={{backgroundImage:'url('+comment+')'}}></i>
                                 <span>2058</span>
                             </div>
                         </div>
@@ -39,11 +40,12 @@ export default class YummyHot extends Quyou{
                         <div className="icon cover"></div>
                         <div className="dos">
                             <div className="do">
-                                <i className="icon" style={{backgroundImage:'url('+goodActive+')'}}></i>
-                                <span>1088</span>
+                                <i className="icon good" style={{backgroundImage:'url('+goodActive+')'}}></i>
+                                <span className="active">1088</span>
                             </div>
+                            <div className="thin-border-verical"></div>
                             <div className="do">
-                                <i className="icon" style={{backgroundImage:'url('+comment+')'}}></i>
+                                <i className="icon comment" style={{backgroundImage:'url('+comment+')'}}></i>
                                 <span>2058</span>
                             </div>
                         </div>
