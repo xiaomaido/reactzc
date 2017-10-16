@@ -18,6 +18,7 @@ import YummyHot from './quyou/YummyHot'
 import SeasonHot from './quyou/SeasonHot'
 import FoodHot from './quyou/FoodHot'
 import ShopHot from './quyou/ShopHot'
+import XianShiFuLi from './quyou/XianShiFuLi'
 import Eat from './quyou/Eat'
 
 export { 
@@ -41,5 +42,6 @@ export {
 	SeasonHot,
 	FoodHot,
 	ShopHot,
+	XianShiFuLi,
 	Eat,
 }

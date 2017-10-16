@@ -17,6 +17,10 @@ window.pageMapRoute={
 		url:'/eat',
 		page:Pages.Eat
 	},
+	xianshifuli: {
+		url:'/xianshifuli',
+		page:Pages.XianShiFuLi
+	},
 	shophot: {
 		url:'/shophot',
 		page:Pages.ShopHot

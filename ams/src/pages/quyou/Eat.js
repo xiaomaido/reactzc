@@ -8,8 +8,8 @@ import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
 import TouchSlideBox from '../../components/TouchSlideBox/'
-const imgSlideList=[banner1,banner1]
-class SeasonHot extends Quyou{
+const imgSlideList=[ banner1, banner1 ]
+export default class Eat extends Quyou{
 	render(){
         document.title='趣游崇明'
 		return (
@@ -69,5 +69,4 @@ class SeasonHot extends Quyou{
             </div>
 		)
 	}
-}
-export default SeasonHot
+} 

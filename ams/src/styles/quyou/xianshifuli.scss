@@ -1,0 +1,21 @@
+@import "../vars.scss";
+.xian-shi-fu-li{
+    .banner{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .list{
+        padding: 0 px2rem(48px);
+        .item{
+        	margin-top: px2rem(60px);
+        	.cover{
+        		outline: $color_cc solid 1px;
+        		width: px2rem(654px);
+        		height: px2rem(318px);
+        		background-size: cover;
+                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+        	}
+        }
+    }
+}

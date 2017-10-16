@@ -6,7 +6,7 @@ import good from '../../images/quyou/icon/good.png'
 import goodActive from '../../images/quyou/icon/good-active.png'
 import star from '../../images/quyou/icon/star.png'
 import StarsShow from '../../components/StarsShow/'
-class FoodHot extends Quyou{
+export default class FoodHot extends Quyou{
 	render(){
         document.title='人气美食'
 		return (
@@ -64,4 +64,3 @@ class FoodHot extends Quyou{
 		)
 	}
 }
-export default FoodHot

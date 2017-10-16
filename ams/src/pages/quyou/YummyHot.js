@@ -1,7 +1,7 @@
 import React from 'react'
 import { Quyou } from './Quyou'
 import '../../styles/quyou/yummyhot.scss'
-class YummyHot extends Quyou{
+export default class YummyHot extends Quyou{
 	render(){
         document.title='美食攻略'
 		return (
@@ -37,4 +37,3 @@ class YummyHot extends Quyou{
 		)
 	}
 }
-export default YummyHot
