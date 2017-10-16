@@ -13,10 +13,10 @@ window.unsubscribe=store.subscribe(() =>
 )
 // 页面路由配置
 window.pageMapRoute={
-	tencentlocation: {
-		url:'/tencentlocation',
-		page:Pages.TencentLocation
-	},
+	// tencentlocation: {
+	// 	url:'/tencentlocation',
+	// 	page:Pages.TencentLocation
+	// },
 	eat: {
 		url:'/eat',
 		page:Pages.Eat

@@ -12,19 +12,33 @@ export default class XianShiFuLi extends Quyou{
                     <div className="item">
                         <div className="icon cover"></div>
                         <div className="product">[快乐柠檬] 恶魔波霸奶茶买一送一</div>
+                        <div className="price-buy">
+                            <div className="buy">
+                                <div className="remain">剩余<span>69</span>份</div>
+                                <div className="btn">抢购</div>
+                            </div>
+                            <div className="price">
+                                <div className="now"><span>¥</span>29.9</div>
+                                <div className="origin">¥39.9</div>
+                            </div>
+                        </div>
+                        <div className="clearboth foot"></div>
                     </div>
                     <div className="clearboth thinner-border"></div>
                     <div className="item">
                         <div className="icon cover"></div>
-                        <div className="box">
-                            <div className="name">崇明樱桃</div>
-                            <div className="shop">【天天果园】</div>
-                            <div className="address">城桥镇南门路37弄18号</div>
+                        <div className="product">[快乐柠檬] 恶魔波霸奶茶买一送一</div>
+                        <div className="price-buy">
+                            <div className="buy">
+                                <div className="remain">剩余<span>69</span>份</div>
+                                <div className="btn">抢购</div>
+                            </div>
+                            <div className="price">
+                                <div className="now"><span>¥</span>29.9</div>
+                                <div className="origin">¥39.9</div>
+                            </div>
                         </div>
-                        <div className="good">
-                            <i className="icon"></i>
-                            <div>587</div>
-                        </div>
+                        <div className="clearboth foot"></div>
                     </div>
                     <div className="clearboth thinner-border"></div>
                 </div>
