@@ -5,7 +5,7 @@ ExtractTextPlugin=require('extract-text-webpack-plugin') // 提取、合并CSS�
 HtmlWebpackPlugin=require('html-webpack-plugin')
 path_output=path.join(__dirname,'dist')
 is_production=process.env.NODE_ENV === 'production'
-// is_production=!is_production
+is_production=!is_production
 entry=[
     './src/index'
 ]
@@ -21,7 +21,13 @@ plugins=[
     ,new CleanPlugin(path_output) // 构建生产环境的时候，清空已存在的dist目录里的文件
     ,new HtmlWebpackPlugin({ // 在dist目录下自动生成index.html
         template: 'src/bundle.html' // 选择一个模板，自动生成的没有viewport description等，更多请参考配置文档
-    }) 
+    })
+    // ,new webpack.DllReferencePlugin({
+    //     context: __dirname,
+    //     manifest: require('./manifest.json'),
+    // })
+    // context 需要跟之前保持一致，这个用来指导 Webpack 匹配 manifest.json 中库的路径；
+    // manifest 用来引入刚才输出的 manifest.json 文件。
 ]
 if(is_production){
     plugins=plugins.concat([ // 补充生产环境要使用的插件
