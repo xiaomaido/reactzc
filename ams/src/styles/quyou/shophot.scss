@@ -25,58 +25,32 @@
                 float: left;
                 height: px2rem(156px);
                 padding-left: px2rem(36px);
+
                 .name{
-                    color: $color_42484e
+                    color: $color_42484e;
+                    font-size: px2rem(30px);
+                    line-height: px2rem(30px);
                 }
-                .permoney{
-                    float: left;
-                    font-size: px2rem(22px); 
-                    line-height: px2rem(22px); 
-                    margin-left: px2rem(22px); 
-                }
-                ul{
-                    clear: both;
-                    padding-top: px2rem(14px); 
-                }
-                li:last-child{
-                    margin-right: 0 !important;
-                }
-                li{
-                    float: left;
-                    font-size: px2rem(20px);
-                }
-                .tags{
-                    li{
-                        color: $color_5d666e;
-                        height: px2rem(36px);
-                        line-height: px2rem(34px);
-                        padding: 0 px2rem(14px);
-                        margin-right: px2rem(18px);
-                        border: 1px solid #e5e5e5;
-                        border-radius: px2rem(18px);
-                    }
-                }
-                .discount{
-                    li{
-                        color: $color_fe932b;
-                        line-height: px2rem(20px);
-                        margin-right: px2rem(30px);
+                .address{
+                    color: $color_5d666e;
+                    font-size: px2rem(22px);
+                    line-height: px2rem(22px);
+                    margin-top: px2rem(22px);
+                    i{
+                        float: left;
+                        width: px2rem(18px);
+                        height: px2rem(22px);
+                        margin-right: px2rem(10px);
                     }
                 }
             }
-            .good{
+            .num{
                 position: absolute;
-                right: 0;
-                i{
-                    display: block;
-                    width: px2rem(26px);
-                    height: px2rem(30px);
-                    // background-image: url(../../images/quyou/good.png);
-                    // background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
-                }
-                div{
-                    color: #a4b4c2;
-                    font-size: 0.5rem;
+                right: px2rem(14px);
+                color: $color_fe932b;
+                font-size: px2rem(20px);
+                span{
+                    margin-left: px2rem(8px);
                 }
             }
         }

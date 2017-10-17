@@ -1,6 +1,9 @@
 import React from 'react'
 import { Quyou } from './Quyou'
 import '../../styles/quyou/shophot.scss'
+import goodActive from '../../images/quyou/icon/good-active.png'
+import good from '../../images/quyou/icon/good.png'
+import addr from '../../images/quyou/icon/addr.png'
 import banner from '../../images/quyou/banner/shophot.png'
 export default class ShopHot extends Quyou{
 	render(){
@@ -12,27 +15,14 @@ export default class ShopHot extends Quyou{
                     <div className="item">
                         <div className="icon cover"></div>
                         <div className="box">
-                            <div className="name">崇明樱桃</div>
-                            <div className="shop">【天天果园】</div>
-                            <div className="address">城桥镇南门路37弄18号</div>
+                            <div className="name">宝岛蟹庄</div>
+                            <div className="address"><i className="icon" style={{backgroundImage:'url('+addr+')'}}></i>城桥镇南门路37弄18号</div>
                         </div>
-                        <div className="good">
-                            <i className="icon"></i>
-                            <div>587</div>
-                        </div>
+                        <div className="num">月售<span>688</span></div>
                     </div>
                     <div className="clearboth thinner-border"></div>
                     <div className="item">
                         <div className="icon cover"></div>
-                        <div className="box">
-                            <div className="name">崇明樱桃</div>
-                            <div className="shop">【天天果园】</div>
-                            <div className="address">城桥镇南门路37弄18号</div>
-                        </div>
-                        <div className="good">
-                            <i className="icon"></i>
-                            <div>587</div>
-                        </div>
                     </div>
                     <div className="clearboth thinner-border"></div>
                 </div>
