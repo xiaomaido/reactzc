@@ -5,14 +5,18 @@ import goodActive from '../../images/quyou/icon/good-active.png'
 import good from '../../images/quyou/icon/good.png'
 import addr from '../../images/quyou/icon/addr.png'
 import banner from '../../images/quyou/banner/shophot.png'
-export default class ShopHot extends Quyou{
+export default class Index extends Quyou{
+	openDetail(e){
+		// 点击跳转路由，打开商品详情页面
+		this.context.router.push('/shopdetail')
+	}
 	render(){
         document.title='人气商家'
 		return (
 			<div className="shop-hot"> 
                 <img className="banner" src={banner} />
                 <div className="list">
-                    <div className="item">
+                    <div className="item" onClick={this.openDetail.bind(this)}>
                         <div className="icon cover"></div>
                         <div className="box">
                             <div className="name">宝岛蟹庄</div>
@@ -29,4 +33,7 @@ export default class ShopHot extends Quyou{
             </div>
 		)
 	}
+}
+Index.contextTypes={
+	router: React.PropTypes.object
 }

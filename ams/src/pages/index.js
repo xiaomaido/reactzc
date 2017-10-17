@@ -15,6 +15,7 @@ import MyGithub from './MyGithub'
 import DatePickerDemo from './antd/DatePickerDemo'
 import ButtonDemo from './antd/ButtonDemo'
 import YummyHot from './quyou/YummyHot'
+import YummyDetail from './quyou/YummyDetail'
 import SeasonHot from './quyou/SeasonHot'
 import FoodHot from './quyou/FoodHot'
 import ShopHot from './quyou/ShopHot'
@@ -40,6 +41,7 @@ export {
 	DatePickerDemo,
 	ButtonDemo,
 	YummyHot,
+	YummyDetail,
 	SeasonHot,
 	FoodHot,
 	ShopHot,

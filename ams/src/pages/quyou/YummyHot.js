@@ -5,7 +5,14 @@ import goodActive from '../../images/quyou/icon/good-active.png'
 import good from '../../images/quyou/icon/good.png'
 import comment from '../../images/quyou/icon/comment.png'
 
-export default class YummyHot extends Quyou{
+export default class Index extends Quyou{
+    doGood(e){
+        alert('点赞成功')
+    }
+	openDetail(e){
+		// 点击跳转路由，打开商品详情页面
+		this.context.router.push('/yummydetail')
+	}
 	render(){
         document.title='美食攻略'
 		return (
@@ -16,15 +23,15 @@ export default class YummyHot extends Quyou{
                             <i className="icon"></i>
                             <span>吃货小分队</span>
                         </div>
-                        <div className="content">驴肉火烧简直是人间美味~~~</div>
-                        <div className="icon cover"></div>
+                        <div className="content" onClick={this.openDetail.bind(this)}>驴肉火烧简直是人间美味~~~</div>
+                        <div className="icon cover" onClick={this.openDetail.bind(this)}></div>
                         <div className="dos">
-                            <div className="do">
-                                <i className="icon good" style={{backgroundImage:'url('+goodActive+')'}}></i>
-                                <span className="active">1088</span>
+                            <div className="do" onClick={this.doGood.bind(this)}>
+                                <i className="icon good" style={{backgroundImage:'url('+good+')'}}></i>
+                                <span>1088</span>
                             </div>
                             <div className="thin-border-verical"></div>
-                            <div className="do">
+                            <div className="do" onClick={this.openDetail.bind(this)}>
                                 <i className="icon comment" style={{backgroundImage:'url('+comment+')'}}></i>
                                 <span>2058</span>
                             </div>
@@ -55,4 +62,7 @@ export default class YummyHot extends Quyou{
             </div>
 		)
 	}
+}
+Index.contextTypes={
+	router: React.PropTypes.object
 }

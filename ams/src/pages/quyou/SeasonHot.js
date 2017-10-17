@@ -4,7 +4,7 @@ import '../../styles/quyou/seasonhot.scss'
 import banner from '../../images/quyou/banner/seasonhot.png'
 import goodActive from '../../images/quyou/icon/good-active.png'
 import addr from '../../images/quyou/icon/addr.png'
-export default class SeasonHot extends Quyou{
+export default class Index extends Quyou{
 	render(){
         document.title='当季推荐'
 		return (
@@ -41,4 +41,7 @@ export default class SeasonHot extends Quyou{
             </div>
 		)
 	}
+}
+Index.contextTypes={
+	router: React.PropTypes.object
 }

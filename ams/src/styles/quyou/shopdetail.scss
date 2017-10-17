@@ -1,0 +1,51 @@
+@import "../vars.scss";
+.shop-detail{
+    background-color: $color_f5;
+    .gap{
+        height: px2rem(26px)
+    }
+    .necker{
+        background-color: $color_ff;
+        padding: px2rem(35px) px2rem(44px);
+        .necker-box{
+            .intro{
+                color: $color_00;
+                font-size: px2rem(34px);
+                line-height: px2rem(34px);
+                span{
+                    float:left; 
+                    background-color: $color_ffc913;
+                    width: px2rem(8px);    
+                    height: px2rem(34px);
+                    margin-right: px2rem(20px);      
+                }
+            }
+        }
+    }
+    .header{
+        background-color: $color_ff;
+        padding: px2rem(30px) px2rem(44px);
+        .header-box{
+            position: relative;
+            .phone{
+                position: absolute;
+                right: 0;
+                top: px2rem(14px);
+                width: px2rem(44px);
+                height: px2rem(44px);
+            }
+            .address{
+                color: $color_5d666e;
+                font-size: px2rem(22px);
+                line-height: px2rem(22px);
+                margin-top: px2rem(22px);
+                i{
+                    float: left;
+                    width: px2rem(18px);
+                    height: px2rem(22px);
+                    margin-right: px2rem(10px);
+                }
+            }
+        }
+    }
+}

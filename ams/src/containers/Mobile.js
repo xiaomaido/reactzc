@@ -41,6 +41,10 @@ window.pageMapRoute={
 		url:'/seasonhot',
 		page:Pages.SeasonHot
 	},
+	yummydetail: {
+		url:'/yummydetail',
+		page:Pages.YummyDetail
+	},
 	yummyhot: {
 		url:'/yummyhot',
 		page:Pages.YummyHot
