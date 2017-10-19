@@ -19,6 +19,9 @@ export default class ShopDetail extends Quyou{
 				<div className="necker">
 					<div className="necker-box">
 						<div className="intro"><span></span>店铺简介</div>
+						<div className="clearboth thinner-border"></div>
+						<div className="descrip">源自美国，手术后妇女节昵称开心农场开心农场看查看源自美国，手术后妇女节昵称开心农场开心农场看查看</div>
+						<div className="clearboth thinner-border"></div>
 					</div>
 				</div>
             </div>

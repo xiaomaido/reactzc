@@ -6,7 +6,8 @@
     }
     .necker{
         background-color: $color_ff;
-        padding: px2rem(35px) px2rem(44px);
+        padding: px2rem(35px) 0;
+        padding-left: px2rem(44px);
         .necker-box{
             .intro{
                 color: $color_00;
@@ -19,6 +20,14 @@
                     height: px2rem(34px);
                     margin-right: px2rem(20px);      
                 }
+                margin-bottom: px2rem(30px);
+            }
+            .descrip{
+                margin: px2rem(30px) 0;
+                padding-right: px2rem(44px);
+                color: $color_5d666e;
+                font-size: px2rem(24px);
+                line-height: px2rem(50px);
             }
         }
     }
