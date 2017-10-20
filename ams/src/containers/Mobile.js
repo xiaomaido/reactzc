@@ -17,6 +17,10 @@ window.pageMapRoute={
 	// 	url:'/tencentlocation',
 	// 	page:Pages.TencentLocation
 	// },
+	intldemo: {
+		url:'/intldemo',
+		page:Pages.IntlDemo
+	},
 	eat: {
 		url:'/eat',
 		page:Pages.Eat

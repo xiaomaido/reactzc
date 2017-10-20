@@ -12,6 +12,7 @@ import SuperAgent from './SuperAgent'
 import Axios from './Axios'
 import FetchAPI from './FetchAPI'
 import MyGithub from './MyGithub'
+import IntlDemo from './IntlDemo'
 import DatePickerDemo from './antd/DatePickerDemo'
 import ButtonDemo from './antd/ButtonDemo'
 import YummyHot from './quyou/YummyHot'
@@ -38,6 +39,7 @@ export {
 	FetchAPI,
 	MyGithub,
 	Axios,
+	IntlDemo,
 	DatePickerDemo,
 	ButtonDemo,
 	YummyHot,
