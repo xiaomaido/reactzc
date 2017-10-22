@@ -28,6 +28,17 @@
                 color: $color_5d666e;
                 font-size: px2rem(24px);
                 line-height: px2rem(50px);
+                overflow: hidden;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                display: -webkit-inline-box;
+                word-break: break-word;
+            }
+            .open-more{
+                display: none;
+                color: $color_ffc913;
+                text-align: center;
+                font-size: px2rem(24px);
             }
         }
     }
@@ -36,6 +47,15 @@
         padding: px2rem(30px) px2rem(44px);
         .header-box{
             position: relative;
+            .thin-border-verical-box{
+                height: px2rem(54px);
+                position: absolute;
+                right: px2rem(94px);
+                top: px2rem(9px);
+                .thin-border-verical:before {
+                    border-left-color: #e5e5e5;
+                }
+            }
             .phone{
                 position: absolute;
                 right: 0;
@@ -54,6 +74,19 @@
                     height: px2rem(22px);
                     margin-right: px2rem(10px);
                 }
+            }
+            .name{
+                color:#020202;
+                font-size: px2rem(32px);
+                line-height: px2rem(32px);
+                position: relative;
+                left: -0.4rem;
+            }
+            .cover{
+                margin-top: px2rem(32px);
+                height: px2rem(208px);
+                background-image: url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg);
+                background-size: cover
             }
         }
     }

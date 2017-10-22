@@ -41,6 +41,12 @@
                 height: px2rem(320px);
                 background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
                 background-size: cover;
+                img{
+                    width: px2rem(90px);
+                    height: px2rem(90px);
+                    display: block;
+                    margin: px2rem(115px) auto;
+                }
             }
             .dos{
                 float: left;

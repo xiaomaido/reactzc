@@ -44,21 +44,25 @@ export default class Eat extends Quyou{
                     </div>
                     <div className="vlist">
                         <div className="ul-box">
-                            <ul style={{width:(4*fontSize*(240+30)/40)}}>
+                            <ul style={{width:(5*fontSize*(240+30)/40)}}>
                                 <li>
-                                    <div className="icon poster"><img src={play} /></div>
+                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}><div className="more">更多视频 &gt;</div></div>
                                     <div className="text">崇明特色美食</div>
                                 </li>
                                 <li>
-                                    <div className="icon poster"><img src={play} /></div>
+                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}><img src={play} /></div>
                                     <div className="text">崇明特色美食</div>
                                 </li>
                                 <li>
-                                    <div className="icon poster"><img src={play} /></div>
+                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}><img src={play} /></div>
                                     <div className="text">崇明特色美食</div>
                                 </li>
                                 <li>
-                                    <div className="icon poster"><img src={play} /></div>
+                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}><img src={play} /></div>
+                                    <div className="text">崇明特色美食</div>
+                                </li>
+                                <li>
+                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}><img src={play} /></div>
                                     <div className="text">崇明特色美食</div>
                                 </li>
                             </ul>

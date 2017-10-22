@@ -108,12 +108,19 @@
                         float: left;
                         width: px2rem(240px);
                         margin-right: px2rem(30px);
+                        .poster .more{
+                            font-size: px2rem(26px);
+                            color: $color_ff;
+                            text-align:center;
+                            background-color: rgba(0,0,0,.5) !important;
+                            line-height: px2rem(152px);
+                            // outline: $color_e5 solid 1px;
+                        }
                         .poster{
                             position:relative;
                             width: px2rem(240px);
                             height: px2rem(152px);
                             background-size: cover;
-                            background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
                             img{
                                 position:absolute;
                                 transform: translate(-50%,-50%);

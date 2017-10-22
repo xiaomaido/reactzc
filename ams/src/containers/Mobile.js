@@ -53,6 +53,10 @@ window.pageMapRoute={
 		url:'/yummyhot',
 		page:Pages.YummyHot
 	},
+	videohot: {
+		url:'/videohot',
+		page:Pages.VideoHot
+	},
 	products: {
 		url:'/products',
 		page:Pages.Products
