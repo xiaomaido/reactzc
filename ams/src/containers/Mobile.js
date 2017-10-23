@@ -25,12 +25,16 @@ window.pageMapRoute={
 		url:'/eat',
 		page:Pages.Eat
 	},
+	xianshifulidetail: {
+		url:'/xianshifuli/:id',
+		page:Pages.XianShiFuLiDetail
+	},
 	xianshifuli: {
 		url:'/xianshifuli',
 		page:Pages.XianShiFuLi
 	},
 	shopdetail: {
-		url:'/shopdetail',
+		url:'/shophot/:id',
 		page:Pages.ShopDetail
 	},
 	shophot: {
@@ -46,7 +50,7 @@ window.pageMapRoute={
 		page:Pages.SeasonHot
 	},
 	yummydetail: {
-		url:'/yummydetail',
+		url:'/yummyhot/:id',
 		page:Pages.YummyDetail
 	},
 	yummyhot: {

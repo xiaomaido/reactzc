@@ -23,6 +23,7 @@ import FoodHot from './quyou/FoodHot'
 import ShopHot from './quyou/ShopHot'
 import ShopDetail from './quyou/ShopDetail'
 import XianShiFuLi from './quyou/XianShiFuLi'
+import XianShiFuLiDetail from './quyou/XianShiFuLiDetail'
 import Eat from './quyou/Eat'
 // import TencentLocation from './quyou/TencentLocation'
 export { 
@@ -51,6 +52,7 @@ export {
 	ShopHot,
 	ShopDetail,
 	XianShiFuLi,
+	XianShiFuLiDetail,
 	Eat,
 	// TencentLocation,
 }
