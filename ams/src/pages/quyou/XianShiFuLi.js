@@ -5,11 +5,12 @@ import banner from '../../images/quyou/banner/shophot.png'
 export default class XianShiFuLi extends Quyou{
 	render(){
         document.title='限时福利'
+        const { location } = this.props
 		return (
 			<div className="xian-shi-fu-li"> 
                 <img className="banner" src={banner} />
                 <div className="list">
-                    <div className="item">
+                    <div className="item" onClick={this.openPage.bind(this,location.pathname+'/abc')}>
                         <div className="icon cover"></div>
                         <div className="product">[快乐柠檬] 恶魔波霸奶茶买一送一</div>
                         <div className="price-buy">
@@ -25,7 +26,7 @@ export default class XianShiFuLi extends Quyou{
                         <div className="clearboth foot"></div>
                     </div>
                     <div className="clearboth thinner-border"></div>
-                    <div className="item">
+                    <div className="item" onClick={this.openPage.bind(this,location.pathname+'/abc')}>
                         <div className="icon cover"></div>
                         <div className="product">[快乐柠檬] 恶魔波霸奶茶买一送一</div>
                         <div className="price-buy">

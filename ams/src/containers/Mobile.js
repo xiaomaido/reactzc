@@ -17,6 +17,10 @@ window.pageMapRoute={
 	// 	url:'/tencentlocation',
 	// 	page:Pages.TencentLocation
 	// },
+	currentroutes: {
+		url:'/currentroutes',
+		page:Pages.CurrentRoutes
+	},
 	intldemo: {
 		url:'/intldemo',
 		page:Pages.IntlDemo
@@ -40,6 +44,10 @@ window.pageMapRoute={
 	shophot: {
 		url:'/shophot',
 		page:Pages.ShopHot
+	},
+	fooddetail: {
+		url:'/foodhot/:id',
+		page:Pages.FoodDetail
 	},
 	foodhot: {
 		url:'/foodhot',

@@ -10,12 +10,9 @@ export default class Index extends Quyou{
     doGood(e){
         alert('点赞成功')
     }
-	openDetail(e){
-		// 点击跳转路由，打开商品详情页面
-		this.context.router.push('/yummydetail')
-	}
 	render(){
         document.title='视频推荐'
+        debugger
 		return (
 			<div className="yummy-hot"> 
                 <div className="list">
@@ -24,47 +21,24 @@ export default class Index extends Quyou{
                             <i className="icon"></i>
                             <span>吃货小分队</span>
                         </div>
-                        <div className="content" onClick={this.openDetail.bind(this)}>驴肉火烧简直是人间美味~~~</div>
-                        <div className="icon cover" onClick={this.openDetail.bind(this)}><img src={play} /></div>
+                        <div className="content" onClick={this.openPage.bind(this,'/yummyhot/1')}>驴肉火烧简直是人间美味~~~</div>
+                        <div className="icon cover" onClick={this.openPage.bind(this)}><img src={play} /></div>
                         <div className="dos">
                             <div className="do" onClick={this.doGood.bind(this)}>
                                 <i className="icon good" style={{backgroundImage:'url('+good+')'}}></i>
                                 <span>1088</span>
                             </div>
                             <div className="thin-border-verical"></div>
-                            <div className="do" onClick={this.openDetail.bind(this)}>
+                            <div className="do" onClick={this.openPage.bind(this)}>
                                 <i className="icon comment" style={{backgroundImage:'url('+comment+')'}}></i>
                                 <span>2058</span>
                             </div>
                         </div>
                     </div>
                     <div className="clearboth"></div>
-                    <div className="item">
-                        <div className="avatar-name">
-                            <i className="icon"></i>
-                            <span>吃货小分队</span>
-                        </div>
-                        <div className="content">驴肉火烧简直是人间美味~~~</div>
-                        <div className="icon cover" onClick={this.openDetail.bind(this)}><img src={play} /></div>
-                        
-                        <div className="dos">
-                            <div className="do">
-                                <i className="icon good" style={{backgroundImage:'url('+goodActive+')'}}></i>
-                                <span className="active">1088</span>
-                            </div>
-                            <div className="thin-border-verical"></div>
-                            <div className="do">
-                                <i className="icon comment" style={{backgroundImage:'url('+comment+')'}}></i>
-                                <span>2058</span>
-                            </div>
-                        </div>
-                    </div>
                     <div className="clearboth"></div>
                 </div>
             </div>
 		)
 	}
-}
-Index.contextTypes={
-	router: React.PropTypes.object
 }

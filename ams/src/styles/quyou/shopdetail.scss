@@ -4,6 +4,59 @@
     .gap{
         height: px2rem(26px)
     }
+    .fooder{
+        background-color: $color_ff;
+        padding-left: px2rem(50px);
+        margin: px2rem(32px) auto;
+        position: relative;
+        .stars-permoney{
+            position: absolute;
+            right: px2rem(50px);
+            .permoney{
+                position: relative;
+                top: px2rem(20px); 
+                font-size: px2rem(18px); 
+                line-height: px2rem(18px);
+                text-align: right;
+            }
+        }
+        .food-name{
+            font-size: px2rem(32px);
+            line-height: px2rem(32px);
+            color: $color_02;
+        }
+        .discount-tags{
+            ul{
+                clear: both;
+                padding-top: px2rem(14px); 
+            }
+            li:last-child{
+                margin-right: 0 !important;
+            }
+            li{
+                float: left;
+                font-size: px2rem(20px);
+            }
+            .tags{
+                li{
+                    color: $color_5d666e;
+                    height: px2rem(36px);
+                    line-height: px2rem(34px);
+                    padding: 0 px2rem(14px);
+                    margin-right: px2rem(18px);
+                    border: 1px solid #e5e5e5;
+                    border-radius: px2rem(18px);
+                }
+            }
+            .discount{
+                li{
+                    color: $color_fe932b;
+                    line-height: px2rem(20px);
+                    margin-right: px2rem(30px);
+                }
+            }
+        }
+    }
     .necker{
         background-color: $color_ff;
         padding: px2rem(35px) 0;

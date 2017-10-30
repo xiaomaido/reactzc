@@ -6,17 +6,18 @@ import good from '../../images/quyou/icon/good.png'
 import goodActive from '../../images/quyou/icon/good-active.png'
 import star from '../../images/quyou/icon/star.png'
 import StarsShow from '../../components/StarsShow/'
-export default class FoodHot extends Quyou{
+export default class Index extends Quyou{
 	render(){
         document.title='人气美食'
+        const { location } = this.props
 		return (
 			<div className="food-hot"> 
                 <img className="banner" src={banner} />
                 <div className="list">
-                    <div className="item">
+                    <div className="item" onClick={this.openPage.bind(this,location.pathname+'/abc')}>
                         <div className="icon cover"></div>
                         <div className="box">
-                            <div className="name">老西门</div>
+                            <div className="name">龙门花甲套餐</div>
                             <div className="stars-permoney">
                                 <StarsShow star={star} number={3.8} />
                                 <div className="permoney">¥20/人</div>
@@ -36,10 +37,10 @@ export default class FoodHot extends Quyou{
                         </div>
                     </div>
                     <div className="clearboth thinner-border"></div>
-                    <div className="item">
+                    <div className="item" onClick={this.openPage.bind(this,location.pathname+'/abc')}>
                         <div className="icon cover"></div>
                         <div className="box">
-                            <div className="name">老西门</div>
+                            <div className="name">爱心鸡排套餐</div>
                             <div className="stars-permoney">
                                 <StarsShow star={star} number={5} />
                                 <div className="permoney">¥10/人</div>

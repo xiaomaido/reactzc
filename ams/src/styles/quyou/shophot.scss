@@ -23,9 +23,9 @@
             }
             .box{
                 float: left;
+                width: 10.9rem;
                 height: px2rem(156px);
                 padding-left: px2rem(36px);
-
                 .name{
                     color: $color_42484e;
                     font-size: px2rem(30px);
@@ -41,6 +41,24 @@
                         width: px2rem(18px);
                         height: px2rem(22px);
                         margin-right: px2rem(10px);
+                    }
+                }
+                .shop-sns{
+                    margin-top: px2rem(30px);
+                    height: px2rem(30px);
+                    li{
+                        width: 33.3%;
+                        height: px2rem(30px);
+                        float: left;
+                        font-size: px2rem(18px);
+                        line-height: px2rem(30px);
+                        color: $color_5d666e;
+                        i{
+                            float: left;
+                            width: px2rem(30px);
+                            height: px2rem(30px);
+                            margin-right: px2rem(12px);
+                        }
                     }
                 }
             }
