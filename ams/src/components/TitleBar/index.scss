@@ -1,0 +1,39 @@
+@import "../../styles/vars.scss";
+.titleBar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $barTop;
+    background-color: $color_ff;
+    z-index: 999;
+    .box{
+        height: $barTop;
+        position: relative;
+        .back{
+            width: px2rem(36px);
+            height: px2rem(36px);
+            display: block;
+            position: absolute;
+            left: px2rem(26px);
+            top: px2rem(26px);
+            background-image: url('./images/back.png')
+        }
+        .title{
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            top: px2rem(22px);
+            width: px2rem(184px);
+            height: px2rem(44px);
+        }
+        .title.foodhot{
+            background-image: url('./images/foodhot.png')
+        }
+        .title.shophot{
+            background-image: url('./images/shophot.png')
+        }
+        .title.seasonhot{
+            background-image: url('./images/seasonhot.png')
+        }
+    }
+}

@@ -46,7 +46,7 @@ export default class Eat extends Quyou{
 			<div className="eat">
                 <div className="top">
                     <TouchSlideBox imgSlideList={imgSlideList} />
-                    <img className="bar" src={bar} />
+                    <img className="bar" src={bar} onClick={this.openPage.bind(this,  `/xianshifuli`)} />
                     <ul className="quick">
                         <li onClick={this.openPage.bind(this,  `/shophot`)}>
                             <img src={quick0} style={{float:'left'}} />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import '../styles/quyou/mobilepanel.scss'
+import TitleBar from '../components/TitleBar/'
 import NavListBox from '../components/NavListBox/'
 class MobilePanel extends Component{
 	render(){
@@ -33,6 +34,11 @@ class MobilePanel extends Component{
 				name:'我',
 			 },
 		]
+		const objTitleBack = { // 标题条返回对应的路由
+			'/foodhot':arr[0],
+			'/shophot':arr[0],
+			'/seasonhot':arr[0],
+		}
 		const objNav = { // 额外的导航需要显示对应的模块
 			// '/foodhot':arr[0],
 		}
@@ -42,8 +48,11 @@ class MobilePanel extends Component{
 		const activeUrl = objNav[location.pathname]
 		return (
 			<div className="mobile-panel">
+				{
+					!activeUrl ? <TitleBar location={location} objTitleBack={objTitleBack}/> : null 
+				}
 				{ 
-					activeUrl ? <NavListBox activeNav={arrNav.find(d=>d.url===activeUrl).nav} arrNav={arrNav}/> : null 
+					activeUrl ? <NavListBox activeNav={arrNav.find(d=>d.url===activeUrl).nav} arrNav={arrNav} /> : null 
 				}
 				{
 					children

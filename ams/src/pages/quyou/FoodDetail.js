@@ -3,7 +3,6 @@ import { Quyou } from './Quyou'
 import '../../styles/quyou/shopdetail.scss'
 import phone from '../../images/quyou/icon/phone.png'
 import addr from '../../images/quyou/icon/addr.png'
-import star from '../../images/quyou/icon/star.png'
 import StarsShow from '../../components/StarsShow/'
 export default class Index extends Quyou{
 	render(){
@@ -12,7 +11,7 @@ export default class Index extends Quyou{
 			<div className="shop-detail">
                 <div className="fooder">
                     <div className="stars-permoney">
-                        <StarsShow star={star} number={5} />
+                        <StarsShow number={5} />
                         <div className="permoney">¥10/人</div>
                     </div>
                     <div className="food-name">红烧东坡肉套餐</div>

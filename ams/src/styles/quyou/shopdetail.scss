@@ -1,13 +1,15 @@
 @import "../vars.scss";
 .shop-detail{
     background-color: $color_f5;
+    padding-top: $barTop;
     .gap{
         height: px2rem(26px)
     }
     .fooder{
         background-color: $color_ff;
         padding-left: px2rem(50px);
-        margin: px2rem(32px) auto;
+        margin: 0 auto px2rem(32px);
+        padding-top: px2rem(32px);
         position: relative;
         .stars-permoney{
             position: absolute;

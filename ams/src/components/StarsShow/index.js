@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import './index.css'
+import star from './images/star.png'
 export default class StarsShow extends Component {
 	render(){
-		const { star, number = 5 } = this.props
+		const { number = 5 } = this.props
 		const length = Math.floor(number)
 		const ds = Array.apply(null, { length })
 		return (
