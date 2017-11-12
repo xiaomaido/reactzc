@@ -12,7 +12,7 @@ export default class Index extends Quyou{
     }
 	render(){
         document.title='视频推荐'
-        debugger
+        const { location } = this.props
 		return (
 			<div className="yummy-hot"> 
                 <div className="list">
@@ -21,8 +21,8 @@ export default class Index extends Quyou{
                             <i className="icon"></i>
                             <span>吃货小分队</span>
                         </div>
-                        <div className="content" onClick={this.openPage.bind(this,'/yummyhot/1')}>驴肉火烧简直是人间美味~~~</div>
-                        <div className="icon cover" onClick={this.openPage.bind(this)}><img src={play} /></div>
+                        <div className="content" onClick={this.openPage.bind(this,location.pathname+'/111')}>11驴肉火烧简直是人间美味~~~</div>
+                        <div className="icon cover" onClick={this.openPage.bind(this,location.pathname+'/111')}><img src={play} /></div>
                         <div className="dos">
                             <div className="do" onClick={this.doGood.bind(this)}>
                                 <i className="icon good" style={{backgroundImage:'url('+good+')'}}></i>
@@ -35,7 +35,6 @@ export default class Index extends Quyou{
                             </div>
                         </div>
                     </div>
-                    <div className="clearboth"></div>
                     <div className="clearboth"></div>
                 </div>
             </div>

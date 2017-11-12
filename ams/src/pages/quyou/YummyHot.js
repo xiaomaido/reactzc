@@ -4,7 +4,6 @@ import '../../styles/quyou/yummyhot.scss'
 import goodActive from '../../images/quyou/icon/good-active.png'
 import good from '../../images/quyou/icon/good.png'
 import comment from '../../images/quyou/icon/comment.png'
-
 export default class Index extends Quyou{
     doGood(e){
         alert('点赞成功')
@@ -59,7 +58,4 @@ export default class Index extends Quyou{
             </div>
 		)
 	}
-}
-Index.contextTypes={
-	router: React.PropTypes.object
 }

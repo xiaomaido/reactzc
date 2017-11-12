@@ -16,6 +16,7 @@ import IntlDemo from './IntlDemo'
 import DatePickerDemo from './antd/DatePickerDemo'
 import ButtonDemo from './antd/ButtonDemo'
 import VideoHot from './quyou/VideoHot'
+import VideoDetail from './quyou/VideoDetail'
 import YummyHot from './quyou/YummyHot'
 import YummyDetail from './quyou/YummyDetail'
 import SeasonHot from './quyou/SeasonHot'
@@ -47,6 +48,7 @@ export {
 	DatePickerDemo,
 	ButtonDemo,
 	VideoHot,
+	VideoDetail,
 	YummyHot,
 	YummyDetail,
 	SeasonHot,
