@@ -5,9 +5,6 @@ export class Quyou extends Component{ // 公共模板
 	openPage(url,e){ // 打开页面
 		this.context.router.push(url)
 	}
-	componentDidMount(){
-		console.log("Quyou Common Page")
-	}
 }
 Quyou.contextTypes={
 	router: PropTypes.object

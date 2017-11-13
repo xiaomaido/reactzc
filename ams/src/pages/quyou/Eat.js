@@ -39,7 +39,7 @@ const VideoList = (props) => {
         
     )
 }
-export default class Eat extends Quyou{
+export default class Index extends Quyou{
 	render(){
         document.title='趣游崇明'
 		return (
