@@ -3,6 +3,37 @@
     background-color: $color_f5;
     .top{
         background-color: $color_ff;
+        .hotelCates{
+            margin-bottom: px2rem(24px);
+            padding: px2rem(40px) px2rem(35px);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 2 * px2rem(40px) + px2rem(220px) + px2rem(16px);
+            a{
+                width: px2rem(216px);
+                height: px2rem(110px);
+            }
+            a:nth-child(1){
+                background-image: url('../../images/quyou/zhu/jpjd.png')
+            }
+            a:nth-child(2){
+                background-image: url('../../images/quyou/zhu/jjsy.png')
+            }
+            a:nth-child(3){
+                background-image: url('../../images/quyou/zhu/tsms.png')
+            }
+            a:nth-child(4){
+                background-image: url('../../images/quyou/zhu/rqtj.png')
+            }
+            a:nth-child(5){
+                background-image: url('../../images/quyou/zhu/thzk.png')
+            }
+            a:nth-child(6){
+                background-image: url('../../images/quyou/zhu/stnz.png')
+            }
+        }
     }
     .bar{
         display: block;

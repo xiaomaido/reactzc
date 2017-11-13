@@ -25,6 +25,10 @@ window.pageMapRoute={
 		url:'/intldemo',
 		page:Pages.IntlDemo
 	},
+	hotel: {
+		url:'/hotel',
+		page:Pages.Hotel
+	},
 	eat: {
 		url:'/eat',
 		page:Pages.Eat

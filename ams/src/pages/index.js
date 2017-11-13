@@ -27,6 +27,7 @@ import ShopDetail from './quyou/ShopDetail'
 import XianShiFuLi from './quyou/XianShiFuLi'
 import XianShiFuLiDetail from './quyou/XianShiFuLiDetail'
 import Eat from './quyou/Eat'
+import Hotel from './quyou/Hotel'
 import CurrentRoutes from './quyou/CurrentRoutes'
 // import TencentLocation from './quyou/TencentLocation'
 export { 
@@ -59,6 +60,7 @@ export {
 	XianShiFuLi,
 	XianShiFuLiDetail,
 	Eat,
+	Hotel,
 	CurrentRoutes,
 	// TencentLocation,
 }
