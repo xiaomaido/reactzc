@@ -1,16 +1,11 @@
 
 import React, { Component } from 'react'
 import {Router, Route, IndexRoute, browserHistory, hashHistory} from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
-import configureStore from '../store'
+// import { syncHistoryWithStore } from 'react-router-redux'
 
 import MobilePanel from './MobilePanel'
 import * as Pages from '../pages';
 
-window.store=configureStore()
-window.unsubscribe=store.subscribe(() =>
-  console.log(store.getState())
-)
 // 页面路由配置
 window.pageMapRoute={
 	// tencentlocation: {
@@ -33,6 +28,10 @@ window.pageMapRoute={
 		url:'/mall',
 		page:Pages.Mall
 	},
+	eat: {
+		url:'/eat',
+		page:Pages.Eat
+	},
 	trip: {
 		url:'/trip',
 		page:Pages.Trip
@@ -40,10 +39,6 @@ window.pageMapRoute={
 	hotel: {
 		url:'/hotel',
 		page:Pages.Hotel
-	},
-	eat: {
-		url:'/eat',
-		page:Pages.Eat
 	},
 	xianshifulidetail: {
 		url:'/xianshifuli/:id',
@@ -89,21 +84,14 @@ window.pageMapRoute={
 		url:'/videohot',
 		page:Pages.VideoHot
 	},
-	products: {
-		url:'/products',
-		page:Pages.Products
-	},
-	product: {
-		url:'/product',
-		page:Pages.Product
-	},
 }
 
-const history=syncHistoryWithStore(hashHistory, window.store)
+const history=hashHistory
+// const history=syncHistoryWithStore(hashHistory, window.store)
 
 const routes = (
 	<Route path="/" component={MobilePanel} >
-		<IndexRoute component={Pages.Dashboard} />
+		<IndexRoute component={Pages.Eat} />
 		{ Object.keys(pageMapRoute).map(d=><Route key={d} path={pageMapRoute[d]["url"]} component={pageMapRoute[d]["page"]} />) }
 	</Route>
 )

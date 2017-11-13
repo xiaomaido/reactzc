@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import '../styles/quyou/mobilepanel.scss'
 import TitleBar from '../components/TitleBar/'
 import NavListBox from '../components/NavListBox/'
-class MobilePanel extends Component{
+export default class MobilePanel extends Component{
 	render(){
 		const { children, location } = this.props //调用children就是加载子路由里面的组件
 		const arr = ['/eat','/hotel','/trip','/mall','/my'] // 导航路由
@@ -61,9 +60,3 @@ class MobilePanel extends Component{
 		)
 	}
 }
-const mapStateToProps=(state)=>{
-	return {
-	    keyword: state.routing.locationBeforeTransitions.pathname.substring(1) 
-	}
-}
-export default connect(mapStateToProps)(MobilePanel)
