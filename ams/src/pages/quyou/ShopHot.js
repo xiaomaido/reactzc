@@ -1,6 +1,4 @@
-import React from 'react'
-import { Quyou } from './Quyou'
-import '../../styles/quyou/shophot.scss'
+
 import comment from '../../images/quyou/icon/comment.png'
 import collect from '../../images/quyou/icon/collect.png'
 import good from '../../images/quyou/icon/good.png'

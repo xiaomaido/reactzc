@@ -5,7 +5,7 @@ import NavListBox from '../components/NavListBox/'
 export default class MobilePanel extends Component{
 	render(){
 		const { children, location } = this.props //调用children就是加载子路由里面的组件
-		const arr = ['/eat','/hotel','/trip','/mall','/my'] // 导航路由
+		const arr = ['/','/hotel','/trip','/mall','/my'] // 导航路由
 		const arrNav = [ // 导航对路由配置数组
 			{
 			   url:arr[0],
@@ -37,6 +37,9 @@ export default class MobilePanel extends Component{
 			'/foodhot':arr[0],
 			'/shophot':arr[0],
 			'/seasonhot':arr[0],
+			'/yummyhot':arr[0],
+			'/videohot':arr[0],
+			'/xianshifuli':arr[0],
 		}
 		const objNav = { // 额外的导航需要显示对应的模块
 			// '/foodhot':arr[0],

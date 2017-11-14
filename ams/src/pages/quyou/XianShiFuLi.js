@@ -1,6 +1,4 @@
-import React from 'react'
-import { Quyou } from './Quyou'
-import '../../styles/quyou/xianshifuli.scss'
+
 import banner from '../../images/quyou/banner/shophot.png'
 export default class XianShiFuLi extends Quyou{
 	render(){

@@ -1,6 +1,3 @@
-import React from 'react'
-import { Quyou } from './Quyou'
-import '../../styles/quyou/eat.scss'
 import bar from '../../images/quyou/banner/bar.png'
 import banner1 from '../../images/quyou/banner/banner1.png'
 import play from '../../images/quyou/icon/play.png'
@@ -22,7 +19,7 @@ const VideoList = (props) => {
                     <ul style={{width:(list.length*fontSize*(240+30)/40)}}>
                         {
                             list.map((d,i)=>(
-                                <li key={i} onClick={me.openPage.bind(me,`videohot/${i}`)}>
+                                <li key={i} onClick={me.openPage.bind(me, `videohot${i===list.length-1?'':`/${i+1}`}`)}>
                                     <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}>
                                         {
                                             i===list.length-1 ? <div className="more">更多视频 &gt;</div> : <img src={play} />
@@ -35,6 +32,7 @@ const VideoList = (props) => {
                     </ul>
                 </div>
             </div>
+            <div className="gap"></div>
         </div>
         
     )
@@ -62,13 +60,17 @@ export default class Index extends Quyou{
                         </li>
                     </ul>
                 </div>
-                <div className="yummy clearboth">
+                <div className="yummy clearboth" onClick={this.openPage.bind(this,  `/yummyhot`)}>
                     <div className="icon picture"></div>
                     <div className="icon logo"></div>
                     <div className="content">崇明岛两天三夜游，我的朋友的觅食之旅，良心推荐之旅。。。</div>
                 </div>
-                <VideoList list={Array.apply(null,{length:8})} me={this} />
-                <div style={{height: 100,background:'#fff'}}></div>
+                <div className="yummy clearboth" onClick={this.openPage.bind(this,  `/yummyhot`)}>
+                    <div className="icon picture"></div>
+                    <div className="icon logo"></div>
+                    <div className="content">崇明岛两天三夜游，我的朋友的觅食之旅，良心推荐之旅。。。</div>
+                </div>
+                <VideoList list={Array.apply(null,{length:5})} me={this} />
             </div>
 		)
 	}

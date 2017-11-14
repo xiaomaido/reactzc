@@ -1,6 +1,4 @@
-import React from 'react'
-import { Quyou } from './Quyou'
-import '../../styles/quyou/eat.scss'
+
 import bar from '../../images/quyou/banner/bar.png'
 import banner1 from '../../images/quyou/banner/banner1.png'
 import play from '../../images/quyou/icon/play.png'

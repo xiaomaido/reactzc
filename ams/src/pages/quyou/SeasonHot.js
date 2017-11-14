@@ -1,6 +1,4 @@
-import React from 'react'
-import { Quyou } from './Quyou'
-import '../../styles/quyou/seasonhot.scss'
+
 import banner from '../../images/quyou/banner/seasonhot.png'
 import goodActive from '../../images/quyou/icon/good-active.png'
 import addr from '../../images/quyou/icon/addr.png'
@@ -41,7 +39,4 @@ export default class Index extends Quyou{
             </div>
 		)
 	}
-}
-Index.contextTypes={
-	router: React.PropTypes.object
 }

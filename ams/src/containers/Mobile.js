@@ -1,8 +1,6 @@
 
 import React, { Component } from 'react'
-import {Router, Route, IndexRoute, browserHistory, hashHistory} from 'react-router'
-// import { syncHistoryWithStore } from 'react-router-redux'
-
+import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router'
 import MobilePanel from './MobilePanel'
 import * as Pages from '../pages';
 
@@ -27,10 +25,6 @@ window.pageMapRoute={
 	mall: {
 		url:'/mall',
 		page:Pages.Mall
-	},
-	eat: {
-		url:'/eat',
-		page:Pages.Eat
 	},
 	trip: {
 		url:'/trip',
@@ -58,6 +52,7 @@ window.pageMapRoute={
 	},
 	fooddetail: {
 		url:'/foodhot/:id',
+		// url:'/fooddetail',
 		page:Pages.FoodDetail
 	},
 	foodhot: {
@@ -85,10 +80,18 @@ window.pageMapRoute={
 		page:Pages.VideoHot
 	},
 }
-
-const history=hashHistory
-// const history=syncHistoryWithStore(hashHistory, window.store)
-
+// window.isHashHistory=''
+window.isHashHistory='#'
+const history= window.isHashHistory ?  hashHistory : browserHistory
+// let prevLocation = {};
+// // history.listen(location => {
+// history.listenBefore(location => {
+//   const pathChanged = prevLocation.pathname !== location.pathname;
+//   const hashChanged = prevLocation.hash !== location.hash;
+//   debugger
+//   if (pathChanged || hashChanged) window.scrollTo(0, 0);
+//   prevLocation = location;
+// });
 const routes = (
 	<Route path="/" component={MobilePanel} >
 		<IndexRoute component={Pages.Eat} />

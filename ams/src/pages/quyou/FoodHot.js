@@ -1,6 +1,4 @@
-import React from 'react'
-import { Quyou } from './Quyou'
-import '../../styles/quyou/foodhot.scss'
+
 import banner from '../../images/quyou/banner/foodhot.png'
 import good from '../../images/quyou/icon/good.png'
 import goodActive from '../../images/quyou/icon/good-active.png'
@@ -12,7 +10,7 @@ export default class Index extends Quyou{
 		return (
 			<div className="food-hot"> 
                 <img className="banner" src={banner} />
-                <FoodList list={Array.apply(null,{length:5})} me={this} pathname={location.pathname}/>
+                <FoodList list={Array.apply(null,{length:5})} me={this} pathname={location.pathname} />
             </div>
 		)
 	}

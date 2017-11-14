@@ -1,12 +1,13 @@
-import React from 'react'
-import { Quyou } from './Quyou'
-import '../../styles/quyou/shopdetail.scss'
+
 import phone from '../../images/quyou/icon/phone.png'
 import addr from '../../images/quyou/icon/addr.png'
 import StarsShow from '../../components/StarsShow/'
 export default class Index extends Quyou{
 	render(){
         document.title='商家信息'
+        // debugger
+        // location.query
+        // {id: "2"}
 		return (
 			<div className="shop-detail">
                 <div className="fooder">

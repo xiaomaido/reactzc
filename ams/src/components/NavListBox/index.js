@@ -1,5 +1,3 @@
-import React from 'react'
-import classnames from 'classnames'
 import './index.scss'
 const Index = (props) => {
     const { activeNav,arrNav } = props
@@ -7,7 +5,7 @@ const Index = (props) => {
         <div className="navListBox">
             {
                 arrNav.map(d=>(
-                    <a key={d.nav} href={`#${d.url}`}>
+                    <a key={d.nav} href={`${window.isHashHistory}${d.url}`}>
                         <i className={classnames({"icon":true,[d.nav]:true,"active":activeNav===d.nav})} />
                         <div>{d.name}</div>
                     </a>

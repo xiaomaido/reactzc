@@ -1,6 +1,4 @@
-import React from 'react'
-import { Quyou } from './Quyou'
-import '../../styles/quyou/shopdetail.scss'
+
 import phone from '../../images/quyou/icon/phone.png'
 import addr from '../../images/quyou/icon/addr.png'
 export default class ShopDetail extends Quyou{

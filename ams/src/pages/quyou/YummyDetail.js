@@ -1,6 +1,4 @@
-import React from 'react'
-import { Quyou } from './Quyou'
-import '../../styles/quyou/yummydetail.scss'
+
 import goodActive from '../../images/quyou/icon/good-active.png'
 import good from '../../images/quyou/icon/good.png'
 export default class Index extends Quyou{

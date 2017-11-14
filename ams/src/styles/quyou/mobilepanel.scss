@@ -1,4 +1,917 @@
+@import "../vars.scss";
 .mobile-panel{
     margin: 0 auto;
     max-width: 25rem;
+}
+.eat{
+    background-color: $color_f5;
+    padding-bottom: $barBottom;
+    .top{
+        background-color: $color_ff;
+        .hotelCates{
+            margin-bottom: px2rem(24px);
+            padding: px2rem(40px) px2rem(35px);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 2 * px2rem(40px) + px2rem(220px) + px2rem(16px);
+            a{
+                width: px2rem(216px);
+                height: px2rem(110px);
+            }
+            a:nth-child(1){
+                background-image: url('../../images/quyou/zhu/jpjd.png')
+            }
+            a:nth-child(2){
+                background-image: url('../../images/quyou/zhu/jjsy.png')
+            }
+            a:nth-child(3){
+                background-image: url('../../images/quyou/zhu/tsms.png')
+            }
+            a:nth-child(4){
+                background-image: url('../../images/quyou/zhu/rqtj.png')
+            }
+            a:nth-child(5){
+                background-image: url('../../images/quyou/zhu/thzk.png')
+            }
+            a:nth-child(6){
+                background-image: url('../../images/quyou/zhu/stnz.png')
+            }
+        }
+    }
+    .bar{
+        display: block;
+        margin: px2rem(24px) auto px2rem(30px);
+        height: px2rem(90px);
+        width: px2rem(630px);
+    }
+    .quick{
+        background-color: $color_ff;
+        display: block;
+        width: px2rem(550px);
+        height: px2rem(96px)+px2rem(14px)+px2rem(24px)+px2rem(28px);
+        margin: 0 auto;
+        li{
+            float: left;
+            width: 33.3%;
+            text-align: center;
+            img{
+                width: px2rem(96px);
+                height: px2rem(96px);
+                display: block;
+                margin: 0 auto;
+            }
+            div{
+                clear: both;
+                padding-top: px2rem(14px);
+                font-size: px2rem(24px);
+                line-height: px2rem(24px);
+            }
+        }
+    }
+    .yummy{
+        margin: px2rem(18px) 0;
+        height: px2rem(152px);
+        background-color: $color_ff;
+        .picture{
+            float: right;
+            margin-top: px2rem(18px);
+            margin-right: px2rem(30px);
+            width: px2rem(170px);
+            height: px2rem(116px);
+            background-size: cover;
+            background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg')
+        }
+        .logo{
+            float: left;
+            margin: px2rem(38px) px2rem(35px);
+            width: px2rem(76px);
+            height: px2rem(76px);
+            background-size: cover;
+            background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg')
+        }
+        .content{
+            float: left;
+            color: $color_5d666e;
+            font-size: px2rem(22px);
+            line-height: px2rem(38px);
+            margin: px2rem(40px) 0 0;
+            width: px2rem(374px)
+        }
+    }
+    .video{
+        background-color: $color_ff;
+        .title-box{
+            position: relative;
+            height: px2rem(98px);
+            .title{
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+                font-weight: 300;
+                font-size: px2rem(30px);
+                width: px2rem(174px);
+                text-align: center;
+                line-height: px2rem(30px);
+                color: #ffce1a;
+                background-color: $color_ff;
+                margin: 0 auto;
+                padding: px2rem(30px) 0;
+            }
+            .line:before{
+                border-color: $color_00;
+            }
+            .line{
+                position: relative;
+                top: px2rem(48px);
+                margin: 0 auto;
+                width: px2rem(288px);
+                border-bottom: 1px solid $color_00;
+            }
+        }
+        .vlist{
+            clear: both;
+            padding-left: px2rem(30px);
+            height: px2rem(198px);
+            overflow: hidden;
+            .ul-box{
+                height: px2rem(198px) + px2rem(18px);
+                overflow-y: hidden;
+                overflow-x: auto;
+                ul{
+                    height: 100%;
+                    li{
+                        float: left;
+                        width: px2rem(240px);
+                        margin-right: px2rem(30px);
+                        .poster .more{
+                            font-size: px2rem(26px);
+                            color: $color_ff;
+                            text-align:center;
+                            background-color: rgba(0,0,0,.5) !important;
+                            line-height: px2rem(152px);
+                            // outline: $color_e5 solid 1px;
+                        }
+                        .poster{
+                            position:relative;
+                            width: px2rem(240px);
+                            height: px2rem(152px);
+                            background-size: cover;
+                            img{
+                                position:absolute;
+                                transform: translate(-50%,-50%);
+                                left: 50%;
+                                top: 50%;
+                                width: px2rem(54px);
+                                height: auto;
+                            }
+                        }
+                        .text{
+                            color: $color_42484e;
+                            margin-top: px2rem(22px);
+                            font-size: px2rem(22px);
+                            line-height: px2rem(22px);
+                        }
+                    }
+                }
+            }
+        }
+        .gap{
+            height: px2rem(36px)
+        }
+    }
+}
+.food-hot{
+    padding-top: $barTop;
+    .banner{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .list{
+        padding: 0 px2rem(36px);
+        .item{
+            width: 100%;
+            float: left;
+            position: relative;
+            padding-top: px2rem(36px);
+            margin-bottom: px2rem(36px);
+            height: px2rem(156px)+px2rem(36px);
+            .cover{
+                float: left;
+                width: px2rem(240px);
+                height: px2rem(156px);
+                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                background-size: cover;
+            }
+            .box{
+                float: left;
+                height: px2rem(156px);
+                padding-left: px2rem(36px);
+                .name{
+                    color: $color_42484e
+                }
+                .permoney{
+                    float: left;
+                    font-size: px2rem(22px); 
+                    line-height: px2rem(22px); 
+                    margin-left: px2rem(22px); 
+                }
+                ul{
+                    clear: both;
+                    padding-top: px2rem(14px); 
+                }
+                li:last-child{
+                    margin-right: 0 !important;
+                }
+                li{
+                    float: left;
+                    font-size: px2rem(20px);
+                }
+                .tags{
+                    li{
+                        color: $color_5d666e;
+                        height: px2rem(36px);
+                        line-height: px2rem(34px);
+                        padding: 0 px2rem(14px);
+                        margin-right: px2rem(18px);
+                        border: 1px solid #e5e5e5;
+                        border-radius: px2rem(18px);
+                    }
+                }
+                .discount{
+                    li{
+                        color: $color_fe932b;
+                        line-height: px2rem(20px);
+                        margin-right: px2rem(30px);
+                    }
+                }
+            }
+            .good{
+                position: absolute;
+                right: 0;
+                i{
+                    display: block;
+                    width: px2rem(26px);
+                    height: px2rem(30px);
+                    // background-image: url(../../images/quyou/good.png);
+                    // background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                }
+                div{
+                    color: #a4b4c2;
+                    font-size: 0.5rem;
+                }
+            }
+        }
+    }
+}
+.season-hot{
+    padding-top: $barTop;
+    .banner{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .list{
+        padding: 0 px2rem(36px);
+        .item{
+            width: 100%;
+            float: left;
+            position: relative;
+            padding-top: px2rem(36px);
+            margin-bottom: px2rem(36px);
+            height: px2rem(156px)+px2rem(36px);
+            .cover{
+                float: left;
+                width: px2rem(240px);
+                height: px2rem(156px);
+                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                background-size: cover;
+            }
+            .box{
+                float: left;
+                height: px2rem(156px);
+                padding-left: px2rem(36px);
+                .name{
+                    color: $color_42484e;
+                    font-size: px2rem(30px);
+                    line-height: px2rem(30px);
+                }
+                .shop{
+                    position:relative;
+                    left: -1 * px2rem(12px); 
+                    color: $color_fe932b;
+                    font-size: px2rem(22px);
+                    line-height: px2rem(22px);
+                    margin-top: px2rem(22px);
+                }
+                .address{
+                    color: $color_5d666e;
+                    font-size: px2rem(22px);
+                    line-height: px2rem(22px);
+                    margin-top: px2rem(22px);
+                    i{
+                        float: left;
+                        width: px2rem(18px);
+                        height: px2rem(22px);
+                        margin-right: px2rem(10px);
+                    }
+                }
+            }
+            .good{
+                position: absolute;
+                right: 0;
+                i{
+                    display: block;
+                    width: px2rem(26px);
+                    height: px2rem(30px);
+                }
+                div{
+                    color: #a4b4c2;
+                    margin-top: px2rem(16px);
+                    font-size: px2rem(18px);
+                    line-height: px2rem(18px);
+                }
+            }
+        }
+    }
+}
+.shop-detail{
+    background-color: $color_f5;
+    padding-top: $barTop;
+    .gap{
+        height: px2rem(26px)
+    }
+    .fooder{
+        background-color: $color_ff;
+        padding-left: px2rem(50px);
+        margin: 0 auto px2rem(32px);
+        padding-top: px2rem(32px);
+        position: relative;
+        .stars-permoney{
+            position: absolute;
+            right: px2rem(50px);
+            .permoney{
+                position: relative;
+                top: px2rem(20px); 
+                font-size: px2rem(18px); 
+                line-height: px2rem(18px);
+                text-align: right;
+            }
+        }
+        .food-name{
+            font-size: px2rem(32px);
+            line-height: px2rem(32px);
+            color: $color_02;
+        }
+        .discount-tags{
+            ul{
+                clear: both;
+                padding-top: px2rem(14px); 
+            }
+            li:last-child{
+                margin-right: 0 !important;
+            }
+            li{
+                float: left;
+                font-size: px2rem(20px);
+            }
+            .tags{
+                li{
+                    color: $color_5d666e;
+                    height: px2rem(36px);
+                    line-height: px2rem(34px);
+                    padding: 0 px2rem(14px);
+                    margin-right: px2rem(18px);
+                    border: 1px solid #e5e5e5;
+                    border-radius: px2rem(18px);
+                }
+            }
+            .discount{
+                li{
+                    color: $color_fe932b;
+                    line-height: px2rem(20px);
+                    margin-right: px2rem(30px);
+                }
+            }
+        }
+    }
+    .necker{
+        background-color: $color_ff;
+        padding: px2rem(35px) 0;
+        padding-left: px2rem(44px);
+        .necker-box{
+            .intro{
+                color: $color_00;
+                font-size: px2rem(34px);
+                line-height: px2rem(34px);
+                span{
+                    float:left; 
+                    background-color: $color_ffc913;
+                    width: px2rem(8px);    
+                    height: px2rem(34px);
+                    margin-right: px2rem(20px);      
+                }
+                margin-bottom: px2rem(30px);
+            }
+            .descrip{
+                margin: px2rem(30px) 0;
+                padding-right: px2rem(44px);
+                color: $color_5d666e;
+                font-size: px2rem(24px);
+                line-height: px2rem(50px);
+                overflow: hidden;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                display: -webkit-inline-box;
+                word-break: break-word;
+            }
+            .open-more{
+                display: none;
+                color: $color_ffc913;
+                text-align: center;
+                font-size: px2rem(24px);
+            }
+        }
+    }
+    .header{
+        background-color: $color_ff;
+        padding: px2rem(30px) px2rem(44px);
+        .header-box{
+            position: relative;
+            .thin-border-verical-box{
+                height: px2rem(54px);
+                position: absolute;
+                right: px2rem(94px);
+                top: px2rem(9px);
+                .thin-border-verical:before {
+                    border-left-color: #e5e5e5;
+                }
+            }
+            .phone{
+                position: absolute;
+                right: 0;
+                top: px2rem(14px);
+                width: px2rem(44px);
+                height: px2rem(44px);
+            }
+            .address{
+                color: $color_5d666e;
+                font-size: px2rem(22px);
+                line-height: px2rem(22px);
+                margin-top: px2rem(22px);
+                i{
+                    float: left;
+                    width: px2rem(18px);
+                    height: px2rem(22px);
+                    margin-right: px2rem(10px);
+                }
+            }
+            .name{
+                color:#020202;
+                font-size: px2rem(32px);
+                line-height: px2rem(32px);
+                position: relative;
+                left: -0.4rem;
+            }
+            .cover{
+                margin-top: px2rem(32px);
+                height: px2rem(208px);
+                background-image: url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg);
+                background-size: cover
+            }
+        }
+    }
+}
+.shop-hot{
+    padding-top: $barTop;
+    .banner{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .list{
+        padding: 0 px2rem(36px);
+        .item{
+            width: 100%;
+            float: left;
+            position: relative;
+            padding-top: px2rem(36px);
+            margin-bottom: px2rem(36px);
+            height: px2rem(156px)+px2rem(36px);
+            .cover{
+                float: left;
+                width: px2rem(240px);
+                height: px2rem(156px);
+                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                background-size: cover;
+            }
+            .box{
+                float: left;
+                width: 10.05rem;
+                height: px2rem(156px);
+                padding-left: px2rem(36px);
+                .name{
+                    color: $color_42484e;
+                    font-size: px2rem(30px);
+                    line-height: px2rem(30px);
+                }
+                .address{
+                    color: $color_5d666e;
+                    font-size: px2rem(22px);
+                    line-height: px2rem(22px);
+                    margin-top: px2rem(22px);
+                    i{
+                        float: left;
+                        width: px2rem(18px);
+                        height: px2rem(22px);
+                        margin-right: px2rem(10px);
+                    }
+                }
+                .shop-sns{
+                    margin-top: px2rem(30px);
+                    height: px2rem(30px);
+                    li{
+                        width: 33.3%;
+                        height: px2rem(30px);
+                        float: left;
+                        font-size: px2rem(18px);
+                        line-height: px2rem(30px);
+                        color: $color_5d666e;
+                        i{
+                            float: left;
+                            width: px2rem(30px);
+                            height: px2rem(30px);
+                            margin-right: px2rem(12px);
+                        }
+                    }
+                }
+            }
+            .num{
+                position: absolute;
+                right: px2rem(14px);
+                color: $color_fe932b;
+                font-size: px2rem(20px);
+                span{
+                    margin-left: px2rem(8px);
+                }
+            }
+        }
+    }
+}
+.xian-shi-fu-li{
+    padding-top: $barTop;
+    .banner{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .list{
+        padding: 0 px2rem(48px);
+        .item{
+        	margin-top: px2rem(60px);
+        	.cover{
+        		outline: $color_cc solid 1px;
+        		width: px2rem(654px);
+        		height: px2rem(318px);
+        		background-size: cover;
+                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+        	}
+        	.product{
+        		color: $color_5d666e;
+        		text-align: left;
+        		margin-top: px2rem(22px);
+        		font-size: px2rem(28px);
+        	}
+        	.price-buy{
+        		margin-top: px2rem(30px);
+        		height: px2rem(68px);
+        		.buy{
+        			float: right;
+        			width: px2rem(340px);
+        			height: px2rem(68px);
+        			outline: $color_ffc913 solid 1px;
+        			div{
+        				float: left;
+        				width: 50%;
+        				height: 100%;
+        				text-align: center;
+        			}
+        			.remain{
+        				background-color: #fff7f4;
+        				color: #b3b59a;
+        				font-size: px2rem(22px);
+        				line-height: px2rem(68px);
+        				span{
+        					padding: 0 px2rem(4px);
+        					color: #ec6941;
+        				}
+        			}
+        			.btn{
+        				background-color: $color_ffc913;
+        				color: $color_ff;
+        				font-size: px2rem(28px);
+        				line-height: px2rem(68px);
+        			}
+        		}
+        		.price{
+        			height: px2rem(68px);
+        			float: left;
+        			.now{
+        				float: left;
+        				color: $color_00;
+        				font-size: px2rem(38px);
+        				line-height: px2rem(68px); 
+        				span{
+        					font-size: px2rem(22px);
+        					line-height: px2rem(68px); 
+        					margin-right: px2rem(6px);
+        				}
+        			}
+        			.origin{
+        				margin-left: px2rem(16px);
+        				float: left;
+        				color: #bebebe;
+        				font-weight: 300;
+        				font-size: px2rem(18px);
+        				line-height: px2rem(68px); 
+        				text-decoration: line-through;
+        			}
+        		}
+        	}
+        	.foot{
+        		height: px2rem(38px);
+        	}
+        }
+    }
+}
+.xian-shi-fu-li-detail{
+    padding-top: $barTop;
+    background-color: $color_f5;
+    .publish{
+    	background-color: $color_ff;
+        padding-bottom:  px2rem(100px);
+        padding-left:  px2rem(50px);
+        .title{
+            color: $color_00;
+            margin: px2rem(36px) 0 px2rem(30px);
+            border-left: px2rem(8px) solid $color_ffc913;
+            padding-left: px2rem(20px);
+            height: px2rem(36px);
+            line-height: px2rem(36px);
+            font-size: px2rem(36px);
+        }
+        .discount{
+            color: #f28119;
+            padding: px2rem(28px) 0;
+            font-size: px2rem(26px);
+            line-height: px2rem(26px);
+        }
+    }
+    .fixed-footer{
+    	background-color: $color_ff;
+    	height: px2rem(100px);
+    	position: fixed;
+    	z-index: 100;
+    	bottom: 0;
+        width: 100%;
+        .left{
+            width: px2rem(450px);
+            height: px2rem(100px);
+            float: left;
+            .price{
+    		    color: $color_ffce1a;
+                line-height: px2rem(100px);
+                font-size: px2rem(34px);
+                padding-left: px2rem(44px);
+                span{
+    	            color: $color_00;
+                    font-size: px2rem(20px);
+                    padding-left: px2rem(30px);
+                    text-decoration: line-through;
+                }         
+            }
+        }
+    	.right{
+            float: right;
+            text-align: center;
+            font-size: px2rem(34px);
+            line-height: px2rem(100px);
+            height: px2rem(100px);
+            width: px2rem(300px);
+    		background-color: $color_ffce1a;
+            color: $color_ff;
+        }
+    }
+}
+.yummy-detail{
+	background-color: $color_f5;
+	padding-top: $barTop;
+    .fixed-footer{
+    	background-color: $color_ff;
+    	height: px2rem(100px);
+    	position: fixed;
+    	z-index: 100;
+    	bottom: 0;
+    	width: 100%;
+    	.text{
+    		background-color: $color_f5;
+    		margin: px2rem(20px);
+    		height: px2rem(60px);
+    		width: px2rem(512px) - px2rem(36px);
+    		border-radius: px2rem(10px);
+    		padding-left: px2rem(36px);
+    		font-size: px2rem(24px);
+    		line-height: px2rem(60px);
+    		float: left;
+    	}
+    	.good-box{
+    		float: right;
+    		margin-top: px2rem(28px);
+    		margin-right: px2rem(32px);
+    		i{
+	            width: px2rem(38px);
+	            height: px2rem(36px);
+	            float: left;
+	            margin-right: px2rem(20px);
+	        }
+	        span{
+	            float: left;
+	        	font-size: px2rem(20px);
+	            line-height: px2rem(36px);
+	        	color: $color_ffc913;
+	        }
+    	}
+    }
+    .necker{
+    	margin-top: px2rem(26px);
+    	background-color: $color_ff;
+    	height: 111px;
+    }
+	.toper{
+    	background-color: $color_ff;
+    	padding: 0 px2rem(32px) 1rem;
+    	.cover{
+    		height: px2rem(332px);
+    		background-size: cover;
+    		margin-top: px2rem(40px);
+    	}
+    	.title{
+    		color: #555;
+    		padding: 0 px2rem(18px);
+            font-size: px2rem(36px);
+            font-weight: 700;
+    		line-height: px2rem(64px);
+			padding-top: px2rem(26px);
+    	}
+    	.text{
+    		margin-top: px2rem(28px);
+    		font-size: px2rem(24px);
+    		line-height: 2 * px2rem(24px);
+    	}
+    	.heder{
+    		padding: 0 px2rem(18px);
+    		margin-top: px2rem(44px);
+    		height: px2rem(82px);
+    		position: relative;
+    		.follow{
+    			span{
+    				position:relative;
+    				top:-0.1rem;
+    				margin-right: 0.2rem;
+    			}
+    			position: absolute;
+    			font-size: px2rem(26px);
+    			width: px2rem(164px);
+    			height: px2rem(60px);
+    			line-height: px2rem(60px);
+    			border-radius: px2rem(30px);
+    			right: 0;
+    			border: 1px solid $color_ffc913;
+    			color: $color_ffc913;
+    			text-align: center;
+    		}
+    		img{
+    			position: absolute;
+    			width: px2rem(82px);
+    			height: px2rem(82px);
+    			border-radius: 50%;
+    			left: px2rem(18px);
+    		}
+    		.nickname,.create{
+    			color: #555;
+    			padding-left: px2rem(110px);
+    			font-size: px2rem(24px);
+    			line-height: px2rem(24px);
+    			padding-top: px2rem(12px);
+    		}
+    		.create{
+    			color: #999;
+    		}
+    	}
+	}
+}
+.yummy-hot{
+    padding-top: $barTop;
+    .list{
+        background-color: $color_f5;
+        .item{
+            background-color: $color_ff;
+            width: 100%;
+            float: left;
+            margin-top: px2rem(20px);
+            .avatar-name{
+                margin: px2rem(30px) auto;
+                padding: 0 px2rem(50px);
+                height: px2rem(82px);
+                i{
+                    border-radius: 50%;
+                    background-image: url('https://img.xiaohongshu.com/avatar/59cfbaecb46c5d515aa83eee.jpg@80w_80h_90q_1e_1c_1x.jpg');
+                    width: px2rem(82px);
+                    height: px2rem(82px);
+                    float: left;
+                }
+                span{
+                    float: left;
+                    font-size: px2rem(24px);
+                    line-height: px2rem(82px);
+                    color: $color_5d666e;
+                    padding-left: px2rem(30px);
+                }
+            }
+            .content{
+                color: $color_5d666e;
+                font-size: px2rem(30px);
+                line-height: px2rem(30px);
+                width: 100%;
+                float: left;
+                padding: 0 px2rem(50px);
+            }
+            .cover{
+                float: left;
+                margin: px2rem(28px) px2rem(50px);
+                width: px2rem(650px);
+                height: px2rem(320px);
+                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                background-size: cover;
+                i{
+                    width: px2rem(90px);
+                    height: px2rem(90px);
+                    display: block;
+                    margin: px2rem(115px) auto;
+                    background-image: url('../../images/quyou/icon/play.png')
+                }
+            }
+            .dos{
+                float: left;
+                width: 100%;
+                height: px2rem(42px);
+                margin-bottom: px2rem(30px);
+                .thin-border-verical{
+                    float: left;
+                }
+                .do.active{
+                    i.good{
+                        background-image: url('../../images/quyou/icon/good-active.png')
+                    }
+                    span{
+                        color: $color_ffce1a;
+                    }                        
+                }                    
+                .do{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                    float: left;
+                    i.good{
+                        width: px2rem(38px);
+                        height: px2rem(36px);
+                        background-image: url('../../images/quyou/icon/good.png')
+                    }
+                    i.comment{
+                        width: px2rem(42px);
+                        height: px2rem(40px);
+                        position:relative;
+                        top:0.06rem;
+                        background-image: url('../../images/quyou/icon/comment.png')
+                    }
+                    span{
+                        height: px2rem(42px);
+                        line-height: px2rem(20px);
+                        font-size: px2rem(20px);
+                        margin-left: px2rem(16px);
+                        position: relative;
+                        top: .4rem;
+                    }
+                    span.active{
+                        color: $color_ffc913
+                    }
+                }
+            }
+        }
+    }
 }

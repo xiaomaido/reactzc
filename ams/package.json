@@ -27,12 +27,15 @@
     "rc-select": "^6.8.8",
     "react-contextmenu": "^2.6.5",
     "react-draggable": "^2.2.6",
+    "react-signature-pad": "0.0.6",
+    "react-signature-pad-input": "0.0.7",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.11.0",
-    "webpack-hot-middleware": "^2.18.2"
+    "webpack-hot-middleware": "^2.18.2",
+    "webpack-visualizer-plugin": "^0.1.11"
   },
   "dependencies": {
     "antd": "^2.13.3",
@@ -48,6 +51,7 @@
     "react-redux": "^5.0.6",
     "react-router": "^2.8.1",
     "react-router-redux": "^4.0.8",
+    "react-router-scroll": "^0.4.4",
     "react-transform-hmr": "^1.0.4",
     "redux": "^3.7.2",
     "redux-api-middleware": "^2.0.0-beta.3",
