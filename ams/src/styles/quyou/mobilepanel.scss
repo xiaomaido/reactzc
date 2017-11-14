@@ -80,8 +80,7 @@
             margin-right: px2rem(30px);
             width: px2rem(170px);
             height: px2rem(116px);
-            background-size: cover;
-            background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg')
+            background-image: url('http://ci.xiaohongshu.com/29183df6-3b62-468e-8928-6e1348f8e30d@r_640w_640h.jpg')
         }
         .logo{
             float: left;
@@ -89,7 +88,7 @@
             width: px2rem(76px);
             height: px2rem(76px);
             background-size: cover;
-            background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg')
+            background-image: url('../../images/quyou/icon/yummyhotlogo.png')
         }
         .content{
             float: left;
@@ -248,6 +247,14 @@
                     }
                 }
             }
+            .good.active{
+                i{
+                    background-image: url('../../images/quyou/icon/good-active.png')
+                }
+                div{
+                    color: $color_ffc913
+                }
+            }
             .good{
                 position: absolute;
                 right: 0;
@@ -255,8 +262,7 @@
                     display: block;
                     width: px2rem(26px);
                     height: px2rem(30px);
-                    // background-image: url(../../images/quyou/good.png);
-                    // background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                    background-image: url('../../images/quyou/icon/good.png')
                 }
                 div{
                     color: #a4b4c2;
@@ -814,6 +820,7 @@
 }
 .yummy-hot{
     padding-top: $barTop;
+    overflow-x: hidden;
     .list{
         background-color: $color_f5;
         .item{

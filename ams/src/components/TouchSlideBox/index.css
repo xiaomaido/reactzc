@@ -11,6 +11,8 @@
 	width: 18.75rem;
 	height: 10.25rem;
 	background-color: #fff;
+	background-size: cover;
+	display: block;
 }
 .slideBox .hd {
 	position: absolute;

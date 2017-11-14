@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Spin from '../../components/Spin/'
+window.Spin=Spin
 
 export class Quyou extends Component{ // 公共模板
 	componentWillMount(){
+        window._location=this.props.location
 		window.scrollTo(0, 0)
-	}
+    }
 	openPage(url,e){ // 打开页面
 		this.context.router.push(url)
 	}
@@ -52,3 +55,35 @@ export const PostList = (props) => {
         </div>
     )
 }
+
+ 
+// window.getScrollTop = () => { //获取滚动条当前的位置
+// 	var scrollTop = 0; 
+//     if (document.documentElement && document.documentElement.scrollTop) { 
+//     	scrollTop = document.documentElement.scrollTop; 
+//     } 
+//     else if (document.body) { 
+//     	scrollTop = document.body.scrollTop; 
+//     } 
+//     return scrollTop; 
+// } 
+
+// window.getClientHeight = () => { //获取当前可是范围的高度
+// 	var clientHeight = 0; 
+//     if (document.body.clientHeight && document.documentElement.clientHeight) { 
+//    		clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight); 
+//     } 
+//     else { 
+//     	clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight); 
+//     } 
+//     return clientHeight; 
+// }
+
+// window.getScrollHeight = () => { //获取文档完整的高度
+// 	return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); 
+// }
+// window.onscroll = function () { 
+// 	if (getScrollTop() + getClientHeight() == getScrollHeight()) { 
+// 		debugger
+// 	} 
+// }

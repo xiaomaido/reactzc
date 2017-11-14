@@ -1,11 +1,23 @@
 import bar from '../../images/quyou/banner/bar.png'
-import banner1 from '../../images/quyou/banner/banner1.png'
 import play from '../../images/quyou/icon/play.png'
 import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
 import TouchSlideBox from '../../components/TouchSlideBox/'
-const imgSlideList=[banner1,banner1]
+const imgSlideList=[
+    {
+        img: '//s4.xiaohongshu.com/static/message/9b624dff22be2f129ed410ac10c1e8ff.jpg',
+        url: 'https://m.xiaohongshu.com/discovery/item/59fc80bbc1605f58897f26a4',
+    },
+    {
+        img: '//s4.xiaohongshu.com/static/message/886dfb568604f2c990ff891329c09688.jpg',
+        url: '/shophot/3',
+    },
+    {
+        img: '//s4.xiaohongshu.com/static/message/8b733c9c2ef37551487aaad3d7b1a080.jpeg',
+        url: '',
+    },
+]
 const VideoList = (props) => {
     const { list, me } = props
     return (
@@ -63,12 +75,7 @@ export default class Index extends Quyou{
                 <div className="yummy clearboth" onClick={this.openPage.bind(this,  `/yummyhot`)}>
                     <div className="icon picture"></div>
                     <div className="icon logo"></div>
-                    <div className="content">崇明岛两天三夜游，我的朋友的觅食之旅，良心推荐之旅。。。</div>
-                </div>
-                <div className="yummy clearboth" onClick={this.openPage.bind(this,  `/yummyhot`)}>
-                    <div className="icon picture"></div>
-                    <div className="icon logo"></div>
-                    <div className="content">崇明岛两天三夜游，我的朋友的觅食之旅，良心推荐之旅。。。</div>
+                    <div className="content">🌸用电饭煲就能做的美食🌸懒人党必看的美食教程🤗🤗</div>
                 </div>
                 <VideoList list={Array.apply(null,{length:5})} me={this} />
             </div>

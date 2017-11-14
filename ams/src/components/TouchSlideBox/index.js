@@ -14,7 +14,7 @@ export default class TouchSlideBox extends Component{
                    		{ 
                    			imgSlideList.map((d,i)=>
                    				(
-        							<li key={i}><div className="icon sample" style={{ backgroundImage: 'url(' + d + ')' }}></div></li>
+        							<li key={i}><a href={~d.url.indexOf('http')?d.url:window.isHashHistory+d.url} className="icon sample" style={{ backgroundImage: 'url(' + d.img + ')' }}></a></li>
                    				)
                    			)
                    		}
