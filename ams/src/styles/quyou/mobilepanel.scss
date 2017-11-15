@@ -1,7 +1,56 @@
 @import "../vars.scss";
 .mobile-panel{
     margin: 0 auto;
-    max-width: 25rem;
+    max-width: $maxWidth;
+}
+.my{
+    background-color: $color_f5;
+    .headbox{
+        max-width: $maxWidth;
+        width: 100%;
+        height: px2rem(360px);
+        background-size: cover;
+        background-image: url('../../images/quyou/icon/bg_m.png');
+        position: relative;
+        .wave{
+            position: absolute;
+            bottom: px2rem(-4px);
+            width: 100%;
+            max-width: $maxWidth;
+            background-size: cover;
+            height: px2rem(72px);
+            background-image: url('../../images/quyou/icon/bg_wave.png');
+        }
+        .avatar{
+            background-image: url('../../images/quyou/icon/avatar.png');
+            height: px2rem(112px);
+            width: px2rem(112px);
+            position: absolute;
+            left: px2rem(50px);            
+            top: px2rem(100px);
+            border-radius: px2rem(8px);
+        }
+        .user-info{
+            position: absolute;
+            width: px2rem(480px);
+            height: px2rem(112px);
+            left: px2rem(50px) + px2rem(112px) + px2rem(30px);            
+            top: px2rem(100px);
+            .nick{
+                position: absolute;
+                top:0;
+                color: #666860;
+                font-size: px2rem(32px);
+            }
+            .account{
+                position: absolute;
+                bottom:0;
+                color: #c7a160;
+                font-size: px2rem(24px);
+            }
+
+        }
+    }
 }
 .eat{
     background-color: $color_f5;

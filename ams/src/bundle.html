@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="format-detection" content="telephone=no,address=no,email=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>趣游崇明</title>
+      <meta charset="utf-8" >
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <meta name="format-detection" content="telephone=no,address=no,email=no">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <title>趣游崇明</title>
+      <style>
+        #index{
+          visibility: hidden;
+        }
+        .spin {
+            width: 6.5rem;
+            height: auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            z-index: 999;
+        }
+      </style>
+      <script>
+        function remLayOut() { 
+          var rootV=20
+          var normalV=375
+          var maxV=500;
+          var docEl=document.documentElement
+          var fontSizeSet=function(){
+              window.clientWidth=docEl.clientWidth
+              clientWidth=(clientWidth>maxV)?maxV:clientWidth
+              window.fontSize=rootV*(clientWidth/normalV)
+              docEl.style.fontSize = fontSize+'px'
+          }
+          fontSizeSet()
+          window.onresize=fontSizeSet
+        }
+        remLayOut()
+        var start=Date.now()
+        window.onload=function(){
+          document.getElementById('diff').innerHTML=Date.now()-start
+          document.getElementById('spin').remove()
+          document.getElementById('index').style.visibility='visible'
+        }
+      </script>
   </head>
   <body>
-  	<div id="index"></div>
+    <div id="diff"></div>
+    <img id="spin" class="spin" src="http://www.weichongming.com/static/images/spin.gif" />
+    <div id="index"></div>
   </body>
 </html>

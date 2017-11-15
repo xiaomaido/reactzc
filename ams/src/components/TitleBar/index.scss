@@ -4,6 +4,7 @@
     top: 0;
     width: 100%;
     height: $barTop;
+    max-width: $maxWidth;
     background-color: $color_ff;
     z-index: 999;
     .box{

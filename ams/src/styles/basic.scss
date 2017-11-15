@@ -4,7 +4,7 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 .maxWidth{
-    max-width: 25rem;
+    max-width: $maxWidth;
 }
 .marginAuto{
     margin: 0 auto;

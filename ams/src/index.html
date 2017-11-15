@@ -10,9 +10,46 @@
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="apple-mobile-web-app-status-bar-style" content="black">
       <title></title>
+      <style>
+        .spin {
+            width: 6.5rem;
+            height: auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            z-index: 999;
+        }
+      </style>
+      <script>
+        function remLayOut() { 
+          var rootV=20
+          var normalV=375
+          var maxV=500;
+          var docEl=document.documentElement
+          var fontSizeSet=function(){
+              window.clientWidth=docEl.clientWidth
+              clientWidth=(clientWidth>maxV)?maxV:clientWidth
+              window.fontSize=rootV*(clientWidth/normalV)
+              docEl.style.fontSize = fontSize+'px'
+          }
+          fontSizeSet()
+          window.onresize=fontSizeSet
+        }
+        remLayOut()
+        var start=Date.now()
+        window.onload=function(){
+          // document.getElementById('diff').innerHTML=Date.now()-start
+          document.getElementById('spin').remove()
+        }
+      </script>
       <link href="static/bundle.css" rel="stylesheet" >
   </head>
   <body>
+    <!-- <div id="diff"></div> -->
+    <img id="spin" class="spin" src="http://www.weichongming.com/static/images/spin.gif" />
     <div id="index"></div>
     <script src="/static/bundle.js"></script>
   </body>

@@ -17,26 +17,26 @@ class Index extends Component {
 		}
 		window.misc=misc
 	}
-	remLayOut(){ 
-	    const rootV=20
-	    const normalV=375
-	    const maxV=500;
-	    const docEl=document.documentElement
-	    const fontSizeSet=()=>{
-	        window.clientWidth=docEl.clientWidth
-	        clientWidth=(clientWidth>maxV)?maxV:clientWidth
-	        window.fontSize=rootV*(clientWidth/normalV)
-	        docEl.style.fontSize = fontSize+'px'
-	    }
-	    fontSizeSet()
-	    window.onload=window.onresize=fontSizeSet
-	}
+	// remLayOut(){ 
+	//     const rootV=20
+	//     const normalV=375
+	//     const maxV=500;
+	//     const docEl=document.documentElement
+	//     const fontSizeSet=()=>{
+	//         window.clientWidth=docEl.clientWidth
+	//         clientWidth=(clientWidth>maxV)?maxV:clientWidth
+	//         window.fontSize=rootV*(clientWidth/normalV)
+	//         docEl.style.fontSize = fontSize+'px'
+	//     }
+	//     fontSizeSet()
+	//     window.onload=window.onresize=fontSizeSet
+	// }
 	checkLogin(){
 		misc.currentUser=JSON.parse(misc.getCookie('tk'))||{id:1}
 		return misc.currentUser
 	}
   	componentWillMount() {
-  		this.remLayOut() // 手机端使用
+  		// this.remLayOut() // 手机端使用
   		this.checkLogin()
   	}
 	render(){
