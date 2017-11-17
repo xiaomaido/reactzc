@@ -13,6 +13,7 @@ import XianShiFuLiDetail from './quyou/XianShiFuLiDetail'
 import Eat from './quyou/Eat'
 import Hotel from './quyou/Hotel'
 import My from './quyou/My'
+import MyProfile from './quyou/MyProfile'
 import Mall from './quyou/Mall'
 import Trip from './quyou/Trip'
 import CurrentRoutes from './quyou/CurrentRoutes'
@@ -33,6 +34,7 @@ export {
 	Eat,
 	Hotel,
 	My,
+	MyProfile,
 	Trip,
 	Mall,
 	CurrentRoutes,

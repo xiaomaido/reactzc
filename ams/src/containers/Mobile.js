@@ -22,6 +22,10 @@ window.pageMapRoute={
 		url:'/my',
 		page:Pages.My
 	},
+	myprofile: {
+		url:'/myprofile',
+		page:Pages.MyProfile
+	},
 	mall: {
 		url:'/mall',
 		page:Pages.Mall

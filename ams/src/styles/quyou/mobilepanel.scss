@@ -30,6 +30,19 @@
             top: px2rem(100px);
             border-radius: px2rem(8px);
         }
+        .arrow-box{
+            position: absolute;
+            right: px2rem(0px);            
+            top: px2rem(100px);
+            width: px2rem(100px); 
+            i{
+                margin: px2rem(40px) auto;
+                display: block;
+                width: px2rem(16px); 
+                height: px2rem(26px); 
+                background-image: url('../../images/quyou/icon/arrow1.png');
+            }
+        }
         .user-info{
             position: absolute;
             width: px2rem(480px);
@@ -51,6 +64,49 @@
 
         }
     }
+    .link-list{
+        background-color: $color_ff;
+        padding-left: px2rem(50px);
+        li{
+            height: px2rem(88px);
+            i{
+                display: block;
+                float: left;
+                margin-top: px2rem(25px);
+                width: px2rem(34px);
+                height: px2rem(34px);
+            }
+            i.collect{
+                background-image: url('../../images/quyou/icon/collect.png');
+            }  
+            i.liked{
+                background-image: url('../../images/quyou/icon/liked.png');
+            }             
+            .name{
+                float: left;
+                line-height: px2rem(88px);
+                font-size: px2rem(26px);
+                color: $color_02;
+                padding-left: px2rem(40px);
+            }
+            .arrow-box{
+                float: right;
+                width: px2rem(104px); 
+                height: px2rem(88px); 
+                span{
+                    margin: px2rem(31px) auto;
+                    display: block;
+                    width: px2rem(16px); 
+                    height: px2rem(20px); 
+                    background-image: url('../../images/quyou/icon/arrow2.png');
+                }
+            }
+        }
+    }
+}
+.my-profile{
+    padding-top: $barTop;
+    background-color: $color_f5;
 }
 .eat{
     background-color: $color_f5;
