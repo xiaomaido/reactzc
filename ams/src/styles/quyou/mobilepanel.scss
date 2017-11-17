@@ -3,6 +3,49 @@
     margin: 0 auto;
     max-width: $maxWidth;
 }
+.trip{
+    background-color: $color_f5;
+    .top{
+        background-color: $color_ff;
+        .bar{
+            display: block;
+            margin: px2rem(28px) auto;
+            height: px2rem(100px);
+            width: px2rem(666px);
+        }
+    }
+    .banner-box{
+        margin: px2rem(24px) auto;
+        width: px2rem(690px);
+        height: px2rem(150px);
+        background-color: $color_ff;
+        .bus{
+            height: px2rem(130px);
+            margin: px2rem(10px) 0;
+            width: auto;
+            float: right;
+        }
+        .bigsmall{
+            padding-left: px2rem(50px);
+            float: left;
+            .big{
+                margin-top: px2rem(38px);
+                font-size: px2rem(34px);
+                line-height: px2rem(34px);
+                color: #99d204;
+                span{
+                    color: $color_33;
+                }
+            }
+            .small{
+                margin-top: px2rem(18px);
+                font-size: px2rem(24px);
+                line-height: px2rem(24px);
+                color: $color_99;
+            }
+        }
+    }
+}
 .my{
     background-color: $color_f5;
     .headbox{
@@ -195,12 +238,12 @@
                 background-image: url('../../images/quyou/zhu/stnz.png')
             }
         }
-    }
-    .bar{
-        display: block;
-        margin: px2rem(24px) auto px2rem(30px);
-        height: px2rem(90px);
-        width: px2rem(630px);
+        .bar{
+            display: block;
+            margin: px2rem(28px) auto;
+            height: px2rem(100px);
+            width: px2rem(666px);
+        }
     }
     .quick{
         background-color: $color_ff;
