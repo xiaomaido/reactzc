@@ -5,6 +5,11 @@ window.Spin=Spin
 
 export class Quyou extends Component{ // 公共模板
 	componentWillMount(){
+        window.onscroll=null
+        window.ontouchstart=null
+        window.ontouchend=null
+        delete window['touchstartY']
+        delete window['touchendY']
         window._location=this.props.location
 		window.scrollTo(0, 0)
     }
@@ -57,33 +62,28 @@ export const PostList = (props) => {
 }
 
  
-// window.getScrollTop = () => { //获取滚动条当前的位置
-// 	var scrollTop = 0; 
-//     if (document.documentElement && document.documentElement.scrollTop) { 
-//     	scrollTop = document.documentElement.scrollTop; 
-//     } 
-//     else if (document.body) { 
-//     	scrollTop = document.body.scrollTop; 
-//     } 
-//     return scrollTop; 
-// } 
+window.getScrollTop = () => { //获取滚动条当前的位置
+	var scrollTop = 0; 
+    if (document.documentElement && document.documentElement.scrollTop) { 
+    	scrollTop = document.documentElement.scrollTop; 
+    } 
+    else if (document.body) { 
+    	scrollTop = document.body.scrollTop; 
+    } 
+    return scrollTop; 
+} 
 
-// window.getClientHeight = () => { //获取当前可是范围的高度
-// 	var clientHeight = 0; 
-//     if (document.body.clientHeight && document.documentElement.clientHeight) { 
-//    		clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight); 
-//     } 
-//     else { 
-//     	clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight); 
-//     } 
-//     return clientHeight; 
-// }
+window.getClientHeight = () => { //获取当前可是范围的高度
+	var clientHeight = 0; 
+    if (document.body.clientHeight && document.documentElement.clientHeight) { 
+   		clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight); 
+    } 
+    else { 
+    	clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight); 
+    } 
+    return clientHeight; 
+}
 
-// window.getScrollHeight = () => { //获取文档完整的高度
-// 	return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); 
-// }
-// window.onscroll = function () { 
-// 	if (getScrollTop() + getClientHeight() == getScrollHeight()) { 
-// 		debugger
-// 	} 
-// }
+window.getScrollHeight = () => { //获取文档完整的高度
+	return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); 
+}

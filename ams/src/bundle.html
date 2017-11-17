@@ -11,9 +11,9 @@
       <meta name="apple-mobile-web-app-status-bar-style" content="black">
       <title>趣游崇明</title>
       <style>
-        #index{
+        /* #index{
           visibility: hidden;
-        }
+        } */
         .spin {
             width: 6.5rem;
             height: auto;
@@ -44,14 +44,14 @@
         remLayOut()
         var start=Date.now()
         window.onload=function(){
-          document.getElementById('diff').innerHTML=Date.now()-start
+          // document.getElementById('diff').innerHTML=Date.now()-start
           document.getElementById('spin').remove()
-          document.getElementById('index').style.visibility='visible'
+          // document.getElementById('index').style.visibility='visible'
         }
       </script>
   </head>
   <body>
-    <div id="diff"></div>
+    <!-- <div id="diff"></div> -->
     <img id="spin" class="spin" src="http://www.weichongming.com/static/images/spin.gif" />
     <div id="index"></div>
   </body>
