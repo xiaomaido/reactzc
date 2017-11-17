@@ -107,6 +107,57 @@
 .my-profile{
     padding-top: $barTop;
     background-color: $color_f5;
+    .link-list{
+        background-color: $color_ff;
+        padding-left: px2rem(40px);
+        li.avatarbox{
+            height: px2rem(174px);    
+            .avatar{
+                float: left;
+                margin-top: px2rem(34px); 
+                height: px2rem(108px);    
+                width: px2rem(108px);    
+                border-radius: px2rem(8px);
+                background-image: url('../../images/quyou/icon/avatar.png');
+            }   
+            .text{
+                line-height: px2rem(174px);
+            }  
+            .arrow-box{
+                height: px2rem(174px); 
+                span{
+                    margin: px2rem(77px) 0 px2rem(77px) px2rem(24px);
+                }
+            } 
+        }
+        li{
+            height: px2rem(88px);           
+            .name{
+                float: left;
+                line-height: px2rem(88px);
+                font-size: px2rem(26px);
+                color: $color_02;
+            }
+            .text{
+                float: right;
+                line-height: px2rem(88px);
+                color: $color_99;
+                font-size: px2rem(24px);
+            }
+            .arrow-box{
+                float: right;
+                width: px2rem(84px); 
+                height: px2rem(88px); 
+                span{
+                    margin: px2rem(34px) 0 0 px2rem(24px);
+                    display: block;
+                    width: px2rem(16px); 
+                    height: px2rem(20px); 
+                    background-image: url('../../images/quyou/icon/arrow2.png');
+                }
+            }
+        }
+    }
 }
 .eat{
     background-color: $color_f5;
