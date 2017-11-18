@@ -37,6 +37,10 @@ class Index extends Component{
         if(!sms.value) return
         alert('登录成功')
     }
+    componentDidMount(){
+        document.body.style.overflow='hidden'
+        // document.body.style.overflowY='auto'
+    }
 	render(){
         const { 
             handleSendSMS = (e) => {

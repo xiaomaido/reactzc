@@ -1,4 +1,4 @@
-
+import { CommentFixed, CommentList, Intro } from './Quyou'
 import phone from '../../images/quyou/icon/phone.png'
 import addr from '../../images/quyou/icon/addr.png'
 export default class ShopDetail extends Quyou{
@@ -6,17 +6,8 @@ export default class ShopDetail extends Quyou{
         document.title='商家信息'
 		return (
 			<div className="shop-detail">
-				<div className="header">
-					<div className="header-box">
-						<div className="thin-border-verical-box">
-							<div className="thin-border-verical"></div>
-						</div>
-						<a href="tel:13248238215" className="icon phone" style={{backgroundImage:'url('+phone+')'}}></a>
-						<div className="name">【乐凯普面包烘焙】</div>
-						<div className="address"><i className="icon" style={{backgroundImage:'url('+addr+')'}}></i>城桥镇南门路37弄18号</div>
-						<div className="icon cover"></div>
-					</div>
-				</div>
+				<CommentFixed />
+				<Intro needCover={true} />
 				<div className="gap"></div>
 				<div className="necker">
 					<div className="necker-box">
@@ -27,6 +18,7 @@ export default class ShopDetail extends Quyou{
 						<div className="clearboth thinner-border"></div>
 					</div>
 				</div>
+				<CommentList total={28} list={[{},{},{},{},{}]} />
             </div>
 		)
 	}

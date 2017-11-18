@@ -1,4 +1,4 @@
-
+import { CommentFixed, CommentList, Intro } from './Quyou'
 import phone from '../../images/quyou/icon/phone.png'
 import addr from '../../images/quyou/icon/addr.png'
 import StarsShow from '../../components/StarsShow/'
@@ -9,7 +9,8 @@ export default class Index extends Quyou{
         // location.query
         // {id: "2"}
 		return (
-			<div className="shop-detail">
+			<div className="shop-detail food-detail">
+                <CommentFixed />
                 <div className="fooder">
                     <div className="stars-permoney">
                         <StarsShow number={5} />
@@ -44,28 +45,20 @@ export default class Index extends Quyou{
                             </ul>
                         </div>
                     </div>
+                    <div className="clearboth thinner-border"></div>
                 </div>
-				<div className="header">
-					<div className="header-box">
-						<div className="thin-border-verical-box">
-							<div className="thin-border-verical"></div>
-						</div>
-						<a href="tel:13248238215" className="icon phone" style={{backgroundImage:'url('+phone+')'}}></a>
-						<div className="name">【乐凯普面包烘焙】</div>
-						<div className="address"><i className="icon" style={{backgroundImage:'url('+addr+')'}}></i>城桥镇南门路37弄18号</div>
-						<div className="icon cover"></div>
-					</div>
-				</div>
+                <Intro />
 				<div className="gap"></div>
 				<div className="necker">
 					<div className="necker-box">
-						<div className="intro"><span></span>店铺简介</div>
+						<div className="intro"><span></span>菜品介绍</div>
 						<div className="clearboth thinner-border"></div>
 						<div className="descrip">源自美国，手术后妇女节昵称开心农场开心农场看查看源自美国，手术后妇女节昵称开心农场开心农场看查看源自美国手术后妇女节昵称开心农场开心农场看查看源自美国，手术后妇女节昵称开心农场开心农场看查看</div>
 						<div className="open-more">展开更多 ^</div>
 						<div className="clearboth thinner-border"></div>
 					</div>
 				</div>
+                <CommentList total={28} list={[{},{},{},{},{}]} />
             </div>
 		)
 	}

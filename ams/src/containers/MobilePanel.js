@@ -33,6 +33,9 @@ export default class MobilePanel extends Component{
 				name:'我',
 			 },
 		]
+		const objTitleNotNeed= { // 不需要标题条对应的路由
+			'/signin': true,
+		}
 		const objTitleBack = { // 标题条返回对应的路由
 			'/foodhot':arr[0],
 			'/shophot':arr[0],
@@ -52,7 +55,7 @@ export default class MobilePanel extends Component{
 		return (
 			<div className="mobile-panel">
 				{
-					!activeUrl ? <TitleBar location={location} objTitleBack={objTitleBack}/> : null 
+					!objTitleNotNeed[location.pathname] && !activeUrl ? <TitleBar location={location} objTitleBack={objTitleBack}/> : null 
 				}
 				{ 
 					activeUrl ? <NavListBox activeNav={arrNav.find(d=>d.url===activeUrl).nav} arrNav={arrNav} /> : null 
