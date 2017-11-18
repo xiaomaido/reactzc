@@ -950,9 +950,65 @@
     	}
     }
     .necker{
+        padding-bottom: px2rem(100px);
     	margin-top: px2rem(26px);
-    	background-color: $color_ff;
-    	height: 111px;
+        background-color: $color_ff;
+        padding-left: px2rem(50px);
+        .comment-title{
+            height: px2rem(98px);
+            line-height: px2rem(98px);
+            color: $color_02;
+            font-size: px2rem(32px);
+        }
+        .comment-title::before{
+            border-left: px2rem(8px) solid $color_ffc913;
+            content: '';
+            padding-right: px2rem(20px);
+        }
+        .comment-list{
+            li{
+                position: relative;
+                min-height: px2rem(90px);
+                padding-right: px2rem(50px);
+                padding-top: px2rem(40px);
+                img{
+                    position: absolute;
+                    width: px2rem(90px);
+                    height: px2rem(90px);
+                    border-radius: 50%;
+                    left: px2rem(6px);    
+                }
+                .create{
+                    position: absolute;
+                    right: px2rem(50px);
+                    color: $color_b6;
+                    font-size: px2rem(20px);
+                }
+                .nicktext{
+                    padding-left: px2rem(130px);
+                    padding-bottom: 1rem;
+                    div{
+                        font-size: px2rem(26px);
+                    }
+                    .nick{
+                        color: #5d666e;
+                        line-height: px2rem(26px);
+                    }
+                    .text{
+                        color: $color_33;
+                        padding-top: px2rem(15px);
+                        line-height: px2rem(36px);
+                    }
+                }
+            }
+        }
+        .view-more{
+            height: px2rem(104px);
+            line-height: px2rem(104px);
+            font-size: px2rem(22px);
+            color: $color_ffc913;
+            text-align: center;
+        }
     }
 	.toper{
     	background-color: $color_ff;
