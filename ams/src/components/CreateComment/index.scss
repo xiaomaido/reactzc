@@ -1,0 +1,56 @@
+@import "../../styles/vars.scss";
+.createComment{
+    position: fixed;
+    max-width: $maxWidth;
+    bottom: 0;
+    width: 100%;
+    height: px2rem(560px);
+    z-index: 2999;
+    background-color: $color_f5;
+    .topp{
+        padding: 0 px2rem(50px);
+        line-height: px2rem(98px);
+        height: px2rem(98px);
+        background-color: $color_ff;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        color: $color_00;
+        font-size: px2rem(28px);
+        .title{
+            font-size: px2rem(30px);
+        }
+        .okay{
+            color: $color_ffce1a;
+            padding-left: px2rem(30px);
+        }
+        .cancel{
+            padding-right: px2rem(30px);
+        }
+    }
+    .write{
+        background-color: $color_ff;
+        margin: px2rem(50px) auto;
+        width: px2rem(654px);
+        height: px2rem(278px);
+        textarea{
+            resize: none;
+            border: 0;
+            margin: 0 px2rem(50px);
+            position: relative;
+            top: 1.25rem;
+            width: px2rem(554px);
+            height: px2rem(178px);
+            display: block;
+            color: $color_02;
+            font-size: px2rem(26px);
+            line-height: px2rem(36px);
+        }
+        textarea::placeholder{
+            color: $color_99 !important;
+            font-size: px2rem(22px) !important;
+            line-height: px2rem(36px) !important;
+        }
+    }
+}

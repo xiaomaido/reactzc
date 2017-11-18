@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Mask from '../../components/Mask/'
+import CreateComment from '../../components/CreateComment/'
+import Sign from '../../components/Sign/'
 import Spin from '../../components/Spin/'
+window.Mask=Mask
+window.CreateComment=CreateComment
+window.Sign=Sign
 window.Spin=Spin
 
 export class Quyou extends Component{ // 公共模板

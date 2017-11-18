@@ -2,6 +2,9 @@
 .mobile-panel{
     margin: 0 auto;
     max-width: $maxWidth;
+    .disable{
+        pointer-events: none;
+    }
 }
 .trip{
     background-color: $color_f5;
@@ -930,7 +933,15 @@
     		font-size: px2rem(24px);
     		line-height: px2rem(60px);
     		float: left;
-    	}
+        }
+    	.good-box.active{
+    		i{
+                background-image: url('../../images/quyou/icon/good-active.png')
+            }
+	        span{
+	        	color: $color_ffc913;
+            }
+        }
     	.good-box{
     		float: right;
     		margin-top: px2rem(28px);
@@ -939,13 +950,14 @@
 	            width: px2rem(38px);
 	            height: px2rem(36px);
 	            float: left;
-	            margin-right: px2rem(20px);
+                margin-right: px2rem(20px);
+                background-image: url('../../images/quyou/icon/good.png')
 	        }
 	        span{
 	            float: left;
 	        	font-size: px2rem(20px);
 	            line-height: px2rem(36px);
-	        	color: $color_ffc913;
+	        	color: $color_5d666e;
 	        }
     	}
     }

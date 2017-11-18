@@ -1,17 +1,26 @@
-
-import goodActive from '../../images/quyou/icon/good-active.png'
-import good from '../../images/quyou/icon/good.png'
 export default class Index extends Quyou{
+	state = {
+		showCreateComment: false,
+		valueCreateComment: ''
+	}
 	render(){
         document.title='美食攻略'
+		const { showCreateComment } = this.state
 		return (
 			<div className="yummy-detail">
-				 <div className="fixed-footer">
+				<Sign />
+				{
+					showCreateComment ? <Mask /> : null
+				}
+				{
+					showCreateComment ? <CreateComment handleChangeInput={this.handleChangeCreateComment.bind(this)} handleClickOkay={this.handleSaveCreateComment.bind(this)} handleClickCancel={this.handleShowCreateComment.bind(this)} /> : null
+				}
+				<div className="fixed-footer">
 					<div className="clearboth thinner-border"></div>
-                	<div className="text">想搭讪，先评论</div>
-                	<div className="good-box">
-                        <i className="icon" style={{backgroundImage:'url('+goodActive+')'}}></i>
-                		<span>26361</span>
+                	<div className="text" onClick={this.handleShowCreateComment.bind(this)}>想搭讪，先评论</div>
+                	<div className="good-box" onClick={this.handleLike.bind(this)}>
+                        <i className="icon"></i>
+                		<span>261</span>
                 	</div>
 				</div> 
                 <div className="toper">
@@ -61,5 +70,25 @@ export default class Index extends Quyou{
                 </div>
             </div>
 		)
+	}
+	handleLike(e){
+
+	}
+	handleShowCreateComment(e){
+		const { showCreateComment } = this.state
+		this.setState({
+			showCreateComment: !showCreateComment
+		})
+	}
+	handleSaveCreateComment(e){
+		const { valueCreateComment } = this.state
+		if(valueCreateComment){
+			alert(valueCreateComment)
+		}
+	}
+	handleChangeCreateComment(e){
+		this.setState({
+			valueCreateComment: e.target.value
+		})
 	}
 }

@@ -18,21 +18,27 @@ var misc={
 			oRet[tmp[0]] = tmp[1];
 		}
 		return oRet;
-	}
-	,setCookie:(name,value,days=7)=>{ // 种cookie
+	},
+	setCookie:(name,value,days=7)=>{ // 种cookie
 	    let exp = new Date();
 	    exp.setTime(exp.getTime() + days*24*60*60*1000);
 	    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString()+";path=/";
-	}
-	,getCookie:(name)=>{ // 取cookie
+	},
+	getCookie:(name)=>{ // 取cookie
 	    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)")
 	    if(arr=document.cookie.match(reg))
 	        return unescape(arr[2])
 	    else
 	        return null
-	}
-	,clearCookie:(name)=>{
+	},
+	clearCookie:(name)=>{
 	    misc.setCookie(name, "", -1)
-	}
+	},
+	validatePhone: (phone) => { // 验证中国地区手机号
+		if (phone.indexOf('86')!==0) {
+			phone = '86' + phone;
+		}
+		return /^(86)[1][3-8][0-9]{9}$/.test(phone);
+	},
 }
 export default misc

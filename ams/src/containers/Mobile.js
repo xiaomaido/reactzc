@@ -14,6 +14,10 @@ window.pageMapRoute={
 		url:'/currentroutes',
 		page:Pages.CurrentRoutes
 	},
+	signin: {
+		url:'/signin',
+		page:Pages.Signin
+	},
 	intldemo: {
 		url:'/intldemo',
 		page:Pages.IntlDemo

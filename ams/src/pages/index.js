@@ -16,6 +16,7 @@ import My from './quyou/My'
 import MyProfile from './quyou/MyProfile'
 import Mall from './quyou/Mall'
 import Trip from './quyou/Trip'
+import Signin from './quyou/Signin'
 import CurrentRoutes from './quyou/CurrentRoutes'
 // import TencentLocation from './quyou/TencentLocation'
 export { 
@@ -37,6 +38,7 @@ export {
 	MyProfile,
 	Trip,
 	Mall,
+	Signin,
 	CurrentRoutes,
 	// TencentLocation,
 }
