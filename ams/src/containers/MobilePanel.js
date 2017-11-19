@@ -43,6 +43,9 @@ export default class MobilePanel extends Component{
 			'/yummyhot':arr[0],
 			'/videohot':arr[0],
 			'/xianshifuli':arr[0],
+			'/guidance':arr[2],
+			'/guidancedetail':arr[2],
+			'/mallfuli':arr[3],
 			'/myprofile':arr[4],
 		}
 		const objNav = { // 额外的导航需要显示对应的模块

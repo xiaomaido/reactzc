@@ -34,9 +34,21 @@ window.pageMapRoute={
 		url:'/mall',
 		page:Pages.Mall
 	},
+	mallfuli: {
+		url:'/mallfuli',
+		page:Pages.MallFuli
+	},
 	trip: {
 		url:'/trip',
 		page:Pages.Trip
+	},
+	guidancedetail: {
+		url:'/guidance/:id',
+		page:Pages.GuidanceDetail
+	},
+	guidance: {
+		url:'/guidance',
+		page:Pages.Guidance
 	},
 	hotel: {
 		url:'/hotel',

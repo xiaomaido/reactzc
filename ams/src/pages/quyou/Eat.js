@@ -3,7 +3,6 @@ import play from '../../images/quyou/icon/play.png'
 import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
-import TouchSlideBox from '../../components/TouchSlideBox/'
 const imgSlideList=[
     {
         img: '//s4.xiaohongshu.com/static/message/9b624dff22be2f129ed410ac10c1e8ff.jpg',
@@ -18,37 +17,6 @@ const imgSlideList=[
         url: '',
     },
 ]
-const VideoList = (props) => {
-    const { list, me } = props
-    return (
-        <div className="video clearboth">
-            <div className="title-box">
-                <div className="line thinner-border clearboth"></div>
-                <div className="title">视频推荐</div>
-            </div>
-            <div className="vlist">
-                <div className="ul-box">
-                    <ul style={{width:(list.length*fontSize*(240+30)/40)}}>
-                        {
-                            list.map((d,i)=>(
-                                <li key={i} onClick={me.openPage.bind(me, `videohot${i===list.length-1?'':`/${i+1}`}`)}>
-                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}>
-                                        {
-                                            i===list.length-1 ? <div className="more">更多视频 &gt;</div> : <img src={play} />
-                                        }
-                                    </div>
-                                    <div className="text">崇明特色美食</div>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            </div>
-            <div className="gap"></div>
-        </div>
-        
-    )
-}
 export default class Index extends Quyou{
 	render(){
         document.title='趣游崇明'
@@ -82,3 +50,35 @@ export default class Index extends Quyou{
 		)
 	}
 } 
+
+const VideoList = (props) => {
+    const { list, me } = props
+    return (
+        <div className="video clearboth">
+            <div className="title-box">
+                <div className="line thinner-border clearboth"></div>
+                <div className="title">视频推荐</div>
+            </div>
+            <div className="vlist">
+                <div className="ul-box">
+                    <ul style={{width:(list.length*fontSize*(240+30)/40)}}>
+                        {
+                            list.map((d,i)=>(
+                                <li key={i} onClick={me.openPage.bind(me, `videohot${i===list.length-1?'':`/${i+1}`}`)}>
+                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}>
+                                        {
+                                            i===list.length-1 ? <div className="more">更多视频 &gt;</div> : <img src={play} />
+                                        }
+                                    </div>
+                                    <div className="text">崇明特色美食</div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div className="gap"></div>
+        </div>
+        
+    )
+}

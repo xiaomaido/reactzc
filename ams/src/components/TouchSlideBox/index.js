@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TouchSlide from '../../vendors/touchslide'
-import './index.css'
+import './index.scss'
 export default class TouchSlideBox extends Component{
 	constructor(props){
 		super(props)
@@ -14,7 +14,7 @@ export default class TouchSlideBox extends Component{
                    		{ 
                    			imgSlideList.map((d,i)=>
                    				(
-        							<li key={i}><a href={~d.url.indexOf('http')?d.url:window.isHashHistory+d.url} className="icon sample" style={{ backgroundImage: 'url(' + d.img + ')' }}></a></li>
+        							<li key={i}><a href={~d.url.indexOf('http')?d.url:window.isHashHistory+(d.url||_location.pathname)} className="icon sample" style={{ backgroundImage: 'url(' + d.img + ')' }}></a></li>
                    				)
                    			)
                    		}
@@ -37,9 +37,9 @@ export default class TouchSlideBox extends Component{
             mainCell:".bd ul", 
             effect:"leftLoop", 
             autoPage: true, //自动分页
-            autoPlay: false, //自动播放
+            autoPlay: true, //自动播放
             delayTime: 100,
-            interTime: 6000,
+            interTime: 5000,
         }):null
 	}
 

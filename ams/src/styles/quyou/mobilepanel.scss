@@ -8,11 +8,17 @@
 }
 .trip{
     background-color: $color_f5;
+    .title{
+        position: absolute;
+        color: $color_ff;
+    }
     .top{
         background-color: $color_ff;
+        margin-top: px2rem(24px);
+        padding-top: px2rem(28px);
         .bar{
             display: block;
-            margin: px2rem(28px) auto;
+            margin: 0 auto px2rem(28px);
             height: px2rem(100px);
             width: px2rem(666px);
         }
@@ -47,6 +53,17 @@
                 color: $color_99;
             }
         }
+    }
+}
+.trip-guidance{
+    padding-top: $barTop;
+    padding-bottom: 0 !important;
+}
+.trip-guidance-detial{
+    padding-top: $barTop;
+    background-color: $color_f5;
+    .top{
+        background-color: $color_ff;
     }
 }
 .my{
@@ -1236,5 +1253,52 @@
                 }
             }
         }
+    }
+}
+.mall{
+    background-color: $color_f5;
+    padding-bottom: $barBottom;
+    .ad-list{
+        li{
+            margin-bottom: px2rem(24px);
+            background-color: $color_ff;
+            padding: px2rem(32px) 0;
+            .icon{
+                width: px2rem(680px);
+                margin: 0 auto;
+                display: block;
+            }
+            .big{
+                height: px2rem(340px);
+            }
+            .small{
+                height: px2rem(220px);
+                position: relative;
+                .ad{
+                    position: absolute;
+                    right: 0;
+                    bottom: px2rem(0);
+                    color: $color_ff;
+                    background-color: $color_99;
+                    text-align: center;
+                    font-size: px2rem(20px);
+                    width: px2rem(48px);
+                    height: px2rem(28px);
+                    line-height: px2rem(28px);
+                }
+            }
+        }
+    }
+}
+.mall-fuli{
+    padding-top: $barTop;
+    background-color: $color_f5;
+    .neck{
+        background-color: $color_ff;
+        padding: px2rem(30px) 0;
+    }
+    .coupon-list{
+        margin-top: px2rem(20px);
+        background-color: $color_ff;
     }
 }

@@ -15,7 +15,10 @@ import Hotel from './quyou/Hotel'
 import My from './quyou/My'
 import MyProfile from './quyou/MyProfile'
 import Mall from './quyou/Mall'
+import MallFuli from './quyou/MallFuli'
 import Trip from './quyou/Trip'
+import Guidance from './quyou/Guidance'
+import GuidanceDetail from './quyou/GuidanceDetail'
 import Signin from './quyou/Signin'
 import CurrentRoutes from './quyou/CurrentRoutes'
 // import TencentLocation from './quyou/TencentLocation'
@@ -37,8 +40,11 @@ export {
 	My,
 	MyProfile,
 	Trip,
+	Guidance,
+	GuidanceDetail,
 	Mall,
 	Signin,
 	CurrentRoutes,
+	MallFuli,
 	// TencentLocation,
 }

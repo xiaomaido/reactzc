@@ -48,5 +48,13 @@
         .title.myprofile{
             background-image: url('./images/myprofile.png')
         }
+        .title.mallfuli{
+            background-image: url('./images/mallfuli.png');
+            width: px2rem(274px);
+        }
+        .title.guidance{
+            background-image: url('./images/guidance.png');
+            width: px2rem(134px);
+        }
     }
 }

@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Mask from '../../components/Mask/'
+import TouchSlideBox from '../../components/TouchSlideBox/'
 import CreateComment from '../../components/CreateComment/'
 import Sign from '../../components/Sign/'
 import Spin from '../../components/Spin/'
+window.TouchSlideBox=TouchSlideBox
 window.Mask=Mask
 window.CreateComment=CreateComment
 window.Sign=Sign
