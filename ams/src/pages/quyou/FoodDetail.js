@@ -18,33 +18,16 @@ export default class Index extends Quyou{
                     </div>
                     <div className="food-name">红烧东坡肉套餐</div>
                     <div className="discount-tags">
-                        <ul className="tags">
-                            <li>本帮菜</li>
-                            <li>回头客多</li>
-                        </ul>
                         <ul className="discount">
                             <li>全场9折</li>
                             <li>满20减3</li>
                         </ul>
+                        <ul className="tags">
+                            <li>本帮菜</li>
+                            <li>回头客多</li>
+                        </ul>
                     </div>
-                    <div className="vlist" style={{height:300}}>
-                        <div className="ul-box">
-                            <ul style={{width:(5*fontSize*(240+30)/40)}}>
-                                <li>
-                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}></div>
-                                </li>
-                                <li>
-                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}></div>
-                                </li>
-                                <li>
-                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}></div>
-                                </li>
-                                <li>
-                                    <div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}></div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+					<PictureList list={Array.apply(null,{length:5})} me={this} />
                     <div className="clearboth thinner-border"></div>
                 </div>
                 <Intro />
@@ -54,12 +37,44 @@ export default class Index extends Quyou{
 						<div className="intro"><span></span>菜品介绍</div>
 						<div className="clearboth thinner-border"></div>
 						<div className="descrip">源自美国，手术后妇女节昵称开心农场开心农场看查看源自美国，手术后妇女节昵称开心农场开心农场看查看源自美国手术后妇女节昵称开心农场开心农场看查看源自美国，手术后妇女节昵称开心农场开心农场看查看</div>
-						<div className="open-more">展开更多 ^</div>
+						{/* <div className="open-more">展开更多 ^</div> */}
 						<div className="clearboth thinner-border"></div>
+                        <div className="discount">
+			                <div className="title"><div>惠</div>本品优惠</div>
+                            <div className="buy-box">
+                                <div className="left">
+                                    <div className="price">￥24.9<span>原价￥36.9</span></div>
+                                </div>
+                                <div className="right">抢购</div>
+                            </div>
+                        </div>
 					</div>
 				</div>
                 <CommentList total={28} list={[{},{},{},{},{}]} />
             </div>
 		)
 	}
+}
+
+const PictureList = (props) => {
+    const { list, me } = props
+    return (
+		<div className="video clearboth">
+			<div className="vlist">
+				<div className="ul-box">
+					<ul style={{width:(list.length*fontSize*(200+30)/40)}}>
+						{
+							list.map((d,i)=>(
+								<li key={i} onClick={me.openPage.bind(me, `abc${i===list.length-1?'':`/${i+1}`}`)}>
+									<div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}>
+									</div>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</div>
+			<div className="gap"></div>
+		</div>
+    )
 }

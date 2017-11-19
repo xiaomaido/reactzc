@@ -97,13 +97,13 @@ const FoodList = (props) => {
                                     <StarsShow number={i+1} />
                                     <div className="permoney">¥20/人</div>
                                 </div>
-                                <ul className="tags">
-                                    <li>本帮菜</li>
-                                    <li>回头客多</li>
-                                </ul>
                                 <ul className="discount">
                                     <li>全场9折</li>
                                     <li>满20减3</li>
+                                </ul>
+                                <ul className="tags">
+                                    <li>本帮菜</li>
+                                    <li>回头客多</li>
                                 </ul>
                             </div>
                             <div className={classnames({good:true,active:i%2})}> 

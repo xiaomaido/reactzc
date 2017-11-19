@@ -414,7 +414,6 @@
             float: left;
             position: relative;
             padding-top: px2rem(36px);
-            margin-bottom: px2rem(36px);
             height: px2rem(156px)+px2rem(36px);
             .cover{
                 float: left;
@@ -641,7 +640,7 @@
                 margin-bottom: px2rem(30px);
             }
             .descrip{
-                margin: px2rem(30px) 0;
+                margin: px2rem(30px) 0 px2rem(18px);
                 padding-right: px2rem(44px);
                 color: $color_5d666e;
                 font-size: px2rem(24px);
@@ -658,6 +657,76 @@
                 text-align: center;
                 font-size: px2rem(24px);
             }
+            .video{
+                .title{
+                    margin: px2rem(24px) 0;
+                    height: px2rem(34px);
+                    line-height: px2rem(34px);
+                    font-size: px2rem(26px);
+                    color: $color_33;
+                    div{
+                        margin-right: px2rem(20px);
+                        background-color: $color_ffce1a;
+                        width: px2rem(34px);
+                        height: px2rem(34px);
+                        line-height: px2rem(34px);
+                        font-size: px2rem(20px);
+                        border-radius: px2rem(8px);
+                        text-align: center;
+                        display: block;
+                        color: $color_ff;
+                        float: left;
+                    }
+                }
+                .vlist{
+                    clear: both;
+                    height: px2rem(204px);
+                    overflow: hidden;
+                    .ul-box{
+                        height: px2rem(204px) + px2rem(18px);
+                        overflow-y: hidden;
+                        overflow-x: auto;
+                        ul{
+                            height: 100%;
+                            li{
+                                float: left;
+                                width: px2rem(200px);
+                                margin-right: px2rem(30px);
+                                .poster{
+                                    position:relative;
+                                    width: px2rem(200px);
+                                    height: px2rem(130px);
+                                    background-size: cover;
+                                    .sold{
+                                        color: $color_ff;
+                                        background-color: $color_ffce1a;
+                                        height: px2rem(34px);
+                                        line-height: px2rem(34px);
+                                        padding: 0 px2rem(12px);
+                                        float: right;
+                                        font-size: px2rem(20px);
+                                    }
+                                }
+                                .text{
+                                    color: $color_42484e;
+                                    margin-top: px2rem(16px);
+                                    font-size: px2rem(26px);
+                                    line-height: px2rem(26px);
+                                }
+                                .price{
+                                    color: $color_fe932b;
+                                    margin-top: px2rem(10px);
+                                    font-size: px2rem(22px);
+                                    line-height: px2rem(22px);
+                                }
+                            }
+                        }
+                    }
+                }
+                .gap{
+                    height: px2rem(10px)
+                }
+            }
         }
     }
 }
@@ -671,6 +740,91 @@
                     width: px2rem(28px);
                     height: px2rem(28px);
                 }
+            }
+        }
+    }
+    .discount{
+        .title{
+            margin: px2rem(24px) 0;
+            height: px2rem(34px);
+            line-height: px2rem(34px);
+            font-size: px2rem(26px);
+            color: $color_33;
+            div{
+                margin-right: px2rem(20px);
+                background-color: $color_ffce1a;
+                width: px2rem(34px);
+                height: px2rem(34px);
+                line-height: px2rem(34px);
+                font-size: px2rem(20px);
+                border-radius: px2rem(8px);
+                text-align: center;
+                display: block;
+                color: $color_ff;
+                float: left;
+            }
+        }
+        .buy-box{
+            padding-right: 1.1rem;
+            background-color: $color_ff;
+            height: px2rem(72px);
+            .left{
+                width: 50%;
+                height: px2rem(72px);
+                float: left;
+                .price{
+                    color: $color_ffce1a;
+                    line-height: px2rem(72px);
+                    font-size: px2rem(34px);
+                    span{
+                        color: $color_00;
+                        font-size: px2rem(20px);
+                        padding-left: px2rem(24px);
+                        text-decoration: line-through;
+                    }         
+                }
+            }
+            .right{
+                float: right;
+                text-align: center;
+                font-size: px2rem(28px);
+                line-height: px2rem(72px);
+                height: px2rem(72px);
+                width: px2rem(170px);
+                background-color: $color_ffce1a;
+                color: $color_ff;
+            }
+        }
+    }
+    .fooder{
+        .video{
+            padding-top: px2rem(24px);
+            .vlist{
+                clear: both;
+                height: px2rem(130px);
+                overflow: hidden;
+                .ul-box{
+                    height: px2rem(130px) + px2rem(18px);
+                    overflow-y: hidden;
+                    overflow-x: auto;
+                    ul{
+                        height: 100%;
+                        li{
+                            float: left;
+                            width: px2rem(200px);
+                            margin-right: px2rem(30px);
+                            .poster{
+                                position:relative;
+                                width: px2rem(200px);
+                                height: px2rem(130px);
+                                background-size: cover;
+                            }
+                        }
+                    }
+                }
+            }
+            .gap{
+                height: px2rem(30px)
             }
         }
     }
@@ -689,7 +843,6 @@
             float: left;
             position: relative;
             padding-top: px2rem(36px);
-            margin-bottom: px2rem(36px);
             height: px2rem(156px)+px2rem(36px);
             .cover{
                 float: left;
@@ -1022,7 +1175,7 @@
     .view-more{
         height: px2rem(104px);
         line-height: px2rem(104px);
-        font-size: px2rem(22px);
+        font-size: px2rem(24px);
         color: $color_ffc913;
         text-align: center;
     }
