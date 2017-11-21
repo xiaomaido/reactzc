@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './index.scss'
 export default class Index extends Component{
     state = {
-        showOptions: true,
+        showOptions: false,
         showTitle: '',
         partId: '-1',
         optionId: '-1',
@@ -80,7 +80,7 @@ export default class Index extends Component{
                     </div>
                     <div className="clearboth thinner-border"></div>  
                     {
-                        showOptions ? <Filters /> : null
+                        showOptions ? <Options part={parts.find(d=>d && d.id===partId)} _this={_this} /> : null
                     }
                 </div>
             </div>
@@ -129,36 +129,6 @@ export default class Index extends Component{
         }
         _this.setState(nextState)
     }
-}
-const Filters = (props) => {
-    return (
-        <div className="select-filters">
-            <div className="title-specials">
-                <div className="title">优惠</div>
-                <ul className="specials">
-                    <li>免配送费</li>
-                    <li>连锁商家</li>
-                    <li>新店开张</li>
-                    <li>新店开张</li>
-                    <li>新店开张</li>
-                </ul>
-            </div>  
-            <div className="title-specials">
-                <div className="title">优惠</div>
-                <ul className="specials">
-                    <li>免配送费</li>
-                    <li>连锁商家</li>
-                    <li>新店开张</li>
-                    <li>新店开张</li>
-                    <li>新店开张</li>
-                </ul>
-            </div> 
-            <div className="buttons">
-                <div className="reset">重置</div>
-                <div className="confirm">确定</div>
-            </div>  
-        </div>  
-    )
 }
 const Options = (props) => {
     const { part, _this } = props

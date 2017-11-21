@@ -7,9 +7,12 @@ export default class Index extends Quyou{
         document.title='美食攻略'
         const { location } = this.props
 		return (
-			<div className="yummy-hot">
+            <div>
+                {/* <SelectBox /> */}
                 <FilterBox />
-                <PostList list={Array.apply(null,{length:4})} me={this} pathname={location.pathname} />
+                <div className="yummy-hot">
+                    <PostList list={Array.apply(null,{length:4})} me={this} pathname={location.pathname} />
+                </div>
             </div>
 		)
 	}

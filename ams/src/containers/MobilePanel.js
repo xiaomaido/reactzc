@@ -58,14 +58,14 @@ export default class MobilePanel extends Component{
 		return (
 			<div className="mobile-panel">
 				{
-					!objTitleNotNeed[location.pathname] && !activeUrl ? <TitleBar location={location} objTitleBack={objTitleBack}/> : null 
-				}
+					children
+				} 
 				{ 
 					activeUrl ? <NavListBox activeNav={arrNav.find(d=>d.url===activeUrl).nav} arrNav={arrNav} /> : null 
 				}
 				{
-					children
-				} 
+					!activeUrl && !objTitleNotNeed[location.pathname] ? <TitleBar location={location} objTitleBack={objTitleBack}/> : null 
+				}
 			</div>
 		)
 	}

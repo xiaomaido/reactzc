@@ -1,4 +1,4 @@
-import './index.css'
+import './index.scss'
 import star from './images/star.png'
 const Index = (props) => {
 	const { number = 5 } = props
