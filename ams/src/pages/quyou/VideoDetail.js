@@ -10,9 +10,6 @@ export default class Index extends Quyou{
 		return (
 			<div className="yummy-detail">
 				{
-					showCreateComment ? <Mask /> : null
-				}
-				{
 					showCreateComment ? <CreateComment handleChangeInput={this.handleChangeCreateComment.bind(this)} handleClickOkay={this.handleSaveCreateComment.bind(this)} handleClickCancel={this.handleShowCreateComment.bind(this)} /> : null
 				}
 				<CommentFixed handleLike={this.handleLike.bind(this)} handleShowCreateComment={this.handleShowCreateComment.bind(this)} />

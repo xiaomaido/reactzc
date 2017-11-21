@@ -151,6 +151,18 @@ export const Intro = (props) => {
         </div>
     ) 
 }
+export const FilterBox = () => {
+    return (
+        <div className="filter-box">
+            <div className="filter-header">
+                <div className="filter-column">板块<i className="tran-down" /></div>
+                    <div className="clearboth thin-border-verical"></div>
+                <div className="filter-column">筛选<i className="tran-down" /></div>
+            </div>
+            <div className="clearboth thinner-border"></div>  
+        </div>
+    )
+}
 window.getScrollTop = () => { //获取滚动条当前的位置
 	var scrollTop = 0; 
     if (document.documentElement && document.documentElement.scrollTop) { 

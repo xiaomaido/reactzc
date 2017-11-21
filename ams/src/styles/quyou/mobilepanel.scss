@@ -1313,7 +1313,7 @@
             background-color: $color_ff;
             width: 100%;
             float: left;
-            margin-bottom: px2rem(20px);
+            margin-top: px2rem(20px);
             .avatar-name{
                 margin: px2rem(30px) auto;
                 padding: 0 px2rem(50px);
@@ -1454,4 +1454,38 @@
         margin-top: px2rem(20px);
         background-color: $color_ff;
     }
+}
+.filter-box{
+    position: fixed;
+    width: 100%;
+    max-width: $maxWidth;
+    background-color: $color_ff;
+    height: px2rem(50px) + px2rem(17px); 
+    padding-top: px2rem(17px); 
+    .filter-header{
+        margin-bottom: px2rem(17px); 
+        height: px2rem(50px);
+        display: flex;
+        .filter-column{
+            font-size: px2rem(24px);
+            line-height: px2rem(50px);
+            width: 50%;
+            color: $color_33;
+            text-align: center;
+            i{
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-left: px2rem(8px) solid transparent;
+                border-right: px2rem(8px) solid transparent;
+                margin-left: px2rem(20px);
+            }
+        }
+    }
+}
+.tran-up {
+    border-bottom: px2rem(12px) solid $color_33;
+}
+.tran-down {
+    border-top: px2rem(12px) solid $color_33;
 }
