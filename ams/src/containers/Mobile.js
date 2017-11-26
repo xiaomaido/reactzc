@@ -50,6 +50,10 @@ window.pageMapRoute={
 		url:'/guidance',
 		page:Pages.Guidance
 	},
+	busline: {
+		url:'/busline',
+		page:Pages.BusLine
+	},
 	hotel: {
 		url:'/hotel',
 		page:Pages.Hotel
@@ -98,6 +102,10 @@ window.pageMapRoute={
 	videohot: {
 		url:'/videohot',
 		page:Pages.VideoHot
+	},
+	query: {
+		url:'/query',
+		page:Pages.Query
 	},
 }
 // window.isHashHistory=''

@@ -8,6 +8,28 @@
 }
 .trip{
     background-color: $color_f5;
+    .query-box{
+        position: absolute;
+        top:0;
+        left: 0;
+        background-color: rgba(256,256,256,.3);
+        width: 100%;
+        max-width: $maxWidth;
+        height: px2rem(88px);
+        z-index: 999;
+        box-shadow: 0 1px 1px 1px rgba(0,0,0,.1);
+        .query{
+            background-color: $color_ff;
+            color: $color_99;
+            margin: px2rem(16px);
+            text-align: center;
+            height: px2rem(56px);
+            line-height: px2rem(56px);
+            border-radius: px2rem(8px);
+            font-size: px2rem(26px);
+            box-shadow: 0 1px 1px 1px rgba(0,0,0,.1);
+        }
+    }
     .title{
         position: absolute;
         color: $color_ff;
@@ -18,7 +40,7 @@
         padding-top: px2rem(28px);
         .bar{
             display: block;
-            margin: 0 auto px2rem(28px);
+            margin: 0 auto;
             height: px2rem(100px);
             width: px2rem(666px);
         }
@@ -54,6 +76,48 @@
             }
         }
     }
+    .video{
+        padding-top: px2rem(24px);
+        background-color: $color_ff;
+        padding-left: px2rem(30px);
+        .vlist{
+            clear: both;
+            height: px2rem(130px) + px2rem(44px);
+            overflow: hidden;
+            .ul-box{
+                height: px2rem(130px) + px2rem(18px) + px2rem(44px);
+                overflow-y: hidden;
+                overflow-x: auto;
+                ul{
+                    height: 100%;
+                    li{
+                        float: left;
+                        width: px2rem(200px);
+                        margin-right: px2rem(30px);
+                        .poster{
+                            position:relative;
+                            width: px2rem(200px);
+                            height: px2rem(130px);
+                            background-size: cover;
+                        }
+                        .text{
+                            color: $color_42484e;
+                            margin-top: px2rem(22px);
+                            font-size: px2rem(22px);
+                            line-height: px2rem(22px);
+                        }
+                    }
+                }
+            }
+        }
+        .gap{
+            height: px2rem(30px)
+        }
+    }
+}
+.trip-query{
+    padding-top: $barTop;
+    background-color: $color_f5;
 }
 .trip-guidance{
     padding-top: $barTop;
@@ -64,6 +128,20 @@
     background-color: $color_f5;
     .top{
         background-color: $color_ff;
+    }
+}
+.trip-busline{
+    padding-top: $barTop;
+    .gjxl{
+        padding: px2rem(30px) 0;
+        height: px2rem(120px);
+        display: block;
+        margin: 0 auto;
+    }
+    .line-table{
+        margin: 0 auto;
+        width: px2rem(690px);
+        border-top: px2rem(8px) solid $color_fe932b
     }
 }
 .my{
@@ -85,7 +163,6 @@
             background-image: url('../../images/quyou/icon/bg_wave.png');
         }
         .avatar{
-            background-image: url('../../images/quyou/icon/avatar.png');
             height: px2rem(112px);
             width: px2rem(112px);
             position: absolute;
@@ -1454,5 +1531,33 @@
     .coupon-list{
         margin-top: px2rem(20px);
         background-color: $color_ff;
+        padding: 0 px2rem(36px);
+        li{
+            .cover-box{
+                position: relative;
+                height: px2rem(190px);
+                padding-top: px2rem(30px);
+                .cover{
+                    width: px2rem(240px);
+                    height: px2rem(160px);
+                    background-size: cover;
+                    float: left;
+                    margin-right: px2rem(30px);
+                }
+                .box{
+                    float: left;
+                }
+                .handed{
+                    position: absolute;
+                    right: 0;
+                    bottom: px2rem(30px);
+                    font-size: px2rem(20px);
+                    line-height: px2rem(20px);
+                    span{
+                        color: $color_fe932b;
+                    }
+                }
+            }
+        }
     }
 }

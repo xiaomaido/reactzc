@@ -16,16 +16,36 @@ const imgSlideList=[
 export default class Index extends Quyou{
 	render(){        
         document.title='平台福利专区'
+        const cover=`http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg`
+        const list=Array.apply(null,{length:5})
         return (
             <div className="mall-fuli">
                 <div className="neck">
                     <TouchSlideBox imgSlideList={imgSlideList} />               
                 </div>
-                <div className="coupon-list">
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                </div>
+                <ul className="coupon-list">
+                    {
+                        list.map((d,i)=>(
+                            <li key={i}>
+                                <div className="cover-box">
+                                    <div className="icon cover" style={{backgroundImage:`url(${cover})`}}></div>
+                                    <div className="box">
+                                        <div className="handed"><span>93</span>人已领取</div>
+                                        <div className="name">龙门花甲套餐</div>
+                                        <div className="name">[八一广场店]</div>
+                                        {/* <ul className="discount">
+                                            <li>新人券</li>
+                                            <li>满减</li>
+                                        </ul> */}
+                                    </div>
+                                </div>
+                                {
+                                    i===list.length-1 ? null : <div className="clearboth thinner-border"></div>
+                                }
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
         )
     }

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './index.scss'
-export default class Index extends Component{
+export default class Index extends React.Component{
     state = {
         showOptions: true,
         showTitle: '',

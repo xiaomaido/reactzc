@@ -17,10 +17,12 @@ import MyProfile from './quyou/MyProfile'
 import Mall from './quyou/Mall'
 import MallFuli from './quyou/MallFuli'
 import Trip from './quyou/Trip'
+import BusLine from './quyou/BusLine'
 import Guidance from './quyou/Guidance'
 import GuidanceDetail from './quyou/GuidanceDetail'
 import Signin from './quyou/Signin'
 import CurrentRoutes from './quyou/CurrentRoutes'
+import Query from './quyou/Query'
 // import TencentLocation from './quyou/TencentLocation'
 export { 
 	IntlDemo,
@@ -42,9 +44,11 @@ export {
 	Trip,
 	Guidance,
 	GuidanceDetail,
+	BusLine,
 	Mall,
 	Signin,
 	CurrentRoutes,
 	MallFuli,
+	Query,
 	// TencentLocation,
 }

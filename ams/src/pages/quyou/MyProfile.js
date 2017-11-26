@@ -1,15 +1,21 @@
 export default class Index extends Quyou{
+    state={
+        my:{
+            avatar_url
+        }
+    }
 	render(){
-        const avatar=`https://img.xiaohongshu.com/avatar/59bfafb2b46c5d19b53e851b.jpg@120w_120h_92q_1e_1c_1x.jpg?wm=160&hm=160&q=92`
+        const me = this
+        const { my } = me.state
         return (
             <div className="my-profile">
                 <ul className="link-list">
                     <li className="avatarbox">
-                        <div className="icon avatar" style={{backgroundImage:`url(${avatar})`}}></div>
-                        <div className="arrow-box">
+                        <div className="icon avatar" style={{backgroundImage:`url(${my.avatar_url})`}}></div>
+                        <div className="arrow-box" onClick={me.handleUploadAvatar.bind(me)}>
                             <span className="icon" />
                         </div>
-                        <div className="text">上传头像</div>
+                        <div className="text">{my.id?`修改`:`上传`}头像</div>
                         <div className="thinner-border clearboth"></div>
                     </li>
                     <li>
@@ -17,6 +23,7 @@ export default class Index extends Quyou{
                         <div className="arrow-box">
                             <span className="icon" />
                         </div>
+                        <div className="text">{my.login}</div>
                         <div className="thinner-border clearboth"></div>
                     </li>
                     <li>
@@ -24,7 +31,8 @@ export default class Index extends Quyou{
                         <div className="arrow-box">
                             <span className="icon" />
                         </div>
-                        <div className="text">修改</div>
+                        {/* <div className="text">修改</div> */}
+                        <div className="text">{my.mobile||'13248238215'}</div>
                         <div className="thinner-border clearboth"></div>
                     </li>
                     <li>
@@ -32,10 +40,32 @@ export default class Index extends Quyou{
                         <div className="arrow-box">
                             <span className="icon" />
                         </div>
+                        <div className="text">{my.sex||'男'}</div>
+                        <div className="thinner-border clearboth"></div>
+                    </li>
+                    <li>
+                        <div className="name">所在地</div>
+                        <div className="arrow-box">
+                            <span className="icon" />
+                        </div>
+                        <div className="text">{my.location||'未知'}</div>
                         <div className="thinner-border clearboth"></div>
                     </li>
                 </ul>
             </div>
         )
+    }
+    componentDidMount(){
+        const { FETCH_MY_PROFILE } = TYPES
+        const { API_MY_PROFILE } = APIS
+        if(FETCH_MY_PROFILE in ResponseState){
+            this.setState({
+                my: ResponseState[FETCH_MY_PROFILE]
+            })
+            return false
+        }
+    }
+    handleUploadAvatar(e){
+        alert(1)
     }
 } 

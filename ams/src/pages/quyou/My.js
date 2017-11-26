@@ -1,19 +1,23 @@
 
 export default class Index extends Quyou{
+    state={
+        my:{
+            avatar_url
+        }
+    }
 	render(){
-        // const avatar=`https://img.xiaohongshu.com/avatar/59bfafb2b46c5d19b53e851b.jpg@120w_120h_92q_1e_1c_1x.jpg?wm=160&hm=160&q=92`
+        const { my } = this.state
         return (
             <div className="my">
                 <div className="icon headbox">
                     <div className="icon wave"></div>
-                    <div className="icon avatar"></div>
-                    {/* <div className="icon avatar" style={{backgroundImage:`url(${avatar})`}}></div> */}
+                    <div className="icon avatar" style={{backgroundImage:`url(${my.avatar_url})`}}></div>
                     <div className="arrow-box" onClick={this.openPage.bind(this,`/myprofile`)}>
                         <i className="icon" />
                     </div>
                     <div className="user-info">
-                        <div className="nick">机智の登登</div>
-                        <div className="account">ID:13248238215</div>
+                        <div className="nick">{my.name||'昵称'}</div>
+                        <div className="account">ID:{my.id}</div>
                     </div>
                 </div>
                 <div className="thinner-border clearboth"></div>
@@ -37,5 +41,27 @@ export default class Index extends Quyou{
                 </ul>
             </div>
         )
+    }
+    componentDidMount(){
+        const { FETCH_MY_PROFILE } = TYPES
+        const { API_MY_PROFILE } = APIS
+        if(FETCH_MY_PROFILE in ResponseState){
+            this.setState({
+                my: ResponseState[FETCH_MY_PROFILE]
+            })
+            return false
+        }
+        this.requestAPI(API_MY_PROFILE,{},(res)=>{
+            ResponseState[FETCH_MY_PROFILE]=res
+            this.setState({
+                my: ResponseState[FETCH_MY_PROFILE]
+            })
+        },(err)=>{
+
+        })
+        // this.requestAPI(`/users/xiaomaido`,{
+        //     id:10086,
+        //     name:'tom',
+        // })
     }
 } 

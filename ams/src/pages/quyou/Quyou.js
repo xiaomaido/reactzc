@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
+import fetch from 'isomorphic-fetch'
+import React from 'react'
 import PropTypes from 'prop-types'
+import LazyLoad from 'react-lazyload'
 import Mask from '../../components/Mask/'
 import TouchSlideBox from '../../components/TouchSlideBox/'
 import CreateComment from '../../components/CreateComment/'
@@ -7,15 +9,18 @@ import Sign from '../../components/Sign/'
 import Spin from '../../components/Spin/'
 import SelectBox from '../../components/SelectBox/'
 import FilterBox from '../../components/FilterBox/'
-window.TouchSlideBox=TouchSlideBox
-window.Mask=Mask
-window.CreateComment=CreateComment
-window.Sign=Sign
-window.Spin=Spin
-window.SelectBox=SelectBox
-window.FilterBox=FilterBox
-
-export class Quyou extends Component{ // 公共模板
+import avatar_url from '../../images/quyou/icon/avatar.png'
+window.avatar_url=avatar_url
+window.TYPES={
+    FETCH_MY_PROFILE:`FETCH_MY_PROFILE`
+}
+window.APIS={
+    API_MY_PROFILE:`/users/xiaomaido`
+}
+export class Quyou extends React.Component{ // 公共模板
+    api={
+        host:`https://api.github.com`
+    }
 	componentWillMount(){
         window.onscroll=null
         window.ontouchstart=null
@@ -27,13 +32,56 @@ export class Quyou extends Component{ // 公共模板
     }
 	openPage(url,e){ // 打开页面
 		this.context.router.push(url)
-	}
+    }
+    requestAPI(url,data,succ=(res)=>{console.log(res)},fail=(err)=>{console.log(err)},method='GET'){
+        url = ~url.indexOf(this.api.host) ? url : this.api.host + url
+        url = data && method==='GET' ? url + Object.keys(data).reduce((arr,k)=>{
+            arr.push(`&${k}=${data[k]}`)
+            return arr
+        },[]).join('').replace('&','?') : url
+        const options= method==='POST' ? {
+            method, 
+            headers: { 
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }, 
+            body: JSON.stringify(data),
+        } : {  
+            method, 
+        }
+        return fetch(url,options)
+        .then(response=>response.json().then(json => ({ json, response })))
+        .then(({ json, response }) => {
+            if (!response.ok) {
+                // return Promise.reject(json)
+                return fail(json)
+            }
+            return succ(json)
+            // return Object.assign({},json)
+        })
+        .catch(function(ex) {
+            return fail(ex)
+            // console.warn(ex)
+        })
+    }
 }
 Quyou.contextTypes={
 	router: PropTypes.object
 }
+window.React=React
 window.Quyou=Quyou
-
+window.TouchSlideBox=TouchSlideBox
+window.LazyLoad=LazyLoad
+window.Mask=Mask
+window.CreateComment=CreateComment
+window.Sign=Sign
+window.Spin=Spin
+window.SelectBox=SelectBox
+window.FilterBox=FilterBox
+window.fetch=fetch
+window.ResponseState={
+    FETCH_MY_PROFILE:{"login":"xiaomaido","id":11659631,"avatar_url":"https://avatars0.githubusercontent.com/u/11659631?v=4","gravatar_id":"","url":"https://api.github.com/users/xiaomaido","html_url":"https://github.com/xiaomaido","followers_url":"https://api.github.com/users/xiaomaido/followers","following_url":"https://api.github.com/users/xiaomaido/following{/other_user}","gists_url":"https://api.github.com/users/xiaomaido/gists{/gist_id}","starred_url":"https://api.github.com/users/xiaomaido/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/xiaomaido/subscriptions","organizations_url":"https://api.github.com/users/xiaomaido/orgs","repos_url":"https://api.github.com/users/xiaomaido/repos","events_url":"https://api.github.com/users/xiaomaido/events{/privacy}","received_events_url":"https://api.github.com/users/xiaomaido/received_events","type":"User","site_admin":false,"name":"Martin Zeng","company":null,"blog":"","location":"Shanghai","email":null,"hireable":null,"bio":null,"public_repos":16,"public_gists":0,"followers":0,"following":1,"created_at":"2015-03-26T05:59:40Z","updated_at":"2017-11-26T03:40:32Z"}
+}
 export const PostList = (props) => {
     const { list, me, pathname } = props
     return (

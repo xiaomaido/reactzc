@@ -60,7 +60,8 @@ export default class Index extends Component{
                         },
                     ],
                 }, 
-            ], 
+            ],
+            thinnerBorder = true,
         } = _this.props
         const { showTitle, partId, showOptions } = _this.state
         console.log(_this.state)
@@ -70,7 +71,9 @@ export default class Index extends Component{
                     showOptions ? <Mask /> : null
                 }
                 <div className="select-box">
-                    <div className="clearboth thinner-border"></div>
+                    { 
+                        thinnerBorder ? <div className="clearboth thinner-border"></div> : null
+                    }
                     <div className="select-header">
                         {
                             parts.map((d,i)=>{
@@ -78,6 +81,9 @@ export default class Index extends Component{
                             })
                         }
                     </div>
+                    { 
+                        thinnerBorder ? <div className="clearboth thinner-border"></div> : null
+                    }
                     <div className="clearboth thinner-border"></div>  
                     {
                         showOptions ? <Options part={parts.find(d=>d && d.id===partId)} _this={_this} /> : null

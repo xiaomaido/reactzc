@@ -5,6 +5,7 @@
     height: 100%;
     z-index: 999;
     top:0;
-    left:0;
+    left:50%;
+    transform: translate(-50%,0);
     background-color: rgba(0,0,0,.5);
 }
