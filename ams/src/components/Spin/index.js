@@ -1,5 +1,5 @@
 import spin from './images/spin.gif'
-// import './index.scss'
+import './index.scss'
 const Index = (props) => {
     return (
         <img className="spin" src={spin} />

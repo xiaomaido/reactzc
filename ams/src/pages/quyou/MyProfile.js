@@ -4,9 +4,17 @@ export default class Index extends Quyou{
             avatar_url
         }
     }
+    state={
+        FETCH_MY_PROFILE:{
+            response:{
+                avatar_url
+            }
+        }
+    }
 	render(){
         const me = this
-        const { my } = me.state
+        const { FETCH_MY_PROFILE } = me.state
+        const my = FETCH_MY_PROFILE.response
         return (
             <div className="my-profile">
                 <ul className="link-list">
@@ -56,11 +64,10 @@ export default class Index extends Quyou{
         )
     }
     componentDidMount(){
-        const { FETCH_MY_PROFILE } = TYPES
-        const { API_MY_PROFILE } = APIS
-        if(FETCH_MY_PROFILE in ResponseState){
+        const { FETCH_MY_PROFILE } = this.state
+        if(TYPES.FETCH_MY_PROFILE in ResponseState){
             this.setState({
-                my: ResponseState[FETCH_MY_PROFILE]
+                FETCH_MY_PROFILE: ResponseState[TYPES.FETCH_MY_PROFILE]
             })
             return false
         }

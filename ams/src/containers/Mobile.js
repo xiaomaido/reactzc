@@ -30,6 +30,14 @@ window.pageMapRoute={
 		url:'/myprofile',
 		page:Pages.MyProfile
 	},
+	mycoupons: {
+		url:'/mycoupons',
+		page:Pages.MyCoupons
+	},
+	mymsg: {
+		url:'/mymsg',
+		page:Pages.MyMsg
+	},
 	mall: {
 		url:'/mall',
 		page:Pages.Mall
