@@ -27,13 +27,13 @@ export default class Index extends Quyou{
 	}
     componentDidMount(){
 		const me = this
-        const { FETCH_EAT_POST_DETAIL } = me.state
-        if(TYPES.FETCH_EAT_POST_DETAIL in ResponseState){
-            me.setState({
-                FETCH_EAT_POST_DETAIL: ResponseState[TYPES.FETCH_EAT_POST_DETAIL]
-            })
-            return false
-        }
+        // const { FETCH_EAT_POST_DETAIL } = me.state
+        // if(TYPES.FETCH_EAT_POST_DETAIL in ResponseState){
+        //     me.setState({
+        //         FETCH_EAT_POST_DETAIL: ResponseState[TYPES.FETCH_EAT_POST_DETAIL]
+        //     })
+        //     return false
+        // }
         me.setState({
             FETCH_EAT_POST_DETAIL: {
                 ...FETCH_EAT_POST_DETAIL,
