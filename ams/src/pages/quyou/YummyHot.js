@@ -7,7 +7,7 @@ export default class Index extends Quyou{
             }
         }
     }
-	render(){
+	renderContent(){
         document.title='美食攻略'
         const me = this
         const { fetching, response = { data: { } } } = me.state.FETCH_EAT_POST_LIST

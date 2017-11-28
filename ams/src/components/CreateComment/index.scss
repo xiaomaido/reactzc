@@ -12,20 +12,25 @@
         line-height: px2rem(98px);
         height: px2rem(98px);
         background-color: $color_ff;
-        display: flex;
-        align-items: center;
-        flex-wrap: nowrap;
-        justify-content: space-between;
+    
         color: $color_00;
         font-size: px2rem(28px);
+        position: relative;
         .title{
+            text-align: center;
             font-size: px2rem(30px);
         }
         .okay{
+            position: absolute;
+            top: 0;
+            right: px2rem(50px);
             color: $color_ffce1a;
             padding-left: px2rem(30px);
         }
         .cancel{
+            position: absolute;
+            top: 0;
+            left: px2rem(50px);
             padding-right: px2rem(30px);
         }
     }
@@ -44,12 +49,12 @@
             height: px2rem(178px);
             display: block;
             color: $color_02;
-            font-size: px2rem(26px);
+            font-size: px2rem(28px);
             line-height: px2rem(36px);
         }
         textarea::placeholder{
             color: $color_99 !important;
-            font-size: px2rem(22px) !important;
+            font-size: px2rem(24px) !important;
             line-height: px2rem(36px) !important;
         }
     }

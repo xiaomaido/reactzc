@@ -9,7 +9,7 @@ export default class Index extends Quyou{
             }
         }
     }
-	render(){
+	renderContent(){
         document.title='趣游崇明'
         const me = this
         const { fetching, response = { data: { } } } = me.state.FETCH_EAT_INDEX

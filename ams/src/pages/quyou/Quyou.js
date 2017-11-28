@@ -61,6 +61,18 @@ export class Quyou extends React.Component{ // 公共模板
             // console.warn(ex)
         })
     }
+    renderContent(){ // 子类覆盖该方法
+        return null 
+    }
+    render(){
+        return (
+            <div className="quyou-base">
+                {
+                    this.renderContent()
+                }
+            </div>
+        )
+    }
 }
 Quyou.contextTypes={
 	router: PropTypes.object
@@ -81,12 +93,16 @@ window.TYPES={
     FETCH_EAT_INDEX:`FETCH_EAT_INDEX`,
     FETCH_EAT_POST_LIST:`FETCH_EAT_POST_LIST`,
     FETCH_EAT_POST_DETAIL:`FETCH_EAT_POST_DETAIL`,
+    DO_EAT_POST_COMMENT:`DO_EAT_POST_COMMENT`,
+    DO_EAT_POST_LIKE:`DO_EAT_POST_LIKE`,
 }
 window.APIS={
     API_MY_PROFILE:`/users/xiaomaido`,
     API_EAT_INDEX:`/eatIndex/index`,
     API_EAT_POST_LIST:`/eatIndex/postList`,
     API_EAT_POST_DETAIL:`/eatIndex/postDetail`,
+    API_EAT_POST_COMMENT:`/eatIndex/postComment`,
+    API_EAT_POST_LIKE:`/eatIndex/postLike`,
 }
 window.ResponseState={
     FETCH_MY_PROFILE:{
@@ -181,7 +197,7 @@ export const CommentList = (props) => {
         list = [],
     } = props
     return (
-        <div className="comment-necker">
+        <div className="comment-necker" id="comment-necker">
             <div className="comment-title">用户评论 ({total})</div>
             <div className="clearboth thinner-border"></div>
             <ul className="comment-list">
@@ -199,12 +215,15 @@ export const CommentList = (props) => {
                     ))
                 }
             </ul>
-            <div className="view-more">查看更多评论</div>
+            {
+                total > 100  ? <div className="view-more">查看更多评论</div> : null
+            }
         </div>
     )
 }
 export const CommentFixed = (props) => {
     const { 
+        textPlaceholder = '请输入...',
         handleShowCreateComment,
         handleLike,
         d = {}, 
@@ -212,7 +231,7 @@ export const CommentFixed = (props) => {
     return (
         <div className="fixed-footer">
             <div className="clearboth thinner-border"></div>
-            <div className="text" onClick={handleShowCreateComment}>想搭讪，先评论</div>
+            <div className="text" onClick={handleShowCreateComment}>{textPlaceholder}</div>
             <div className={classnames({'good-box':true, active:d.is_like})} onClick={handleLike}>
                 <i className="icon"></i>
                 <span>{d.like_count}</span>

@@ -6,7 +6,7 @@ export default class Index extends Quyou{
             }
         }
     }
-	render(){
+	renderContent(){
         const { FETCH_MY_PROFILE } = this.state
         const my = FETCH_MY_PROFILE.response
         return (

@@ -1,7 +1,11 @@
 import './index.scss'
-const Index = (props) => {
+ const Index = (props) => {
     const { 
-        maxLength,
+        maxLength = 100,
+        textPlaceholder = '发表评论是搭讪成功的第一步哦~',
+        textTitle = '写评论',
+        textCancel = '取消',
+        textOkay = '确定',
         handleClickCancel = (e) => {
             alert('cancel')
         },
@@ -17,12 +21,15 @@ const Index = (props) => {
             <Mask />
             <div className="createComment">
                 <div className="topp">
-                    <div className="cancel" onClick={handleClickCancel}>取消</div>
-                    <div className="title">写评论</div>
-                    <div className="okay" onClick={handleClickOkay}>发布</div>
+                    <div className="cancel" onClick={handleClickCancel}>{textCancel}</div>
+                    <div className="title">{textTitle}</div>
+                    <div className="okay" onClick={handleClickOkay}>{textOkay}</div>
                 </div>
                 <div className="write">
-                    <textarea onChange={handleChangeInput} placeholder="发表评论是搭讪成功的第一步哦~" maxLength={maxLength}></textarea>
+                    <textarea 
+                        onChange={handleChangeInput} 
+                        placeholder={textPlaceholder} 
+                        maxLength={maxLength}></textarea>
                 </div>
             </div>
         </div>
