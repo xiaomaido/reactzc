@@ -463,6 +463,7 @@
             margin: px2rem(28px) auto;
             height: px2rem(100px);
             width: px2rem(666px);
+            border-radius: px2rem(100px);
         }
     }
     .quick{
@@ -499,7 +500,6 @@
             margin-right: px2rem(30px);
             width: px2rem(170px);
             height: px2rem(116px);
-            background-image: url('http://ci.xiaohongshu.com/29183df6-3b62-468e-8928-6e1348f8e30d@r_640w_640h.jpg')
         }
         .logo{
             float: left;
@@ -575,6 +575,7 @@
                             position:relative;
                             width: px2rem(240px);
                             height: px2rem(152px);
+                            background-color: $color_e5;
                             background-size: cover;
                             img{
                                 position:absolute;
@@ -1521,7 +1522,6 @@
                 height: px2rem(82px);
                 i{
                     border-radius: 50%;
-                    background-image: url('https://img.xiaohongshu.com/avatar/59cfbaecb46c5d515aa83eee.jpg@80w_80h_90q_1e_1c_1x.jpg');
                     width: px2rem(82px);
                     height: px2rem(82px);
                     float: left;
@@ -1547,14 +1547,13 @@
                 margin: px2rem(28px) px2rem(50px);
                 width: px2rem(650px);
                 height: px2rem(320px);
-                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
                 background-size: cover;
                 i{
                     width: px2rem(90px);
                     height: px2rem(90px);
                     display: block;
                     margin: px2rem(115px) auto;
-                    background-image: url('../../images/quyou/icon/play.png')
+                    // background-image: url('../../images/quyou/icon/play.png')
                 }
             }
             .dos{

@@ -1,6 +1,3 @@
-import { debug } from "util";
-
-
 export default class Index extends Quyou{
     state={
         FETCH_MY_PROFILE:{

@@ -1,6 +1,5 @@
 
 import bar from '../../images/quyou/banner/bar.png'
-import play from '../../images/quyou/icon/play.png'
 import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
