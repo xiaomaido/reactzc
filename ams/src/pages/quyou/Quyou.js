@@ -96,11 +96,15 @@ window.ResponseState={
     // FETCH_EAT_INDEX:{
     //     fetching: 0,
     //     response: {"msg":"","data":{"timeBenefits":"http:\/\/pic4.nipic.com\/20091217\/3885730_124701000519_2.jpg","banner":[{"priority":0,"title":"测试一个","id":6,"url":"http:\/\/mall.55haitao.com\/","img":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg","status":"0000","rtype":"0000"},{"priority":0,"title":"趣游专区","id":7,"url":"http:\/\/sports.sina.com.cn\/nba\/","img":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/e24a7aa1da26b911.png","status":"0000","rtype":"0000"},{"priority":0,"title":"酒店banner1","id":8,"url":"http:\/\/sports.sina.com.cn\/nba\/","img":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg","status":"0000","rtype":"0001"},{"priority":0,"title":"酒店banner3","id":9,"url":"http:\/\/www.baidu.com","img":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/4cdbdb7209e2a99e.png","status":"0000","rtype":"0001"},{"priority":0,"title":"吃吃吃","id":10,"url":"http:\/\/map.baidu.com\/","img":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/4cdbdb7209e2a99e.png","status":"0000","rtype":"0001"},{"priority":1,"title":"测试哈","id":1,"url":"http:\/\/www.baidu.com","img":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg","status":"0000","rtype":"0000"}],"post_index":{"imgs":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg","id":8,"description":"大是大非多少发多少分"},"recomm_medias":[{"title":"买实惠","media":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/5e3b2e69a33def3e.pdf","id":21},{"title":"写两个","media":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/c3ed43537dd0e166.pdf","id":20},{"title":"测试一个","media":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/6b59b37d4908b061.pdf","id":19},{"title":"而特我","media":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/5e3b2e69a33def3e.pdf","id":17},{"title":"不那么","media":"http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/202e96c99c90788a.pdf","id":16}]},"code":0}
-    // }
+    // },
     // FETCH_EAT_POST_LIST:{
     //     fetching: 0,
     //     response: {"msg":"","data":{"count":9,"data":[{"headimg":"https:\/\/img.webmd.com\/dtmcms\/live\/webmd\/consumer_assets\/site_images\/articles\/health_tools\/lice_slideshow\/photolibrary_rm_photo_of_boy_scratching_head.jpg","imgs":["http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg"],"id":8,"status":"0001","update_dt":1510383278,"description":"大是大非多少发多少分","tour_area":"","rtype":"0000","nickname":"牧马人","create_dt":1510383278,"tour_project":"","comment_count":0,"is_like":0,"title":"","tour_cate":"","user_id":1,"share_count":0,"like_count":0},{"headimg":"https:\/\/img.webmd.com\/dtmcms\/live\/webmd\/consumer_assets\/site_images\/articles\/health_tools\/lice_slideshow\/photolibrary_rm_photo_of_boy_scratching_head.jpg","imgs":["'http:\/\/img.taopic.com\/uploads\/allimg\/120901\/219077-120Z121055762.jpg'","'http:\/\/img.taopic.com\/uploads\/allimg\/120901\/219077-120Z121055762.jpg'"],"id":3,"status":"0001","update_dt":0,"description":"写写写3","tour_area":"","rtype":"0000","nickname":"牧马人","create_dt":0,"tour_project":"","comment_count":0,"is_like":0,"title":"","tour_cate":"","user_id":1,"share_count":0,"like_count":0},{"headimg":"https:\/\/img.webmd.com\/dtmcms\/live\/webmd\/consumer_assets\/site_images\/articles\/health_tools\/lice_slideshow\/photolibrary_rm_photo_of_boy_scratching_head.jpg","imgs":["'http:\/\/img.taopic.com\/uploads\/allimg\/120901\/219077-120Z121055762.jpg'","'http:\/\/img.taopic.com\/uploads\/allimg\/120901\/219077-120Z121055762.jpg'"],"id":4,"status":"0001","update_dt":0,"description":"写写写4","tour_area":"","rtype":"0000","nickname":"牧马人","create_dt":0,"tour_project":"","comment_count":0,"is_like":0,"title":"","tour_cate":"","user_id":1,"share_count":0,"like_count":0},{"headimg":"https:\/\/img.webmd.com\/dtmcms\/live\/webmd\/consumer_assets\/site_images\/articles\/health_tools\/lice_slideshow\/photolibrary_rm_photo_of_boy_scratching_head.jpg","imgs":["http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/4cdbdb7209e2a99e.png"],"id":9,"status":"0000","update_dt":1510477738,"description":"三十","tour_area":"","rtype":"0000","nickname":"牧马人","create_dt":1510477738,"tour_project":"","comment_count":0,"is_like":0,"title":"的人","tour_cate":"","user_id":1,"share_count":0,"like_count":0},{"headimg":"https:\/\/img.webmd.com\/dtmcms\/live\/webmd\/consumer_assets\/site_images\/articles\/health_tools\/lice_slideshow\/photolibrary_rm_photo_of_boy_scratching_head.jpg","imgs":["http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg","http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/4cdbdb7209e2a99e.png"],"id":5,"status":"0000","update_dt":1510477716,"description":"写写写5","tour_area":"","rtype":"0000","nickname":"牧马人","create_dt":0,"tour_project":"","comment_count":0,"is_like":0,"title":"呃呃","tour_cate":"","user_id":1,"share_count":0,"like_count":0},{"headimg":"https:\/\/img.webmd.com\/dtmcms\/live\/webmd\/consumer_assets\/site_images\/articles\/health_tools\/lice_slideshow\/photolibrary_rm_photo_of_boy_scratching_head.jpg","imgs":["http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg"],"id":6,"status":"0000","update_dt":1510477710,"description":"写写写6","tour_area":"","rtype":"0000","nickname":"牧马人","create_dt":0,"tour_project":"","comment_count":0,"is_like":0,"title":"222 ","tour_cate":"","user_id":1,"share_count":0,"like_count":0},{"headimg":"https:\/\/img.webmd.com\/dtmcms\/live\/webmd\/consumer_assets\/site_images\/articles\/health_tools\/lice_slideshow\/photolibrary_rm_photo_of_boy_scratching_head.jpg","imgs":["http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg"],"id":2,"status":"0000","update_dt":1510477706,"description":"写写写1","tour_area":"","rtype":"0000","nickname":"牧马人","create_dt":0,"tour_project":"","comment_count":4,"is_like":0,"title":"纯纯粹粹","tour_cate":"","user_id":1,"share_count":0,"like_count":2},{"headimg":"https:\/\/img.webmd.com\/dtmcms\/live\/webmd\/consumer_assets\/site_images\/articles\/health_tools\/lice_slideshow\/photolibrary_rm_photo_of_boy_scratching_head.jpg","imgs":["http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg"],"id":1,"status":"0000","update_dt":1510477700,"description":"写写写2","tour_area":"","rtype":"0000","nickname":"牧马人","create_dt":0,"tour_project":"","comment_count":1,"is_like":1,"title":"吃吃吃","tour_cate":"","user_id":1,"share_count":0,"like_count":1},{"headimg":"https:\/\/img.webmd.com\/dtmcms\/live\/webmd\/consumer_assets\/site_images\/articles\/health_tools\/lice_slideshow\/photolibrary_rm_photo_of_boy_scratching_head.jpg","imgs":["http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg","http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/ee88704eae9a12e4.jpg"],"id":7,"status":"0000","update_dt":1510477695,"description":"OK的","tour_area":"","rtype":"0000","nickname":"牧马人","create_dt":1510383260,"tour_project":"","comment_count":0,"is_like":0,"title":"得到的","tour_cate":"","user_id":1,"share_count":0,"like_count":0}]},"code":0}
-    // }
+    // },
+    // FETCH_EAT_POST_DETAIL:{
+    //     fetching: 0,
+    //     response: {"msg":"","data":{"headimg":"https:\/\/img.webmd.com\/dtmcms\/live\/webmd\/consumer_assets\/site_images\/articles\/health_tools\/lice_slideshow\/photolibrary_rm_photo_of_boy_scratching_head.jpg","imgs":["http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/b1e1a745820f31be.jpg"],"id":2,"status":"0000","is_follow":0,"update_dt":1510477706,"description":"写写写1","tour_area":"","rtype":"0000","nickname":"牧马人","create_dt":0,"tour_project":"","comment_count":4,"is_like":0,"title":"纯纯粹粹","tour_cate":"","comments":[{"comment":"a4发多少测测试","opt_id":2,"creat_dt":"1508290886","status":"0000","rtype":"0000","user_id":1,"id":12},{"comment":"a4发多少测测试","opt_id":2,"creat_dt":"1508254502","status":"0000","rtype":"0000","user_id":1,"id":11},{"comment":"a4发多少测测试","opt_id":2,"creat_dt":"1508254445","status":"0000","rtype":"0000","user_id":1,"id":10},{"comment":"a4发多少测测试","opt_id":2,"creat_dt":"1508253696","status":"0000","rtype":"0000","user_id":1,"id":4},{"comment":"a4发多少测测试","opt_id":2,"creat_dt":"1508253690","status":"0000","rtype":"0000","user_id":1,"id":3}],"user_id":1,"share_count":0,"like_count":2},"code":0}
+    // },
 }
 export const PostList = (props) => {
     const { list, me } = props
@@ -108,7 +112,7 @@ export const PostList = (props) => {
     return (
         <div className="list">
             {
-                list.map((d={imgs:[]},i)=>(
+                list.map((d={ imgs:[] },i)=>(
                     <div key={i}>
                         <div className="item">
                             <div className="avatar-name">
@@ -141,24 +145,31 @@ export const PostList = (props) => {
     )
 }
 export const PostDetail  = (props) => {
-    const { isVideoPost = false, isImagePost = false } = props
+    const { 
+        isVideoPost = false, 
+        isImagePost = false, 
+        d = {
+            imgs:[]
+        },
+        me,
+    } = props
     return (
         <div>
             {
                 isVideoPost ? (<video src="//v.xiaohongshu.com/ljeahFnueWK2AxUEWbYskA94oKzW" controls="controls" playsInline="true" poster="http://ci.xiaohongshu.com/3156aeaf-745a-4770-942a-e660431dc5d5@r_640w_640h.jpg">您的浏览器不支持 video 标签。</video>) : null
             }
             <div className="toper">
-                <div className="title">强烈推荐徐家汇的这家日料</div>
+                <div className="title">{d.title}</div>
                 <div className="heder">
-                    <div className="follow"><span>+</span>关注</div>
-                    <img src={"https://img.xiaohongshu.com/avatar/59cfbaecb46c5d515aa83eee.jpg@80w_80h_90q_1e_1c_1x.jpg"} />
-                    <div className="nickname">人气小登登</div>
-                    <div className="create">2017-09-29</div>
+                    <div className="follow" onClick={me.handleFollow.bind(me, d.user_id)}><span>+</span>关注</div>
+                    <img src={d.headimg} />
+                    <div className="nickname">{d.nickname}</div>
+                    <div className="create">{d.create_dt||d.update_dt}</div>
                 </div>
                 {
-                    isImagePost ? (<div className="icon cover" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}></div>) : null
+                    isImagePost ? (<div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>) : null
                 }
-                <div className="text">我也想有一个酱紫比男朋友还暖心的大金毛🌀感动到最后一个竟然笑了 太可爱🌀别人家的狗😂 我们家的四只泰迪我撞死了都跟他们没关系，有人喂饭就好了</div>
+                <div className="text">{d.description}</div>
             </div>
         </div>
         
@@ -175,13 +186,13 @@ export const CommentList = (props) => {
             <div className="clearboth thinner-border"></div>
             <ul className="comment-list">
                 {
-                    list.map((d,i)=>(
+                    list.map((d = {},i)=>(
                         <li key={i}>
                             <img src={"https://img.xiaohongshu.com/avatar/59cfbaecb46c5d515aa83eee.jpg@80w_80h_90q_1e_1c_1x.jpg"} />
-                            <div className="create">3分钟前</div> 
+                            <div className="create">{misc.formatTime(d.creat_dt*1000,2)}</div> 
                             <div className="nicktext">
                                 <div className="nick">圣保罗爷爷</div>
-                                <div className="text">火箭上升至西部第一</div>
+                                <div className="text">{d.comment}</div>
                             </div>
                             <div className="clearboth thinner-border"></div>
                         </li>
@@ -193,14 +204,18 @@ export const CommentList = (props) => {
     )
 }
 export const CommentFixed = (props) => {
-    const { handleShowCreateComment, handleLike } = props
+    const { 
+        handleShowCreateComment,
+        handleLike,
+        d = {}, 
+    } = props
     return (
         <div className="fixed-footer">
             <div className="clearboth thinner-border"></div>
             <div className="text" onClick={handleShowCreateComment}>想搭讪，先评论</div>
-            <div className="good-box" onClick={handleLike}>
+            <div className={classnames({'good-box':true, active:d.is_like})} onClick={handleLike}>
                 <i className="icon"></i>
-                <span>261</span>
+                <span>{d.like_count}</span>
             </div>
         </div>
     )
