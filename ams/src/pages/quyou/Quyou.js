@@ -9,11 +9,14 @@ import Sign from '../../components/Sign/'
 import Spin from '../../components/Spin/'
 import SelectBox from '../../components/SelectBox/'
 import FilterBox from '../../components/FilterBox/'
+import StarsShow from '../../components/StarsShow/'
 import avatar_url from '../../images/quyou/icon/avatar.png'
 import play from '../../images/quyou/icon/play.png'
 window.avatar_url=avatar_url
 window.play=play
 export class Quyou extends React.Component{ // 公共模板
+    limit=3
+    page=0
     api={
         // host:`https://api.github.com`
         host:`http://qyadmin.weichongming.com/peanut`
@@ -79,6 +82,7 @@ Quyou.contextTypes={
 }
 window.React=React
 window.Quyou=Quyou
+window.StarsShow=StarsShow
 window.TouchSlideBox=TouchSlideBox
 window.LazyLoad=LazyLoad
 window.Mask=Mask
@@ -93,6 +97,8 @@ window.TYPES={
     FETCH_EAT_INDEX:`FETCH_EAT_INDEX`,
     FETCH_EAT_POST_LIST:`FETCH_EAT_POST_LIST`,
     FETCH_EAT_POST_DETAIL:`FETCH_EAT_POST_DETAIL`,
+    FETCH_EAT_FOOD_LIST:`FETCH_EAT_FOOD_LIST`,
+    FETCH_EAT_FOOD_DETAIL:`FETCH_EAT_FOOD_DETAIL`,
 }
 window.APIS={
     API_MY_PROFILE:`/users/xiaomaido`,
@@ -101,6 +107,8 @@ window.APIS={
     API_EAT_POST_DETAIL:`/eatIndex/postDetail`,
     API_EAT_POST_COMMENT:`/eatIndex/postComment`,
     API_EAT_POST_LIKE:`/eatIndex/postLike`,
+    API_EAT_FOOD_LIST:`/eatIndex/foodSearch`,
+    API_EAT_FOOD_DETAIL:`/eatIndex/foodDetail`,
 }
 window.ResponseState={
     FETCH_MY_PROFILE:{
@@ -190,10 +198,11 @@ export const PostDetail  = (props) => {
     )
 }
 export const CommentList = (props) => {
-    const {
+    let {
         total = 0,
         list = [],
     } = props
+    list = Array.isArray(list) ? list : []
     return (
         <div className="comment-necker" id="comment-necker">
             <div className="comment-title">用户评论 ({total})</div>
@@ -238,16 +247,19 @@ export const CommentFixed = (props) => {
     )
 }
 export const Intro = (props) => {
-    const { needCover = false } = props
+    const { 
+        needCover = false,
+        data = {},
+    } = props
     return (
         <div className="shop-header">
             <div className="header-box">
                 <div className="thin-border-verical-box">
                     <div className="thin-border-verical"></div>
                 </div>
-                <a href="tel:15601963619" className="icon phone"></a>
-                <div className="name"><i className="icon" />【乐凯普面包烘焙】</div>
-                <div className="address"><i className="icon" />城桥镇南门路37弄18号</div>
+                <a href={`tel:${data.phone}`} className="icon phone"></a>
+                <div className="name"><i className="icon" />【{data.name}】</div>
+                <div className="address"><i className="icon" />{data.addr1+data.addr2+data.addr3+data.detail}</div>
                 {
                     needCover ? (<div className="icon cover"></div>) : null
                 }

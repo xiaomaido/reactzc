@@ -620,8 +620,8 @@
                 float: left;
                 width: px2rem(240px);
                 height: px2rem(156px);
-                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
                 background-size: cover;
+                background-color: $color_e5;
             }
             .box{
                 float: left;
@@ -711,7 +711,7 @@
                 float: left;
                 width: px2rem(240px);
                 height: px2rem(156px);
-                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                background-color: $color_e5;
                 background-size: cover;
             }
             .box{
@@ -1019,6 +1019,7 @@
                                 width: px2rem(200px);
                                 height: px2rem(130px);
                                 background-size: cover;
+                                background-color: $color_e5;
                             }
                         }
                     }
@@ -1049,7 +1050,7 @@
                 float: left;
                 width: px2rem(240px);
                 height: px2rem(156px);
-                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                background-color: $color_e5;
                 background-size: cover;
             }
             .box{
@@ -1120,8 +1121,8 @@
         		outline: $color_cc solid 1px;
         		width: px2rem(654px);
         		height: px2rem(318px);
-        		background-size: cover;
-                background-image: url('http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg');
+                background-size: cover;
+                background-color: $color_e5;
         	}
         	.product{
         		color: $color_5d666e;
@@ -1218,6 +1219,7 @@
         width: 100%;
         height: px2rem(460px);
         background-size: cover;
+        background-color: $color_e5;
     }
     .publish{
         margin-top: px2rem(20px);
@@ -1430,8 +1432,8 @@
         .cover{
             margin-top: px2rem(32px);
             height: px2rem(208px);
-            background-image: url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg);
-            background-size: cover
+            background-size: cover;
+            background-color: $color_e5;
         }
     }
 }
@@ -1447,6 +1449,7 @@
     	padding: 0 px2rem(32px) 1rem;
     	.cover{
     		height: px2rem(332px);
+            background-color: $color_e5;
     		background-size: cover;
     		margin-top: px2rem(40px);
     	}
@@ -1548,12 +1551,12 @@
                 width: px2rem(650px);
                 height: px2rem(320px);
                 background-size: cover;
+                background-color: $color_e5;
                 i{
                     width: px2rem(90px);
                     height: px2rem(90px);
                     display: block;
                     margin: px2rem(115px) auto;
-                    // background-image: url('../../images/quyou/icon/play.png')
                 }
             }
             .dos{

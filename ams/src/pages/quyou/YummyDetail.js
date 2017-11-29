@@ -27,7 +27,7 @@ export default class Index extends Quyou{
 	}
     componentDidMount(){
 		const me = this
-        // const { FETCH_EAT_POST_DETAIL } = me.state
+        const { FETCH_EAT_POST_DETAIL } = me.state
         // if(TYPES.FETCH_EAT_POST_DETAIL in ResponseState){
         //     me.setState({
         //         FETCH_EAT_POST_DETAIL: ResponseState[TYPES.FETCH_EAT_POST_DETAIL]
@@ -45,15 +45,13 @@ export default class Index extends Quyou{
 			...params,
 			user_id:0,
 		},(response)=>{
-            ResponseState[TYPES.FETCH_EAT_POST_DETAIL]={
-                response,
-                fetching: 0
-            }
             me.setState({
-                FETCH_EAT_POST_DETAIL: ResponseState[TYPES.FETCH_EAT_POST_DETAIL]
+                FETCH_EAT_POST_DETAIL: {
+					response,
+					fetching: 0
+				}
             })
         })
-		
 	}
 	handleLike(e){
 		const me = this
