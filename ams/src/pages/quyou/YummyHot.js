@@ -90,7 +90,7 @@ const Content = (props) => {
     } = response.data
     return (
         <div className="yummy-hot"> 
-            <PostList list={data} me={me} />
+            <PostList list={data} me={me} isImagePost={true} />
         </div>
     )
 } 

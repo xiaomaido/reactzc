@@ -1,4 +1,3 @@
-
 import banner from '../../images/quyou/banner/shophot.png'
 const initStateResponse = {
 	data: {

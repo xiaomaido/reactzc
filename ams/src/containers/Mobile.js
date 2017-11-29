@@ -84,7 +84,6 @@ window.pageMapRoute={
 	},
 	fooddetail: {
 		url:'/foodhot/:id',
-		// url:'/fooddetail',
 		page:Pages.FoodDetail
 	},
 	foodhot: {
@@ -95,14 +94,6 @@ window.pageMapRoute={
 		url:'/seasonhot',
 		page:Pages.SeasonHot
 	},
-	yummydetail: {
-		url:'/yummyhot/:id',
-		page:Pages.YummyDetail
-	},
-	yummyhot: {
-		url:'/yummyhot',
-		page:Pages.YummyHot
-	},
 	videodetail: {
 		url:'/videohot/:id',
 		page:Pages.VideoDetail
@@ -110,6 +101,14 @@ window.pageMapRoute={
 	videohot: {
 		url:'/videohot',
 		page:Pages.VideoHot
+	},
+	yummydetail: {
+		url:'/yummyhot/:id',
+		page:Pages.YummyDetail
+	},
+	yummyhot: {
+		url:'/yummyhot',
+		page:Pages.YummyHot
 	},
 	query: {
 		url:'/query',

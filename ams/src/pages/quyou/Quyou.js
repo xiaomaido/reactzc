@@ -18,7 +18,6 @@ export class Quyou extends React.Component{ // 公共模板
     limit=3
     page=0
     api={
-        // host:`https://api.github.com`
         host:`http://qyadmin.weichongming.com/peanut`
     }
 	componentWillMount(){
@@ -70,6 +69,8 @@ export class Quyou extends React.Component{ // 公共模板
     render(){
         return (
             <div className="quyou-base">
+                {/* <SelectBox /> */}
+                {/* <FilterBox /> */}
                 {
                     this.renderContent()
                 }
@@ -95,6 +96,8 @@ window.fetch=fetch
 window.TYPES={
     FETCH_MY_PROFILE:`FETCH_MY_PROFILE`,
     FETCH_EAT_INDEX:`FETCH_EAT_INDEX`,
+    FETCH_EAT_MEDIA_LIST:`FETCH_EAT_MEDIA_LIST`,
+    FETCH_EAT_MEDIA_DETAIL:`FETCH_EAT_MEDIA_DETAIL`,
     FETCH_EAT_POST_LIST:`FETCH_EAT_POST_LIST`,
     FETCH_EAT_POST_DETAIL:`FETCH_EAT_POST_DETAIL`,
     FETCH_EAT_FOOD_LIST:`FETCH_EAT_FOOD_LIST`,
@@ -105,6 +108,8 @@ window.TYPES={
 window.APIS={
     API_MY_PROFILE:`/users/xiaomaido`,
     API_EAT_INDEX:`/eatIndex/index`,
+    API_EAT_MEDIA_LIST:`/eatIndex/recMediaList`,
+    API_EAT_MEDIA_DETAIL:`/eatIndex/recMediaDetail`,
     API_EAT_POST_LIST:`/eatIndex/postList`,
     API_EAT_POST_DETAIL:`/eatIndex/postDetail`,
     API_EAT_POST_COMMENT:`/eatIndex/postComment`,
@@ -121,7 +126,12 @@ window.ResponseState={
     },
 }
 window.PostList = (props) => {
-    const { list, me } = props
+    const {
+        isVideoPost = false, 
+        isImagePost = false, 
+        list, 
+        me,
+    } = props
     const { pathname } = _location
     return (
         <div className="list">
@@ -134,7 +144,7 @@ window.PostList = (props) => {
                                 <span>{d.nickname}</span>
                             </div>
                             <div className="content" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>{d.description}</div>
-                            <div className="icon cover" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)} style={{backgroundImage:`url(${d.imgs[0]})`}}>
+                            <div className="icon cover" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)} style={{backgroundImage:`url(${isVideoPost?d.media:d.imgs[0]})`}}>
                                 {
                                     ~pathname.indexOf('video') ? <i className="icon play" style={{backgroundImage:`url(${play})`}} /> : null
                                 }
