@@ -1,4 +1,3 @@
-import { CommentFixed, CommentList, Intro } from './Quyou'
 const initStateResponse = {
 	data: {
         stag_names: [],
@@ -23,11 +22,10 @@ export default class Index extends Quyou{
 		isLike: false,
 	}
 	renderContent(){
-        document.title='商家信息'
+        document.title='美食信息'
         const me = this
         const { fetching, response = initStateResponse } = me.state.FETCH_EAT_FOOD_DETAIL
         return fetching ? <Spin /> : <Content response={response} me={me} />
-        // return <Content response={response} me={me} />
     }
     componentDidMount(){
         const me = this
@@ -99,154 +97,8 @@ export default class Index extends Quyou{
 }
 const Content = (props) => {
     const { response, me } = props
-    var o = {
-        "msg": "",
-        "data": {
-            "custom_avg": 20,
-            "id": 5,
-            "tags": [
-                1,
-                2,
-                3
-            ],
-            "has_promotion": "1",
-            "description": "有啥不一样",
-            "seller_info": {
-                "imgs": [
-                    "http://sfmimg.b0.upaiyun.com/prod_00/b1e1a745820f31be.jpg"
-                ],
-                "custom_avg": 20,
-                "id": 1,
-                "tags": [
-                    2,
-                    3
-                ],
-                "status": "0000",
-                "extraAddr": "阳光",
-                "description": "",
-                "geoinfo": "(5,2)",
-                "detail": "434号",
-                "stags": {},
-                "name": "珍奶会所",
-                "area": 0,
-                "comment_count": 2,
-                "rtype": "0000",
-                "addr1": "崇明区",
-                "has_promotion": "1",
-                "addr3": "八二路",
-                "sale_count": 0,
-                "phone": "17321066362",
-                "addr2": "城桥镇",
-                "like_count": 1
-            },
-            "stags": [
-                4,
-                5,
-                6
-            ],
-            "images": [
-                "http://img01",
-                "http://03.jpg"
-            ],
-            "products": {},
-            "comments": [
-                {
-                    "comment": "ddd",
-                    "opt_id": 5,
-                    "creat_dt": "1511885748",
-                    "status": "0000",
-                    "rtype": "0010",
-                    "user_id": 1,
-                    "id": 40
-                },
-                {
-                    "comment": "ddd",
-                    "opt_id": 5,
-                    "creat_dt": "1511885733",
-                    "status": "0000",
-                    "rtype": "0010",
-                    "user_id": 1,
-                    "id": 39
-                },
-                {
-                    "comment": "ddd",
-                    "opt_id": 5,
-                    "creat_dt": "1511885514",
-                    "status": "0000",
-                    "rtype": "0010",
-                    "user_id": 1,
-                    "id": 38
-                },
-                {
-                    "comment": "ddd",
-                    "opt_id": 5,
-                    "creat_dt": "1511885412",
-                    "status": "0000",
-                    "rtype": "0010",
-                    "user_id": 1,
-                    "id": 37
-                }
-            ],
-            "stag_names": [
-                {
-                    "createtime": 0,
-                    "id": 4,
-                    "mode": "0000",
-                    "status": "0",
-                    "tagname": "回头客多"
-                },
-                {
-                    "createtime": 1509292298,
-                    "id": 6,
-                    "mode": "0001",
-                    "status": "0",
-                    "tagname": "专属"
-                },
-                {
-                    "createtime": 1509292257,
-                    "id": 5,
-                    "mode": "0000",
-                    "status": "0",
-                    "tagname": "蛋糕"
-                }
-            ],
-            "comment_count": 4,
-            "is_like": 0,
-            "title": "人气美食",
-            "status": "1",
-            "star_count": 4,
-            "tag_names": [
-                {
-                    "createtime": 0,
-                    "id": 1,
-                    "mode": "0000",
-                    "status": "0",
-                    "tagname": "中餐"
-                },
-                {
-                    "createtime": 0,
-                    "id": 2,
-                    "mode": "0000",
-                    "status": "0",
-                    "tagname": "农家乐"
-                },
-                {
-                    "createtime": 0,
-                    "id": 3,
-                    "mode": "0000",
-                    "status": "0",
-                    "tagname": "地方特色"
-                }
-            ],
-            "seller_id": 1,
-            "rec_desc": "3元一个 5元两个",
-            "like_count": 1
-        },
-        "code": 0
-    }
     const { data = {}  } = response
     const { showCreateComment, textOkay, textPlaceholder } = me.state
-    
     return data.id ? (
         <div className="shop-detail food-detail">
             <div className="fooder">

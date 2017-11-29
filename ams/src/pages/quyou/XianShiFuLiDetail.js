@@ -1,4 +1,3 @@
-import { Intro } from './Quyou'
 export default class Index extends Quyou{
 	render(){
         document.title='限时福利'

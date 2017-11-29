@@ -1,4 +1,3 @@
-import { CommentFixed, CommentList, PostDetail } from './Quyou'
 export default class Index extends Quyou{
 	state = {
 		showCreateComment: false,

@@ -1,4 +1,3 @@
-import { PostList } from './Quyou'
 const initStateResponse = {
 	data: {
         "count": 0,

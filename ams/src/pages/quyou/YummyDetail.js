@@ -1,4 +1,3 @@
-import { CommentFixed, CommentList, PostDetail } from './Quyou'
 const initStateResponse = {
 	data: {
 		comment_count: 0, 

@@ -21,7 +21,7 @@ export default class Index extends Quyou{
 			<div className="food-hot">
                 <img className="banner" src={banner} />
                 {
-                    fetching ? <Spin /> : <FoodList response={response} me={this} />
+                    fetching ? <Spin /> : <List response={response} me={me} />
                 }
             </div>
         )
@@ -33,7 +33,7 @@ export default class Index extends Quyou{
         //         <div id="touchstart"></div>
         //         <div id="touchend"></div>
         //         {
-        //             FETCH_EAT_FOOD_LIST.fetching ? <FoodList list={FETCH_EAT_FOOD_LIST.response.datas} me={this} /> : <Spin />
+        //             FETCH_EAT_FOOD_LIST.fetching ? <List list={FETCH_EAT_FOOD_LIST.response.datas} me={this} /> : <Spin />
         //         }
         //     </div>
 		// )
@@ -41,20 +41,6 @@ export default class Index extends Quyou{
     componentDidMount(){
         const me = this
         me.requestList(me)
-
-        // let { FETCH_EAT_FOOD_LIST } = this.state
-        // FETCH_EAT_FOOD_LIST={
-        //     ...FETCH_EAT_FOOD_LIST,
-        //     fetching: 1,
-        //     response: {
-        //         datas: Array.apply(null,{length:5})
-        //     },
-        // }
-        // setTimeout(()=>{
-        //     this.setState({
-        //         FETCH_EAT_FOOD_LIST
-        //     })
-        // }, 500)
         // window.onscroll = () => { 
         //     if(!getScrollTop()){
         //         const touch = (event) => {  
@@ -129,7 +115,7 @@ export default class Index extends Quyou{
         })
     }
 }
-const FoodList = (props) => {
+const List = (props) => {
     const { response, me } = props
     const { 
         data = [],

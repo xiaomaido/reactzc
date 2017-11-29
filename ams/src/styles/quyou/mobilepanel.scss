@@ -1073,6 +1073,8 @@
                         width: px2rem(18px);
                         height: px2rem(22px);
                         margin-right: px2rem(10px);
+                        background-image: url('../../images/quyou/icon/addr.png')
+                        
                     }
                 }
                 .shop-sns{
@@ -1091,6 +1093,18 @@
                             height: px2rem(30px);
                             margin-right: px2rem(12px);
                         }
+                        i.good{
+                            background-image: url('../../images/quyou/icon/good.png')
+                        } 
+                        i.good.active{
+                            background-image: url('../../images/quyou/icon/good-active.png')
+                        } 
+                        i.comment{
+                            background-image: url('../../images/quyou/icon/comment.png')
+                        } 
+                        i.collect{
+                            background-image: url('../../images/quyou/icon/collect.png')
+                        }                             
                     }
                 }
             }
