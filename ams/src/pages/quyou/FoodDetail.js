@@ -10,9 +10,11 @@ const initStateResponse = {
 	}
 }
 const initTextOkay='发布'
+const API_PAGE = APIS.API_EAT_FOOD_DETAIL
+const FETCH_PAGE = TYPES.FETCH_EAT_FOOD_DETAIL
 export default class Index extends Quyou{
     state = {
-        FETCH_EAT_FOOD_DETAIL:{
+        [FETCH_PAGE]:{
             response: initStateResponse
         },
 		showCreateComment: false,
@@ -24,25 +26,24 @@ export default class Index extends Quyou{
 	renderContent(){
         document.title='美食信息'
         const me = this
-        const { fetching, response = initStateResponse } = me.state.FETCH_EAT_FOOD_DETAIL
+        const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
         return fetching ? <Spin /> : <Content response={response} me={me} />
     }
     componentDidMount(){
         const me = this
-        const { FETCH_EAT_FOOD_DETAIL } = me.state
         me.setState({
-            FETCH_EAT_FOOD_DETAIL: {
-                ...FETCH_EAT_FOOD_DETAIL,
+            [FETCH_PAGE]: {
+                ...me.state[FETCH_PAGE],
                 fetching: 1,
             }
 		})
 		const { params } = me.props
-        me.requestAPI(APIS.API_EAT_FOOD_DETAIL,{
+        me.requestAPI(API_PAGE,{
 			...params,
 			user_id:0,
 		},(response)=>{
             me.setState({
-                FETCH_EAT_FOOD_DETAIL: {
+                [FETCH_PAGE]: {
                     response,
                     fetching: 0
                 }

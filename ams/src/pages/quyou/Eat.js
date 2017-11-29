@@ -1,9 +1,11 @@
 import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
+const API_PAGE = APIS.API_EAT_INDEX
+const FETCH_PAGE = TYPES.FETCH_EAT_INDEX
 export default class Index extends Quyou{
     state={
-        FETCH_EAT_INDEX:{
+        [FETCH_PAGE]:{
             response: {
                 data: { }
             }
@@ -12,31 +14,23 @@ export default class Index extends Quyou{
 	renderContent(){
         document.title='趣游崇明'
         const me = this
-        const { fetching, response = { data: { } } } = me.state.FETCH_EAT_INDEX
+        const { fetching, response = { data: { } } } = me.state[FETCH_PAGE]
 		return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)
     }
     componentDidMount(){
         const me = this
-        const { FETCH_EAT_INDEX } = me.state
-        if(TYPES.FETCH_EAT_INDEX in ResponseState){
-            me.setState({
-                FETCH_EAT_INDEX: ResponseState[TYPES.FETCH_EAT_INDEX]
-            })
-            return false
-        }
         me.setState({
-            FETCH_EAT_INDEX: {
-                ...FETCH_EAT_INDEX,
+            [FETCH_PAGE]: {
+                ...me.state[FETCH_PAGE],
                 fetching: 1,
             }
         })
-        me.requestAPI(APIS.API_EAT_INDEX,{},(response)=>{
-            ResponseState[TYPES.FETCH_EAT_INDEX]={
-                response,
-                fetching: 0
-            }
+        me.requestAPI(API_PAGE,{},(response)=>{
             me.setState({
-                FETCH_EAT_INDEX: ResponseState[TYPES.FETCH_EAT_INDEX]
+                [FETCH_PAGE]: {
+                    response,
+                    fetching: 0
+                }
             })
         })
     }

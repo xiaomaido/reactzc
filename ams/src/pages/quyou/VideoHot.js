@@ -5,70 +5,42 @@ const initStateResponse = {
         "data": [],
     }
 }
+const API_PAGE = APIS.API_EAT_MEDIA_LIST
+const FETCH_PAGE = TYPES.FETCH_EAT_MEDIA_LIST
 export default class Index extends Quyou{
     state={
-        FETCH_EAT_MEDIA_LIST:{
+        [FETCH_PAGE]:{
             response: initStateResponse
         }
     }
 	renderContent(){
         document.title='视频推荐'
         const me = this
-        const { fetching, response = initStateResponse } = me.state.FETCH_EAT_MEDIA_LIST
-        return (
-            <div className="yummy-hot"> 
-                {
-                    fetching ? <Spin /> : <Content response={response} me={me} />
-                }
-            </div>
-        )
+        const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
+        return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)
     }
     componentDidMount(){
         const me = this
-        me.requestList(me)
-    }
-    requestList(me){
-        const { FETCH_EAT_MEDIA_LIST } = me.state
-        if(me.page === 0) {
-            me.setState({
-                FETCH_EAT_MEDIA_LIST: {
-                    ...FETCH_EAT_MEDIA_LIST,
-                    fetching: 1,
-                }
-            })
-        }
-        me.requestAPI(APIS.API_EAT_MEDIA_LIST,{
-            limit: me.limit,
-            offset: me.limit * me.page
-        },(response)=>{
-            if(me.page === 0) {
-                me.setState({
-                    FETCH_EAT_MEDIA_LIST: {
-                        response,
-                        fetching: 0
-                    }
-                })
-                return
-            }
-            const { FETCH_EAT_MEDIA_LIST } = me.state
-            FETCH_EAT_MEDIA_LIST.response.data.data = [
-                ...FETCH_EAT_MEDIA_LIST.response.data.data,
-                ...response.data.data,
-            ]
-            FETCH_EAT_MEDIA_LIST.fetching = 0
-            me.setState({
-                FETCH_EAT_MEDIA_LIST,
-            })
-        })
+        me.requestList(me,FETCH_PAGE,API_PAGE)
     }
     doGood(e){
         alert('点赞成功')
     }
 }
+
 const Content = (props) => {
     const { response, me } = props
-    const { 
+    let { 
+        count = 0,
         data = [],
     } = response.data
-    return data.length ? <PostList list={data} me={me} isVideoPost={true} /> :null
-} 
+    data = Array.isArray(data) ? data : []
+    return (
+        <div className="yummy-hot"> 
+            <PostList list={data} me={me} isVideoPost={true} />
+            {
+                me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
+            }
+        </div>
+    )
+}  

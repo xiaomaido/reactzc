@@ -1,29 +1,72 @@
-export default class Index extends Quyou{
-	render(){
-        document.title='限时福利'
-        const { id } = this.props.params
-        // {id: "134"}
-        const cover = `http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg`
-		return (
-			<div className="xian-shi-fu-li-detail">
-                <div className="fixed-footer-xian-shi">
-                    <div className="left">
-                        <div className="clearboth thinner-border"></div>
-                        <div className="price">￥24.9<span>￥36.9</span></div>
-                    </div>
-                    <div className="right">抢购</div>
-                </div>
-                <div className="icon cover" style={{backgroundImage: `url(${cover})`}}></div>
-                <div className="fu-li">
-                    <div className="name">[星冰乐] 奶茶买一送一</div>
-                    <div className="remain">剩余<span>518</span></div>
-                </div>
-                <Intro />
-                <div className="publish">
-                    <div className="title">抢购须知</div>
-                    <div className="clearboth thinner-border"></div>
-                </div>                
-            </div>
-		)
+const initStateResponse = {
+	data: {
+        imgs: [],
+        seller_info: {},
+		is_like: 0,
+        like_count: 0,
 	}
+}
+const API_PAGE = APIS.API_EAT_TIME_DETAIL
+const FETCH_PAGE = TYPES.FETCH_EAT_TIME_DETAIL
+export default class Index extends Quyou{
+    state={
+        [FETCH_PAGE]:{
+            response: initStateResponse
+        }
+    }
+	renderContent(){
+        document.title='限时福利'
+        const me = this
+        const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
+        return fetching ? <Spin /> : <Content response={response} me={me} />
+    }
+    componentDidMount(){
+        const me = this
+        me.setState({
+            [FETCH_PAGE]: {
+                ...me.state[FETCH_PAGE],
+                fetching: 1,
+            }
+		})
+		const { params } = me.props
+        me.requestAPI(API_PAGE,{
+			...params,
+		},(response)=>{
+            me.setState({
+                [FETCH_PAGE]: {
+                    response,
+                    fetching: 0
+                }
+            })
+        })
+    }
+}
+
+
+const Content = (props) => {
+    const { response, me } = props
+    const { data = { imgs: [] }  } = response
+    const cover = `http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg`
+    return data.id ? (
+        <div className="xian-shi-fu-li-detail">
+            <div className="fixed-footer-xian-shi">
+                <div className="left">
+                    <div className="clearboth thinner-border"></div>
+                    <div className="price">￥{me.centToYuan(data.realPrice)}<span>￥{me.centToYuan(data.mallPrice)}</span></div>
+                </div>
+                <div className="right">抢购</div>
+            </div>
+            <div className="icon cover" style={{backgroundImage: `url(${data.imgs[0]})`}}></div>
+            <div className="fu-li">
+                <div className="name">[{data.name}] {data.title}</div>
+                <div className="remain">剩余<span>{data.stock}</span></div>
+            </div>
+            <Intro data={data.seller_info} />
+            <div className="publish">
+                <div className="title">抢购须知</div>
+                <div className="clearboth thinner-border"></div>
+                <div>{data.rule}</div>
+            </div>                
+        </div>
+    ) : null
 }

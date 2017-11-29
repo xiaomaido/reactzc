@@ -1,22 +1,23 @@
 
 import banner from '../../images/quyou/banner/foodhot.png'
-import good from '../../images/quyou/icon/good.png'
 const initStateResponse = {
 	data: {
         "count": 0,
         "data": [],
     }
 }
+const API_PAGE = APIS.API_EAT_FOOD_LIST
+const FETCH_PAGE = TYPES.FETCH_EAT_FOOD_LIST
 export default class Index extends Quyou{
     state={
-        FETCH_EAT_FOOD_LIST:{
+        [FETCH_PAGE]:{
             response: initStateResponse
         }
     }
 	renderContent(){
         document.title='人气美食'
         const me = this
-        const { fetching, response = initStateResponse } = me.state.FETCH_EAT_FOOD_LIST
+        const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
         return (
 			<div className="food-hot">
                 <img className="banner" src={banner} />
@@ -81,22 +82,21 @@ export default class Index extends Quyou{
         // }
     }
     requestList(me){
-        const { FETCH_EAT_FOOD_LIST } = me.state
         if(me.page === 0) {
             me.setState({
-                FETCH_EAT_FOOD_LIST: {
-                    ...FETCH_EAT_FOOD_LIST,
+                [FETCH_PAGE]: {
+                    ...me.state[FETCH_PAGE],
                     fetching: 1,
                 }
             })
         }
-        me.requestAPI(APIS.API_EAT_FOOD_LIST,{
+        me.requestAPI(API_PAGE,{
             limit: me.limit,
             offset: me.limit * me.page
         },(response)=>{
             if(me.page === 0) {
                 me.setState({
-                    FETCH_EAT_FOOD_LIST: {
+                    [FETCH_PAGE]: {
                         response,
                         fetching: 0
                     }

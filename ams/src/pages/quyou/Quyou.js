@@ -5,6 +5,7 @@ import LazyLoad from 'react-lazyload'
 import Mask from '../../components/Mask/'
 import TouchSlideBox from '../../components/TouchSlideBox/'
 import CreateComment from '../../components/CreateComment/'
+import NoMoreData from '../../components/NoMoreData/'
 import Sign from '../../components/Sign/'
 import Spin from '../../components/Spin/'
 import SelectBox from '../../components/SelectBox/'
@@ -19,6 +20,9 @@ export class Quyou extends React.Component{ // 公共模板
     page=0
     api={
         host:`http://qyadmin.weichongming.com/peanut`
+    }
+    centToYuan(cent){
+        return cent/100
     }
 	componentWillMount(){
         window.onscroll=null
@@ -77,12 +81,59 @@ export class Quyou extends React.Component{ // 公共模板
             </div>
         )
     }
+    scrollLoadMore(me,FETCH_PAGE,API_PAGE){
+        window.onscroll = () => {
+            if (getScrollTop() + getClientHeight() == getScrollHeight()) { 
+                const { count } = me.state[FETCH_PAGE].response.data
+                if(me.page >= Math.floor(count/me.limit)-1){
+                    window.onscroll=null
+                    return
+                }
+                ++me.page
+                me.requestList(me,FETCH_PAGE,API_PAGE)
+            }
+        }
+    }
+    requestList(me,FETCH_PAGE,API_PAGE){
+        me.scrollLoadMore(me,FETCH_PAGE,API_PAGE)
+        if(me.page === 0) {
+            me.setState({
+                [FETCH_PAGE]: {
+                    ...me.state[FETCH_PAGE],
+                    fetching: 1,
+                }
+            })
+        }
+        me.requestAPI(API_PAGE,{
+            limit: me.limit,
+            offset: me.limit * me.page
+        },(response)=>{
+            if(me.page === 0) {
+                me.setState({
+                    [FETCH_PAGE]: {
+                        response,
+                        fetching: 0
+                    }
+                })
+                return
+            }
+            const FETCH_TEMP = me.state[FETCH_PAGE]
+            FETCH_TEMP.response.data.data = [
+                ...FETCH_TEMP.response.data.data,
+                ...response.data.data,
+            ]
+            me.setState({
+                [FETCH_PAGE]: FETCH_TEMP
+            })
+        })
+    }
 }
 Quyou.contextTypes={
 	router: PropTypes.object
 }
 window.React=React
 window.Quyou=Quyou
+window.NoMoreData=NoMoreData
 window.StarsShow=StarsShow
 window.TouchSlideBox=TouchSlideBox
 window.LazyLoad=LazyLoad
@@ -102,8 +153,10 @@ window.TYPES={
     FETCH_EAT_POST_DETAIL:`FETCH_EAT_POST_DETAIL`,
     FETCH_EAT_FOOD_LIST:`FETCH_EAT_FOOD_LIST`,
     FETCH_EAT_FOOD_DETAIL:`FETCH_EAT_FOOD_DETAIL`,
-    FETCH_EAT_SHOP_LIST:`FETCH_EAT_SELLER_LIST`,
-    FETCH_EAT_SHOP_DETAIL:`FETCH_EAT_SELLER_DETAIL`,
+    FETCH_EAT_SHOP_LIST:`FETCH_EAT_SHOP_LIST`,
+    FETCH_EAT_SHOP_DETAIL:`FETCH_EAT_SHOP_DETAIL`,
+    FETCH_EAT_TIME_LIST:`FETCH_EAT_TIME_LIST`,
+    FETCH_EAT_TIME_DETAIL:`FETCH_EAT_TIME_DETAIL`,
 }
 window.APIS={
     API_MY_PROFILE:`/users/xiaomaido`,
@@ -118,6 +171,8 @@ window.APIS={
     API_EAT_FOOD_DETAIL:`/eatIndex/foodDetail`,
     API_EAT_SHOP_LIST:`/eatIndex/sellerSearch`,
     API_EAT_SHOP_DETAIL:`/eatIndex/sellerDetail`,
+    API_EAT_TIME_LIST:`/eatIndex/timeBenefitsList`,
+    API_EAT_TIME_DETAIL:`/eatIndex/timeBenefitsDetail`,
 }
 window.ResponseState={
     FETCH_MY_PROFILE:{
@@ -161,7 +216,7 @@ window.PostList = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="clearboth thinner-border"></div>
+                        <div className="clearboth"></div>
                     </div>
                 ))
             }
