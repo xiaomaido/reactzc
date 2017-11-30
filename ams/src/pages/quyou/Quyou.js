@@ -16,6 +16,8 @@ import play from '../../images/quyou/icon/play.png'
 window.avatar_url=avatar_url
 window.play=play
 export class Quyou extends React.Component{ // 公共模板
+    initTextOkay='发布'
+    user_id=2
     limit=3
     page=0
     api={
@@ -71,12 +73,13 @@ export class Quyou extends React.Component{ // 公共模板
         return null 
     }
     render(){
+        const me = this
         return (
             <div className="quyou-base">
                 {/* <SelectBox /> */}
                 {/* <FilterBox /> */}
                 {
-                    this.renderContent()
+                    me.renderContent()
                 }
             </div>
         )
@@ -84,8 +87,8 @@ export class Quyou extends React.Component{ // 公共模板
     scrollLoadMore(me,FETCH_PAGE,API_PAGE){
         window.onscroll = () => {
             if (getScrollTop() + getClientHeight() == getScrollHeight()) { 
-                const { count } = me.state[FETCH_PAGE].response.data
-                if(me.page >= Math.floor(count/me.limit)-1){
+                const { count = 0 } = me.state[FETCH_PAGE].response.data
+                if(me.page >= Math.ceil(count/me.limit)-1){
                     window.onscroll=null
                     return
                 }
@@ -96,19 +99,20 @@ export class Quyou extends React.Component{ // 公共模板
     }
     requestList(me,FETCH_PAGE,API_PAGE){
         me.scrollLoadMore(me,FETCH_PAGE,API_PAGE)
-        if(me.page === 0) {
+        const { state, page, limit } = me
+        if(page === 0) {
             me.setState({
                 [FETCH_PAGE]: {
-                    ...me.state[FETCH_PAGE],
+                    ...state[FETCH_PAGE],
                     fetching: 1,
                 }
             })
         }
         me.requestAPI(API_PAGE,{
-            limit: me.limit,
-            offset: me.limit * me.page
+            limit,
+            offset: limit * page
         },(response)=>{
-            if(me.page === 0) {
+            if(page === 0) {
                 me.setState({
                     [FETCH_PAGE]: {
                         response,
@@ -127,6 +131,110 @@ export class Quyou extends React.Component{ // 公共模板
             })
         })
     }
+    requestDetail(me,FETCH_PAGE,API_PAGE){
+        const { state, props, user_id } = me
+		const { params } = props
+        me.setState({
+            [FETCH_PAGE]: {
+                ...state[FETCH_PAGE],
+                fetching: 1,
+            }
+		})
+        me.requestAPI(API_PAGE,{
+			...params,
+			user_id,
+		},(response)=>{
+            me.setState({
+                [FETCH_PAGE]: {
+                    response,
+                    fetching: 0
+                }
+            })
+        })
+    }
+	handleShowCreateComment(e){
+		const me = this
+		const { showCreateComment } = me.state
+		me.setState({
+			showCreateComment: !showCreateComment
+		})
+	}
+	handleChangeCreateComment(e){
+		const me = this
+		me.setState({
+			valueCreateComment: e.target.value
+		})
+	}
+	handleSaveCreateComment({ API_PAGE_COMMENT, FETCH_PAGE, ID }, e){
+        const me = this
+        const { state, initTextOkay, user_id } = me
+		const { valueCreateComment, textOkay } = state
+		const { params } = me.props
+		if(textOkay === initTextOkay && valueCreateComment) {
+			me.setState({
+				textOkay: `${initTextOkay}中...`,
+			})
+			me.requestAPI(API_PAGE_COMMENT,{
+				content: valueCreateComment,
+				[ID]: params.id,
+				user_id,
+			},(response)=>{
+				const { code = 0, data } = response
+				if(code || !data.id) {
+					me.setState({
+						textOkay: initTextOkay,
+					})
+					console.log('error')
+					return
+				}
+				const FETCH_TEMP = me.state[FETCH_PAGE]
+				FETCH_TEMP.response.data.comment_count += 1
+				FETCH_TEMP.response.data.comments.unshift(data)
+				me.setState({
+					[FETCH_PAGE]: FETCH_TEMP,
+					textOkay: initTextOkay,
+					isDoLike: false,
+					showCreateComment: false,
+					valueCreateComment: '',
+				})
+				window.scrollTo(0, document.getElementsByClassName('comment-title')[0].offsetTop-fontSize*2.2) // 回到第一个评论
+				// document.getElementsByClassName('comment-title')[0].scrollIntoView() // 回到第一个评论
+			})
+		}
+	}
+	handleLike({ API_PAGE_LIKE, FETCH_PAGE, ID }, e){
+        const me = this
+        const { state, props, user_id } = me
+		const { isDoLike } = state
+		const { params } = props
+		if(!isDoLike){
+			me.setState({
+				isDoLike: true,
+			})
+			me.requestAPI(API_PAGE_LIKE,{
+				[ID]: params.id,
+				user_id,
+			},(response)=>{
+				const { code = 0, data } = response
+				if(code) {
+					me.setState({
+						isDoLike: false,
+					})
+					return
+				}
+				const FETCH_TEMP = me.state[FETCH_PAGE]
+				FETCH_TEMP.response.data.is_like = !FETCH_TEMP.response.data.is_like
+				FETCH_TEMP.response.data.like_count = FETCH_TEMP.response.data.like_count + (FETCH_TEMP.response.data.is_like ? 1 : -1)
+				me.setState({
+					[FETCH_PAGE]: FETCH_TEMP,
+					isDoLike: false,
+				})
+			})
+		}
+	}
+	handleFollow(id,e){
+		alert('follow ' + id)
+	}
 }
 Quyou.contextTypes={
 	router: PropTypes.object
@@ -163,6 +271,8 @@ window.APIS={
     API_EAT_INDEX:`/eatIndex/index`,
     API_EAT_MEDIA_LIST:`/eatIndex/recMediaList`,
     API_EAT_MEDIA_DETAIL:`/eatIndex/recMediaDetail`,
+    API_EAT_MEDIA_COMMENT:`/eatIndex/mediaComment`,
+    API_EAT_MEDIA_LIKE:`/eatIndex/recMediaLike`,
     API_EAT_POST_LIST:`/eatIndex/postList`,
     API_EAT_POST_DETAIL:`/eatIndex/postDetail`,
     API_EAT_POST_COMMENT:`/eatIndex/postComment`,
@@ -182,8 +292,7 @@ window.ResponseState={
 }
 window.PostList = (props) => {
     const {
-        isVideoPost = false, 
-        isImagePost = false, 
+        isVideo = false, 
         list, 
         me,
     } = props
@@ -199,7 +308,7 @@ window.PostList = (props) => {
                                 <span>{d.nickname}</span>
                             </div>
                             <div className="content" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>{d.description}</div>
-                            <div className="icon cover" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)} style={{backgroundImage:`url(${isVideoPost?d.media:d.imgs[0]})`}}>
+                            <div className="icon cover" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)} style={{backgroundImage:`url(${isVideo?d.media:d.imgs[0]})`}}>
                                 {
                                     ~pathname.indexOf('video') ? <i className="icon play" style={{backgroundImage:`url(${play})`}} /> : null
                                 }
@@ -224,9 +333,8 @@ window.PostList = (props) => {
     )
 }
 window.PostDetail  = (props) => {
-    const { 
-        isVideoPost = false, 
-        isImagePost = false, 
+    const {
+        isVideo = false, 
         d = {
             imgs:[]
         },
@@ -235,7 +343,7 @@ window.PostDetail  = (props) => {
     return (
         <div>
             {
-                isVideoPost ? (<video src="//v.xiaohongshu.com/ljeahFnueWK2AxUEWbYskA94oKzW" controls="controls" playsInline="true" poster="http://ci.xiaohongshu.com/3156aeaf-745a-4770-942a-e660431dc5d5@r_640w_640h.jpg">您的浏览器不支持 video 标签。</video>) : null
+                isVideo ? (<video src="//v.xiaohongshu.com/ljeahFnueWK2AxUEWbYskA94oKzW" controls="controls" playsInline="true" poster="http://ci.xiaohongshu.com/3156aeaf-745a-4770-942a-e660431dc5d5@r_640w_640h.jpg">您的浏览器不支持 video 标签。</video>) : null
             }
             <div className="toper">
                 <div className="title">{d.title}</div>
@@ -246,7 +354,7 @@ window.PostDetail  = (props) => {
                     <div className="create">{d.create_dt||d.update_dt}</div>
                 </div>
                 {
-                    isImagePost ? (<div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>) : null
+                    !isVideo ? (<div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>) : null
                 }
                 <div className="text">{d.description}</div>
             </div>
@@ -287,7 +395,7 @@ window.CommentList = (props) => {
 }
 window.CommentFixed = (props) => {
     const { 
-        textPlaceholder = '请输入...',
+        textPlaceholder = '想搭讪，先评论',
         handleShowCreateComment,
         handleLike,
         d = {}, 

@@ -21,25 +21,9 @@ export default class Index extends Quyou{
         return fetching ? <Spin /> : <Content response={response} me={me} />
     }
     componentDidMount(){
-        const me = this
-        me.setState({
-            [FETCH_PAGE]: {
-                ...me.state[FETCH_PAGE],
-                fetching: 1,
-            }
-		})
-		const { params } = me.props
-        me.requestAPI(API_PAGE,{
-			...params,
-		},(response)=>{
-            me.setState({
-                [FETCH_PAGE]: {
-                    response,
-                    fetching: 0
-                }
-            })
-        })
-    }
+		const me = this
+		me.requestDetail(me,FETCH_PAGE,API_PAGE)
+	}
 }
 
 

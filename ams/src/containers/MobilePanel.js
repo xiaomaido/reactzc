@@ -61,15 +61,15 @@ export default class MobilePanel extends Component{
 		const activeUrl = objNav[location.pathname]
 		return (
 			<div className="mobile-panel">
-				{
-					children
-				} 
 				{ 
 					activeUrl ? <NavListBox activeNav={arrNav.find(d=>d.url===activeUrl).nav} arrNav={arrNav} /> : null 
 				}
 				{
 					!activeUrl && !objTitleNotNeed[location.pathname] ? <TitleBar location={location} objTitleBack={objTitleBack}/> : null 
 				}
+				{
+					children
+				} 
 			</div>
 		)
 	}

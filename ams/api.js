@@ -100,32 +100,32 @@ baseUrl = "http://qyadmin.weichongming.com/peanut"
 
 # ******************  吃  ************************** #
 #首页接口
-eatIndex = baseUrl + '/eatIndex/index'
+eatIndex = baseUrl + '/eatIndex/index'  $$BINGO
 eatIndexQ = {
 }
 
 # 限时福利列表接口
-eatTimeBenefitList = baseUrl + '/eatIndex/timeBenefitsList'
+eatTimeBenefitList = baseUrl + '/eatIndex/timeBenefitsList'  $$BINGO
 eatTimeBenefitListQ = {
         "limit": 10,
         "offset": 0
 }
 
 # 限时福利详情接口
-eatTimeBenefitDetail = baseUrl + '/eatIndex/timeBenefitsDetail'
+eatTimeBenefitDetail = baseUrl + '/eatIndex/timeBenefitsDetail'  $$BINGO
 eatTimeBenefitDetailQ = {
         "id": 2
 }
 
 # 美食攻略 列表
-eatpostList = baseUrl + '/eatIndex/postList'
+eatpostList = baseUrl + '/eatIndex/postList'  $$BINGO
 eatpostListQ = {
         "limit": 10,
         "offset": 0
 }
 
 # 美食攻略 详情
-eatPostDetail = baseUrl + '/eatIndex/postDetail'
+eatPostDetail = baseUrl + '/eatIndex/postDetail'  $$BINGO
 eatpostDetailQ = {
         "user_id": 0,  #后期接口直接注入可不考虑
         "id": 2
@@ -148,14 +148,14 @@ eatpostLikeQ = {
 
 # # -推荐视频  列表
 # eatrecMediaList(limit, offset)
-eatrecMediaList = baseUrl + '/eatIndex/recMediaList'
+eatrecMediaList = baseUrl + '/eatIndex/recMediaList'  $$BINGO
 eatrecMediaListQ = {
         "limit": 10,
         "offset": 0
 }
 
 # 推荐视频 详情
-eatrecMediaDetail = baseUrl + '/eatIndex/recMediaDetail'
+eatrecMediaDetail = baseUrl + '/eatIndex/recMediaDetail'  $$BINGO
 eatrecMediaDetailQ = {
         "user_id": 10,
         "id": 15
@@ -177,7 +177,7 @@ eatrecMediaLikeQ = {
 }
 
 # 人气美食 列表
-eatfoodSearch = baseUrl + '/eatIndex/foodSearch'
+eatfoodSearch = baseUrl + '/eatIndex/foodSearch'  $$BINGO
 eatfoodSearchQ = {
         "limit": 10,
         "offset": 0
@@ -185,7 +185,7 @@ eatfoodSearchQ = {
 #(user_id, tag, location, sortby, filter, limit, offset)
 
 # 人气美食 详情
-eatfoodDetail = baseUrl + '/eatIndex/foodDetail'
+eatfoodDetail = baseUrl + '/eatIndex/foodDetail'  $$BINGO
 eatfoodDetailQ = {
         "user_id": 1,
         "id": 5
@@ -207,7 +207,7 @@ eatfoodCommentQ = {
 }
 
 #  人气商家列表
-eatsellerSearch = baseUrl + '/eatIndex/sellerSearch'
+eatsellerSearch = baseUrl + '/eatIndex/sellerSearch'  $$BINGO
 eatsellerSearchQ = {
         "limit": 10,
         "offset": 0
@@ -215,7 +215,7 @@ eatsellerSearchQ = {
 # (user_id, tag, location, sortby, filter, limit, offset)
 
 #  人气商家详情页
-eatsellerDetail = baseUrl + '/eatIndex/sellerDetail'
+eatsellerDetail = baseUrl + '/eatIndex/sellerDetail'  $$BINGO
 eatsellerDetailQ = {
         "user_id": 1,
         "id": 6

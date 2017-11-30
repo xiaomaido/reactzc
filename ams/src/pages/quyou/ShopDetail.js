@@ -16,7 +16,6 @@ export default class ShopDetail extends Quyou{
 		showCreateComment: false,
 		valueCreateComment: '',
 		textOkay: initTextOkay,
-		textPlaceholder: '想搭讪，先评论',
 		isLike: false,
 	}
 	renderContent(){
@@ -26,31 +25,14 @@ export default class ShopDetail extends Quyou{
         return fetching ? <Spin /> : <Content response={response} me={me} />
     }
     componentDidMount(){
-        const me = this
-        me.setState({
-            [FETCH_PAGE]: {
-                ...me.state[FETCH_PAGE],
-                fetching: 1,
-            }
-		})
-		const { params } = me.props
-        me.requestAPI(API_PAGE,{
-			...params,
-			user_id:0,
-		},(response)=>{
-            me.setState({
-                [FETCH_PAGE]: {
-                    response,
-                    fetching: 0
-                }
-            })
-        })
-    }
+		const me = this
+		me.requestDetail(me,FETCH_PAGE,API_PAGE)
+	}
 }
 const Content = (props) => {
     const { response, me } = props
     const { data = { }  } = response
-    const { showCreateComment, textOkay, textPlaceholder } = me.state
+    const { showCreateComment, textOkay } = me.state
     return data.id ? (
 		<div className="shop-detail">
 			<CommentFixed />

@@ -37,7 +37,7 @@ const Content = (props) => {
     data = Array.isArray(data) ? data : []
     return (
         <div className="yummy-hot"> 
-            <PostList list={data} me={me} isVideoPost={true} />
+            <PostList list={data} me={me} isVideo={true} />
             {
                 me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
             }
