@@ -532,7 +532,7 @@
                 width: px2rem(174px);
                 text-align: center;
                 line-height: px2rem(30px);
-                color: #ffce1a;
+                color: #FFCE19;
                 background-color: $color_ff;
                 margin: 0 auto;
                 padding: px2rem(30px) 0;
@@ -564,18 +564,22 @@
                         width: px2rem(240px);
                         margin-right: px2rem(30px);
                         .poster .more{
+                            width: px2rem(240px);
+                            height: px2rem(152px);
                             font-size: px2rem(26px);
+                            line-height: px2rem(152px);
                             color: $color_ff;
                             text-align:center;
                             background-color: rgba(0,0,0,.5) !important;
-                            line-height: px2rem(152px);
                             // outline: $color_e5 solid 1px;
+                        }
+                        .poster.other{
+                            background-color: $color_e5;
                         }
                         .poster{
                             position:relative;
                             width: px2rem(240px);
                             height: px2rem(152px);
-                            background-color: $color_e5;
                             background-size: cover;
                             img{
                                 position:absolute;
@@ -1466,7 +1470,12 @@
             background-color: $color_e5;
     		background-size: cover;
     		margin-top: px2rem(40px);
-    	}
+        }
+        .pic{
+    		margin-top: px2rem(40px);
+            width: 100%;     
+            display: block;       
+        }
     	.title{
     		color: #555;
     		padding: 0 px2rem(18px);
@@ -1477,8 +1486,8 @@
     	}
     	.text{
     		margin-top: px2rem(28px);
-    		font-size: px2rem(24px);
-    		line-height: 2 * px2rem(24px);
+    		font-size: px2rem(28px);
+    		line-height: 1.8 * px2rem(28px);
     	}
     	.heder{
     		padding: 0 px2rem(18px);
@@ -1553,11 +1562,14 @@
             }
             .content{
                 color: $color_5d666e;
-                font-size: px2rem(30px);
-                line-height: px2rem(30px);
-                width: 100%;
-                float: left;
+                font-size: px2rem(28px);
+                line-height: px2rem(40px);
                 padding: 0 px2rem(50px);
+                overflow: hidden;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                display: -webkit-inline-box;
+                word-break: break-word;
             }
             .cover{
                 float: left;

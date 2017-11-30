@@ -28,7 +28,7 @@ export default class Index extends Quyou{
 		document.title='视频推荐'
 		const me = this
 		const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
-		return fetching ? <Spin /> : (response.code === 0 ? <Index.Content response={response} me={me} /> : null)
+		return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)
 	}
     componentDidMount(){
 		const me = this
@@ -36,7 +36,7 @@ export default class Index extends Quyou{
 	}
 }
 
-Index.Content = (props) => {
+const Content = (props) => {
     const { response, me } = props
     const { 
         data = {},

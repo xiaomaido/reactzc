@@ -132,7 +132,7 @@ eatpostDetailQ = {
 }
 
 # 美食攻略评论
-eatPostComment = baseUrl + '/eatIndex/postComment'
+eatPostComment = baseUrl + '/eatIndex/postComment'  $$BINGO
 eatPostCommentQ = {
         "content": "好吃呀好吃",
         "user_id": 1,
@@ -140,7 +140,7 @@ eatPostCommentQ = {
 }
 
 # 美食攻略点赞
-eatpostLike = baseUrl + '/eatIndex/postLike'
+eatpostLike = baseUrl + '/eatIndex/postLike'  $$BINGO
 eatpostLikeQ = {
         "user_id": 1,
         "post_id": 1
@@ -162,7 +162,7 @@ eatrecMediaDetailQ = {
 }
 
 # 推荐视频 评论
-eatmediaComment = baseUrl + '/eatIndex/mediaComment'
+eatmediaComment = baseUrl + '/eatIndex/mediaComment'  $$BINGO
 eatmediaCommentQ = {
         "content": "砸了砸了",
         "user_id": 1,
@@ -170,7 +170,7 @@ eatmediaCommentQ = {
 }
 
 # 推荐视频  点赞
-eatrecMediaLike = baseUrl + '/eatIndex/recMediaLike'
+eatrecMediaLike = baseUrl + '/eatIndex/recMediaLike'  $$BINGO
 eatrecMediaLikeQ = {
         "user_id": 1,
         "media_id": 15
@@ -192,14 +192,14 @@ eatfoodDetailQ = {
 }
 
 # 人气美食  点赞
-eatfoodLike = baseUrl + '/eatIndex/foodLike'
+eatfoodLike = baseUrl + '/eatIndex/foodLike'  $$BINGO
 eatfoodLikeQ = {
         "user_id": 1,
         "id": 5
 }
 
 # 人气美食 评论
-eatfoodComment = baseUrl + '/eatIndex/foodComment'
+eatfoodComment = baseUrl + '/eatIndex/foodComment'  $$BINGO
 eatfoodCommentQ = {
         "content": "ddd", 
         "user_id": 1, 
@@ -223,7 +223,7 @@ eatsellerDetailQ = {
 #(user_id, id)
 
 #  人气商家 评论
-eatsellerComment = baseUrl + '/eatIndex/sellerComment'
+eatsellerComment = baseUrl + '/eatIndex/sellerComment'  $$BINGO
 eatsellerCommentQ = {
         "content": "22222",
         "user_id": 1,
@@ -232,7 +232,7 @@ eatsellerCommentQ = {
 # (content, user_id, id)
 
 #  人气商家 点赞
-eatsellerLike = baseUrl + '/eatIndex/sellerLike'
+eatsellerLike = baseUrl + '/eatIndex/sellerLike'  $$BINGO
 eatsellerLikeQ = {
         "user_id": 1,
         "id": 6

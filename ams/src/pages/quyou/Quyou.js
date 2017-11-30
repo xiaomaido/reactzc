@@ -188,7 +188,8 @@ export class Quyou extends React.Component{ // 公共模板
 					return
 				}
 				const FETCH_TEMP = me.state[FETCH_PAGE]
-				FETCH_TEMP.response.data.comment_count += 1
+                FETCH_TEMP.response.data.comment_count += 1
+                FETCH_TEMP.response.data.comments = Array.isArray(FETCH_TEMP.response.data.comments) ? FETCH_TEMP.response.data.comments : [] 
 				FETCH_TEMP.response.data.comments.unshift(data)
 				me.setState({
 					[FETCH_PAGE]: FETCH_TEMP,
@@ -279,8 +280,12 @@ window.APIS={
     API_EAT_POST_LIKE:`/eatIndex/postLike`,
     API_EAT_FOOD_LIST:`/eatIndex/foodSearch`,
     API_EAT_FOOD_DETAIL:`/eatIndex/foodDetail`,
+    API_EAT_FOOD_COMMENT:`/eatIndex/foodComment`,
+    API_EAT_FOOD_LIKE:`/eatIndex/foodLike`,
     API_EAT_SHOP_LIST:`/eatIndex/sellerSearch`,
     API_EAT_SHOP_DETAIL:`/eatIndex/sellerDetail`,
+    API_EAT_SHOP_COMMENT:`/eatIndex/sellerComment`,
+    API_EAT_SHOP_LIKE:`/eatIndex/sellerLike`,
     API_EAT_TIME_LIST:`/eatIndex/timeBenefitsList`,
     API_EAT_TIME_DETAIL:`/eatIndex/timeBenefitsDetail`,
 }
@@ -302,24 +307,24 @@ window.PostList = (props) => {
             {
                 list.map((d={ imgs:[] },i)=>(
                     <div key={i}>
-                        <div className="item">
+                        <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>
                             <div className="avatar-name">
                                 <i className="icon" style={{backgroundImage:`url(${d.headimg})`}}></i>
                                 <span>{d.nickname}</span>
                             </div>
-                            <div className="content" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>{d.description}</div>
-                            <div className="icon cover" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)} style={{backgroundImage:`url(${isVideo?d.media:d.imgs[0]})`}}>
+                            <div className="content">{d.description}</div>
+                            <div className="icon cover" style={{backgroundImage:`url(${isVideo?d.media:d.imgs[0]})`}}>
                                 {
                                     ~pathname.indexOf('video') ? <i className="icon play" style={{backgroundImage:`url(${play})`}} /> : null
                                 }
                             </div>
                             <div className="dos">
-                                <div className={classnames({do:true,active:d.is_like})} onClick={me.doGood.bind(this)}>
+                                <div className={classnames({do:true,active:d.is_like})} >
                                     <i className="icon good"></i>
                                     <span>{d.like_count}</span>
                                 </div>
                                 <div className="thin-border-verical"></div>
-                                <div className="do" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>
+                                <div className="do">
                                     <i className="icon comment"></i>
                                     <span>{d.comment_count}</span>
                                 </div>
@@ -343,7 +348,7 @@ window.PostDetail  = (props) => {
     return (
         <div>
             {
-                isVideo ? (<video src="//v.xiaohongshu.com/ljeahFnueWK2AxUEWbYskA94oKzW" controls="controls" playsInline="true" poster="http://ci.xiaohongshu.com/3156aeaf-745a-4770-942a-e660431dc5d5@r_640w_640h.jpg">您的浏览器不支持 video 标签。</video>) : null
+                isVideo ? (<video src="http://cdn.weichongming.com/空调/富士通将军空调/诺可力X-1级能效-挂壁式/诺可力X-2匹、3匹-1级能效-08.mp4" controls="controls" playsInline="true" poster="http://cdn.weichongming.com/%E7%A9%BA%E8%B0%83/%E5%AF%8C%E5%A3%AB%E9%80%9A%E5%B0%86%E5%86%9B%E7%A9%BA%E8%B0%83/%E8%AF%BA%E5%8F%AF%E5%8A%9BX-1%E7%BA%A7%E8%83%BD%E6%95%88-%E6%8C%82%E5%A3%81%E5%BC%8F/%E8%AF%BA%E5%8F%AF%E5%8A%9BX-2%E5%8C%B9%E3%80%813%E5%8C%B9-1%E7%BA%A7%E8%83%BD%E6%95%88-08.mp4?vframe/png/offset/8|imageView2/2/w/200">您的浏览器不支持 video 标签。</video>) : null
             }
             <div className="toper">
                 <div className="title">{d.title}</div>
@@ -354,13 +359,15 @@ window.PostDetail  = (props) => {
                     <div className="create">{d.create_dt||d.update_dt}</div>
                 </div>
                 {
-                    !isVideo ? (<div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>) : null
+                    !isVideo ? <img className="pic" src={d.imgs[0]} /> : null
                 }
                 <div className="text">{d.description}</div>
             </div>
         </div>
-        
     )
+    // {
+    //     !isVideo ? (<div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>) : null
+    // }
 }
 window.CommentList = (props) => {
     let {

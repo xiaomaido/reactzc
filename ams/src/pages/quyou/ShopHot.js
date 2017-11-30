@@ -28,40 +28,7 @@ export default class Index extends Quyou{
 	}
     componentDidMount(){
         const me = this
-        me.requestList(me)
-    }
-    requestList(me){
-        if(me.page === 0) {
-            me.setState({
-                [FETCH_PAGE]: {
-                    ...me.state[FETCH_PAGE],
-                    fetching: 1,
-                }
-            })
-        }
-        me.requestAPI(API_PAGE,{
-            limit: me.limit,
-            offset: me.limit * me.page
-        },(response)=>{
-            if(me.page === 0) {
-                me.setState({
-                    [FETCH_PAGE]: {
-                        response,
-                        fetching: 0
-                    }
-                })
-                return
-            }
-            const { FETCH_EAT_SHOP_LIST } = me.state
-            FETCH_EAT_SHOP_LIST.response.data.data = [
-                ...FETCH_EAT_SHOP_LIST.response.data.data,
-                ...response.data.data,
-            ]
-            FETCH_EAT_SHOP_LIST.fetching = 0
-            me.setState({
-                FETCH_EAT_SHOP_LIST,
-            })
-        })
+        me.requestList(me,FETCH_PAGE,API_PAGE)
     }
 }
 

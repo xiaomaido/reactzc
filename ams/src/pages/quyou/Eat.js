@@ -82,19 +82,23 @@ const VideoList = (props) => {
             </div>
             <div className="vlist">
                 <div className="ul-box">
-                    <ul style={{width:(list.length*fontSize*(240+30)/40)}}>
+                    <ul style={{width:((list.length+1)*fontSize*(240+30)/40)}}>
                         {
                             list.map((d,i)=>(
-                                <li key={i} onClick={me.openPage.bind(me, `/videohot${i===list.length-1?'':`/${d.id}`}`)}>
-                                    <div className="icon poster" style={{backgroundImage:`url(${d.media})`}}>
-                                        {
-                                            i===list.length-1 ? <div className="more">更多视频 &gt;</div> : <img src={play} />
-                                        }
+                                <li key={i} onClick={me.openPage.bind(me, `/videohot/${d.id}`)}>
+                                    <div className="icon poster other" style={{backgroundImage:`url(${d.media})`}}>
+                                        <img src={play} />
                                     </div>
                                     <div className="text">{d.title}</div>
                                 </li>
                             ))
                         }
+                        <li onClick={me.openPage.bind(me, `/videohot`)}>
+                            <div className="icon poster">
+                                <div className="more">更多视频 &gt;</div>
+                            </div>
+                            <div className="text"></div>
+                        </li>
                     </ul>
                 </div>
             </div>

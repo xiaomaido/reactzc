@@ -1,28 +1,32 @@
 const initStateResponse = {
 	data: {
+		comment_count: 0, 
+		comments: [],
         imgs: [],
 		is_like: 0,
         like_count: 0,
 	}
 }
-const initTextOkay='发布'
+const ID = 'id'
+const API_PAGE_LIKE = APIS.API_EAT_SHOP_LIKE
+const API_PAGE_COMMENT = APIS.API_EAT_SHOP_COMMENT
 const API_PAGE = APIS.API_EAT_SHOP_DETAIL
 const FETCH_PAGE = TYPES.FETCH_EAT_SHOP_DETAIL
-export default class ShopDetail extends Quyou{
+export default class Index extends Quyou{
 	state = {
         [FETCH_PAGE]:{
             response: initStateResponse
         },
 		showCreateComment: false,
 		valueCreateComment: '',
-		textOkay: initTextOkay,
+		textOkay: this.initTextOkay,
 		isLike: false,
 	}
 	renderContent(){
         document.title='商家信息'
         const me = this
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
-        return fetching ? <Spin /> : <Content response={response} me={me} />
+		return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)
     }
     componentDidMount(){
 		const me = this
@@ -35,7 +39,6 @@ const Content = (props) => {
     const { showCreateComment, textOkay } = me.state
     return data.id ? (
 		<div className="shop-detail">
-			<CommentFixed />
 			<Intro data={data} needCover={true} />
 			<div className="gap"></div>
 			<div className="necker">
@@ -48,6 +51,18 @@ const Content = (props) => {
 					<ProductList list={Array.apply(null,{length:5})} me={me} />
 				</div>
 			</div>
+			{
+				showCreateComment ? 
+					<CreateComment 
+						textOkay={textOkay} 
+						handleClickOkay={me.handleSaveCreateComment.bind(me, { API_PAGE_COMMENT, FETCH_PAGE, ID })} 
+						handleClickCancel={me.handleShowCreateComment.bind(me)} 
+						handleChangeInput={me.handleChangeCreateComment.bind(me)} /> : null
+			}
+			<CommentFixed 
+				d={data} 
+				handleLike={me.handleLike.bind(me, { API_PAGE_LIKE, FETCH_PAGE, ID })} 
+				handleShowCreateComment={me.handleShowCreateComment.bind(me)} />
 			<CommentList 
 				total={data.comment_count} 
 				list={data.comments} />

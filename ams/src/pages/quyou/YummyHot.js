@@ -22,9 +22,6 @@ export default class Index extends Quyou{
         const me = this
         me.requestList(me,FETCH_PAGE,API_PAGE)
     }
-    doGood(e){
-        alert('点赞成功')
-    }
 }
 const Content = (props) => {
     const { response, me } = props

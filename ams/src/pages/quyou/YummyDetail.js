@@ -26,14 +26,14 @@ export default class Index extends Quyou{
 		document.title='美食攻略'
 		const me = this
 		const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
-		return fetching ? <Spin /> : (response.code === 0 ? <Index.Content response={response} me={me} /> : null)
+		return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)
 	}
     componentDidMount(){
 		const me = this
 		me.requestDetail(me,FETCH_PAGE,API_PAGE)
 	}
 }
-Index.Content = (props) => {
+const Content = (props) => {
     const { response, me } = props
     const { 
         data = {},

@@ -14,7 +14,7 @@ export default class Index extends Quyou{
             response: initStateResponse
         }
     }
-	renderContent(){
+    renderContent(){
         document.title='人气美食'
         const me = this
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
@@ -26,22 +26,24 @@ export default class Index extends Quyou{
                 }
             </div>
         )
-        // return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)
-		// return (
-		// 	<div className="food-hot">
-        //         <div id="loading"></div>
-        //         <img className="banner" src={banner} />
-        //         <div id="touchstart"></div>
-        //         <div id="touchend"></div>
-        //         {
-        //             FETCH_EAT_FOOD_LIST.fetching ? <List list={FETCH_EAT_FOOD_LIST.response.datas} me={this} /> : <Spin />
-        //         }
-        //     </div>
-		// )
     }
     componentDidMount(){
         const me = this
-        me.requestList(me)
+        me.requestList(me,FETCH_PAGE,API_PAGE)
+    }
+    // 下拉刷新
+	// renderContent(){
+		// return (
+		// 	<div className="food-hot">
+        //         <div id="loading"></div>
+        //         <div id="touchstart"></div>
+        //         <div id="touchend"></div>
+        //     </div>
+		// )
+    // }
+    // componentDidMount(){
+    //     const me = this
+    //     me.requestList(me)
         // window.onscroll = () => { 
         //     if(!getScrollTop()){
         //         const touch = (event) => {  
@@ -80,40 +82,7 @@ export default class Index extends Quyou{
         //         alert('load more')
         //     } 
         // }
-    }
-    requestList(me){
-        if(me.page === 0) {
-            me.setState({
-                [FETCH_PAGE]: {
-                    ...me.state[FETCH_PAGE],
-                    fetching: 1,
-                }
-            })
-        }
-        me.requestAPI(API_PAGE,{
-            limit: me.limit,
-            offset: me.limit * me.page
-        },(response)=>{
-            if(me.page === 0) {
-                me.setState({
-                    [FETCH_PAGE]: {
-                        response,
-                        fetching: 0
-                    }
-                })
-                return
-            }
-            const { FETCH_EAT_FOOD_LIST } = me.state
-            FETCH_EAT_FOOD_LIST.response.data.data = [
-                ...FETCH_EAT_FOOD_LIST.response.data.data,
-                ...response.data.data,
-            ]
-            FETCH_EAT_FOOD_LIST.fetching = 0
-            me.setState({
-                FETCH_EAT_FOOD_LIST,
-            })
-        })
-    }
+    // }
 }
 const List = (props) => {
     const { response, me } = props
