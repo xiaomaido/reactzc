@@ -76,7 +76,6 @@ export class Quyou extends React.Component{ // 公共模板
         const me = this
         return (
             <div className="quyou-base">
-                {/* <SelectBox /> */}
                 {/* <FilterBox /> */}
                 {
                     me.renderContent()
@@ -348,7 +347,7 @@ window.PostDetail  = (props) => {
     return (
         <div>
             {
-                isVideo ? (<video src="http://cdn.weichongming.com/空调/富士通将军空调/诺可力X-1级能效-挂壁式/诺可力X-2匹、3匹-1级能效-08.mp4" controls="controls" playsInline="true" poster="http://cdn.weichongming.com/%E7%A9%BA%E8%B0%83/%E5%AF%8C%E5%A3%AB%E9%80%9A%E5%B0%86%E5%86%9B%E7%A9%BA%E8%B0%83/%E8%AF%BA%E5%8F%AF%E5%8A%9BX-1%E7%BA%A7%E8%83%BD%E6%95%88-%E6%8C%82%E5%A3%81%E5%BC%8F/%E8%AF%BA%E5%8F%AF%E5%8A%9BX-2%E5%8C%B9%E3%80%813%E5%8C%B9-1%E7%BA%A7%E8%83%BD%E6%95%88-08.mp4?vframe/png/offset/8|imageView2/2/w/200">您的浏览器不支持 video 标签。</video>) : null
+                isVideo ? (<video src={d.media} poster={d.indexPic} controls="controls" playsInline="true">您的浏览器不支持 video 标签。</video>) : null
             }
             <div className="toper">
                 <div className="title">{d.title}</div>
@@ -359,12 +358,28 @@ window.PostDetail  = (props) => {
                     <div className="create">{d.create_dt||d.update_dt}</div>
                 </div>
                 {
-                    !isVideo ? <img className="pic" src={d.imgs[0]} /> : null
+                    isVideo ? null : <div>
+                        {
+                            d.imgs.map((da,i)=> <img key={i} className="pic" src={da} /> )
+                        }
+                    </div>
                 }
-                <div className="text">{d.description}</div>
+                {
+                    d.description.split('<br>').map((da,i)=><div key={i} className="text">{da}</div>)
+                }
             </div>
         </div>
     )
+    // {
+    //     isVideo ? null : <img className="pic" src={d.imgs[0]} />
+    // }
+    // {
+    //     isVideo ? null : <div>
+    //         {
+    //             d.imgs.map((da,i)=> i>0 ? <img key={i} className="pic" src={da} /> : null)
+    //         }
+    //     </div>
+    // }
     // {
     //     !isVideo ? (<div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>) : null
     // }

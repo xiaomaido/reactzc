@@ -2,7 +2,7 @@
 .select-box{
     position: fixed;
     top: $barTop;
-    // width: 100%;
+    width: 100%;
     max-width: $maxWidth;
     background-color: $color_ff;
     height: px2rem(50px) + 2 * px2rem(17px); 
@@ -15,7 +15,7 @@
         .select-column{
             font-size: px2rem(26px);
             line-height: px2rem(50px);
-            // width: 50%;
+            width: 50%;
             color: $color_33;
             text-align: center;
             i{

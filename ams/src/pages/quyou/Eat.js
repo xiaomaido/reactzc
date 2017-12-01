@@ -1,3 +1,4 @@
+import bar from '../../images/quyou/banner/bar.png'
 import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
@@ -47,7 +48,8 @@ const Content = (props) => {
         <div className="eat">
             <div className="top">
                 <TouchSlideBox imgSlideList={banner} />
-                <img className="bar" src={timeBenefits} onClick={me.openPage.bind(me, `/xianshifuli`)} />
+                {/* <img className="bar" src={timeBenefits} onClick={me.openPage.bind(me, `/xianshifuli`)} /> */}
+                <img className="bar" src={bar} onClick={me.openPage.bind(me, `/xianshifuli`)} />
                 <ul className="quick">
                     <li onClick={me.openPage.bind(me,  `/shophot`)}>
                         <img src={quick0} style={{float:'left'}} />

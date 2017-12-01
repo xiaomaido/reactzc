@@ -107,7 +107,7 @@ var misc={
 			time = new Date().getTime() - time;
 			time = Math.ceil(time / 1000);
 			if (time < mGap) {
-				time = time>=0 ? time : 0
+				time = time>0 ? time : 1
 				str = time + '秒前';
 			} else if (time < hGap) {
 				str = parseInt(time / mGap, 10) + '分钟前';
