@@ -88,7 +88,7 @@ const VideoList = (props) => {
                         {
                             list.map((d,i)=>(
                                 <li key={i} onClick={me.openPage.bind(me, `/videohot/${d.id}`)}>
-                                    <div className="icon poster other" style={{backgroundImage:`url(${d.media})`}}>
+                                    <div className="icon poster other" style={{backgroundImage:`url(${d.indexPic})`}}>
                                         <img src={play} />
                                     </div>
                                     <div className="text">{d.title}</div>

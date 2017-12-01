@@ -17,7 +17,7 @@ window.avatar_url=avatar_url
 window.play=play
 export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
-    user_id=2
+    user_id=3
     limit=3
     page=0
     api={
@@ -311,8 +311,11 @@ window.PostList = (props) => {
                                 <i className="icon" style={{backgroundImage:`url(${d.headimg})`}}></i>
                                 <span>{d.nickname}</span>
                             </div>
-                            <div className="content">{d.description}</div>
-                            <div className="icon cover" style={{backgroundImage:`url(${isVideo?d.media:d.imgs[0]})`}}>
+                            <div className="content">
+                                <div>{d.title}</div>
+                                {d.description.split('<br>')[0]}
+                            </div>
+                            <div className="icon cover" style={{backgroundImage:`url(${isVideo?d.indexPic:d.imgs[0]})`}}>
                                 {
                                     ~pathname.indexOf('video') ? <i className="icon play" style={{backgroundImage:`url(${play})`}} /> : null
                                 }
@@ -352,7 +355,7 @@ window.PostDetail  = (props) => {
             <div className="toper">
                 <div className="title">{d.title}</div>
                 <div className="heder">
-                    <div className="follow" onClick={me.handleFollow.bind(me, d.user_id)}><span>+</span>关注</div>
+                    {/* <div className="follow" onClick={me.handleFollow.bind(me, d.user_id)}><span>+</span>关注</div> */}
                     <img src={d.headimg} />
                     <div className="nickname">{d.nickname}</div>
                     <div className="create">{d.create_dt||d.update_dt}</div>
@@ -396,17 +399,23 @@ window.CommentList = (props) => {
             <div className="clearboth thinner-border"></div>
             <ul className="comment-list">
                 {
-                    list.map((d = {},i)=>(
-                        <li key={i}>
-                            <img src={"https://img.xiaohongshu.com/avatar/59cfbaecb46c5d515aa83eee.jpg@80w_80h_90q_1e_1c_1x.jpg"} />
-                            <div className="create">{misc.formatTime(d.creat_dt*1000,2)}</div> 
-                            <div className="nicktext">
-                                <div className="nick">圣保罗爷爷</div>
-                                <div className="text">{d.comment}</div>
-                            </div>
-                            <div className="clearboth thinner-border"></div>
-                        </li>
-                    ))
+                    list.map((d = {},i)=>{
+                        d.user_info = d.user_info || {
+                            headimg: avatar_url,
+                            nickname: `游客${i+1}`,
+                        }
+                        return (
+                            <li key={i}>
+                                <img src={d.user_info.headimg} />
+                                <div className="create">{misc.formatTime(d.creat_dt*1000,2)}</div> 
+                                <div className="nicktext">
+                                    <div className="nick" >{d.user_info.nickname}</div>
+                                    <div className="text">{d.comment}</div>
+                                </div>
+                                <div className="clearboth thinner-border"></div>
+                            </li>
+                        )
+                    })
                 }
             </ul>
             {

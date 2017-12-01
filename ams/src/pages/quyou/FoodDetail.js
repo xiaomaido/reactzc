@@ -41,6 +41,7 @@ const Content = (props) => {
     const { response, me } = props
     const { data = {}  } = response
     const { showCreateComment, textOkay } = me.state
+    data.stag_names = Array.isArray(data.stag_names) ? data.stag_names : []
     return data.id ? (
         <div className="shop-detail food-detail">
             <div className="fooder">

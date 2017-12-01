@@ -500,6 +500,7 @@
             margin-right: px2rem(30px);
             width: px2rem(170px);
             height: px2rem(116px);
+            background-size: cover;
         }
         .logo{
             float: left;
@@ -515,7 +516,12 @@
             font-size: px2rem(22px);
             line-height: px2rem(38px);
             margin: px2rem(40px) 0 0;
-            width: px2rem(374px)
+            width: px2rem(374px);
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            display: -webkit-inline-box;
+            word-break: break-word;
         }
     }
     .video{
@@ -1532,7 +1538,8 @@
 	}
 }
 .yummy-hot{
-    padding-top: $barTop + $filterTop;
+    // padding-top: $barTop + $filterTop;
+    padding-top: $barTop;
     overflow-x: hidden;
     position: relative;
     .list{
@@ -1570,6 +1577,17 @@
                 -webkit-box-orient: vertical;
                 display: -webkit-inline-box;
                 word-break: break-word;
+                div{
+                    width: 100%;
+                    font-weight: 700;
+                    font-size: px2rem(30px);
+                    line-height: px2rem(48px);
+                    overflow: hidden;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-inline-box;
+                    word-break: break-word;
+                }
             }
             .cover{
                 float: left;

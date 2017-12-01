@@ -5,7 +5,7 @@ node_modules
 
 # production
 build
-
+dist
 harden
 svgcanvas/hightopo
 svgcanvas/hightopo-master
