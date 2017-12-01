@@ -7,6 +7,7 @@ import Product from './Product'
 import ContextMenuReact from './ContextMenuReact'
 import DraggableReact from './DraggableReact'
 import SelectRC from './SelectRC'
+import FormRC from './FormRC'
 import TaskApp from './TaskApp'
 import SuperAgent from './SuperAgent'
 import Axios from './Axios'
@@ -24,6 +25,7 @@ export {
 	,ContextMenuReact
 	,DraggableReact
 	,SelectRC
+	,FormRC
 	,TaskApp
 	,SuperAgent
 	,FetchAPI

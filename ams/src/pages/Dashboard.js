@@ -15,7 +15,6 @@ class Dashboard extends Base{
 		):(<span>12</span>)
 	}
 	componentWillUnmount(){
-		debugger
 	}
 	handleClick(e){
 		this.setState({

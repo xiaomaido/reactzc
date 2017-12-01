@@ -51,6 +51,10 @@ window.pageMapRoute={
 		url:'/selectrc',
 		page:Pages.SelectRC
 	},
+	formrc: {
+		url:'/formrc',
+		page:Pages.FormRC
+	},
 	taskapp: {
 		url:'/taskapp',
 		page:Pages.TaskApp
@@ -70,7 +74,7 @@ window.pageMapRoute={
 	mygithub:{
 		url:'/mygithub',
 		page:Pages.MyGithub
-	}
+	},
 }
 // 左侧菜单栏配置
 window.menusMapRoute=[
@@ -112,7 +116,12 @@ window.menusMapRoute=[
 		    },{
 				name: '下拉选择',
 			    url: pageMapRoute.selectrc.url,
-		    },{
+			},
+			{
+				name: '表单验证',
+			    url: pageMapRoute.formrc.url,
+			},
+			{
 				name: 'SuperAgent',
 			    url: pageMapRoute.superagent.url,
 		    },{

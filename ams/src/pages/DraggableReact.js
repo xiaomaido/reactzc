@@ -22,7 +22,6 @@ class DraggableReact extends Component{
 		console.log('Leave')
 	}
 	handleDrop(e){
-		debugger
 		console.log('Drop')
 	}
 	render(){
