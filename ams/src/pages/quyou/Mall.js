@@ -3,7 +3,7 @@ import gg from '../../images/quyou/banner/gg.png'
 import stncp from '../../images/quyou/banner/stncp.png'
 
 export default class Index extends Quyou{
-	render(){
+	renderContent(){
         document.title='趣游崇明'
         return (
             <div className="mall">

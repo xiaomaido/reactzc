@@ -260,6 +260,7 @@ window.fetch=fetch
 window.TYPES={
     FETCH_MY_PROFILE:`FETCH_MY_PROFILE`,
     FETCH_TOUR_INDEX:`FETCH_TOUR_INDEX`,
+    FETCH_TOUR_PIC_LIST:`FETCH_TOUR_PIC_LIST`,
     FETCH_EAT_INDEX:`FETCH_EAT_INDEX`,
     FETCH_MEDIA_LIST:`FETCH_MEDIA_LIST`,
     FETCH_MEDIA_DETAIL:`FETCH_MEDIA_DETAIL`,
@@ -515,8 +516,11 @@ window.Intro = (props) => {
         needCover = false,
         data = {
             imgs: [],
+            tag_name: [],
+            activities: [],
         },
     } = props
+    data.tag_name = Array.isArray(data.tag_name) ? data.tag_name : []
     return (
         <div className="shop-header">
             <div className="header-box">
@@ -524,7 +528,7 @@ window.Intro = (props) => {
                     <div className="thin-border-verical"></div>
                 </div>
                 <a href={`tel:${data.phone}`} className="icon phone"></a>
-                <div className="name"><i className="icon" />【{data.name}】</div>
+                <div className="name"><i className="icon" />【{data.name}】{ data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}</div>
                 <div className="address"><i className="icon" />{data.addr1+data.addr2+data.addr3+data.detail}</div>
                 {
                     needCover ? (<div className="icon cover" style={{backgroundImage:`url(${data.imgs[0]})`}}></div>) : null

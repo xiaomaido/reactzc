@@ -1,5 +1,5 @@
 export default class Index extends Quyou{
-	render(){
+	renderContent(){
         document.title='导览图'
         return (
             <div className="trip-guidance-detial">

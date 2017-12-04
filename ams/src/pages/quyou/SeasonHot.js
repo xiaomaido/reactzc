@@ -3,7 +3,7 @@ import banner from '../../images/quyou/banner/seasonhot.png'
 import goodActive from '../../images/quyou/icon/good-active.png'
 import addr from '../../images/quyou/icon/addr.png'
 export default class Index extends Quyou{
-	render(){
+	renderContent(){
         document.title='当季推荐'
 		return (
 			<div className="season-hot"> 

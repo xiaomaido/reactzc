@@ -14,7 +14,7 @@ const imgSlideList=[
     },
 ]
 export default class Index extends Quyou{
-	render(){        
+	renderContent(){        
         document.title='平台福利专区'
         const cover=`http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg`
         const list=Array.apply(null,{length:5})

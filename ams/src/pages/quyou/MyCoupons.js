@@ -1,5 +1,5 @@
 export default class Index extends Quyou{
-    render(){
+    renderContent(){
         const list = [1,3,4,7,5,8,9,0]
         const url = "https://avatars0.githubusercontent.com/u/11659631?v=4"
         return (

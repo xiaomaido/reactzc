@@ -65,11 +65,7 @@ export default class MobilePanel extends Component{
 				{ 
 					activeUrl ? <NavListBox activeNav={arrNav.find(d=>d.url===activeUrl).nav} arrNav={arrNav} /> : null 
 				}
-				<div>
-					{/* <SelectBox /> */}
-					{/* <SelectBox /> */}
-					{/* <SelectBox /> */}
-				</div>
+				{/* <SelectBox /> */}
 				{
 					!activeUrl && !objTitleNotNeed[location.pathname] ? <TitleBar location={location} objTitleBack={objTitleBack}/> : null 
 				}

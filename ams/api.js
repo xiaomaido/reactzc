@@ -252,7 +252,7 @@ tourIndexQ = {
 }
 
 # 导览图列表
-tourPicList =  baseUrl + '/tourIndex/tourPicList' 
+tourPicList =  baseUrl + '/tourIndex/tourPicList'  $$BINGO 
 tourPicListQ = {
         "limit": 10, 
         "offset": 0

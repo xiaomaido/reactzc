@@ -42,6 +42,7 @@ const Content = (props) => {
 	const _t = query._t || 'EAT'
 	const API_PAGE_LIKE = APIS[`API_${_t}_SHOP_LIKE`]
 	const API_PAGE_COMMENT = APIS[`API_${_t}_SHOP_COMMENT`]
+	data.activities = Array.isArray(data.activities) ? data.activities : []
     return data.id ? (
 		<div className="shop-detail">
 			<Intro data={data} needCover={true} />
@@ -52,6 +53,8 @@ const Content = (props) => {
 					<div className="clearboth thinner-border"></div>
 					<div className="descrip">{data.description||'暂无'}</div>
 					{/* <div className="open-more">展开更多 ^</div> */}
+					<div className="clearboth thinner-border"></div>
+					<ProductList list={Array.apply(null,{length:5})} me={me} />
 					<div className="clearboth thinner-border"></div>
 					<ProductList list={Array.apply(null,{length:5})} me={me} />
 				</div>
@@ -78,6 +81,7 @@ const ProductList = (props) => {
     const { list, me } = props
     return (
 		<div className="video clearboth">
+			<div className="title"><div>活</div>近期活动</div>
 			<div className="title"><div>惠</div>商家优惠</div>
 			<div className="vlist">
 				<div className="ul-box">

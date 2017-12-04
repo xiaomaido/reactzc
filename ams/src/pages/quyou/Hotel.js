@@ -14,20 +14,25 @@ const imgSlideList=[
     },
 ]
 export default class Index extends Quyou{
-	render(){
+	renderContent(){
+        const me=this
         document.title='趣游崇明'
         const cates = Array.apply(null, { length: 6 })
 		return (
 			<div className="eat">
                 <div className="top">
                     <TouchSlideBox imgSlideList={imgSlideList} />
+                    <div className="hotelhot" onClick={me.openPage.bind(me, `/hotelhot?cate=-1`)}>
+                        <div className="icon"></div>
+                        <div className="clearboth thinner-border"></div>
+                    </div>
                     <div className="hotelCates">
                         {
                             cates.map((d,i)=><a key={i} className="icon" href={`${window.isHashHistory}/hotelhot?cate=${i+1}`}></a>)
                         }
                     </div>
                 </div>
-                <VideoList list={[]} me={this} title={"客房视频"} type={"SLEEP"} />
+                <VideoList list={[]} me={me} title={"客房视频"} type={"SLEEP"} />
                 <div style={{height: 100,background:'#fff'}}></div>
             </div>
 		)

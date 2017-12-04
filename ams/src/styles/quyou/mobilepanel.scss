@@ -425,6 +425,14 @@
 .eat{
     background-color: $color_f5;
     padding-bottom: $barBottom;
+    .hotelhot{
+        height: px2rem(108px);
+        padding: 0 px2rem(36px);
+        .icon{
+            height: px2rem(108px);
+            background-image: url('../../images/quyou/banner/abc.png');
+        }
+    }
     .top{
         background-color: $color_ff;
         .hotelCates{
@@ -1496,6 +1504,15 @@
                 height: px2rem(32px);
                 background-image: url('../../images/quyou/icon/shop.png')
             }
+            .tag{
+                position: relative;
+                top: -0.1rem;
+                line-height: px2rem(18px);
+                padding: px2rem(6px) px2rem(14px);
+                background-color: #bfe169;
+                font-size: px2rem(18px);
+                color: $color_ff;
+            }
         }
         .cover{
             margin-top: px2rem(32px);
@@ -1714,6 +1731,7 @@
             }
             .big{
                 height: px2rem(340px);
+                background-size: cover;
             }
             .small{
                 height: px2rem(220px);

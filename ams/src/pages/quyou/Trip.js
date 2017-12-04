@@ -8,7 +8,7 @@ const imgSlideList=[
 ]
 const FETCH_PAGE = TYPES.FETCH_TOUR_INDEX
 export default class Index extends Quyou{
-	render(){
+	renderContent(){
         document.title='趣游崇明'
         const me=this
         return (
@@ -20,7 +20,7 @@ export default class Index extends Quyou{
                     </div>
                 </div>
                 <TouchSlideBox imgSlideList={imgSlideList} />               
-                <div className="top">
+                <div className="top" onClick={me.openPage.bind(me, `/posthot?_t=TOUR`)}>
                     <img className="bar" src={bar}  />
                     <div style={{height:0}}>&nbsp;</div>
                 </div>
@@ -41,7 +41,7 @@ export default class Index extends Quyou{
         const { query } = me.props.location
 		const _t = query._t || 'EAT'
 		const API_PAGE = APIS[`API_TOUR_INDEX`]
-		me.requestDetail(me,FETCH_PAGE,API_PAGE)
+		// me.requestDetail(me,FETCH_PAGE,API_PAGE)
 	}
 } 
 

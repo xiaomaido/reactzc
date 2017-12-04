@@ -1,5 +1,5 @@
 export default class Index extends Quyou{
-    render(){
+    renderContent(){
         const list = [
             {
                 msg:'恭喜你获得了系统赠送的优惠券1张'

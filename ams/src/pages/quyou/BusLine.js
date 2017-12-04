@@ -1,7 +1,7 @@
 import gjxl from '../../images/quyou/trip/gjxl.png'
 
 export default class Index extends Quyou{
-	render(){
+	renderContent(){
         document.title='公交时刻表'
         return (
             <div className="trip-busline">
