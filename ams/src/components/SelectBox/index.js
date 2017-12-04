@@ -64,7 +64,6 @@ export default class Index extends Component{
             thinnerBorder = true,
         } = _this.props
         const { showTitle, partId, showOptions } = _this.state
-        console.log(_this.state)
         return (
             <div>
                 {

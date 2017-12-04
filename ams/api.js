@@ -1,90 +1,3 @@
-#!/usr/bin/env python
-# coding=utf-8
-import urllib,urllib2
-import json
-import cookielib
-import requests
-
-#baseUrl = "http://192.168.16.132:8891/productApi."
-#baseUrl = "http://139.224.44.238:8791/productApi."
-baseUrl = "http://qyadmin.weichongming.com/peanut"
-
-
-# ******************  吃  ************************** #
-#首页接口
-eatIndex = baseUrl + '/eatIndex/index'
-eatIndexQ = {
-}
-
-# 限时福利列表接口
-eatTimeBenefitList = baseUrl + '/eatIndex/timeBenefitsList'
-eatTimeBenefitListQ = {
-        "limit": 10,
-        "offset": 0
-}
-
-# 限时福利详情接口
-eatTimeBenefitDetail = baseUrl + '/eatIndex/timeBenefitsDetail'
-eatTimeBenefitDetailQ = {
-        "id": 2
-}
-
-# 美食攻略 详情
-eatpostList = baseUrl + '/eatIndex/postList'
-eatpostListQ = {
-        "limit": 10,
-        "offset": 0
-}
-
-# 美食攻略 详情
-eatPostDetail = baseUrl + '/eatIndex/postDetail'
-eatpostDetailQ = {
-        "user_id": 0,  #后期接口直接注入可不考虑
-        "id": 2
-}
-
-# 美食攻略评论
-eatPostComment = baseUrl + '/eatIndex/postComment'
-eatPostCommentQ = {
-        "content": "好吃呀好吃",
-        "user_id": 1,
-        "post_id": 1
-}
-
-# 美食攻略点赞
-eatpostLike = baseUrl + '/eatIndex/postLike'
-eatpostLikeQ = {
-        "user_id": 1,
-        "post_id": 1
-}
-
-url = eatpostLike
-query = eatpostLikeQ
-res = requests.post(url, data=json.dumps(query))
-print json.dumps(json.loads(res.text), indent=2, ensure_ascii=False)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #!/usr/bin/env python
 # coding=utf-8
@@ -237,14 +150,209 @@ eatsellerLikeQ = {
         "user_id": 1,
         "id": 6
 }
-# (user_id, id)
+
+# --------------------- 住  ---------------------- #
+# 推荐视频列表
+sleepRecMediaList = baseUrl + '/sleepIndex/recMediaList'  $$BINGO
+sleepRecMediaListQ = {
+        "limit": 10,
+        "offset": 0
+}
+
+# 推荐视频 详情
+sleepRecMediaDetail = baseUrl + '/sleepIndex/recMediaDetail'  $$BINGO
+sleepRecMediaDetailQ = {
+        "user_id": 1,
+        "id": 20
+}
+
+# 推荐视频  点赞
+sleepRecMediaLike = baseUrl + '/sleepIndex/recMediaLike'  $$BINGO
+sleepRecMediaLikeQ = {
+        "user_id": 1,
+        "media_id": 20
+}
+
+# 推荐视频 评论
+sleepmediaComment =  baseUrl + '/sleepIndex/mediaComment'  $$BINGO
+sleepmediaCommentQ = {
+        "content": '哈哈',
+        "user_id": 1,
+        "media_id": 20
+}
+
+# ********* 人气酒店 *********** #
+# 人气酒店列表
+sleepsellerSearch =  baseUrl + '/sleepIndex/sellerSearch'  $$BINGO
+sleepsellerSearchQ = {
+        "user_id": 1,
+        "limit": 10, 
+        "offset": 0
+}
+
+# 人气商家详情页
+sleepsellerDetail =  baseUrl + '/sleepIndex/sellerDetail'  $$BINGO
+sleepsellerDetailQ = { 
+        "user_id": 1, 
+        "id": 6
+}
+
+# 人气商家 评论
+sleepsellerComment =  baseUrl + '/sleepIndex/sellerComment'  $$BINGO
+sleepsellerCommentQ = {
+        "content": "11111", 
+        "user_id": 1,
+        "id": 6
+}
+
+# 人气商家 点赞
+sleepsellerLike =  baseUrl + '/sleepIndex/sellerLike'  $$BINGO
+sleepsellerLikeQ = {
+        "user_id": 1,
+        "id": 6
+}
+
+# ********* 住宿攻略 *********** #
+# 住宿攻略 列表
+sleeppostList =  baseUrl + '/sleepIndex/postList'  $$BINGO
+sleeppostListQ = {
+        "limit": 10,
+        "offset": 0
+}
+
+# 住宿攻略 详情
+sleeppostDetail =  baseUrl + '/sleepIndex/postDetail'  $$BINGO
+sleeppostDetailQ = {
+        "user_id":1, 
+        "id": 11
+}
+
+# 住宿攻略评论
+sleeppostComment =  baseUrl + '/sleepIndex/postComment'  $$BINGO
+sleeppostCommentQ = {
+        "content": '111', 
+        "user_id": 1, 
+        "post_id": 11
+}
+
+# 住宿攻略点赞
+sleeppostLike =  baseUrl + '/sleepIndex/postLike'  $$BINGO
+sleeppostLikeQ = {
+        "user_id": 1, 
+        "post_id": 11
+}
 
 
-url = eatsellerDetail
-query = eatsellerDetailQ
 
-# url = eatsellerComment
-# query = eatsellerCommentQ
+# --------------------- 游  ---------------------- #
+# 首页
+tourIndex = baseUrl + '/tourIndex/index'
+tourIndexQ = {
+        'tab_id': 0
+}
+
+# 导览图列表
+tourPicList =  baseUrl + '/tourIndex/tourPicList' 
+tourPicListQ = {
+        "limit": 10, 
+        "offset": 0
+}
+
+# 导览图详情页
+tourPicDetail = baseUrl + '/tourIndex/tourPicDetail'
+tourPicDetailQ = {
+        "id": 2
+}
+
+
+# 全部线路及交通工具
+tourRouteList = baseUrl + '/tourIndex/tourRouteList'
+tourRouteListQ = {
+        "rtype": '00' # '00' 全部线路 '01' 交通工具
+} 
+
+# 线路及交通工具详情
+tourRouteDetail = baseUrl + '/tourIndex/tourRouteDetail'
+tourRouteDetailQ = {
+        "id": 5
+}
+
+# 线路攻略
+#tourpostList = baseUrl(limit, offset, project, eara, cate)
+tourpostList = baseUrl + '/tourIndex/postList'  $$BINGO
+tourpostListQ = {
+        "limit": 10,
+        "offset": 0,
+        'project': '',  #项目
+        'eara': '', #地区
+        'cate': '', #类别
+}
+
+# 线路攻略 详情
+# postDetail(user_id, id)
+tourpostDetail = baseUrl + '/tourIndex/postDetail'  $$BINGO
+tourpostDetailQ = {
+        "user_id": 1,
+        "id": 15
+}
+
+# 线路攻略  评论
+# postComment(content, user_id, post_id)
+tourpostComment = baseUrl + '/tourIndex/postComment'  $$BINGO
+tourpostCommentQ = {
+        'content': '哈哈哈',
+        "user_id": 1,
+        "post_id": 15
+}
+
+# 线路攻略 点赞
+# postLike(user_id, post_id)
+tourpostLike = baseUrl + '/tourIndex/postLike'  $$BINGO
+tourpostLikeQ =  {
+        "user_id": 1,
+        "post_id": 15
+}
+
+# 景区列表
+# sellerSearch(user_id, tag, location, sortby, filter, limit, offset)
+toursellerSearch = baseUrl + '/tourIndex/sellerSearch'
+toursellerSearchQ = {
+        "limit": 10,
+        "offset": 0
+}
+
+# 景区详情
+# sellerDetail(user_id, id)
+toursellerDetail = baseUrl + '/tourIndex/sellerDetail'
+toursellerDetailQ = {
+        "user_id": 1,
+        "id": 19
+}
+
+# 景区评论
+# sellerComment(content, user_id, id)
+toursellerComment = baseUrl + '/tourIndex/sellerComment'
+toursellerCommentQ = {
+        'content': '哈哈哈111',
+        "user_id": 1,
+        "id": 19
+}
+
+# 景区点赞
+# sellerLike(user_id, id)
+toursellerLike = baseUrl + '/tourIndex/sellerLike'
+toursellerLikeQ = {
+        "user_id": 1,
+        "id": 19
+}
+
+url = toursellerDetail
+query = toursellerDetailQ
 res = requests.post(url, data=json.dumps(query))
 print json.dumps(json.loads(res.text), indent=2, ensure_ascii=False)
+
+
+
+# 游 帖子加项目...， 加领券
+# 住 商家加类目，加评分
 

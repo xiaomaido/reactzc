@@ -63,7 +63,6 @@ export default class Index extends React.Component{
             ], 
         } = _this.props
         const { showTitle, partId, showOptions } = _this.state
-        console.log(_this.state)
         return (
             <div>
                 {

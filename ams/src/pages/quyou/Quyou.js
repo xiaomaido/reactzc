@@ -76,7 +76,6 @@ export class Quyou extends React.Component{ // 公共模板
         const me = this
         return (
             <div className="quyou-base">
-                {/* <FilterBox /> */}
                 {
                     me.renderContent()
                 }
@@ -98,7 +97,7 @@ export class Quyou extends React.Component{ // 公共模板
     }
     requestList(me,FETCH_PAGE,API_PAGE){
         me.scrollLoadMore(me,FETCH_PAGE,API_PAGE)
-        const { state, page, limit } = me
+        const { state, page, limit, user_id } = me
         if(page === 0) {
             me.setState({
                 [FETCH_PAGE]: {
@@ -107,10 +106,17 @@ export class Quyou extends React.Component{ // 公共模板
                 }
             })
         }
-        me.requestAPI(API_PAGE,{
+        let req={
+			user_id,
             limit,
             offset: limit * page
-        },(response)=>{
+        }
+        if(API_PAGE===`/tourIndex/postList`){
+            req[`project`]=``
+            req[`eara`]=``
+            req[`cate`]=``
+        }
+        me.requestAPI(API_PAGE,req,(response)=>{
             if(page === 0) {
                 me.setState({
                     [FETCH_PAGE]: {
@@ -183,7 +189,6 @@ export class Quyou extends React.Component{ // 公共模板
 					me.setState({
 						textOkay: initTextOkay,
 					})
-					console.log('error')
 					return
 				}
 				const FETCH_TEMP = me.state[FETCH_PAGE]
@@ -254,20 +259,48 @@ window.FilterBox=FilterBox
 window.fetch=fetch
 window.TYPES={
     FETCH_MY_PROFILE:`FETCH_MY_PROFILE`,
+    FETCH_TOUR_INDEX:`FETCH_TOUR_INDEX`,
     FETCH_EAT_INDEX:`FETCH_EAT_INDEX`,
-    FETCH_EAT_MEDIA_LIST:`FETCH_EAT_MEDIA_LIST`,
-    FETCH_EAT_MEDIA_DETAIL:`FETCH_EAT_MEDIA_DETAIL`,
-    FETCH_EAT_POST_LIST:`FETCH_EAT_POST_LIST`,
-    FETCH_EAT_POST_DETAIL:`FETCH_EAT_POST_DETAIL`,
+    FETCH_MEDIA_LIST:`FETCH_MEDIA_LIST`,
+    FETCH_MEDIA_DETAIL:`FETCH_MEDIA_DETAIL`,
+    FETCH_POST_LIST:`FETCH_POST_LIST`,
+    FETCH_POST_DETAIL:`FETCH_POST_DETAIL`,
     FETCH_EAT_FOOD_LIST:`FETCH_EAT_FOOD_LIST`,
     FETCH_EAT_FOOD_DETAIL:`FETCH_EAT_FOOD_DETAIL`,
     FETCH_EAT_SHOP_LIST:`FETCH_EAT_SHOP_LIST`,
-    FETCH_EAT_SHOP_DETAIL:`FETCH_EAT_SHOP_DETAIL`,
+    FETCH_SLEEP_SHOP_LIST:`FETCH_SLEEP_SHOP_LIST`,
+    FETCH_SHOP_DETAIL:`FETCH_SHOP_DETAIL`,
     FETCH_EAT_TIME_LIST:`FETCH_EAT_TIME_LIST`,
     FETCH_EAT_TIME_DETAIL:`FETCH_EAT_TIME_DETAIL`,
 }
 window.APIS={
     API_MY_PROFILE:`/users/xiaomaido`,
+    API_TOUR_INDEX:`/tourIndex/index`,
+    API_TOUR_PIC_LIST:`/tourIndex/tourPicList`,
+    API_TOUR_PIC_DETAIL:`/tourIndex/tourPicDetail`,
+    API_TOUR_ROUTE_LIST:`/tourIndex/tourRouteList`,
+    API_TOUR_ROUTE_DETAIL:`/tourIndex/tourRouteDetail`,
+    API_TOUR_POST_LIST:`/tourIndex/postList`,
+    API_TOUR_POST_DETAIL:`/tourIndex/postDetail`,
+    API_TOUR_POST_COMMENT:`/tourIndex/postComment`,
+    API_TOUR_POST_LIKE:`/tourIndex/postLike`,
+    API_TOUR_SHOP_LIST:`/tourIndex/sellerSearch`,
+    API_TOUR_SHOP_DETAIL:`/tourIndex/sellerDetail`,
+    API_TOUR_SHOP_COMMENT:`/tourIndex/sellerComment`,
+    API_TOUR_SHOP_LIKE:`/tourIndex/sellerLike`,
+    API_SLEEP_INDEX:`/sleepIndex/index`,
+    API_SLEEP_MEDIA_LIST:`/sleepIndex/recMediaList`,
+    API_SLEEP_MEDIA_DETAIL:`/sleepIndex/recMediaDetail`,
+    API_SLEEP_MEDIA_LIKE:`/sleepIndex/recMediaLike`,
+    API_SLEEP_MEDIA_COMMENT:`/sleepIndex/mediaComment`,
+    API_SLEEP_POST_LIST:`/sleepIndex/postList`,
+    API_SLEEP_POST_DETAIL:`/sleepIndex/postDetail`,
+    API_SLEEP_POST_COMMENT:`/sleepIndex/postComment`,
+    API_SLEEP_POST_LIKE:`/sleepIndex/postLike`,
+    API_SLEEP_SHOP_LIST:`/sleepIndex/sellerSearch`,
+    API_SLEEP_SHOP_DETAIL:`/sleepIndex/sellerDetail`,
+    API_SLEEP_SHOP_COMMENT:`/sleepIndex/sellerComment`,
+    API_SLEEP_SHOP_LIKE:`/sleepIndex/sellerLike`,
     API_EAT_INDEX:`/eatIndex/index`,
     API_EAT_MEDIA_LIST:`/eatIndex/recMediaList`,
     API_EAT_MEDIA_DETAIL:`/eatIndex/recMediaDetail`,
@@ -294,11 +327,46 @@ window.ResponseState={
         response: {"login":"xiaomaido","id":11659631,"avatar_url":"https://avatars0.githubusercontent.com/u/11659631?v=4","gravatar_id":"","url":"https://api.github.com/users/xiaomaido","html_url":"https://github.com/xiaomaido","followers_url":"https://api.github.com/users/xiaomaido/followers","following_url":"https://api.github.com/users/xiaomaido/following{/other_user}","gists_url":"https://api.github.com/users/xiaomaido/gists{/gist_id}","starred_url":"https://api.github.com/users/xiaomaido/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/xiaomaido/subscriptions","organizations_url":"https://api.github.com/users/xiaomaido/orgs","repos_url":"https://api.github.com/users/xiaomaido/repos","events_url":"https://api.github.com/users/xiaomaido/events{/privacy}","received_events_url":"https://api.github.com/users/xiaomaido/received_events","type":"User","site_admin":false,"name":"Martin Zeng","company":null,"blog":"","location":"Shanghai","email":null,"hireable":null,"bio":null,"public_repos":16,"public_gists":0,"followers":0,"following":1,"created_at":"2015-03-26T05:59:40Z","updated_at":"2017-11-26T03:40:32Z"}
     },
 }
+window.VideoList = (props) => {
+    const { list, me, title = '视频推荐', type = 'EAT' } = props
+    return (
+        <div className="video clearboth">
+            <div className="title-box">
+                <div className="line thinner-border clearboth"></div>
+                <div className="title" onClick={me.openPage.bind(me, `/videohot?_t=${type}`)}>{title}</div>
+            </div>
+            <div className="vlist">
+                <div className="ul-box">
+                    <ul style={{width:((list.length+1)*fontSize*(240+30)/40)}}>
+                        {
+                            list.map((d,i)=>(
+                                <li key={i} onClick={me.openPage.bind(me, `/videohot/${d.id}?_t=${type}`)}>
+                                    <div className="icon poster other" style={{backgroundImage:`url(${d.indexPic})`}}>
+                                        <img src={play} />
+                                    </div>
+                                    <div className="text">{d.title}</div>
+                                </li>
+                            ))
+                        }
+                        <li onClick={me.openPage.bind(me, `/videohot`)}>
+                            <div className="icon poster">
+                                <div className="more">更多视频 &gt;</div>
+                            </div>
+                            <div className="text"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className="gap"></div>
+        </div>
+    )
+}
 window.PostList = (props) => {
     const {
         isVideo = false, 
         list, 
         me,
+        type = 'EAT',
     } = props
     const { pathname } = _location
     return (
@@ -306,7 +374,7 @@ window.PostList = (props) => {
             {
                 list.map((d={ imgs:[] },i)=>(
                     <div key={i}>
-                        <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>
+                        <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}?_t=${type}`)}>
                             <div className="avatar-name">
                                 <i className="icon" style={{backgroundImage:`url(${d.headimg})`}}></i>
                                 <span>{d.nickname}</span>
@@ -402,7 +470,7 @@ window.CommentList = (props) => {
                     list.map((d = {},i)=>{
                         d.user_info = d.user_info || {
                             headimg: avatar_url,
-                            nickname: `游客${i+1}`,
+                            nickname: `游客`,
                         }
                         return (
                             <li key={i}>

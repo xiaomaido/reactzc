@@ -701,6 +701,50 @@
         }
     }
 }
+.hotel-hot{
+    .box{
+        width: 10rem;
+        .address{
+            color: $color_5d666e;
+            font-size: px2rem(22px);
+            line-height: px2rem(30px);
+            margin-top: 0;
+            padding-top: 0.35rem;
+            i{
+                float: left;
+                width: px2rem(18px);
+                height: px2rem(22px);
+                margin-right: px2rem(10px);
+                background-image: url('../../images/quyou/icon/addr.png')
+                
+            }
+        }
+        .stars-permoney{
+            width: 10rem;
+            height: px2rem(20px);
+            .stars-show{
+                height: px2rem(20px);
+                float: left;
+            }
+            .permoney{
+                position: relative;
+                top: -0.1rem;
+                float: right !important;
+                span{
+                    color: #ff942a;
+                    font-size: px2rem(30px);
+                    line-height: px2rem(30px);
+                    // color: #9a9a9a;
+                    // font-size: px2rem(22px);
+                    // line-height: px2rem(28px);
+                }
+            }
+        }
+        .tags{
+            padding-top: 0.1rem !important;
+        }
+    }
+}
 .season-hot{
     padding-top: $barTop;
     .banner{
@@ -1076,7 +1120,7 @@
                 .address{
                     color: $color_5d666e;
                     font-size: px2rem(22px);
-                    line-height: px2rem(22px);
+                    line-height: px2rem(30px);
                     margin-top: px2rem(22px);
                     i{
                         float: left;

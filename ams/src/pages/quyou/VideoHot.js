@@ -5,8 +5,7 @@ const initStateResponse = {
         "data": [],
     }
 }
-const API_PAGE = APIS.API_EAT_MEDIA_LIST
-const FETCH_PAGE = TYPES.FETCH_EAT_MEDIA_LIST
+const FETCH_PAGE = TYPES.FETCH_MEDIA_LIST
 export default class Index extends Quyou{
     state={
         [FETCH_PAGE]:{
@@ -22,7 +21,10 @@ export default class Index extends Quyou{
     }
     componentDidMount(){
         const me = this
-        me.requestList(me,FETCH_PAGE,API_PAGE)
+        const { query } = me.props.location
+        const _t = query._t || 'EAT'
+        const API_PAGE = APIS[`API_${_t}_MEDIA_LIST`]
+        me.requestList(me, FETCH_PAGE, API_PAGE)
     }
 }
 
@@ -33,9 +35,11 @@ const Content = (props) => {
         data = [],
     } = response.data
     data = Array.isArray(data) ? data : []
+	const { query } = _location
+	const _t = query._t || 'EAT'
     return (
         <div className="yummy-hot"> 
-            <PostList list={data} me={me} isVideo={true} />
+            <PostList list={data} me={me} type={_t} isVideo={true} />
             {
                 me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
             }

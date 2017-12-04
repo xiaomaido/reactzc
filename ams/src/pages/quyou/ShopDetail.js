@@ -9,9 +9,7 @@ const initStateResponse = {
 }
 const ID = 'id'
 const API_PAGE_LIKE = APIS.API_EAT_SHOP_LIKE
-const API_PAGE_COMMENT = APIS.API_EAT_SHOP_COMMENT
-const API_PAGE = APIS.API_EAT_SHOP_DETAIL
-const FETCH_PAGE = TYPES.FETCH_EAT_SHOP_DETAIL
+const FETCH_PAGE = TYPES.FETCH_SHOP_DETAIL
 export default class Index extends Quyou{
 	state = {
         [FETCH_PAGE]:{
@@ -30,20 +28,27 @@ export default class Index extends Quyou{
     }
     componentDidMount(){
 		const me = this
+        const { query } = me.props.location
+		const _t = query._t || 'EAT'
+		const API_PAGE = APIS[`API_${_t}_SHOP_DETAIL`]
 		me.requestDetail(me,FETCH_PAGE,API_PAGE)
 	}
 }
 const Content = (props) => {
     const { response, me } = props
     const { data = { }  } = response
-    const { showCreateComment, textOkay } = me.state
+	const { showCreateComment, textOkay } = me.state
+	const { query } = _location
+	const _t = query._t || 'EAT'
+	const API_PAGE_LIKE = APIS[`API_${_t}_SHOP_LIKE`]
+	const API_PAGE_COMMENT = APIS[`API_${_t}_SHOP_COMMENT`]
     return data.id ? (
 		<div className="shop-detail">
 			<Intro data={data} needCover={true} />
 			<div className="gap"></div>
 			<div className="necker">
 				<div className="necker-box">
-					<div className="intro"><span></span>店铺简介</div>
+					<div className="intro"><span></span>简介</div>
 					<div className="clearboth thinner-border"></div>
 					<div className="descrip">{data.description||'暂无'}</div>
 					{/* <div className="open-more">展开更多 ^</div> */}

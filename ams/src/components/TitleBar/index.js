@@ -4,6 +4,18 @@ const Index = (props) => {
     const current = location.pathname.split('/')
     let backUrl = `/${current[1]}`
     backUrl = current.length === 3 ? backUrl : objTitleBack[backUrl]
+    const { search, query } = props.location
+    const _t = query._t || 'EAT'
+    if(backUrl === '/'){
+        if(_t === 'SLEEP') backUrl='/hotel'
+        else if(_t === 'TOUR') backUrl='/trip'
+    }
+    else if(backUrl === '/posthot' || backUrl === '/videohot'){
+        backUrl = backUrl + search
+    }
+    else if(backUrl === '/shophot'){
+        backUrl = _t === 'SLEEP' ? '/hotelhot' : backUrl
+    }        
     return (
         <div className="titleBar">
             <div className="box">

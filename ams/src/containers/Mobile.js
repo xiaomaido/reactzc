@@ -66,6 +66,10 @@ window.pageMapRoute={
 		url:'/hotel',
 		page:Pages.Hotel
 	},
+	hotelhot: {
+		url:'/hotelhot',
+		page:Pages.HotelHot
+	},
 	xianshifulidetail: {
 		url:'/xianshifuli/:id',
 		page:Pages.XianShiFuLiDetail
@@ -102,13 +106,13 @@ window.pageMapRoute={
 		url:'/videohot',
 		page:Pages.VideoHot
 	},
-	yummydetail: {
-		url:'/yummyhot/:id',
-		page:Pages.YummyDetail
+	postdetail: {
+		url:'/posthot/:id',
+		page:Pages.PostDetail
 	},
-	yummyhot: {
-		url:'/yummyhot',
-		page:Pages.YummyHot
+	posthot: {
+		url:'/posthot',
+		page:Pages.PostHot
 	},
 	query: {
 		url:'/query',

@@ -9,11 +9,7 @@ const initStateResponse = {
 
 const isVideo = true
 const ID = 'media_id' 
-const API_PAGE_LIKE = APIS.API_EAT_MEDIA_LIKE
-const API_PAGE_COMMENT = APIS.API_EAT_MEDIA_COMMENT
-const API_PAGE = APIS.API_EAT_MEDIA_DETAIL
-const FETCH_PAGE = TYPES.FETCH_EAT_MEDIA_DETAIL
-
+const FETCH_PAGE = TYPES.FETCH_MEDIA_DETAIL
 export default class Index extends Quyou{
 	state = {
         [FETCH_PAGE]:{
@@ -32,6 +28,9 @@ export default class Index extends Quyou{
 	}
     componentDidMount(){
 		const me = this
+        const { query } = me.props.location
+		const _t = query._t || 'EAT'
+		const API_PAGE = APIS[`API_${_t}_MEDIA_DETAIL`]
 		me.requestDetail(me,FETCH_PAGE,API_PAGE)
 	}
 }
@@ -42,6 +41,10 @@ const Content = (props) => {
         data = {},
 	} = response
 	const { showCreateComment, textOkay } = me.state
+	const { query } = _location
+	const _t = query._t || 'EAT'
+	const API_PAGE_LIKE = APIS[`API_${_t}_MEDIA_LIKE`]
+	const API_PAGE_COMMENT = APIS[`API_${_t}_MEDIA_COMMENT`]
     return data.id ? (
 		<div className="yummy-detail">
 			{

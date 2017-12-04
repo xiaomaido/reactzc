@@ -1,4 +1,3 @@
-import bar from '../../images/quyou/banner/bar.png'
 import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
@@ -48,8 +47,7 @@ const Content = (props) => {
         <div className="eat">
             <div className="top">
                 <TouchSlideBox imgSlideList={banner} />
-                {/* <img className="bar" src={timeBenefits} onClick={me.openPage.bind(me, `/xianshifuli`)} /> */}
-                <img className="bar" src={bar} onClick={me.openPage.bind(me, `/xianshifuli`)} />
+                <img className="bar" src={timeBenefits} onClick={me.openPage.bind(me, `/xianshifuli`)} />
                 <ul className="quick">
                     <li onClick={me.openPage.bind(me,  `/shophot`)}>
                         <img src={quick0} style={{float:'left'}} />
@@ -66,45 +64,11 @@ const Content = (props) => {
                 </ul>
             </div>
             <div className="yummy clearboth">
-                <div className="icon logo" onClick={me.openPage.bind(me,  `/yummyhot`)}></div>
-                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}} onClick={me.openPage.bind(me,  `/yummyhot/${post_index.id}`)}></div>
-                <div className="content" onClick={me.openPage.bind(me,  `/yummyhot/${post_index.id}`)}>{post_index.description}</div>
+                <div className="icon logo" onClick={me.openPage.bind(me,  `/posthot`)}></div>
+                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}} onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}></div>
+                <div className="content" onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}>{post_index.description}</div>
             </div>
             <VideoList list={recomm_medias} me={me} />
         </div>
     )
 } 
-const VideoList = (props) => {
-    const { list, me } = props
-    return (
-        <div className="video clearboth">
-            <div className="title-box">
-                <div className="line thinner-border clearboth"></div>
-                <div className="title" onClick={me.openPage.bind(me, `/videohot`)}>视频推荐</div>
-            </div>
-            <div className="vlist">
-                <div className="ul-box">
-                    <ul style={{width:((list.length+1)*fontSize*(240+30)/40)}}>
-                        {
-                            list.map((d,i)=>(
-                                <li key={i} onClick={me.openPage.bind(me, `/videohot/${d.id}`)}>
-                                    <div className="icon poster other" style={{backgroundImage:`url(${d.indexPic})`}}>
-                                        <img src={play} />
-                                    </div>
-                                    <div className="text">{d.title}</div>
-                                </li>
-                            ))
-                        }
-                        <li onClick={me.openPage.bind(me, `/videohot`)}>
-                            <div className="icon poster">
-                                <div className="more">更多视频 &gt;</div>
-                            </div>
-                            <div className="text"></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="gap"></div>
-        </div>
-    )
-}

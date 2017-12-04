@@ -6,6 +6,7 @@ const imgSlideList=[
         url: '/guidance',
     },
 ]
+const FETCH_PAGE = TYPES.FETCH_TOUR_INDEX
 export default class Index extends Quyou{
 	render(){
         document.title='趣游崇明'
@@ -23,7 +24,7 @@ export default class Index extends Quyou{
                     <img className="bar" src={bar}  />
                     <div style={{height:0}}>&nbsp;</div>
                 </div>
-				<PictureList list={Array.apply(null,{length:5})} me={this} />
+				<PictureList list={[{id:16},{id:17}]} me={this} />
                 <div className="banner-box">
                     <div className="bigsmall" onClick={this.openPage.bind(this,  `/busline`)}>
                         <div className="big"><span>打造</span>低碳环保出行</div>
@@ -35,6 +36,13 @@ export default class Index extends Quyou{
             </div>
         )
     }
+    componentDidMount(){
+		const me = this
+        const { query } = me.props.location
+		const _t = query._t || 'EAT'
+		const API_PAGE = APIS[`API_TOUR_INDEX`]
+		me.requestDetail(me,FETCH_PAGE,API_PAGE)
+	}
 } 
 
 const PictureList = (props) => {
@@ -46,7 +54,7 @@ const PictureList = (props) => {
 					<ul style={{width:(list.length*fontSize*(200+30)/40)}}>
 						{
 							list.map((d,i)=>(
-								<li key={i} onClick={me.openPage.bind(me, `yummyhot/${i+1}`)}>
+								<li key={i} onClick={me.openPage.bind(me, `posthot/${d.id}?_t=TOUR`)}>
 									<div className="icon poster" style={{backgroundImage:'url(http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg)'}}>
 									</div>
                                     <div className="text">焦糖玛奇朵</div>
