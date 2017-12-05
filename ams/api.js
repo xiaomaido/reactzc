@@ -315,7 +315,7 @@ tourpostLikeQ =  {
 
 # 景区列表
 # sellerSearch(user_id, tag, location, sortby, filter, limit, offset)
-toursellerSearch = baseUrl + '/tourIndex/sellerSearch'
+toursellerSearch = baseUrl + '/tourIndex/sellerSearch'  $$BINGO
 toursellerSearchQ = {
         "limit": 10,
         "offset": 0
@@ -323,7 +323,7 @@ toursellerSearchQ = {
 
 # 景区详情
 # sellerDetail(user_id, id)
-toursellerDetail = baseUrl + '/tourIndex/sellerDetail'
+toursellerDetail = baseUrl + '/tourIndex/sellerDetail'  $$BINGO
 toursellerDetailQ = {
         "user_id": 1,
         "id": 19
@@ -331,7 +331,7 @@ toursellerDetailQ = {
 
 # 景区评论
 # sellerComment(content, user_id, id)
-toursellerComment = baseUrl + '/tourIndex/sellerComment'
+toursellerComment = baseUrl + '/tourIndex/sellerComment'  $$BINGO
 toursellerCommentQ = {
         'content': '哈哈哈111',
         "user_id": 1,
@@ -340,7 +340,7 @@ toursellerCommentQ = {
 
 # 景区点赞
 # sellerLike(user_id, id)
-toursellerLike = baseUrl + '/tourIndex/sellerLike'
+toursellerLike = baseUrl + '/tourIndex/sellerLike'  $$BINGO
 toursellerLikeQ = {
         "user_id": 1,
         "id": 19

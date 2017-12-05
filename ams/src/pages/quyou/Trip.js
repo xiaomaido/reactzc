@@ -13,26 +13,27 @@ export default class Index extends Quyou{
         const me=this
         return (
             <div className="trip">
-                <div className="query-box" onClick={me.openPage.bind(me, `/query`)}>
+                {/* <div className="query-box" onClick={me.openPage.bind(me, `/query`)}>
                     <div className="query">
                         <i className="icon" />
                         <span>请输入关键字查询</span>
                     </div>
-                </div>
+                </div> */}
                 <TouchSlideBox imgSlideList={imgSlideList} />               
                 <div className="top" onClick={me.openPage.bind(me, `/posthot?_t=TOUR`)}>
                     <img className="bar" src={bar}  />
                     <div style={{height:0}}>&nbsp;</div>
                 </div>
-				<PictureList list={[{id:16},{id:17}]} me={this} />
+				<PictureList list={[{id:16},{id:17}]} me={me} />
                 <div className="banner-box">
-                    <div className="bigsmall" onClick={this.openPage.bind(this,  `/busline`)}>
+                    <div className="bigsmall" onClick={me.openPage.bind(me,  `/busline`)}>
                         <div className="big"><span>打造</span>低碳环保出行</div>
                         <div className="small">公共交通线路时刻一览表</div>
                     </div>
                     <img className="bus" src={bus}  />
                 </div>
                 <div style={{height:0}}>&nbsp;</div>
+                <div style={{backgroundColor:'#fff'}} onClick={me.openPage.bind(me,  `/triphot?cate=-1`)}>景点列表</div>
             </div>
         )
     }

@@ -20,6 +20,7 @@ import MyMsg from './quyou/MyMsg'
 import Mall from './quyou/Mall'
 import MallFuli from './quyou/MallFuli'
 import Trip from './quyou/Trip'
+import TripHot from './quyou/TripHot'
 import BusLine from './quyou/BusLine'
 import Guidance from './quyou/Guidance'
 import GuidanceDetail from './quyou/GuidanceDetail'
@@ -48,6 +49,7 @@ export {
 	MyCoupons,
 	MyMsg,
 	Trip,
+	TripHot,
 	Guidance,
 	GuidanceDetail,
 	BusLine,

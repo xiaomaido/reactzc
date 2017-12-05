@@ -50,6 +50,10 @@ window.pageMapRoute={
 		url:'/trip',
 		page:Pages.Trip
 	},
+	triphot: {
+		url:'/triphot',
+		page:Pages.TripHot
+	},
 	guidancedetail: {
 		url:'/guidance/:id',
 		page:Pages.GuidanceDetail
