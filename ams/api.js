@@ -346,13 +346,26 @@ toursellerLikeQ = {
         "id": 19
 }
 
-url = toursellerDetail
-query = toursellerDetailQ
-res = requests.post(url, data=json.dumps(query))
-print json.dumps(json.loads(res.text), indent=2, ensure_ascii=False)
+# 用户登陆
+userGetcode = baseUrl + '/user/getloginCode'
+userGetcodeQ = {
+        "mobile": "17321066362"
+        }
+
+userMcheck = baseUrl + '/user/mcheck'
+userMcheckQ = {
+        "mobile": "17321066362",
+        "code": "8a14ea"
+        }
 
 
 
-# 游 帖子加项目...， 加领券
-# 住 商家加类目，加评分
+
+
+
+
+
+
+
+
 

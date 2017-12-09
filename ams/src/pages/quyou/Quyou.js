@@ -6,7 +6,7 @@ import Mask from '../../components/Mask/'
 import TouchSlideBox from '../../components/TouchSlideBox/'
 import CreateComment from '../../components/CreateComment/'
 import NoMoreData from '../../components/NoMoreData/'
-import Sign from '../../components/Sign/'
+// import Sign from '../../components/Sign/'
 import Spin from '../../components/Spin/'
 import SelectBox from '../../components/SelectBox/'
 import FilterBox from '../../components/FilterBox/'
@@ -17,7 +17,7 @@ window.avatar_url=avatar_url
 window.play=play
 export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
-    user_id=3
+    user_id=0
     limit=3
     page=0
     api={
@@ -39,6 +39,12 @@ export class Quyou extends React.Component{ // 公共模板
 		this.context.router.push(url)
     }
     requestAPI(url,data,succ=(res)=>{console.log(res)},fail=(err)=>{console.log(err)},method='GET'){
+        if(data.user_id === 0){
+            if(~url.indexOf('Like') || ~url.indexOf('Comment')){
+                this.openPage('/signin')
+                return
+            }
+        }        
         url = ~url.indexOf(this.api.host) ? url : this.api.host + url
         url = data && method==='GET' ? url + Object.keys(data).reduce((arr,k)=>{
             arr.push(`&${k}=${data[k]}`)
@@ -159,6 +165,10 @@ export class Quyou extends React.Component{ // 公共模板
     }
 	handleShowCreateComment(e){
 		const me = this
+        if(me.user_id === 0){
+            this.openPage('/signin')
+            return
+        }
 		const { showCreateComment } = me.state
 		me.setState({
 			showCreateComment: !showCreateComment
@@ -252,13 +262,15 @@ window.TouchSlideBox=TouchSlideBox
 window.LazyLoad=LazyLoad
 window.Mask=Mask
 window.CreateComment=CreateComment
-window.Sign=Sign
+// window.Sign=Sign
 window.Spin=Spin
 window.SelectBox=SelectBox
 window.FilterBox=FilterBox
 window.fetch=fetch
 window.TYPES={
     FETCH_MY_PROFILE:`FETCH_MY_PROFILE`,
+    FETCH_MY_GET_LOGIN_CODE:`FETCH_MY_GET_LOGIN_CODE`,
+    FETCH_MY_CHECK_LOGIN_CODE:`FETCH_MY_CHECK_LOGIN_CODE`,
     FETCH_TOUR_INDEX:`FETCH_TOUR_INDEX`,
     FETCH_TOUR_PIC_LIST:`FETCH_TOUR_PIC_LIST`,
     FETCH_EAT_INDEX:`FETCH_EAT_INDEX`,
@@ -276,6 +288,8 @@ window.TYPES={
 }
 window.APIS={
     API_MY_PROFILE:`/users/xiaomaido`,
+    API_MY_GET_LOGIN_CODE:`/user/getloginCode`,
+    API_MY_CHECK_LOGIN_CODE:`/user/mcheck`,
     API_TOUR_INDEX:`/tourIndex/index`,
     API_TOUR_PIC_LIST:`/tourIndex/tourPicList`,
     API_TOUR_PIC_DETAIL:`/tourIndex/tourPicDetail`,
