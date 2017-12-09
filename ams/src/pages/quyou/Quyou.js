@@ -18,6 +18,7 @@ window.play=play
 export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
     user_id=0
+    _tk=misc.getCookie('_tk')
     limit=3
     page=0
     api={
@@ -38,13 +39,14 @@ export class Quyou extends React.Component{ // 公共模板
 	openPage(url,e){ // 打开页面
 		this.context.router.push(url)
     }
-    requestAPI(url,data,succ=(res)=>{console.log(res)},fail=(err)=>{console.log(err)},method='GET'){
-        if(data.user_id === 0){
+    requestAPI=(url,data,succ=(res)=>{console.log(res)},fail=(err)=>{console.log(err)},method='GET')=>{
+        const me = this
+        if(!me._tk){
             if(~url.indexOf('Like') || ~url.indexOf('Comment')){
                 this.openPage('/signin')
                 return
             }
-        }        
+        }      
         url = ~url.indexOf(this.api.host) ? url : this.api.host + url
         url = data && method==='GET' ? url + Object.keys(data).reduce((arr,k)=>{
             arr.push(`&${k}=${data[k]}`)
@@ -165,7 +167,7 @@ export class Quyou extends React.Component{ // 公共模板
     }
 	handleShowCreateComment(e){
 		const me = this
-        if(me.user_id === 0){
+        if(!me._tk){
             this.openPage('/signin')
             return
         }

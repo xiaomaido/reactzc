@@ -124,7 +124,7 @@ export default class Index extends Quyou{
         },(response)=>{
             // {"msg":"验证码错误请重新提交","data":"","code":20003}
             const { msg, code } = response
-            if(code){
+            if(!code){
                 me.setState({
                     validityState: msg,
                 })
@@ -136,6 +136,7 @@ export default class Index extends Quyou{
                 me.setState({
                     validityState: '登录成功！',
                 },jump)
+                misc.setCookie('_tk', 'nhjrIIHsgWOphQ2dytO2amZPdDe4N5vA4dUSmr6AcBLElZLiQLMDe14NiTZcVqSBSOWLT9P9YWeH%2FcfHsprwVQUy7iGOCFj8Oj5GwwgjR0%3D')
             }
         })
     }
