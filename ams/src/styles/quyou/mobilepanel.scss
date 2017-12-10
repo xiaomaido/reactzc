@@ -8,6 +8,7 @@
 }
 .trip{
     background-color: $color_f5;
+    padding-bottom: $barTop;
     .query-box{
         position: absolute;
         top:0;
@@ -132,6 +133,7 @@
 }
 .trip-busline{
     padding-top: $barTop;
+    padding-bottom: $barTop;
     .gjxl{
         padding: px2rem(30px) 0;
         height: px2rem(120px);
@@ -142,6 +144,11 @@
         margin: 0 auto;
         width: px2rem(690px);
         border-top: px2rem(8px) solid $color_fe932b
+    }
+    .bustime{
+        display: block;
+        margin: 0 auto;
+        width: px2rem(690px);
     }
 }
 .my{
@@ -902,6 +909,9 @@
                 }
                 margin-bottom: px2rem(30px);
             }
+            .descrip.activity{
+                margin-top: 0;
+            }
             .descrip{
                 margin: px2rem(30px) 0 px2rem(18px);
                 padding-right: px2rem(44px);
@@ -909,7 +919,7 @@
                 font-size: px2rem(24px);
                 line-height: px2rem(50px);
                 overflow: hidden;
-                -webkit-line-clamp: 4;
+                -webkit-line-clamp: 8;
                 -webkit-box-orient: vertical;
                 display: -webkit-inline-box;
                 word-break: break-word;
@@ -927,6 +937,9 @@
                     line-height: px2rem(34px);
                     font-size: px2rem(26px);
                     color: $color_33;
+                    div.activity{
+                        background-color: $color_78c790;
+                    }
                     div{
                         margin-right: px2rem(20px);
                         background-color: $color_ffce1a;
@@ -1517,6 +1530,7 @@
         .cover{
             margin-top: px2rem(32px);
             height: px2rem(208px);
+            height: px2rem(400px);
             background-size: cover;
             background-color: $color_e5;
         }

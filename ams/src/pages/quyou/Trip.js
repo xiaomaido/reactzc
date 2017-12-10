@@ -33,7 +33,7 @@ export default class Index extends Quyou{
                     <img className="bus" src={bus}  />
                 </div>
                 <div style={{height:0}}>&nbsp;</div>
-                <div style={{backgroundColor:'#fff'}} onClick={me.openPage.bind(me,  `/triphot?cate=-1`)}>景点列表</div>
+                <div style={{backgroundColor:'#fff',padding:30}} onClick={me.openPage.bind(me,  `/triphot?cate=-1`)}>旅游景点列表</div>
             </div>
         )
     }

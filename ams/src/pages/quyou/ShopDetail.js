@@ -54,9 +54,7 @@ const Content = (props) => {
 					<div className="descrip">{data.description||'暂无'}</div>
 					{/* <div className="open-more">展开更多 ^</div> */}
 					<div className="clearboth thinner-border"></div>
-					<ProductList list={Array.apply(null,{length:5})} me={me} />
-					<div className="clearboth thinner-border"></div>
-					<ProductList list={Array.apply(null,{length:5})} me={me} />
+					<ProductList list={Array.apply(null,{length:5})} me={me} activities={data.activities} />
 				</div>
 			</div>
 			{
@@ -78,10 +76,21 @@ const Content = (props) => {
 	): null
 }
 const ProductList = (props) => {
-    const { list, me } = props
+    const { list, me, activities = [] } = props
     return (
 		<div className="video clearboth">
-			<div className="title"><div>活</div>近期活动</div>
+			{
+				Array.isArray(activities) ? activities.map((d,i)=>(
+					<div key={i}>
+						<div className="title activity"><div className="activity">活</div>近期活动</div>
+						<div className="descrip activity">
+							活动名：{d.title}<br/>
+							内容：<br/>
+							{d.description}
+						</div>
+					</div>
+				)) : null
+			}
 			<div className="title"><div>惠</div>商家优惠</div>
 			<div className="vlist">
 				<div className="ul-box">

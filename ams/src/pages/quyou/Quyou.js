@@ -547,7 +547,7 @@ window.Intro = (props) => {
                 <div className="name"><i className="icon" />【{data.name}】{ data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}</div>
                 <div className="address"><i className="icon" />{data.addr1+data.addr2+data.addr3+data.detail}</div>
                 {
-                    needCover ? (<div className="icon cover" style={{backgroundImage:`url(${data.imgs[0]})`}}></div>) : null
+                    needCover ? data.imgs.map((img,i)=><div key={i} className="icon cover" style={{backgroundImage:`url(${img})`}}></div>) : null
                 }
             </div>
         </div>
