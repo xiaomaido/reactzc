@@ -475,7 +475,7 @@
         }
         .bar{
             display: block;
-            margin: px2rem(28px) auto;
+            margin: px2rem(28px) auto 0;
             height: px2rem(100px);
             width: px2rem(666px);
             border-radius: px2rem(100px);
@@ -486,7 +486,7 @@
         display: block;
         width: px2rem(550px);
         height: px2rem(96px)+px2rem(14px)+px2rem(24px)+px2rem(28px);
-        margin: 0 auto;
+        margin: px2rem(28px) auto 0;
         li{
             float: left;
             width: 33.3%;
@@ -1497,8 +1497,9 @@
         .address{
             color: $color_5d666e;
             font-size: px2rem(22px);
-            line-height: px2rem(32px);
-            margin-top: px2rem(22px);
+            line-height: 1rem;
+            margin-top: 0.55rem;
+            width: 78%;
             i{
                 float: left;
                 width: px2rem(32px);

@@ -47,7 +47,7 @@ const Content = (props) => {
         <div className="eat">
             <div className="top">
                 <TouchSlideBox imgSlideList={banner} />
-                <img className="bar" src={timeBenefits} onClick={me.openPage.bind(me, `/xianshifuli`)} />
+                {/* <img className="bar" src={timeBenefits} onClick={me.openPage.bind(me, `/xianshifuli`)} /> */}
                 <ul className="quick">
                     <li onClick={me.openPage.bind(me,  `/shophot`)}>
                         <img src={quick0} style={{float:'left'}} />
