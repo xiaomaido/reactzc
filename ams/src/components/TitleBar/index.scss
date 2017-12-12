@@ -27,52 +27,68 @@
             width: px2rem(184px);
             height: px2rem(44px);
         }
-        .title.foodhot{
-            background-image: url('./images/foodhot.png')
+        .title.foodhoteat{
+            background-image: url('./images/foodhoteat.png')
         }
-        .title.shophot{
-            background-image: url('./images/shophot.png')
+        .title.shophoteat{
+            background-image: url('./images/shophoteat.png')
         }
-        .title.seasonhot{
-            background-image: url('./images/seasonhot.png')
+        .title.shophottour{
+            background-image: url('./images/triphoteat.png')
         }
-        .title.posthot{
-            background-image: url('./images/posthot.png')
+        .title.shophotsleep{
+            background-image: url('./images/hotelhoteat.png')
         }
-        .title.videohot{
-            background-image: url('./images/videohot.png')
+        .title.seasonhoteat{
+            background-image: url('./images/seasonhoteat.png')
         }
-        .title.hotelhot{
-            background-image: url('./images/hotelhot.png')
+        .title.posthoteat{
+            background-image: url('./images/posthoteat.png')
         }
-        .title.triphot{
-            background-image: url('./images/triphot.png')
+        .title.posthotsleep{
+            background-image: url('./images/posthotsleep.png')
         }
-        .title.xianshifuli{
-            background-image: url('./images/xianshifuli.png')
+        .title.posthottour{
+            background-image: url('./images/posthottour.png')
         }
-        .title.myprofile{
-            background-image: url('./images/myprofile.png')
+        .title.videohoteat{
+            background-image: url('./images/videohoteat.png')
         }
-        .title.mallfuli{
-            background-image: url('./images/mallfuli.png');
+        .title.videohotsleep{
+            background-image: url('./images/videohotsleep.png')
+        }
+        .title.hotelhoteat{
+            background-image: url('./images/hotelhoteat.png')
+        }
+        .title.triphoteat{
+            background-image: url('./images/triphoteat.png')
+        }
+        .title.xianshifulieat{
+            background-image: url('./images/xianshifulieat.png')
+        }
+        .title.myprofileeat{
+            background-image: url('./images/myprofileeat.png')
+        }
+        .title.mallfulieat{
+            background-image: url('./images/mallfulieat.png');
             width: px2rem(274px);
         }
-        .title.guidance{
-            background-image: url('./images/guidance.png');
+        .title.guidanceeat{
+            background-image: url('./images/guidanceeat.png');
             width: px2rem(134px);
         }
-        .title.busline{
-            width: px2rem(134px);
+        .title.buslineeat{
+            width: px2rem(233px);
+            background-image: url('./images/buslineeat.png');
         }
-        .title.query{
-            background-image: url('./images/query.png');
+        .title.queryeat{
+            background-image: url('./images/queryeat.png');
         }
-        .title.mycoupons{
-            background-image: url('./images/mycoupons.png');
+        .title.mycouponseat{
+            background-image: url('./images/mycouponseat.png');
         }
-        .title.mymsg{
-            background-image: url('./images/mymsg.png');
+        .title.mymsgeat{
+            background-image: url('./images/mymsgeat.png');
         }
     }
 }

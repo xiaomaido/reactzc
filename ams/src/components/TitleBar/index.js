@@ -6,6 +6,7 @@ const Index = (props) => {
     backUrl = current.length === 3 ? backUrl : objTitleBack[backUrl]
     const { search, query } = props.location
     const _t = query._t || 'EAT'
+    const titleimg = current[1] + _t.toLowerCase()
     if(backUrl === '/'){
         if(_t === 'SLEEP') backUrl='/hotel'
         else if(_t === 'TOUR') backUrl='/trip'
@@ -21,7 +22,7 @@ const Index = (props) => {
         <div className="titleBar">
             <div className="box">
                 <a className="icon back" href={`${window.isHashHistory}${backUrl}`}></a>
-                <i className={classnames({"icon":true,"title":true,[current[1]]:true})}  />
+                <i className={classnames({"icon":true,"title":true,[titleimg]:true})}  />
             </div>
             <div className="clearboth thinner-border"></div>
         </div>

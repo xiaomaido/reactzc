@@ -149,6 +149,7 @@
         display: block;
         margin: 0 auto;
         width: px2rem(690px);
+        position: relative;
     }
 }
 .my{
@@ -616,6 +617,11 @@
                             margin-top: px2rem(22px);
                             font-size: px2rem(22px);
                             line-height: px2rem(22px);
+                            overflow: hidden;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                            display: -webkit-inline-box;
+                            word-break: break-word;
                         }
                     }
                 }
@@ -988,6 +994,11 @@
                                     margin-top: px2rem(16px);
                                     font-size: px2rem(26px);
                                     line-height: px2rem(26px);
+                                    overflow: hidden;
+                                    -webkit-line-clamp: 1;
+                                    -webkit-box-orient: vertical;
+                                    display: -webkit-inline-box;
+                                    word-break: break-word;
                                 }
                                 .price{
                                     color: $color_fe932b;

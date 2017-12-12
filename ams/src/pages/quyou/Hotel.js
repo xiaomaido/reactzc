@@ -32,8 +32,8 @@ export default class Index extends Quyou{
                         }
                     </div>
                 </div>
-                <VideoList list={[]} me={me} title={"客房视频"} type={"SLEEP"} />
-                <div style={{backgroundColor:'#fff',padding:30}} onClick={me.openPage.bind(me,  `/posthot?_t=TOUR`)}>住宿帖子列表</div>
+                <VideoList list={[]} me={me} title={"酒店视频"} type={"SLEEP"} />
+                <div style={{backgroundColor:'#fff',padding:30}} onClick={me.openPage.bind(me,  `/posthot?_t=SLEEP`)}>住宿帖子列表</div>
                 <div style={{height: 100,background:'#fff'}}></div>
             </div>
 		)
