@@ -19,7 +19,7 @@ export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
     user_id=0
     _tk=misc.getCookie('_tk')
-    limit=3
+    limit=6
     page=0
     api={
         host:`http://qyadmin.weichongming.com/peanut`
@@ -361,7 +361,7 @@ window.VideoList = (props) => {
                                     <div className="icon poster other" style={{backgroundImage:`url(${d.indexPic})`}}>
                                         <img src={play} />
                                     </div>
-                                    <div className="text">{d.title}</div>
+                                    <div className="text text-elip">{d.title}</div>
                                 </li>
                             ))
                         }

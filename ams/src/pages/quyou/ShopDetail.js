@@ -53,8 +53,8 @@ const Content = (props) => {
 					<div className="clearboth thinner-border"></div>
 					<div className="descrip">{data.description||'暂无'}</div>
 					{/* <div className="open-more">展开更多 ^</div> */}
-					<div className="clearboth thinner-border"></div>
-					<ProductList list={Array.apply(null,{length:5})} me={me} activities={data.activities} />
+					{/* <div className="clearboth thinner-border"></div> */}
+					{/* <ProductList list={Array.apply(null,{length:5})} me={me} activities={data.activities} /> */}
 				</div>
 			</div>
 			{

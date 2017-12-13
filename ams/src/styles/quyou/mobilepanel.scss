@@ -5,6 +5,12 @@
     .disable{
         pointer-events: none;
     }
+    .text-elip{
+        word-wrap: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 .trip{
     background-color: $color_f5;
@@ -614,14 +620,9 @@
                         }
                         .text{
                             color: $color_42484e;
-                            margin-top: px2rem(22px);
-                            font-size: px2rem(22px);
-                            line-height: px2rem(22px);
-                            overflow: hidden;
-                            -webkit-line-clamp: 1;
-                            -webkit-box-orient: vertical;
-                            display: -webkit-inline-box;
-                            word-break: break-word;
+                            margin-top: 0.45rem;
+                            font-size: 0.55rem;
+                            line-height: 0.75rem;
                         }
                     }
                 }
