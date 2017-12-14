@@ -16,7 +16,7 @@ export default class Index extends Quyou{
         countTime: seconds,
     }
     validityStateEmpty(me) {
-        setTimeout(()=>{
+        this.time1=setTimeout(()=>{
             me.setState({
                 validityState: '',
             }) 
@@ -123,26 +123,31 @@ export default class Index extends Quyou{
             code: sms.value
         },(response)=>{
             // {"msg":"验证码错误请重新提交","data":"","code":20003}
+            // {"msg":"","data":{"nickname":"qy_fee10b","uid":11,"token":"A9VWO7g6Y0pzM6M6WL6ZmFOZirZrvtQoWskAIz67nKfD36nkXm5HCcBrRscoOHNrSFoln0o9O9GxJyRLiZMB9Q==","is_v":"0"},"code":0}
             const { msg, code } = response
-            if(!code){
+            if(code){
                 me.setState({
                     validityState: msg,
                 })
                 me.validityStateEmpty(me)
             }else{
-                const jump = setTimeout(()=>{
+                this.jump = setTimeout(()=>{
                     me.handleBack()
                 }, 800)
                 me.setState({
                     validityState: '登录成功！',
-                },jump)
+                },this.jump)
                 misc.setCookie('_tk', 'nhjrIIHsgWOphQ2dytO2amZPdDe4N5vA4dUSmr6AcBLElZLiQLMDe14NiTZcVqSBSOWLT9P9YWeH%2FcfHsprwVQUy7iGOCFj8Oj5GwwgjR0%3D')
             }
         })
     }
     componentDidMount(){
-        document.body.style.overflow='hidden'
-        // document.body.style.overflowY='auto'
+        document.body.style.overflowY='hidden'
+    }
+    componentWillUnmount(){
+        clearTimeout(this.time1)
+        clearTimeout(this.jump)
+        document.body.style.overflowY='auto'
     }
     handleBack(){
         window.history.back()
