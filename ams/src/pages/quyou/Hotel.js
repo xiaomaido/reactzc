@@ -13,6 +13,7 @@ const imgSlideList=[
         url: '',
     },
 ]
+
 export default class Index extends Quyou{
 	renderContent(){
         const me=this
@@ -32,9 +33,12 @@ export default class Index extends Quyou{
                         }
                     </div>
                 </div>
+                <div className="yummy clearboth">
+                    <div className="icon logo" onClick={me.openPage.bind(me,  `/posthot?_t=SLEEP`)}></div>
+                    <div className="icon picture" style={{backgroundImage:`url(${imgSlideList[0].img})`}} onClick={me.openPage.bind(me,  `/posthot/${122}?_t=SLEEP`)}></div>
+                    <div className="content" onClick={me.openPage.bind(me,  `/posthot/${123}?_t=SLEEP`)}>11111111</div>
+                </div>
                 <VideoList list={[]} me={me} title={"酒店视频"} type={"SLEEP"} />
-                <div style={{backgroundColor:'#fff',padding:30}} onClick={me.openPage.bind(me,  `/posthot?_t=SLEEP`)}>住宿帖子列表</div>
-                <div style={{height: 100,background:'#fff'}}></div>
             </div>
 		)
 	}

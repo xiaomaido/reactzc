@@ -9,6 +9,13 @@
 .trip{
     background-color: $color_f5;
     padding-bottom: $barTop;
+    .polistdiv{
+        background-color: $color_ff;
+        padding: px2rem(40px);
+        img {
+            width: 100%;
+        }
+    }
     .query-box{
         position: absolute;
         top:0;
