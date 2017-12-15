@@ -35,32 +35,38 @@ export default class Index extends Quyou{
 const List = (props) => {
     const { response, me } = props
     const { 
+        count = 0,
         data = [],
     } = response.data
     const { pathname } = _location
     return (
-        <div className="list">
-            {
-                data.map((d = { imgs: [] },i)=>(
-                    <div key={i}>
-                        <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>
-                            <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
-                            <div className="box">
-                                <div className="name">{d.name}</div>
-                                <div className="address text-elip"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
-                                <ul className="shop-sns">
-                                    <li><i className="icon good"></i>{d.like_count}</li>
-                                    <li><i className="icon comment"></i>{d.comment_count}</li>
-                                    {/* <li><i className="icon collect"></i>0</li> */}
-                                </ul>
+        <div>
+            <div className="list">
+                {
+                    data.map((d = { imgs: [] },i)=>(
+                        <div key={i}>
+                            <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>
+                                <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
+                                <div className="box">
+                                    <div className="name">{d.name}</div>
+                                    <div className="address text-elip"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
+                                    <ul className="shop-sns">
+                                        <li><i className="icon good"></i>{d.like_count}</li>
+                                        <li><i className="icon comment"></i>{d.comment_count}</li>
+                                        {/* <li><i className="icon collect"></i>0</li> */}
+                                    </ul>
+                                </div>
+                                {/* <div className="num">月售<span>{d.sale_count}</span></div> */}
                             </div>
-                            <div className="num">月售<span>{d.sale_count}</span></div>
+                            {
+                                i===data.length-1 ? null : <div className="clearboth thinner-border"></div>
+                            }
                         </div>
-                        {
-                            i===data.length-1 ? null : <div className="clearboth thinner-border"></div>
-                        }
-                    </div>
-                ))
+                    ))
+                }
+            </div>
+            {
+                me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
             }
         </div>
     )

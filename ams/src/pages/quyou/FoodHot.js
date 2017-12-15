@@ -87,47 +87,53 @@ export default class Index extends Quyou{
 const List = (props) => {
     const { response, me } = props
     const { 
+        count = 0,
         data = [],
     } = response.data
     const { pathname } = _location
 
     return (
-        <div className="list">
-            {
-                data.map((d = { images: [] },i)=>{
-                    d.stag_names = Array.isArray(d.stag_names) ? d.stag_names : []
-                    return (
-                        <div key={i}>
-                            <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>
-                                <div className="icon cover" style={{backgroundImage:`url(${d.images[0]})`}}></div>
-                                <div className="box">
-                                    <div className="name">{d.title}</div>
-                                    <div className="stars-permoney">
-                                        <StarsShow number={d.star_count} />
-                                        <div className="permoney">¥{d.custom_avg}/人</div>
+        <div>
+            <div className="list">
+                {
+                    data.map((d = { images: [] },i)=>{
+                        d.stag_names = Array.isArray(d.stag_names) ? d.stag_names : []
+                        return (
+                            <div key={i}>
+                                <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>
+                                    <div className="icon cover" style={{backgroundImage:`url(${d.images[0]})`}}></div>
+                                    <div className="box">
+                                        <div className="name">{d.title}</div>
+                                        <div className="stars-permoney clearboth">
+                                            <StarsShow number={d.star_count} />
+                                            <div className="permoney">¥{d.custom_avg}/人</div>
+                                        </div>
+                                        <ul className="discount clearboth">
+                                            {
+                                                d.rec_desc.split(' ').map((da,i)=><li key={i}>{da}</li>)
+                                            }
+                                        </ul>
+                                        <ul className="tags clearboth">
+                                            {
+                                                d.stag_names.map((d,i)=><li key={i}>{d.tagname}</li>)
+                                            }
+                                        </ul>
                                     </div>
-                                    <ul className="discount">
-                                        {
-                                            d.rec_desc.split(' ').map((da,i)=><li key={i}>{da}</li>)
-                                        }
-                                    </ul>
-                                    <ul className="tags">
-                                        {
-                                            d.stag_names.map((d,i)=><li key={i}>{d.tagname}</li>)
-                                        }
-                                    </ul>
+                                    <div className={classnames({good:true,active:d.is_like})}> 
+                                        <i className="icon" />
+                                        <div>{d.like_count}</div>
+                                    </div>
                                 </div>
-                                <div className={classnames({good:true,active:d.is_like})}> 
-                                    <i className="icon" />
-                                    <div>{d.like_count}</div>
-                                </div>
+                                {
+                                    i===data.length-1 ? null : <div className="clearboth thinner-border"></div>
+                                }
                             </div>
-                            {
-                                i===data.length-1 ? null : <div className="clearboth thinner-border"></div>
-                            }
-                        </div>
-                    )
-                })
+                        )
+                    })
+                }
+            </div>
+            {
+                me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
             }
         </div>
     )

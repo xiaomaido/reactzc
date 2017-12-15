@@ -499,11 +499,13 @@
         background-color: $color_ff;
         display: block;
         width: px2rem(550px);
+        width: px2rem(680px);
         height: px2rem(96px)+px2rem(14px)+px2rem(24px)+px2rem(28px);
         margin: px2rem(28px) auto 0;
         li{
             float: left;
             width: 33.3%;
+            width: 50%;
             text-align: center;
             img{
                 width: px2rem(96px);
@@ -542,7 +544,7 @@
         .content{
             float: left;
             color: $color_5d666e;
-            font-size: px2rem(22px);
+            font-size: px2rem(24px);
             line-height: px2rem(38px);
             margin: px2rem(40px) 0 0;
             width: px2rem(374px);
@@ -628,7 +630,7 @@
                         .text{
                             color: $color_42484e;
                             margin-top: 0.45rem;
-                            font-size: 0.55rem;
+                            font-size: 0.6rem;
                             line-height: 0.75rem;
                         }
                     }
@@ -666,8 +668,13 @@
                 float: left;
                 height: px2rem(156px);
                 padding-left: px2rem(36px);
+                width: 10rem;
                 .name{
-                    color: $color_42484e
+                    color: $color_42484e;
+                    font-size: 0.7rem;
+                    line-height: 0.9rem;
+                    height: 1.2rem;
+
                 }
                 .permoney{
                     float: left;
@@ -1587,8 +1594,8 @@
     	}
     	.text{
     		margin-top: px2rem(28px);
-    		font-size: px2rem(28px);
-    		line-height: 1.8 * px2rem(28px);
+    		font-size: px2rem(30px);
+    		line-height: 1.8 * px2rem(30px);
     	}
     	.heder{
     		padding: 0 px2rem(18px);
@@ -1648,6 +1655,14 @@
                 margin: px2rem(30px) auto;
                 padding: 0 px2rem(50px);
                 height: px2rem(82px);
+                a{
+                    margin-top: .5rem;
+                    width: .8rem;
+                    margin-left: .2rem;
+                    height: .8rem;
+                    display: inline-block;
+                    background-image: url('../../images/quyou/icon/V2@3x.png')
+                }
                 i{
                     border-radius: 50%;
                     width: px2rem(82px);

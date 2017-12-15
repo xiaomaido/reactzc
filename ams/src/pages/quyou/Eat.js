@@ -50,17 +50,19 @@ const Content = (props) => {
                 {/* <img className="bar" src={timeBenefits} onClick={me.openPage.bind(me, `/xianshifuli`)} /> */}
                 <ul className="quick">
                     <li onClick={me.openPage.bind(me,  `/shophot`)}>
-                        <img src={quick0} style={{float:'left'}} />
-                        <div style={{textAlign:'left'}}>人气商家</div>
+                        {/* <img src={quick0} style={{float:'left'}} />
+                        <div style={{textAlign:'left'}}>人气商家</div> */}
+                        <img src={quick0} />
+                        <div>人气商家</div>
                     </li>
                     <li onClick={me.openPage.bind(me,  `/foodhot`)}>
                         <img src={quick1} />
                         <div>人气美食</div>
                     </li>
-                    <li onClick={me.openPage.bind(me,  `/seasonhot`)}>
+                    {/* <li onClick={me.openPage.bind(me,  `/seasonhot`)}>
                         <img src={quick2} style={{float:'right'}} />
                         <div style={{textAlign:'right'}}>当季推荐</div>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
             <div className="yummy clearboth">

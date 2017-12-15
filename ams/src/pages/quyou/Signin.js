@@ -5,11 +5,6 @@ const seconds = 60 * 3
 const smsLength = 6
 const isDoing='正在'
 export default class Index extends Quyou{
-    // render(){
-    //     return (
-    //         <Sign />
-    //     )
-    // }
     state = {
         validityState: '',
         sendStatus: 0,

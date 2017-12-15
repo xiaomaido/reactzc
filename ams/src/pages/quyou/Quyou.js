@@ -19,7 +19,7 @@ export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
     user_id=0
     _tk=misc.getCookie('_tk')
-    limit=6
+    limit=8
     page=0
     api={
         host:`http://qyadmin.weichongming.com/peanut`
@@ -395,6 +395,7 @@ window.PostList = (props) => {
                             <div className="avatar-name">
                                 <i className="icon" style={{backgroundImage:`url(${d.headimg})`}}></i>
                                 <span>{d.nickname}</span>
+                                <a className="icon"></a>
                             </div>
                             <div className="content">
                                 <div>{d.title}</div>
@@ -529,6 +530,7 @@ window.CommentFixed = (props) => {
 }
 window.Intro = (props) => {
     const { 
+        handleJump = () => { },
         needCover = false,
         data = {
             imgs: [],
@@ -544,7 +546,7 @@ window.Intro = (props) => {
                     <div className="thin-border-verical"></div>
                 </div>
                 <a href={`tel:${data.phone}`} className="icon phone"></a>
-                <div className="name"><i className="icon" />【{data.name}】{ data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}</div>
+                <div className="name" onClick={handleJump}><i className="icon" />【{data.name}】{ data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}</div>
                 <div className="address"><i className="icon" />{data.addr1+data.addr2+data.addr3+data.detail}</div>
                 {
                     needCover ? data.imgs.map((img,i)=><div key={i} className="icon cover" style={{backgroundImage:`url(${img})`}}></div>) : null

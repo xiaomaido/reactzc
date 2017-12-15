@@ -65,7 +65,7 @@ const Content = (props) => {
                 <PictureList list={data.images} me={me} />
                 <div className="clearboth thinner-border"></div>
             </div>
-            <Intro data={data.seller_info} />
+            <Intro data={data.seller_info} handleJump={me.openPage.bind(me,  `/shophot/${data.seller_info.id}`)} />
             <div className="gap"></div>
             <div className="necker">
                 <div className="necker-box">
@@ -73,7 +73,7 @@ const Content = (props) => {
                     <div className="clearboth thinner-border"></div>
                     <div className="descrip">{data.description}</div>
                     {/* <div className="open-more">展开更多 ^</div> */}
-                    <div className="clearboth thinner-border"></div>
+                    {/* <div className="clearboth thinner-border"></div>
                     <div className="discount">
                         <div className="title"><div>惠</div>本品优惠</div>
                         <div className="buy-box">
@@ -82,7 +82,7 @@ const Content = (props) => {
                             </div>
                             <div className="right">抢购</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 			{
