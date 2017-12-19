@@ -118,8 +118,8 @@ export default class Index extends Quyou{
             code: sms.value
         },(response)=>{
             // {"msg":"验证码错误请重新提交","data":"","code":20003}
-            // {"msg":"","data":{"nickname":"qy_fee10b","uid":11,"token":"A9VWO7g6Y0pzM6M6WL6ZmFOZirZrvtQoWskAIz67nKfD36nkXm5HCcBrRscoOHNrSFoln0o9O9GxJyRLiZMB9Q==","is_v":"0"},"code":0}
-            const { msg, code } = response
+            // {"msg":"","data":{"nickname":"qy_fee10b","uid":11,"token":"PnhjrIIHsgWOphQ2dytO2amZPdDe4N5vA4dUSmr6AcBdmnycc4yqhY%2FvlQkR2PZrQXCf94bS4bOH6PiuFPQILcEBlLfUQMI2sNm614Sfmjk%3D","is_v":"0"},"code":0}
+            const { msg, code, data = {} } = response
             if(code){
                 me.setState({
                     validityState: msg,
@@ -132,7 +132,9 @@ export default class Index extends Quyou{
                 me.setState({
                     validityState: '登录成功！',
                 },this.jump)
-                misc.setCookie('_tk', 'nhjrIIHsgWOphQ2dytO2amZPdDe4N5vA4dUSmr6AcBLElZLiQLMDe14NiTZcVqSBSOWLT9P9YWeH%2FcfHsprwVQUy7iGOCFj8Oj5GwwgjR0%3D')
+                misc.getCookie('user')
+                misc.setCookie('user', JSON.stringify(data))
+                // misc.setCookie('_tk', 'nhjrIIHsgWOphQ2dytO2amZPdDe4N5vA4dUSmr6AcBLElZLiQLMDe14NiTZcVqSBSOWLT9P9YWeH%2FcfHsprwVQUy7iGOCFj8Oj5GwwgjR0%3D')
             }
         })
     }

@@ -18,6 +18,7 @@ window.play=play
 export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
     user_id=0
+    user=JSON.parse(misc.getCookie('user'))||{}
     _tk=misc.getCookie('_tk')
     limit=10
     page=0
