@@ -1,21 +1,27 @@
 @import "../../styles/vars.scss";
-.select-box{
-    position: fixed;
-    top: $barTop;
-    // width: 100%;
-    max-width: $maxWidth;
+.select-box-div{
     background-color: $color_ff;
+    // position: fixed;
+    // top: $barTop;
+    // width: 100%;
+    // max-width: $maxWidth;
+    // z-index: 2999;
     height: px2rem(50px) + 2 * px2rem(17px); 
-    z-index: 2999;
+}
+.select-box{
     .select-header{
         background-color: $color_ff;
         margin: px2rem(17px) 0; 
-        height: px2rem(50px);
+        margin: 0; 
+        height: px2rem(84px);
         display: flex;
         .select-column{
+            text-align: center;
+            width: 100%;
+            margin: px2rem(17px) 0; 
             font-size: px2rem(26px);
+            height: px2rem(50px);
             line-height: px2rem(50px);
-            // width: 50%;
             color: $color_33;
             text-align: center;
             i{
