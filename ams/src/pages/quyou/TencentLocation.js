@@ -37,7 +37,7 @@ export default class TencentLocation extends Quyou{
         super(props)
     }
 	render(){
-        document.title='商家信息'
+        // document.title='商家信息'
 		return (
 			<div className="tencent-location"> 
                 <div id="pos-area">

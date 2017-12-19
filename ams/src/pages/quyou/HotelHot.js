@@ -15,7 +15,7 @@ export default class Index extends Quyou{
         }
     }
     renderContent(){
-        document.title='精品酒店'
+        // document.title='精品酒店'
         const me = this
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
         return (
@@ -34,37 +34,43 @@ export default class Index extends Quyou{
 const List = (props) => {
     const { response, me } = props
     const { 
+        count = 0,
         data = [],
     } = response.data
     return data.length ? (
-        <div className="list">
-            {
-                data.map((d = { imgs: [] },i)=>{
-                    d.stag_names = Array.isArray(d.stag_names) ? d.stag_names : [{tagname:'返券'}]
-                    return (
-                        <div key={i}>
-                            <div className="item" onClick={me.openPage.bind(me,`/shophot/${d.id}?_t=SLEEP`)}>
-                                <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
-                                <div className="box">
-                                    <div className="name">{d.name}</div>
-                                    <div className="stars-permoney">
-                                        <StarsShow number={d.star_count||5} />
-                                        <div className="permoney"><span>¥{d.custom_avg}</span> 起</div>
+        <div>
+            <div className="list">
+                {
+                    data.map((d = { imgs: [] },i)=>{
+                        d.stag_names = Array.isArray(d.stag_names) ? d.stag_names : []
+                        return (
+                            <div key={i}>
+                                <div className="item" onClick={me.openPage.bind(me,`/shophot/${d.id}?_t=SLEEP`)}>
+                                    <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
+                                    <div className="box">
+                                        <div className="name">{d.name}</div>
+                                        <div className="stars-permoney">
+                                            <StarsShow number={d.star_count||5} />
+                                            <div className="permoney"><span>¥{d.custom_avg}</span> 起</div>
+                                        </div>
+                                        <ul className="tags">
+                                            {
+                                                d.stag_names.map((d,i)=><li key={i}>{d.tagname}</li>)
+                                            }
+                                        </ul>
+                                        <div className="address clearboth"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
                                     </div>
-                                    <ul className="tags">
-                                        {
-                                            d.stag_names.map((d,i)=><li key={i}>{d.tagname}</li>)
-                                        }
-                                    </ul>
-                                    <div className="address clearboth"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
                                 </div>
+                                {
+                                    i===data.length-1 ? null : <div className="clearboth thinner-border"></div>
+                                }
                             </div>
-                            {
-                                i===data.length-1 ? null : <div className="clearboth thinner-border"></div>
-                            }
-                        </div>
-                    )
-                })
+                        )
+                    })
+                }
+            </div>
+            {
+                me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
             }
         </div>
     ) : null

@@ -6,7 +6,7 @@ import bustime4 from '../../images/quyou/trip/4@3x.png'
 
 export default class Index extends Quyou{
 	renderContent(){
-        document.title='公交时刻表'
+        // document.title='公交时刻表'
         return (
             <div className="trip-busline">
                 <img className="gjxl" src={gjxl} />

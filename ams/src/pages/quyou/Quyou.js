@@ -19,7 +19,7 @@ export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
     user_id=0
     _tk=misc.getCookie('_tk')
-    limit=8
+    limit=10
     page=0
     api={
         host:`http://qyadmin.weichongming.com/peanut`

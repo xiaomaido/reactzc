@@ -30,19 +30,19 @@ export default class Index extends Quyou{
         
     }
 	renderContent(){
-        document.title='视频推荐'
+        // document.title='视频推荐'
         // return null
         const me = this
         const { blocks } =  me.state
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
-        return (
-            <div className="yummy-hot">
-                <div>
-                    <SelectBox options={blocks} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} />
-                </div>
-                <div style={{height: 800}}></div>
-            </div>
-        )
+        // return (
+        //     <div className="yummy-hot">
+        //         <div>
+        //             <SelectBox options={blocks} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} />
+        //         </div>
+        //         <div style={{height: 800}}></div>
+        //     </div>
+        // )
         return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)
     }
     componentDidMount(){
@@ -50,7 +50,7 @@ export default class Index extends Quyou{
         const { query } = me.props.location
         const _t = query._t || 'EAT'
         const API_PAGE = APIS[`API_${_t}_MEDIA_LIST`]
-        // me.requestList(me, FETCH_PAGE, API_PAGE)
+        me.requestList(me, FETCH_PAGE, API_PAGE)
     }
 }
 

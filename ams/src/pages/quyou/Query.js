@@ -1,6 +1,6 @@
 export default class Index extends Quyou{
 	renderContent(){
-        document.title='热搜榜'
+        // document.title='热搜榜'
         return (
             <div className="trip-query">
                 <ul>

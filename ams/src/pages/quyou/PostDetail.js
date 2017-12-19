@@ -20,7 +20,7 @@ export default class Index extends Quyou{
 		isDoLike: false,
 	}
 	renderContent(){
-		document.title='美食攻略'
+		// document.title='美食攻略'
 		const me = this
 		const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
 		return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)

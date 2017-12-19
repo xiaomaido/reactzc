@@ -14,7 +14,7 @@ export default class Index extends Quyou{
         }
     }
 	renderContent(){
-        document.title='人气商家'
+        // document.title='人气商家'
         const me = this
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
         return (

@@ -4,7 +4,7 @@ import goodActive from '../../images/quyou/icon/good-active.png'
 import addr from '../../images/quyou/icon/addr.png'
 export default class Index extends Quyou{
 	renderContent(){
-        document.title='当季推荐'
+        // document.title='当季推荐'
 		return (
 			<div className="season-hot"> 
                 <img className="banner" src={banner} />

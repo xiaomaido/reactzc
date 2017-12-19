@@ -4,7 +4,7 @@ import stncp from '../../images/quyou/banner/stncp.png'
 
 export default class Index extends Quyou{
 	renderContent(){
-        document.title='趣游崇明'
+        // document.title='趣游崇明'
         return (
             <div className="mall">
                 <ul className="ad-list">

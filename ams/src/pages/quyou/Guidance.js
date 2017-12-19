@@ -13,7 +13,7 @@ export default class Index extends Quyou{
         }
     }
 	renderContent(){
-        document.title='导览图'
+        // document.title='导览图'
         const me = this
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
         return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)

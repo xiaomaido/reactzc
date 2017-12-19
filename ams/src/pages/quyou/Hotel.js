@@ -17,7 +17,7 @@ const imgSlideList=[
 export default class Index extends Quyou{
 	renderContent(){
         const me=this
-        document.title='趣游崇明'
+        // document.title='趣游崇明'
         const cates = Array.apply(null, { length: 6 })
 		return (
 			<div className="eat">
