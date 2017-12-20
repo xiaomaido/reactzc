@@ -1,25 +1,12 @@
 export default class Index extends Quyou{
-    state={
-        my:{
-            avatar_url
-        }
-    }
-    state={
-        FETCH_MY_PROFILE:{
-            response:{
-                avatar_url
-            }
-        }
-    }
 	renderContent(){
         const me = this
-        const { FETCH_MY_PROFILE } = me.state
-        const my = FETCH_MY_PROFILE.response
+        const { user: my } = me
         return (
             <div className="my-profile">
                 <ul className="link-list">
                     <li className="avatarbox">
-                        <div className="icon avatar" style={{backgroundImage:`url(${my.avatar_url})`}}></div>
+                        <div className="icon avatar" style={{backgroundImage:`url(${my.avatar_url||avatar_url})`}}></div>
                         <div className="arrow-box" onClick={me.handleUploadAvatar.bind(me)}>
                             <span className="icon" />
                         </div>
@@ -31,7 +18,7 @@ export default class Index extends Quyou{
                         <div className="arrow-box">
                             <span className="icon" />
                         </div>
-                        <div className="text">{my.login}</div>
+                        <div className="text">{my.nickname}</div>
                         <div className="thinner-border clearboth"></div>
                     </li>
                     <li>
@@ -48,31 +35,25 @@ export default class Index extends Quyou{
                         <div className="arrow-box">
                             <span className="icon" />
                         </div>
-                        <div className="text">{my.sex||'男'}</div>
+                        <div className="text">{my.sex||'请选择'}</div>
                         <div className="thinner-border clearboth"></div>
                     </li>
-                    <li>
+                    {/* <li>
                         <div className="name">所在地</div>
                         <div className="arrow-box">
                             <span className="icon" />
                         </div>
                         <div className="text">{my.location||'未知'}</div>
                         <div className="thinner-border clearboth"></div>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         )
     }
     componentDidMount(){
-        const { FETCH_MY_PROFILE } = this.state
-        if(TYPES.FETCH_MY_PROFILE in ResponseState){
-            this.setState({
-                FETCH_MY_PROFILE: ResponseState[TYPES.FETCH_MY_PROFILE]
-            })
-            return false
-        }
+        
     }
     handleUploadAvatar(e){
-        alert(1)
+        alert('选择')
     }
 } 

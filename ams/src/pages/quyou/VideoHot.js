@@ -69,24 +69,24 @@ export default class Index extends Quyou{
         const { blocks, cates } =  me
         const { blocksShowOptions, catesShowOptions } = me.state
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
-        return (
-            <div className="yummy-hot video-hot">
-                <div>
-                    <SelectBox showOptions={blocksShowOptions} options={blocks} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'blocks')} />
-                    {/* <div className="clearboth thin-border-verical"></div> */}
-                    <SelectBox showOptions={catesShowOptions} options={cates} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'cates')} />
-                </div>
-                <div style={{height: 800}}></div>
-            </div>
-        )
-        // return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)
+        // return (
+        //     <div className="yummy-hot video-hot">
+        //         <div>
+        //             <SelectBox showOptions={blocksShowOptions} options={blocks} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'blocks')} />
+        //             {/* <div className="clearboth thin-border-verical"></div> */}
+        //             <SelectBox showOptions={catesShowOptions} options={cates} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'cates')} />
+        //         </div>
+        //         <div style={{height: 800}}></div>
+        //     </div>
+        // )
+        return fetching ? <Spin /> : (response.code === 0 ? <Content response={response} me={me} /> : null)
     }
     componentDidMount(){
         const me = this
         const { query } = me.props.location
         const _t = query._t || 'EAT'
         const API_PAGE = APIS[`API_${_t}_MEDIA_LIST`]
-        // me.requestList(me, FETCH_PAGE, API_PAGE)
+        me.requestList(me, FETCH_PAGE, API_PAGE)
     }
 }
 

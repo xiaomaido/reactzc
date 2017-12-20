@@ -124,7 +124,7 @@ export default class Index extends Quyou{
                 })
                 me.validityStateEmpty(me)
             }else{
-                misc.setCookie('user', JSON.stringify(data))
+                misc.setCookie('user', JSON.stringify({ ...data, mobile: mobile.value }))
                 this.jump = setTimeout(()=>{
                     me.handleBack()
                 }, 800)
