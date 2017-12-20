@@ -11,39 +11,39 @@ export default class Index extends Quyou{
         [FETCH_PAGE]:{
             response: initStateResponse
         },
-        blocks: [
-            {
-                title:'板块',
-                id:0, 
-            },
-            {
-                title:'吃',
-                id:1, 
-            },
-            {
-                title:'住',
-                id:2, 
-            },
-        ],
-        cates: [
-            {
-                title:'筛选',
-                id:0, 
-            },
-            {
-                title:'川湘菜',
-                id:1, 
-            },
-            {
-                title:'本帮菜',
-                id:2, 
-            },
-            {
-                title:'日料',
-                id:3, 
-            },
-        ],
     }
+    blocks=[
+        {
+            title:'板块',
+            id:0, 
+        },
+        {
+            title:'吃',
+            id:1, 
+        },
+        {
+            title:'住',
+            id:2, 
+        },
+    ]
+    cates=[
+        {
+            title:'筛选',
+            id:0, 
+        },
+        {
+            title:'川湘菜',
+            id:1, 
+        },
+        {
+            title:'本帮菜',
+            id:2, 
+        },
+        {
+            title:'日料',
+            id:3, 
+        },
+    ]
     handleSelectBoxChage(value){
         console.log(value)
     }
@@ -51,12 +51,13 @@ export default class Index extends Quyou{
         // document.title='视频推荐'
         // return null
         const me = this
-        const { blocks } =  me.state
+        const { blocks, cates } =  me
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
         return (
-            <div className="yummy-hot">
+            <div className="yummy-hot video-hot">
                 <div>
                     <SelectBox options={blocks} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} />
+                    <SelectBox options={cates} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} />
                 </div>
                 <div style={{height: 800}}></div>
             </div>
@@ -82,7 +83,7 @@ const Content = (props) => {
 	const { query } = _location
 	const _t = query._t || 'EAT'
     return (
-        <div className="yummy-hot"> 
+        <div className="yummy-hot video-hot"> 
             <PostList list={data} me={me} type={_t} isVideo={true} />
             {
                 me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
