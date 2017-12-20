@@ -444,8 +444,8 @@ window.PostDetail  = (props) => {
                 <div className="heder">
                     {/* <div className="follow" onClick={me.handleFollow.bind(me, d.user_id)}><span>+</span>关注</div> */}
                     <img src={d.headimg} />
-                    <div className="nickname">{d.nickname}</div>
-                    <div className="create">{d.create_dt||d.update_dt}</div>
+                    <div className="nickname">{d.nickname}<a className="icon"></a></div>
+                    {/* <div className="create">{d.create_dt||d.update_dt}</div> */}
                 </div>
                 {
                     isVideo ? null : <div>

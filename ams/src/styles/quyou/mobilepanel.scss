@@ -541,6 +541,9 @@
             background-size: cover;
             background-image: url('../../images/quyou/icon/yummyhotlogo.png')
         }
+        .logo.hotel{
+            background-image: url('../../images/quyou/icon/yummyhotlogohotel.png')
+        }
         .content{
             float: left;
             color: $color_5d666e;
@@ -1625,7 +1628,17 @@
     			height: px2rem(82px);
     			border-radius: 50%;
     			left: px2rem(18px);
-    		}
+            }
+            a{
+                position: relative;
+                top: 0.1rem;
+                margin-top: .2rem;
+                width: .8rem;
+                margin-left: .2rem;
+                height: .8rem;
+                display: inline-block;
+                background-image: url('../../images/quyou/icon/V2@3x.png')
+            }
     		.nickname,.create{
     			color: #555;
     			padding-left: px2rem(110px);

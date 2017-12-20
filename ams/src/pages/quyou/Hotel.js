@@ -34,7 +34,7 @@ export default class Index extends Quyou{
                     </div>
                 </div>
                 <div className="yummy clearboth">
-                    <div className="icon logo" onClick={me.openPage.bind(me,  `/posthot?_t=SLEEP`)}></div>
+                    <div className="icon logo hotel" onClick={me.openPage.bind(me,  `/posthot?_t=SLEEP`)}></div>
                     <div className="icon picture" style={{backgroundImage:`url(${imgSlideList[0].img})`}} onClick={me.openPage.bind(me,  `/posthot/${122}?_t=SLEEP`)}></div>
                     <div className="content" onClick={me.openPage.bind(me,  `/posthot/${123}?_t=SLEEP`)}>11111111</div>
                 </div>

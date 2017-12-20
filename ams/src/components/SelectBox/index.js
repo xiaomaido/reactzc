@@ -33,35 +33,42 @@ export default class Index extends Component{
                     thinnerBorder ? <div className="clearboth thinner-border"></div> : null
                 }
                 {
-                        showOptions ? <Options _this={_this} /> : null
+                        showOptions ? <Options _this={_this} handleSelectBoxChage={handleSelectBoxChage} /> : null
                 }
             </div>
         )
     }
-    handleClick(part, e){
+    handleClick(e){
         let nextState = {
             showOptions: true,
         }
         this.setState(nextState)
     }
-    handleOptionClick(option, e){
+    handleOptionClick({ option, handleSelectBoxChage }, e){
         const _this = this
         let nextState = {
             showOptions:false,
             optionId:option.id,
         }
         this.setState(nextState)
+        handleSelectBoxChage(option)
     }
 }
 const Options = (props) => {
-    const { _this } = props
+    const { 
+        _this, 
+        handleSelectBoxChage = () => {},
+    } = props
     const { optionId, options } = _this.state
     return (
         <ul className="select-options">
             {
                 options.map((d,i)=>{
                     return (
-                        <li key={d.id} className={optionId?(optionId===d.id?'active':''):(i===0?'active':'')} onClick={_this.handleOptionClick.bind(_this,d)}>
+                        <li key={d.id} className={optionId?(optionId===d.id?'active':''):(i===0?'active':'')} onClick={_this.handleOptionClick.bind(_this,{
+                            option: d,
+                            handleSelectBoxChage,
+                        })}>
                             <div className="title">{d.title}</div> 
                             <div className="clearboth thinner-border"></div> 
                         </li>
