@@ -7,8 +7,8 @@ const Index = (props) => {
     let titleimg = current[1] + _t.toLowerCase()
     let backUrl = ''
     // window.locationFrom = window._location
-    // if(window.locationFrom && typeof window.locationFrom === 'object'){
-    //     backUrl = window.locationFrom.pathname
+    // if(window.locationFrom && typeof window.locationFrom === 'object' && (~window.locationFrom.pathname.indexOf('/shophot/'))){
+    //     backUrl = window.locationFrom.pathname + window.locationFrom.search
     // }else{
         backUrl = `/${current[1]}`
         backUrl = current.length === 3 ? backUrl : objTitleBack[backUrl]
@@ -24,7 +24,7 @@ const Index = (props) => {
             else if(_t === 'TOUR') backUrl='/triphot'
         }
     // }
-    console.log(backUrl)
+    // console.log(backUrl)
     return (
         <div className="titleBar">
             <div className="box">

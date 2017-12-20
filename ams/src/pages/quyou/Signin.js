@@ -2,7 +2,7 @@ import '../../components/Sign/index.scss'
 import app from '../../components/Sign/images/app.png'
 import signin from '../../components/Sign/images/signin.png'
 const seconds = 60 * 3
-const smsLength = 6
+const smsLength = 4
 const isDoing='正在'
 export default class Index extends Quyou{
     state = {
@@ -117,8 +117,6 @@ export default class Index extends Quyou{
             mobile: mobile.value,
             code: sms.value
         },(response)=>{
-            // {"msg":"验证码错误请重新提交","data":"","code":20003}
-            // {"msg":"","data":{"nickname":"qy_fee10b","uid":11,"token":"PnhjrIIHsgWOphQ2dytO2amZPdDe4N5vA4dUSmr6AcBdmnycc4yqhY%2FvlQkR2PZrQXCf94bS4bOH6PiuFPQILcEBlLfUQMI2sNm614Sfmjk%3D","is_v":"0"},"code":0}
             const { msg, code, data = {} } = response
             if(code){
                 me.setState({
@@ -126,15 +124,13 @@ export default class Index extends Quyou{
                 })
                 me.validityStateEmpty(me)
             }else{
+                misc.setCookie('user', JSON.stringify(data))
                 this.jump = setTimeout(()=>{
                     me.handleBack()
                 }, 800)
                 me.setState({
                     validityState: '登录成功！',
                 },this.jump)
-                misc.getCookie('user')
-                misc.setCookie('user', JSON.stringify(data))
-                // misc.setCookie('_tk', 'nhjrIIHsgWOphQ2dytO2amZPdDe4N5vA4dUSmr6AcBLElZLiQLMDe14NiTZcVqSBSOWLT9P9YWeH%2FcfHsprwVQUy7iGOCFj8Oj5GwwgjR0%3D')
             }
         })
     }
@@ -172,7 +168,7 @@ export default class Index extends Quyou{
                 <div className="input-list">
                     <div className="input-item">
                         <div className="txt">手机号</div>
-                        <input type="tel" placeholder="点此输入手机号码" maxLength="11" ref="mobile" defaultValue="13248238215" autoFocus/>
+                        <input type="tel" placeholder="点此输入手机号码" maxLength="11" ref="mobile" defaultValue="" autoFocus/>
                     </div>
                     <div className="clearboth thinner-border"></div>
                     <div className="input-item">
@@ -183,7 +179,7 @@ export default class Index extends Quyou{
                             }
                         </div>
                         <div className="txt">验证码</div>
-                        <input type="text" placeholder="点此输入短信验证码" maxLength={smsLength} ref="sms" defaultValue=""/>
+                        <input type="tel" placeholder="点此输入短信验证码" maxLength={smsLength} ref="sms" defaultValue=""/>
                     </div>
                     <div className="clearboth thinner-border"></div>
                 </div>

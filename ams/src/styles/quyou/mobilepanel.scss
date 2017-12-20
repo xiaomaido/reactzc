@@ -147,8 +147,39 @@
     .top{
         background-color: $color_ff;
         padding-left: 1rem;
+        .area{
+            color: $color_00;
+            padding-top: px2rem(48px);
+            line-height: px2rem(48px);
+            font-size: px2rem(48px);
+            font-weight: 700;
+        }
+        .dic{
+            color: #afafaf;
+            padding-top: px2rem(20px);
+            line-height: px2rem(24px);
+            font-size: px2rem(24px);
+            padding-bottom: px2rem(48px);
+        }
         .list{
-            padding: 1rem 0;
+            a{
+                display: block;
+                margin-top: px2rem(54px);
+                line-height: px2rem(28px);
+                font-size: px2rem(28px);
+                color: #6292da;
+                span{
+                    color: #ffcc1e;
+                }
+                em{
+                    float: left;
+                    margin-top: px2rem(4px);
+                    width: px2rem(20px);
+                    height: px2rem(20px);
+                    margin-right: px2rem(20px);
+                    background-color: #b3d364;
+                }
+            }
         }
     }
 }
@@ -247,7 +278,7 @@
                 position: absolute;
                 bottom:0;
                 color: #c7a160;
-                font-size: px2rem(24px);
+                font-size: px2rem(28px);
             }
 
         }

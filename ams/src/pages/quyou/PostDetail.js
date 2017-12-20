@@ -61,7 +61,8 @@ const Content = (props) => {
 				isVideo={isVideo} 
 				d={data} 
 				me={me} /> 
-			<CommentList 
+			<CommentList
+				me={me} 
 				total={data.comment_count} 
 				list={data.comments} />
 		</div>

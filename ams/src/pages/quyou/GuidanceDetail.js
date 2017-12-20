@@ -36,14 +36,16 @@ const Content = (props) => {
         <div className="trip-guidance-detial">
             <img src={detail.img}  />
             <div className="top">
-                <div>{detail.title}区域</div>
-                <div>拥有以下景点</div>
+                <div className="area">{detail.title}区域</div>
+                <div className="dic">拥有以下景点</div>
                 <div className="clearboth thinner-border"></div>
                 <div className="list">
                     {
                         detail.seller.map((d,i)=>(
                             <Link key={i} to={`/shophot/${d.id}?_t=TOUR`}>
-                                {d.name}<span>(点击查看)</span>
+                                <em></em>
+                                {d.name}
+                                <span>（点击查看）</span>
                             </Link>
                         ))
                     }

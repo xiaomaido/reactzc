@@ -18,9 +18,7 @@ window.avatar_url=avatar_url
 window.play=play
 export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
-    user_id=0
-    user=JSON.parse(misc.getCookie('user'))||{}
-    _tk=misc.getCookie('_tk')
+    user=JSON.parse(misc.getCookie('user'))||{ token: ''}
     limit=10
     page=0
     api={
@@ -30,6 +28,7 @@ export class Quyou extends React.Component{ // 公共模板
         return cent/100
     }
 	componentWillMount(){
+        this.user.token=encodeURIComponent(this.user.token)
         window.onscroll=null
         window.ontouchstart=null
         window.ontouchend=null
@@ -43,7 +42,7 @@ export class Quyou extends React.Component{ // 公共模板
     }
     requestAPI=(url,data,succ=(res)=>{console.log(res)},fail=(err)=>{console.log(err)},method='GET')=>{
         const me = this
-        if(!me._tk){
+        if(!me.user.token){
             if(~url.indexOf('Like') || ~url.indexOf('Comment')){
                 this.openPage('/signin')
                 return
@@ -107,7 +106,7 @@ export class Quyou extends React.Component{ // 公共模板
     }
     requestList(me,FETCH_PAGE,API_PAGE){
         me.scrollLoadMore(me,FETCH_PAGE,API_PAGE)
-        const { state, page, limit, user_id } = me
+        const { state, page, limit } = me
         if(page === 0) {
             me.setState({
                 [FETCH_PAGE]: {
@@ -117,7 +116,7 @@ export class Quyou extends React.Component{ // 公共模板
             })
         }
         let req={
-			user_id,
+            token: me.user.token,
             limit,
             offset: limit * page
         }
@@ -147,7 +146,7 @@ export class Quyou extends React.Component{ // 公共模板
         })
     }
     requestDetail(me,FETCH_PAGE,API_PAGE){
-        const { state, props, user_id } = me
+        const { state, props } = me
 		const { params } = props
         me.setState({
             [FETCH_PAGE]: {
@@ -157,7 +156,7 @@ export class Quyou extends React.Component{ // 公共模板
 		})
         me.requestAPI(API_PAGE,{
 			...params,
-			user_id,
+            token: me.user.token,
 		},(response)=>{
             me.setState({
                 [FETCH_PAGE]: {
@@ -169,7 +168,7 @@ export class Quyou extends React.Component{ // 公共模板
     }
 	handleShowCreateComment(e){
 		const me = this
-        if(!me._tk){
+        if(!me.user.token){
             this.openPage('/signin')
             return
         }
@@ -186,7 +185,7 @@ export class Quyou extends React.Component{ // 公共模板
 	}
 	handleSaveCreateComment({ API_PAGE_COMMENT, FETCH_PAGE, ID }, e){
         const me = this
-        const { state, initTextOkay, user_id } = me
+        const { state, initTextOkay } = me
 		const { valueCreateComment, textOkay } = state
 		const { params } = me.props
 		if(textOkay === initTextOkay && valueCreateComment) {
@@ -196,7 +195,7 @@ export class Quyou extends React.Component{ // 公共模板
 			me.requestAPI(API_PAGE_COMMENT,{
 				content: valueCreateComment,
 				[ID]: params.id,
-				user_id,
+                token: me.user.token,
 			},(response)=>{
 				const { code = 0, data } = response
 				if(code || !data.id) {
@@ -223,7 +222,7 @@ export class Quyou extends React.Component{ // 公共模板
 	}
 	handleLike({ API_PAGE_LIKE, FETCH_PAGE, ID }, e){
         const me = this
-        const { state, props, user_id } = me
+        const { state, props } = me
 		const { isDoLike } = state
 		const { params } = props
 		if(!isDoLike){
@@ -232,7 +231,7 @@ export class Quyou extends React.Component{ // 公共模板
 			})
 			me.requestAPI(API_PAGE_LIKE,{
 				[ID]: params.id,
-				user_id,
+                token: me.user.token,
 			},(response)=>{
 				const { code = 0, data } = response
 				if(code) {
@@ -479,6 +478,7 @@ window.PostDetail  = (props) => {
 }
 window.CommentList = (props) => {
     let {
+        me,
         total = 0,
         list = [],
     } = props
@@ -492,11 +492,11 @@ window.CommentList = (props) => {
                     list.map((d = {},i)=>{
                         d.user_info = d.user_info || {
                             headimg: avatar_url,
-                            nickname: `游客`,
+                            nickname: me.user.nickname,
                         }
                         return (
                             <li key={i}>
-                                <img src={d.user_info.headimg} />
+                                <img src={d.user_info.headimg||avatar_url} />
                                 <div className="create">{misc.formatTime(d.creat_dt*1000,2)}</div> 
                                 <div className="nicktext">
                                     <div className="nick" >{d.user_info.nickname}</div>

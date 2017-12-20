@@ -347,12 +347,12 @@ toursellerLikeQ = {
 }
 
 # 用户登陆
-userGetcode = baseUrl + '/user/getloginCode'
+userGetcode = baseUrl + '/user/getloginCode'  $$BINGO
 userGetcodeQ = {
         "mobile": "17321066362"
         }
 
-userMcheck = baseUrl + '/user/mcheck'
+userMcheck = baseUrl + '/user/mcheck'  $$BINGO
 userMcheckQ = {
         "mobile": "17321066362",
         "code": "8a14ea"

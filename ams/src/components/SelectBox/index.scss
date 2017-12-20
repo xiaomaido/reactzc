@@ -41,7 +41,10 @@
         }
     }
     .select-options{
-        background-color: $color_ff;
+        width: px2rem(750px);
+        position: absolute;
+        left: 0;
+        // background-color: $color_ff;
         padding: 0 px2rem(60px) px2rem(80px);
         li.active{
             .title{
