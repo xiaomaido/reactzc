@@ -140,8 +140,16 @@
 .trip-guidance-detial{
     padding-top: $barTop;
     background-color: $color_f5;
+    img{
+        width: 100%;
+        display: block;
+    }
     .top{
         background-color: $color_ff;
+        padding-left: 1rem;
+        .list{
+            padding: 1rem 0;
+        }
     }
 }
 .trip-busline{

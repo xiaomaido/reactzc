@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch'
 import React from 'react'
+import { Link } from 'react-router'
 import PropTypes from 'prop-types'
 import LazyLoad from 'react-lazyload'
 import Mask from '../../components/Mask/'
@@ -258,6 +259,7 @@ Quyou.contextTypes={
 	router: PropTypes.object
 }
 window.React=React
+window.Link=Link
 window.Quyou=Quyou
 window.NoMoreData=NoMoreData
 window.StarsShow=StarsShow
@@ -276,6 +278,7 @@ window.TYPES={
     FETCH_MY_CHECK_LOGIN_CODE:`FETCH_MY_CHECK_LOGIN_CODE`,
     FETCH_TOUR_INDEX:`FETCH_TOUR_INDEX`,
     FETCH_TOUR_PIC_LIST:`FETCH_TOUR_PIC_LIST`,
+    FETCH_TOUR_PIC_DETAIL:`FETCH_TOUR_PIC_DETAIL`,
     FETCH_EAT_INDEX:`FETCH_EAT_INDEX`,
     FETCH_MEDIA_LIST:`FETCH_MEDIA_LIST`,
     FETCH_MEDIA_DETAIL:`FETCH_MEDIA_DETAIL`,

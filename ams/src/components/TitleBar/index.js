@@ -17,7 +17,7 @@ const Index = (props) => {
     else if(backUrl === '/shophot'){
         if(_t === 'SLEEP') backUrl='/hotelhot'
         else if(_t === 'TOUR') backUrl='/triphot'
-    }        
+    } 
     return (
         <div className="titleBar">
             <div className="box">
