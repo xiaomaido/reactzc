@@ -20,6 +20,15 @@
         padding: px2rem(40px);
         img {
             width: 100%;
+            display: block;
+        }
+    }
+    .guidancediv{
+        background-color: $color_ff;
+        // padding-bottom: px2rem(14px);
+        img {
+            width: 100%;
+            display: block;
         }
     }
     .query-box{
@@ -50,8 +59,7 @@
     }
     .top{
         background-color: $color_ff;
-        margin-top: px2rem(24px);
-        padding-top: px2rem(28px);
+        padding-top: px2rem(24px);
         .bar{
             display: block;
             margin: 0 auto;
@@ -512,19 +520,19 @@
                 background-image: url('../../images/quyou/zhu/jpjd.png')
             }
             a:nth-child(2){
-                background-image: url('../../images/quyou/zhu/jjsy.png')
-            }
-            a:nth-child(3){
                 background-image: url('../../images/quyou/zhu/tsms.png')
             }
+            a:nth-child(3){
+                background-image: url('../../images/quyou/zhu/stnz.png')
+            }
             a:nth-child(4){
-                background-image: url('../../images/quyou/zhu/rqtj.png')
+                background-image: url('../../images/quyou/zhu/jjsy.png')
             }
             a:nth-child(5){
-                background-image: url('../../images/quyou/zhu/thzk.png')
+                background-image: url('../../images/quyou/zhu/rqtj.png')
             }
             a:nth-child(6){
-                background-image: url('../../images/quyou/zhu/stnz.png')
+                background-image: url('../../images/quyou/zhu/thzk.png')
             }
         }
         .bar{
@@ -539,13 +547,13 @@
         background-color: $color_ff;
         display: block;
         width: px2rem(550px);
-        width: px2rem(680px);
+        // width: px2rem(680px);
         height: px2rem(96px)+px2rem(14px)+px2rem(24px)+px2rem(28px);
         margin: px2rem(28px) auto 0;
         li{
             float: left;
             width: 33.3%;
-            width: 50%;
+            // width: 50%;
             text-align: center;
             img{
                 width: px2rem(96px);
@@ -785,7 +793,7 @@
         width: 10rem;
         .address{
             color: $color_5d666e;
-            font-size: px2rem(22px);
+            font-size: px2rem(24px);
             line-height: px2rem(30px);
             margin-top: 0;
             padding-top: 0.35rem;
@@ -851,6 +859,7 @@
                 float: left;
                 height: px2rem(156px);
                 padding-left: px2rem(36px);
+                width: 10.05rem;
                 .name{
                     color: $color_42484e;
                     font-size: px2rem(30px);
@@ -860,20 +869,21 @@
                     position:relative;
                     left: -1 * px2rem(12px); 
                     color: $color_fe932b;
-                    font-size: px2rem(22px);
-                    line-height: px2rem(22px);
+                    font-size: px2rem(26px);
+                    line-height: px2rem(26px);
                     margin-top: px2rem(22px);
                 }
                 .address{
                     color: $color_5d666e;
-                    font-size: px2rem(22px);
-                    line-height: px2rem(22px);
+                    font-size: px2rem(24px);
+                    line-height: px2rem(24px);
                     margin-top: px2rem(22px);
                     i{
                         float: left;
                         width: px2rem(18px);
                         height: px2rem(22px);
                         margin-right: px2rem(10px);
+                        background-image: url('../../images/quyou/icon/addr.png')
                     }
                 }
             }
@@ -884,6 +894,7 @@
                     display: block;
                     width: px2rem(26px);
                     height: px2rem(30px);
+                    background-image: url('../../images/quyou/icon/good.png')
                 }
                 div{
                     color: #a4b4c2;
@@ -1209,7 +1220,7 @@
                 }
                 .address{
                     color: $color_5d666e;
-                    font-size: px2rem(22px);
+                    font-size: px2rem(24px);
                     line-height: px2rem(30px);
                     margin-top: px2rem(22px);
                     i{
@@ -1565,7 +1576,7 @@
         }
         .address{
             color: $color_5d666e;
-            font-size: px2rem(22px);
+            font-size: px2rem(24px);
             line-height: 1rem;
             margin-top: 0.55rem;
             width: 78%;

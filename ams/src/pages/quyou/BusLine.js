@@ -12,9 +12,9 @@ export default class Index extends Quyou{
                 <img className="gjxl" src={gjxl} />
                 {/* <div className="line-table"></div>  */}
                 <img className="bustime" src={bustime1} />
-                <img className="bustime" src={bustime2} style={{top:'-1'}} />
-                <img className="bustime" src={bustime3} style={{top:'-2'}} />
-                <img className="bustime" src={bustime4} style={{top:'-3'}} />
+                <img className="bustime" src={bustime2} style={{top:'-1px'}} />
+                <img className="bustime" src={bustime3} style={{top:'-2px'}} />
+                <img className="bustime" src={bustime4} style={{top:'-3px'}} />
             </div>
         )
     }

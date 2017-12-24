@@ -70,6 +70,7 @@ const Content = (props) => {
 				handleLike={me.handleLike.bind(me, { API_PAGE_LIKE, FETCH_PAGE, ID })} 
 				handleShowCreateComment={me.handleShowCreateComment.bind(me)} />
 			<CommentList 
+				me={me}
 				total={data.comment_count} 
 				list={data.comments} />
 		</div>

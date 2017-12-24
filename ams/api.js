@@ -364,7 +364,39 @@ userMcheckQ = {
 
 
 
-
+        #  用户信息
+        userUpdate = baseUrl + '/user/updateInfo'  $$BINGO
+        userUpdateQ = {
+                "nickname": "趣游崇明",
+                "headimg": "https://avatars0.githubusercontent.com/u/11659631?v=4",
+                "user_id": 1
+                }
+        
+        #  通过tag去filter tag具体看后台tag管理下的 酒店标签
+        sleepsellerSearch =  baseUrl + '/sleepIndex/sellerSearch'  $$BINGO
+        sleepsellerSearchQ = {
+                "user_id": 1,
+                "tag": 8,
+                "limit": 10, 
+                "offset": 0
+        }
+        
+        
+        # 住首页接口
+        sleepIndexList = baseUrl + '/sleepIndex/index'  $$BINGO
+        sleepIndexListQ = {
+                "limit": 10,
+                "offset": 0
+        }
+        
+        # 多了season_rec字段 后台只需要在需要配置的事写上标题就行
+        seasonSearch = baseUrl + '/eatIndex/seasonRecSearch'  $$BINGO
+        seasonSearchQ = {
+                "limit": 10,
+                "offset": 0
+        }
+        
+        token过期已处理
 
 
 

@@ -50,27 +50,29 @@ const Content = (props) => {
                 {/* <img className="bar" src={timeBenefits} onClick={me.openPage.bind(me, `/xianshifuli`)} /> */}
                 <ul className="quick">
                     <li onClick={me.openPage.bind(me,  `/shophot`)}>
-                        {/* <img src={quick0} style={{float:'left'}} />
-                        <div style={{textAlign:'left'}}>人气商家</div> */}
-                        <img src={quick0} />
-                        <div>人气商家</div>
+                        <img src={quick0} style={{float:'left'}} />
+                        <div style={{textAlign:'left'}}>人气商家</div>
+                        {/* <img src={quick0} />
+                        <div>人气商家</div> */}
                     </li>
                     <li onClick={me.openPage.bind(me,  `/foodhot`)}>
                         <img src={quick1} />
                         <div>人气美食</div>
                     </li>
-                    {/* <li onClick={me.openPage.bind(me,  `/seasonhot`)}>
+                    <li onClick={me.openPage.bind(me,  `/seasonhot`)}>
                         <img src={quick2} style={{float:'right'}} />
                         <div style={{textAlign:'right'}}>当季推荐</div>
-                    </li> */}
+                    </li>
                 </ul>
             </div>
-            <div className="yummy clearboth">
-                <div className="icon logo" onClick={me.openPage.bind(me,  `/posthot`)}></div>
-                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}} onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}></div>
-                <div className="content" onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}>{post_index.description}</div>
+            <div className="yummy clearboth" onClick={me.openPage.bind(me,  `/posthot`)}>
+                <div className="icon logo"></div>
+                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}}></div>
+                <div className="content">{post_index.description}</div>
             </div>
             <VideoList list={recomm_medias} me={me} />
         </div>
     )
-} 
+}
+
+// onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}

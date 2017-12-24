@@ -1,8 +1,22 @@
 export default class Index extends Quyou{
+    constructor(props){
+        super(props)
+        // misc.setCookie('user','{"token": "abc","uid": 1,"nickname": "qy_deabc", "mobile": "13248238215"}')
+        this.state={
+            user: this.user
+        }
+    }
+    signOut(){
+        misc.clearCookie('user')
+        this.user = { token: ''}
+        this.setState({
+            user: this.user
+        })
+    }
 	renderContent(){
         const me = this
         const { user: my } = me
-        console.log(my)
+        // console.log(my)
         // {
         //     my.uid?<div className="icon" onClick={me.openPage.bind(me,`/mymsg`)}><span></span></div>:null
         // }
@@ -10,7 +24,7 @@ export default class Index extends Quyou{
             <div className="my">
                 <div className="icon headbox">
                     <div className="icon wave"></div>
-                    <div className="icon avatar" style={{backgroundImage:`url(${my.avatar_url||avatar_url})`}}></div>
+                    <div className="icon avatar" style={{backgroundImage:`url(${my.headimg||avatar_url})`}}></div>
                     <div className="arrow-box" onClick={me.openPage.bind(me,my.uid ? `/myprofile` : `/signin`)}>
                         <i className="icon" />
                     </div>
@@ -44,14 +58,26 @@ export default class Index extends Quyou{
                         </div>
                         <div className="thinner-border clearboth"></div>
                     </li> */}
-                    <li onClick={me.openPage.bind(me,my.uid ? `/shophot` : `/signin`)}>
+                    {/* <li onClick={me.openPage.bind(me,my.uid ? `/shophot` : `/signin`)}>
                         <i className="icon liked" />
                         <div className="name">我赞过的</div>
                         <div className="arrow-box">
                             <span className="icon" />
                         </div>
                         <div className="thinner-border clearboth"></div>
-                    </li>
+                    </li> */}
+                    {
+                        my.uid ? (
+                            <li onClick={me.signOut.bind(me)}>
+                                <i className="icon liked" />
+                                <div className="name">退出登录</div>
+                                <div className="arrow-box">
+                                    <span className="icon" />
+                                </div>
+                                <div className="thinner-border clearboth"></div>
+                            </li>
+                        ):null
+                    }
                 </ul>
             </div>
         )

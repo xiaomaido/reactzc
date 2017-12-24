@@ -5,25 +5,35 @@ const Index = (props) => {
     const { search, query } = props.location
     const _t = query._t || 'EAT'
     let titleimg = current[1] + _t.toLowerCase()
-    let backUrl = ''
-    // window.locationFrom = window._location
-    // if(window.locationFrom && typeof window.locationFrom === 'object' && (~window.locationFrom.pathname.indexOf('/shophot/'))){
-    //     backUrl = window.locationFrom.pathname + window.locationFrom.search
-    // }else{
-        backUrl = `/${current[1]}`
-        backUrl = current.length === 3 ? backUrl : objTitleBack[backUrl]
-        if(backUrl === '/'){
-            if(_t === 'SLEEP') backUrl='/hotel'
-            else if(_t === 'TOUR') backUrl='/trip'
+    let backUrl = `/${current[1]}`
+    backUrl = current.length === 3 ? backUrl : objTitleBack[backUrl]
+    if(backUrl === '/'){
+        if(_t === 'SLEEP') backUrl='/hotel'
+        else if(_t === 'TOUR') backUrl='/trip'
+    }
+    else if(backUrl === '/posthot' || backUrl === '/videohot'){
+        backUrl = backUrl + search
+    }
+    else if(backUrl === '/shophot'){
+        if(_t === 'SLEEP') backUrl='/hotelhot'
+        else if(_t === 'TOUR') backUrl='/triphot'
+    }
+    window.locationFrom = window._location
+    if(locationFrom && typeof locationFrom === 'object'){
+        const pathnameFrom = locationFrom.pathname
+        const pathnameNow = location.pathname
+        // console.log('pathnameFrom', pathnameFrom)
+        // console.log('pathnameNow', pathnameNow)
+        if( 
+            pathnameFrom === '/seasonhot'
+            || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/foodhot/'))
+            || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/guidance/'))
+            || (~pathnameNow.indexOf('/videohot/') && (pathnameFrom === '/' || pathnameFrom === '/hotel'))
+            || (~pathnameNow.indexOf('/posthot/') && pathnameFrom === '/trip')
+        ) {
+            backUrl = pathnameFrom
         }
-        else if(backUrl === '/posthot' || backUrl === '/videohot'){
-            backUrl = backUrl + search
-        }
-        else if(backUrl === '/shophot'){
-            if(_t === 'SLEEP') backUrl='/hotelhot'
-            else if(_t === 'TOUR') backUrl='/triphot'
-        }
-    // }
+    }
     // console.log(backUrl)
     return (
         <div className="titleBar">

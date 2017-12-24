@@ -66,6 +66,8 @@ export class Quyou extends React.Component{ // 公共模板
         return fetch(url,options)
         .then(response=>response.json().then(json => ({ json, response })))
         .then(({ json, response }) => {
+            // token 过期 
+            // 200010 
             if (!response.ok) {
                 // return Promise.reject(json)
                 return fail(json)
@@ -124,6 +126,8 @@ export class Quyou extends React.Component{ // 公共模板
             req[`project`]=``
             req[`eara`]=``
             req[`cate`]=``
+        }else if(API_PAGE===`/sleepIndex/sellerSearch`&&_location.query.tag){
+            req[`tag`]=_location.query.tag
         }
         me.requestAPI(API_PAGE,req,(response)=>{
             if(page === 0) {
@@ -252,7 +256,7 @@ export class Quyou extends React.Component{ // 公共模板
 	}
 	handleFollow(id,e){
 		alert('follow ' + id)
-	}
+    }
 }
 Quyou.contextTypes={
 	router: PropTypes.object
@@ -272,27 +276,27 @@ window.SelectBox=SelectBox
 window.FilterBox=FilterBox
 window.fetch=fetch
 window.TYPES={
-    FETCH_MY_PROFILE:`FETCH_MY_PROFILE`,
     FETCH_MY_GET_LOGIN_CODE:`FETCH_MY_GET_LOGIN_CODE`,
     FETCH_MY_CHECK_LOGIN_CODE:`FETCH_MY_CHECK_LOGIN_CODE`,
     FETCH_TOUR_INDEX:`FETCH_TOUR_INDEX`,
     FETCH_TOUR_PIC_LIST:`FETCH_TOUR_PIC_LIST`,
     FETCH_TOUR_PIC_DETAIL:`FETCH_TOUR_PIC_DETAIL`,
     FETCH_EAT_INDEX:`FETCH_EAT_INDEX`,
+    FETCH_EAT_FOOD_LIST:`FETCH_EAT_FOOD_LIST`,
+    FETCH_EAT_FOOD_DETAIL:`FETCH_EAT_FOOD_DETAIL`,
+    FETCH_EAT_SHOP_LIST:`FETCH_EAT_SHOP_LIST`,
+    FETCH_EAT_TIME_LIST:`FETCH_EAT_TIME_LIST`,
+    FETCH_EAT_TIME_DETAIL:`FETCH_EAT_TIME_DETAIL`,
+    FETCH_EAT_SEASON_LIST:`FETCH_EAT_SEASON_LIST`,
+    FETCH_SLEEP_INDEX:`FETCH_SLEEP_INDEX`,
+    FETCH_SLEEP_SHOP_LIST:`FETCH_SLEEP_SHOP_LIST`,
+    FETCH_SHOP_DETAIL:`FETCH_SHOP_DETAIL`,
     FETCH_MEDIA_LIST:`FETCH_MEDIA_LIST`,
     FETCH_MEDIA_DETAIL:`FETCH_MEDIA_DETAIL`,
     FETCH_POST_LIST:`FETCH_POST_LIST`,
     FETCH_POST_DETAIL:`FETCH_POST_DETAIL`,
-    FETCH_EAT_FOOD_LIST:`FETCH_EAT_FOOD_LIST`,
-    FETCH_EAT_FOOD_DETAIL:`FETCH_EAT_FOOD_DETAIL`,
-    FETCH_EAT_SHOP_LIST:`FETCH_EAT_SHOP_LIST`,
-    FETCH_SLEEP_SHOP_LIST:`FETCH_SLEEP_SHOP_LIST`,
-    FETCH_SHOP_DETAIL:`FETCH_SHOP_DETAIL`,
-    FETCH_EAT_TIME_LIST:`FETCH_EAT_TIME_LIST`,
-    FETCH_EAT_TIME_DETAIL:`FETCH_EAT_TIME_DETAIL`,
 }
 window.APIS={
-    API_MY_PROFILE:`/users/xiaomaido`,
     API_MY_GET_LOGIN_CODE:`/user/getloginCode`,
     API_MY_CHECK_LOGIN_CODE:`/user/mcheck`,
     API_TOUR_INDEX:`/tourIndex/index`,
@@ -340,6 +344,7 @@ window.APIS={
     API_EAT_SHOP_LIKE:`/eatIndex/sellerLike`,
     API_EAT_TIME_LIST:`/eatIndex/timeBenefitsList`,
     API_EAT_TIME_DETAIL:`/eatIndex/timeBenefitsDetail`,
+    API_EAT_SEASON_LIST:`/eatIndex/seasonRecSearch`,
 }
 window.VideoList = (props) => {
     const { list, me, title = '视频推荐', type = 'EAT' } = props

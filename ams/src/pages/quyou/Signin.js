@@ -125,12 +125,14 @@ export default class Index extends Quyou{
                 me.validityStateEmpty(me)
             }else{
                 misc.setCookie('user', JSON.stringify({ ...data, mobile: mobile.value }))
-                this.jump = setTimeout(()=>{
-                    me.handleBack()
-                }, 800)
+                 
                 me.setState({
                     validityState: '登录成功！',
-                },this.jump)
+                }, () => {
+                    me.jump = setTimeout(()=>{
+                        me.handleBack()
+                    }, 800)
+                })
             }
         })
     }
@@ -138,8 +140,9 @@ export default class Index extends Quyou{
         document.body.style.overflowY='hidden'
     }
     componentWillUnmount(){
-        clearTimeout(this.time1)
-        clearTimeout(this.jump)
+        this.interval && clearInterval(this.interval)
+        this.time1 && clearTimeout(this.time1)
+        this.jump && clearTimeout(this.jump)
         document.body.style.overflowY='auto'
     }
     handleBack(){
@@ -168,7 +171,7 @@ export default class Index extends Quyou{
                 <div className="input-list">
                     <div className="input-item">
                         <div className="txt">手机号</div>
-                        <input type="tel" placeholder="点此输入手机号码" maxLength="11" ref="mobile" defaultValue="" autoFocus/>
+                        <input type="tel" placeholder="点此输入手机号码" maxLength="11" ref="mobile" defaultValue="13248238215" autoFocus/>
                     </div>
                     <div className="clearboth thinner-border"></div>
                     <div className="input-item">
