@@ -14,6 +14,7 @@ export default class Index extends Quyou{
 			me.setState({
 				textOkay: `${initTextOkay}中...`,
             })
+            debugger
 			me.requestAPI(API_SAVE_PROPERTY,{
                 ...query,
 				[property]: valueCreateComment,

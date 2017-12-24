@@ -171,7 +171,7 @@ export default class Index extends Quyou{
                 <div className="input-list">
                     <div className="input-item">
                         <div className="txt">手机号</div>
-                        <input type="tel" placeholder="点此输入手机号码" maxLength="11" ref="mobile" defaultValue="13248238215" autoFocus/>
+                        <input type="tel" placeholder="点此输入手机号码" maxLength="11" ref="mobile" defaultValue="" autoFocus/>
                     </div>
                     <div className="clearboth thinner-border"></div>
                     <div className="input-item">

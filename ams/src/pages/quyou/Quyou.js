@@ -297,6 +297,7 @@ window.TYPES={
     FETCH_POST_DETAIL:`FETCH_POST_DETAIL`,
 }
 window.APIS={
+    API_MY_UPDATE_PROFILE:`/user/updateInfo`,
     API_MY_GET_LOGIN_CODE:`/user/getloginCode`,
     API_MY_CHECK_LOGIN_CODE:`/user/mcheck`,
     API_TOUR_INDEX:`/tourIndex/index`,
