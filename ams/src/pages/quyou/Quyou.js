@@ -549,6 +549,10 @@ window.Intro = (props) => {
         },
     } = props
     data.tag_name = Array.isArray(data.tag_name) ? data.tag_name : []
+    const addr = data.addr1+data.addr2+data.addr3+data.detail
+    const handleJumpMap = () => {
+        window.location.href=`https://m.amap.com/search/mapview/keywords=崇明${data.name}`
+    }
     return (
         <div className="shop-header">
             <div className="header-box">
@@ -557,7 +561,7 @@ window.Intro = (props) => {
                 </div>
                 <a href={`tel:${data.phone}`} className="icon phone"></a>
                 <div className="name" onClick={handleJump}><i className="icon" />【{data.name}】{ data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}</div>
-                <div className="address"><i className="icon" />{data.addr1+data.addr2+data.addr3+data.detail}</div>
+                <div className="address" onClick={handleJumpMap}><i className="icon" />{addr}</div>
                 {
                     needCover ? data.imgs.map((img,i)=><div key={i} className="icon cover" style={{backgroundImage:`url(${img})`}}></div>) : null
                 }
