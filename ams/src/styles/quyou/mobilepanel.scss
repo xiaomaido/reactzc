@@ -338,10 +338,23 @@
 .my-profile{
     padding-top: $barTop;
     background-color: $color_f5;
+    #headimgform{
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 7.35rem;
+        height: 4.35rem;
+        input{
+            width: 100%;
+            height: 100%;
+        }
+    }
     .link-list{
         background-color: $color_ff;
         padding-left: px2rem(40px);
         li.avatarbox{
+            position: relative;
             height: px2rem(174px);    
             .avatar{
                 float: left;

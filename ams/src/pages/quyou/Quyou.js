@@ -22,7 +22,7 @@ export class Quyou extends React.Component{ // 公共模板
     limit=10
     page=0
     api={
-        host:`http://qyadmin.weichongming.com/peanut`
+        host:`http://quyou.weichongming.com/peanut`
     }
     centToYuan(cent){
         return cent/100

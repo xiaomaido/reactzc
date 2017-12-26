@@ -14,7 +14,6 @@ export default class Index extends Quyou{
 			me.setState({
 				textOkay: `${initTextOkay}中...`,
             })
-            debugger
 			me.requestAPI(API_SAVE_PROPERTY,{
                 ...query,
 				[property]: valueCreateComment,
@@ -69,7 +68,9 @@ export default class Index extends Quyou{
                         </div>
                         <div className="text" onClick={me.handleUploadAvatar.bind(me)}>{my.id?`修改`:`上传`}头像</div>
                         <div className="thinner-border clearboth"></div>
-                        
+                        <form encType="multipart/form-data" id="headimgform">
+                            <input type="file" name="filename" id="headimginput" accept="image/png,image/jpg,image/jpeg,image/gif" onChange={me.upload.bind(me)} />
+                        </form>
                     </li>
                     <li>
                         <div className="name">昵称</div>
@@ -104,9 +105,6 @@ export default class Index extends Quyou{
                         <div className="thinner-border clearboth"></div>
                     </li> */}
                 </ul>
-                {/* <form encType="multipart/form-data" id="headimgform">
-                    <input type="file" name="filename" id="headimginput" accept="image/png,image/jpg,image/jpeg,image/gif" onChange={me.upload.bind(me)} />
-                </form> */}
             </div>
         )
     }
@@ -119,9 +117,10 @@ export default class Index extends Quyou{
     upload(element,formId,succ,fail){
         const form = new FormData(this.headimgform)
         const oReq = new XMLHttpRequest()
-        oReq.open("POST", "http://qyadmin.weichongming.com/peanut/fileUpload", true)
+        oReq.open("POST", "http://quyou.weichongming.com/peanut/fileUpload", true)
         // oReq.open("POST", "/peanut/fileUpload", true)
         oReq.onload = function(oEvent) {
+            debugger
             console.log(oReq.status)
             if (oReq.status == 200) {
                 console.log(oReq.response)

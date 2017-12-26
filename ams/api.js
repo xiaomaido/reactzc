@@ -8,7 +8,7 @@ import requests
 
 #baseUrl = "http://192.168.16.132:8891/productApi."
 #baseUrl = "http://139.224.44.238:8791/productApi."
-baseUrl = "http://qyadmin.weichongming.com/peanut"
+baseUrl = "http://quyou.weichongming.com/peanut"
 
 
 # ******************  吃  ************************** #

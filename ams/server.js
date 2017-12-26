@@ -4,7 +4,7 @@ webpackHotMiddleware=require('webpack-hot-middleware')
 config=require('./webpack.config')
 app=new (require('express'))()
 // proxy = require('express-http-proxy');
-// app.use('/peanut/fileUpload', proxy('http://qyadmin.weichongming.com'));
+// app.use('/peanut/fileUpload', proxy('http://quyou.weichongming.com'));
 port=1718
 compiler=webpack(config)
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
