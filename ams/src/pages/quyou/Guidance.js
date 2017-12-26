@@ -37,7 +37,9 @@ const Content = (props) => {
                 {
                     data.map((d,i)=>(
                         <li key={i}>
-                            <a href={`${window.isHashHistory}/guidance/${d.id}`} className="icon big" style={{backgroundImage:`url(${d.img})`}}></a>
+                            <LazyLoad height={200} offset={100}>
+                                <a href={`${window.isHashHistory}/guidance/${d.id}`} className="icon big" style={{backgroundImage:`url(${d.img})`}}></a>
+                            </LazyLoad>
                         </li>
                     ))
                 }

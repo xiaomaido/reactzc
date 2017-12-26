@@ -389,6 +389,7 @@ window.PostList = (props) => {
         type = 'EAT',
     } = props
     const { pathname } = _location
+    // <LazyLoad key={i} height={200} offset={100}>
     return (
         <div className="list">
             {
@@ -404,11 +405,13 @@ window.PostList = (props) => {
                                 <div>{d.title}</div>
                                 {d.description.split('<br>')[0]}
                             </div>
-                            <div className="icon cover" style={{backgroundImage:`url(${isVideo?d.indexPic:d.imgs[0]})`}}>
-                                {
-                                    ~pathname.indexOf('video') ? <i className="icon play" style={{backgroundImage:`url(${play})`}} /> : null
-                                }
-                            </div>
+                            <LazyLoad height={200} offset={100}>
+                                <div className="icon cover" style={{backgroundImage:`url(${isVideo?d.indexPic:d.imgs[0]})`}}>
+                                    {
+                                        ~pathname.indexOf('video') ? <i className="icon play" style={{backgroundImage:`url(${play})`}} /> : null
+                                    }
+                                </div>
+                            </LazyLoad>
                             <div className="dos">
                                 <div className={classnames({do:true,active:d.is_like})} >
                                     <i className="icon good"></i>
@@ -436,6 +439,7 @@ window.PostDetail  = (props) => {
         },
         me,
     } = props
+    // d.imgs.map((da,i) => <img key={i} className="pic" src={da} />)
     return (
         <div>
             {
@@ -452,7 +456,7 @@ window.PostDetail  = (props) => {
                 {
                     isVideo ? null : <div>
                         {
-                            d.imgs.map((da,i)=> <img key={i} className="pic" src={da} /> )
+                            d.imgs.map((da,i) => <LazyLoad key={i} height={200} offset={100}><img className="pic" src={da} /></LazyLoad> )
                         }
                     </div>
                 }
@@ -496,7 +500,9 @@ window.CommentList = (props) => {
                         }
                         return (
                             <li key={i}>
-                                <img src={d.user_info.headimg||avatar_url} />
+                                <LazyLoad height={50} offset={100}>
+                                    <img src={d.user_info.headimg||avatar_url} />
+                                </LazyLoad>
                                 <div className="create">{misc.formatTime(d.creat_dt*1000,2)}</div> 
                                 <div className="nicktext">
                                     <div className="nick" >{d.user_info.nickname}</div>

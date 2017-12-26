@@ -46,7 +46,9 @@ const List = (props) => {
                     data.map((d = { imgs: [] },i)=>(
                         <div key={i}>
                             <div className="item" onClick={me.openPage.bind(me,`/shophot/${d.id}`)}>
-                                <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
+                                <LazyLoad key={i} height={100} offset={100}>
+                                    <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
+                                </LazyLoad>
                                 <div className="box">
                                     <div className="name">{d.season_rec}</div>
                                     <div className="shop">【{d.name}】</div>

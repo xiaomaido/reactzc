@@ -46,7 +46,9 @@ const List = (props) => {
                         return (
                             <div key={i}>
                                 <div className="item" onClick={me.openPage.bind(me,`/shophot/${d.id}?_t=SLEEP`)}>
-                                    <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
+                                    <LazyLoad key={i} height={100} offset={100}>
+                                        <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
+                                    </LazyLoad>
                                     <div className="box">
                                         <div className="name">{d.name}</div>
                                         <div className="stars-permoney">
