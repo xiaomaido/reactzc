@@ -43,6 +43,7 @@ const Content = (props) => {
 	const API_PAGE_LIKE = APIS[`API_${_t}_SHOP_LIKE`]
 	const API_PAGE_COMMENT = APIS[`API_${_t}_SHOP_COMMENT`]
 	data.activities = Array.isArray(data.activities) ? data.activities : []
+	data.description = data.description || ''
     return data.id ? (
 		<div className="shop-detail">
 			<Intro data={data} needCover={true} />
@@ -51,7 +52,9 @@ const Content = (props) => {
 				<div className="necker-box">
 					<div className="intro"><span></span>简介</div>
 					<div className="clearboth thinner-border"></div>
-					<div className="descrip">{data.description||'暂无'}</div>
+					{
+						data.description.split('<br>').map((d,i)=><div className="descrip" key={i}>{d}</div>)
+					}
 					{/* <div className="open-more">展开更多 ^</div> */}
 					{/* <div className="clearboth thinner-border"></div> */}
 					{/* <ProductList list={Array.apply(null,{length:5})} me={me} activities={data.activities} /> */}

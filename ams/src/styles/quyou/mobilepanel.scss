@@ -1001,16 +1001,17 @@
                 margin-top: 0;
             }
             .descrip{
-                margin: px2rem(30px) 0 px2rem(18px);
+                padding-top: px2rem(20px);
+                // margin: px2rem(30px) 0 px2rem(18px);
                 padding-right: px2rem(44px);
                 color: $color_5d666e;
                 font-size: px2rem(24px);
                 line-height: px2rem(50px);
-                overflow: hidden;
-                -webkit-line-clamp: 8;
-                -webkit-box-orient: vertical;
-                display: -webkit-inline-box;
-                word-break: break-word;
+                // overflow: hidden;
+                // -webkit-line-clamp: 8;
+                // -webkit-box-orient: vertical;
+                // display: -webkit-inline-box;
+                // word-break: break-word;
             }
             .open-more{
                 display: none;
