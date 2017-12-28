@@ -207,7 +207,13 @@ export class Quyou extends React.Component{ // 公共模板
 						textOkay: initTextOkay,
 					})
 					return
-				}
+                }
+                data.user_info = {
+                    id: me.user.uid,
+                    headimg: me.user.headimg,
+                    is_v: me.user.is_v,
+                    nickname: me.user.nickname
+                }
 				const FETCH_TEMP = me.state[FETCH_PAGE]
                 FETCH_TEMP.response.data.comment_count += 1
                 FETCH_TEMP.response.data.comments = Array.isArray(FETCH_TEMP.response.data.comments) ? FETCH_TEMP.response.data.comments : [] 

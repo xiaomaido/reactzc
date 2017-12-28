@@ -3,9 +3,10 @@ export default class Index extends Quyou{
     state={
         showCreateComment: false,
         textOkay: this.initTextOkay,
-        user: this.user
+        user: this.user,
+        uploadText: '上传头像'
     }
-	handleSaveComment({ API_SAVE_PROPERTY, FETCH_PAGE, property = 'nickname', query = {} }, e){
+	handleSaveComment({ API_SAVE_PROPERTY, property = 'nickname', query = {} }, e){
         const me = this
         const { state, initTextOkay } = me
 		const { valueCreateComment, textOkay } = state
@@ -42,7 +43,7 @@ export default class Index extends Quyou{
 	}
 	renderContent(){
         const me = this
-        const { showCreateComment, textOkay, user: my } = me.state
+        const { showCreateComment, textOkay, user: my, uploadText } = me.state
         // console.log(my.token)
         return (
             <div className="my-profile">
@@ -63,13 +64,15 @@ export default class Index extends Quyou{
                 <ul className="link-list">
                     <li className="avatarbox">
                         <div className="icon avatar" style={{backgroundImage:`url(${my.headimg||avatar_url})`}}></div>
-                        <div className="arrow-box" onClick={me.handleUploadAvatar.bind(me)}>
+                        <div className="arrow-box" >
                             <span className="icon" />
                         </div>
-                        <div className="text" onClick={me.handleUploadAvatar.bind(me)}>{my.id?`修改`:`上传`}头像</div>
+                        <div className="text">{uploadText}</div>
                         <div className="thinner-border clearboth"></div>
                         <form encType="multipart/form-data" id="headimgform">
-                            <input type="file" name="filename" id="headimginput" accept="image/png,image/jpg,image/jpeg,image/gif" onChange={me.upload.bind(me)} />
+                            <input type="file" name="file" accept="image/png,image/jpg,image/jpeg,image/gif" onChange={me.upload.bind(me,{ API_SAVE_PROPERTY, property: 'headimg', query: {
+                                nickname: my.nickname
+                            }})} />
                         </form>
                     </li>
                     <li>
@@ -108,23 +111,54 @@ export default class Index extends Quyou{
             </div>
         )
     }
-    handleUploadAvatar(e){
-    }
-    componentDidMount(){
-        // this.headimgform = document.getElementById('headimgform')
-        // this.headimginput = document.getElementById('headimginput')
-    }
-    upload(element,formId,succ,fail){
-        const form = new FormData(this.headimgform)
+    upload({ API_SAVE_PROPERTY, property = 'headimg', query = {} }){
+        const me = this
+        const { uploadText } = me.state
+        if(uploadText === `上传中...`) return false
+        me.setState({
+            uploadText: `上传中...`
+        })
+        const fail = () => {
+            me.setState({
+                uploadText: `上传失败，重新上传`
+            })
+        }
+        const form = new FormData(document.getElementById('headimgform'))
         const oReq = new XMLHttpRequest()
-        oReq.open("POST", "http://quyou.weichongming.com/peanut/fileUpload", true)
         // oReq.open("POST", "/peanut/fileUpload", true)
+        oReq.open("POST", "http://quyou.weichongming.com/peanut/fileUpload", true)
         oReq.onload = function(oEvent) {
-            debugger
-            console.log(oReq.status)
-            if (oReq.status == 200) {
-                console.log(oReq.response)
-                // succ&&succ(element,JSON.parse(oReq.response))
+            console.log(oReq)
+            if (oReq.status === 200) {
+                // debugger
+                // const res = {url: "http://sfmimg.b0.upaiyun.com/prod_00/2caa03cd39ecd102.png", code: 0}
+                const res=JSON.parse(oReq.response)
+                // console.log(res)
+                if(res.code === 0){
+                    me.requestAPI(API_SAVE_PROPERTY,{
+                        ...query,
+                        [property]: res.url,
+                        token: me.user.token,
+                    },(response)=>{
+                        debugger
+                        const { code = 0, data } = response
+                        if(code) {
+                            fail&&fail()
+                            return
+                        }
+                        const user = {
+                            ...me.user,
+                            ...data,
+                        }
+                        me.setState({
+                            uploadText: `上传成功，重新上传`,
+                            user,
+                        })
+                        misc.setCookie('user',JSON.stringify(user))
+                    })
+                }else{
+                    fail&&fail()
+                }
             } else {
                 fail&&fail()
             }
