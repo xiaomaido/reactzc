@@ -22,8 +22,8 @@ const Index = (props) => {
     if(locationFrom && typeof locationFrom === 'object'){
         const pathnameFrom = locationFrom.pathname
         const pathnameNow = location.pathname
-        console.log('pathnameFrom', pathnameFrom)
-        console.log('pathnameNow', pathnameNow)
+        // console.log('pathnameFrom', pathnameFrom)
+        // console.log('pathnameNow', pathnameNow)
         if( 
             pathnameFrom === '/seasonhot'
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/')
@@ -39,7 +39,7 @@ const Index = (props) => {
             backUrl = pathnameFrom
         }
     }
-    console.log(backUrl)
+    // console.log(backUrl)
     return (
         <div className="titleBar">
             <div className="box">

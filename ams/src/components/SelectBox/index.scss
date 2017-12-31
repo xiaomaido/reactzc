@@ -43,9 +43,15 @@
     .select-options{
         width: px2rem(750px);
         position: absolute;
+        z-index: 100;
         left: 0;
-        // background-color: $color_ff;
+        background-color: $color_ff;
         padding: 0 px2rem(60px) px2rem(80px);
+        max-height: 14rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        // box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.2);
         li.active{
             .title{
                 color: $color_ffc913;

@@ -42,17 +42,17 @@ export default class Index extends Component{
                     thinnerBorder ? <div className="clearboth thinner-border"></div> : null
                 }
                 {
-                        showOptions ? <Options _this={_this} handleSelectBoxChage={handleSelectBoxChage} handleSelectBoxChageColumn={handleSelectBoxChageColumn} /> : null
+                        showOptions ? (
+                            <div>
+                                <div style={{height:1}}><div className="clearboth thinner-border"></div></div>
+                                <Options _this={_this} handleSelectBoxChage={handleSelectBoxChage} handleSelectBoxChageColumn={handleSelectBoxChageColumn} />
+                            </div>
+                        ) : null
                 }
             </div>
         )
     }
     handleClick({handleSelectBoxChageColumn}, e){
-        // const { showOptions } = this.state
-        // let nextState = {
-        //     showOptions: !showOptions,
-        // }
-        // this.setState(nextState)
         handleSelectBoxChageColumn()
     }
     handleOptionClick({ option, handleSelectBoxChage, handleSelectBoxChageColumn }, e){
