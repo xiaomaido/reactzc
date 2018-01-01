@@ -16,25 +16,80 @@ import avatar_url from '../../images/quyou/icon/avatar.png'
 import play from '../../images/quyou/icon/play.png'
 window.avatar_url=avatar_url
 window.play=play
+window.server=`http://quyou.weichongming.com`
+window.wxconfig={}
+window.jsApiList=['onMenuShareAppMessage','onMenuShareTimeline','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
 export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
     user=JSON.parse(misc.getCookie('user'))||{ token: ''}
     limit=10
     page=0
     api={
-        host:`http://quyou.weichongming.com/peanut`
+        host:`${server}/peanut`,
+        // host:`http://quyou.weichongming.com/peanut`,
     }
     centToYuan(cent){
         return cent/100
     }
+    shareTextObj={}
+    shareTextObjSetting({title,imgUrl,desc}){
+        const me=this
+        const { pathname, search, key } = me.props.location
+        me.shareTextObj={
+            link: (server + '/#' + pathname + (search ? `${search}&_k=${key}` : `?_k=${key}`)), // 分享URL
+            title, // 分享标题
+            imgUrl, // 分享图标
+            desc, // 分享描述
+        }
+        console.log('shareTextObj',me.shareTextObj)
+        me.weixinSDK()
+    }
+    weixinSDK(){
+		console.log('wx',wx)
+		wx.ready(function(){
+			wx.checkJsApi({
+				jsApiList,
+				success: function(res) {
+					if(res&&res.checkResult){
+						for(var i in res.checkResult){
+							if(res.checkResult[i]){
+								wx[i](me.shareTextObj)
+							}
+						}
+					}
+				}
+			})
+		}) 
+		wx.error(function(err){
+			console.log('err',err)
+		})
+	}
 	componentWillMount(){
-        this.user.token=encodeURIComponent(this.user.token)
+        const { API_MY_GET_JSSIGN } = APIS
+        const me=this
+        const { pathname, search, key } = me.props.location
+        me.requestAPI(API_MY_GET_JSSIGN,{
+            url: encodeURIComponent(server + '/#' + pathname + (search ? `${search}&_k=${key}` : `?_k=${key}`)), // 分享URL
+        },(res)=>{
+            wxconfig={
+                jsApiList,
+                appId:'wxee431201802aecab',
+                debug:false,
+                timestamp:res.data["timestamp"],
+                signature:res.data["signature"],
+                nonceStr:res.data["noncestr"],
+            }
+			wx.config(wxconfig)
+            console.log('wxconfig',wxconfig)
+        })
+        me.shareTextObjSetting=me.shareTextObjSetting.bind(this)
+        me.user.token=encodeURIComponent(me.user.token)
         window.onscroll=null
         window.ontouchstart=null
         window.ontouchend=null
         delete window['touchstartY']
         delete window['touchendY']
-        window._location=this.props.location
+        window._location=me.props.location
 		window.scrollTo(0, 0)
     }
 	openPage(url,e){ // 打开页面
@@ -63,6 +118,7 @@ export class Quyou extends React.Component{ // 公共模板
         } : {  
             method, 
         }
+        console.log('fetch url', url)
         return fetch(url,options)
         .then(response=>response.json().then(json => ({ json, response })))
         .then(({ json, response }) => {
@@ -168,6 +224,15 @@ export class Quyou extends React.Component{ // 公共模板
                     fetching: 0
                 }
             })
+            const { data = {}} = response
+            if(data.id){
+                data.imgs = Array.isArray(data.imgs) ? data.imgs : []
+                me.shareTextObjSetting({
+                    title:data.title,
+                    imgUrl:data.imgs[0]||`http://qyadmin.weichongming.com/logo.png`,
+                    desc:data.description,
+                })
+            }
         })
     }
 	handleShowCreateComment(e){
@@ -303,6 +368,7 @@ window.TYPES={
     FETCH_POST_DETAIL:`FETCH_POST_DETAIL`,
 }
 window.APIS={
+    API_MY_GET_JSSIGN:`/user/get_jssign`,
     API_MY_UPDATE_PROFILE:`/user/updateInfo`,
     API_MY_GET_LOGIN_CODE:`/user/getloginCode`,
     API_MY_CHECK_LOGIN_CODE:`/user/mcheck`,
