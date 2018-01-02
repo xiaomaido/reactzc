@@ -36,7 +36,8 @@ export class Quyou extends React.Component{ // 公共模板
         const me=this
         const { pathname, search, key } = me.props.location
         me.shareTextObj={
-            link: (server + '/#' + pathname + (search ? `${search}&_k=${key}` : `?_k=${key}`)), // 分享URL
+            link: window.location.href, // 分享URL
+            // link: (server + '/#' + pathname + (search ? `${search}&_k=${key}` : `?_k=${key}`)), // 分享URL
             title, // 分享标题
             imgUrl, // 分享图标
             desc, // 分享描述
@@ -45,11 +46,13 @@ export class Quyou extends React.Component{ // 公共模板
         me.weixinSDK()
     }
     weixinSDK(){
+        const me=this
 		console.log('wx',wx)
 		wx.ready(function(){
 			wx.checkJsApi({
 				jsApiList,
 				success: function(res) {
+                    console.log(res)
 					if(res&&res.checkResult){
 						for(var i in res.checkResult){
 							if(res.checkResult[i]){
@@ -69,7 +72,8 @@ export class Quyou extends React.Component{ // 公共模板
         const me=this
         const { pathname, search, key } = me.props.location
         me.requestAPI(API_MY_GET_JSSIGN,{
-            url: encodeURIComponent(server + '/#' + pathname + (search ? `${search}&_k=${key}` : `?_k=${key}`)), // 分享URL
+            // url: encodeURIComponent(server + '/#' + pathname + (search ? `${search}&_k=${key}` : `?_k=${key}`)), // 分享URL
+            url: encodeURIComponent(window.location.href), // 分享URL
         },(res)=>{
             wxconfig={
                 jsApiList,
@@ -83,6 +87,7 @@ export class Quyou extends React.Component{ // 公共模板
             console.log('wxconfig',wxconfig)
         })
         me.shareTextObjSetting=me.shareTextObjSetting.bind(this)
+        me.weixinSDK=me.weixinSDK.bind(this)
         me.user.token=encodeURIComponent(me.user.token)
         window.onscroll=null
         window.ontouchstart=null
@@ -227,10 +232,11 @@ export class Quyou extends React.Component{ // 公共模板
             const { data = {}} = response
             if(data.id){
                 data.imgs = Array.isArray(data.imgs) ? data.imgs : []
+                data.images = Array.isArray(data.images) ? data.images : []
                 me.shareTextObjSetting({
-                    title:data.title,
-                    imgUrl:data.imgs[0]||`http://qyadmin.weichongming.com/logo.png`,
-                    desc:data.description,
+                    title:data.title||data.name,
+                    imgUrl:data.imgs[0]||data.images[0]||data.indexPic||`http://qyadmin.weichongming.com/logo.png`,
+                    desc:data.description.split('<br>')[0],
                 })
             }
         })
