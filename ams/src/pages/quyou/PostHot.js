@@ -23,6 +23,11 @@ export default class Index extends Quyou{
         const _t = query._t || 'EAT'
         const API_PAGE = APIS[`API_${_t}_POST_LIST`]
         me.requestList(me,FETCH_PAGE,API_PAGE)
+        me.shareTextObjSetting({
+            title:`趣游崇明之热门攻略`,
+            imgUrl:`http://qyadmin.weichongming.com/logo.png`,
+            desc:'整合崇明全域“吃住游购”旅游产品的综合平台和崇明旅游行业引导的风向标。',
+        })
     }
 }
 const Content = (props) => {

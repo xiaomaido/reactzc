@@ -30,6 +30,11 @@ export default class Index extends Quyou{
     componentDidMount(){
         const me = this
         me.requestList(me,FETCH_PAGE,API_PAGE)
+        me.shareTextObjSetting({
+            title:`人气美食`,
+            imgUrl: banner,
+            desc:'整合崇明全域的人气美食、唯爱与美食不可辜负！',
+        })
     }
     // 下拉刷新
 	// renderContent(){

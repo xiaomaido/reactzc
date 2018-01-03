@@ -235,7 +235,7 @@ export class Quyou extends React.Component{ // 公共模板
                 data.images = Array.isArray(data.images) ? data.images : []
                 me.shareTextObjSetting({
                     title:data.title||data.name,
-                    imgUrl:data.imgs[0]||data.images[0]||data.indexPic||`http://qyadmin.weichongming.com/logo.png`,
+                    imgUrl:data.imgs[0]||data.images[0]||data.indexPic||data.img||`http://qyadmin.weichongming.com/logo.png`,
                     desc:data.description.split('<br>')[0],
                 })
             }

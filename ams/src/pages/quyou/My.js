@@ -82,4 +82,11 @@ export default class Index extends Quyou{
             </div>
         )
     }
+    componentDidMount(){
+        me.shareTextObjSetting({
+            title:`趣游崇明`,
+            imgUrl:`http://qyadmin.weichongming.com/logo.png`,
+            desc:'整合崇明全域“吃住游购”旅游产品的综合平台和崇明旅游行业引导的风向标。',
+        })
+    }
 } 

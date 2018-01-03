@@ -29,6 +29,11 @@ export default class Index extends Quyou{
     componentDidMount(){
         const me = this
         me.requestList(me,FETCH_PAGE,API_PAGE)
+        me.shareTextObjSetting({
+            title:`人气商家`,
+            imgUrl: banner,
+            desc:'整合崇明全域的人气商家、精推品质之选！',
+        })
     }
 }
 
