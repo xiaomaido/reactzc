@@ -30,6 +30,11 @@ export default class Index extends Quyou{
     componentDidMount(){
         const me = this
         me.requestList(me,FETCH_PAGE,API_PAGE)
+        me.shareTextObjSetting({
+            title:`当季推荐`,
+            imgUrl: `http://quyou.weichongming.com/static/images/seasonhot.f9c8bbfed7a87aa734c6ba2f40b44591.png`,
+            desc:'整合崇明全域的当季推荐优惠活动！',
+        })
     }
 }
 const List = (props) => {

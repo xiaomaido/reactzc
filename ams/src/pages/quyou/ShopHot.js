@@ -31,7 +31,7 @@ export default class Index extends Quyou{
         me.requestList(me,FETCH_PAGE,API_PAGE)
         me.shareTextObjSetting({
             title:`人气商家`,
-            imgUrl: banner,
+            imgUrl: `http://quyou.weichongming.com/static/images/shophot.6aa46ea1b7d4a35f033ee113df4e7a03.png`,
             desc:'整合崇明全域的人气商家、精推品质之选！',
         })
     }

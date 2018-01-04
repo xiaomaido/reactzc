@@ -32,7 +32,7 @@ export default class Index extends Quyou{
         me.requestList(me,FETCH_PAGE,API_PAGE)
         me.shareTextObjSetting({
             title:`人气美食`,
-            imgUrl: banner,
+            imgUrl: `http://quyou.weichongming.com/static/images/foodhot.0f506936c300278554dbabac524f62d4.png`,
             desc:'整合崇明全域的人气美食、唯爱与美食不可辜负！',
         })
     }
