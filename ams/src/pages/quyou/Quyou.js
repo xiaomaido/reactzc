@@ -631,6 +631,9 @@ window.Intro = (props) => {
     const handleJumpMap = () => {
         window.location.href=`https://m.amap.com/search/mapview/keywords=崇明${data.name}`
     }
+    // {
+    //     needCover ? data.imgs.map((img,i)=><div key={i} className="icon cover" style={{backgroundImage:`url(${img})`}}></div>) : null
+    // }
     return (
         <div className="shop-header">
             <div className="header-box">
@@ -641,7 +644,7 @@ window.Intro = (props) => {
                 <div className="name" onClick={handleJump}><i className="icon" />【{data.name}】{ data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}</div>
                 <div className="address" onClick={handleJumpMap}><i className="icon" />{addr}</div>
                 {
-                    needCover ? data.imgs.map((img,i)=><div key={i} className="icon cover" style={{backgroundImage:`url(${img})`}}></div>) : null
+                    needCover ? data.imgs.map((img,i)=><img key={i} className="icover" src={img}/>) : null
                 }
             </div>
         </div>

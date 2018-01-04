@@ -1629,6 +1629,12 @@
             background-size: cover;
             background-color: $color_e5;
         }
+        .icover{
+            margin-top: px2rem(32px);
+            width: 100%;
+            height: auto;
+            display: block;
+        }
     }
 }
 .yummy-detail{
