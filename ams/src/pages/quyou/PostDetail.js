@@ -18,6 +18,8 @@ export default class Index extends Quyou{
 		valueCreateComment: '',
 		textOkay: this.initTextOkay,
 		isDoLike: false,
+		isDoFollow: false,
+		textFollow: '关注',
 	}
 	renderContent(){
 		// document.title='美食攻略'
@@ -41,6 +43,7 @@ const Content = (props) => {
 	const { showCreateComment, textOkay } = me.state
 	const { query } = _location
 	const _t = query._t || 'EAT'
+	const API_MY_DO_FOLLOW = APIS[`API_MY_DO_FOLLOW`]
 	const API_PAGE_LIKE = APIS[`API_${_t}_POST_LIKE`]
 	const API_PAGE_COMMENT = APIS[`API_${_t}_POST_COMMENT`]
     return data.id ? (
@@ -60,6 +63,7 @@ const Content = (props) => {
 			<PostDetail 
 				isVideo={isVideo} 
 				d={data} 
+				params={{ API_MY_DO_FOLLOW, FETCH_PAGE }}
 				me={me} /> 
 			<CommentList
 				me={me} 

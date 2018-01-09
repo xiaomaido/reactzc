@@ -14,6 +14,7 @@ import FilterBox from '../../components/FilterBox/'
 import StarsShow from '../../components/StarsShow/'
 import avatar_url from '../../images/quyou/icon/avatar.png'
 import play from '../../images/quyou/icon/play.png'
+import { setTimeout } from 'timers';
 window.avatar_url=avatar_url
 window.play=play
 window.server=`http://quyou.weichongming.com`
@@ -28,6 +29,38 @@ export class Quyou extends React.Component{ // 公共模板
         host:`${server}/peanut`,
         // host:`http://quyou.weichongming.com/peanut`,
     }
+    hotelTags = [
+        {
+            title:'精品酒店',
+            name: 'jingpinjiudian',
+            id:12,
+        },
+        {
+            title:'特色民宿',
+            name: 'teseminsu',
+            id:4,
+        },
+        {
+            title:'生态农庄',
+            name: 'shengtainongzhuang',
+            id:3,
+        },
+        {
+            title:'经济适用',
+            name: 'jingjishiyong',
+            id:9,
+        },
+        {
+            title:'人气推荐',
+            name: 'renqituijian',
+            id:10,
+        },
+        {
+            title:'特惠折扣',
+            name: 'tehuizhekou',
+            id:11,
+        },
+    ]
     centToYuan(cent){
         return cent/100
     }
@@ -42,12 +75,12 @@ export class Quyou extends React.Component{ // 公共模板
             imgUrl, // 分享图标
             desc, // 分享描述
         }
-        console.log('shareTextObj',me.shareTextObj)
+        // console.log('shareTextObj',me.shareTextObj)
         me.weixinSDK()
     }
     weixinSDK(){
         const me=this
-		console.log('wx',wx)
+		// console.log('wx',wx)
 		wx.ready(function(){
 			wx.checkJsApi({
 				jsApiList,
@@ -84,7 +117,7 @@ export class Quyou extends React.Component{ // 公共模板
                 nonceStr:res.data["noncestr"],
             }
 			wx.config(wxconfig)
-            console.log('wxconfig',wxconfig)
+            // console.log('wxconfig',wxconfig)
         })
         me.shareTextObjSetting=me.shareTextObjSetting.bind(this)
         me.weixinSDK=me.weixinSDK.bind(this)
@@ -95,10 +128,16 @@ export class Quyou extends React.Component{ // 公共模板
         delete window['touchstartY']
         delete window['touchendY']
         window._location=me.props.location
-		window.scrollTo(0, 0)
+		// window.scrollTo(0, 0)
     }
 	openPage(url,e){ // 打开页面
 		this.context.router.push(url)
+    }
+    getRequestParam(data){
+        return Object.keys(data).reduce((arr,k)=>{
+            arr.push(`&${k}=${data[k]}`)
+            return arr
+        },[]).join('').replace('&','?') 
     }
     requestAPI=(url,data,succ=(res)=>{console.log(res)},fail=(err)=>{console.log(err)},method='GET')=>{
         const me = this
@@ -109,10 +148,8 @@ export class Quyou extends React.Component{ // 公共模板
             }
         }      
         url = ~url.indexOf(this.api.host) ? url : this.api.host + url
-        url = data && method==='GET' ? url + Object.keys(data).reduce((arr,k)=>{
-            arr.push(`&${k}=${data[k]}`)
-            return arr
-        },[]).join('').replace('&','?') : url
+        // console.log('fetch data', data)
+        url = data && method==='GET' ? url + me.getRequestParam(data) : url
         const options= method==='POST' ? {
             method, 
             headers: { 
@@ -123,7 +160,7 @@ export class Quyou extends React.Component{ // 公共模板
         } : {  
             method, 
         }
-        console.log('fetch url', url)
+        // console.log('fetch url', url)
         return fetch(url,options)
         .then(response=>response.json().then(json => ({ json, response })))
         .then(({ json, response }) => {
@@ -191,6 +228,7 @@ export class Quyou extends React.Component{ // 公共模板
             req[`tag`]=_location.query.tag
         }
         me.requestAPI(API_PAGE,req,(response)=>{
+            console.log('response',response)
             if(page === 0) {
                 me.setState({
                     [FETCH_PAGE]: {
@@ -331,8 +369,42 @@ export class Quyou extends React.Component{ // 公共模板
 			})
 		}
 	}
-	handleFollow(id,e){
-		alert('follow ' + id)
+	handleFollow({ user_id, isFollowed, API_MY_DO_FOLLOW, FETCH_PAGE },e){
+        const me = this
+        const { state, props } = me
+		const { isDoFollow, textFollow } = state
+        const { params } = props
+		if(!isDoFollow){
+			me.setState({
+                isDoFollow: true,
+            })
+            setTimeout(()=>{
+                const FETCH_TEMP = me.state[FETCH_PAGE]
+				FETCH_TEMP.response.data.is_follow = !FETCH_TEMP.response.data.is_follow
+				me.setState({
+					[FETCH_PAGE]: FETCH_TEMP,
+					isDoFollow: false,
+				})
+            },600)
+			// me.requestAPI(API_MY_DO_FOLLOW,{
+			// 	user_id,
+            //     token: me.user.token,
+			// },(response)=>{
+			// 	const { code = 0, data } = response
+			// 	if(code) {
+			// 		me.setState({
+			// 			isDoFollow: false,
+			// 		})
+			// 		return
+			// 	}
+			// 	const FETCH_TEMP = me.state[FETCH_PAGE]
+			// 	FETCH_TEMP.response.data.is_follow = !FETCH_TEMP.response.data.is_follow
+			// 	me.setState({
+			// 		[FETCH_PAGE]: FETCH_TEMP,
+			// 		isDoLike: false,
+			// 	})
+            // })
+        }
     }
 }
 Quyou.contextTypes={
@@ -374,6 +446,7 @@ window.TYPES={
     FETCH_POST_DETAIL:`FETCH_POST_DETAIL`,
 }
 window.APIS={
+    API_MY_DO_FOLLOW:`/user/do_follow`,
     API_MY_GET_JSSIGN:`/user/get_jssign`,
     API_MY_UPDATE_PROFILE:`/user/updateInfo`,
     API_MY_GET_LOGIN_CODE:`/user/getloginCode`,
@@ -513,11 +586,17 @@ window.PostDetail  = (props) => {
     const {
         isVideo = false, 
         d = {
-            imgs:[]
+            imgs:[],
+            is_follow: 0
         },
         me,
+        params = { }
     } = props
+    let { isDoFollow = false } =  me.state
+    const isFollowed = d.is_follow
+    // const isFollowed = 'isFollowed' in me.state ? me.state.isFollowed : d.is_follow
     // d.imgs.map((da,i) => <img key={i} className="pic" src={da} />)
+    const { API_MY_DO_FOLLOW, FETCH_PAGE } = params
     return (
         <div>
             {
@@ -526,7 +605,23 @@ window.PostDetail  = (props) => {
             <div className="toper">
                 <div className="title">{d.title}</div>
                 <div className="heder">
-                    {/* <div className="follow" onClick={me.handleFollow.bind(me, d.user_id)}><span>+</span>关注</div> */}
+                    <div style={{display:'none'}} className={classnames({ follow:true, active: isFollowed })} onClick={me.handleFollow.bind(me, { user_id: d.user_id, isFollowed, API_MY_DO_FOLLOW, FETCH_PAGE })}>
+                        {
+                            isDoFollow ? (
+                                isFollowed ? '取消关注...' : (
+                                    <div>
+                                        <span>+</span>关注中...
+                                    </div>
+                                )
+                            ) : (
+                                isFollowed ? '已关注' : (
+                                    <div>
+                                        <span>+</span>关注
+                                    </div>
+                                )
+                            )
+                        }
+                    </div>
                     <img src={d.headimg} />
                     <div className="nickname">{d.nickname}<a className="icon"></a></div>
                     {/* <div className="create">{d.create_dt||d.update_dt}</div> */}

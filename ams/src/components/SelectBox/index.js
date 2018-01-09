@@ -8,11 +8,11 @@ export default class Index extends Component{
         this.state = {
             showOptions,
             options,
-            optionId: 0,
+            optionId: props.optionId || 0,
         }
     }
     componentWillReceiveProps(nextProps){
-        console.log(nextProps)
+        // console.log(nextProps)
         let { options = [], showOptions = false } = nextProps
         this.setState({
             showOptions,
@@ -24,16 +24,19 @@ export default class Index extends Component{
         const { 
             thinnerBorder = true,
             part,
+            type = '',
             handleSelectBoxChageColumn = () => {},
             handleSelectBoxChage = () => {},
         } = _this.props
         const { showTitle, showOptions, options, optionId } = _this.state
+        // console.log('options',options)
+        // console.log('optionId',optionId)
         return (
             <div className="select-box">
                 <div className="select-header">
                     {
                         <div className="select-column" onClick={_this.handleClick.bind(_this, { handleSelectBoxChageColumn })}>
-                            {options[optionId].title}
+                            {options.find(d=>d.id===optionId).title}
                             <i className={ showOptions ? 'tran-up' : 'tran-down'} />
                         </div>
                     }
@@ -45,7 +48,7 @@ export default class Index extends Component{
                         showOptions ? (
                             <div>
                                 <div style={{height:1}}><div className="clearboth thinner-border"></div></div>
-                                <Options _this={_this} handleSelectBoxChage={handleSelectBoxChage} handleSelectBoxChageColumn={handleSelectBoxChageColumn} />
+                                <Options _this={_this} type={type} handleSelectBoxChage={handleSelectBoxChage} handleSelectBoxChageColumn={handleSelectBoxChageColumn} />
                             </div>
                         ) : null
                 }
@@ -55,20 +58,21 @@ export default class Index extends Component{
     handleClick({handleSelectBoxChageColumn}, e){
         handleSelectBoxChageColumn()
     }
-    handleOptionClick({ option, handleSelectBoxChage, handleSelectBoxChageColumn }, e){
+    handleOptionClick({ option, handleSelectBoxChage, handleSelectBoxChageColumn, type }, e){
         const _this = this
         let nextState = {
             // showOptions:false,
             optionId:option.id,
         }
         this.setState(nextState)
-        handleSelectBoxChageColumn()
-        handleSelectBoxChage(option)
+        handleSelectBoxChageColumn(type)
+        handleSelectBoxChage({type,option})
     }
 }
 const Options = (props) => {
     const { 
         _this, 
+        type = '',
         handleSelectBoxChageColumn = () => {},
         handleSelectBoxChage = () => {},
     } = props
@@ -80,6 +84,7 @@ const Options = (props) => {
                     return (
                         <li key={d.id} className={optionId?(optionId===d.id?'active':''):(i===0?'active':'')} onClick={_this.handleOptionClick.bind(_this,{
                             option: d,
+                            type,
                             handleSelectBoxChage,
                             handleSelectBoxChageColumn,
                         })}>

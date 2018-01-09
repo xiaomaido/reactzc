@@ -45,18 +45,20 @@ const Content = (props) => {
         recomm_medias = [],
         post_index = {},
     } = response.data
-    const tags = [12,4,3,9,10,11]
+    // {
+    //     me.hotelTags.map(({id, name})=><a key={id} className="icon" href={`${window.isHashHistory}/hotelhot?tagname=${name}&tag=${id}`}></a>)
+    // }
     return (
         <div className="eat">
             <div className="top">
                 <TouchSlideBox imgSlideList={banner} />
-                <div className="hotelhot" onClick={me.openPage.bind(me, `/hotelhot?cate=-1`)}>
+                <div className="hotelhot" onClick={me.openPage.bind(me, `/hotelhot`)}>
                     <div className="icon"></div>
                     <div className="clearboth thinner-border"></div>
                 </div>
                 <div className="hotelCates">
                     {
-                        tags.map(d=><a key={d} className="icon" href={`${window.isHashHistory}/hotelhot?tag=${d}`}></a>)
+                        me.hotelTags.map(({id, name})=><a key={id} className="icon" href={`${window.isHashHistory}/hotelhot?tag=${id}`}></a>)
                     }
                 </div>
             </div>

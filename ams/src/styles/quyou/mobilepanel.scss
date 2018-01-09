@@ -1676,7 +1676,11 @@
     		margin-top: px2rem(44px);
     		height: px2rem(82px);
     		position: relative;
-    		.follow{
+    		.follow.active{
+    			background-color: $color_ffc913;
+                color: $color_ff;
+            }
+            .follow{
     			span{
     				position:relative;
     				top:-0.1rem;
@@ -1885,6 +1889,12 @@
         float: left;
         width: 50%;
         width: 33.3%;
+    }
+}
+.food-hot{
+    .select-box{
+        float: left;
+        width: 50%;
     }
 }
 .mall{

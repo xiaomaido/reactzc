@@ -5,6 +5,10 @@ const Index = (props) => {
     const { search, query } = props.location
     const _t = query._t || 'EAT'
     let titleimg = current[1] + _t.toLowerCase()
+    // if(titleimg === 'hotelhoteat' && query.tagname){
+    //     titleimg = query.tagname
+    // }
+    // console.log('titleimg',titleimg)
     let backUrl = `/${current[1]}`
     backUrl = current.length === 3 ? backUrl : objTitleBack[backUrl]
     if(backUrl === '/'){
@@ -20,14 +24,16 @@ const Index = (props) => {
     }
     window.locationFrom = window._location
     if(locationFrom && typeof locationFrom === 'object'){
-        const pathnameFrom = locationFrom.pathname
-        const pathnameNow = location.pathname
-        // console.log('pathnameFrom', pathnameFrom)
-        // console.log('pathnameNow', pathnameNow)
+        const pathnameFrom = locationFrom.pathname + locationFrom.search
+        const pathnameNow = location.pathname + location.search
+        console.log('pathnameFrom', pathnameFrom)
+        console.log('pathnameNow', pathnameNow)
         if( 
             pathnameFrom === '/seasonhot'
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/')
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/hotel')
+            || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/hotelhot'))
+            || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/triphot'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/foodhot/'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/guidance/'))
             || (~pathnameNow.indexOf('/videohot/') && pathnameFrom === '/')
@@ -39,7 +45,7 @@ const Index = (props) => {
             backUrl = pathnameFrom
         }
     }
-    // console.log(backUrl)
+    console.log(backUrl)
     return (
         <div className="titleBar">
             <div className="box">

@@ -83,6 +83,7 @@ export default class Index extends Quyou{
         )
     }
     componentDidMount(){
+        const me = this
         me.shareTextObjSetting({
             title:`趣游崇明`,
             imgUrl:`http://www.weichongming.com/quyou/logo.png`,
