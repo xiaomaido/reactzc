@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
-import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router'
+// import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import MobilePanel from './MobilePanel'
 import * as Pages from '../pages';
 
@@ -29,6 +30,10 @@ window.pageMapRoute={
 	myprofile: {
 		url:'/myprofile',
 		page:Pages.MyProfile
+	},
+	myfollows: {
+		url:'/myfollows',
+		page:Pages.MyFollows
 	},
 	mycoupons: {
 		url:'/mycoupons',
@@ -125,7 +130,8 @@ window.pageMapRoute={
 }
 // window.isHashHistory=''
 window.isHashHistory='#'
-const history= window.isHashHistory ?  hashHistory : browserHistory
+const history = hashHistory
+// const history= window.isHashHistory ?  hashHistory : browserHistory
 // let prevLocation = {};
 // // history.listen(location => {
 // history.listenBefore(location => {

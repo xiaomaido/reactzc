@@ -142,7 +142,7 @@ export class Quyou extends React.Component{ // 公共模板
     requestAPI=(url,data,succ=(res)=>{console.log(res)},fail=(err)=>{console.log(err)},method='GET')=>{
         const me = this
         if(!me.user.token){
-            if(~url.indexOf('Like') || ~url.indexOf('Comment')){
+            if(~url.indexOf('Like') || ~url.indexOf('Comment') || ~url.indexOf('follow')){
                 this.openPage('/signin')
                 return
             }
@@ -224,8 +224,12 @@ export class Quyou extends React.Component{ // 公共模板
             req[`project`]=``
             req[`eara`]=``
             req[`cate`]=``
-        }else if(API_PAGE===`/sleepIndex/sellerSearch`&&_location.query.tag){
-            req[`tag`]=_location.query.tag
+        }else if(API_PAGE===`/sleepIndex/sellerSearch`){
+            req={
+                ...req,
+                ..._location.query
+            }
+            delete req['filterid']
         }
         me.requestAPI(API_PAGE,req,(response)=>{
             console.log('response',response)
@@ -378,32 +382,32 @@ export class Quyou extends React.Component{ // 公共模板
 			me.setState({
                 isDoFollow: true,
             })
-            setTimeout(()=>{
-                const FETCH_TEMP = me.state[FETCH_PAGE]
+            // setTimeout(()=>{
+            //     const FETCH_TEMP = me.state[FETCH_PAGE]
+			// 	FETCH_TEMP.response.data.is_follow = !FETCH_TEMP.response.data.is_follow
+			// 	me.setState({
+			// 		[FETCH_PAGE]: FETCH_TEMP,
+			// 		isDoFollow: false,
+			// 	})
+            // },600)
+			me.requestAPI(API_MY_DO_FOLLOW,{
+				follow_id:user_id,
+                token: me.user.token,
+			},(response)=>{
+				const { code = 0, data } = response
+				if(code) {
+					me.setState({
+						isDoFollow: false,
+					})
+					return
+				}
+				const FETCH_TEMP = me.state[FETCH_PAGE]
 				FETCH_TEMP.response.data.is_follow = !FETCH_TEMP.response.data.is_follow
 				me.setState({
 					[FETCH_PAGE]: FETCH_TEMP,
 					isDoFollow: false,
 				})
-            },600)
-			// me.requestAPI(API_MY_DO_FOLLOW,{
-			// 	user_id,
-            //     token: me.user.token,
-			// },(response)=>{
-			// 	const { code = 0, data } = response
-			// 	if(code) {
-			// 		me.setState({
-			// 			isDoFollow: false,
-			// 		})
-			// 		return
-			// 	}
-			// 	const FETCH_TEMP = me.state[FETCH_PAGE]
-			// 	FETCH_TEMP.response.data.is_follow = !FETCH_TEMP.response.data.is_follow
-			// 	me.setState({
-			// 		[FETCH_PAGE]: FETCH_TEMP,
-			// 		isDoLike: false,
-			// 	})
-            // })
+            })
         }
     }
 }
@@ -425,6 +429,7 @@ window.SelectBox=SelectBox
 window.FilterBox=FilterBox
 window.fetch=fetch
 window.TYPES={
+    FETCH_MY_FOLLOW_LIST:`FETCH_MY_FOLLOW_LIST`,
     FETCH_MY_GET_LOGIN_CODE:`FETCH_MY_GET_LOGIN_CODE`,
     FETCH_MY_CHECK_LOGIN_CODE:`FETCH_MY_CHECK_LOGIN_CODE`,
     FETCH_TOUR_INDEX:`FETCH_TOUR_INDEX`,
@@ -446,7 +451,8 @@ window.TYPES={
     FETCH_POST_DETAIL:`FETCH_POST_DETAIL`,
 }
 window.APIS={
-    API_MY_DO_FOLLOW:`/user/do_follow`,
+    API_MY_FOLLOW_LIST:`/user/followList`,
+    API_MY_DO_FOLLOW:`/user/follow`,
     API_MY_GET_JSSIGN:`/user/get_jssign`,
     API_MY_UPDATE_PROFILE:`/user/updateInfo`,
     API_MY_GET_LOGIN_CODE:`/user/getloginCode`,
@@ -605,7 +611,7 @@ window.PostDetail  = (props) => {
             <div className="toper">
                 <div className="title">{d.title}</div>
                 <div className="heder">
-                    <div style={{display:'none'}} className={classnames({ follow:true, active: isFollowed })} onClick={me.handleFollow.bind(me, { user_id: d.user_id, isFollowed, API_MY_DO_FOLLOW, FETCH_PAGE })}>
+                    <div className={classnames({ follow:true, active: isFollowed })} onClick={me.handleFollow.bind(me, { user_id: d.user_id, isFollowed, API_MY_DO_FOLLOW, FETCH_PAGE })}>
                         {
                             isDoFollow ? (
                                 isFollowed ? '取消关注...' : (
@@ -624,7 +630,7 @@ window.PostDetail  = (props) => {
                     </div>
                     <img src={d.headimg} />
                     <div className="nickname">{d.nickname}<a className="icon"></a></div>
-                    {/* <div className="create">{d.create_dt||d.update_dt}</div> */}
+                    <div className="create">{misc.formatTime(d.create_dt*1000,2)}</div>
                 </div>
                 {
                     isVideo ? null : <div>

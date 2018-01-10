@@ -238,6 +238,7 @@
             left: px2rem(50px);            
             top: px2rem(100px);
             border-radius: px2rem(8px);
+            border-radius: 50%;
         }
         .arrow-box{
             position: absolute;
@@ -411,13 +412,17 @@
         background-color: $color_ff;
         height: px2rem(194px);
         padding: 0 px2rem(36px) 0 px2rem(50px);
+        .btn.active {
+            background-color: $color_ffc913;
+            color: $color_ff;
+        }
         .btn{
             float: right;
             margin-top: px2rem(67px);
             height: px2rem(60px);
             line-height: px2rem(60px);
             width: px2rem(160px);
-            font-size: px2rem(24px);
+            font-size: px2rem(28px);
             text-align: center;
             color: $color_ffc913;
             border: 1px solid $color_ffc913;
@@ -429,6 +434,7 @@
             float: left;
             margin-top: px2rem(37px);
             border-radius: px2rem(8px);
+            border-radius: 50%;
         }
         .content{
             height: px2rem(120px);
@@ -438,21 +444,22 @@
             position: relative;
             .name{
                 color:$color_636462;
-                font-size: px2rem(28px);
+                font-size: px2rem(34px);
                 line-height: px2rem(40px);
                 width: px2rem(320px);
                 overflow: hidden;
-                -webkit-line-clamp: 2;
+                -webkit-line-clamp: 1;
                 -webkit-box-orient: vertical;
                 display: -webkit-inline-box;
                 word-break: break-word;
+                margin-top: 0.4rem;
             }
             .end{
                 position: absolute;
-                bottom: 0;
+                bottom: 0.3rem;
                 color:$color_99;
-                font-size: px2rem(22px);
-                line-height: px2rem(22px);
+                font-size: px2rem(28px);
+                line-height: px2rem(28px);
             }
         }
     }
@@ -1695,7 +1702,8 @@
     			right: 0;
     			border: 1px solid $color_ffc913;
     			color: $color_ffc913;
-    			text-align: center;
+                text-align: center;
+                margin-top: 0.275rem;
     		}
     		img{
     			position: absolute;
@@ -1707,7 +1715,7 @@
             a{
                 position: relative;
                 top: 0.1rem;
-                margin-top: .2rem;
+                // margin-top: .2rem;
                 width: .8rem;
                 margin-left: .2rem;
                 height: .8rem;
@@ -1719,10 +1727,10 @@
     			padding-left: px2rem(110px);
     			font-size: px2rem(24px);
     			line-height: px2rem(24px);
-    			padding-top: px2rem(12px);
     		}
     		.create{
-    			color: #999;
+                color: #999;
+    			padding-top: px2rem(12px);
     		}
     	}
 	}

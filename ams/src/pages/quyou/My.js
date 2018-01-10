@@ -5,6 +5,7 @@ export default class Index extends Quyou{
         this.state={
             user: this.user
         }
+        // misc.setCookie('user','{"nickname":"大胡子哈登","uid":11,"is_v":"0","headimg":"http://sfmimg.b0.upaiyun.com/prod_00/dad34defeb681dc6.jpeg","token":"c/p6F3gJWa/wpFjVAS4zKyZyirfa/s6Gc9SWkfWU1pVRxXg6DpvH+Eki4kWqMrzW3/mmUdW55HujpY+xXKKnpw==","mobile":"13248238215"}')
     }
     signOut(){
         misc.clearCookie('user')
@@ -49,8 +50,8 @@ export default class Index extends Quyou{
                             <span className="icon" />
                         </div>
                         <div className="thinner-border clearboth"></div>
-                    </li> */}
-                    {/* <li onClick={me.openPage.bind(me,my.uid ? `/shophot` : `/signin`)}>
+                    </li>
+                    <li onClick={me.openPage.bind(me,my.uid ? `/shophot` : `/signin`)}>
                         <i className="icon collect" />
                         <div className="name">我收藏的</div>
                         <div className="arrow-box">
@@ -66,10 +67,18 @@ export default class Index extends Quyou{
                         </div>
                         <div className="thinner-border clearboth"></div>
                     </li> */}
+                    <li onClick={me.openPage.bind(me,my.uid ? `/myfollows` : `/signin`)}>
+                        <i className="icon liked" />
+                        <div className="name">我的关注</div>
+                        <div className="arrow-box">
+                            <span className="icon" />
+                        </div>
+                        <div className="thinner-border clearboth"></div>
+                    </li>
                     {
                         my.uid ? (
                             <li onClick={me.signOut.bind(me)}>
-                                <i className="icon liked" />
+                                <i className="icon seller" />
                                 <div className="name">退出登录</div>
                                 <div className="arrow-box">
                                     <span className="icon" />

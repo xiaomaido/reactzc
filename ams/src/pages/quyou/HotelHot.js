@@ -14,14 +14,14 @@ export default class Index extends Quyou{
             response: initStateResponse
         },
         tagsShowOptions: false,
-        townsShowOptions: false,
+        filteridsShowOptions: false,
     }
     constructor(props){
         super(props)
         const me = this
         me.tags=[
             {
-                title:'全部',
+                title:'全部类型',
                 id:0, 
             },
             ...me.hotelTags.map(({id, title})=>({id, title}))
@@ -32,8 +32,17 @@ export default class Index extends Quyou{
         // document.title='精品酒店'
         const me = this
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
+        const { tags, filterids } =  me
+        const { tagsShowOptions, filteridsShowOptions } = me.state
+        let { tag = 0, filterid = 0 } =  me.props.location.query
+        tag = Number(tag)
+        filterid = Number(filterid)
         return (
 			<div className="food-hot hotel-hot">
+                <div>
+                    <SelectBox showOptions={tagsShowOptions} options={tags} optionId={tag} type={'tags'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'tags')} />
+                    <SelectBox showOptions={filteridsShowOptions} options={filterids} optionId={filterid}  type={'filterids'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'filterids')} />
+                </div>
                 {
                     fetching ? <Spin /> : <List response={response} me={me} />
                 }
@@ -49,9 +58,9 @@ export default class Index extends Quyou{
             desc:'整合崇明全域“吃住游购”旅游产品的综合平台和崇明旅游行业引导的风向标。',
         })
     }
-    towns=[
+    filterids=[
         {
-            title:'区域',
+            title:'全部区域',
             id:0, 
         },
         {
@@ -106,8 +115,8 @@ export default class Index extends Quyou{
             [temp]: !this.state[temp],
         }
         if(type === 'tags'){
-            nextState['townsShowOptions']=false
-        }else if(type === 'towns'){
+            nextState['filteridsShowOptions']=false
+        }else if(type === 'filterids'){
             nextState['tagsShowOptions']=false
         }
         this.setState(nextState)
@@ -118,10 +127,20 @@ export default class Index extends Quyou{
         console.log('option',option)
         let { query } = me.props.location
         if(type === 'tags'){
-            query['tag'] = option.id
+            if(option.id){
+                query['tag'] = option.id
+            }else{
+                delete query['tag']
+            } 
         }
-        else if(type === 'towns'){
-            query['town'] = option.id
+        else if(type === 'filterids'){
+            if(option.id){
+                query['filterid'] = option.id
+                query['filter'] = encodeURIComponent(option.title)
+            }else{
+                delete query['filter']
+                delete query['filterid']
+            }
         }
         me.openPage(`/hotelhot${me.getRequestParam(query)}`)
     }
@@ -138,17 +157,8 @@ const List = (props) => {
         count = 0,
         data = [],
     } = response.data
-    const { tags, towns } =  me
-    const { tagsShowOptions, townsShowOptions } = me.state
-    let { tag = 0, town = 0 } =  me.props.location.query
-    tag = Number(tag)
-    town = Number(town)
     return data.length ? (
         <div>
-            <div>
-                <SelectBox showOptions={tagsShowOptions} options={tags} optionId={tag} type={'tags'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'tags')} />
-                <SelectBox showOptions={townsShowOptions} options={towns} optionId={town}  type={'towns'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'towns')} />
-            </div>
             <div className="list">
                 {
                     data.map((d = { imgs: [] },i)=>{
@@ -185,5 +195,5 @@ const List = (props) => {
                 me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
             }
         </div>
-    ) : null
+    ) : <NoMoreData type={'nodata'}/>
 }

@@ -52,6 +52,7 @@ export default class MobilePanel extends Component{
 			'/mallfuli':arr[3],
 			'/myprofile':arr[4],
 			'/mycoupons':arr[4],
+			'/myfollows':arr[4],
 			'/mymsg':arr[4],
 		}
 		const objNav = { // 额外的导航需要显示对应的模块

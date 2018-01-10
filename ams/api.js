@@ -399,5 +399,24 @@ userMcheckQ = {
         token过期已处理
 
 
+        ======== &nbsp ========
+
+
+
+        followUser = baseUrl + '/user/follow'
+followUserQ = {
+        "follow_id": 12,
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==", 
+        }
+
+followUserList = baseUrl + '/user/followList'
+followUserListQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==", 
+        }
+
+
+
+        ======== &nbsp ========
+
 
 

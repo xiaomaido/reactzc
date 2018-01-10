@@ -17,6 +17,7 @@ import My from './quyou/My'
 import MyProfile from './quyou/MyProfile'
 import MyCoupons from './quyou/MyCoupons'
 import MyMsg from './quyou/MyMsg'
+import MyFollows from './quyou/MyFollows'
 import Mall from './quyou/Mall'
 import MallFuli from './quyou/MallFuli'
 import Trip from './quyou/Trip'
@@ -48,6 +49,7 @@ export {
 	MyProfile,
 	MyCoupons,
 	MyMsg,
+	MyFollows,
 	Trip,
 	TripHot,
 	Guidance,
