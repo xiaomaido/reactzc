@@ -429,6 +429,7 @@ window.SelectBox=SelectBox
 window.FilterBox=FilterBox
 window.fetch=fetch
 window.TYPES={
+    FETCH_MY_COUPON_LIST:`FETCH_MY_COUPON_LIST`,
     FETCH_MY_FOLLOW_LIST:`FETCH_MY_FOLLOW_LIST`,
     FETCH_MY_GET_LOGIN_CODE:`FETCH_MY_GET_LOGIN_CODE`,
     FETCH_MY_CHECK_LOGIN_CODE:`FETCH_MY_CHECK_LOGIN_CODE`,
@@ -451,6 +452,9 @@ window.TYPES={
     FETCH_POST_DETAIL:`FETCH_POST_DETAIL`,
 }
 window.APIS={
+    API_MY_COUPON_RECEIVE:`/user/recive_coupon`,
+    API_MY_COUPON_USE:`/user/coupon_use`,
+    API_MY_COUPON_LIST:`/user/coupoList`,
     API_MY_FOLLOW_LIST:`/user/followList`,
     API_MY_DO_FOLLOW:`/user/follow`,
     API_MY_GET_JSSIGN:`/user/get_jssign`,

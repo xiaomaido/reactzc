@@ -419,4 +419,30 @@ followUserListQ = {
         ======== &nbsp ========
 
 
+        商家id 42 
+        后台可以配
+        有优惠券
+        游
+        模块
+
+
+        reciev_coupon = baseUrl + "/user/recive_coupon"
+reciev_couponQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "coupon_id": 3,
+        }
+
+use_coupon = baseUrl + "/user/coupon_use"
+use_couponQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "coupon_id": 3,
+        "coupon_code": "123"
+        }
+
+
+
+
+
+        ======== &nbsp ========
+        
 

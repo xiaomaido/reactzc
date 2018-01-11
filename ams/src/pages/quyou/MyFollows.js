@@ -37,6 +37,7 @@ const Content = (props) => {
     } = response.data
     data = Array.isArray(data) ? data : []
     const url = "http://sfmimg.b0.upaiyun.com/prod_00/db68ca0aeb8c19a7.jpg"
+    data = [...data,1,2]
     return (
         <div className="my-coupons">
             {
