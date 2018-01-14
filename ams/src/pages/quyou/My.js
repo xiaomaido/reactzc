@@ -1,11 +1,10 @@
 export default class Index extends Quyou{
     constructor(props){
         super(props)
-        // misc.setCookie('user','{"token": "abc","uid": 1,"nickname": "qy_deabc", "mobile": "13248238215"}')
         this.state={
             user: this.user
         }
-        misc.setCookie('user','{"nickname":"大胡子哈登","uid":11,"is_v":"0","headimg":"http://sfmimg.b0.upaiyun.com/prod_00/dad34defeb681dc6.jpeg","token":"c/p6F3gJWa/wpFjVAS4zKyZyirfa/s6Gc9SWkfWU1pVRxXg6DpvH+Eki4kWqMrzW3/mmUdW55HujpY+xXKKnpw==","mobile":"13248238215"}')
+        // misc.setCookie('user','{"nickname":"大胡子哈登","uid":11,"is_v":"0","headimg":"http://sfmimg.b0.upaiyun.com/prod_00/dad34defeb681dc6.jpeg","token":"c/p6F3gJWa/wpFjVAS4zKyZyirfa/s6Gc9SWkfWU1pVRxXg6DpvH+Eki4kWqMrzW3/mmUdW55HujpY+xXKKnpw==","mobile":"13248238215"}')
     }
     signOut(){
         misc.clearCookie('user')
@@ -43,7 +42,7 @@ export default class Index extends Quyou{
                 </div>
                 <div className="thinner-border clearboth"></div>
                 <ul className="link-list">
-                    {/* <li onClick={me.openPage.bind(me,my.uid ? `/mycoupons` : `/signin`)}>
+                    <li onClick={me.openPage.bind(me,my.uid ? `/mycoupons?ltype=0` : `/signin`)}>
                         <i className="icon seller" />
                         <div className="name">我的优惠券</div>
                         <div className="arrow-box">
@@ -51,7 +50,7 @@ export default class Index extends Quyou{
                         </div>
                         <div className="thinner-border clearboth"></div>
                     </li>
-                    <li onClick={me.openPage.bind(me,my.uid ? `/shophot` : `/signin`)}>
+                    {/* <li onClick={me.openPage.bind(me,my.uid ? `/shophot` : `/signin`)}>
                         <i className="icon collect" />
                         <div className="name">我收藏的</div>
                         <div className="arrow-box">

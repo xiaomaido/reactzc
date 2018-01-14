@@ -441,6 +441,14 @@ use_couponQ = {
 
 
 
+my_coupon = baseUrl + "/user/coupon_my"
+my_couponQ = {
+"token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+"ltype": 1, # 0 有效未使用 1 已使用 2 已过期
+"limit": 10,
+"offset": 0
+}
+
 
 
         ======== &nbsp ========

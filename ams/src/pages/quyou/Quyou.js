@@ -142,8 +142,8 @@ export class Quyou extends React.Component{ // 公共模板
     requestAPI=(url,data,succ=(res)=>{console.log(res)},fail=(err)=>{console.log(err)},method='GET')=>{
         const me = this
         if(!me.user.token){
-            if(~url.indexOf('Like') || ~url.indexOf('Comment') || ~url.indexOf('follow')){
-                this.openPage('/signin')
+            if(~url.indexOf('Like') || ~url.indexOf('Comment') || ~url.indexOf('follow') || ~url.indexOf('coupon')){
+                me.openPage('/signin')
                 return
             }
         }      
@@ -164,8 +164,11 @@ export class Quyou extends React.Component{ // 公共模板
         return fetch(url,options)
         .then(response=>response.json().then(json => ({ json, response })))
         .then(({ json, response }) => {
-            // token 过期 
-            // 200010 
+            // {"msg":"token过期","data":"","code":20010}
+            if(json && json.code === 20010){
+                me.openPage('/signin')
+                return fail(json)
+            }
             if (!response.ok) {
                 // return Promise.reject(json)
                 return fail(json)
@@ -230,6 +233,11 @@ export class Quyou extends React.Component{ // 公共模板
                 ..._location.query
             }
             delete req['filterid']
+        }else if(API_PAGE===`/user/coupon_my`){
+            req={
+                ...req,
+                ..._location.query
+            }
         }
         me.requestAPI(API_PAGE,req,(response)=>{
             console.log('response',response)
@@ -452,9 +460,9 @@ window.TYPES={
     FETCH_POST_DETAIL:`FETCH_POST_DETAIL`,
 }
 window.APIS={
+    API_MY_COUPON_LIST:`/user/coupon_my`,
     API_MY_COUPON_RECEIVE:`/user/recive_coupon`,
     API_MY_COUPON_USE:`/user/coupon_use`,
-    API_MY_COUPON_LIST:`/user/coupoList`,
     API_MY_FOLLOW_LIST:`/user/followList`,
     API_MY_DO_FOLLOW:`/user/follow`,
     API_MY_GET_JSSIGN:`/user/get_jssign`,
@@ -507,6 +515,33 @@ window.APIS={
     API_EAT_TIME_LIST:`/eatIndex/timeBenefitsList`,
     API_EAT_TIME_DETAIL:`/eatIndex/timeBenefitsDetail`,
     API_EAT_SEASON_LIST:`/eatIndex/seasonRecSearch`,
+}
+window.STATE={
+    coupons: [{
+        "desc_title": "周末不可用周末不可用周末不可用",
+        "imgs": ["http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/4cdbdb7209e2a99e.png"],
+        "id": 3,
+        "coupon_code": "123",
+        "stock": 19,
+        "status": "0000",
+        "reciev_count": 4,
+        "use_count": 1,
+        "title": "大优惠门票代金券5元",
+        "update_dt": 1515731748,
+        "start_dt": 1512274528,
+        "create_dt": 1512274530,
+        "rtype": "0010",
+        "seller_id": 42,
+        "end_dt": 1516767328
+    }]
+}
+window.initState=()=>{
+    return {
+        data: {
+            "count": 0,
+            "data": [],
+        }
+    }
 }
 window.VideoList = (props) => {
     const { list, me, title = '视频推荐', type = 'EAT' } = props

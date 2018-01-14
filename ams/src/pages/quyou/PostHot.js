@@ -1,9 +1,4 @@
-const initStateResponse = {
-	data: {
-        "count": 0,
-        "data": [],
-    }
-}
+const initStateResponse = initState()
 const FETCH_PAGE = TYPES.FETCH_POST_LIST
 export default class Index extends Quyou{
     state={

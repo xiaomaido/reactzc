@@ -1,11 +1,6 @@
 
 import banner from '../../images/quyou/banner/seasonhot.png'
-const initStateResponse = {
-	data: {
-        "count": 0,
-        "data": [],
-    }
-}
+const initStateResponse = initState()
 const API_PAGE = APIS.API_EAT_SEASON_LIST
 const FETCH_PAGE = TYPES.FETCH_EAT_SEASON_LIST
 export default class Index extends Quyou{

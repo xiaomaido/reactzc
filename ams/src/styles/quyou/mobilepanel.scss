@@ -407,59 +407,123 @@
 .my-coupons{
     padding-top: $barTop;
     background-color: $color_f5;
-    .item{
-        margin-top: px2rem(20px); 
+    .types{
+        position: fixed;
         background-color: $color_ff;
-        height: px2rem(194px);
-        padding: 0 px2rem(36px) 0 px2rem(50px);
-        .btn.active {
-            background-color: $color_ffc913;
-            color: $color_ff;
-        }
-        .btn{
-            float: right;
-            margin-top: px2rem(67px);
-            height: px2rem(60px);
-            line-height: px2rem(60px);
-            width: px2rem(160px);
-            font-size: px2rem(28px);
-            text-align: center;
-            color: $color_ffc913;
-            border: 1px solid $color_ffc913;
-            border-radius: px2rem(40px);
-        }
-        .cover{
-            height: px2rem(120px);
-            width: px2rem(120px);
-            float: left;
-            margin-top: px2rem(37px);
-            border-radius: px2rem(8px);
-            border-radius: 50%;
-        }
-        .content{
-            height: px2rem(120px);
-            margin-left: px2rem(36px);
-            margin-top: px2rem(37px);
-            float: left;
+        height: px2rem(130px);
+        width: 100%;
+        li.active{
             position: relative;
+            background-color: $color_33;
             .name{
-                color:$color_636462;
-                font-size: px2rem(34px);
-                line-height: px2rem(40px);
-                width: px2rem(320px);
-                overflow: hidden;
-                -webkit-line-clamp: 1;
-                -webkit-box-orient: vertical;
-                display: -webkit-inline-box;
-                word-break: break-word;
-                margin-top: 0.4rem;
+                color: $color_ffc913;
             }
-            .end{
+            .t-down{
                 position: absolute;
-                bottom: 0.3rem;
-                color:$color_99;
+                bottom: -0.3rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 0;
+                border-left: .3rem solid transparent;
+                border-right: .3rem solid transparent;
+                border-top: .3rem solid $color_33;
+            }
+        }
+        li{
+            width: 33.3%;
+            float: left;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            flex-flow: column;
+            .name{
+                // margin-top: px2rem(30px);
+                color: $color_33;
+                font-size: px2rem(30px);
+                line-height: px2rem(30px);
+            }
+            .number{
+                margin-top: px2rem(15px);
+                color: $color_99;
+                font-size: px2rem(26px);
+                line-height: px2rem(26px);
+                font-weight: 900;
+            }
+            
+        }
+    }
+    .list{
+        padding-top: px2rem(130px);
+        .item{
+            margin-top: px2rem(20px); 
+            background-color: $color_ff;
+            height: px2rem(194px);
+            padding: 0 px2rem(36px) 0 px2rem(50px);
+            .btn.active {
+                background-color: $color_ffc913;
+                color: $color_ff;
+            }
+            .btn{
+                float: right;
+                margin-top: px2rem(67px);
+                height: px2rem(60px);
+                line-height: px2rem(60px);
+                width: px2rem(160px);
                 font-size: px2rem(28px);
-                line-height: px2rem(28px);
+                text-align: center;
+                color: $color_ffc913;
+                border: 1px solid $color_ffc913;
+                border-radius: px2rem(40px);
+            }
+            .cover{
+                height: px2rem(120px);
+                width: px2rem(120px);
+                float: left;
+                margin-top: px2rem(37px);
+                border-radius: px2rem(8px);
+            }
+            .cover.circle{
+                border-radius: 50%;
+            }        
+            .content{
+                height: px2rem(120px);
+                margin-left: px2rem(36px);
+                margin-top: px2rem(37px);
+                float: left;
+                position: relative;
+                .name{
+                    color:$color_636462;
+                    font-size: px2rem(34px);
+                    line-height: px2rem(40px);
+                    width: px2rem(320px);
+                    overflow: hidden;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-inline-box;
+                    word-break: break-word;
+                    margin-top: 0.4rem;
+                }
+                .name.coupon{
+                    font-size: px2rem(24px);
+                    line-height: px2rem(32px);
+                    margin-top: 0;
+                    -webkit-line-clamp: 3;
+                    
+                }
+                .end.coupon{
+                    bottom: 0rem;
+                    font-size: px2rem(24px);
+                }
+                .end{
+                    position: absolute;
+                    bottom: 0.3rem;
+                    color:$color_99;
+                    font-size: px2rem(28px);
+                    line-height: px2rem(28px);
+                }
             }
         }
     }
@@ -1052,10 +1116,10 @@
                 }
                 .vlist{
                     clear: both;
-                    height: px2rem(204px);
+                    height: 9rem;
                     overflow: hidden;
                     .ul-box{
-                        height: px2rem(204px) + px2rem(18px);
+                        height: 9.6rem;
                         overflow-y: hidden;
                         overflow-x: auto;
                         ul{
@@ -1068,10 +1132,10 @@
                                     position:relative;
                                     width: px2rem(200px);
                                     height: px2rem(130px);
-                                    background-size: cover;
+                                    // background-size: cover;
                                     .sold{
                                         color: $color_ff;
-                                        background-color: $color_ffce1a;
+                                        background-color: #bfe169;
                                         height: px2rem(34px);
                                         line-height: px2rem(34px);
                                         padding: 0 px2rem(12px);
@@ -1083,18 +1147,34 @@
                                     color: $color_42484e;
                                     margin-top: px2rem(16px);
                                     font-size: px2rem(26px);
-                                    line-height: px2rem(26px);
+                                    line-height: px2rem(30px);
                                     overflow: hidden;
-                                    -webkit-line-clamp: 1;
+                                    -webkit-line-clamp: 2;
                                     -webkit-box-orient: vertical;
                                     display: -webkit-inline-box;
                                     word-break: break-word;
                                 }
                                 .price{
                                     color: $color_fe932b;
-                                    margin-top: px2rem(10px);
+                                    margin-top: px2rem(6px);
                                     font-size: px2rem(22px);
-                                    line-height: px2rem(22px);
+                                    line-height: px2rem(26px);
+                                    overflow: hidden;
+                                    -webkit-line-clamp: 2;
+                                    -webkit-box-orient: vertical;
+                                    display: -webkit-inline-box;
+                                    word-break: break-word;
+                                }
+                                .btn{
+                                    text-align: center;
+                                    color: $color_ff;
+                                    font-size: px2rem(26px);
+                                    line-height: px2rem(60px);
+                                    height: px2rem(60px);
+                                    background-color: #d2d2d2;
+                                }
+                                .btn.enable{
+                                    background-color: $color_ffce1a;
                                 }
                             }
                         }

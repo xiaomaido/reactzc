@@ -140,7 +140,6 @@ export default class Index extends Quyou{
                         [property]: res.url,
                         token: me.user.token,
                     },(response)=>{
-                        debugger
                         const { code = 0, data } = response
                         if(code) {
                             fail&&fail()

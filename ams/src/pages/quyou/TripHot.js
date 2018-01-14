@@ -1,11 +1,5 @@
 import { debug } from "util";
-
-const initStateResponse = {
-	data: {
-        "count": 0,
-        "data": [],
-    }
-}
+const initStateResponse = initState()
 const API_PAGE = APIS.API_TOUR_SHOP_LIST
 const FETCH_PAGE = TYPES.FETCH_TOUR_SHOP_LIST
 export default class Index extends Quyou{

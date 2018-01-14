@@ -1,9 +1,4 @@
-const initStateResponse = {
-	data: {
-        "count": 0,
-        "data": [],
-    }
-}
+const initStateResponse = initState()
 const API_PAGE = APIS.API_TOUR_PIC_DETAIL
 const FETCH_PAGE = TYPES.FETCH_TOUR_PIC_DETAIL
 export default class Index extends Quyou{

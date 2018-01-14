@@ -1,9 +1,4 @@
-const initStateResponse = {
-	data: {
-        "count": 0,
-        "data": [],
-    }
-}
+const initStateResponse = initState()
 const FETCH_PAGE = TYPES.FETCH_MY_FOLLOW_LIST
 const API_PAGE= APIS.API_MY_FOLLOW_LIST
 export default class Index extends Quyou{
@@ -44,7 +39,7 @@ const Content = (props) => {
                 data.map((d,i)=>(
                     <div key={i} className="item">
                         <div className="btn active">已关注</div>
-                        <div className="icon cover" style={{backgroundImage:`url(${url})`}}></div>
+                        <div className="icon cover circle" style={{backgroundImage:`url(${url})`}}></div>
                         <div className="content">
                             <div className="name">一点点奶茶券第二</div>
                             <div className="end">1个粉丝</div>
