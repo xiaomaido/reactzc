@@ -1,4 +1,5 @@
 @import "../vars.scss";
+
 .mobile-panel{
     margin: 0 auto;
     max-width: $maxWidth;
@@ -388,6 +389,8 @@
                 line-height: px2rem(88px);
                 color: $color_99;
                 font-size: px2rem(24px);
+                width: 9rem;
+                text-align: right;
             }
             .arrow-box{
                 float: right;
@@ -404,6 +407,13 @@
         }
     }
 }
+.bigv {
+    width: .8rem;
+    margin-left: .2rem;
+    height: .8rem;
+    display: inline-block;
+    background-image: url('../../images/quyou/icon/V2@3x.png')
+}
 .my-coupons{
     padding-top: $barTop;
     background-color: $color_f5;
@@ -412,6 +422,7 @@
         background-color: $color_ff;
         height: px2rem(130px);
         width: 100%;
+        z-index: 99;
         li.active{
             position: relative;
             background-color: $color_33;
@@ -444,6 +455,7 @@
                 color: $color_33;
                 font-size: px2rem(30px);
                 line-height: px2rem(30px);
+               
             }
             .number{
                 margin-top: px2rem(15px);
@@ -505,6 +517,10 @@
                     display: -webkit-inline-box;
                     word-break: break-word;
                     margin-top: 0.4rem;
+                }
+                .name.follow{
+                    line-height: px2rem(120px);
+                    margin-top: 0;
                 }
                 .name.coupon{
                     font-size: px2rem(24px);

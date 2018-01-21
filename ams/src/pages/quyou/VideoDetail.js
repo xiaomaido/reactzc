@@ -43,6 +43,7 @@ const Content = (props) => {
 	const { showCreateComment, textOkay } = me.state
 	const { query } = _location
 	const _t = query._t || 'EAT'
+	const API_MY_DO_FOLLOW = APIS[`API_MY_DO_FOLLOW`]
 	const API_PAGE_LIKE = APIS[`API_${_t}_MEDIA_LIKE`]
 	const API_PAGE_COMMENT = APIS[`API_${_t}_MEDIA_COMMENT`]
     return data.id ? (
@@ -62,6 +63,7 @@ const Content = (props) => {
 			<PostDetail 
 				isVideo={isVideo} 
 				d={data} 
+				params={{ API_MY_DO_FOLLOW, FETCH_PAGE }}
 				me={me} /> 
 			<CommentList 
 				total={data.comment_count} 

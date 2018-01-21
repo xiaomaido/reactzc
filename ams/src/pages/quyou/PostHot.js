@@ -17,7 +17,7 @@ export default class Index extends Quyou{
         const { query } = me.props.location
         const _t = query._t || 'EAT'
         const API_PAGE = APIS[`API_${_t}_POST_LIST`]
-        me.requestList(me,FETCH_PAGE,API_PAGE)
+        me.requestList(me,FETCH_PAGE,API_PAGE,true)
         me.shareTextObjSetting({
             title:`趣游崇明之热门攻略`,
             imgUrl:`http://www.weichongming.com/quyou/logo.png`,

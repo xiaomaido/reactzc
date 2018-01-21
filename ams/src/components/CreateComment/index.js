@@ -1,6 +1,7 @@
 import './index.scss'
  const Index = (props) => {
     const { 
+        type = 'textarea',
         defaultValue = '',
         maxLength = 50,
         textPlaceholder = '发表评论是搭讪成功的第一步哦~',
@@ -27,10 +28,19 @@ import './index.scss'
                     <div className="okay" onClick={handleClickOkay}>{textOkay}</div>
                 </div>
                 <div className="write">
-                    <textarea 
-                        onChange={handleChangeInput} 
-                        placeholder={textPlaceholder} 
-                        maxLength={maxLength} defaultValue={defaultValue}></textarea>
+                    {
+                        type === 'password' ? (
+                            <input 
+                                onChange={handleChangeInput} 
+                                placeholder={textPlaceholder} 
+                                maxLength={maxLength}
+                                defaultValue={defaultValue}
+                                type="password" />
+                        ) : <textarea 
+                                onChange={handleChangeInput} 
+                                placeholder={textPlaceholder} 
+                                maxLength={maxLength} defaultValue={defaultValue}></textarea>
+                    }
                 </div>
             </div>
         </div>

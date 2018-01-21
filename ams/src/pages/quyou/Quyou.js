@@ -194,7 +194,7 @@ export class Quyou extends React.Component{ // 公共模板
             </div>
         )
     }
-    scrollLoadMore(me,FETCH_PAGE,API_PAGE){
+    scrollLoadMore(me,FETCH_PAGE,API_PAGE,randomSort){
         window.onscroll = () => {
             if (getScrollTop() + getClientHeight() == getScrollHeight()) { 
                 const { count = 0 } = me.state[FETCH_PAGE].response.data
@@ -203,12 +203,12 @@ export class Quyou extends React.Component{ // 公共模板
                     return
                 }
                 ++me.page
-                me.requestList(me,FETCH_PAGE,API_PAGE)
+                me.requestList(me,FETCH_PAGE,API_PAGE,randomSort)
             }
         }
     }
-    requestList(me,FETCH_PAGE,API_PAGE){
-        me.scrollLoadMore(me,FETCH_PAGE,API_PAGE)
+    requestList(me,FETCH_PAGE,API_PAGE,randomSort = false){
+        me.scrollLoadMore(me,FETCH_PAGE,API_PAGE,randomSort)
         const { state, page, limit } = me
         if(page === 0) {
             me.setState({
@@ -241,6 +241,9 @@ export class Quyou extends React.Component{ // 公共模板
         }
         me.requestAPI(API_PAGE,req,(response)=>{
             console.log('response',response)
+            if(randomSort){
+                response.data.data = response.data.data.sort(()=>Math.random()-0.5)
+            }
             if(page === 0) {
                 me.setState({
                     [FETCH_PAGE]: {
@@ -291,15 +294,16 @@ export class Quyou extends React.Component{ // 公共模板
             }
         })
     }
-	handleShowCreateComment(e){
-		const me = this
+	handleShowCreateComment(params = {}){
+        const me = this
         if(!me.user.token){
             this.openPage('/signin')
             return
         }
-		const { showCreateComment } = me.state
+        const { showCreateComment } = me.state
 		me.setState({
-			showCreateComment: !showCreateComment
+            showCreateComment: !showCreateComment,
+            ...params
 		})
 	}
 	handleChangeCreateComment(e){

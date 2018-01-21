@@ -22,7 +22,7 @@ export default class Index extends Quyou{
     }
     componentDidMount(){
         const me = this
-        me.requestList(me,FETCH_PAGE,API_PAGE)
+        me.requestList(me,FETCH_PAGE,API_PAGE,true)
         me.shareTextObjSetting({
             title:`趣游崇明`,
             imgUrl:`http://www.weichongming.com/quyou/logo.png`,

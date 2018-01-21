@@ -2,55 +2,64 @@ const initStateResponse = initState()
 const FETCH_PAGE = TYPES.FETCH_MY_COUPON_LIST
 const API_PAGE = APIS.API_MY_COUPON_LIST
 const API_MY_COUPON_USE = APIS.API_MY_COUPON_USE
+const okay='核销'
+const title='商家确认'
 export default class Index extends Quyou{
+    initTextOkay=okay
     state={
         [FETCH_PAGE]:{
             response: initStateResponse
         },
         isDoUse: false,
         showCreateComment: false,
-        textOkay: this.initTextOkay,
+        textOkay: okay,
+        textTitle: title
     }
-    // {me.handleCouponUse.bind(me,{
-    //     coupon_id: d.id,
-    //     coupon_code: d.coupon_code,
-    // })}
-	handleSaveComment({ property = 'nickname', query = {} }, e){
+    ltypes=['未使用','已使用','已过期']
+	handleSaveComment({ property = '' }, e){
         const me = this
         const { state, initTextOkay } = me
-		const { valueCreateComment, textOkay } = state
-		const { params } = me.props
+		const { valueCreateComment, textOkay, params } = state
+        const { query } = me.props
 		if(textOkay === initTextOkay && valueCreateComment) {
 			me.setState({
 				textOkay: `${initTextOkay}中...`,
             })
 			me.requestAPI(API_MY_COUPON_USE,{
-                ...query,
-				[property]: valueCreateComment,
+                ...params,
+                [property]: valueCreateComment,
                 token: me.user.token,
 			},(response)=>{
-				const { code = 0, data } = response
+                // {"msg":"口令错误","data":"","code":20015}
+				const { code = 0, data, msg } = response
 				if(code) {
 					me.setState({
-						textOkay: initTextOkay,
-					})
+                        textOkay: initTextOkay,
+                        textTitle: msg
+					},()=>{
+                        setTimeout(()=>{
+                            me.setState({
+                                textTitle: title
+                            })
+                        },2000)
+                    })
 					return
-				}
-                const user = {
-                    ...me.user,
-                    ...data,
                 }
+                const FETCH_TEMP = {
+                    ...me.state[FETCH_PAGE]
+                }
+                FETCH_TEMP.response.data.count += -1
+                FETCH_TEMP.response.data.data = FETCH_TEMP.response.data.data.filter(({coupon_id})=>coupon_id!==params.coupon_id)
 				me.setState({
 					textOkay: initTextOkay,
 					showCreateComment: false,
                     valueCreateComment: '',
-                    user,
+                    [FETCH_PAGE]: FETCH_TEMP
                 })
-                misc.setCookie('user',JSON.stringify(user))
+                me.openPage(`/mycoupons?ltype=1`)
 			})
 		}
 	}
-    ltypes=['未使用','已使用','已过期']
     handleClick(type=0){
         const me = this
         let { ltype = '0' } = _location.query
@@ -67,8 +76,8 @@ export default class Index extends Quyou{
 	}
 	renderContent(){
         const me = this
-        const { showCreateComment } = me.state
-        const { fetching, response = initStateResponse, textOkay } = me.state[FETCH_PAGE]
+        const { showCreateComment, textTitle, textOkay } = me.state
+        const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
         let { ltype = '0' } = _location.query
         ltype = Number(ltype)
         return (
@@ -76,14 +85,13 @@ export default class Index extends Quyou{
                 {
 				    showCreateComment ? 
                         <CreateComment
+                            type="password"
                             maxLength={20}
                             textPlaceholder='请商户营业员输入核销口令～'
-                            textTitle='商家核销'
-                            textOkay={textOkay} 
+                            textTitle={textTitle}
+                            textOkay={textOkay}
                             handleClickCancel={me.handleShowCreateComment.bind(me)} 
-                            handleClickOkay={me.handleSaveComment.bind(me, { property: 'nickname', query: {
-
-                            } })} 
+                            handleClickOkay={me.handleSaveComment.bind(me, { property: 'coupon_code' })} 
                             handleChangeInput={me.handleChangeCreateComment.bind(me)} /> : null
 			    }
                 <ul className="types">
@@ -119,57 +127,6 @@ export default class Index extends Quyou{
         _location = nextProps.location
         me.requestList(me,FETCH_PAGE,API_PAGE)
     }
-    handleCouponUse({ coupon_id,coupon_code }){
-        const me = this
-        const { state, props } = me
-		const { isDoUse } = state
-		const { params } = props
-		if(!isDoUse){
-			me.setState({
-				isDoUse: true,
-            })
-			me.requestAPI(APIS.API_MY_COUPON_USE,{
-                coupon_id,
-                coupon_code:'123',
-                token: me.user.token,
-			},(response)=>{
-                const { code = 0, data } = response
-				if(code) {
-					me.setState({
-						isDoUse: false,
-					})
-					return
-				}
-				// const FETCH_TEMP = me.state[FETCH_PAGE]
-				// FETCH_TEMP.response.data.is_like = !FETCH_TEMP.response.data.is_like
-				// FETCH_TEMP.response.data.like_count = FETCH_TEMP.response.data.like_count + (FETCH_TEMP.response.data.is_like ? 1 : -1)
-				// me.setState({
-				// 	[FETCH_PAGE]: FETCH_TEMP,
-				// 	isDoLike: false,
-				// })
-			})
-		}
-    }
-    // renderContent(){
-    //     const list = [1,3,4,7,5,8,9,0]
-    //     const url = "https://avatars0.githubusercontent.com/u/11659631?v=4"
-    //     return (
-    //         <div className="my-coupons">
-    //             {
-    //                 list.map((d,i)=>(
-    //                     <div key={i} className="item">
-    //                         <div className="btn">点击使用</div>
-    //                         <div className="icon cover" style={{backgroundImage:`url(${url})`}}></div>
-    //                         <div className="content">
-    //                             <div className="name">一点点奶茶券第二杯半价券快来使用哦</div>
-    //                             <div className="end">2017-12-31到期</div>
-    //                         </div>
-    //                     </div>
-    //                 ))
-    //             }
-    //         </div>
-    //     )
-    // }
 }
 
 
@@ -180,10 +137,9 @@ const Content = (props) => {
         data = [],
     } = response.data
     data = Array.isArray(data) ? data : []
-    data = [
-        ...data,
-    ]
-    
+    // data = [
+    //     ...data,
+    // ]
     return (
         <div className="list">
             {
@@ -191,7 +147,9 @@ const Content = (props) => {
                     d.imgs=Array.isArray(d.imgs)?d.imgs:[]
                     return (
                         <div key={i} className="item">
-                            <div className="btn" onClick={me.handleShowCreateComment.bind(me)}>点击使用</div>
+                            {
+                                _location.query.ltype === '0' ? <div className="btn" onClick={me.handleShowCreateComment.bind(me, { coupon_id: d.coupon_id })}>点击使用</div> : null
+                            }
                             <div className="icon cover circle" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
                             <div className="content">
                                 <div className="name coupon">{`【${'凌一刀'}】`} {d.title} {d.desc_title} </div>
@@ -202,8 +160,23 @@ const Content = (props) => {
                 })
             }
             {
-                me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
+                me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData type={data.length?'nomoredata':'nodata'} /> : <Spin.Spin2 />
             }
         </div>
     )
 } 
+
+// {
+//     me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
+// }
+
+// {
+//     data.length ? (
+//         <div className="item">
+//             <div className="icon cover circle"></div>
+//             <div className="content">
+//                 <div className="name follow"></div>
+//             </div>
+//         </div>
+//     ) : null
+// }

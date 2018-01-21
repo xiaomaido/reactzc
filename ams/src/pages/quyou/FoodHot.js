@@ -24,7 +24,7 @@ export default class Index extends Quyou{
     }
     componentDidMount(){
         const me = this
-        me.requestList(me,FETCH_PAGE,API_PAGE)
+        me.requestList(me,FETCH_PAGE,API_PAGE,true)
         me.shareTextObjSetting({
             title:`人气美食`,
             imgUrl: `http://quyou.weichongming.com/static/images/foodhot.0f506936c300278554dbabac524f62d4.png`,

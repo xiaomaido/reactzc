@@ -449,7 +449,26 @@ my_couponQ = {
 "offset": 0
 }
 
+my_post = baseUrl + '/user/postList'
+my_postQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "limit": 10,
+        "offset": 0
+        }
 
+my_recMedia = baseUrl + '/user/recMediaList'
+my_recMediaQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "limit": 10,
+        "offset": 0
+        }
+
+
+
+        
+        '0000' 美食攻略  '0001' '住房攻略' 0010  游路线
+
+        返回值有 rtype 表明是哪个模块的
 
         ======== &nbsp ========
         

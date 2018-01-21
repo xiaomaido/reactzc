@@ -39,6 +39,18 @@
         margin: px2rem(50px) auto;
         width: px2rem(654px);
         height: px2rem(278px);
+        input{
+            border: 0;
+            margin: 0 px2rem(50px);
+            position: relative;
+            top: .85rem;
+            width: px2rem(554px);
+            height: px2rem(78px);
+            display: block;
+            color: $color_02;
+            font-size: px2rem(28px);
+            line-height: px2rem(36px);
+        }
         textarea{
             resize: none;
             border: 0;

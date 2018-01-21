@@ -4,7 +4,8 @@ export default class Index extends Quyou{
         showCreateComment: false,
         textOkay: this.initTextOkay,
         user: this.user,
-        uploadText: '上传头像'
+        uploadText: '上传头像',
+        currentProperty: ''
     }
 	handleSaveComment({ API_SAVE_PROPERTY, property = 'nickname', query = {} }, e){
         const me = this
@@ -40,24 +41,47 @@ export default class Index extends Quyou{
                 misc.setCookie('user',JSON.stringify(user))
 			})
 		}
-	}
+    }
+    getCurrentProperty(){
+        return this.currentProperty
+    }
 	renderContent(){
         const me = this
-        const { showCreateComment, textOkay, user: my, uploadText } = me.state
-        // console.log(my.token)
+        const { showCreateComment, textOkay, user: my, uploadText, currentProperty } = me.state
+        console.log('currentProperty',currentProperty)
         return (
             <div className="my-profile">
                 {
-				    showCreateComment ? 
+				    currentProperty === 'nickname' && showCreateComment ? 
                         <CreateComment
-                            defaultValue={my.nickname}
+                            defaultValue={my['nickname']}
                             maxLength={20}
                             textPlaceholder='想一个有意思的昵称吧～'
                             textTitle='修改昵称'
                             textOkay={textOkay} 
-                            handleClickCancel={me.handleShowCreateComment.bind(me)} 
+                            handleClickCancel={me.handleShowCreateComment.bind(me,{
+                                currentProperty: ''
+                            })} 
                             handleClickOkay={me.handleSaveComment.bind(me, { API_SAVE_PROPERTY, property: 'nickname', query: {
-                                headimg: my.headimg
+                                headimg: my.headimg,
+                                psign: my.psign||'',
+                            } })} 
+                            handleChangeInput={me.handleChangeCreateComment.bind(me)} /> : null
+                }
+                {
+				    currentProperty === 'psign' && showCreateComment ? 
+                        <CreateComment
+                            defaultValue={my['psign']}
+                            maxLength={20}
+                            textPlaceholder='想一个有意思的个性签名吧～'
+                            textTitle='修改个性签名'
+                            textOkay={textOkay} 
+                            handleClickCancel={me.handleShowCreateComment.bind(me,{
+                                currentProperty: ''
+                            })} 
+                            handleClickOkay={me.handleSaveComment.bind(me, { API_SAVE_PROPERTY, property: 'psign', query: {
+                                headimg: my.headimg,
+                                nickname: my.nickname
                             } })} 
                             handleChangeInput={me.handleChangeCreateComment.bind(me)} /> : null
 			    }
@@ -76,19 +100,34 @@ export default class Index extends Quyou{
                         </form>
                     </li>
                     <li>
-                        <div className="name">昵称</div>
-                        <div className="arrow-box" onClick={me.handleShowCreateComment.bind(me)}>
-                            <span className="icon" />
-                        </div>
-                        <div className="text" onClick={me.handleShowCreateComment.bind(me)}>{my.nickname}</div>
-                        <div className="thinner-border clearboth"></div>
-                    </li>
-                    <li>
                         <div className="name">手机</div>
                         <div className="arrow-box">
                         </div>
-                        {/* <div className="text">修改</div> */}
                         <div className="text">{my.mobile}</div>
+                        <div className="thinner-border clearboth"></div>
+                    </li>
+                    <li>
+                        <div className="name">昵称</div>
+                        <div className="arrow-box" onClick={me.handleShowCreateComment.bind(me,{
+                            currentProperty:'nickname'
+                        })}>
+                            <span className="icon" />
+                        </div>
+                        <div className="text" onClick={me.handleShowCreateComment.bind(me,{
+                            currentProperty:'nickname'
+                        })}>{my.nickname}</div>
+                        <div className="thinner-border clearboth"></div>
+                    </li>
+                    <li>
+                        <div className="name">个性签名</div>
+                        <div className="arrow-box" onClick={me.handleShowCreateComment.bind(me,{
+                            currentProperty:'psign'
+                        })}>
+                            <span className="icon" />
+                        </div>
+                        <div className="text text-elip" onClick={me.handleShowCreateComment.bind(me,{
+                            currentProperty:'psign'
+                        })}>{my.psign||`本宝宝暂时还没想到个性的签名`}</div>
                         <div className="thinner-border clearboth"></div>
                     </li>
                     {/* <li>

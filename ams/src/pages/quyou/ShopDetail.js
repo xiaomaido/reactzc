@@ -23,6 +23,7 @@ export default class Index extends Quyou{
 		isLike: false,
 	}
 	renderContent(){
+		window.state=this.state
         // document.title='商家信息'
         const me = this
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
@@ -42,13 +43,20 @@ export default class Index extends Quyou{
 				coupon_id,
 				token: me.user.token,
 			},(response={})=>{
-				const { code=-1, data="",msg="" } = response
+				const { code=-1, data="", msg="" } = response
 				// {"msg":"已经领取","data":"","code":20012}
 				if(code){
-					
+					alert(msg)
 					return
 				}
 				// {"msg":"","data":true,"code":0}
+				alert('领取成功')
+				const FETCH_TEMP = me.state[FETCH_PAGE]
+				const temp = FETCH_TEMP.response.data.coupon.find(d=>d.id===coupon_id)
+				temp.reciev_count += 1
+				this.setState({
+					[FETCH_PAGE]: FETCH_TEMP
+				})
 			})
 		}
 	}
@@ -150,5 +158,5 @@ const ProductList = (props) => {
 				) : null
 			}
 		</div>
-    )
+	)
 }

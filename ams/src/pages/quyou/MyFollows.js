@@ -22,6 +22,9 @@ export default class Index extends Quyou{
             desc:'整合崇明全域“吃住游购”旅游产品的综合平台和崇明旅游行业引导的风向标。',
         })
     }
+    handleClick(id){
+        console.log(id)
+    }
 }
 
 const Content = (props) => {
@@ -31,25 +34,32 @@ const Content = (props) => {
         data = [],
     } = response.data
     data = Array.isArray(data) ? data : []
-    const url = "http://sfmimg.b0.upaiyun.com/prod_00/db68ca0aeb8c19a7.jpg"
-    data = [...data,1,2]
     return (
         <div className="my-coupons">
+            <div className="list" style={{paddingTop:0}}>
             {
-                data.map((d,i)=>(
-                    <div key={i} className="item">
+                data.map(({user_info},i)=>(
+                    <div key={i} className="item" onClick={me.handleClick.bind(me,user_info.id)}>
                         <div className="btn active">已关注</div>
-                        <div className="icon cover circle" style={{backgroundImage:`url(${url})`}}></div>
+                        <div className="icon cover circle" style={{backgroundImage:`url(${user_info.headimg})`}}></div>
                         <div className="content">
-                            <div className="name">一点点奶茶券第二</div>
-                            <div className="end">1个粉丝</div>
+                            <div className="name follow">
+                                { user_info.nickname }
+                                { user_info.is_v === '1' ? <a className="icon bigv"></a> : null}
+                            </div>
+                            {/* <div className="end">8个粉丝</div> */}
                         </div>
                     </div>
                 ))
             }
             {
-                me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
+                me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData type={data.length?'nomoredata':'nodata'} /> : <Spin.Spin2 />
             }
+            </div>
         </div>
     )
 } 
+
+// {
+//     me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
+// }
