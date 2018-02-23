@@ -75,6 +75,11 @@ const Content = (props) => {
                 <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}}></div>
                 <div className="content">{post_index.description}</div>
             </div>
+            <div className="yummy clearboth" onClick={me.openPage.bind(me,  `/posthot?_t=PLUS`)}>
+                <div className="icon logo"></div>
+                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}}></div>
+                <div className="content">点此进入图文列表</div>
+            </div>
             <VideoList list={recomm_medias} me={me} />
         </div>
     )

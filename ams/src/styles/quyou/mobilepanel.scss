@@ -1,5 +1,7 @@
 @import "../vars.scss";
-
+img {
+    width: 100%;
+}
 .mobile-panel{
     margin: 0 auto;
     max-width: $maxWidth;

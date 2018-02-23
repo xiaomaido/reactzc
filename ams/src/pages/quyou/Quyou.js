@@ -289,7 +289,7 @@ export class Quyou extends React.Component{ // 公共模板
                 me.shareTextObjSetting({
                     title:data.title||data.name,
                     imgUrl:data.imgs[0]||data.images[0]||data.indexPic||data.img||`http://www.weichongming.com/quyou/logo.png`,
-                    desc:data.description.split('<br>')[0],
+                    desc:data.description?data.description.split('<br>')[0]:'',
                 })
             }
         })
@@ -462,6 +462,8 @@ window.TYPES={
     FETCH_MEDIA_DETAIL:`FETCH_MEDIA_DETAIL`,
     FETCH_POST_LIST:`FETCH_POST_LIST`,
     FETCH_POST_DETAIL:`FETCH_POST_DETAIL`,
+    FETCH_PLUS_POST_LIST:`FETCH_PLUS_POST_LIST`,
+    FETCH_PLUS_DETAIL:`FETCH_PLUS_DETAIL`,
 }
 window.APIS={
     API_MY_COUPON_LIST:`/user/coupon_my`,
@@ -519,6 +521,10 @@ window.APIS={
     API_EAT_TIME_LIST:`/eatIndex/timeBenefitsList`,
     API_EAT_TIME_DETAIL:`/eatIndex/timeBenefitsDetail`,
     API_EAT_SEASON_LIST:`/eatIndex/seasonRecSearch`,
+    API_PLUS_POST_LIST:`/eatIndex/postPlusList`,
+    API_PLUS_POST_DETAIL:`/eatIndex/postPlusDetail`,
+    API_PLUS_POST_COMMENT:`/eatIndex/postPlusComment`,
+    API_PLUS_POST_LIKE:`/eatIndex/postPlusLike`,
 }
 window.STATE={
     coupons: [{
@@ -593,40 +599,44 @@ window.PostList = (props) => {
     return (
         <div className="list">
             {
-                list.map((d={ imgs:[] },i)=>(
-                    <div key={i}>
-                        <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}?_t=${type}`)}>
-                            <div className="avatar-name">
-                                <i className="icon" style={{backgroundImage:`url(${d.headimg})`}}></i>
-                                <span>{d.nickname}</span>
-                                <a className="icon"></a>
-                            </div>
-                            <div className="content">
-                                <div>{d.title}</div>
-                                {d.description.split('<br>')[0]}
-                            </div>
-                            <LazyLoad height={200} offset={100}>
-                                <div className="icon cover" style={{backgroundImage:`url(${isVideo?d.indexPic:d.imgs[0]})`}}>
-                                    {
-                                        ~pathname.indexOf('video') ? <i className="icon play" style={{backgroundImage:`url(${play})`}} /> : null
-                                    }
+                list.map((d={ imgs:[] },i)=>{
+                    d.imgs = Array.isArray(d.imgs) ? d.imgs : []
+                    d.imgs = d.imgs.length ? d.imgs : (d.cover_img?[d.cover_img]:[])
+                    return (
+                        <div key={i}>
+                            <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}?_t=${type}`)}>
+                                <div className="avatar-name">
+                                    <i className="icon" style={{backgroundImage:`url(${d.headimg})`}}></i>
+                                    <span>{d.nickname}</span>
+                                    <a className="icon"></a>
                                 </div>
-                            </LazyLoad>
-                            <div className="dos">
-                                <div className={classnames({do:true,active:d.is_like})} >
-                                    <i className="icon good"></i>
-                                    <span>{d.like_count}</span>
+                                <div className="content">
+                                    <div>{d.title}</div>
+                                    {d.description?d.description.split('<br>')[0]:''}
                                 </div>
-                                <div className="thin-border-verical"></div>
-                                <div className="do">
-                                    <i className="icon comment"></i>
-                                    <span>{d.comment_count}</span>
+                                <LazyLoad height={200} offset={100}>
+                                    <div className="icon cover" style={{backgroundImage:`url(${isVideo?d.indexPic:d.imgs[0]})`}}>
+                                        {
+                                            ~pathname.indexOf('video') ? <i className="icon play" style={{backgroundImage:`url(${play})`}} /> : null
+                                        }
+                                    </div>
+                                </LazyLoad>
+                                <div className="dos">
+                                    <div className={classnames({do:true,active:d.is_like})} >
+                                        <i className="icon good"></i>
+                                        <span>{d.like_count}</span>
+                                    </div>
+                                    <div className="thin-border-verical"></div>
+                                    <div className="do">
+                                        <i className="icon comment"></i>
+                                        <span>{d.comment_count}</span>
+                                    </div>
                                 </div>
                             </div>
+                            <div className="clearboth"></div>
                         </div>
-                        <div className="clearboth"></div>
-                    </div>
-                ))
+                    )
+                })
             }
         </div>
     )
@@ -646,6 +656,8 @@ window.PostDetail  = (props) => {
     // const isFollowed = 'isFollowed' in me.state ? me.state.isFollowed : d.is_follow
     // d.imgs.map((da,i) => <img key={i} className="pic" src={da} />)
     const { API_MY_DO_FOLLOW, FETCH_PAGE } = params
+    d.imgs = Array.isArray(d.imgs) ? d.imgs : []
+    // d.imgs = d.imgs.length ? d.imgs : (d.cover_img?[d.cover_img]:[])
     return (
         <div>
             {
@@ -683,7 +695,12 @@ window.PostDetail  = (props) => {
                     </div>
                 }
                 {
-                    d.description.split('<br>').map((da,i)=><div key={i} className="text">{da}</div>)
+                    d.description?d.description.split('<br>').map((da,i)=><div key={i} className="text">{da}</div>):''
+                }
+                {
+                    d.content?<div dangerouslySetInnerHTML={{
+                        __html: d.content
+                    }}/>:null
                 }
             </div>
         </div>

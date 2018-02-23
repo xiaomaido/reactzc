@@ -473,3 +473,41 @@ my_recMediaQ = {
         ======== &nbsp ========
         
 
+
+
+
+
+
+
+
+
+        # 富文本帖子
+postPlusList = baseUrl + '/eatIndex/postPlusList'
+postPlusListQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "limit": 10,
+        "offset": 0
+}
+
+# 富文本帖子 详情
+postPlusDetail = baseUrl + '/eatIndex/postPlusDetail'
+postPlusDetailQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "id": 1
+}
+
+# 富文本帖子评论
+postPlusComment = baseUrl + '/eatIndex/postPlusComment'
+postPlusCommentQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "content": "好吃呀好吃",
+        "post_id": 1
+}
+
+# 富文本帖子点赞
+postPlusLike = baseUrl + '/eatIndex/postPlusLike'
+postPlusLikeQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "post_id": 1
+}
+
