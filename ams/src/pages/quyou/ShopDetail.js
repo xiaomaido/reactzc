@@ -71,9 +71,16 @@ const Content = (props) => {
 	const API_PAGE_COMMENT = APIS[`API_${_t}_SHOP_COMMENT`]
 	data.activities = Array.isArray(data.activities) ? data.activities : []
 	data.description = data.description || ''
+	const Composed = (
+		<div className="necker" style={{padding: 0}}>
+			<div className="necker-box">
+				<ProductList list={data.coupon} me={me} activities={data.activities} />
+			</div>
+		</div>
+	)
     return data.id ? (
 		<div className="shop-detail">
-			<Intro data={data} needCover={true} />
+			<Intro data={data} needCover={true} Composed={Composed} />
 			<div className="gap"></div>
 			<div className="necker">
 				<div className="necker-box">
@@ -83,7 +90,7 @@ const Content = (props) => {
 						data.description.split('<br>').map((d,i)=><div className="descrip" key={i}>{d}</div>)
 					}
 					{/* <div className="open-more">展开更多 ^</div> */}
-					<ProductList list={data.coupon} me={me} activities={data.activities} />
+					{/* <ProductList list={data.coupon} me={me} activities={data.activities} /> */}
 				</div>
 			</div>
 			{

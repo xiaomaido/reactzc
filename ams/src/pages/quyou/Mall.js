@@ -29,13 +29,13 @@ export default class Index extends Quyou{
     }
 	renderContent(){
         // document.title='趣游崇明'
-        const { htmlContent = '' } = this.state
-        const dangerouslyContent = {
-            __html: htmlContent
-        }
+        // const { htmlContent = '' } = this.state
+        // const dangerouslyContent = {
+        //     __html: htmlContent
+        // }
+        // <div style={{padding: '1rem'}} dangerouslySetInnerHTML={dangerouslyContent}/>
         return (
             <div className="mall">
-                <div style={{padding: '1rem'}} dangerouslySetInnerHTML={dangerouslyContent}/>
                 <ul className="ad-list" style={{height:700}}>
                     <li>
                         <a href={ !true ? `${window.isHashHistory}/mallfuli`:`javascript:;`} className="icon big" style={{backgroundImage:`url(${ptflzq})`}}></a>

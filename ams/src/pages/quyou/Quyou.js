@@ -61,6 +61,56 @@ export class Quyou extends React.Component{ // 公共模板
             id:11,
         },
     ]
+    filterids=[
+        {
+            title:'全部区域',
+            id:0, 
+        },
+        {
+            title:'新村乡',
+            id:1, 
+        }, 
+        {
+            title:'绿华镇',
+            id:2, 
+        }, 
+        {
+            title:'三星镇',
+            id:3, 
+        },
+        {
+            title:'庙镇',
+            id:4, 
+        }, 
+        {
+            title:'港西镇',
+            id:5, 
+        }, 
+        {
+            title:'竖新镇',
+            id:6, 
+        }, 
+        {
+            title:'城桥镇',
+            id:7, 
+        }, 
+        {
+            title:'新河镇',
+            id:8, 
+        }, 
+        {
+            title:'港沿镇',
+            id:9, 
+        }, 
+        {
+            title:'中兴镇',
+            id:10, 
+        }, 
+        {
+            title:'向化镇',
+            id:11, 
+        }, 
+    ]
     centToYuan(cent){
         return cent/100
     }
@@ -227,7 +277,8 @@ export class Quyou extends React.Component{ // 公共模板
             req[`project`]=``
             req[`eara`]=``
             req[`cate`]=``
-        }else if(API_PAGE===`/sleepIndex/sellerSearch`){
+        // }else if(API_PAGE===`/sleepIndex/sellerSearch`){
+        }else if(~API_PAGE.indexOf(`/sellerSearch`)){
             req={
                 ...req,
                 ..._location.query
@@ -241,6 +292,8 @@ export class Quyou extends React.Component{ // 公共模板
         }
         me.requestAPI(API_PAGE,req,(response)=>{
             console.log('response',response)
+            response.data = response.data || {}
+            response.data.data = Array.isArray(response.data.data)?response.data.data:[]
             if(randomSort){
                 response.data.data = response.data.data.sort(()=>Math.random()-0.5)
             }
@@ -688,17 +741,21 @@ window.PostDetail  = (props) => {
                     <div className="create">{misc.formatTime(d.create_dt*1000,2)}</div>
                 </div>
                 {
-                    isVideo ? null : <div>
-                        {
-                            d.imgs.map((da,i) => <LazyLoad key={i} height={200} offset={100}><img className="pic" src={da} /></LazyLoad> )
-                        }
-                    </div>
+                    isVideo ? null : (
+                        d.is_rich==="0" ? (
+                            <div>
+                                {
+                                    d.imgs.map((da,i) => <LazyLoad key={i} height={200} offset={100}><img className="pic" src={da} /></LazyLoad> )
+                                }
+                            </div>
+                        ) : null
+                    )
                 }
                 {
-                    d.description?d.description.split('<br>').map((da,i)=><div key={i} className="text">{da}</div>):''
+                    d.is_rich==="0"&&d.description?d.description.split('<br>').map((da,i)=><div key={i} className="text">{da}</div>):''
                 }
                 {
-                    d.content?<div dangerouslySetInnerHTML={{
+                    d.is_rich==="1"&&d.content?<div className="text" dangerouslySetInnerHTML={{
                         __html: d.content
                     }}/>:null
                 }
@@ -786,6 +843,7 @@ window.Intro = (props) => {
             tag_name: [],
             activities: [],
         },
+        Composed,
     } = props
     data.tag_name = Array.isArray(data.tag_name) ? data.tag_name : []
     const addr = data.addr1+data.addr2+data.addr3+data.detail
@@ -804,6 +862,9 @@ window.Intro = (props) => {
                 <a href={`tel:${data.phone}`} className="icon phone"></a>
                 <div className="name" onClick={handleJump}><i className="icon" />【{data.name}】{ data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}</div>
                 <div className="address" onClick={handleJumpMap}><i className="icon" />{addr}</div>
+                {
+                    Composed
+                }
                 {
                     needCover ? data.imgs.map((img,i)=><img key={i} className="icover" src={img}/>) : null
                 }

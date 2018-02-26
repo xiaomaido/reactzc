@@ -52,56 +52,6 @@ export default class Index extends Quyou{
             desc:'整合崇明全域“吃住游购”旅游产品的综合平台和崇明旅游行业引导的风向标。',
         })
     }
-    filterids=[
-        {
-            title:'全部区域',
-            id:0, 
-        },
-        {
-            title:'新村乡',
-            id:1, 
-        }, 
-        {
-            title:'绿华镇',
-            id:2, 
-        }, 
-        {
-            title:'三星镇',
-            id:3, 
-        },
-        {
-            title:'庙镇',
-            id:4, 
-        }, 
-        {
-            title:'港西镇',
-            id:5, 
-        }, 
-        {
-            title:'竖新镇',
-            id:6, 
-        }, 
-        {
-            title:'城桥镇',
-            id:7, 
-        }, 
-        {
-            title:'新河镇',
-            id:8, 
-        }, 
-        {
-            title:'港沿镇',
-            id:9, 
-        }, 
-        {
-            title:'中兴镇',
-            id:10, 
-        }, 
-        {
-            title:'向化镇',
-            id:11, 
-        }, 
-    ]
     handleSelectBoxChageColumn(type){
         const temp = `${type}ShowOptions`
         // console.log('temp',temp)
