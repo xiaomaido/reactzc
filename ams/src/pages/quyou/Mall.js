@@ -38,7 +38,7 @@ export default class Index extends Quyou{
             <div className="mall">
                 <ul className="ad-list" style={{height:700}}>
                     <li>
-                        <a href={ !true ? `${window.isHashHistory}/mallfuli`:`javascript:;`} className="icon big" style={{backgroundImage:`url(${ptflzq})`}}></a>
+                        <a href={ true ? `${window.isHashHistory}/mallfuli`:`javascript:;`} className="icon big" style={{backgroundImage:`url(${ptflzq})`}}></a>
                     </li>
                     {/* <li>
                         <a href={ !true ? `${window.isHashHistory}/`:`http://www.zenongji.cn/wap/index.php`} className="icon small" style={{backgroundImage:`url(http://www.zenongji.cn/public/attachment/201705/25/10/59263d9a11c47.jpg)`}}>

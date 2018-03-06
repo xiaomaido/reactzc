@@ -1,3 +1,4 @@
+const opacity=0.5
 export default class Index extends Quyou{
     constructor(props){
         super(props)
@@ -71,6 +72,36 @@ export default class Index extends Quyou{
                         <div className="name">我的关注</div>
                         <div className="arrow-box">
                             <span className="icon" />
+                        </div>
+                        <div className="thinner-border clearboth"></div>
+                    </li>
+                    <li>
+                        <div style={{opacity}}>
+                            <i className="icon card" />
+                            <div className="name">趣游一卡通</div>
+                            <div className="arrow-box">
+                                <span className="icon" />
+                            </div>
+                        </div>
+                        <div className="thinner-border clearboth"></div>
+                    </li>
+                    <li>
+                        <div style={{opacity}}>
+                            <i className="icon activity" />
+                            <div className="name">我的活动</div>
+                            <div className="arrow-box">
+                                <span className="icon" />
+                            </div>
+                        </div>
+                        <div className="thinner-border clearboth"></div>
+                    </li>
+                    <li>
+                        <div style={{opacity}}>
+                            <i className="icon diary" />
+                            <div className="name">我的日记</div>
+                            <div className="arrow-box">
+                                <span className="icon" />
+                            </div>
                         </div>
                         <div className="thinner-border clearboth"></div>
                     </li>

@@ -1,8 +1,7 @@
 import bar from '../../images/quyou/trip/bar.png'
 import bus from '../../images/quyou/trip/bus.png'
 import guidance from '../../images/quyou/trip/pic-daolantu@3x.png'
-import polist from '../../images/quyou/trip/pic-you-list@3x.png'
-import banner from '../../images/quyou/trip/pic-you-list.png'
+import banner from '../../images/quyou/trip/pic-you-list@3x.jpg'
 const imgSlideList=[
     {
         img: banner,
@@ -82,9 +81,6 @@ const Content = (props) => {
             <div className="guidancediv" onClick={me.openPage.bind(me,  `/guidance`)}>
                 <img src={guidance}  />
             </div>
-            {/* <div className="polistdiv" onClick={me.openPage.bind(me,  `/triphot?cate=-1`)}>
-                <img src={polist}  />
-            </div> */}
         </div>
     )
 } 

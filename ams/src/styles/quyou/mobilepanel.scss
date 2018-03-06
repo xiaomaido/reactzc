@@ -311,9 +311,18 @@ img {
             i.collect{
                 background-image: url('../../images/quyou/icon/collect.png');
             }  
+            i.card{
+                background-image: url('../../images/quyou/icon/card.png');
+            }   
+            i.activity{
+                background-image: url('../../images/quyou/icon/activity.png');
+            }  
+            i.diary{
+                background-image: url('../../images/quyou/icon/diary.png');
+            }  
             i.liked{
                 background-image: url('../../images/quyou/icon/liked.png');
-            }   
+            }  
             i.seller{
                 background-image: url('../../images/quyou/icon/seller.png');
             }            
@@ -1998,12 +2007,14 @@ img {
         width: 33.3%;
     }
 }
+/*
 .food-hot{
     .select-box{
         float: left;
         width: 50%;
     }
 }
+*/
 .mall{
     background-color: $color_f5;
     padding-bottom: $barBottom;

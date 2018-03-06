@@ -66,6 +66,12 @@ export default class Index extends Quyou{
         }
         me.openPage(`/shophot${me.getRequestParam(query)}`)
     }
+    componentWillReceiveProps(nextProps){
+        const me = this 
+        _location = nextProps.location
+        me.page = 0
+        me.requestList(me,FETCH_PAGE,API_PAGE)
+    }
     componentDidMount(){
         const me = this
         me.requestList(me,FETCH_PAGE,API_PAGE,true)
@@ -74,12 +80,6 @@ export default class Index extends Quyou{
             imgUrl: `http://quyou.weichongming.com/static/images/shophot.6aa46ea1b7d4a35f033ee113df4e7a03.png`,
             desc:'整合崇明全域的人气商家、精推品质之选！',
         })
-    }
-    componentWillReceiveProps(nextProps){
-        const me = this 
-        _location = nextProps.location
-        me.page = 0
-        me.requestList(me,FETCH_PAGE,API_PAGE)
     }
 }
 

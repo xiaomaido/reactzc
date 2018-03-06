@@ -67,35 +67,35 @@ export class Quyou extends React.Component{ // 公共模板
             id:0, 
         },
         {
-            title:'新村乡',
+            title:'城桥镇',
             id:1, 
         }, 
         {
-            title:'绿华镇',
+            title:'陈家镇',
             id:2, 
         }, 
         {
-            title:'三星镇',
+            title:'建设镇',
             id:3, 
-        },
+        }, 
         {
-            title:'庙镇',
+            title:'绿华镇',
             id:4, 
         }, 
         {
-            title:'港西镇',
+            title:'三星镇',
             id:5, 
-        }, 
+        },
         {
-            title:'竖新镇',
+            title:'庙镇',
             id:6, 
         }, 
         {
-            title:'城桥镇',
+            title:'港西镇',
             id:7, 
         }, 
         {
-            title:'新河镇',
+            title:'竖新镇',
             id:8, 
         }, 
         {
@@ -109,6 +109,34 @@ export class Quyou extends React.Component{ // 公共模板
         {
             title:'向化镇',
             id:11, 
+        }, 
+        {
+            title:'东平镇',
+            id:12, 
+        }, 
+        {
+            title:'堡镇',
+            id:13, 
+        }, 
+        {
+            title:'新海镇',
+            id:14, 
+        }, 
+        {
+            title:'新河镇',
+            id:15, 
+        }, 
+        {
+            title:'长兴镇',
+            id:16, 
+        }, 
+        {
+            title:'新村乡',
+            id:17, 
+        }, 
+        {
+            title:'横沙乡',
+            id:18, 
         }, 
     ]
     centToYuan(cent){

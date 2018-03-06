@@ -5,20 +5,71 @@ const FETCH_PAGE = TYPES.FETCH_TOUR_SHOP_LIST
 export default class Index extends Quyou{
     state={
         [FETCH_PAGE]:{
-            response: initStateResponse
+            response: initStateResponse,
+            filteridsShowOptions: false,
         }
     }
     renderContent(){
         // document.title='精品酒店'
         const me = this
         const { fetching, response = initStateResponse } = me.state[FETCH_PAGE]
+        const { filterids } =  me
+        const { filteridsShowOptions } = me.state
+        let { filterid = 0 } =  me.props.location.query
+        filterid = Number(filterid)
         return (
 			<div className="food-hot hotel-hot">
+                <div>
+                    <SelectBox showOptions={filteridsShowOptions} options={filterids} optionId={filterid}  type={'filterids'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'filterids')} />
+                </div>
                 {
                     fetching ? <Spin /> : <List response={response} me={me} />
                 }
             </div>
         )
+    }
+    
+    handleSelectBoxChageColumn(type){
+        const temp = `${type}ShowOptions`
+        // console.log('temp',temp)
+        let nextState = {
+            [temp]: !this.state[temp],
+        }
+        if(type === 'tags'){
+            nextState['filteridsShowOptions']=false
+        }else if(type === 'filterids'){
+            nextState['tagsShowOptions']=false
+        }
+        this.setState(nextState)
+    }
+    handleSelectBoxChage({type = '',option = {}}){
+        const me = this
+        console.log('type',type)
+        console.log('option',option)
+        let { query } = me.props.location
+        if(type === 'tags'){
+            if(option.id){
+                query['tag'] = option.id
+            }else{
+                delete query['tag']
+            } 
+        }
+        else if(type === 'filterids'){
+            if(option.id){
+                query['filterid'] = option.id
+                query['filter'] = encodeURIComponent(option.title)
+            }else{
+                delete query['filter']
+                delete query['filterid']
+            }
+        }
+        me.openPage(`/triphot${me.getRequestParam(query)}`)
+    }
+    componentWillReceiveProps(nextProps){
+        const me = this 
+        _location = nextProps.location
+        me.page = 0
+        me.requestList(me,FETCH_PAGE,API_PAGE)
     }
     componentDidMount(){
         const me = this
