@@ -2103,6 +2103,38 @@ img {
 .mall{
     background-color: $color_f5;
     padding-bottom: $barBottom;
+    .notice-box{
+        position: relative;
+        width: 17rem;
+        margin: 0 auto;
+        display: block;
+        margin-top: 0.8rem;
+        img.abc{
+            float: left;
+            height: px2rem(48px);
+        }
+        span{
+            margin-left: px2rem(20px);
+            line-height: px2rem(22px);
+            font-size: px2rem(22px);
+        }
+        a{
+            text-align: right;
+            position: absolute;
+            right: 0;
+            width: 4rem;
+            height: px2rem(48px);
+            color: $color_ffce1a;
+            font-size: px2rem(26px);
+            line-height: px2rem(48px);
+            img{
+                position: absolute;
+                margin-left: px2rem(15px);
+                top: px2rem(11px);
+                height: px2rem(26px);
+            }
+        }
+    }
     .ad-list{
         li{
             margin-bottom: px2rem(24px);

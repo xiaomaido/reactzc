@@ -78,6 +78,11 @@ const Content = (props) => {
 			</div>
 		</div>
 	)
+	// {
+	// 	data.description.split('<br>').map((d,i)=><div className="descrip" key={i}>{d}</div>)
+	// }
+	// <div className="open-more">展开更多 ^</div>
+	// <ProductList list={data.coupon} me={me} activities={data.activities} />
     return data.id ? (
 		<div className="shop-detail">
 			<Intro data={data} needCover={true} Composed={Composed} />
@@ -86,11 +91,8 @@ const Content = (props) => {
 				<div className="necker-box">
 					<div className="intro"><span></span>简介</div>
 					<div className="clearboth thinner-border"></div>
-					{
-						data.description.split('<br>').map((d,i)=><div className="descrip" key={i}>{d}</div>)
-					}
-					{/* <div className="open-more">展开更多 ^</div> */}
-					{/* <ProductList list={data.coupon} me={me} activities={data.activities} /> */}
+					<div style={{paddingTop:'0.5rem',paddingRight: '1.1rem'}} dangerouslySetInnerHTML={{__html: data.description||''}}></div>
+					<div className="clearboth"></div>
 				</div>
 			</div>
 			{

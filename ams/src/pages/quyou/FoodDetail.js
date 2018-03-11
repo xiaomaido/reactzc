@@ -71,7 +71,9 @@ const Content = (props) => {
                 <div className="necker-box">
                     <div className="intro"><span></span>菜品介绍</div>
                     <div className="clearboth thinner-border"></div>
-                    <div className="descrip">{data.description}</div>
+					<div style={{paddingTop:'0.5rem',paddingRight: '1.1rem'}} dangerouslySetInnerHTML={{__html: data.description||''}}></div>
+					<div className="clearboth"></div>
+                    {/* <div className="descrip">{data.description}</div> */}
                     {/* <div className="open-more">展开更多 ^</div> */}
                     {/* <div className="clearboth thinner-border"></div>
                     <div className="discount">

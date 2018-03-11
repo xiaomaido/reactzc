@@ -71,7 +71,7 @@ const Content = (props) => {
                         <div className="icon yingyuan"></div>                        
                         <div className="text">影院排名</div>                        
                     </a>
-                    <a href="#/triphot?cate=-1" className="row_a" style={{left:0}}>
+                    <a href={`${window.isHashHistory}/triphot?cate=-1`} className="row_a" style={{left:0}}>
                         <div className="icon jingdian"></div>                        
                         <div className="text">热门景点</div>                        
                     </a>
