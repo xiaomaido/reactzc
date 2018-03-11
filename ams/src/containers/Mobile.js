@@ -67,10 +67,10 @@ window.pageMapRoute={
 		url:'/guidance',
 		page:Pages.Guidance
 	},
-	busline: {
-		url:'/busline',
-		page:Pages.BusLine
-	},
+	// busline: {
+	// 	url:'/busline',
+	// 	page:Pages.BusLine
+	// },
 	hotel: {
 		url:'/hotel',
 		page:Pages.Hotel

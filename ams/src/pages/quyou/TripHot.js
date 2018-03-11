@@ -18,7 +18,7 @@ export default class Index extends Quyou{
         let { filterid = 0 } =  me.props.location.query
         filterid = Number(filterid)
         return (
-			<div className="food-hot hotel-hot">
+			<div className="food-hot hotel-hot trip-hot">
                 <div>
                     <SelectBox showOptions={filteridsShowOptions} options={filterids} optionId={filterid}  type={'filterids'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'filterids')} />
                 </div>
@@ -125,5 +125,5 @@ const List = (props) => {
                 me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
             }
         </div>
-    ) : null
+    ) : <NoMoreData type={'nodata'}/>
 }

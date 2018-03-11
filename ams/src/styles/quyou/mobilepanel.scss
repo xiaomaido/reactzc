@@ -18,6 +18,81 @@ img {
 .trip{
     background-color: $color_f5;
     padding-bottom: $barTop;
+    .menulist{
+        background-color: $color_ff;
+        padding: 0 px2rem(90px);
+        .row{
+            padding-top: px2rem(24px);
+            height: px2rem(116px)+px2rem(30px);
+            position: relative;
+            a.row_a{
+                text-align: center;
+                position: absolute;
+            }
+            div.row_div{
+                text-align: center;
+                margin: 0 auto;
+                width: px2rem(108px);
+
+            }
+            .icon{
+                height: px2rem(108px);
+                width: px2rem(108px);
+            }
+            .text{
+                margin-top: px2rem(8px);
+                font-size: px2rem(20px);
+                line-height: px2rem(20px);
+            }
+            .jingdian{
+                background-image: url('../../images/quyou/trip/jingdian.png');
+            }
+            .evcard{
+                background-image: url('../../images/quyou/trip/evcard.png');
+            }
+            .yingyuan{
+                background-image: url('../../images/quyou/trip/yingyuan.png');
+            }
+            .tianqi{
+                background-image: url('../../images/quyou/trip/tianqi.png');
+            }
+            .geren{
+                background-image: url('../../images/quyou/trip/geren.png');
+            }
+            .huodong{
+                background-image: url('../../images/quyou/trip/huodong.png');
+            }
+        }
+    }
+    .busboat{
+        margin: px2rem(24px) 0;
+        background-color: $color_ff;
+        height: px2rem(306px);
+        img{
+            display: block;
+            margin: px2rem(24px) auto 0;
+            height: px2rem(138px);
+        }
+        .titlet{
+            margin-top: px2rem(38px);
+            color: #68edaf;
+            font-size: px2rem(32px);
+            line-height: px2rem(32px);
+            text-align: center;
+        }
+        .desct{
+            margin-top: px2rem(20px);
+            color: #999;
+            font-size: px2rem(22px);
+            line-height: px2rem(22px);
+            text-align: center;
+        }
+        .column{
+            width: 50%;
+            height: px2rem(306px);
+            float: left;
+        }
+    }
     .polistdiv{
         background-color: $color_ff;
         padding: px2rem(40px);
@@ -900,6 +975,11 @@ img {
     }
 }
 .hotel-hot{
+    
+    .select-box{
+        width: 50%;
+        float: left;
+    }
     .box{
         width: 10rem;
         .address{
@@ -941,6 +1021,11 @@ img {
         .tags{
             padding-top: 0.1rem !important;
         }
+    }
+}
+.trip-hot{
+    .select-box{
+        width: 100%;
     }
 }
 .season-hot{
