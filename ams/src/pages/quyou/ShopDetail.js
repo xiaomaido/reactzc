@@ -119,17 +119,20 @@ const ProductList = (props) => {
     return (
 		<div className="video clearboth">
 			{
-				Array.isArray(activities) ? activities.map((d,i)=>(
-					<div key={i}>
-						<div style={{padding: '10px 0 2px'}}><div className="clearboth thinner-border"></div></div>
-						<div className="title activity"><div className="activity">活</div>近期活动</div>
-						<div className="descrip activity">
-							活动名：{d.title}<br/>
-							内容：<br/>
-							{d.description}
+				Array.isArray(activities) ? activities.map((d,i)=>{
+					if (new Date()<new Date(d.start_dt * 1000) || new Date()>new Date(d.end_dt * 1000)) return null
+					return (
+						<div key={i}>
+							<div style={{padding: '10px 0 2px'}}><div className="clearboth thinner-border"></div></div>
+							<div className="title activity"><div className="activity">活</div>近期活动</div>
+							<div className="descrip activity">
+								活动名：{d.title}<br/>
+								内容：<br/>
+								{d.description}
+							</div>
 						</div>
-					</div>
-				)) : null
+					)
+				}) : null
 			}
 			{
 				Array.isArray(list) ? (

@@ -70,10 +70,10 @@ const Content = (props) => {
                     </li>
                 </ul>
             </div>
-            <div className="yummy clearboth" onClick={me.openPage.bind(me,  `/posthot`)}>
-                <div className="icon logo"></div>
-                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}}></div>
-                <div className="content">{post_index.description}</div>
+            <div className="yummy clearboth">
+                <div className="icon logo" onClick={me.openPage.bind(me,  `/posthot`)}></div>
+                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}} onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}></div>
+                <div className="content" onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}>{post_index.description}</div>
             </div>
             {/* <div className="yummy clearboth" onClick={me.openPage.bind(me,  `/posthot?_t=PLUS`)}>
                 <div className="icon logo"></div>

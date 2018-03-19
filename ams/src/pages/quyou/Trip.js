@@ -2,11 +2,11 @@ import bar from '../../images/quyou/trip/bar.png'
 import busicon from '../../images/quyou/trip/busicon.png'
 import boaticon from '../../images/quyou/trip/boaticon.png'
 import guidance from '../../images/quyou/trip/pic-daolantu@3x.png'
-import banner from '../../images/quyou/trip/pic-you-list@3x.jpg'
+import banner from '../../images/quyou/trip/pic-you-list@3x.png'
 const imgSlideList=[
     {
         img: banner,
-        url: `/triphot?cate=-1`,
+        url: `/guidance`,
     },
 ]
 const API_PAGE = APIS.API_TOUR_INDEX
@@ -84,7 +84,7 @@ const Content = (props) => {
                 </div>
                 <div className="row">
                     <a href="javascript:;" className="row_a" style={{right:0}}>
-                        <div className="icon huodong"></div>                        
+                        <div className="icon huodong shadow"></div>                        
                         <div className="text">活动报名</div>                        
                     </a>
                     <a href="http://wx.weather.com.cn/mweather/101021100.shtml?from=quyou&isappinstalled=0#1" className="row_a" style={{left:0}}>
@@ -93,7 +93,7 @@ const Content = (props) => {
                     </a>
                     <div className="row_div">
                         <a href="javascript:;">
-                            <div className="icon geren"></div>                        
+                            <div className="icon geren shadow"></div>                        
                             <div className="text">个人定制</div>                        
                         </a>
                     </div>
@@ -120,14 +120,14 @@ const Content = (props) => {
                 <div className="column" style={{width:0}}><div className="thin-border-verical"></div></div>
                 <a className="column" href={'http://shcm.dashenw.cn/static/ferrytime.html'}>
                     <div className="titlet">崇明轮渡出行</div>
-                    <div className="desct">体验海中浪漫环游</div>
+                    <div className="desct">横渡长江岛中部首选</div>
                     <img alt={'崇明轮渡'} src={boaticon} />
                 </a>
             </div>
-            <div style={{height:0}}>&nbsp;</div>
-            <div className="guidancediv" onClick={me.openPage.bind(me,  `/guidance`)}>
+            {/* <div style={{height:0}}>&nbsp;</div> */}
+            {/* <div className="guidancediv" onClick={me.openPage.bind(me,  `/guidance`)}>
                 <img src={guidance}  />
-            </div>
+            </div> */}
         </div>
     )
 } 

@@ -36,6 +36,7 @@ const Index = (props) => {
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/triphot'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/foodhot/'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/guidance/'))
+            || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/mallfuli'))
             || (~pathnameNow.indexOf('/videohot/') && pathnameFrom === '/')
             || (~pathnameNow.indexOf('/videohot/') && pathnameFrom === '/hotel')
             || (~pathnameNow.indexOf('/posthot/') && pathnameFrom === '/')
@@ -45,7 +46,7 @@ const Index = (props) => {
             backUrl = pathnameFrom
         }
     }
-    console.log(backUrl)
+    console.log('backUrl', backUrl)
     return (
         <div className="titleBar">
             <div className="box">

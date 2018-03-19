@@ -511,3 +511,56 @@ postPlusLikeQ = {
         "post_id": 1
 }
 
+
+
+
+# 热门优惠列表(首页limit指定1)
+favordiscountList = baseUrl + '/shopIndex/favordiscountList'
+favordiscountListQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "limit": 10,
+        "offset": 0
+}
+
+# 热门优惠详情
+favordiscountDetail = baseUrl + '/shopIndex/favordiscountDetail'
+favordiscountDetailQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "id": 126
+}
+
+# 热门优惠详情
+favordiscountComment = baseUrl + '/shopIndex/favordiscountComment'
+favordiscountCommentQ = {
+        "token": "PnhjrIIHsgWOphQ2dytO2amZPdDe4N5vA4dUSmr6AcCBqWrDBm/5YCNoRGVlbzqind+As7Q5DrtcAjh2nZV2AWBFQRBuUgunsD6oc6HDrp4=",
+        "content": "好吃呀好吃",
+        "post_id": 126
+}
+
+# 热门详情点赞
+favordiscountLike = baseUrl + '/shopIndex/favordiscountLike'
+favordiscountLikeQ = {
+        "token": "PnhjrIIHsgWOphQ2dytO2amZPdDe4N5vA4dUSmr6AcCBqWrDBm/5YCNoRGVlbzqind+As7Q5DrtcAjh2nZV2AWBFQRBuUgunsD6oc6HDrp4=",
+        "post_id": 126
+}
+
+# 可以用来做首页配置
+postPlusDetail = baseUrl + '/eatIndex/postPlusDetail'
+postPlusDetailQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "id": 1
+}
+
+// 水印
+http://sfmimg.b0.upaiyun.com/prod_00/53a2bd9f859fa229.png!/watermark/url/L3Byb2RfMDAvOGRhZWNmNGRlM2EyNmEyZi5wbmc=/percent/8
+L3Byb2RfMDAvOGRhZWNmNGRlM2EyNmEyZi5wbmc=
+
+
+# 优惠活动页面banner
+commBanner = baseUrl + '/commIndex/activityBanner'
+commBannerQ = {}
+
+1.商家都加了filter过滤 地区 ☑️
+2.商家都加了has_coupon=1过滤是否有优惠券
+3.针对富文本加了content字段 ☑️
+4.在优惠券下来商家是加了ID在前面 ☑️

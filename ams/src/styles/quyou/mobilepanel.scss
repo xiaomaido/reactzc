@@ -62,10 +62,21 @@ img {
             .huodong{
                 background-image: url('../../images/quyou/trip/huodong.png');
             }
+            .shadow{
+                opacity: 0.6
+            }
+            /*
+            .geren.shadow{
+                background-image: url('../../images/quyou/trip/gerenshadow.png');
+            }
+            .huodong.shadow{
+                background-image: url('../../images/quyou/trip/huodongshadow.png');
+            }
+            */
         }
     }
     .busboat{
-        margin: px2rem(24px) 0;
+        margin: px2rem(24px) 0 0;
         background-color: $color_ff;
         height: px2rem(306px);
         img{
@@ -500,59 +511,59 @@ img {
     display: inline-block;
     background-image: url('../../images/quyou/icon/V2@3x.png')
 }
+.types{
+    position: fixed;
+    background-color: $color_ff;
+    height: px2rem(130px);
+    width: 100%;
+    z-index: 99;
+    li.active{
+        position: relative;
+        background-color: $color_33;
+        .name{
+            color: $color_ffc913;
+        }
+        .t-down{
+            position: absolute;
+            bottom: -0.3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: .3rem solid transparent;
+            border-right: .3rem solid transparent;
+            border-top: .3rem solid $color_33;
+        }
+    }
+    li{
+        width: 33.3%;
+        float: left;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-flow: column;
+        .name{
+            // margin-top: px2rem(30px);
+            color: $color_33;
+            font-size: px2rem(30px);
+            line-height: px2rem(30px);
+           
+        }
+        .number{
+            margin-top: px2rem(15px);
+            color: $color_99;
+            font-size: px2rem(26px);
+            line-height: px2rem(26px);
+            font-weight: 900;
+        }
+        
+    }
+}
 .my-coupons{
     padding-top: $barTop;
     background-color: $color_f5;
-    .types{
-        position: fixed;
-        background-color: $color_ff;
-        height: px2rem(130px);
-        width: 100%;
-        z-index: 99;
-        li.active{
-            position: relative;
-            background-color: $color_33;
-            .name{
-                color: $color_ffc913;
-            }
-            .t-down{
-                position: absolute;
-                bottom: -0.3rem;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 0;
-                height: 0;
-                border-left: .3rem solid transparent;
-                border-right: .3rem solid transparent;
-                border-top: .3rem solid $color_33;
-            }
-        }
-        li{
-            width: 33.3%;
-            float: left;
-            height: 100%;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            flex-wrap: nowrap;
-            flex-flow: column;
-            .name{
-                // margin-top: px2rem(30px);
-                color: $color_33;
-                font-size: px2rem(30px);
-                line-height: px2rem(30px);
-               
-            }
-            .number{
-                margin-top: px2rem(15px);
-                color: $color_99;
-                font-size: px2rem(26px);
-                line-height: px2rem(26px);
-                font-weight: 900;
-            }
-            
-        }
-    }
     .list{
         padding-top: px2rem(130px);
         .item{
@@ -2121,16 +2132,21 @@ img {
         a{
             text-align: right;
             position: absolute;
-            right: 0;
+            right: 0.7rem;
             width: 4rem;
             height: px2rem(48px);
             color: $color_ffce1a;
             font-size: px2rem(26px);
             line-height: px2rem(48px);
+            span{
+                color: #666;
+                font-size: px2rem(22px);
+                line-height: px2rem(48px);
+            }
             img{
                 position: absolute;
                 margin-left: px2rem(15px);
-                top: px2rem(11px);
+                top: 0.225rem;
                 height: px2rem(26px);
             }
         }
@@ -2176,9 +2192,8 @@ img {
         padding: px2rem(30px) 0;
     }
     .coupon-list{
-        margin-top: px2rem(20px);
         background-color: $color_ff;
-        padding: 0 px2rem(36px);
+        padding: 3.25rem px2rem(36px) 0;
         li{
             .cover-box{
                 position: relative;
@@ -2200,8 +2215,41 @@ img {
                     bottom: px2rem(30px);
                     font-size: px2rem(20px);
                     line-height: px2rem(20px);
+                    color: #afb4c2;
                     span{
                         color: $color_fe932b;
+                    }
+                }
+                .name{
+                    margin-top: px2rem(8px);
+                    font-size: px2rem(32px);
+                    line-height: px2rem(32px);
+                    color: #333;
+                }
+                .addr{
+                    margin-top: px2rem(12px);
+                    font-size: px2rem(22px);
+                    line-height: px2rem(22px);
+                    color: #5c666e;
+                }
+                .color1{
+                    background-color: #fecf1a
+                }
+                .color2{
+                    background-color: #ffa0a1
+                }
+                .color3{
+                    background-color: #d1c1a5
+                }
+                .discount{
+                    margin-top: px2rem(30px);
+                    li{
+                        color: $color_ff;
+                        height: px2rem(40px);
+                        line-height: px2rem(40px);
+                        padding: 0 px2rem(10px);
+                        float: left;
+                        font-size: px2rem(20px);
                     }
                 }
             }

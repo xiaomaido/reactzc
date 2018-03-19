@@ -62,10 +62,10 @@ const Content = (props) => {
                     }
                 </div>
             </div>
-            <div className="yummy clearboth" onClick={me.openPage.bind(me,  `/posthot?_t=SLEEP`)}>
-                <div className="icon logo hotel"></div>
-                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}}></div>
-                <div className="content">{post_index.description}</div>
+            <div className="yummy clearboth">
+                <div className="icon logo hotel" onClick={me.openPage.bind(me,  `/posthot?_t=SLEEP`)}></div>
+                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}} onClick={me.openPage.bind(me,  `/posthot/${post_index.id}?_t=SLEEP`)}></div>
+                <div className="content" onClick={me.openPage.bind(me, `/posthot/${post_index.id}?_t=SLEEP`)}>{post_index.description}</div>
             </div>
             <VideoList list={recomm_medias} me={me} title={"酒店视频"} type={"SLEEP"} />
         </div>

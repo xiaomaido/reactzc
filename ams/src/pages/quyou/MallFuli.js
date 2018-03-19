@@ -13,40 +13,114 @@ const imgSlideList=[
         url: 'https://m.xiaohongshu.com/discovery/item/59fc80bbc1605f58897f26a4',
     },
 ]
+const initStateResponse = initState()
+const API_PAGE_SET=[APIS.API_EAT_SHOP_LIST,APIS.API_SLEEP_SHOP_LIST,APIS.API_TOUR_SHOP_LIST]
+const FETCH_PAGE_SET=[TYPES.FETCH_EAT_SHOP_LIST,TYPES.FETCH_SLEEP_SHOP_LIST,TYPES.FETCH_TOUR_SHOP_LIST]
+
+const ltypesSet=['EAT','SLEEP','TOUR']
 export default class Index extends Quyou{
-	renderContent(){        
+    ltypes=['吃','住','游']
+    
+    constructor(props){
+        super(props)
+        this.ltype = Number(props.location.query.ltype) || 0
+        this.state={
+            [FETCH_PAGE_SET[this.ltype]]:{
+                response: initStateResponse
+            }
+        }
+    }
+    handleClick(type=0){
+        const me = this
+        if(type !== this.ltype) {
+            me.openPage(`/mallfuli?has_coupon=1&ltype=${type}`)
+        }
+    }
+	renderContent(){      
         // document.title='平台福利专区'
-        const cover=`http://ac-tulkzvki.clouddn.com/5m7AK2sp4XT0ygsw0a3vgzWvVgdD5FDTgD4gKM2l.jpg`
-        const list=Array.apply(null,{length:5})
+        const me = this
+        const { fetching, response = initStateResponse } = me.state[FETCH_PAGE_SET[this.ltype]]
         return (
             <div className="mall-fuli">
-                <div className="neck">
+                {/* <div className="neck">
                     <TouchSlideBox imgSlideList={imgSlideList} />               
-                </div>
-                <ul className="coupon-list">
+                </div> */}
+                <ul className="types">
                     {
-                        list.map((d,i)=>(
-                            <li key={i}>
-                                <div className="cover-box">
-                                    <div className="icon cover" style={{backgroundImage:`url(${cover})`}}></div>
-                                    <div className="box">
-                                        <div className="handed"><span>93</span>人已领取</div>
-                                        <div className="name">龙门花甲套餐</div>
-                                        <div className="name">[八一广场店]</div>
-                                        {/* <ul className="discount">
-                                            <li>新人券</li>
-                                            <li>满减</li>
-                                        </ul> */}
-                                    </div>
-                                </div>
-                                {
-                                    i===list.length-1 ? null : <div className="clearboth thinner-border"></div>
-                                }
+                        me.ltypes.map((d,i)=>(
+                            <li key={i} className={classnames({active:this.ltype===i})} onClick={me.handleClick.bind(me,i)}>
+                                <div className="name">{d}</div>
+                                <div className="t-down"></div>
                             </li>
                         ))
                     }
                 </ul>
+                {
+                    fetching ? <Spin /> : <List response={response} me={me} ltype={this.ltype}/>
+                }
             </div>
         )
     }
+    componentDidMount(){
+        const me = this
+        me.requestList(me,FETCH_PAGE_SET[this.ltype],API_PAGE_SET[this.ltype])
+        me.shareTextObjSetting({
+            title:`趣游-平台福利专区`,
+            imgUrl:`http://www.weichongming.com/quyou/logo.png`,
+            desc:'整合崇明全域“吃住游购”旅游产品的综合平台和崇明旅游行业引导的风向标。',
+        })
+    }
+    componentWillReceiveProps(nextProps){
+        const me = this 
+        _location = nextProps.location
+        this.ltype = Number(nextProps.location.query.ltype) || 0
+        me.requestList(me,FETCH_PAGE_SET[this.ltype],API_PAGE_SET[this.ltype])
+    }
 } 
+
+const List = (props) => {
+    const { response, me, ltype } = props
+    let { 
+        count = 0,
+        data = [],
+    } = response.data
+    const { pathname } = _location
+    data = Array.isArray(data)?data:[]
+    const arr = [1, 2, 3]
+    return (
+        <div>
+            <ul className="coupon-list">
+                {
+                    data.map((d = { imgs: [] },i)=>{
+                        d.coupon = Array.isArray(d.coupon) ? d.coupon : []
+                        return (
+                            <li key={i}>
+                                <div className="cover-box" onClick={me.openPage.bind(me,`/shophot/${d.id}?_t=${ltypesSet[ltype]}`)}>
+                                    <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
+                                    <div className="box">
+                                        <div className="handed"><span>{d.coupon.length ? d.coupon[0].reciev_count : 0}</span> 人已领取</div>
+                                        <div className="name">{d.name}</div>
+                                        <div className="addr">[{d.addr2+(d.addr3?'·'+d.addr3:'')}店]</div>
+                                        {
+                                            d.coupon.length ? (
+                                                <ul className="discount">
+                                                    <li className={"color" + arr.sort((a)=>Math.random()<0.5)[0]}>{d.coupon[0].title}</li>
+                                                </ul>
+                                            ) : null
+                                        }
+                                    </div>
+                                </div>
+                                {
+                                    i===data.length-1 ? null : <div className="clearboth thinner-border"></div>
+                                }
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+            {
+                me.page === 0? null: (me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />)
+            }
+        </div>
+    )
+}
