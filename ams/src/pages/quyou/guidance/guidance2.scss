@@ -1,0 +1,70 @@
+
+.ditu {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 32rem;
+  width: 32rem;
+  display: block;
+  position: relative;
+
+  .ditu-p {
+    position: absolute;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 0.4rem;
+    /* background-color: yellow; */
+    border-style: double;
+    border-color: aliceblue;
+    background-color: red;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.ditu-p {
+  &.p1 {
+    top: 10%;
+    left: 20%;
+  }
+
+  &.p2 {
+    top: 20%;
+    left: 30%;
+  }
+  &.p3 {
+    top: 30%;
+    left: 40%;
+  }
+  &.p4 {
+    top: 40%;
+    left: 50%;
+  }
+
+  .ditu-info {
+    display: none;
+  }
+
+  &:hover .ditu-info{
+    padding: 0.5rem;
+    //height: 3rem;
+    width: 5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* opacity: 0.7; */
+    color: aliceblue;
+    font-size: 0.6rem;
+    text-align: center;
+    display: block;
+    font-weight: 100;
+    a {
+      color: white;
+    }
+  }
+}
+
+#myCanvas {
+  border:1px solid #d3d3d3;
+  background:#ffffff;
+}

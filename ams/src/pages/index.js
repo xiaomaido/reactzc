@@ -24,6 +24,7 @@ import Trip from './quyou/Trip'
 import TripHot from './quyou/TripHot'
 // import BusLine from './quyou/BusLine'
 import Guidance from './quyou/Guidance'
+import Guidance2 from './quyou/guidance/Guidance2'
 import GuidanceDetail from './quyou/GuidanceDetail'
 import Signin from './quyou/Signin'
 import CurrentRoutes from './quyou/CurrentRoutes'
@@ -53,6 +54,7 @@ export {
 	Trip,
 	TripHot,
 	Guidance,
+	Guidance2,
 	GuidanceDetail,
 	// BusLine,
 	Mall,
