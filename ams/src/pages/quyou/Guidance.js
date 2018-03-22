@@ -29,6 +29,7 @@ export default class Index extends Quyou{
         })
     }
 }
+
 const Content = (props) => {
     const { response, me } = props
     let { 
