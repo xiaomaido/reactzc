@@ -1,6 +1,6 @@
-import quick0 from '../../images/quyou/icon/quick0.png'
-import quick1 from '../../images/quyou/icon/quick1.png'
-import quick2 from '../../images/quyou/icon/quick2.png'
+import quick0 from '../../images/quyou/icon/quick0.jpg'
+import quick1 from '../../images/quyou/icon/quick1.jpg'
+import quick2 from '../../images/quyou/icon/quick2.jpg'
 const API_PAGE = APIS.API_EAT_INDEX
 const FETCH_PAGE = TYPES.FETCH_EAT_INDEX
 export default class Index extends Quyou{
