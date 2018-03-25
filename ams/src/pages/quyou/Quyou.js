@@ -322,9 +322,9 @@ export class Quyou extends React.Component{ // 公共模板
             console.log('response',response)
             response.data = response.data || {}
             response.data.data = Array.isArray(response.data.data)?response.data.data:[]
-            if(randomSort){
-                response.data.data = response.data.data.sort(()=>Math.random()-0.5)
-            }
+            // if(randomSort){
+            //     response.data.data = response.data.data.sort(()=>Math.random()-0.5)
+            // }
             if(page === 0) {
                 me.setState({
                     [FETCH_PAGE]: {
