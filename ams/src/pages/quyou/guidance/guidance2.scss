@@ -1,22 +1,32 @@
-
+@import "../../../styles/vars.scss";
 .ditu {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 32rem;
   width: 32rem;
+  //height: 32rem;
+  //width: 32rem;
   display: block;
   position: relative;
 
+  &:hover {
+    //transform:scale(1.2)
+  }
+
   .ditu-p {
     position: absolute;
-    height: 0.5rem;
-    width: 0.5rem;
-    border-radius: 0.4rem;
-    /* background-color: yellow; */
-    border-style: double;
-    border-color: aliceblue;
-    background-color: red;
+    //height: 0.5rem;
+    //width: 0.5rem;
+    //border-radius: 0.4rem;
+    ///* background-color: yellow; */
+    //border-style: double;
+    //border-color: aliceblue;
+    //background-color: red;
+    height: px2rem(37px);
+    width: px2rem(33px);
+    background-image: url("./200.png");
+    animation:fade 3000ms infinite;
 
     &:hover {
       cursor: pointer;
@@ -24,24 +34,77 @@
   }
 }
 
+@keyframes fade {
+  from { opacity: 1.0; }
+  40% { opacity: 1.0; }
+  50% { opacity: 0.6; }
+  60% { opacity: 1.0; }
+  to { opacity: 1.0; }
+}
+
 .ditu-p {
-  &.p1 {
-    top: 10%;
-    left: 20%;
+  &.dtsd {
+    top: 59%;
+    left: 86%;
   }
 
-  &.p2 {
+  &.qwstc {
+    top: 36%;
+    left: 62%;
+  }
+  &.jnsmwhc {
+    top: 31%;
+    left: 58%;
+  }
+  &.ydstc {
+    top: 66%;
+    left: 76%;
+  }
+
+  &.zhly {
+    top: 51%;
+    left: 51%;
+  }
+  &.gjzsty {
+    top: 33%;
+    left: 37%;
+  }
+  &.cmxg {
+    top: 38%;
+    left: 31%;
+  }
+
+  &.dpgjsl {
+    top: 38%;
+    left: 47%;
+  }
+
+  &.rhgy {
+    top: 12%;
+    left: 16%;
+  }
+
+  &.xsmz {
+    top: 28%;
+    left: 8%;
+  }
+  &.cxjy {
+    top: 73%;
+    left: 42%;
+  }
+  &.xdkxnc {
     top: 20%;
-    left: 30%;
+    left: 26%;
   }
-  &.p3 {
-    top: 30%;
-    left: 40%;
-  }
-  &.p4 {
+  &.dhjgkxnc {
     top: 40%;
-    left: 50%;
+    left: 70%;
   }
+  &.ycxmgy {
+    top: 88%;
+    left: 76%;
+  }
+
 
   .ditu-info {
     display: none;
@@ -58,6 +121,7 @@
     text-align: center;
     display: block;
     font-weight: 100;
+    transform: translateY(-3em);
     a {
       color: white;
     }
