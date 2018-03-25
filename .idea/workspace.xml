@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="721aa67e-7cee-4b98-b66e-f1cc10822815" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ams/src/images/quyou/eat/eat-log.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ams/src/images/quyou/eat/eat_middle_01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ams/src/pages/quyou/eat/eat.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ams/src/images/quyou/trip/evcard.png" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/evcard.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ams/src/images/quyou/trip/geren.png" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/geren.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ams/src/images/quyou/trip/huodong.png" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/huodong.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ams/src/images/quyou/trip/jingdian.png" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/jingdian.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ams/src/images/quyou/trip/tianqi.png" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/tianqi.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ams/src/images/quyou/trip/yingyuan.png" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/yingyuan.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ams/src/pages/quyou/Eat.js" afterPath="$PROJECT_DIR$/ams/src/pages/quyou/Eat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ams/src/pages/quyou/Quyou.js" afterPath="$PROJECT_DIR$/ams/src/pages/quyou/Quyou.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/trip-bak-top.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/trip-bk-icon0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/trip-bk-icon1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/trip-bk1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ams/src/images/quyou/trip/trip-bk2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ams/src/pages/quyou/Trip.js" afterPath="$PROJECT_DIR$/ams/src/pages/quyou/Trip.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ams/src/styles/quyou/mobilepanel.scss" afterPath="$PROJECT_DIR$/ams/src/styles/quyou/mobilepanel.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,14 +22,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6142596">
+    <splitter split-orientation="horizontal" split-proportion="0.53686774">
       <split-first>
         <leaf>
-          <file leaf-file-name="Trip.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Trip.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ams/src/pages/quyou/Trip.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="19" />
+                <state relative-caret-position="536">
+                  <caret line="136" column="41" lean-forward="false" selection-start-line="136" selection-start-column="35" selection-end-line="136" selection-end-column="41" />
                   <folding>
                     <element signature="e#0#49#0" expanded="true" />
                   </folding>
@@ -93,10 +89,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Eat.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Eat.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ams/src/pages/quyou/Eat.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="10">
+                <state relative-caret-position="87">
                   <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
                   <folding />
                 </state>
@@ -154,8 +150,8 @@
           <file leaf-file-name="mobilepanel.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ams/src/styles/quyou/mobilepanel.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="18" selection-end-line="39" selection-end-column="39" />
+                <state relative-caret-position="224">
+                  <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -205,9 +201,9 @@
       <find>LazyLoad</find>
       <find>quick0</find>
       <find>post_index</find>
-      <find>imgSlideList</find>
-      <find>VideoList</find>
       <find>jingdian</find>
+      <find>VideoList</find>
+      <find>imgSlideList</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/ams/src</dir>
@@ -230,6 +226,7 @@
         <option value="$PROJECT_DIR$/ams/src/pages/quyou/Quyou.js" />
         <option value="$PROJECT_DIR$/ams/src/pages/quyou/Eat.js" />
         <option value="$PROJECT_DIR$/ams/src/pages/quyou/eat/eat.scss" />
+        <option value="$PROJECT_DIR$/ams/src/pages/quyou/Trip.js" />
         <option value="$PROJECT_DIR$/ams/src/styles/quyou/mobilepanel.scss" />
       </list>
     </option>
@@ -413,18 +410,18 @@
       <updated>1520953653195</updated>
       <workItem from="1520953654451" duration="570000" />
       <workItem from="1521250941514" duration="424000" />
-      <workItem from="1521469555399" duration="14276000" />
+      <workItem from="1521469555399" duration="17739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15270000" />
+    <option name="totallyTimeSpent" value="18733000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-76" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13586098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13586098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23038729" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -577,16 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ams/src/pages/quyou/Trip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ams/src/pages/quyou/guidance/Guidance2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
@@ -671,19 +658,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ams/src/styles/quyou/mobilepanel.scss">
+    <entry file="file://$PROJECT_DIR$/ams/src/pages/quyou/Eat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="18" selection-end-line="39" selection-end-column="39" />
+        <state relative-caret-position="87">
+          <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ams/src/pages/quyou/Eat.js">
+    <entry file="file://$PROJECT_DIR$/ams/src/images/quyou/trip/trip-bk1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ams/src/styles/quyou/mobilepanel.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+        <state relative-caret-position="224">
+          <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ams/src/pages/quyou/Trip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="136" column="41" lean-forward="false" selection-start-line="136" selection-start-column="35" selection-end-line="136" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -81,11 +81,60 @@ img {
     .busboat{
         margin: px2rem(24px) 0 0;
         background-color: $color_ff;
-        height: px2rem(306px);
+        height: px2rem(297px);
+        .trip-bk-wenzi {
+            font-size: px2rem(24px);
+            position: absolute;
+            top: 50%;
+            transform: translate(50%, 130%);
+            text-align: center;
+            color: white;
+            font-weight: 200;
+
+            .content {
+                transform: scale(0.6, 0.6);
+                font-weight: 100;
+                line-height: 6px;
+            }
+        }
+
+        .trip-bk-icon1 {
+            background-image: url("../../images/quyou/trip/trip-bk-icon0.png");
+            height: px2rem(109px);
+            width: px2rem(102px);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .trip-bk-icon2 {
+            background-image: url("../../images/quyou/trip/trip-bk-icon1.png");
+            height: px2rem(109px);
+            width: px2rem(102px);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .trip-bk-top {
+            background-image: url("../../images/quyou/trip/trip-bak-top.png");
+            transform: translateY(-100%);
+            height: px2rem(297px);
+            opacity: 0.1;
+        }
+
         img{
             display: block;
-            margin: px2rem(24px) auto 0;
-            height: px2rem(138px);
+            //margin: px2rem(24px) auto 0;
+            height: px2rem(297px);
         }
         .titlet{
             margin-top: px2rem(38px);
@@ -102,8 +151,9 @@ img {
             text-align: center;
         }
         .column{
+            position: relative;
             width: 50%;
-            height: px2rem(306px);
+            height: px2rem(297px);
             float: left;
         }
     }
