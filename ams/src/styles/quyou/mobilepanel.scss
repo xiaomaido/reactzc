@@ -36,8 +36,11 @@ img {
 
             }
             .icon{
-                height: px2rem(108px);
-                width: px2rem(108px);
+                //height: px2rem(108px);
+                //width: px2rem(108px);
+                height: 1.35rem;
+                width: 1.35rem;
+                margin: 0.675rem;
             }
             .text{
                 margin-top: px2rem(8px);

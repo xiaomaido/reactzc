@@ -635,13 +635,15 @@ window.initState=()=>{
         }
     }
 }
+import './eat/eat.scss'
 window.VideoList = (props) => {
     const { list, me, title = '视频推荐', type = 'EAT' } = props
     return (
         <div className="video clearboth">
             <div className="title-box">
-                <div className="line thinner-border clearboth"></div>
-                <div className="title" onClick={me.openPage.bind(me, `/videohot?_t=${type}`)}>{title}</div>
+                {/*<div className="line thinner-border clearboth"></div>*/}
+                <div className="eat-video" onClick={me.openPage.bind(me, `/videohot?_t=${type}`)}>当地食谱</div>
+                {/*<div className="title" onClick={me.openPage.bind(me, `/videohot?_t=${type}`)}>{title}</div>*/}
             </div>
             <div className="vlist">
                 <div className="ul-box">
