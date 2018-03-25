@@ -35,6 +35,15 @@ export default class Index extends Quyou{
 }
 
 class Content extends React.Component {
+    im = null;
+
+    state = {
+        imgStyle: {
+            backgroundImage:`url(${ditu})`,
+            height: '32rem',
+            width: '32rem'
+        }
+    }
     componentDidMount1() {
         var c=document.getElementById("myCanvas");
         var ctx=c.getContext("2d");
@@ -44,6 +53,15 @@ class Content extends React.Component {
         imgTile.onload = function() {
             ctx.drawImage(imgTile,0,0, 640, 640);
         }
+    }
+    componentDidMount() {
+        this.setState({
+            imgStyle: {
+                backgroundImage:`url(${ditu})`,
+                height: window.screen.height - 2.2*window.fontSize,
+                width: window.screen.height - 2.2*window.fontSize,
+            }
+        });
     }
 
     render ()  {
@@ -61,7 +79,7 @@ class Content extends React.Component {
 
                 <LazyLoad height={200} offset={100}>
                     <div>
-                        <div className="ditu" style={{backgroundImage:`url(${ditu})`}}>
+                        <div className="ditu" style={this.state.imgStyle}>
                             <div className="ditu-p dtsd icon">
                                 <div className="ditu-info">
                                     <a href={`${window.isHashHistory}/guidance/1`}>东滩湿地公园</a>
