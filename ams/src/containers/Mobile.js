@@ -64,11 +64,11 @@ window.pageMapRoute={
 		page:Pages.GuidanceDetail
 	},
 	guidance: {
-		url:'/guidance',
+		url:'/guidance2',
 		page:Pages.Guidance
 	},
     guidance2: {
-        url:'/guidance2',
+        url:'/guidance',
         page:Pages.Guidance2
     },
 	// busline: {

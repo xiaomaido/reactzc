@@ -36,8 +36,11 @@ img {
 
             }
             .icon{
-                height: px2rem(108px);
-                width: px2rem(108px);
+                //height: px2rem(108px);
+                //width: px2rem(108px);
+                height: 1.35rem;
+                width: 1.35rem;
+                margin: 0.675rem;
             }
             .text{
                 margin-top: px2rem(8px);
@@ -78,11 +81,60 @@ img {
     .busboat{
         margin: px2rem(24px) 0 0;
         background-color: $color_ff;
-        height: px2rem(306px);
+        height: px2rem(297px);
+        .trip-bk-wenzi {
+            font-size: px2rem(24px);
+            position: absolute;
+            top: 50%;
+            transform: translate(50%, 130%);
+            text-align: center;
+            color: white;
+            font-weight: 200;
+
+            .content {
+                transform: scale(0.6, 0.6);
+                font-weight: 100;
+                line-height: 6px;
+            }
+        }
+
+        .trip-bk-icon1 {
+            background-image: url("../../images/quyou/trip/trip-bk-icon0.png");
+            height: px2rem(109px);
+            width: px2rem(102px);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .trip-bk-icon2 {
+            background-image: url("../../images/quyou/trip/trip-bk-icon1.png");
+            height: px2rem(109px);
+            width: px2rem(102px);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .trip-bk-top {
+            background-image: url("../../images/quyou/trip/trip-bak-top.png");
+            transform: translateY(-100%);
+            height: px2rem(297px);
+            opacity: 0.1;
+        }
+
         img{
             display: block;
-            margin: px2rem(24px) auto 0;
-            height: px2rem(138px);
+            //margin: px2rem(24px) auto 0;
+            height: px2rem(297px);
         }
         .titlet{
             margin-top: px2rem(38px);
@@ -99,8 +151,9 @@ img {
             text-align: center;
         }
         .column{
+            position: relative;
             width: 50%;
-            height: px2rem(306px);
+            height: px2rem(297px);
             float: left;
         }
     }
@@ -307,7 +360,7 @@ img {
     .headbox{
         max-width: $maxWidth;
         width: 100%;
-        height: px2rem(360px);
+        height: px2rem(377px);
         background-size: cover;
         background-image: url('../../images/quyou/icon/bg_m.png');
         position: relative;
@@ -696,7 +749,7 @@ img {
         padding: 0 px2rem(36px);
         .icon{
             height: px2rem(108px);
-            background-image: url('../../images/quyou/banner/abc.png');
+            background-image: url('../../images/quyou/banner/abc.jpg');
         }
     }
     .top{
@@ -709,27 +762,40 @@ img {
             flex-wrap: wrap;
             align-items: center;
             height: 2 * px2rem(40px) + px2rem(220px) + px2rem(16px);
-            a{
+            .cont{
                 width: px2rem(216px);
                 height: px2rem(110px);
+                display: inline-block;
+                text-align: center;
             }
-            a:nth-child(1){
+            a {
+                width: px2rem(76px);
+                height: px2rem(77px);
+                display: inline-block;
+            }
+            .cont:nth-child(1) a{
                 background-image: url('../../images/quyou/zhu/jpjd.png')
             }
-            a:nth-child(2){
+            .cont:nth-child(2) a{
                 background-image: url('../../images/quyou/zhu/tsms.png')
             }
-            a:nth-child(3){
+            .cont:nth-child(3) a{
                 background-image: url('../../images/quyou/zhu/stnz.png')
             }
-            a:nth-child(4){
+            .cont:nth-child(4) a{
                 background-image: url('../../images/quyou/zhu/jjsy.png')
             }
-            a:nth-child(5){
+            .cont:nth-child(5) a{
                 background-image: url('../../images/quyou/zhu/rqtj.png')
             }
-            a:nth-child(6){
+            .cont:nth-child(6) a{
                 background-image: url('../../images/quyou/zhu/thzk.png')
+            }
+
+            .wenzi {
+                font-size: px2rem(25px);
+                text-align: center;
+                color: #000000;
             }
         }
         .bar{
@@ -770,6 +836,13 @@ img {
         margin: px2rem(18px) 0;
         height: px2rem(152px);
         background-color: $color_ff;
+        .zhu2 {
+            background-image: url("../../images/quyou/zhu/zhu2.jpg");
+            width: 100%;
+            height: px2rem(172px);
+            cursor: pointer;
+        }
+
         .picture{
             float: right;
             margin-top: px2rem(18px);

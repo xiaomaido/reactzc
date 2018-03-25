@@ -3,6 +3,11 @@ import busicon from '../../images/quyou/trip/busicon.png'
 import boaticon from '../../images/quyou/trip/boaticon.png'
 import guidance from '../../images/quyou/trip/pic-daolantu@3x.png'
 import banner from '../../images/quyou/trip/pic-you-list@3x.png'
+import tropBak1 from '../../images/quyou/trip/trip-bk1.png';
+import tropBak2 from '../../images/quyou/trip/trip-bk2.png';
+import tropBakTop from '../../images/quyou/trip/trip-bak-top.png';
+
+
 const imgSlideList=[
     {
         img: banner,
@@ -113,15 +118,29 @@ const Content = (props) => {
             </div> */}
             <div className="busboat">
                 <a className="column" href={'http://shanghaicity.openservice.kankanews.com/public/bus'}>
-                    <div className="titlet">崇明公交线路</div>
-                    <div className="desct">打造低碳环保出行</div>
-                    <img alt={'崇明公交'} src={busicon} />
+                    <img src={tropBak1} />
+                    <div className="trip-bk-icon1"></div>
+                    <div className="trip-bk-wenzi">
+                        <div>崇明轮渡出行</div>
+                        <div className="content">横渡长江中部首选</div>
+                    </div>
+                    <div className="trip-bk-top"/>
+                    {/*<div className="titlet">崇明公交线路</div>*/}
+                    {/*<div className="desct">打造低碳环保出行</div>*/}
+                    {/*<img alt={'崇明公交'} src={busicon} />*/}
                 </a>
                 <div className="column" style={{width:0}}><div className="thin-border-verical"></div></div>
                 <a className="column" href={'http://shcm.dashenw.cn/static/ferrytime.html'}>
-                    <div className="titlet">崇明轮渡出行</div>
-                    <div className="desct">横渡长江岛中部首选</div>
-                    <img alt={'崇明轮渡'} src={boaticon} />
+                    <img src={tropBak2} />
+                    <div className="trip-bk-icon2"></div>
+                    <div className="trip-bk-wenzi">
+                        <div>崇明公交线路</div>
+                        <div className="content">打造低碳环保出行</div>
+                    </div>
+                    <div className="trip-bk-top"/>
+                    {/*<div className="titlet">崇明轮渡出行</div>*/}
+                    {/*<div className="desct">横渡长江岛中部首选</div>*/}
+                    {/*<img alt={'崇明轮渡'} src={boaticon} />*/}
                 </a>
             </div>
             {/* <div style={{height:0}}>&nbsp;</div> */}

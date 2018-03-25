@@ -35,6 +35,15 @@ export default class Index extends Quyou{
 }
 
 class Content extends React.Component {
+    im = null;
+
+    state = {
+        imgStyle: {
+            backgroundImage:`url(${ditu})`,
+            height: '32rem',
+            width: '32rem'
+        }
+    }
     componentDidMount1() {
         var c=document.getElementById("myCanvas");
         var ctx=c.getContext("2d");
@@ -44,6 +53,15 @@ class Content extends React.Component {
         imgTile.onload = function() {
             ctx.drawImage(imgTile,0,0, 640, 640);
         }
+    }
+    componentDidMount() {
+        this.setState({
+            imgStyle: {
+                backgroundImage:`url(${ditu})`,
+                height: window.screen.height - 2.2*window.fontSize,
+                width: window.screen.height - 2.2*window.fontSize,
+            }
+        });
     }
 
     render ()  {
@@ -61,17 +79,79 @@ class Content extends React.Component {
 
                 <LazyLoad height={200} offset={100}>
                     <div>
-                        <div href={`${window.isHashHistory}/guidance/1`} className="ditu" style={{backgroundImage:`url(${ditu})`}}>
-                            <div>
-                                <div className="ditu-p p1">
-                                    <div className="ditu-info">
-                                        <a href={`${window.isHashHistory}/guidance/1`}>东滩湿地公园</a>
-                                    </div>
+                        <div className="ditu" style={this.state.imgStyle}>
+                            <div className="ditu-p dtsd icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>东滩湿地公园</a>
                                 </div>
                             </div>
-                            <div className="ditu-p p2"></div>
-                            <div className="ditu-p p3"></div>
-                            <div className="ditu-p p4"></div>
+
+                            <div className="ditu-p qwstc icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>前卫生态村</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p jnsmwhc icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>江南三民文化村</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p ydstc icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>瀛东生态村</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p zhly icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>紫海鹭缘浪漫爱情主题公园</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p gjzsty icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>高家庄生态园</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p cmxg icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>崇明学宫</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p dpgjsl icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>东平国家森林公园</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p rhgy icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>瑞华果园</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p xsmz icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>西沙·明珠湖景区</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p cxjy icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>长兴郊野公园</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p xdkxnc icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>香朵开心农场</a>
+                                </div>
+                            </div>
+                            <div className="ditu-p dhjgkxnc icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>东禾九谷开心农场</a>
+                                </div>
+                            </div>
+
+                            <div className="ditu-p ycxmgy icon">
+                                <div className="ditu-info">
+                                    <a href={`${window.isHashHistory}/guidance/1`}>悦采香玫瑰园</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </LazyLoad>

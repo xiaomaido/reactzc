@@ -322,9 +322,9 @@ export class Quyou extends React.Component{ // 公共模板
             console.log('response',response)
             response.data = response.data || {}
             response.data.data = Array.isArray(response.data.data)?response.data.data:[]
-            if(randomSort){
-                response.data.data = response.data.data.sort(()=>Math.random()-0.5)
-            }
+            // if(randomSort){
+            //     response.data.data = response.data.data.sort(()=>Math.random()-0.5)
+            // }
             if(page === 0) {
                 me.setState({
                     [FETCH_PAGE]: {
@@ -635,13 +635,15 @@ window.initState=()=>{
         }
     }
 }
+import './eat/eat.scss'
 window.VideoList = (props) => {
     const { list, me, title = '视频推荐', type = 'EAT' } = props
     return (
         <div className="video clearboth">
             <div className="title-box">
-                <div className="line thinner-border clearboth"></div>
-                <div className="title" onClick={me.openPage.bind(me, `/videohot?_t=${type}`)}>{title}</div>
+                {/*<div className="line thinner-border clearboth"></div>*/}
+                <div className="eat-video" onClick={me.openPage.bind(me, `/videohot?_t=${type}`)}>{title}</div>
+                {/*<div className="title" onClick={me.openPage.bind(me, `/videohot?_t=${type}`)}>{title}</div>*/}
             </div>
             <div className="vlist">
                 <div className="ul-box">
