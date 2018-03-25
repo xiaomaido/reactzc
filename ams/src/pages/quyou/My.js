@@ -24,7 +24,7 @@ export default class Index extends Quyou{
         return (
             <div className="my">
                 <div className="icon headbox">
-                    <div className="icon wave"></div>
+                    {/*<div className="icon wave"></div>*/}
                     <div className="icon avatar" style={{backgroundImage:`url(${my.headimg||avatar_url})`}}></div>
                     <div className="arrow-box" onClick={me.openPage.bind(me,my.uid ? `/myprofile` : `/signin`)}>
                         <i className="icon" />

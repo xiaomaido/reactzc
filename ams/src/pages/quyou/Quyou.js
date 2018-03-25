@@ -642,7 +642,7 @@ window.VideoList = (props) => {
         <div className="video clearboth">
             <div className="title-box">
                 {/*<div className="line thinner-border clearboth"></div>*/}
-                <div className="eat-video" onClick={me.openPage.bind(me, `/videohot?_t=${type}`)}>当地食谱</div>
+                <div className="eat-video" onClick={me.openPage.bind(me, `/videohot?_t=${type}`)}>{title}</div>
                 {/*<div className="title" onClick={me.openPage.bind(me, `/videohot?_t=${type}`)}>{title}</div>*/}
             </div>
             <div className="vlist">

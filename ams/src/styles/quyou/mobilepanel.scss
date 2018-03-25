@@ -360,7 +360,7 @@ img {
     .headbox{
         max-width: $maxWidth;
         width: 100%;
-        height: px2rem(360px);
+        height: px2rem(377px);
         background-size: cover;
         background-image: url('../../images/quyou/icon/bg_m.png');
         position: relative;
@@ -749,7 +749,7 @@ img {
         padding: 0 px2rem(36px);
         .icon{
             height: px2rem(108px);
-            background-image: url('../../images/quyou/banner/abc.png');
+            background-image: url('../../images/quyou/banner/abc.jpg');
         }
     }
     .top{
@@ -762,27 +762,40 @@ img {
             flex-wrap: wrap;
             align-items: center;
             height: 2 * px2rem(40px) + px2rem(220px) + px2rem(16px);
-            a{
+            .cont{
                 width: px2rem(216px);
                 height: px2rem(110px);
+                display: inline-block;
+                text-align: center;
             }
-            a:nth-child(1){
+            a {
+                width: px2rem(76px);
+                height: px2rem(77px);
+                display: inline-block;
+            }
+            .cont:nth-child(1) a{
                 background-image: url('../../images/quyou/zhu/jpjd.png')
             }
-            a:nth-child(2){
+            .cont:nth-child(2) a{
                 background-image: url('../../images/quyou/zhu/tsms.png')
             }
-            a:nth-child(3){
+            .cont:nth-child(3) a{
                 background-image: url('../../images/quyou/zhu/stnz.png')
             }
-            a:nth-child(4){
+            .cont:nth-child(4) a{
                 background-image: url('../../images/quyou/zhu/jjsy.png')
             }
-            a:nth-child(5){
+            .cont:nth-child(5) a{
                 background-image: url('../../images/quyou/zhu/rqtj.png')
             }
-            a:nth-child(6){
+            .cont:nth-child(6) a{
                 background-image: url('../../images/quyou/zhu/thzk.png')
+            }
+
+            .wenzi {
+                font-size: px2rem(25px);
+                text-align: center;
+                color: #000000;
             }
         }
         .bar{
@@ -823,6 +836,13 @@ img {
         margin: px2rem(18px) 0;
         height: px2rem(152px);
         background-color: $color_ff;
+        .zhu2 {
+            background-image: url("../../images/quyou/zhu/zhu2.jpg");
+            width: 100%;
+            height: px2rem(172px);
+            cursor: pointer;
+        }
+
         .picture{
             float: right;
             margin-top: px2rem(18px);

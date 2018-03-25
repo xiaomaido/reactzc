@@ -81,7 +81,7 @@ const Content = (props) => {
                 <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}}></div>
                 <div className="content">点此进入图文列表</div>
             </div> */}
-            <VideoList list={recomm_medias} me={me} />
+            <VideoList list={recomm_medias} title="当地食谱" me={me} />
         </div>
     )
 }
