@@ -3,6 +3,7 @@ import inext from '../../images/quyou/banner/inext.png'
 import notice from '../../images/quyou/banner/notice.png'
 import ptflzq from '../../images/quyou/banner/pic-ptflzq.png'
 import stncp from '../../images/quyou/banner/stncp.png'
+import dami from '../../images/quyou/banner/pic-dami@3x.png'
 const zenongji = `http://zenongji.com.cn/mobile/`
 // document.domain = "caibaojian.com";
 // const setIframeHeight = (iframeId) => {
@@ -44,6 +45,10 @@ export default class Index extends Quyou{
             <div className="mall">
                 <ul className="ad-list" style={{height:700}}>
                     <li>
+                        <a href={ true ? `${window.isHashHistory}/`:`javascript:;`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
+                        </a>
+                    </li>
+                    <li>
                         <a href={ true ? `${window.isHashHistory}/mallfuli?ltype=0&has_coupon=1`:`javascript:;`} className="icon big" style={{backgroundImage:`url(${ptflzq})`}}></a>
                         <div className="notice-box">
                             <a>查看详情<img src={inext} /></a>
@@ -51,10 +56,10 @@ export default class Index extends Quyou{
                             <span>请务必知晓使用须知的内容</span>
                         </div>
                     </li>
-                    <li>
-                        <a href={ true ? `${window.isHashHistory}/`:`javascript:;`} className="icon small" style={{backgroundImage:`url(${youhui})`}}>
-                        </a>
-                    </li>
+                    {/*<li>*/}
+                        {/*<a href={ true ? `${window.isHashHistory}/`:`javascript:;`} className="icon small" style={{backgroundImage:`url(${youhui})`}}>*/}
+                        {/*</a>*/}
+                    {/*</li>*/}
                     {/* <li>
                         <a href={ !true ? `${window.isHashHistory}/`:`http://www.zenongji.cn/wap/index.php`} className="icon small" style={{backgroundImage:`url(http://www.zenongji.cn/public/attachment/201705/25/10/59263d9a11c47.jpg)`}}>
                             <div className="ad">广告</div>
