@@ -50,16 +50,17 @@ export default class Index extends Quyou{
                     </li>
                     <li>
                         <a href={ true ? `${window.isHashHistory}/mallfuli?ltype=0&has_coupon=1`:`javascript:;`} className="icon big" style={{backgroundImage:`url(${ptflzq})`}}></a>
-                        <div className="notice-box">
+
+                        <div className="notice-box" onClick={this.openPage.bind(this, '/paperhot/214?_t=FAVORD')}>
                             <a>查看详情<img src={inext} /></a>
                             <img className="abc" src={notice} />
                             <span>请务必知晓使用须知的内容</span>
                         </div>
                     </li>
-                    {/*<li>*/}
-                        {/*<a href={ true ? `${window.isHashHistory}/`:`javascript:;`} className="icon small" style={{backgroundImage:`url(${youhui})`}}>*/}
-                        {/*</a>*/}
-                    {/*</li>*/}
+                    <li>
+                        <a href={ true ? `${window.isHashHistory}/paperhot/126?_t=FAVORD`:`javascript:;`} className="icon small" style={{backgroundImage:`url(${youhui})`}}>
+                        </a>
+                    </li>
                     {/* <li>
                         <a href={ !true ? `${window.isHashHistory}/`:`http://www.zenongji.cn/wap/index.php`} className="icon small" style={{backgroundImage:`url(http://www.zenongji.cn/public/attachment/201705/25/10/59263d9a11c47.jpg)`}}>
                             <div className="ad">广告</div>

@@ -123,6 +123,10 @@ window.pageMapRoute={
 		url:'/posthot/:id',
 		page:Pages.PostDetail
 	},
+    paperhot: {
+        url:'/paperhot/:id',
+        page:Pages.PagerHot
+	},
 	posthot: {
 		url:'/posthot',
 		page:Pages.PostHot

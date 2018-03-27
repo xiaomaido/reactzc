@@ -22,6 +22,16 @@ const Index = (props) => {
         if(_t === 'SLEEP') backUrl='/hotelhot'
         else if(_t === 'TOUR') backUrl='/triphot'
     }
+    else if(backUrl == '/paperhot') {
+        if (_t === 'FAVORD' && (current[2] == 214 || current[2] == 126)) {
+            backUrl = '/mall';
+            titleimg = `${titleimg}${current[2]}`
+        }
+        if (_t === 'FAVORD' && (current[2] == 213)) {
+            backUrl = '/trip';
+            titleimg = `${titleimg}${current[2]}`
+        }
+    }
     window.locationFrom = window._location
     if(locationFrom && typeof locationFrom === 'object'){
         const pathnameFrom = locationFrom.pathname + locationFrom.search
