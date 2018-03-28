@@ -72,7 +72,7 @@ const Content = (props) => {
             <TouchSlideBox imgSlideList={imgSlideList} />    
             <div className="menulist">
                 <div className="row">
-                    <a href="javascript:;" className="row_a" style={{right:0}}>
+                    <a href={ true ? `${window.isHashHistory}/paperhot/213?_t=FAVORD`:`javascript:;`} className="row_a" style={{right:0}}>
                         <div className="icon yingyuan"></div>                        
                         <div className="text">影院排名</div>                        
                     </a>

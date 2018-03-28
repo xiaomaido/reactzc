@@ -1,3 +1,5 @@
+import './hotel/hotel.scss';
+
 const API_PAGE = APIS.API_SLEEP_INDEX
 const FETCH_PAGE = TYPES.FETCH_SLEEP_INDEX
 export default class Index extends Quyou{
@@ -62,7 +64,11 @@ const Content = (props) => {
             <div className="top">
                 <TouchSlideBox imgSlideList={banner} />
                 <div className="hotelhot" onClick={me.openPage.bind(me, `/hotelhot`)}>
-                    <div className="icon"></div>
+                    {/*<div className="icon"></div>*/}
+                    <div className="h-title">酒店</div>
+                    <div className="h-content">一键筛选最适合您的酒店</div>
+                    <div className="h-chakan"></div>
+                    <div className="h-icon">查看</div>
                     <div className="clearboth thinner-border"></div>
                 </div>
                 <div className="hotelCates">

@@ -745,8 +745,8 @@ img {
     background-color: $color_f5;
     padding-bottom: $barBottom;
     .hotelhot{
-        height: px2rem(108px);
-        padding: 0 px2rem(36px);
+        //height: px2rem(108px);
+        //padding: 0 px2rem(36px);
         .icon{
             height: px2rem(108px);
             background-image: url('../../images/quyou/banner/abc.jpg');
@@ -836,12 +836,6 @@ img {
         margin: px2rem(18px) 0;
         height: px2rem(152px);
         background-color: $color_ff;
-        .zhu2 {
-            background-image: url("../../images/quyou/zhu/zhu2.jpg");
-            width: 100%;
-            height: px2rem(172px);
-            cursor: pointer;
-        }
 
         .picture{
             float: right;
@@ -2236,7 +2230,7 @@ img {
             }
             .big{
                 height: 9.4rem;
-                background-size: cover;
+                background-size: contain;
             }
             .small{
                 height: px2rem(220px);
