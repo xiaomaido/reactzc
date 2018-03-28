@@ -4,6 +4,7 @@ const API_PAGE = APIS.API_MY_COUPON_LIST
 const API_MY_COUPON_USE = APIS.API_MY_COUPON_USE
 const okay='核销'
 const title='商家确认'
+const ID='coupon_id'
 export default class Index extends Quyou{
     initTextOkay=okay
     state={
@@ -16,17 +17,16 @@ export default class Index extends Quyou{
         textTitle: title
     }
     ltypes=['未使用','已使用','已过期']
-	handleSaveComment({ property = '' }, e){
+	handleSaveComment({ property = '', ID }, e){
         const me = this
         const { state, initTextOkay } = me
-		const { valueCreateComment, textOkay, params } = state
-        const { query } = me.props
+        const { valueCreateComment, textOkay, couponId } = state
 		if(textOkay === initTextOkay && valueCreateComment) {
 			me.setState({
 				textOkay: `${initTextOkay}中...`,
             })
 			me.requestAPI(API_MY_COUPON_USE,{
-                ...params,
+                [ID]: couponId,
                 [property]: valueCreateComment,
                 token: me.user.token,
 			},(response)=>{
@@ -49,7 +49,7 @@ export default class Index extends Quyou{
                     ...me.state[FETCH_PAGE]
                 }
                 FETCH_TEMP.response.data.count += -1
-                FETCH_TEMP.response.data.data = FETCH_TEMP.response.data.data.filter(({coupon_id})=>coupon_id!==params.coupon_id)
+                FETCH_TEMP.response.data.data = FETCH_TEMP.response.data.data.filter(({coupon_id})=>coupon_id!==couponId)
 				me.setState({
 					textOkay: initTextOkay,
 					showCreateComment: false,
@@ -91,7 +91,7 @@ export default class Index extends Quyou{
                             textTitle={textTitle}
                             textOkay={textOkay}
                             handleClickCancel={me.handleShowCreateComment.bind(me)} 
-                            handleClickOkay={me.handleSaveComment.bind(me, { property: 'coupon_code' })} 
+                            handleClickOkay={me.handleSaveComment.bind(me, { property: 'coupon_code', ID })} 
                             handleChangeInput={me.handleChangeCreateComment.bind(me)} /> : null
 			    }
                 <ul className="types">
@@ -148,7 +148,7 @@ const Content = (props) => {
                     return (
                         <div key={i} className="item">
                             {
-                                _location.query.ltype === '0' ? <div className="btn" onClick={me.handleShowCreateComment.bind(me, { coupon_id: d.coupon_id })}>点击使用</div> : null
+                                _location.query.ltype === '0' ? <div className="btn" onClick={me.handleShowCreateComment.bind(me, { couponId: d.coupon_id })}>点击使用</div> : null
                             }
                             <div className="icon cover circle" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
                             <div className="content">
