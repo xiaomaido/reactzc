@@ -7,14 +7,15 @@ export default class TouchSlideBox extends Component{
 	}
 	render(){
 		const { imgSlideList } = this.props
-		return (
+        // {/*<li key={i}><a href={~d.url.indexOf('http')?d.url:window.isHashHistory+(d.url||_location.pathname)} className="icon sample" style={{ backgroundImage: 'url(' + d.img + ')' }}></a></li>*/}
+        return (
 			<div id="TouchSlideBox" className="slideBox">
 			    <div className="bd">
 			        <ul>
                    		{ 
                    			imgSlideList.map((d,i)=>
                    				(
-        							<li key={i}><a href={~d.url.indexOf('http')?d.url:window.isHashHistory+(d.url||_location.pathname)} className="icon sample" style={{ backgroundImage: 'url(' + d.img + ')' }}></a></li>
+        							<li key={i}><a href="javascript:void(0);" className="icon sample" style={{ backgroundImage: 'url(' + d.img + ')' }}></a></li>
                    				)
                    			)
                    		}
