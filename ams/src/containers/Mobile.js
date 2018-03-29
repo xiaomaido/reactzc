@@ -64,9 +64,13 @@ window.pageMapRoute={
 		page:Pages.GuidanceDetail
 	},
 	guidance: {
-		url:'/guidance',
+		url:'/guidance2',
 		page:Pages.Guidance
 	},
+    guidance2: {
+        url:'/guidance',
+        page:Pages.Guidance2
+    },
 	// busline: {
 	// 	url:'/busline',
 	// 	page:Pages.BusLine
@@ -118,6 +122,10 @@ window.pageMapRoute={
 	postdetail: {
 		url:'/posthot/:id',
 		page:Pages.PostDetail
+	},
+    paperhot: {
+        url:'/paperhot/:id',
+        page:Pages.PagerHot
 	},
 	posthot: {
 		url:'/posthot',

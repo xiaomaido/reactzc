@@ -1,6 +1,7 @@
 import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
+import './eat/eat.scss';
 const API_PAGE = APIS.API_EAT_INDEX
 const FETCH_PAGE = TYPES.FETCH_EAT_INDEX
 export default class Index extends Quyou{
@@ -71,9 +72,10 @@ const Content = (props) => {
                 </ul>
             </div>
             <div className="yummy clearboth">
-                <div className="icon logo" onClick={me.openPage.bind(me,  `/posthot`)}></div>
-                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}} onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}></div>
-                <div className="content" onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}>{post_index.description}</div>
+                <div className="icon eat-log" onClick={me.openPage.bind(me,  `/posthot`)}></div>
+                {/*<div className="icon logo" onClick={me.openPage.bind(me,  `/posthot`)}></div>*/}
+                {/*<div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}} onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}></div>*/}
+                {/*<div className="content" onClick={me.openPage.bind(me,  `/posthot/${post_index.id}`)}>{post_index.description}</div>*/}
             </div>
             {/* <div className="yummy clearboth" onClick={me.openPage.bind(me,  `/posthot?_t=PLUS`)}>
                 <div className="icon logo"></div>

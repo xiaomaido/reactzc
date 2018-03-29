@@ -62,6 +62,9 @@ img {
             .huodong{
                 background-image: url('../../images/quyou/trip/huodong.png');
             }
+            .quanyuditu {
+                background-image: url('../../images/quyou/trip/quanyuditu.jpg');
+            }
             .shadow{
                 opacity: 0.6
             }
@@ -79,6 +82,64 @@ img {
         margin: px2rem(24px) 0 0;
         background-color: $color_ff;
         height: px2rem(306px);
+        .gongjiao {
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            background-image: url("../../images/quyou/trip/gongjiao@3x.png");
+
+            .content {
+                font-size: px2rem(2.83px);
+
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, 50%);
+                text-align: center;
+                color: white;
+                font-weight: 200;
+                left: 50%;
+                letter-spacing: 1px;
+                width: px2rem(240px);
+
+                .content1 {
+                    transform: scale(0.6, 0.6);
+                    font-weight: 100;
+                    line-height: 10px;
+                }
+            }
+        }
+        .lundu {
+            .content {
+                font-size: px2rem(2.83px);
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, 50%);
+                text-align: center;
+                color: white;
+                font-weight: 200;
+                left: 50%;
+                letter-spacing: 1px;
+                width: px2rem(240px);
+
+                .content1 {
+                    transform: scale(0.6, 0.6);
+                    font-weight: 100;
+                    line-height: 10px;
+                }
+            }
+
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            background-image: url("../../images/quyou/trip/lundu@3x.png");
+        }
+
         img{
             display: block;
             margin: px2rem(24px) auto 0;
@@ -709,27 +770,40 @@ img {
             flex-wrap: wrap;
             align-items: center;
             height: 2 * px2rem(40px) + px2rem(220px) + px2rem(16px);
-            a{
+            .cont{
                 width: px2rem(216px);
                 height: px2rem(110px);
+                display: inline-block;
+                text-align: center;
             }
-            a:nth-child(1){
-                background-image: url('../../images/quyou/zhu/jpjd.png')
+            a {
+                width: px2rem(76px);
+                height: px2rem(77px);
+                display: inline-block;
             }
-            a:nth-child(2){
-                background-image: url('../../images/quyou/zhu/tsms.png')
+            .cont:nth-child(1) a{
+                background-image: url('../../images/quyou/zhu/ic-jpjd@3x.png')
             }
-            a:nth-child(3){
-                background-image: url('../../images/quyou/zhu/stnz.png')
+            .cont:nth-child(2) a{
+                background-image: url('../../images/quyou/zhu/ic-jjsy@3x.png')
             }
-            a:nth-child(4){
-                background-image: url('../../images/quyou/zhu/jjsy.png')
+            .cont:nth-child(3) a{
+                background-image: url('../../images/quyou/zhu/ic-tsms@3x.png')
             }
-            a:nth-child(5){
-                background-image: url('../../images/quyou/zhu/rqtj.png')
+            .cont:nth-child(4) a{
+                background-image: url('../../images/quyou/zhu/ic-rqtj@3x.png')
             }
-            a:nth-child(6){
-                background-image: url('../../images/quyou/zhu/thzk.png')
+            .cont:nth-child(5) a{
+                background-image: url('../../images/quyou/zhu/ic-tjzk@3x.png')
+            }
+            .cont:nth-child(6) a{
+                background-image: url('../../images/quyou/zhu/ic-stnz@3x.png')
+            }
+
+            .wenzi {
+                font-size: px2rem(25px);
+                text-align: center;
+                color: #000000;
             }
         }
         .bar{
@@ -2163,7 +2237,7 @@ img {
             }
             .big{
                 height: 9.4rem;
-                background-size: cover;
+                background-size: contain;
             }
             .small{
                 height: px2rem(220px);

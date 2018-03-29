@@ -1,0 +1,57 @@
+@import "../../../styles/vars.scss";
+
+
+.zhu2 {
+  background-image: url("../../../images/quyou/zhu/zhu2.jpg");
+  width: 100%;
+  height: px2rem(172px);
+  cursor: pointer;
+}
+
+.hotelhot {
+  margin: 0 0.9rem;
+  line-height: 46px;
+  //border-bottom-style: solid;
+  //border-bottom-width: 1px;
+  //border-bottom-color: #e1e1e1;
+  height: px2rem(108px);
+
+  .h-title {
+    display: inline-block;
+    font-size: px2rem(40px);
+    font-weight: bold;
+    font-style: italic;
+    color: #000000;
+  }
+
+  .h-content {
+    margin-left: px2rem(66px);
+    display: inline-block;
+    font-size: px2rem(30.68px);
+    font-weight: bold;
+    font-style: italic;
+    color: #eea235;
+  }
+
+  .h-icon {
+    display: inline-block;
+    font-size: px2rem(20px);
+    float: right;
+    margin-top: 0.1rem;
+    margin-right: 0.3rem;
+    //margin-left: 2.2rem;
+    //margin-right: 0.3rem;
+  }
+  .h-chakan {
+    vertical-align: middle;
+    background-image: url("./zhu-chakan.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: px2rem(46px);
+    width: px2rem(30px);
+    display: inline-block;
+    float: right;
+    margin-top: px2rem(28px);
+  }
+}

@@ -1,3 +1,5 @@
+import './hotel/hotel.scss';
+
 const API_PAGE = APIS.API_SLEEP_INDEX
 const FETCH_PAGE = TYPES.FETCH_SLEEP_INDEX
 export default class Index extends Quyou{
@@ -48,6 +50,15 @@ const Content = (props) => {
     // {
     //     me.hotelTags.map(({id, name})=><a key={id} className="icon" href={`${window.isHashHistory}/hotelhot?tagname=${name}&tag=${id}`}></a>)
     // }
+    const wenzi = [
+        '精品酒店',
+        '经济适用',
+        '特色民宿',
+        '人气推荐',
+        '特惠折扣',
+        '生态农庄',
+
+    ];
     return (
         <div className="eat">
             <div className="top">
@@ -58,14 +69,25 @@ const Content = (props) => {
                 </div>
                 <div className="hotelCates">
                     {
-                        me.hotelTags.map(({id, name})=><a key={id} className="icon" href={`${window.isHashHistory}/hotelhot?tag=${id}`}></a>)
+                        me.hotelTags.map(({id, name, title}, index)=>{
+                            // return <a key={id} className="icon" href={`${window.isHashHistory}/hotelhot?tag=${id}`}>
+                            //     </a>
+                            return <div key={index} className="cont icon">
+
+                                <a key={id} className="icon" href={`${window.isHashHistory}/hotelhot?tag=${id}`}>
+                                </a>
+                                <div className="wenzi">{title}</div>
+                            </div>
+                        })
                     }
                 </div>
             </div>
             <div className="yummy clearboth">
-                <div className="icon logo hotel" onClick={me.openPage.bind(me,  `/posthot?_t=SLEEP`)}></div>
-                <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}} onClick={me.openPage.bind(me,  `/posthot/${post_index.id}?_t=SLEEP`)}></div>
-                <div className="content" onClick={me.openPage.bind(me, `/posthot/${post_index.id}?_t=SLEEP`)}>{post_index.description}</div>
+                <div className="zhu2 icon" onClick={me.openPage.bind(me,  `/posthot?_t=SLEEP`)}>
+                </div>
+                {/*<div className="icon logo hotel" onClick={me.openPage.bind(me,  `/posthot?_t=SLEEP`)}></div>*/}
+                {/*<div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}} onClick={me.openPage.bind(me,  `/posthot/${post_index.id}?_t=SLEEP`)}></div>*/}
+                {/*<div className="content" onClick={me.openPage.bind(me, `/posthot/${post_index.id}?_t=SLEEP`)}>{post_index.description}</div>*/}
             </div>
             <VideoList list={recomm_medias} me={me} title={"酒店视频"} type={"SLEEP"} />
         </div>

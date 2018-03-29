@@ -9,6 +9,7 @@ const imgSlideList=[
         url: `/guidance`,
     },
 ]
+
 const API_PAGE = APIS.API_TOUR_INDEX
 const FETCH_PAGE = TYPES.FETCH_TOUR_INDEX
 export default class Index extends Quyou{
@@ -68,17 +69,17 @@ const Content = (props) => {
             <div className="menulist">
                 <div className="row">
                     <a href="javascript:;" className="row_a" style={{right:0}}>
-                        <div className="icon yingyuan"></div>                        
-                        <div className="text">影院排名</div>                        
+                        <div className="icon evcard"></div>
+                        <div className="text">EVCARD</div>
                     </a>
-                    <a href={`${window.isHashHistory}/triphot?cate=-1`} className="row_a" style={{left:0}}>
-                        <div className="icon jingdian"></div>                        
-                        <div className="text">热门景点</div>                        
+                    <a href={`${window.isHashHistory}/guidance`} className="row_a" style={{left:0}}>
+                        <div className="icon quanyuditu"></div>
+                        <div className="text">全域地图</div>
                     </a>
                     <div className="row_div">
-                        <a href="javascript:;">
-                            <div className="icon evcard"></div>                        
-                            <div className="text">EVCARD</div>                        
+                        <a href={`${window.isHashHistory}/triphot?cate=-1`} >
+                            <div className="icon jingdian"></div>
+                            <div className="text">热门景点</div>
                         </a>
                     </div>
                 </div>
@@ -87,14 +88,14 @@ const Content = (props) => {
                         <div className="icon huodong shadow"></div>                        
                         <div className="text">活动报名</div>                        
                     </a>
-                    <a href="http://wx.weather.com.cn/mweather/101021100.shtml?from=quyou&isappinstalled=0#1" className="row_a" style={{left:0}}>
-                        <div className="icon tianqi"></div>                        
-                        <div className="text">天气预报</div>                        
+                    <a href={ true ? `${window.isHashHistory}/paperhot/213?_t=FAVORD`:`javascript:;`} className="row_a" style={{left:0}}>
+                        <div className="icon yingyuan"></div>
+                        <div className="text">影院排名</div>
                     </a>
                     <div className="row_div">
-                        <a href="javascript:;">
-                            <div className="icon geren shadow"></div>                        
-                            <div className="text">个人定制</div>                        
+                        <a href="http://wx.weather.com.cn/mweather/101021100.shtml?from=quyou&isappinstalled=0#1">
+                            <div className="icon tianqi"></div>
+                            <div className="text">天气预报</div>
                         </a>
                     </div>
                 </div>
@@ -113,15 +114,27 @@ const Content = (props) => {
             </div> */}
             <div className="busboat">
                 <a className="column" href={'http://shanghaicity.openservice.kankanews.com/public/bus'}>
-                    <div className="titlet">崇明公交线路</div>
-                    <div className="desct">打造低碳环保出行</div>
-                    <img alt={'崇明公交'} src={busicon} />
+                    <div className="gongjiao">
+                        <div className="content">
+                            <div className="">崇明公交线路</div>
+                            <div className="content1">打造低碳环保出行</div>
+                        </div>
+                    </div>
+                    {/*<div className="titlet">崇明公交线路</div>*/}
+                    {/*<div className="desct">打造低碳环保出行</div>*/}
+                    {/*<img alt={'崇明公交'} src={busicon} />*/}
                 </a>
                 <div className="column" style={{width:0}}><div className="thin-border-verical"></div></div>
                 <a className="column" href={'http://shcm.dashenw.cn/static/ferrytime.html'}>
-                    <div className="titlet">崇明轮渡出行</div>
-                    <div className="desct">横渡长江岛中部首选</div>
-                    <img alt={'崇明轮渡'} src={boaticon} />
+                    <div className="lundu">
+                        <div className="content">
+                            <div className="">崇明轮渡出行</div>
+                            <div className="content1">横渡长江中部首选</div>
+                        </div>
+                    </div>
+                    {/*<div className="titlet">崇明轮渡出行</div>*/}
+                    {/*<div className="desct">崇明轮渡出行</div>*/}
+                    {/*<img alt={'崇明轮渡'} src={boaticon} />*/}
                 </a>
             </div>
             {/* <div style={{height:0}}>&nbsp;</div> */}

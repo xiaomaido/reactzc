@@ -22,6 +22,16 @@ const Index = (props) => {
         if(_t === 'SLEEP') backUrl='/hotelhot'
         else if(_t === 'TOUR') backUrl='/triphot'
     }
+    else if(backUrl == '/paperhot') {
+        if (_t === 'FAVORD' && (current[2] == 214 || current[2] == 126)) {
+            backUrl = '/mall';
+            titleimg = `${titleimg}${current[2]}`
+        }
+        if (_t === 'FAVORD' && (current[2] == 213)) {
+            backUrl = '/trip';
+            titleimg = `${titleimg}${current[2]}`
+        }
+    }
     window.locationFrom = window._location
     if(locationFrom && typeof locationFrom === 'object'){
         const pathnameFrom = locationFrom.pathname + locationFrom.search
@@ -36,6 +46,7 @@ const Index = (props) => {
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/triphot'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/foodhot/'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/guidance/'))
+            || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/guidance2/'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/mallfuli'))
             || (~pathnameNow.indexOf('/videohot/') && pathnameFrom === '/')
             || (~pathnameNow.indexOf('/videohot/') && pathnameFrom === '/hotel')
@@ -46,7 +57,7 @@ const Index = (props) => {
             backUrl = pathnameFrom
         }
     }
-    console.log('backUrl', backUrl)
+    console.log('backUrl', backUrl, 'titleimg', titleimg);
     return (
         <div className="titleBar">
             <div className="box">

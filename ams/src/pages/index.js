@@ -24,10 +24,12 @@ import Trip from './quyou/Trip'
 import TripHot from './quyou/TripHot'
 // import BusLine from './quyou/BusLine'
 import Guidance from './quyou/Guidance'
+import Guidance2 from './quyou/guidance/Guidance2'
 import GuidanceDetail from './quyou/GuidanceDetail'
 import Signin from './quyou/Signin'
 import CurrentRoutes from './quyou/CurrentRoutes'
 import Query from './quyou/Query'
+import PagerHot from './quyou/PagerHot'
 // import TencentLocation from './quyou/TencentLocation'
 export { 
 	IntlDemo,
@@ -53,6 +55,7 @@ export {
 	Trip,
 	TripHot,
 	Guidance,
+	Guidance2,
 	GuidanceDetail,
 	// BusLine,
 	Mall,
@@ -60,5 +63,6 @@ export {
 	CurrentRoutes,
 	MallFuli,
 	Query,
+    PagerHot,
 	// TencentLocation,
 }

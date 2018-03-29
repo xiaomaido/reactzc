@@ -322,9 +322,9 @@ export class Quyou extends React.Component{ // 公共模板
             console.log('response',response)
             response.data = response.data || {}
             response.data.data = Array.isArray(response.data.data)?response.data.data:[]
-            if(randomSort){
-                response.data.data = response.data.data.sort(()=>Math.random()-0.5)
-            }
+            // if(randomSort){
+            //     response.data.data = response.data.data.sort(()=>Math.random()-0.5)
+            // }
             if(page === 0) {
                 me.setState({
                     [FETCH_PAGE]: {
@@ -607,6 +607,8 @@ window.APIS={
     API_PLUS_POST_DETAIL:`/eatIndex/postPlusDetail`,
     API_PLUS_POST_COMMENT:`/eatIndex/postPlusComment`,
     API_PLUS_POST_LIKE:`/eatIndex/postPlusLike`,
+
+    API_FAVORD_POST_DETAIL: `/shopIndex/favordiscountDetail`,
 }
 window.STATE={
     coupons: [{
@@ -731,7 +733,8 @@ window.PostDetail  = (props) => {
             is_follow: 0
         },
         me,
-        params = { }
+        params = { },
+        noShowHeder,
     } = props
     let { isDoFollow = false } =  me.state
     const isFollowed = d.is_follow
@@ -747,28 +750,37 @@ window.PostDetail  = (props) => {
             }
             <div className="toper">
                 <div className="title">{d.title}</div>
-                <div className="heder">
-                    <div className={classnames({ follow:true, active: isFollowed })} onClick={me.handleFollow.bind(me, { user_id: d.user_id, isFollowed, API_MY_DO_FOLLOW, FETCH_PAGE })}>
-                        {
-                            isDoFollow ? (
-                                isFollowed ? '取消关注...' : (
-                                    <div>
-                                        <span>+</span>关注中...
-                                    </div>
-                                )
-                            ) : (
-                                isFollowed ? '已关注' : (
-                                    <div>
-                                        <span>+</span>关注
-                                    </div>
-                                )
-                            )
-                        }
-                    </div>
-                    <img src={d.headimg} />
-                    <div className="nickname">{d.nickname}<a className="icon"></a></div>
-                    <div className="create">{misc.formatTime(d.create_dt*1000,2)}</div>
-                </div>
+                {
+                    noShowHeder
+                        ?
+                        null
+                        :
+                        (
+                            <div className="heder">
+                                <div className={classnames({ follow:true, active: isFollowed })} onClick={me.handleFollow.bind(me, { user_id: d.user_id, isFollowed, API_MY_DO_FOLLOW, FETCH_PAGE })}>
+                                    {
+                                        isDoFollow ? (
+                                            isFollowed ? '取消关注...' : (
+                                                <div>
+                                                    <span>+</span>关注中...
+                                                </div>
+                                            )
+                                        ) : (
+                                            isFollowed ? '已关注' : (
+                                                <div>
+                                                    <span>+</span>关注
+                                                </div>
+                                            )
+                                        )
+                                    }
+                                </div>
+                                <img src={d.headimg} />
+                                <div className="nickname">{d.nickname}<a className="icon"></a></div>
+                                <div className="create">{misc.formatTime(d.create_dt*1000,2)}</div>
+                            </div>
+                        )
+                }
+
                 {
                     isVideo ? null : (
                         d.is_rich==="0" ? (
