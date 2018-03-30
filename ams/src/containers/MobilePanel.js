@@ -47,6 +47,7 @@ export default class MobilePanel extends Component{
 			'/triphot':arr[2],
 			'/busline':arr[2],
 			'/guidance':arr[2],
+            '/guidance2':arr[2],
 			'/query':arr[2],
 			'/guidancedetail':arr[2],
 			'/mallfuli':arr[3],
