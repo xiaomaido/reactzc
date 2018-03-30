@@ -19,14 +19,13 @@ export default class Index extends Quyou{
 	handleSaveComment({ property = '' }, e){
         const me = this
         const { state, initTextOkay } = me
-		const { valueCreateComment, textOkay, params } = state
-        const { query } = me.props
+        const { valueCreateComment, textOkay, coupon_id: couponId } = state
 		if(textOkay === initTextOkay && valueCreateComment) {
 			me.setState({
 				textOkay: `${initTextOkay}中...`,
             })
 			me.requestAPI(API_MY_COUPON_USE,{
-                ...params,
+                coupon_id: couponId,
                 [property]: valueCreateComment,
                 token: me.user.token,
 			},(response)=>{
@@ -140,6 +139,7 @@ const Content = (props) => {
     // data = [
     //     ...data,
     // ]
+    const tempStyle = _location.query.ltype !== '0' ? {width:'12rem'} : {}
     return (
         <div className="list">
             {
@@ -152,7 +152,7 @@ const Content = (props) => {
                             }
                             <div className="icon cover circle" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
                             <div className="content">
-                                <div className="name coupon">{`【${'凌一刀'}】`} {d.title} {d.desc_title} </div>
+                                <div className="name coupon" style={tempStyle}>{`【${'凌一刀'}】`} {d.title} {d.desc_title} </div>
                                 <div className="end coupon">{misc.formatDateTime(new Date(d.end_dt*1000), misc.formatType['1'])}到期</div>
                             </div>
                         </div>

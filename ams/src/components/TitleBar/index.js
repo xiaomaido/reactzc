@@ -40,6 +40,7 @@ const Index = (props) => {
         console.log('pathnameNow', pathnameNow)
         if( 
             pathnameFrom === '/seasonhot'
+            || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/guidance')
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/')
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/hotel')
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/hotelhot'))

@@ -1,6 +1,5 @@
 import './guidance2.scss';
 import ditu from './ditu.jpg';
-import React from 'react';
 
 const initStateResponse = {
 	data: {
@@ -58,8 +57,8 @@ class Content extends React.Component {
         this.setState({
             imgStyle: {
                 backgroundImage:`url(${ditu})`,
-                height: window.screen.height - 2.2*window.fontSize,
-                width: window.screen.height - 2.2*window.fontSize,
+                height: window.innerHeight - 2.2*window.fontSize,
+                width: window.innerHeight - 2.2*window.fontSize,
             }
         });
     }
