@@ -90,7 +90,7 @@ const Content = (props) => {
                     </a>
                     <a href={ true ? `${window.isHashHistory}/paperhot/213?_t=FAVORD`:`javascript:;`} className="row_a" style={{left:0}}>
                         <div className="icon yingyuan"></div>
-                        <div className="text">影院排名</div>
+                        <div className="text">影院排片</div>
                     </a>
                     <div className="row_div">
                         <a href="http://wx.weather.com.cn/mweather/101021100.shtml?from=quyou&isappinstalled=0#1">

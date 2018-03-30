@@ -2194,13 +2194,15 @@ img {
         margin: 0 auto;
         display: block;
         margin-top: 0.8rem;
+        height: px2rem(48px);
         img.abc{
             float: left;
             height: px2rem(48px);
         }
         span{
+            float: left;
             margin-left: px2rem(20px);
-            line-height: px2rem(22px);
+            line-height: px2rem(48px);
             font-size: px2rem(22px);
         }
         a{
