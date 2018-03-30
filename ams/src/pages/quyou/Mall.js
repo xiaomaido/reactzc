@@ -45,7 +45,7 @@ export default class Index extends Quyou{
             <div className="mall">
                 <ul className="ad-list" style={{height:700}}>
                     <li>
-                        <a href={ true ? `${window.isHashHistory}/`:`javascript:;`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
+                        <a href={ !true ? `${window.isHashHistory}/`:`http://m.chongnongpi.com/index.jsp`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
                         </a>
                     </li>
                     <li>
