@@ -583,6 +583,7 @@ img {
         background-color: $color_33;
         .name{
             color: $color_ffc913;
+            font-weight: 800;
         }
         .t-down{
             position: absolute;
@@ -608,15 +609,15 @@ img {
         .name{
             // margin-top: px2rem(30px);
             color: $color_33;
-            font-size: px2rem(30px);
-            line-height: px2rem(30px);
+            font-size: px2rem(34px);
+            line-height: px2rem(34px);
            
         }
         .number{
             margin-top: px2rem(15px);
             color: $color_99;
-            font-size: px2rem(26px);
-            line-height: px2rem(26px);
+            font-size: px2rem(32px);
+            line-height: px2rem(32px);
             font-weight: 900;
         }
         
