@@ -306,7 +306,7 @@ export class Quyou extends React.Component{ // 公共模板
             req[`eara`]=``
             req[`cate`]=``
         // }else if(API_PAGE===`/sleepIndex/sellerSearch`){
-        }else if(~API_PAGE.indexOf(`/sellerSearch`)){
+        }else if(~API_PAGE.indexOf(`/sellerSearch`)||~API_PAGE.indexOf(`/foodSearch`)||~API_PAGE.indexOf(`/seasonRecSearch`)){
             req={
                 ...req,
                 ..._location.query
