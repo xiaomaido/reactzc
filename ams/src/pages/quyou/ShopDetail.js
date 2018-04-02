@@ -1,3 +1,5 @@
+import Confirm from '../../components/Confirm';
+
 const initStateResponse = {
 	data: {
 		comment_count: 0, 
@@ -46,7 +48,15 @@ export default class Index extends Quyou{
 				const { code=-1, data="", msg="" } = response
 				// {"msg":"已经领取","data":"","code":20012}
 				if(code){
-					alert(msg)
+                    Confirm.show({
+						title: msg,
+						desc: '恭喜您已经领取过',
+						callBacks: [
+							{text: '我知道了', onClick: () => {Confirm.close()}},
+                            // {text: '选择2', onClick: () => {}}
+						]
+					});
+					// alert(msg)
 					return
 				}
 				// {"msg":"","data":true,"code":0}
