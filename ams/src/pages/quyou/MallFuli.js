@@ -20,6 +20,7 @@ const FETCH_PAGE_SET=[TYPES.FETCH_EAT_SHOP_LIST,TYPES.FETCH_SLEEP_SHOP_LIST,TYPE
 const ltypesSet=['EAT','SLEEP','TOUR']
 export default class Index extends Quyou{
     ltypes=['吃','住','游']
+    ltypesEn=['eat-m','zhu-m','trip-m']
     
     constructor(props){
         super(props)
@@ -50,6 +51,7 @@ export default class Index extends Quyou{
                         me.ltypes.map((d,i)=>(
                             <li key={i} className={classnames({active:this.ltype===i})} onClick={me.handleClick.bind(me,i)}>
                                 <div className="name">{d}</div>
+                                <div className={`${this.ltypesEn[i]} image-m`}></div>
                                 <div className="t-down"></div>
                             </li>
                         ))

@@ -16,6 +16,7 @@ export default class Index extends Quyou{
         textTitle: title
     }
     ltypes=['未使用','已使用','已过期']
+    ltypesEn = ['unused-m', 'used-m', 'expired-m']
 	handleSaveComment({ property = '' }, e){
         const me = this
         const { state, initTextOkay } = me
@@ -97,10 +98,13 @@ export default class Index extends Quyou{
                     {
                         me.ltypes.map((d,i)=>(
                             <li key={i} className={classnames({active:ltype===i})} onClick={me.handleClick.bind(me,i)}>
-                                <div className="name">{d}</div>
-                                {
-                                    ltype===i?<div className="number">{response.data.count}</div>:null
-                                }
+                                <div className="name">
+                                    {d}
+                                    {
+                                        ltype===i?<div className="number">{response.data.count}</div>:null
+                                    }
+                                </div>
+                                <div className={`${this.ltypesEn[i]} image-m`}></div>
                                 <div className="t-down"></div>
                             </li>
                         ))
@@ -139,7 +143,8 @@ const Content = (props) => {
     // data = [
     //     ...data,
     // ]
-    const tempStyle = _location.query.ltype !== '0' ? {width:'12rem'} : {}
+    const ltype = _location.query.ltype
+    const tempStyle = ltype !== '0' ? {width:'12rem'} : {}
     return (
         <div className="list">
             {
@@ -148,12 +153,14 @@ const Content = (props) => {
                     return (
                         <div key={i} className="item">
                             {
-                                _location.query.ltype === '0' ? <div className="btn" onClick={me.handleShowCreateComment.bind(me, { coupon_id: d.coupon_id })}>点击使用</div> : null
+                                ltype === '0' ? <div className="btn" onClick={me.handleShowCreateComment.bind(me, { coupon_id: d.coupon_id })}>点击使用</div> : null
                             }
                             <div className="icon cover circle" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
                             <div className="content">
-                                <div className="name coupon" style={tempStyle}>{`【${'凌一刀'}】`} {d.title} {d.desc_title} </div>
-                                <div className="end coupon">{misc.formatDateTime(new Date(d.end_dt*1000), misc.formatType['1'])}到期</div>
+                                <div className="name coupon" style={tempStyle}>{`【${d.seller.name}】`} {d.title} {d.desc_title} </div>
+                                {
+                                    ltype === '1' ? <div className="end coupon">{misc.formatDateTime(new Date(d.end_dt*1000), misc.formatType['1'])} 使用</div> : <div className="end coupon">{misc.formatDateTime(new Date(d.end_dt*1000), misc.formatType['1'])} 到期</div>
+                                }
                             </div>
                         </div>
                     )
