@@ -16,6 +16,7 @@ export default class Index extends Quyou{
         textTitle: title
     }
     ltypes=['未使用','已使用','已过期']
+    ltypesEn = ['unused-m', 'used-m', 'expired-m']
 	handleSaveComment({ property = '' }, e){
         const me = this
         const { state, initTextOkay } = me
@@ -97,10 +98,13 @@ export default class Index extends Quyou{
                     {
                         me.ltypes.map((d,i)=>(
                             <li key={i} className={classnames({active:ltype===i})} onClick={me.handleClick.bind(me,i)}>
-                                <div className="name">{d}</div>
-                                {
-                                    ltype===i?<div className="number">{response.data.count}</div>:null
-                                }
+                                <div className="name">
+                                    {d}
+                                    {
+                                        ltype===i?<div className="number">{response.data.count}</div>:null
+                                    }
+                                </div>
+                                <div className={`${this.ltypesEn[i]} image-m`}></div>
                                 <div className="t-down"></div>
                             </li>
                         ))

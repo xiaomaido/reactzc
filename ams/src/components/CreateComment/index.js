@@ -1,4 +1,5 @@
 import './index.scss'
+import Confirm from '../../components/Confirm';
  const Index = (props) => {
     const { 
         type = 'textarea',
@@ -9,6 +10,9 @@ import './index.scss'
         textCancel = '取消',
         textOkay = '确定',
         handleClickCancel = (e) => {
+            // Confirm.show({
+            //     title: 'cancel',
+            // })
             alert('cancel')
         },
         handleClickOkay = (e) => {
