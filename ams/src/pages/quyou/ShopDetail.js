@@ -1,4 +1,4 @@
-import Confirm from '../../components/Confirm';
+import Confirm from '../../components/Confirm'
 
 const initStateResponse = {
 	data: {
@@ -48,19 +48,52 @@ export default class Index extends Quyou{
 				const { code=-1, data="", msg="" } = response
 				// {"msg":"已经领取","data":"","code":20012}
 				if(code){
+					const codeMap = {
+						'20012': '您已经领取过该优惠券哦！'
+					}
                     Confirm.show({
-						title: msg,
-						desc: '恭喜您已经领取过',
+						title: '领取失败',
+						desc: codeMap[code]||msg,
 						callBacks: [
-							{text: '我知道了', onClick: () => {Confirm.close()}},
-                            // {text: '选择2', onClick: () => {}}
+							// {text: '我知道了', onClick: () => {Confirm.close()}},
+							// {text: '选择2', onClick: () => {}}
+							{
+								text: '查看优惠券',
+								onClick: () => {
+									Confirm.close()
+									me.openPage(`/mycoupons?ltype=0`)
+								}
+							},
+							// {
+							// 	text: '我知道了',
+							// 	onClick: () => {
+							// 		Confirm.close()
+							// 	}
+							// },
 						]
-					});
-					// alert(msg)
+					})
 					return
 				}
 				// {"msg":"","data":true,"code":0}
-				alert('领取成功')
+				// alert('领取成功')
+				Confirm.show({
+					title: '领取成功',
+					desc: '快去使用吧~',
+					callBacks: [
+						{
+							text: '查看优惠券',
+							onClick: () => {
+								debugger
+							}
+						},
+						// {
+						// 	text: '我知道了',
+						// 	onClick: () => {
+						// 		Confirm.close()
+						// 	}
+						// },
+					]
+				})
 				const FETCH_TEMP = me.state[FETCH_PAGE]
 				const temp = FETCH_TEMP.response.data.coupon.find(d=>d.id===coupon_id)
 				temp.reciev_count += 1
@@ -162,8 +195,8 @@ const ProductList = (props) => {
 															d.reciev_count?<div className="sold">{d.reciev_count}人已领</div>:null
 														}
 													</div>
-													<div className="text">{d.title}</div>
-													<div className="price">{d.desc_title}</div>
+													<div className="text ">{d.title}</div>
+													{/* <div className="price ">{d.desc_title}</div> */}
 													<div className={classnames({btn:true,enable:d.stock})} onClick={me.handleReceiveCoupon.bind(me,{
 														coupon_id:d.id,
 														stock:d.stock,

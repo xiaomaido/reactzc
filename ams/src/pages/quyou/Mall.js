@@ -42,7 +42,7 @@ export default class Index extends Quyou{
         // }
         // <div style={{padding: '1rem'}} dangerouslySetInnerHTML={dangerouslyContent}/>
         return (
-            <div className="mall">
+            <div className="mall" style={{paddingBottom:'3.8rem'}}>
                 <ul className="ad-list" style={{height:700}}>
                     <li>
                         <a href={ !true ? `${window.isHashHistory}/`:`http://m.chongnongpi.com/index.jsp`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
@@ -67,7 +67,7 @@ export default class Index extends Quyou{
                         </a>
                     </li> */}
                     <li>
-                        <a href={ true ? `${window.isHashHistory}/` : ''} className="icon big" style={{backgroundImage:`url(${stncp})`}}></a>
+                        <a href={ !true ? `${window.isHashHistory}/` : 'javascript:;'} className="icon big" style={{backgroundImage:`url(${stncp})`}}></a>
                     </li>
                 </ul>
             </div>
