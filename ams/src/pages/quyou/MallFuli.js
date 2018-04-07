@@ -98,7 +98,7 @@ const List = (props) => {
                         return (
                             <li key={i}>
                                 <div className="cover-box" onClick={me.openPage.bind(me,`/shophot/${d.id}?_t=${ltypesSet[ltype]}`)}>
-                                    <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
+                                    <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}></div>
                                     <div className="box">
                                         <div className="handed"><span>{d.coupon.length ? d.coupon[0].reciev_count : 0}</span> 人已领取</div>
                                         <div className="name">{d.name}</div>

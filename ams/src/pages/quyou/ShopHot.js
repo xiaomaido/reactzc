@@ -98,7 +98,7 @@ const List = (props) => {
                     data.map((d = { imgs: [] },i)=>(
                         <div key={i}>
                             <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>
-                                <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]})`}}></div>
+                                <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}></div>
                                 <div className="box">
                                     <div className="name">{d.name}</div>
                                     <div className="address text-elip"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>

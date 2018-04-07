@@ -573,6 +573,7 @@ img {
     background-image: url('../../images/quyou/icon/V2@3x.png')
 }
 .types{
+    max-width: $maxWidth;
     position: fixed;
     background-color: $color_ff;
     height: px2rem(130px);

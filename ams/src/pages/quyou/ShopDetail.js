@@ -190,7 +190,7 @@ const ProductList = (props) => {
 											d.imgs=Array.isArray(d.imgs)?d.imgs:[]
 											return (
 												<li key={i}>
-													<div className="icon poster" style={{backgroundImage:`url(${d.imgs[0]})`}}>
+													<div className="icon poster" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}>
 														{
 															d.reciev_count?<div className="sold">{d.reciev_count}人已领</div>:null
 														}

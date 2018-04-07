@@ -156,7 +156,7 @@ const PictureList = (props) => {
 						{
 							list.map((d,i)=>(
 								<li key={i} onClick={me.openPage.bind(me, `/posthot/${d.id}?_t=TOUR`)}>
-									<div className="icon poster" style={{backgroundImage:`url(${d.imgs})`}}>
+									<div className="icon poster" style={{backgroundImage:`url(${d.imgs}${doImg.fw()})`}}>
 									</div>
                                     <div className="text text-elip">{d.title}</div>
 								</li>

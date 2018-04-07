@@ -507,6 +507,10 @@ export class Quyou extends React.Component{ // 公共模板
 Quyou.contextTypes={
 	router: PropTypes.object
 }
+window.doImg={
+    fw: width => `!/fw/${width||300}`,
+    fh: height => `!/fh/${height||200}`
+}
 window.React=React
 window.Link=Link
 window.Quyou=Quyou
@@ -651,7 +655,7 @@ window.VideoList = (props) => {
                         {
                             list.map((d,i)=>(
                                 <li key={i} onClick={me.openPage.bind(me, `/videohot/${d.id}?_t=${type}`)}>
-                                    <div className="icon poster other" style={{backgroundImage:`url(${d.indexPic})`}}>
+                                    <div className="icon poster other" style={{backgroundImage:`url(${d.indexPic}${doImg.fw()})`}}>
                                         <img src={play} />
                                     </div>
                                     <div className="text text-elip">{d.title}</div>
@@ -699,7 +703,7 @@ window.PostList = (props) => {
                                     {d.description?d.description.split('<br>')[0]:''}
                                 </div>
                                 <LazyLoad height={200} offset={100}>
-                                    <div className="icon cover" style={{backgroundImage:`url(${isVideo?d.indexPic:d.imgs[0]})`}}>
+                                    <div className="icon cover" style={{backgroundImage:`url(${isVideo?d.indexPic:d.imgs[0]}${doImg.fw(400)})`}}>
                                         {
                                             ~pathname.indexOf('video') ? <i className="icon play" style={{backgroundImage:`url(${play})`}} /> : null
                                         }

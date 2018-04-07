@@ -152,7 +152,7 @@ const List = (props) => {
                             <div key={i}>
                                 <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>
                                     <LazyLoad key={i} height={100} offset={100}>
-                                        <div className="icon cover" style={{backgroundImage:`url(${d.images[0]})`}}></div>
+                                        <div className="icon cover" style={{backgroundImage:`url(${d.images[0]}${doImg.fw()})`}}></div>
                                     </LazyLoad>
                                     <div className="box">
                                         <div className="name">{d.title}</div>
