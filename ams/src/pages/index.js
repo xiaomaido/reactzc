@@ -15,6 +15,7 @@ import Hotel from './quyou/Hotel'
 import HotelHot from './quyou/HotelHot'
 import My from './quyou/My'
 import MyProfile from './quyou/MyProfile'
+import MyCouponDetail from './quyou/MyCouponDetail'
 import MyCoupons from './quyou/MyCoupons'
 import MyMsg from './quyou/MyMsg'
 import MyFollows from './quyou/MyFollows'
@@ -49,6 +50,7 @@ export {
 	HotelHot,
 	My,
 	MyProfile,
+	MyCouponDetail,
 	MyCoupons,
 	MyMsg,
 	MyFollows,

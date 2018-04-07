@@ -39,6 +39,10 @@ window.pageMapRoute={
 		url:'/mycoupons',
 		page:Pages.MyCoupons
 	},
+	mycoupondetail: {
+		url:'/mycoupons/:id',
+		page:Pages.MyCouponDetail
+	},
 	mymsg: {
 		url:'/mymsg',
 		page:Pages.MyMsg

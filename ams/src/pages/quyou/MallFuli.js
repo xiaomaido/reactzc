@@ -106,7 +106,7 @@ const List = (props) => {
                                         {
                                             d.coupon.length ? (
                                                 <ul className="discount">
-                                                    <li className={"color" + arr.sort((a)=>Math.random()<0.5)[0]}>{d.coupon[0].title}</li>
+                                                    <li className={"text-elip color" + arr.sort((a)=>Math.random()<0.5)[0]}>{d.coupon[0].title}</li>
                                                 </ul>
                                             ) : null
                                         }

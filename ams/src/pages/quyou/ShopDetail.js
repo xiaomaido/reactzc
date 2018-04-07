@@ -195,8 +195,8 @@ const ProductList = (props) => {
 															d.reciev_count?<div className="sold">{d.reciev_count}人已领</div>:null
 														}
 													</div>
-													<div className="text ">{d.title}</div>
-													{/* <div className="price ">{d.desc_title}</div> */}
+													<div className="text">{d.title}</div>
+													<div className="price">{d.desc_title}</div>
 													<div className={classnames({btn:true,enable:d.stock})} onClick={me.handleReceiveCoupon.bind(me,{
 														coupon_id:d.id,
 														stock:d.stock,

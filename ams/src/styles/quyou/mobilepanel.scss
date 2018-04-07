@@ -1389,7 +1389,7 @@ img {
                                     font-size: px2rem(26px);
                                     line-height: px2rem(30px);
                                     overflow: hidden;
-                                    -webkit-line-clamp: 2;
+                                    -webkit-line-clamp: 1;
                                     -webkit-box-orient: vertical;
                                     display: -webkit-inline-box;
                                     word-break: break-word;
@@ -2368,6 +2368,7 @@ img {
                         padding: 0 px2rem(10px);
                         float: left;
                         font-size: px2rem(20px);
+                        max-width: 5.5rem;
                     }
                 }
             }
