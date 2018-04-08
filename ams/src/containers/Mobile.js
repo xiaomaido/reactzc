@@ -139,6 +139,10 @@ window.pageMapRoute={
 		url:'/query',
 		page:Pages.Query
 	},
+	agricultural: {
+		url: '/agricultural',
+		page: Pages.Agricultual
+	}
 }
 // window.isHashHistory=''
 window.isHashHistory='#'

@@ -67,7 +67,7 @@ export default class Index extends Quyou{
                         </a>
                     </li> */}
                     <li>
-                        <a href={ !true ? `${window.isHashHistory}/` : 'javascript:;'} className="icon big" style={{backgroundImage:`url(${stncp})`}}></a>
+                        <a href={ true ? `${window.isHashHistory}/agricultural` : 'javascript:;'} className="icon big" style={{backgroundImage:`url(${stncp})`}}></a>
                     </li>
                 </ul>
             </div>
