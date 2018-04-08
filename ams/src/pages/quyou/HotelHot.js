@@ -107,6 +107,7 @@ const List = (props) => {
                 {
                     data.map((d = { imgs: [] },i)=>{
                         d.stag_names = Array.isArray(d.stag_names) ? d.stag_names : []
+                        d.coupon = Array.isArray(d.coupon) ? d.coupon : []
                         return (
                             <div key={i}>
                                 <div className="item" onClick={me.openPage.bind(me,`/shophot/${d.id}?_t=SLEEP`)}>
@@ -124,7 +125,14 @@ const List = (props) => {
                                                 d.stag_names.map((d,i)=><li key={i}>{d.tagname}</li>)
                                             }
                                         </ul>
-                                        <div className="address clearboth"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
+                                        <div className="address clearboth text-elip"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
+                                        {
+                                            d.coupon.length ? (
+                                                <ul className="discountarr">
+                                                    <li className={"text-elip color" + [1, 2, 3].sort((a)=>Math.random()<0.5)[0]}>{d.coupon[0].title}</li>
+                                                </ul>
+                                            ) : null
+                                        }
                                     </div>
                                 </div>
                                 {

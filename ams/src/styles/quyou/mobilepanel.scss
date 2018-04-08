@@ -1038,7 +1038,7 @@ img {
                     color: $color_42484e;
                     font-size: 0.7rem;
                     line-height: 0.9rem;
-                    height: 1.2rem;
+                    height: 1rem;
 
                 }
                 .permoney{
@@ -1115,7 +1115,7 @@ img {
             font-size: px2rem(24px);
             line-height: px2rem(30px);
             margin-top: 0;
-            padding-top: 0.35rem;
+            /* padding-top: 0.35rem; */
             i{
                 float: left;
                 width: px2rem(18px);
@@ -1579,10 +1579,15 @@ img {
                     }
                 }
                 .shop-sns{
-                    margin-top: px2rem(30px);
+                    margin-top: px2rem(36px);
                     height: px2rem(30px);
+                    float: right;
+                    li:first-child{
+                        margin-left: 0;
+                    }
                     li{
-                        width: 33.3%;
+                        /* width: 33.3%; */
+                        margin-left: 1rem;
                         height: px2rem(30px);
                         float: left;
                         font-size: px2rem(18px);
@@ -2335,7 +2340,7 @@ img {
                 .handed{
                     position: absolute;
                     right: 0;
-                    bottom: px2rem(30px);
+                    bottom: 1.1rem;
                     font-size: px2rem(20px);
                     line-height: px2rem(20px);
                     color: #afb4c2;
@@ -2355,28 +2360,32 @@ img {
                     line-height: px2rem(22px);
                     color: #5c666e;
                 }
-                .color1{
-                    background-color: #fecf1a
-                }
-                .color2{
-                    background-color: #ffa0a1
-                }
-                .color3{
-                    background-color: #d1c1a5
-                }
-                .discount{
-                    margin-top: px2rem(30px);
-                    li{
-                        color: $color_ff;
-                        height: px2rem(40px);
-                        line-height: px2rem(40px);
-                        padding: 0 px2rem(10px);
-                        float: left;
-                        font-size: px2rem(20px);
-                        max-width: 5.5rem;
-                    }
-                }
             }
         }
+    }
+}
+
+
+.color1{
+    background-color: #fecf1a
+}
+.color2{
+    background-color: #ffa0a1
+}
+.color3{
+    background-color: #d1c1a5
+}
+.discountarr{
+    /* margin-top: px2rem(30px); */
+    position: absolute;
+    bottom: 1rem;
+    li{
+        color: $color_ff;
+        height: px2rem(40px);
+        line-height: px2rem(40px);
+        padding: 0 px2rem(10px);
+        float: left;
+        font-size: px2rem(20px);
+        max-width: 5.5rem;
     }
 }
