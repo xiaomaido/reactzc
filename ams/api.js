@@ -564,3 +564,12 @@ commBannerQ = {}
 2.商家都加了has_coupon=1过滤是否有优惠券
 3.针对富文本加了content字段 ☑️
 4.在优惠券下来商家是加了ID在前面 ☑️
+
+
+
+// 优惠券详情接口
+detail_coupon = baseUrl + "/user/coupon_detail"
+detail_couponQ = {
+        "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
+        "coupon_id": 6
+}

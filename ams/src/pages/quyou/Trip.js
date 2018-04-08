@@ -6,7 +6,8 @@ import banner from '../../images/quyou/trip/pic-you-list@3x.png'
 const imgSlideList=[
     {
         img: banner,
-        url: `/guidance`,
+        // url: `/guidance`,
+        url: ``,
     },
 ]
 

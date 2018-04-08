@@ -1380,7 +1380,7 @@ img {
                                         height: px2rem(34px);
                                         line-height: px2rem(34px);
                                         padding: 0 px2rem(12px);
-                                        float: right;
+                                        float: left;
                                         font-size: px2rem(20px);
                                     }
                                 }
@@ -1388,23 +1388,27 @@ img {
                                     color: $color_42484e;
                                     margin-top: px2rem(16px);
                                     font-size: px2rem(26px);
-                                    line-height: px2rem(30px);
+                                    line-height: px2rem(32px);
+                                    /*
                                     overflow: hidden;
                                     -webkit-line-clamp: 1;
                                     -webkit-box-orient: vertical;
                                     display: -webkit-inline-box;
                                     word-break: break-word;
+                                    */
                                 }
                                 .price{
                                     color: $color_fe932b;
-                                    margin-top: px2rem(6px);
+                                    margin: px2rem(6px) 0;
                                     font-size: px2rem(22px);
-                                    line-height: px2rem(26px);
+                                    line-height: px2rem(28px);
+                                    /*
                                     overflow: hidden;
                                     -webkit-line-clamp: 1;
                                     -webkit-box-orient: vertical;
                                     display: -webkit-inline-box;
                                     word-break: break-word;
+                                    */
                                 }
                                 .btn{
                                     text-align: center;

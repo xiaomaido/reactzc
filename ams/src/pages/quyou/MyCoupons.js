@@ -155,13 +155,14 @@ const Content = (props) => {
                             {
                                 ltype === '0' ? <div className="btn" onClick={me.handleShowCreateComment.bind(me, { coupon_id: d.coupon_id })}>点击使用</div> : null
                             }
-                            {/* <div className="icon cover circle" style={{backgroundImage:`url(${d.imgs[0]})`}}></div> */}
-                            <div className="icon cover" style={{backgroundSize: 'cover',backgroundImage:`url(${d.seller.imgs[0]}${doImg.fw(100)})`}}></div>
-                            <div className="content">
-                                <div className="name coupon" style={tempStyle}>{`【${d.seller.name}】`} {d.title} {d.desc_title} </div>
-                                {
-                                    ltype === '1' ? <div className="end coupon">{misc.formatDateTime(new Date(d.end_dt*1000), misc.formatType['1'])} 使用</div> : <div className="end coupon">{misc.formatDateTime(new Date(d.end_dt*1000), misc.formatType['1'])} 到期</div>
-                                }
+                            <div style={{height:'4.28rem'}} onClick={me.openPage.bind(me,`/mycoupons/8`)}>
+                                <div className="icon cover" style={{backgroundPosition: 'right',backgroundSize: 'cover',backgroundImage:`url(${d.imgs[0]}${doImg.fw(100)})`}}></div>
+                                <div className="content">
+                                    <div className="name coupon" style={tempStyle}>{`【${d.seller.name}】`} {d.title} {d.desc_title} </div>
+                                    {
+                                        ltype === '1' ? <div className="end coupon">{misc.formatDateTime(new Date(d.end_dt*1000), misc.formatType['1'])} 使用</div> : <div className="end coupon">{misc.formatDateTime(new Date(d.end_dt*1000), misc.formatType['1'])} 到期</div>
+                                    }
+                                </div>
                             </div>
                         </div>
                     )

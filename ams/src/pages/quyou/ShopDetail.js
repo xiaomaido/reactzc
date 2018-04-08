@@ -190,17 +190,14 @@ const ProductList = (props) => {
 											d.imgs=Array.isArray(d.imgs)?d.imgs:[]
 											return (
 												<li key={i}>
-													<div className="icon poster" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}>
+													<div className="icon poster" style={{backgroundPosition:'right',backgroundSize:'cover',backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}>
 														{
 															d.reciev_count?<div className="sold">{d.reciev_count}人已领</div>:null
 														}
 													</div>
-													<div className="text">{d.title}</div>
-													<div className="price">{d.desc_title}</div>
-													<div className={classnames({btn:true,enable:d.stock})} onClick={me.handleReceiveCoupon.bind(me,{
-														coupon_id:d.id,
-														stock:d.stock,
-													})}>{d.stock?`立即领取`:`已领取完`}</div>
+													<div className="text text-elip">{d.title}</div>
+													<div className="price text-elip">{d.desc_title}</div>
+													<div className={classnames({btn:true,enable:d.stock})} onClick={me.openPage.bind(me,'/mycoupons/8')}>我要领取</div>
 												</li>
 											)
 										})
@@ -215,3 +212,9 @@ const ProductList = (props) => {
 		</div>
 	)
 }
+/*
+<div className={classnames({btn:true,enable:d.stock})} onClick={me.handleReceiveCoupon.bind(me,{
+														coupon_id:d.id,
+														stock:d.stock,
+													})}>{d.stock?`立即领取`:`已领取完`}</div>
+													*/
