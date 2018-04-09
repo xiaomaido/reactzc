@@ -1365,13 +1365,16 @@ img {
                         overflow-x: auto;
                         ul{
                             height: 100%;
+                            li:last-child{
+                                margin-right: 0;
+                            }
                             li{
                                 float: left;
-                                width: px2rem(200px);
+                                width: px2rem(220px);
                                 margin-right: px2rem(30px);
                                 .poster{
                                     position:relative;
-                                    width: px2rem(200px);
+                                    width: px2rem(220px);
                                     height: px2rem(130px);
                                     // background-size: cover;
                                     .sold{

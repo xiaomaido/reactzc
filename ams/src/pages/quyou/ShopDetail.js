@@ -184,7 +184,7 @@ const ProductList = (props) => {
 						<div className="title"><div>惠</div>商家优惠</div>
 						<div className="vlist">
 							<div className="ul-box">
-								<ul style={{width:(list.length*fontSize*(200+30)/40)}}>
+								<ul style={{width:(list.length*fontSize*(220+30)/40)-0.75*fontSize}}>
 									{
 										list.map((d,i)=>{
 											d.imgs=Array.isArray(d.imgs)?d.imgs:[]
