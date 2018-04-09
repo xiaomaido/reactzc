@@ -31,6 +31,7 @@ import Signin from './quyou/Signin'
 import CurrentRoutes from './quyou/CurrentRoutes'
 import Query from './quyou/Query'
 import PagerHot from './quyou/PagerHot'
+import Agricultual from './quyou/agricultural';
 // import TencentLocation from './quyou/TencentLocation'
 export { 
 	IntlDemo,
@@ -66,5 +67,6 @@ export {
 	MallFuli,
 	Query,
     PagerHot,
+    Agricultual,
 	// TencentLocation,
 }

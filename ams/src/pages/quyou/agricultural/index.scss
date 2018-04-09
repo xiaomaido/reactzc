@@ -1,0 +1,62 @@
+@import "../../../styles/vars.scss";
+
+.ag-guidance {
+  padding-top: $barTop;
+  background-color: $color_f5;
+  .list {
+    background-color: $color_ff;
+    //height: px2rem(457px);
+    margin-top: px2rem(26px);
+
+    li {
+      a {
+        overflow: hidden;
+        display: block;
+        height: px2rem(228px);
+        //width: 100%;
+        margin: 0 px2rem(36px) 0 px2rem(36px);
+        position: relative;
+
+        .title {
+          transform: translate(20%,70%);
+          position: absolute;
+          top: 0;
+          display: inline-block;
+          font-size: px2rem(32px);
+          letter-spacing: 1px;
+          .sub-title {
+            margin-top: px2rem(10px);
+            font-size: px2rem(24px);
+          }
+        }
+
+      }
+      .first {
+        border-bottom-width: 1px;
+        border-bottom-color: rgba(0, 0, 36, 0.13);
+        border-bottom-style: solid;
+      }
+    }
+  }
+
+  .icon {
+    display: inline-block;
+    height: px2rem(158px);
+    width: px2rem(244px);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    //display: block;
+    margin-bottom: px2rem(35px);
+    margin-top: px2rem(35px);
+  }
+
+  .dami {
+    background-image: url("./pic-cmdami@3x.png");
+  }
+
+  .tese {
+
+    background-image: url("./pic-tsncp@3x.png");
+  }
+}
