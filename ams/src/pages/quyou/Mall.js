@@ -4,7 +4,6 @@ import notice from '../../images/quyou/banner/notice.png'
 import ptflzq from '../../images/quyou/banner/pic-ptflzq.png'
 import stncp from '../../images/quyou/banner/stncp.png'
 import dami from '../../images/quyou/banner/pic-dami@3x.png'
-const zenongji = `http://zenongji.com.cn/mobile/`
 // document.domain = "caibaojian.com";
 // const setIframeHeight = (iframeId) => {
 //     const iframe = document.getElementById(iframeId)

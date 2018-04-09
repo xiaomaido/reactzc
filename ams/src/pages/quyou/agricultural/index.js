@@ -2,12 +2,8 @@
 import './index.scss'
 
 export default class Index extends Quyou{
-    state={
-    }
     renderContent(){
-        // document.title='导览图'
-        return  <Content />;
-
+        return  <Content />
     }
     componentDidMount() {
         const me = this
@@ -18,29 +14,24 @@ export default class Index extends Quyou{
         })
     }
 }
-
-
 class Content extends React.Component {
-
     state = {
         agStyle: {}
     }
-
     componentDidMount() {
         this.setState({
             agStyle: {
-                height: window.innerHeight - 2.2*window.fontSize,
+                height: window.innerHeight - 2.2*window.fontSize
             }
-        });
+        })
     }
 
     render ()  {
-
         return (
             <div className="mall ag-guidance" style={this.state.agStyle}>
                 <ul className="list">
                     <li>
-                        <a className="first" >
+                        <a className="first" href={ !true ? `${window.isHashHistory}/`:`http://m.chongnongpi.com/index.jsp`}>
                             <div className="dami icon"></div>
                             <div className="title">
                                 崇明大米专区
@@ -49,7 +40,7 @@ class Content extends React.Component {
                         </a>
                     </li>
                     <li>
-                        <a >
+                        <a className="first" href={ !true ? `${window.isHashHistory}/`:`http://quyou.zenongji.com.cn/mobile/`}>
                             <div className="tese icon"></div>
                             <div className="title">
                                 特色农产品专区

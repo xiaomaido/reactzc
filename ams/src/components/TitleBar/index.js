@@ -65,7 +65,7 @@ const Index = (props) => {
                 <a className="icon back" href={`${window.isHashHistory}${backUrl}`}></a>
                 <i className={classnames({"icon":true,"title":true,[titleimg]:true})}  />
             </div>
-            <div className="clearboth thinner-border"></div>
+            <div className="clearboth thinner-border" style={{height:1}}></div>
         </div>
     )
 }
