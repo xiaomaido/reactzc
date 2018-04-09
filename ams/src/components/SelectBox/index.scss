@@ -1,0 +1,72 @@
+@import "../../styles/vars.scss";
+.select-box-div{
+    background-color: $color_ff;
+    // position: fixed;
+    // top: $barTop;
+    // width: 100%;
+    // max-width: $maxWidth;
+    // z-index: 2999;
+    height: px2rem(50px) + 2 * px2rem(17px); 
+}
+.select-box{
+    .select-header{
+        background-color: $color_ff;
+        margin: px2rem(17px) 0; 
+        margin: 0; 
+        height: px2rem(84px);
+        display: flex;
+        .select-column{
+            text-align: center;
+            width: 100%;
+            margin: px2rem(17px) 0; 
+            font-size: px2rem(26px);
+            height: px2rem(50px);
+            line-height: px2rem(50px);
+            color: $color_33;
+            text-align: center;
+            i{
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-left: px2rem(8px) solid transparent;
+                border-right: px2rem(8px) solid transparent;
+                margin-left: px2rem(20px);
+            }
+            .tran-up {
+                border-bottom: px2rem(12px) solid $color_33;
+            }
+            .tran-down {
+                border-top: px2rem(12px) solid $color_33;
+            }
+        }
+    }
+    .select-options{
+        width: px2rem(750px);
+        position: absolute;
+        z-index: 100;
+        left: 0;
+        background-color: $color_ff;
+        padding: 0 px2rem(60px) px2rem(80px);
+        max-height: 16rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        // box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.2);
+        li.active{
+            .title{
+                color: $color_ffc913;
+            }
+            .thinner-border::before{
+                border-color: $color_ffc913;
+            }
+        }
+        li{
+            height: px2rem(88px);
+            line-height: px2rem(88px);
+            .title{
+                color: $color_33;
+                font-size: px2rem(26px);
+            }
+        }
+    }
+}

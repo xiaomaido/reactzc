@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#pos-area {
+    background-color: #009DDC;
+    margin-bottom: 10px;
+    width: 100%;
+    overflow: scroll;
+    text-align: left;
+    color: white;
+}
+#demo {
+    padding: 8px;
+    font-size: small;
+}
+#btn-area {
+    height: 100px;
+}
+button {
+    margin-bottom: 10px;
+    padding: 12px 8px;
+    width: 42%;
+    border-radius: 8px;
+    background-color: #009DDC;
+    color: white;
+}

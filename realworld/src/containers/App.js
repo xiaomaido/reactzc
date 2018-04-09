@@ -86,7 +86,6 @@ class App extends Component{
 		})
 	}
 	componentDidUpdate(){
-		debugger
 	}
 	handleChange(nextKeyword){
 		this.props.pushState(null,`/${nextKeyword}`)

@@ -1,0 +1,128 @@
+@import "../../styles/vars.scss";
+.titleBar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $barTop;
+    max-width: $maxWidth;
+    background-color: $color_ff;
+    z-index: 999;
+    .box{
+        height: $barTop;
+        position: relative;
+        .back{
+            width: px2rem(36px);
+            height: px2rem(36px);
+            display: block;
+            position: absolute;
+            left: px2rem(26px);
+            top: px2rem(26px);
+            background-image: url('./images/back.png')
+        }
+        .title{
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            top: px2rem(22px);
+            width: px2rem(184px);
+            height: px2rem(44px);
+        }
+        .title.foodhoteat{
+            background-image: url('./images/foodhoteat.png')
+        }
+        .title.shophoteat{
+            background-image: url('./images/shophoteat.png')
+        }
+        .title.shophottour{
+            background-image: url('./images/triphoteat.png')
+        }
+        .title.shophotsleep{
+            background-image: url('./images/hotelhoteat.png')
+        }
+        .title.seasonhoteat{
+            background-image: url('./images/seasonhoteat.png')
+        }
+        .title.posthoteat{
+            background-image: url('./images/posthoteat.png')
+        }
+        .title.posthotsleep{
+            background-image: url('./images/posthotsleep.png')
+        }
+        .title.posthottour{
+            background-image: url('./images/posthottour.png')
+        }
+        .title.videohoteat{
+            background-image: url('./images/videohoteat.png')
+        }
+        .title.videohotsleep{
+            background-image: url('./images/videohotsleep.png')
+        }
+        .title.hotelhoteat{
+            background-image: url('./images/hotelhoteat.png')
+        }
+        // .title.jingpinjiudian{
+        //     background-image: url('./images/jingpinjiudian.png')
+        // }
+        // .title.teseminsu{
+        //     background-image: url('./images/teseminsu.png')
+        // }
+        // .title.shengtainongzhuang{
+        //     background-image: url('./images/shengtainongzhuang.png')
+        // }
+        // .title.jingjishiyong{
+        //     background-image: url('./images/jingjishiyong.png')
+        // }
+        // .title.renqituijian{
+        //     background-image: url('./images/renqituijian.png')
+        // }
+        // .title.tehuizhekou{
+        //     background-image: url('./images/tehuizhekou.png')
+        // }
+        .title.triphoteat{
+            background-image: url('./images/triphoteat.png')
+        }
+        .title.xianshifulieat{
+            background-image: url('./images/xianshifulieat.png')
+        }
+        .title.myprofileeat{
+            background-image: url('./images/myprofileeat.png')
+        }
+        .title.mallfulieat{
+            background-image: url('./images/mallfulieat.png');
+            // width: px2rem(274px);
+        }
+        .title.guidanceeat, .title.guidance2eat{
+            background-image: url('./images/guidanceeat.png');
+            width: px2rem(134px);
+        }
+        .title.buslineeat{
+            width: px2rem(233px);
+            background-image: url('./images/buslineeat.png');
+        }
+        .title.queryeat{
+            background-image: url('./images/queryeat.png');
+        }
+        .title.mycouponseat{
+            background-image: url('./images/mycouponseat.png');
+        }
+        .title.mymsgeat{
+            background-image: url('./images/mymsgeat.png');
+        }
+        .title.myfollowseat{
+            background-image: url('./images/myfollowseat.png');
+        }
+        .title.agriculturaleat{
+            background-image: url('./images/nongchanping.png');
+        }
+        .title.paperhotfavord126{
+            background-image: url('./images/rmyh.png');
+        }
+
+        .title.paperhotfavord214 {
+            background-image: url('./images/syxz.png');
+        }
+        .title.paperhotfavord213 {
+            background-image: url('./images/yypm.png');
+        }
+    }
+}

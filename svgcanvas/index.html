@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>Canvas</title>
+        <style type="text/css">
+            canvas { border: 1px solid black; }
+        </style>
+    </head>
+    <body style="background: rgba(109, 106, 106, 0.55);">
+        <canvas id="floor" width="500" height="500"></canvas>
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <canvas id="tutorial" width="500" height="500"></canvas>
+        <br />
+        <br />
+        <div id="image-box" style="position:relative">
+            <canvas id="image" width="500" height="500"></canvas>
+        </div>
+        <br />
+        <canvas id="palette" width="150" height="150" style="border:none"></canvas>
+        <script type="text/javascript">
+            var canvasContext = {
+                fillStyle: "#000000",
+                filter: "none",
+                font: "10px sans-serif",
+                globalAlpha: 1,
+                globalCompositeOperation: "source-over",
+                imageSmoothingEnabled: true,
+                imageSmoothingQuality: "low",
+                lineCap: "butt",
+                lineDashOffset: 0,
+                lineJoin: "miter",
+                lineWidth: 1,
+                miterLimit: 10,
+                shadowBlur: 0,
+                shadowColor: "rgba(0, 0, 0, 0)",
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                strokeStyle: "#000000",
+                textAlign: "start",
+                textBaseline: "alphabetic"
+            }
+            function tutorial(){
+                var canvas = document.getElementById('tutorial')
+                if (canvas.getContext){
+                    var ctx = canvas.getContext('2d')
+                    ctx.fillStyle = "rgb(200,0,0)"
+                    ctx.fillRect (0, 0, 75, 75)
+
+                    ctx.fillStyle = "rgba(0, 0, 200, 0.5)"
+                    ctx.fillRect (274, 40, 60, 60)
+                    
+                    ctx.fillStyle = "rgba(0, 100, 100, 0.6)"
+                    ctx.fillRect(125,125,100,100)
+                    ctx.clearRect(135,135,100,100)
+                    ctx.strokeStyle = "red"
+                    ctx.strokeRect(125,125,100,100)
+
+                    ctx.fillStyle = "rgba(0, 0, 0, 1)"
+                    ctx.beginPath()
+                    ctx.moveTo(300,300)
+                    ctx.lineTo(300,350)
+                    ctx.lineTo(240,325)
+                    ctx.fill() // 完成闭合图形
+                    ctx.closePath() // 如果是一个图形闭合后，路径关闭函数不写也没关系
+
+                    ctx.beginPath();
+                    ctx.arc(400,100,50,0,Math.PI*2,true); // 绘制头
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(420,90,8,0,Math.PI*2,true); // 绘制右眼
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(380,90,8,0,Math.PI*2,true); // 绘制左眼
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(400,110,20,0.1*Math.PI,0.9*Math.PI,false); // 绘制笑脸
+                    ctx.stroke();
+
+                    // 二次贝尔赛曲线
+                    ctx.beginPath()
+                    ctx.moveTo(75,25)
+                    ctx.quadraticCurveTo(25,25,25,62.5)
+                    ctx.quadraticCurveTo(25,100,50,100)
+                    ctx.quadraticCurveTo(50,120,30,125)
+                    ctx.quadraticCurveTo(60,120,65,100)
+                    ctx.quadraticCurveTo(125,100,125,62.5)
+                    ctx.quadraticCurveTo(125,25,75,25)
+                    ctx.stroke()
+
+                    //三次贝塞尔曲线
+                    ctx.beginPath();
+                    ctx.moveTo(275,40);
+                    ctx.bezierCurveTo(275,37,270,25,250,25);
+                    ctx.fill();
+
+                }
+            }
+            function palette(){ // 调色板
+                var ctx = document.getElementById('palette').getContext('2d');
+                // 画背景
+                ctx.fillStyle = '#FD0';
+                ctx.fillRect(0,0,75,75);
+                ctx.fillStyle = '#6C0';
+                ctx.fillRect(75,0,75,75);
+                ctx.fillStyle = '#09F';
+                ctx.fillRect(0,75,75,75);
+                ctx.fillStyle = '#F30';
+                ctx.fillRect(75,75,75,75);
+                ctx.fillStyle = '#FFF';
+
+                // 设置透明度值
+                ctx.globalAlpha = 0.2;
+
+                // 画半透明圆
+                for (var i=1;i<8;i++){
+                    ctx.beginPath();
+                    ctx.arc(75,75,10*i,0,Math.PI*2,true);
+                    ctx.fill();
+                }
+            }
+            function drawLine(ctx,x,y,r,angle){ // 绘制线条
+                ctx.moveTo(x,y)
+                var _x=x+r*Math.cos(angle*Math.PI/180),
+                    _y=y+r*Math.sin(angle*Math.PI/180)
+                var img = new Image()
+                img.onload = function(){
+                    ctx.drawImage(img,_x-0.5*r/3,_y-0.5*r/3,r/3,r/3) // 绘制中心坐标的图片
+                }
+                img.src = 'https://img.adidas.com.cn/resources/2017/9/15/15054445518197796_500X500.jpg'
+                ctx.lineTo(_x,_y)
+            }
+            function image(){
+                document.getElementById('image').oncontextmenu=function(){return false;}  // 禁止浏览器默认鼠标右键事件
+                var x=y=250,
+                    r=50,
+                    arr=Array.apply(null,{length:6})
+                var canvas = document.getElementById('image')
+                if (canvas.getContext){
+                    var ctx = canvas.getContext('2d')
+                    var img = new Image()
+                    img.onload = function(){
+                        ctx.globalCompositeOperation = 'source-over'
+                        ctx.strokeStyle = "blue"
+                        arr.forEach((d,i)=>drawLine(ctx,x,y,3*r,i*360/arr.length))
+                        ctx.stroke()
+                        ctx.drawImage(img,x-r/2,y-r/2,r,r) // 绘制中心坐标的图片
+                    }
+                    img.src = 'https://img.adidas.com.cn/resources/2017/9/15/15054445276517704_500X500.jpg'
+                }
+                ctx.beginPath();
+                ctx.arc(70, 80, 10, 0, 2 * Math.PI, false);
+                ctx.fill();
+                canvas.addEventListener("click", function(event){
+                    if(event.region === 'circle') {
+                        alert("hit region: " + event.region);
+                    }
+                });
+                try {
+                    ctx.addHitRegion({id: "circle"});
+                } catch (e) {
+                    // 注意：该接口目前尚在实验中，在未来版本的浏览器中其语法和行为可能有所改变
+                    alert("请在chrome://flags中启用【Experimental canvas features 实验性画布功能】或在firefox中输入about:config使canvas.hitregions.enabled值为true以开启更多功能~~~///(^v^)\\\~~~");
+                }
+                
+            }
+            window.onload=function(){
+                tutorial()
+                palette()
+                image()
+                init()
+                drawFloor()
+            }
+            var sun = new Image();
+            var moon = new Image();
+            var earth = new Image();
+            function init(){
+                sun.src = 'https://mdn.mozillademos.org/files/1456/Canvas_sun.png';
+                moon.src = 'https://mdn.mozillademos.org/files/1443/Canvas_moon.png';
+                earth.src = 'https://mdn.mozillademos.org/files/1429/Canvas_earth.png';
+                window.requestAnimationFrame(draw);
+            }
+
+            function draw() {
+                var ctx = document.getElementById('canvas').getContext('2d');
+                ctx.globalCompositeOperation = 'destination-over';
+                ctx.clearRect(0,0,300,300); // clear canvas
+                ctx.fillStyle = 'rgba(0,0,0,0.4)';
+                ctx.strokeStyle = 'rgba(0,153,255,0.4)';
+                ctx.save();
+                ctx.translate(150,150);
+                // Earth
+                var time = new Date();
+                ctx.rotate( ((2*Math.PI)/60)*time.getSeconds() + ((2*Math.PI)/60000)*time.getMilliseconds() );
+                ctx.translate(105,0);
+                ctx.fillRect(0,-12,50,24); // Shadow
+                ctx.drawImage(earth,-12,-12);
+
+                // Moon
+                ctx.save();
+                ctx.rotate( ((2*Math.PI)/6)*time.getSeconds() + ((2*Math.PI)/6000)*time.getMilliseconds() );
+                ctx.translate(0,28.5);
+                ctx.drawImage(moon,-3.5,-3.5);
+                ctx.restore();
+
+                ctx.restore();
+                
+                ctx.beginPath();
+                ctx.arc(150,150,105,0,Math.PI*2,false); // Earth orbit
+                ctx.stroke();
+                
+                ctx.drawImage(sun,0,0,300,300);
+
+                window.requestAnimationFrame(draw);
+            }
+        
+            function drawFloor() {
+                var ctx = document.getElementById('floor').getContext('2d');
+                ctx.fillRect(0,0,150,150);
+                ctx.translate(75,75);
+
+                // Create a circular clipping path
+                ctx.beginPath();
+                ctx.arc(0,0,60,0,Math.PI*2,true);
+                ctx.clip();
+
+                // draw background
+                var lingrad = ctx.createLinearGradient(0,-75,0,75);
+                lingrad.addColorStop(0, '#232256');
+                lingrad.addColorStop(1, '#143778');
+                
+                ctx.fillStyle = lingrad;
+                ctx.fillRect(-75,-75,150,150);
+
+                // draw stars
+                for (var j=1;j<50;j++){
+                    ctx.save();
+                    ctx.fillStyle = '#fff';
+                    ctx.translate(75-Math.floor(Math.random()*150),
+                                75-Math.floor(Math.random()*150));
+                    drawStar(ctx,Math.floor(Math.random()*4)+2);
+                    ctx.restore();
+                }
+            
+            }
+            function drawStar(ctx,r){
+                ctx.save();
+                ctx.beginPath()
+                ctx.moveTo(r,0);
+                for (var i=0;i<9;i++){
+                    ctx.rotate(Math.PI/5);
+                    if(i%2 == 0) {
+                    ctx.lineTo((r/0.525731)*0.200811,0);
+                    } else {
+                    ctx.lineTo(r,0);
+                    }
+                }
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+        </script>
+    </body>
+</html>

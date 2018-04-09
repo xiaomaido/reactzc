@@ -1,0 +1,75 @@
+@import "../../styles/vars.scss";
+.navListBox{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: $maxWidth;
+    height: px2rem(100px);
+    background-color: $color_ff;
+    z-index: 999;
+    box-shadow: 0 -1px 0 0 rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        display: block;
+        height: px2rem(100px);
+        width: 1/5 * 100%;
+        text-align: center;
+        position: relative;
+        i{
+            background-color: transparent;
+            width: px2rem(50px); 
+            height: px2rem(50px); 
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            top: px2rem(16px);
+        }
+        i.active{
+            width: px2rem(78px);
+            height: px2rem(78px);
+            top: px2rem(-16px);
+        }
+        i.chi.active{
+            background-image: url('./images/nav_chi_active.png')
+        }
+        i.chi{
+            background-image: url('./images/nav_chi.png')
+        }
+        i.zhu.active{
+            background-image: url('./images/nav_zhu_active.png')
+        }
+        i.zhu{
+            background-image: url('./images/nav_zhu.png')
+        }
+        i.you.active{
+            background-image: url('./images/nav_you_active.png')
+        }
+        i.you{
+            background-image: url('./images/nav_you.png')
+        }
+        i.gou.active{
+            background-image: url('./images/nav_gou_active.png')
+        }
+        i.gou{
+            background-image: url('./images/nav_gou.png')
+        }
+        i.wo.active{
+            background-image: url('./images/nav_wo_active.png')
+        }
+        i.wo{
+            background-image: url('./images/nav_wo.png')
+        }
+        div{
+            position: absolute;
+            bottom: px2rem(8px);
+            width: 100%;
+            text-align: center;
+            color: $color_33;
+            font-size: px2rem(20px);
+            line-height: px2rem(20px);
+        }
+            
+    }
+}

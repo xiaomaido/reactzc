@@ -1,4 +1,4 @@
-@function px2rem($px, $base: 20px) {
+@function px2rem($px, $base: 40px) {
     @if (unitless($px)) {
         @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
         @return px2rem($px + 0px); // That may fail.
@@ -7,18 +7,17 @@
     }
     @return ($px/$base) * 1rem;
 }
-$rem_0_5: px2rem(10px);
-$rem_1: px2rem(20px);
-$rem_2: px2rem(40px);
+$rem_0_5: px2rem(20px);
+$rem_1: px2rem(40px);
+$rem_2: px2rem(80px);
 $rem_3: px2rem(60px);
 $rem_4: px2rem(80px);
-$rem_5: px2rem(100px);
-$rem_6: px2rem(120px);
-$rem_7: px2rem(140px);
-$rem_8: px2rem(160px);
-$rem_9: px2rem(180px);
-$rem_10: px2rem(200px);
-$rem_25: px2rem(500px);
+$rem_5: px2rem(200px);
+$rem_10: px2rem(400px);
+$filterTop: px2rem(84px);
+$barTop: px2rem(88px);
+$barBottom: px2rem(100px);
+$maxWidth: px2rem(1000px);
 $int_5: 5px;
 $int_10: 10px;
 $int_12: 12px;
@@ -33,9 +32,23 @@ $color_e6: #e6e6e6;
 $color_e6_02: rgba(230, 230, 230, 0.2);
 $color_ff: #ffffff;
 $color_f5: #f5f5f5;
+$color_e5: #e5e5e5;
 $color_cc: #cccccc;
 $color_20: #202020;
 $color_00: #000000;
+$color_42484e: #42484e;
+$color_ffc913: #ffc913;
+
+$color_fe932b: #ec6941;
+$color_fe932b: #fe932b;
+$color_ffce1a: #ffce1a;
+$color_b6: #b6b6b6;
+$color_33: #333333;
+$color_99: #999999;
+$color_5d666e: #5d666e;
+$color_02: #020202;
+$color_78c790: #78c790;
+
 $color_F0734F: #F0734F;
 $color_636462: #636462;
 $font: 400 1rem/1rem "Helvetica Neue", Helvetica, Tahoma, Arial, Sans-serif;

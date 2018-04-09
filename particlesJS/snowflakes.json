@@ -1,0 +1,54 @@
+{
+    "particles": {
+        "number": {
+            "value": 80
+        },
+        "shape": {
+            "type": "image",
+            "stroke": {
+                "width": 0,
+                "color": "#ff0000"
+            },
+            "polygon": {
+                "nb_sides": 5
+            },
+            "image": {
+                "src": "http://st-prod.b0.upaiyun.com/zeus/2017/02/10/3f41975c5282b754d800fa48fc818aeb!/format/png",
+                "src": "snow.png",
+                "height": 83,
+                "height": 96,
+                "width": 96
+            }
+        },
+        "size": {
+            "value": 15,
+            "random": true
+        },
+        "line_linked": {
+            "enable": false,
+            "distance": 0,
+            "opaity": 1,
+            "width": 0
+        },
+        "move": {
+            "enable": true,
+            "speed": 3,
+            "direction": "bottom",
+            "direction": "right",
+            "straight": false
+        }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": false
+            }
+        },
+        "modes": {
+            "push": {
+                "particles_nb": 0
+            }
+        }
+    }
+}
