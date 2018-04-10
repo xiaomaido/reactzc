@@ -1,4 +1,4 @@
-import Confirm from '../../components/Confirm'
+// import Confirm from '../../components/Confirm'
 
 const initStateResponse = {
 	data: {
@@ -38,71 +38,71 @@ export default class Index extends Quyou{
 		const API_PAGE = APIS[`API_${_t}_SHOP_DETAIL`]
 		me.requestDetail(me,FETCH_PAGE,API_PAGE)
 	}
-	handleReceiveCoupon({coupon_id,stock}){
-		const me=this
-		if(stock){
-			me.requestAPI(API_MY_COUPON_RECEIVE,{
-				coupon_id,
-				token: me.user.token,
-			},(response={})=>{
-				const { code=-1, data="", msg="" } = response
-				// {"msg":"已经领取","data":"","code":20012}
-				if(code){
-					const codeMap = {
-						'20012': '您已经领取过该优惠券哦！'
-					}
-                    Confirm.show({
-						title: '领取失败',
-						desc: codeMap[code]||msg,
-						callBacks: [
-							// {text: '我知道了', onClick: () => {Confirm.close()}},
-							// {text: '选择2', onClick: () => {}}
-							{
-								text: '查看优惠券',
-								onClick: () => {
-									Confirm.close()
-									me.openPage(`/mycoupons?ltype=0`)
-								}
-							},
-							// {
-							// 	text: '我知道了',
-							// 	onClick: () => {
-							// 		Confirm.close()
-							// 	}
-							// },
-						]
-					})
-					return
-				}
-				// {"msg":"","data":true,"code":0}
-				// alert('领取成功')
-				Confirm.show({
-					title: '领取成功',
-					desc: '快去使用吧~',
-					callBacks: [
-						{
-							text: '查看优惠券',
-							onClick: () => {
-								debugger
-							}
-						},
-						// {
-						// 	text: '我知道了',
-						// 	onClick: () => {
-						// 		Confirm.close()
-						// 	}
-						// },
-					]
-				})
-				const FETCH_TEMP = me.state[FETCH_PAGE]
-				const temp = FETCH_TEMP.response.data.coupon.find(d=>d.id===coupon_id)
-				temp.reciev_count += 1
-				this.setState({
-					[FETCH_PAGE]: FETCH_TEMP
-				})
-			})
-		}
-	}
+	// handleReceiveCoupon({coupon_id,stock}){
+	// 	const me=this
+	// 	if(stock){
+	// 		me.requestAPI(API_MY_COUPON_RECEIVE,{
+	// 			coupon_id,
+	// 			token: me.user.token,
+	// 		},(response={})=>{
+	// 			const { code=-1, data="", msg="" } = response
+	// 			// {"msg":"已经领取","data":"","code":20012}
+	// 			if(code){
+	// 				const codeMap = {
+	// 					'20012': '您已经领取过该优惠券哦！'
+	// 				}
+    //                 Confirm.show({
+	// 					title: '领取失败',
+	// 					desc: codeMap[code]||msg,
+	// 					callBacks: [
+	// 						// {text: '我知道了', onClick: () => {Confirm.close()}},
+	// 						// {text: '选择2', onClick: () => {}}
+	// 						{
+	// 							text: '查看优惠券',
+	// 							onClick: () => {
+	// 								Confirm.close()
+	// 								me.openPage(`/mycoupons?ltype=0`)
+	// 							}
+	// 						},
+	// 						// {
+	// 						// 	text: '我知道了',
+	// 						// 	onClick: () => {
+	// 						// 		Confirm.close()
+	// 						// 	}
+	// 						// },
+	// 					]
+	// 				})
+	// 				return
+	// 			}
+	// 			// {"msg":"","data":true,"code":0}
+	// 			// alert('领取成功')
+	// 			Confirm.show({
+	// 				title: '领取成功',
+	// 				desc: '快去使用吧~',
+	// 				callBacks: [
+	// 					{
+	// 						text: '查看优惠券',
+	// 						onClick: () => {
+	// 							debugger
+	// 						}
+	// 					},
+	// 					// {
+	// 					// 	text: '我知道了',
+	// 					// 	onClick: () => {
+	// 					// 		Confirm.close()
+	// 					// 	}
+	// 					// },
+	// 				]
+	// 			})
+	// 			const FETCH_TEMP = me.state[FETCH_PAGE]
+	// 			const temp = FETCH_TEMP.response.data.coupon.find(d=>d.id===coupon_id)
+	// 			temp.reciev_count += 1
+	// 			this.setState({
+	// 				[FETCH_PAGE]: FETCH_TEMP
+	// 			})
+	// 		})
+	// 	}
+	// }
 }
 const Content = (props) => {
     const { response, me } = props

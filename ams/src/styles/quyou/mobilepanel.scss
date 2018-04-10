@@ -1763,6 +1763,18 @@ img {
             font-size: px2rem(26px);
             line-height: px2rem(26px);
         }
+        .timearea{
+            padding-top: px2rem(16px);
+            .timeareatitle,.timeareatime{
+                color: #5d666e;
+                font-size: px2rem(28px);
+                line-height: px2rem(48px);
+            }
+            .timeareatime{
+                font-size: px2rem(26px);
+                line-height: px2rem(30px);
+            }
+        }
     }
     .fixed-footer-xian-shi{
     	background-color: $color_ff;

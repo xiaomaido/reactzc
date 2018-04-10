@@ -220,7 +220,7 @@ export class Quyou extends React.Component{ // 公共模板
     requestAPI=(url,data,succ=(res)=>{console.log(res)},fail=(err)=>{console.log(err)},method='GET')=>{
         const me = this
         if(!me.user.token){
-            if(~url.indexOf('Like') || ~url.indexOf('Comment') || ~url.indexOf('follow') || ~url.indexOf('coupon')){
+            if(~url.indexOf('Like') || ~url.indexOf('Comment') || ~url.indexOf('follow') || (~url.indexOf('coupon') && url !== '/user/coupon_detail')){
                 me.openPage('/signin')
                 return
             }
@@ -552,16 +552,16 @@ window.TYPES={
     FETCH_PLUS_DETAIL:`FETCH_PLUS_DETAIL`,
 }
 window.APIS={
-    API_MY_COUPON_LIST:`/user/coupon_my`,
     API_MY_COUPON_RECEIVE:`/user/recive_coupon`,
+    API_MY_COUPON_LIST:`/user/coupon_my`,
     API_MY_COUPON_USE:`/user/coupon_use`,
+    API_MY_COUPON_DETAIL: '/user/coupon_detail',
     API_MY_FOLLOW_LIST:`/user/followList`,
     API_MY_DO_FOLLOW:`/user/follow`,
     API_MY_GET_JSSIGN:`/user/get_jssign`,
     API_MY_UPDATE_PROFILE:`/user/updateInfo`,
     API_MY_GET_LOGIN_CODE:`/user/getloginCode`,
     API_MY_CHECK_LOGIN_CODE:`/user/mcheck`,
-    API_MY_COUPON_DETAIL: '/user/coupon_detail',
     API_TOUR_INDEX:`/tourIndex/index`,
     API_TOUR_PIC_LIST:`/tourIndex/tourPicList`,
     API_TOUR_PIC_DETAIL:`/tourIndex/tourPicDetail`,

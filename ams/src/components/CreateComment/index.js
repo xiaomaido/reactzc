@@ -1,5 +1,5 @@
 import './index.scss'
-import Confirm from '../../components/Confirm';
+// import Confirm from '../../components/Confirm';
  const Index = (props) => {
     const { 
         type = 'textarea',

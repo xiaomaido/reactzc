@@ -18,6 +18,9 @@ class Content extends React.Component {
     state = {
         agStyle: {}
     }
+    componentWillMount(){
+    	window.scrollTo(0, 0)
+    }
     componentDidMount() {
         this.setState({
             agStyle: {

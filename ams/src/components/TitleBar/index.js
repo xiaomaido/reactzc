@@ -22,6 +22,9 @@ const Index = (props) => {
         if(_t === 'SLEEP') backUrl='/hotelhot'
         else if(_t === 'TOUR') backUrl='/triphot'
     }
+    else if(backUrl === '/mycoupons'){
+        backUrl = backUrl + '?ltype=0'
+    }
     else if(backUrl == '/paperhot') {
         if (_t === 'FAVORD' && (current[2] == 214 || current[2] == 126)) {
             backUrl = '/mall';
@@ -54,11 +57,13 @@ const Index = (props) => {
             || (~pathnameNow.indexOf('/posthot/') && pathnameFrom === '/')
             || (~pathnameNow.indexOf('/posthot/') && pathnameFrom === '/trip')
             || (~pathnameNow.indexOf('/posthot/') && pathnameFrom === '/hotel')
+            || (~pathnameNow.indexOf('/mycoupons/') && ~pathnameFrom.indexOf('/mycoupons'))
         ) {
             backUrl = pathnameFrom
         }
     }
-    console.log('backUrl', backUrl, 'titleimg', titleimg);
+    console.log('backUrl', backUrl);
+    // console.log('backUrl', backUrl, 'titleimg', titleimg);
     return (
         <div className="titleBar">
             <div className="box">
