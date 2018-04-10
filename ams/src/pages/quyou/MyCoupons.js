@@ -155,7 +155,7 @@ const Content = (props) => {
                             {
                                 ltype === '0' ? <div className="btn" onClick={me.handleShowCreateComment.bind(me, { coupon_id: d.coupon_id })}>点击使用</div> : null
                             }
-                            <div style={{height:'4.28rem'}} onClick={me.openPage.bind(me,`/mycoupons/8`)}>
+                            <div style={{height:'4.28rem'}} onClick={me.openPage.bind(me,`/mycoupons/${d.coupon_id}`)}>
                                 <div className="icon cover" style={{backgroundPosition: 'right',backgroundSize: 'cover',backgroundImage:`url(${d.imgs[0]}${doImg.fw(100)})`}}></div>
                                 <div className="content">
                                     <div className="name coupon" style={tempStyle}>{`【${d.seller.name}】`} {d.title} {d.desc_title} </div>

@@ -197,7 +197,7 @@ const ProductList = (props) => {
 													</div>
 													<div className="text text-elip">{d.title}</div>
 													<div className="price text-elip">{d.desc_title}</div>
-													<div className={classnames({btn:true,enable:d.stock})} onClick={me.openPage.bind(me,'/mycoupons/8')}>我要领取</div>
+													<div className={classnames({btn:true,enable:d.stock})} onClick={me.openPage.bind(me,`/mycoupons/${d.id}`)}>我要领取</div>
 												</li>
 											)
 										})

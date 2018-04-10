@@ -40,7 +40,7 @@ window.pageMapRoute={
 		page:Pages.MyCoupons
 	},
 	mycoupondetail: {
-		url:'/mycoupons/:id',
+		url:'/mycoupons/:coupon_id',
 		page:Pages.MyCouponDetail
 	},
 	mymsg: {

@@ -561,6 +561,7 @@ window.APIS={
     API_MY_UPDATE_PROFILE:`/user/updateInfo`,
     API_MY_GET_LOGIN_CODE:`/user/getloginCode`,
     API_MY_CHECK_LOGIN_CODE:`/user/mcheck`,
+    API_MY_COUPON_DETAIL: '/user/coupon_detail',
     API_TOUR_INDEX:`/tourIndex/index`,
     API_TOUR_PIC_LIST:`/tourIndex/tourPicList`,
     API_TOUR_PIC_DETAIL:`/tourIndex/tourPicDetail`,

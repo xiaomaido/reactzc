@@ -339,7 +339,7 @@ var misc = {
 			time = Math.ceil(time / 1000);
 			do {
 				if (time >= mGap) {
-					t = parseInt(time / mGap, 10);
+					var t = parseInt(time / mGap, 10);
 					if (t < 10) {
 						t = '0' + t;
 					};
