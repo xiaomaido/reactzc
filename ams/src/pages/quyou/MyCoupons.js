@@ -49,7 +49,7 @@ export default class Index extends Quyou{
                     ...me.state[FETCH_PAGE]
                 }
                 FETCH_TEMP.response.data.count += -1
-                FETCH_TEMP.response.data.data = FETCH_TEMP.response.data.data.filter(({coupon_id})=>coupon_id!==params.coupon_id)
+                FETCH_TEMP.response.data.data = FETCH_TEMP.response.data.data.filter(({coupon_id})=>coupon_id!==couponId)
 				me.setState({
 					textOkay: initTextOkay,
 					showCreateComment: false,
