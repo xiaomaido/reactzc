@@ -2,6 +2,25 @@ import banner from '../../images/quyou/banner/shophot.png'
 const initStateResponse = initState()
 const API_PAGE = APIS.API_EAT_SHOP_LIST
 const FETCH_PAGE = TYPES.FETCH_EAT_SHOP_LIST
+const SearchInput = (props) => {
+    const {handleSearch = () => {}} = props
+    return (
+        <div className="search-input">
+            <div className="area">
+                <i className="icon" />
+                <input
+                    placeholder="搜索商家名称"
+                    onChange={
+                        (e)=>{
+                            handleSearch(e.target.value)
+                        }
+                    }
+                />
+            </div>
+            <div className="clearboth thinner-border"></div>
+        </div>
+    )
+}
 export default class Index extends Quyou{
     state={
         [FETCH_PAGE]:{
@@ -17,6 +36,17 @@ export default class Index extends Quyou{
         const { filteridsShowOptions } = me.state
         let { filterid = 0 } =  me.props.location.query
         filterid = Number(filterid)
+        return (
+			<div className="shop-hot">
+                <img className="banner" src={banner} />
+                <div>
+                    <SearchInput handleSearch={me.handleSearch} />
+                </div>
+                <div>
+                    <SelectBox showOptions={filteridsShowOptions} options={filterids} optionId={filterid}  type={'filterids'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'filterids')} />
+                </div>
+            </div>
+        )
         return (
 			<div className="shop-hot">
                 <img className="banner" src={banner} />
@@ -72,14 +102,23 @@ export default class Index extends Quyou{
         me.page = 0
         me.requestList(me,FETCH_PAGE,API_PAGE)
     }
-    componentDidMount(){
-        const me = this
-        me.requestList(me,FETCH_PAGE,API_PAGE,true)
-        me.shareTextObjSetting({
-            title:`人气商家`,
-            imgUrl: `http://quyou.weichongming.com/static/images/shophot.6aa46ea1b7d4a35f033ee113df4e7a03.png`,
-            desc:'整合崇明全域的人气商家、精推品质之选！',
-        })
+    // componentDidMount(){
+    //     const me = this
+    //     me.requestList(me,FETCH_PAGE,API_PAGE,true)
+    //     me.shareTextObjSetting({
+    //         title:`人气商家`,
+    //         imgUrl: `http://quyou.weichongming.com/static/images/shophot.6aa46ea1b7d4a35f033ee113df4e7a03.png`,
+    //         desc:'整合崇明全域的人气商家、精推品质之选！',
+    //     })
+    // }
+    handleSearch(like){
+        console.log(value)
+        let { query } = me.props.location
+        query = {
+            ...query,
+            like
+        }
+        me.openPage(`/shophot${me.getRequestParam(query)}`)
     }
 }
 

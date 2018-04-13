@@ -2404,3 +2404,38 @@ img {
         max-width: 5.5rem;
     }
 }
+.search-input{
+    height: px2rem(100px);
+    .area{
+        margin: px2rem(20px) px2rem(24px);
+        height: px2rem(60px);
+        background-color: $color_f5;
+        border: 1px solid $color_e5;
+        border-radius: px2rem(8px);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        i{
+            background-image: url('../../images/quyou/icon/isearchinput.png');
+            width: px2rem(34px);
+            height: px2rem(34px);
+            margin: px2rem(13px) px2rem(30px) px2rem(13px) 0;
+            display: block;
+        }
+        input{
+            margin: px2rem(13px) 0;
+            width: 5rem;
+            border: 0;
+            color: $color_33;
+            font-size: px2rem(28px);
+            height: px2rem(34px);
+            line-height: px2rem(34px);
+        }
+        input::placeholder{
+            color: $color_99 !important;
+            font-size: px2rem(24px) !important;
+            line-height: px2rem(34px) !important;
+        }
+    }
+}
+
