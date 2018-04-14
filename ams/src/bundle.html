@@ -49,5 +49,17 @@
     <img id="spin" class="spin" src="/static/images/spin.b5ff1ed55753353a1ceeed31baa13b66.gif" />
     <div id="index"></div>
     <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="https://cdn.ravenjs.com/3.24.1/raven.min.js"
+    crossorigin="anonymous"></script>
+    <script>
+      Raven.config('https://494d4147ff724e9abade84f657970409@sentry.io/1189197').install()
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?5dda512547f14c220bf44583e81ca3d9";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
   </body>
 </html>

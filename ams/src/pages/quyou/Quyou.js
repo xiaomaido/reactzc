@@ -943,59 +943,60 @@ window.getClientHeight = () => { //获取当前可是范围的高度
 window.getScrollHeight = () => { //获取文档完整的高度
 	return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); 
 }
-function getViewportSize () {
-    return {
-        width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-        height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-    };
-}
+// function getViewportSize () {
+//     return {
+//         width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+//         height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+//     };
+// }
 window.SearchInput = (props) => {
     const {handleSearch = () => {}, me} = props
-    // document.activeElement
-    // window.onresize = function(){
-    //     alert(window.innerHeight)
-    // }
-    // onFocus={
-    //     ()=>{
-    //         // me.searchInput.value = getViewportSize().height
-    //     }
-    // }
     return (
         <div className="search-input">
-            <div className="area">
-                <i
-                    className="icon"
-                    onClick={
-                        ()=>{
-                            me.searchInput && me.searchInput.focus()
-                        }
+            <form
+                noValidate={true}
+                autoComplete="off"
+                className="area"
+                action={''}
+                onSubmit={
+                    (form)=>{
+                        document.activeElement && document.activeElement.blur() // 收起输入键盘
+                        handleSearch(me.searchInput.value)
+                        return false
                     }
-                />
-                <input
-                    defaultValue={me.props.location.query.like}
-                    ref={(node)=>{
-                        me.searchInput = node
-                        // console.log('node', node)
-                    }}
-                    placeholder="搜索商家名称"
-                    onBlur={
-                        (e)=>{
-                            // me.searchInput.value = getViewportSize().height
-                            handleSearch(e.target.value)
-                            // alert(1)
-                        }
-                    }
-                    onKeyUp={
-                        (e)=>{
-                            // me.searchInput.value = getViewportSize().height
-                            if (e.keyCode === 13) {
-                                document.activeElement && document.activeElement.blur() // 收起输入键盘
-                                handleSearch(e.target.value)
+                }
+            >
+                    <i
+                        className="icon"
+                        onClick={
+                            ()=>{
+                                me.searchInput && me.searchInput.focus()
+                                me.searchInput && me.searchInput.focus()
                             }
                         }
-                    }
-                />
-            </div>
+                    />
+                    <input
+                        type="search"
+                        defaultValue={me.props.location.query.like}
+                        ref={(node)=>{
+                            me.searchInput = node
+                        }}
+                        placeholder="搜索商家名称"
+                        // onBlur={
+                        //     (e)=>{
+                        //         handleSearch(e.target.value)
+                        //     }
+                        // }
+                        // onKeyUp={
+                        //     (e)=>{
+                        //         if (e.keyCode === 13) {
+                        //             document.activeElement && document.activeElement.blur() // 收起输入键盘
+                        //             handleSearch(e.target.value)
+                        //         }
+                        //     }
+                        // }
+                    />
+            </form>
             <div className="clearboth thinner-border"></div>
         </div>
     )

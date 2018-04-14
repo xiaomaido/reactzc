@@ -2424,6 +2424,7 @@ img {
             display: block;
         }
         input{
+            -webkit-appearance: none;
             margin: px2rem(8px) 0 0;
             width: 10rem;
             border: 0;
