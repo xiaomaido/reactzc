@@ -573,3 +573,25 @@ detail_couponQ = {
         "token": "rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSHC4RFJeXCcTvqYwtpGbGjdMSuJMb3X+ebGNXWdWg9OpQ==",
         "coupon_id": 6
 }
+
+
+
+
+https://tongji.baidu.com/
+手机号 15601963619
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5dda512547f14c220bf44583e81ca3d9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+线上错误收集机制
+https://sentry.io/
+xiaomaido@hotmail.com
+1qazxsw2

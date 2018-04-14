@@ -2415,7 +2415,7 @@ img {
         border-radius: px2rem(8px);
         box-sizing: border-box;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         i{
             background-image: url('../../images/quyou/icon/isearchinput.png');
             width: px2rem(34px);
@@ -2425,7 +2425,7 @@ img {
         }
         input{
             margin: px2rem(8px) 0 0;
-            width: 5rem;
+            width: 10rem;
             border: 0;
             color: $color_33;
             font-size: px2rem(28px);

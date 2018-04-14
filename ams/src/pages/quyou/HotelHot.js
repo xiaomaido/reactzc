@@ -34,7 +34,7 @@ export default class Index extends Quyou{
         return (
 			<div className="food-hot hotel-hot">
                 <div>
-                    <SearchInput handleSearch={me.handleSearch.bind(me)} />
+                    <SearchInput me={me} handleSearch={me.handleSearch.bind(me)} />
                 </div>
                 <div>
                     <SelectBox showOptions={tagsShowOptions} options={tags} optionId={tag} type={'tags'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'tags')} />

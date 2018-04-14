@@ -943,17 +943,54 @@ window.getClientHeight = () => { //获取当前可是范围的高度
 window.getScrollHeight = () => { //获取文档完整的高度
 	return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); 
 }
+function getViewportSize () {
+    return {
+        width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+    };
+}
 window.SearchInput = (props) => {
-    const {handleSearch = () => {}} = props
+    const {handleSearch = () => {}, me} = props
+    // document.activeElement
+    // window.onresize = function(){
+    //     alert(window.innerHeight)
+    // }
     return (
         <div className="search-input">
             <div className="area">
-                <i className="icon" />
+                <i
+                    className="icon"
+                    onClick={
+                        ()=>{
+                            me.searchInput && me.searchInput.focus()
+                        }
+                    }
+                />
                 <input
+                    defaultValue={me.props.location.query.like}
+                    ref={(node)=>{
+                        me.searchInput = node
+                        // console.log('node', node)
+                    }}
                     placeholder="搜索商家名称"
+                    onFocus={
+                        ()=>{
+                            // me.searchInput.value = getViewportSize().height
+                        }
+                    }
                     onBlur={
                         (e)=>{
+                            // me.searchInput.value = getViewportSize().height
                             handleSearch(e.target.value)
+                            // alert(1)
+                        }
+                    }
+                    onKeyUp={
+                        (e)=>{
+                            // me.searchInput.value = getViewportSize().height
+                            if (e.keyCode === 13) {
+                                handleSearch(e.target.value)
+                            }
                         }
                     }
                 />
