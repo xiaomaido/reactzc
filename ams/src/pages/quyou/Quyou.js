@@ -955,6 +955,11 @@ window.SearchInput = (props) => {
     // window.onresize = function(){
     //     alert(window.innerHeight)
     // }
+    // onFocus={
+    //     ()=>{
+    //         // me.searchInput.value = getViewportSize().height
+    //     }
+    // }
     return (
         <div className="search-input">
             <div className="area">
@@ -973,11 +978,6 @@ window.SearchInput = (props) => {
                         // console.log('node', node)
                     }}
                     placeholder="搜索商家名称"
-                    onFocus={
-                        ()=>{
-                            // me.searchInput.value = getViewportSize().height
-                        }
-                    }
                     onBlur={
                         (e)=>{
                             // me.searchInput.value = getViewportSize().height
@@ -989,6 +989,7 @@ window.SearchInput = (props) => {
                         (e)=>{
                             // me.searchInput.value = getViewportSize().height
                             if (e.keyCode === 13) {
+                                document.activeElement && document.activeElement.blur() // 收起输入键盘
                                 handleSearch(e.target.value)
                             }
                         }
