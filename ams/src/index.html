@@ -35,7 +35,10 @@
           display: none;
         }
       </style>
+      <script src="https://cdn.ravenjs.com/3.24.1/raven.min.js"
+              crossorigin="anonymous"></script>
       <script>
+          Raven.config('https://29d01d99494540659f1391ab1bd9d547@sentry.io/1189191').install()
         function remLayOut() { 
           var rootV=20
           var normalV=375
@@ -66,5 +69,14 @@
     <div id="index"></div>
     <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script src="/static/bundle.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?5dda512547f14c220bf44583e81ca3d9";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
   </body>
 </html>
