@@ -20,6 +20,9 @@ export default class Index extends Quyou{
         return (
 			<div className="food-hot hotel-hot trip-hot">
                 <div>
+                    <SearchInput handleSearch={me.handleSearch.bind(me)} />
+                </div>
+                <div>
                     <SelectBox showOptions={filteridsShowOptions} options={filterids} optionId={filterid}  type={'filterids'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'filterids')} />
                 </div>
                 {
@@ -79,6 +82,16 @@ export default class Index extends Quyou{
             imgUrl:`http://www.weichongming.com/quyou/logo.png`,
             desc:'整合崇明全域“吃住游购”旅游产品的综合平台和崇明旅游行业引导的风向标。',
         })
+    }
+    handleSearch(like){
+        const me = this
+        let { query } = me.props.location
+        query = {
+            ...query,
+            like
+        }
+        console.log('query', query)
+        me.openPage(`/triphot${me.getRequestParam(query)}`)
     }
 }
 const List = (props) => {

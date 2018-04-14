@@ -943,3 +943,22 @@ window.getClientHeight = () => { //获取当前可是范围的高度
 window.getScrollHeight = () => { //获取文档完整的高度
 	return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); 
 }
+window.SearchInput = (props) => {
+    const {handleSearch = () => {}} = props
+    return (
+        <div className="search-input">
+            <div className="area">
+                <i className="icon" />
+                <input
+                    placeholder="搜索商家名称"
+                    onBlur={
+                        (e)=>{
+                            handleSearch(e.target.value)
+                        }
+                    }
+                />
+            </div>
+            <div className="clearboth thinner-border"></div>
+        </div>
+    )
+}

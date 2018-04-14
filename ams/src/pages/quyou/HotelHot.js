@@ -34,6 +34,9 @@ export default class Index extends Quyou{
         return (
 			<div className="food-hot hotel-hot">
                 <div>
+                    <SearchInput handleSearch={me.handleSearch.bind(me)} />
+                </div>
+                <div>
                     <SelectBox showOptions={tagsShowOptions} options={tags} optionId={tag} type={'tags'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'tags')} />
                     <SelectBox showOptions={filteridsShowOptions} options={filterids} optionId={filterid}  type={'filterids'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'filterids')} />
                 </div>
@@ -93,6 +96,16 @@ export default class Index extends Quyou{
         _location = nextProps.location
         me.page = 0
         me.requestList(me,FETCH_PAGE,API_PAGE)
+    }
+    handleSearch(like){
+        const me = this
+        let { query } = me.props.location
+        query = {
+            ...query,
+            like
+        }
+        console.log('query', query)
+        me.openPage(`/hotelhot${me.getRequestParam(query)}`)
     }
 }
 const List = (props) => {

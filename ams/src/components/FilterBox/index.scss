@@ -35,6 +35,7 @@
         }
     }
     .select-options{
+        box-sizing: border-box;
         background-color: $color_ff;
         padding: 0 px2rem(60px) px2rem(80px);
         li.active{

@@ -41,6 +41,7 @@
         }
     }
     .select-options{
+        box-sizing: border-box;
         width: px2rem(750px);
         position: absolute;
         z-index: 100;

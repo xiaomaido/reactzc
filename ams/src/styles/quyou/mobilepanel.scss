@@ -2405,9 +2405,10 @@ img {
     }
 }
 .search-input{
-    height: px2rem(100px);
+    height: px2rem(80px);
+    padding-top: px2rem(20px);
     .area{
-        margin: px2rem(20px) px2rem(24px);
+        margin: 0 px2rem(24px) px2rem(20px);
         height: px2rem(60px);
         background-color: $color_f5;
         border: 1px solid $color_e5;
@@ -2419,11 +2420,11 @@ img {
             background-image: url('../../images/quyou/icon/isearchinput.png');
             width: px2rem(34px);
             height: px2rem(34px);
-            margin: px2rem(13px) px2rem(30px) px2rem(13px) 0;
+            margin: px2rem(10px) px2rem(30px) 0 0;
             display: block;
         }
         input{
-            margin: px2rem(13px) 0;
+            margin: px2rem(8px) 0 0;
             width: 5rem;
             border: 0;
             color: $color_33;
@@ -2434,7 +2435,7 @@ img {
         input::placeholder{
             color: $color_99 !important;
             font-size: px2rem(24px) !important;
-            line-height: px2rem(34px) !important;
+            line-height: px2rem(40px) !important;
         }
     }
 }
