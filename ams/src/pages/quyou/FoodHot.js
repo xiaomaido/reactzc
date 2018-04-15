@@ -22,6 +22,9 @@ export default class Index extends Quyou{
 			<div className="food-hot">
                 <img className="banner" src={banner} />
                 <div>
+                    <SearchInput me={me} handleSearch={me.handleSearch.bind(me)} placeholder={'搜索美食名称'}/>
+                </div>
+                <div>
                     <SelectBox showOptions={filteridsShowOptions} options={filterids} optionId={filterid}  type={'filterids'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'filterids')} />
                 </div>
                 {

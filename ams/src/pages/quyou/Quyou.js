@@ -503,6 +503,16 @@ export class Quyou extends React.Component{ // 公共模板
             })
         }
     }
+    handleSearch(like){
+        const me = this
+        let { query } = me.props.location
+        query = {
+            ...query,
+            like
+        }
+        console.log('query', query)
+        me.openPage(`${_location.pathname}${me.getRequestParam(query)}`)
+    }
 }
 Quyou.contextTypes={
 	router: PropTypes.object
@@ -950,7 +960,7 @@ window.getScrollHeight = () => { //获取文档完整的高度
 //     };
 // }
 window.SearchInput = (props) => {
-    const {handleSearch = () => {}, me} = props
+    const {handleSearch = () => {}, me, placeholder = '搜索商家名称'} = props
     return (
         <div className="search-input">
             <form
@@ -966,22 +976,24 @@ window.SearchInput = (props) => {
                     }
                 }
             >
-                    <i
-                        className="icon"
+                    <div
+                        className="iconbox"
                         onClick={
                             ()=>{
                                 me.searchInput && me.searchInput.focus()
                                 me.searchInput && me.searchInput.focus()
                             }
                         }
-                    />
+                    >
+                        <i className="icon" />
+                    </div>
                     <input
                         type="search"
                         defaultValue={me.props.location.query.like}
                         ref={(node)=>{
                             me.searchInput = node
                         }}
-                        placeholder="搜索商家名称"
+                        placeholder={placeholder}
                         // onBlur={
                         //     (e)=>{
                         //         handleSearch(e.target.value)
