@@ -26,7 +26,7 @@ const Index = (props) => {
         backUrl = backUrl + '?ltype=0'
     }
     else if(backUrl == '/paperhot') {
-        if (_t === 'FAVORD' && (current[2] == 214 || current[2] == 126)) {
+        if (_t === 'FAVORD' && (current[2] == 214 || current[2] == 126 || current[2] == 226)) {
             backUrl = '/mall';
             titleimg = `${titleimg}${current[2]}`
         }
