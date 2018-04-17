@@ -2,12 +2,12 @@ import bar from '../../images/quyou/trip/bar.png'
 import busicon from '../../images/quyou/trip/busicon.png'
 import boaticon from '../../images/quyou/trip/boaticon.png'
 import guidance from '../../images/quyou/trip/pic-daolantu@3x.png'
-import banner from '../../images/quyou/trip/pic-you-list@3x.png'
+import banner from '../../images/quyou/trip/zixingchesai.png'
 const imgSlideList=[
     {
         img: banner,
         // url: `/guidance`,
-        url: ``,
+        url: `http://weixin.shmaishuang.com/app/index.php?i=79&c=entry&m=ewei_shopv2&do=mobile&r=diypage&id=99`,
     },
 ]
 

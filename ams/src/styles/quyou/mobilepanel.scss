@@ -18,6 +18,9 @@ img {
 .trip{
     background-color: $color_f5;
     padding-bottom: $barTop;
+    .slideBox, .slideBox .sample {
+        height: 9rem;
+    }
     .menulist{
         background-color: $color_ff;
         padding: 0 px2rem(90px);
