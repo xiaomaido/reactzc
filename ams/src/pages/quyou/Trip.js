@@ -115,27 +115,17 @@ const Content = (props) => {
             </div> */}
             <div className="busboat">
                 <a className="column" href={'http://shanghaicity.openservice.kankanews.com/public/bus'}>
-                    <div className="gongjiao">
-                        <div className="content">
-                            <div className="">崇明公交线路</div>
-                            <div className="content1">打造低碳环保出行</div>
-                        </div>
+                    <div className="icon gongjiao">
+                        <div className="big">崇明公交线路</div>
+                        <div className="small">打造低碳环保出行</div>
                     </div>
-                    {/*<div className="titlet">崇明公交线路</div>*/}
-                    {/*<div className="desct">打造低碳环保出行</div>*/}
-                    {/*<img alt={'崇明公交'} src={busicon} />*/}
                 </a>
-                <div className="column" style={{width:0}}><div className="thin-border-verical"></div></div>
+                {/* <div className="column" style={{width:0}}><div className="thin-border-verical"></div></div> */}
                 <a className="column" href={'http://shcm.dashenw.cn/static/ferrytime.html'}>
-                    <div className="lundu">
-                        <div className="content">
-                            <div className="">崇明轮渡出行</div>
-                            <div className="content1">横渡长江中部首选</div>
-                        </div>
+                    <div className="icon lundu">
+                        <div className="big">崇明轮渡出行</div>
+                        <div className="small">横渡长江中部首选</div>
                     </div>
-                    {/*<div className="titlet">崇明轮渡出行</div>*/}
-                    {/*<div className="desct">崇明轮渡出行</div>*/}
-                    {/*<img alt={'崇明轮渡'} src={boaticon} />*/}
                 </a>
             </div>
             {/* <div style={{height:0}}>&nbsp;</div> */}

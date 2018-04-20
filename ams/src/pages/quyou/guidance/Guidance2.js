@@ -41,7 +41,7 @@ class Content extends React.Component {
             backgroundImage:`url(${ditu})`,
             height: '32rem',
             width: '32rem'
-        }
+        },
     }
     componentDidMount1() {
         var c=document.getElementById("myCanvas");
@@ -76,102 +76,82 @@ class Content extends React.Component {
         data = Array.isArray(data) ? data : []
         return (
             <div className="mall trip-guidance">
-                {/*<canvas id="myCanvas" width="640" height="640" >*/}
-                    {/*Your browser does not support the HTML5 canvas tag.*/}
-                {/*</canvas>*/}
-
-                <LazyLoad height={200} offset={100}>
-                    <div>
-                        <div className="ditu" style={this.state.imgStyle}>
-                            <div className="ditu-p dtsd icon">
-                                <div className="ditu-info">
-                                    <a href={this.guildDetailUrl(37)}>东滩湿地公园</a>
-                                </div>
+                <div>
+                    <div className="ditu" style={this.state.imgStyle}>
+                        <div className="ditu-p qwstc icon">
+                            <div className="ditu-info">
+                                <a href={this.guildDetailUrl(37)}>东滩湿地公园</a>
                             </div>
-
-                            <div className="ditu-p qwstc icon">
-                                <div className="ditu-info">
-                                    <a href={this.guildDetailUrl(36)}>前卫生态村</a>
-                                </div>
-                            </div>
-                            <div className="ditu-p jnsmwhc icon">
-                                <div className="ditu-info">
-                                    <a href={this.guildDetailUrl(44)}>江南三民文化村</a>
-                                </div>
-                            </div>
-                            <div className="ditu-p ydstc icon">
-                                <div className="ditu-info">
-                                    <a href={this.guildDetailUrl(46)}>瀛东生态村</a>
-                                </div>
-                            </div>
-                            <div className="ditu-p zhly icon">
-                                <div className="ditu-info">
-                                    <a href={this.guildDetailUrl(38)}>紫海鹭缘浪漫爱情主题公园</a>
-                                </div>
-                            </div>
-                            <div className="ditu-p gjzsty icon">
-                                <div className="ditu-info">
-                                    <a href={this.guildDetailUrl(39)}>高家庄生态园</a>
-                                </div>
-                            </div>
-                            {/*<div className="ditu-p cmxg icon">*/}
-                                {/*<div className="ditu-info">*/}
-                                    {/*<a href={`${window.isHashHistory}/guidance/1`}>崇明学宫</a>*/}
-                                {/*</div>*/}
-                            {/*</div>*/}
-                            <div className="ditu-p dpgjsl icon">
-                                <div className="ditu-info">
-                                    <a href={this.guildDetailUrl(19)}>东平国家森林公园</a>
-                                </div>
-                            </div>
-                            <div className="ditu-p rhgy icon">
-                                <div className="ditu-info">
-                                    <a href={this.guildDetailUrl(43)}>瑞华果园</a>
-                                </div>
-                            </div>
-                            <div className="ditu-p xsmz icon">
-                                <div className="ditu-info">
-                                    <a href={this.guildDetailUrl(40)}>西沙·明珠湖景区</a>
-                                </div>
-                            </div>
-                            <div className="ditu-p cxjy icon">
-                                <div className="ditu-info">
-                                    <a href={this.guildDetailUrl(99)}>长兴郊野公园</a>
-                                </div>
-                            </div>
-                            <div className="ditu-p xdkxnc icon">
-                                <div className="ditu-info">
-                                    <a href={`${window.isHashHistory}/shophot/155?_t=SLEEP`}>香朵开心农场</a>
-                                </div>
-                            </div>
-                            <div className="ditu-p dhjgkxnc icon">
-                                <div className="ditu-info">
-                                    <a href={`${window.isHashHistory}/shophot/72?_t=SLEEP`}>东禾九谷开心农场</a>
-                                </div>
-                            </div>
-
-                            {/*<div className="ditu-p ycxmgy icon">*/}
-                                {/*<div className="ditu-info">*/}
-                                    {/*<a href={`${window.isHashHistory}/guidance/1`}>悦采香玫瑰园</a>*/}
-                                {/*</div>*/}
-                            {/*</div>*/}
                         </div>
+
+                        <div className="ditu-p qwstc icon">
+                            <div className="ditu-info">
+                                <a href={this.guildDetailUrl(36)}>前卫生态村</a>
+                            </div>
+                        </div>
+                        <div className="ditu-p jnsmwhc icon">
+                            <div className="ditu-info">
+                                <a href={this.guildDetailUrl(44)}>江南三民文化村</a>
+                            </div>
+                        </div>
+                        <div className="ditu-p ydstc icon">
+                            <div className="ditu-info">
+                                <a href={this.guildDetailUrl(46)}>瀛东生态村</a>
+                            </div>
+                        </div>
+                        <div className="ditu-p zhly icon">
+                            <div className="ditu-info">
+                                <a href={this.guildDetailUrl(38)}>紫海鹭缘浪漫爱情主题公园</a>
+                            </div>
+                        </div>
+                        <div className="ditu-p gjzsty icon">
+                            <div className="ditu-info">
+                                <a href={this.guildDetailUrl(39)}>高家庄生态园</a>
+                            </div>
+                        </div>
+                        {/*<div className="ditu-p cmxg icon">*/}
+                            {/*<div className="ditu-info">*/}
+                                {/*<a href={`${window.isHashHistory}/guidance/1`}>崇明学宫</a>*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
+                        <div className="ditu-p dpgjsl icon">
+                            <div className="ditu-info">
+                                <a href={this.guildDetailUrl(19)}>东平国家森林公园</a>
+                            </div>
+                        </div>
+                        <div className="ditu-p rhgy icon">
+                            <div className="ditu-info">
+                                <a href={this.guildDetailUrl(43)}>瑞华果园</a>
+                            </div>
+                        </div>
+                        <div className="ditu-p xsmz icon">
+                            <div className="ditu-info">
+                                <a href={this.guildDetailUrl(40)}>西沙·明珠湖景区</a>
+                            </div>
+                        </div>
+                        <div className="ditu-p cxjy icon">
+                            <div className="ditu-info">
+                                <a href={this.guildDetailUrl(99)}>长兴郊野公园</a>
+                            </div>
+                        </div>
+                        <div className="ditu-p xdkxnc icon">
+                            <div className="ditu-info">
+                                <a href={`${window.isHashHistory}/shophot/155?_t=SLEEP`}>香朵开心农场</a>
+                            </div>
+                        </div>
+                        <div className="ditu-p dhjgkxnc icon">
+                            <div className="ditu-info">
+                                <a href={`${window.isHashHistory}/shophot/72?_t=SLEEP`}>东禾九谷开心农场</a>
+                            </div>
+                        </div>
+
+                        {/*<div className="ditu-p ycxmgy icon">*/}
+                            {/*<div className="ditu-info">*/}
+                                {/*<a href={`${window.isHashHistory}/guidance/1`}>悦采香玫瑰园</a>*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
                     </div>
-                </LazyLoad>
-                {/*<ul className="ad-list">*/}
-                {/*<li key={0}>*/}
-                {/**/}
-                {/*</li>*/}
-                {/*{*/}
-                {/*[].map((d,i)=>(*/}
-                {/*<li key={i}>*/}
-                {/*<LazyLoad height={200} offset={100}>*/}
-                {/*<a href={`${window.isHashHistory}/guidance/${d.id}`} className="icon big" style={{backgroundImage:`url(${d.img})`}}></a>*/}
-                {/*</LazyLoad>*/}
-                {/*</li>*/}
-                {/*))*/}
-                {/*}*/}
-                {/*</ul>*/}
+                </div>
             </div>
         )
     }
