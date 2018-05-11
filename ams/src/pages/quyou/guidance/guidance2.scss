@@ -105,13 +105,14 @@
     left: 76%;
   }
 
-
-  .ditu-info {
-    display: none;
+.ditu-info-none {
+  display: none;
+}
+  .ditu-info-block {
+    display: block;
   }
-
-&:hover .ditu-info{
-    padding: 0.3rem;
+  .ditu-info{
+    padding: 0.5rem;
     //height: 3rem;
     width: 5rem;
     background-color: rgba(0, 0, 0, 0.5);
@@ -119,12 +120,8 @@
     color: aliceblue;
     font-size: 0.6rem;
     text-align: center;
-    display: block;
-    font-weight: 400;
-    // transform: translateY(-3em);
-    position: absolute;
-    left: -2.5rem;
-    top: -1.8rem;
+    font-weight: 700;
+    transform: translateY(-3em);
     a {
       color: white;
     }
