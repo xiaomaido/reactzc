@@ -3,13 +3,13 @@ import busicon from '../../images/quyou/trip/busicon.png'
 import boaticon from '../../images/quyou/trip/boaticon.png'
 import guidance from '../../images/quyou/trip/pic-daolantu@3x.png'
 import banner from '../../images/quyou/trip/zixingchesai.png'
-const imgSlideList=[
-    {
-        img: banner,
-        // url: `/guidance`,
-        url: `http://weixin.shmaishuang.com/app/index.php?i=79&c=entry&m=ewei_shopv2&do=mobile&r=diypage&id=99`,
-    },
-]
+// const imgSlideList=[
+//     {
+//         img: banner,
+//         // url: `/guidance`,
+//         url: `http://weixin.shmaishuang.com/app/index.php?i=79&c=entry&m=ewei_shopv2&do=mobile&r=diypage&id=99`,
+//     },
+// ]
 
 const API_PAGE = APIS.API_TOUR_INDEX
 const FETCH_PAGE = TYPES.FETCH_TOUR_INDEX
@@ -56,6 +56,7 @@ const Content = (props) => {
     const { response, me } = props
     const { 
         tour_pic = '',
+        banner = [],
         recommPost = [],
     } = response.data
     return (
@@ -66,7 +67,7 @@ const Content = (props) => {
                     <span>请输入关键字查询</span>
                 </div>
             </div> */}
-            <TouchSlideBox imgSlideList={imgSlideList} />    
+            <TouchSlideBox imgSlideList={banner} />    
             <div className="menulist">
                 <div className="row">
                     <a href="javascript:;" className="row_a" style={{right:0}}>
