@@ -3,7 +3,7 @@ import inext from '../../images/quyou/banner/inext.png'
 import notice from '../../images/quyou/banner/notice.png'
 import ptflzq from '../../images/quyou/banner/pic-ptfl.png'
 import stncp from '../../images/quyou/banner/stncp.png'
-import dami from '../../images/quyou/banner/pic-ptzc@3x.png'
+import dami from '../../images/quyou/banner/findyou.png'
 // document.domain = "caibaojian.com";
 // const setIframeHeight = (iframeId) => {
 //     const iframe = document.getElementById(iframeId)
@@ -42,11 +42,11 @@ export default class Index extends Quyou{
         // <div style={{padding: '1rem'}} dangerouslySetInnerHTML={dangerouslyContent}/>
         return (
             <div className="mall" style={{paddingBottom:'3.8rem'}}>
-                <ul className="ad-list" style={{height:700}}>
+                <ul className="ad-list">
                     <li>
                         {/* <a href={ !true ? `${window.isHashHistory}/`:`http://m.chongnongpi.com/index.jsp`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
                         </a> */}
-                        <a href={ true ? `${window.isHashHistory}/paperhot/226?_t=FAVORD`:``} className="icon big" style={{backgroundImage:`url(${dami})`}}>
+                        <a href={ !true ? `${window.isHashHistory}/paperhot/226?_t=FAVORD`:`https://mp.weixin.qq.com/s/RqCHoPyPq5Bk42RXlqzPGw`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
                         </a>
                     </li>
                     <li>
