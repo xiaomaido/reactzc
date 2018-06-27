@@ -70,9 +70,9 @@ const Content = (props) => {
             <TouchSlideBox imgSlideList={banner} />    
             <div className="menulist">
                 <div className="row">
-                    <a href="javascript:;" className="row_a" style={{right:0}}>
+                    <a href={`http://bus.weichongming.com/main`} className="row_a" style={{right:0}}>
                         <div className="icon evcard"></div>
-                        <div className="text">EVCARD</div>
+                        <div className="text">交通出行</div>
                     </a>
                     <a href={`${window.isHashHistory}/guidance`} className="row_a" style={{left:0}}>
                         <div className="icon quanyuditu"></div>
