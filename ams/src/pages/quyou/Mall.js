@@ -16,9 +16,6 @@ import dami from '../../images/quyou/banner/findyou.png'
 // }
 
 export default class Index extends Quyou{
-    state = {
-        htmlContent: `<h3 ><span style="color:#Da4453"><ins><strong>经常会听到有人说，读大学有什么用？</strong></ins></span></h3> <h4 >你看那北大毕业的还有卖猪肉的，清华毕业的还当保安，我手下刚招来的985大学的高材生，来了还不是要从打杂开始干？</h4> <h4 ><br></h4> <h4 >还有人说，你看那些当年的高考状元，哪个成为行业领袖了？应试教育不行，净教出一些死读书的书呆子。</h4> <h4 ><br></h4>`
-    }
     componentWillMount(){
     	window.scrollTo(0, 0)
     }
@@ -35,18 +32,13 @@ export default class Index extends Quyou{
     }
 	renderContent(){
         // document.title='趣游崇明'
-        // const { htmlContent = '' } = this.state
-        // const dangerouslyContent = {
-        //     __html: htmlContent
-        // }
-        // <div style={{padding: '1rem'}} dangerouslySetInnerHTML={dangerouslyContent}/>
         return (
             <div className="mall" style={{paddingBottom:'3.8rem'}}>
                 <ul className="ad-list">
                     <li>
                         {/* <a href={ !true ? `${window.isHashHistory}/`:`http://m.chongnongpi.com/index.jsp`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
                         </a> */}
-                        <a href={ !true ? `${window.isHashHistory}/paperhot/226?_t=FAVORD`:`https://mp.weixin.qq.com/s/RqCHoPyPq5Bk42RXlqzPGw`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
+                        <a href={ !true ? `${window.isHashHistory}/paperhot/226?_t=FAVORD`:`http://weixin.shmaishuang.com/app/index.php?i=79&c=entry&m=ewei_shopv2&do=mobile&r=article&aid=1155`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
                         </a>
                     </li>
                     <li>

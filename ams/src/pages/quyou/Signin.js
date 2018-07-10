@@ -186,7 +186,8 @@ export default class Index extends Quyou{
                     </div>
                     <div className="clearboth thinner-border"></div>
                 </div>
-                <img className="signin" src={signin} onClick={this.handleSignInClick.bind(this)} /> 
+                <div className="icon signin" style={{height: '2.75rem', backgroundImage: `url(${signin})`}} onClick={this.handleSignInClick.bind(this)} ></div> 
+                {/* <img className="signin" src={signin} onClick={this.handleSignInClick.bind(this)} />  */}
                 <div className="validate-result">{validityState}</div>
             </div>
         )
