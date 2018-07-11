@@ -24,6 +24,7 @@ export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
     user=JSON.parse(misc.getCookie('user'))||{ token: ''}
     limit=10
+    limit=5
     page=0
     api={
         host:`${server}/peanut`,
@@ -155,6 +156,22 @@ export class Quyou extends React.Component{ // 公共模板
         }
         // console.log('shareTextObj',me.shareTextObj)
         me.weixinSDK()
+    }
+    requestListOrCacheData({FETCH_PAGE,API_PAGE}){
+        const me = this 
+        const CACHE_DATA = sessionStorage ? JSON.parse(sessionStorage.getItem(FETCH_PAGE)) : null
+        if (CACHE_DATA) {
+            me.setState({
+                [FETCH_PAGE]: CACHE_DATA.response
+            }, () => {
+                sessionStorage.removeItem(FETCH_PAGE)
+                window.scrollTo(0, CACHE_DATA.scrollTop) // 回到之前离开的位置
+                me.page = CACHE_DATA.page
+                me.scrollLoadMore(me,FETCH_PAGE,API_PAGE,false)
+            })
+        } else {
+            me.requestList(me,FETCH_PAGE,API_PAGE,true)
+        }
     }
     weixinSDK(){
         const me=this
@@ -692,6 +709,7 @@ window.PostList = (props) => {
         list, 
         me,
         type = 'EAT',
+        FETCH_PAGE
     } = props
     const { pathname } = _location
     // <LazyLoad key={i} height={200} offset={100}>
@@ -703,7 +721,20 @@ window.PostList = (props) => {
                     d.imgs = d.imgs.length ? d.imgs : (d.cover_img?[d.cover_img]:[])
                     return (
                         <div key={i}>
-                            <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}?_t=${type}`)}>
+                            {/* <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}?_t=${type}`)}> */}
+                            <div 
+                                className="item"
+                                onClick={()=>{
+                                    if(sessionStorage) {
+                                        sessionStorage.setItem(FETCH_PAGE, JSON.stringify({
+                                            response: me.state[FETCH_PAGE],
+                                            scrollTop: getScrollTop(),
+                                            page: me.page
+                                        }))
+                                    }
+                                    me.openPage(`${pathname}/${d.id}?_t=${type}`)
+                                }}
+                            >
                                 <div className="avatar-name">
                                     <i className="icon" style={{backgroundImage:`url(${d.headimg})`}}></i>
                                     <span>{d.nickname}</span>
@@ -801,7 +832,7 @@ window.PostDetail  = (props) => {
                         d.is_rich==="0" ? (
                             <div>
                                 {
-                                    d.imgs.map((da,i) => <LazyLoad key={i} height={200} offset={100}><img className="pic" src={da} /></LazyLoad> )
+                                    d.imgs.map((da,i) => <LazyLoad key={i} height={200} offset={100}><img className="pic" src={`${da}${doImg.fw(800)}`} /></LazyLoad> )
                                 }
                             </div>
                         ) : null
@@ -922,7 +953,7 @@ window.Intro = (props) => {
                     Composed
                 }
                 {
-                    needCover ? data.imgs.map((img,i)=><img key={i} className="icover" src={img}/>) : null
+                    needCover ? data.imgs.map((img,i)=><img key={i} className="icover" src={`${img}${doImg.fw(800)}`}/>) : null
                 }
             </div>
         </div>

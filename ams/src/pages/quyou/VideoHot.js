@@ -138,7 +138,8 @@ export default class Index extends Quyou{
         const { query } = me.props.location
         const _t = query._t || 'EAT'
         const API_PAGE = APIS[`API_${_t}_MEDIA_LIST`]
-        me.requestList(me, FETCH_PAGE, API_PAGE,true)
+        me.requestListOrCacheData({FETCH_PAGE,API_PAGE})
+        // me.requestList(me,FETCH_PAGE,API_PAGE,true)
         me.shareTextObjSetting({
             title:`趣游崇明之精选视频`,
             imgUrl:`http://www.weichongming.com/quyou/logo.png`,
@@ -165,7 +166,7 @@ const Content = (props) => {
                 <SelectBox showOptions={catesShowOptions} options={cates} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'cates')} />
                 <SelectBox showOptions={townsShowOptions} options={towns} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'towns')} />
             </div> */}
-            <PostList list={data} me={me} type={_t} isVideo={true} />
+            <PostList list={data} me={me} type={_t} isVideo={true} FETCH_PAGE={FETCH_PAGE} />
             {
                 me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
             }

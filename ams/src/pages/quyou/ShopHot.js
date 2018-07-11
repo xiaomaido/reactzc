@@ -77,7 +77,8 @@ export default class Index extends Quyou{
     }
     componentDidMount(){
         const me = this
-        me.requestList(me,FETCH_PAGE,API_PAGE,true)
+        me.requestListOrCacheData({FETCH_PAGE,API_PAGE})
+        // me.requestList(me,FETCH_PAGE,API_PAGE,true)
         me.shareTextObjSetting({
             title:`人气商家`,
             imgUrl: `http://quyou.weichongming.com/static/images/shophot.6aa46ea1b7d4a35f033ee113df4e7a03.png`,
@@ -113,7 +114,21 @@ const List = (props) => {
                         d.coupon = Array.isArray(d.coupon) ? d.coupon : []
                         return (
                             <div key={i}>
-                                <div className="item" onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}>
+                                <div 
+                                    className="item"
+                                    onClick={()=>{
+                                        if(sessionStorage) {
+                                            sessionStorage.setItem(FETCH_PAGE, JSON.stringify({
+                                                response: me.state[FETCH_PAGE],
+                                                scrollTop: getScrollTop(),
+                                                page: me.page
+                                            }))
+                                        }
+                                        me.openPage(`${pathname}/${d.id}`)
+                                    }}
+                                    // onClick={me.openPage.bind(me,`${pathname}/${d.id}`)}
+
+                                >
                                     <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}></div>
                                     <div className="box">
                                         <div className="name">{d.name}</div>

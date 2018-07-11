@@ -3,9 +3,9 @@ webpack=require('webpack')
 CleanPlugin=require('clean-webpack-plugin') 
 ExtractTextPlugin=require('extract-text-webpack-plugin') // 提取、合并CSS，不压缩
 HtmlWebpackPlugin=require('html-webpack-plugin')
-path_output=path.join(__dirname,'dist')
+path_output=path.join(__dirname,'static')
 is_production=process.env.NODE_ENV === 'production'
-is_production=!is_production
+// is_production=!is_production
 entry=[
     './src/index'
 ]
@@ -18,8 +18,8 @@ output={
 plugins=[
     new webpack.HotModuleReplacementPlugin()
     ,new ExtractTextPlugin({ filename: 'bundle'+(is_production?'.[hash]':'')+'.css', disable: false, allChunks: true }) //提取出来的样式放在bundle.css文件中
-    ,new CleanPlugin(path_output) // 构建生产环境的时候，清空已存在的dist目录里的文件
-    ,new HtmlWebpackPlugin({ // 在dist目录下自动生成index.html
+    ,new CleanPlugin(path_output) // 构建生产环境的时候，清空已存在的static目录里的文件
+    ,new HtmlWebpackPlugin({ // 在static目录下自动生成index.html
         template: 'src/bundle.html' // 选择一个模板，自动生成的没有viewport description等，更多请参考配置文档
     })
     // ,new webpack.DllReferencePlugin({

@@ -77,7 +77,8 @@ export default class Index extends Quyou{
     }
     componentDidMount(){
         const me = this
-        me.requestList(me,FETCH_PAGE,API_PAGE,true)
+        me.requestListOrCacheData({FETCH_PAGE,API_PAGE})
+        // me.requestList(me,FETCH_PAGE,API_PAGE,true)
         me.shareTextObjSetting({
             title:`当季推荐`,
             imgUrl: `http://quyou.weichongming.com/static/images/seasonhot.f9c8bbfed7a87aa734c6ba2f40b44591.png`,
@@ -98,7 +99,20 @@ const List = (props) => {
                 {
                     data.map((d = { imgs: [] },i)=>(
                         <div key={i}>
-                            <div className="item" onClick={me.openPage.bind(me,`/shophot/${d.id}`)}>
+                            <div
+                                className="item"
+                                onClick={()=>{
+                                    if(sessionStorage) {
+                                        sessionStorage.setItem(FETCH_PAGE, JSON.stringify({
+                                            response: me.state[FETCH_PAGE],
+                                            scrollTop: getScrollTop(),
+                                            page: me.page
+                                        }))
+                                    }
+                                    me.openPage(`/shophot/${d.id}`)
+                                }}
+                                // onClick={me.openPage.bind(me,`/shophot/${d.id}`)}
+                            >
                                 <LazyLoad key={i} height={100} offset={100}>
                                     <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}></div>
                                 </LazyLoad>
