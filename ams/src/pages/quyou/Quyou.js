@@ -24,7 +24,6 @@ export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
     user=JSON.parse(misc.getCookie('user'))||{ token: ''}
     limit=10
-    limit=5
     page=0
     api={
         host:`${server}/peanut`,
