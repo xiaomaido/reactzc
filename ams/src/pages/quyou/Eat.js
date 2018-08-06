@@ -1,6 +1,7 @@
 import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
+import eatcover from '../../images/quyou/eatcover.png'
 import './eat/eat.scss';
 const API_PAGE = APIS.API_EAT_INDEX
 const FETCH_PAGE = TYPES.FETCH_EAT_INDEX
@@ -82,7 +83,11 @@ const Content = (props) => {
                 <div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}}></div>
                 <div className="content">点此进入图文列表</div>
             </div> */}
-            <VideoList list={recomm_medias} me={me} />
+            <VideoList
+                list={recomm_medias}
+                me={me}
+                cover={eatcover}
+            />
         </div>
     )
 }

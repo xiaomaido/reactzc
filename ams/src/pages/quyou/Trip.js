@@ -1,4 +1,5 @@
-import bar from '../../images/quyou/trip/bar.png'
+import buildings from '../../images/quyou/trip/buildings.png'
+import tripcover from '../../images/quyou/trip/tripcover.png'
 import busicon from '../../images/quyou/trip/busicon.png'
 import boaticon from '../../images/quyou/trip/boaticon.png'
 import guidance from '../../images/quyou/trip/pic-daolantu@3x.png'
@@ -102,8 +103,8 @@ const Content = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="top" onClick={me.openPage.bind(me, `/posthot?_t=TOUR`)}>
-                <img className="bar" src={bar}  />
+            <div className="top" onClick={me.openPage.bind(me, `/buildinghot?cate=-1`)}>
+                <img className="bar" src={buildings}  />
                 <div style={{height:0}}>&nbsp;</div>
             </div>
             <PictureList list={recommPost} me={me} />
@@ -144,7 +145,13 @@ const PictureList = (props) => {
 		<div className="video clearboth">
 			<div className="vlist">
 				<div className="ul-box">
-					<ul style={{width:(list.length*fontSize*(200+30)/40)}}>
+					<ul style={{width:((list.length+1)*fontSize*(200+30)/40)}}>
+                        <li
+                            onClick={me.openPage.bind(me, `/posthot?_t=TOUR`)}
+                        >
+                            <div className="icon poster" style={{backgroundImage:`url(${tripcover})`}}></div>
+                            <div className="text text-elip">查看更多攻略<img className="cover-go" src={go} /></div>
+                        </li>
 						{
 							list.map((d,i)=>(
 								<li key={i} onClick={me.openPage.bind(me, `/posthot/${d.id}?_t=TOUR`)}>

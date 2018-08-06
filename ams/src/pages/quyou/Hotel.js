@@ -1,5 +1,5 @@
 import './hotel/hotel.scss';
-
+import hotelcover from '../../images/quyou/hotelcover.png'
 const API_PAGE = APIS.API_SLEEP_INDEX
 const FETCH_PAGE = TYPES.FETCH_SLEEP_INDEX
 export default class Index extends Quyou{
@@ -89,7 +89,13 @@ const Content = (props) => {
                 {/*<div className="icon picture" style={{backgroundImage:`url(${post_index.imgs})`}} onClick={me.openPage.bind(me,  `/posthot/${post_index.id}?_t=SLEEP`)}></div>*/}
                 {/*<div className="content" onClick={me.openPage.bind(me, `/posthot/${post_index.id}?_t=SLEEP`)}>{post_index.description}</div>*/}
             </div>
-            <VideoList list={recomm_medias} me={me} title={"酒店视频"} type={"SLEEP"} />
+            <VideoList
+                list={recomm_medias}
+                me={me}
+                title={"酒店视频"}
+                type={"SLEEP"}
+                cover={hotelcover}
+            />
         </div>
     )
 }

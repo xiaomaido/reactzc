@@ -3,6 +3,7 @@ const initStateResponse = initState()
 const API_PAGE = APIS.API_TOUR_SHOP_LIST
 const FETCH_PAGE = TYPES.FETCH_TOUR_SHOP_LIST
 export default class Index extends Quyou{
+    limit=30
     state={
         [FETCH_PAGE]:{
             response: initStateResponse,
@@ -20,7 +21,7 @@ export default class Index extends Quyou{
         return (
 			<div className="food-hot hotel-hot trip-hot">
                 <div>
-                    <SearchInput me={me} handleSearch={me.handleSearch.bind(me)} />
+                    <SearchInput me={me} handleSearch={me.handleSearch.bind(me)} placeholder={'搜索建筑物名称'} />
                 </div>
                 <div>
                     <SelectBox showOptions={filteridsShowOptions} options={filterids} optionId={filterid}  type={'filterids'} handleSelectBoxChage={me.handleSelectBoxChage.bind(me)} handleSelectBoxChageColumn={me.handleSelectBoxChageColumn.bind(me,'filterids')} />
@@ -92,15 +93,18 @@ export default class Index extends Quyou{
             like
         }
         console.log('query', query)
-        me.openPage(`/triphot${me.getRequestParam(query)}`)
+        me.openPage(`/buildinghot${me.getRequestParam(query)}`)
     }
 }
 const List = (props) => {
     const { response, me } = props
-    const { 
+    let { 
         count = 0,
         data = [],
     } = response.data
+    data = Array.isArray(data) ? data : []
+    data = data.filter(({id}) => buildingIds[id])
+    count = data.length
     return data.length ? (
         <div>
             <div className="list">
@@ -108,7 +112,7 @@ const List = (props) => {
                     data.map((d = { imgs: [] },i)=>{
                         d.stag_names = Array.isArray(d.stag_names) ? d.stag_names : []
                         d.coupon = Array.isArray(d.coupon) ? d.coupon : []
-                        return !buildingIds[d.id]?(
+                        return (
                             <div key={i}>
                                 <div
                                     className="item"
@@ -120,9 +124,8 @@ const List = (props) => {
                                                 page: me.page
                                             }))
                                         }
-                                        me.openPage(`/shophot/${d.id}?_t=TOUR`)
+                                        me.openPage(`/buildinghot/${d.id}?_t=TOUR`)
                                     }}
-                                    // onClick={me.openPage.bind(me,`/shophot/${d.id}?_t=TOUR`)}
                                 >
                                     <LazyLoad key={i} height={100} offset={100}>
                                         <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}></div>
@@ -131,7 +134,7 @@ const List = (props) => {
                                         <div className="name">{d.name}</div>
                                         <div className="stars-permoney">
                                             <StarsShow number={d.star_count||5} />
-                                            <div className="permoney"><span>¥{d.custom_avg}</span> 起</div>
+                                            {/* <div className="permoney"><span>¥{d.custom_avg}</span> 起</div> */}
                                         </div>
                                         <ul className="tags">
                                             {
@@ -152,7 +155,7 @@ const List = (props) => {
                                     i===data.length-1 ? null : <div className="clearboth thinner-border"></div>
                                 }
                             </div>
-                        ):null
+                        )
                     })
                 }
             </div>

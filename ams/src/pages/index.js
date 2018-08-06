@@ -98,6 +98,12 @@ const ShopDetail = Loadable({
     loading: Loading,
 })
 
+const BuildingDetail = Loadable({
+    loader: () => import('./quyou/BuildingDetail'),
+    loading: Loading,
+})
+
+
 const XianShiFuLi = Loadable({
     loader: () => import('./quyou/XianShiFuLi'),
     loading: Loading,
@@ -173,6 +179,12 @@ const TripHot = Loadable({
     loading: Loading,
 })
 
+const BuildingHot = Loadable({
+    loader: () => import('./quyou/BuildingHot'),
+    loading: Loading,
+})
+
+
 const Guidance = Loadable({
     loader: () => import('./quyou/Guidance'),
     loading: Loading,
@@ -236,7 +248,9 @@ export {
 	MyMsg,
 	MyFollows,
 	Trip,
-	TripHot,
+    TripHot,
+    BuildingHot,
+    BuildingDetail,
 	Guidance,
 	Guidance2,
 	GuidanceDetail,

@@ -13,13 +13,30 @@ import SelectBox from '../../components/SelectBox/'
 import FilterBox from '../../components/FilterBox/'
 import StarsShow from '../../components/StarsShow/'
 import avatar_url from '../../images/quyou/icon/avatar.png'
+import go from '../../images/quyou/go.png'
 import play from '../../images/quyou/icon/play.png'
 import { setTimeout } from 'timers';
+window.go=go
 window.avatar_url=avatar_url
 window.play=play
 window.server=`http://quyou.weichongming.com`
 window.wxconfig={}
 window.jsApiList=['onMenuShareAppMessage','onMenuShareTimeline','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
+window.buildingIds = {
+    202: true,
+    203: true,
+    204: true,
+    205: true,
+    206: true,
+    207: true,
+    208: true,
+    209: true,
+    210: true,
+    211: true,
+    212: true,
+    213: true,
+    214: true,
+}
 export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
     user=JSON.parse(misc.getCookie('user'))||{ token: ''}
@@ -669,7 +686,7 @@ window.initState=()=>{
     }
 }
 window.VideoList = (props) => {
-    const { list, me, title = '视频推荐', type = 'EAT' } = props
+    const { list, me, title = '视频推荐', type = 'EAT', cover = '' } = props
     return (
         <div className="video clearboth">
             <div className="title-box">
@@ -679,6 +696,14 @@ window.VideoList = (props) => {
             <div className="vlist">
                 <div className="ul-box">
                     <ul style={{width:((list.length+1)*fontSize*(240+30)/40)}}>
+                        <li onClick={me.openPage.bind(me, `/videohot`)}>
+                            <div className="icon poster" style={{backgroundImage:`url(${cover})`}}>
+                                {/* <div className="more"></div> */}
+                                {/* <div className="more">更多 &gt;</div> */}
+                            </div>
+                            <div className="text">查看更多视频<img className="cover-go" src={go} /></div>
+                            {/* <div className="text">更多推荐视频</div> */}
+                        </li>
                         {
                             list.map((d,i)=>(
                                 <li key={i} onClick={me.openPage.bind(me, `/videohot/${d.id}?_t=${type}`)}>
@@ -689,12 +714,6 @@ window.VideoList = (props) => {
                                 </li>
                             ))
                         }
-                        <li onClick={me.openPage.bind(me, `/videohot`)}>
-                            <div className="icon poster">
-                                <div className="more">更多视频 &gt;</div>
-                            </div>
-                            <div className="text"></div>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -836,6 +855,9 @@ window.PostDetail  = (props) => {
                             </div>
                         ) : null
                     )
+                }
+                {
+                    isVideo && d.description ? d.description.split('<br>').map((da,i)=><div key={i} className="text">{da}</div>) : null
                 }
                 {
                     d.is_rich==="0"&&d.description?d.description.split('<br>').map((da,i)=><div key={i} className="text">{da}</div>):''

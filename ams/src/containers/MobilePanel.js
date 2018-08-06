@@ -45,6 +45,7 @@ export default class MobilePanel extends Component{
 			'/xianshifuli':arr[0],
 			'/hotelhot':arr[1],
 			'/triphot':arr[2],
+			'/buildinghot':arr[2],
 			'/busline':arr[2],
 			'/guidance':arr[2],
             '/guidance2':arr[2],

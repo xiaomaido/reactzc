@@ -63,6 +63,10 @@ window.pageMapRoute={
 		url:'/triphot',
 		page:Pages.TripHot
 	},
+	buildinghot: {
+		url:'/buildinghot',
+		page:Pages.BuildingHot
+	},
 	guidancedetail: {
 		url:'/guidance/:id',
 		page:Pages.GuidanceDetail
@@ -94,6 +98,10 @@ window.pageMapRoute={
 	xianshifuli: {
 		url:'/xianshifuli',
 		page:Pages.XianShiFuLi
+	},
+	buildingdetail: {
+		url:'/buildinghot/:id',
+		page:Pages.BuildingDetail
 	},
 	shopdetail: {
 		url:'/shophot/:id',

@@ -30,16 +30,20 @@ export default class Index extends Quyou{
         //     setIframeHeight(document.getElementById('external-frame'))
         // }
     }
+    
+//     <li>
+//     {/* <a href={ !true ? `${window.isHashHistory}/`:`http://m.chongnongpi.com/index.jsp`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
+//     </a> */}
+//     <a href={ !true ? `${window.isHashHistory}/paperhot/226?_t=FAVORD`:`http://weixin.shmaishuang.com/app/index.php?i=79&c=entry&m=ewei_shopv2&do=mobile&r=article&aid=1155`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
+//     </a>
+// </li>
 	renderContent(){
         // document.title='趣游崇明'
         return (
             <div className="mall" style={{paddingBottom:'3.8rem'}}>
                 <ul className="ad-list">
                     <li>
-                        {/* <a href={ !true ? `${window.isHashHistory}/`:`http://m.chongnongpi.com/index.jsp`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
-                        </a> */}
-                        <a href={ !true ? `${window.isHashHistory}/paperhot/226?_t=FAVORD`:`http://weixin.shmaishuang.com/app/index.php?i=79&c=entry&m=ewei_shopv2&do=mobile&r=article&aid=1155`} className="icon big" style={{backgroundImage:`url(${dami})`}}>
-                        </a>
+                        <a href={ true ? `${window.isHashHistory}/agricultural` : 'javascript:;'} className="icon big" style={{backgroundImage:`url(${stncp})`, backgroundSize: 'cover'}}></a>
                     </li>
                     <li>
                         <a href={ true ? `${window.isHashHistory}/mallfuli?ltype=0&has_coupon=1`:`javascript:;`} className="icon big" style={{backgroundImage:`url(${ptflzq})`}}></a>
@@ -59,9 +63,6 @@ export default class Index extends Quyou{
                             <div className="ad">广告</div>
                         </a>
                     </li> */}
-                    <li>
-                        <a href={ true ? `${window.isHashHistory}/agricultural` : 'javascript:;'} className="icon big" style={{backgroundImage:`url(${stncp})`, backgroundSize: 'cover'}}></a>
-                    </li>
                 </ul>
             </div>
         )

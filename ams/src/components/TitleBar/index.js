@@ -8,7 +8,7 @@ const Index = (props) => {
     // if(titleimg === 'hotelhoteat' && query.tagname){
     //     titleimg = query.tagname
     // }
-    // console.log('titleimg',titleimg)
+    console.log('titleimg',titleimg)
     let backUrl = `/${current[1]}`
     backUrl = current.length === 3 ? backUrl : objTitleBack[backUrl]
     if(backUrl === '/'){
@@ -48,6 +48,7 @@ const Index = (props) => {
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/hotel')
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/hotelhot'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/triphot'))
+            || (~pathnameNow.indexOf('/buildinghot/') && ~pathnameFrom.indexOf('/buildinghot'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/foodhot/'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/guidance/'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/guidance2/'))

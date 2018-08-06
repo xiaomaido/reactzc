@@ -2,6 +2,12 @@
 img {
     max-width: 100%;
 }
+.cover-go{
+    width: 1rem;
+    margin-left: .2rem;
+    top: 0.05rem;
+    position: relative;
+}
 .mobile-panel{
     margin: 0 auto;
     max-width: $maxWidth;
@@ -183,7 +189,7 @@ img {
         .bar{
             display: block;
             margin: 0 auto;
-            height: px2rem(100px);
+            // height: px2rem(100px);
             width: px2rem(666px);
         }
     }
