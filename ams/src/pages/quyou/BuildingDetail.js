@@ -128,6 +128,10 @@ const Content = (props) => {
 	// <ProductList list={data.coupon} me={me} activities={data.activities} />
     return data.id ? (
 		<div className="shop-detail">
+            <ul className="building-nav">
+                <li onClick={me.openPage.bind(me,`/`)}>趣游崇明首页</li>
+                <li onClick={me.openPage.bind(me,`/buildinghot`)}>查看建筑列表</li>
+            </ul>
 			<Intro data={data} needCover={true} Composed={Composed} />
 			<div className="gap"></div>
 			<div className="necker">

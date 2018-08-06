@@ -2,6 +2,26 @@
 img {
     max-width: 100%;
 }
+.building-nav{
+    background-color: $color_ff;
+    height: px2rem(50px);
+    text-align: center;
+    font-size: 0;
+    li:last-child{
+        margin-right: 0 !important;
+    }
+    li{
+        margin-top: px2rem(20px);
+        background-color: $color_ffc913;
+        color: $color_ff;
+        font-size: px2rem(20px);
+        height: px2rem(20px);
+        line-height: px2rem(20px);
+        padding: px2rem(10px) px2rem(20px);
+        margin-right: 2rem;
+        display: inline-block;
+    }
+}
 .cover-go{
     width: 1rem;
     margin-left: .2rem;
