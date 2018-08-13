@@ -60,6 +60,7 @@ const Content = (props) => {
         banner = [],
         recommPost = [],
     } = response.data
+    const handleClickEvent = (+new Date()) < (+new Date('2018/08/16')) ? ()=>{} : me.openPage.bind(me, `/buildinghot?cate=-1`)
     return (
         <div className="trip">
             {/* <div className="query-box" onClick={me.openPage.bind(me, `/query`)}>
@@ -103,7 +104,10 @@ const Content = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="top" onClick={me.openPage.bind(me, `/buildinghot?cate=-1`)}>
+            <div
+                className="top"
+                onClick={handleClickEvent}
+            >
                 <img className="bar" src={buildings}  />
                 <div style={{height:0}}>&nbsp;</div>
             </div>

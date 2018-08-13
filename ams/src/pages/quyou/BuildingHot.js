@@ -67,7 +67,7 @@ export default class Index extends Quyou{
                 delete query['filterid']
             }
         }
-        me.openPage(`/triphot${me.getRequestParam(query)}`)
+        me.openPage(`/buildinghot${me.getRequestParam(query)}`)
     }
     componentWillReceiveProps(nextProps){
         const me = this 
