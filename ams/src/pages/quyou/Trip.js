@@ -60,7 +60,8 @@ const Content = (props) => {
         banner = [],
         recommPost = [],
     } = response.data
-    const handleClickEvent = (+new Date()) < (+new Date('2018/08/16')) ? ()=>{} : me.openPage.bind(me, `/buildinghot?cate=-1`)
+    const handleClickEvent = me.openPage.bind(me, `/buildinghot?cate=-1`)
+    // const handleClickEvent = (+new Date()) < (+new Date('2018/08/16')) ? ()=>{} : me.openPage.bind(me, `/buildinghot?cate=-1`)
     return (
         <div className="trip">
             {/* <div className="query-box" onClick={me.openPage.bind(me, `/query`)}>

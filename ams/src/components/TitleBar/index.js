@@ -62,6 +62,9 @@ const Index = (props) => {
         ) {
             backUrl = pathnameFrom
         }
+        // if (pathnameNow === '/hengsha') {
+        //     backUrl = '/agricultural'
+        // }
     }
     console.log('backUrl', backUrl);
     // console.log('backUrl', backUrl, 'titleimg', titleimg);

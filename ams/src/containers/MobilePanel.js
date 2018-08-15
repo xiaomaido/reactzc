@@ -57,6 +57,7 @@ export default class MobilePanel extends Component{
 			'/myfollows':arr[4],
 			'/mymsg':arr[4],
             '/agricultural':arr[3],
+            '/hengsha':'/agricultural',
 		}
 		const objNav = { // 额外的导航需要显示对应的模块
 			// '/foodhot':arr[0],

@@ -964,10 +964,19 @@ window.Intro = (props) => {
     return (
         <div className="shop-header">
             <div className="header-box">
-                <div className="thin-border-verical-box">
-                    <div className="thin-border-verical"></div>
-                </div>
-                <a href={`tel:${data.phone}`} className="icon phone"></a>
+                {
+                    data.phone === '13248238215' ? null : (
+                        <div className="thin-border-verical-box">
+                            <div className="thin-border-verical"></div>
+                        </div>
+                    )
+                }
+                {
+                    data.phone === '13248238215' ? null : (
+                        <a href={`tel:${data.phone}`} className="icon phone"></a>
+                    )
+                }
+                
                 <div className="name" onClick={handleJump}><i className="icon" />【{data.name}】{ data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}</div>
                 <div className="address" onClick={handleJumpMap}><i className="icon" />{addr}</div>
                 {

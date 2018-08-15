@@ -34,28 +34,21 @@ class Content extends React.Component {
             <div className="mall ag-guidance" style={this.state.agStyle}>
                 <ul className="list">
                     <li>
-                        <a className="first" href={ !true ? `${window.isHashHistory}/`:`http://m.chongnongpi.com/index.jsp`}>
-                            <div className="dami icon"></div>
+                        <a className="first" href={ !true ? `${window.isHashHistory}/`:`https://h5.youzan.com/v2/goods/26z26oit13omm?showsku=true`}>
+                            <div className="xiaolongxia icon"></div>
                             <div className="title">
-                                崇明大米专区
-                                <div className="sub-title">[官方认证单位]</div>
+                                小龙虾
+                                <div className="sub-title" style={{visibility: 'hidden'}}>
+                                [专业合作单位]
+                                </div>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a className="first" href={ true ? `${window.isHashHistory}/`:`http://quyou.zenongji.com.cn/mobile/`}>
-                            <div className="tese icon"></div>
+                        <a className="first" href={ true ? `${window.isHashHistory}/`:`https://h5.youzan.com/v2/goods/3nqhvflh1030u?showsku=true`}>
+                            <div className="zuixie icon"></div>
                             <div className="title">
-                                特色农产品专区
-                                <div className="sub-title">[专业合作单位]</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a className="first" href={ true ? `${window.isHashHistory}/hengsha`:``}>
-                            <div className="hengsha icon"></div>
-                            <div className="title">
-                                横沙专区
+                                醉蟹
                                 <div className="sub-title" style={{visibility: 'hidden'}}>
                                 [专业合作单位]
                                 </div>

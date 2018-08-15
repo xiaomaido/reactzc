@@ -150,6 +150,10 @@ window.pageMapRoute={
 	agricultural: {
 		url: '/agricultural',
 		page: Pages.Agricultual
+	},
+	hengsha: {
+		url: '/hengsha',
+		page: Pages.Hengsha
 	}
 }
 // window.isHashHistory=''

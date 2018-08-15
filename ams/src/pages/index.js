@@ -225,6 +225,11 @@ const Agricultual = Loadable({
     loading: Loading,
 })
 
+const Hengsha = Loadable({
+    loader: () => import('./quyou/agricultural/hengsha'),
+    loading: Loading,
+})
+
 export { 
 	IntlDemo,
 	VideoHot,
@@ -262,5 +267,6 @@ export {
 	Query,
     PagerHot,
     Agricultual,
+    Hengsha,
 	// TencentLocation,
 }
