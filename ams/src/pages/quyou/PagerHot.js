@@ -47,6 +47,7 @@ const Content = (props) => {
 	const cssObj = query.webview === '1' ? {paddingTop:0}:{}
 	// const API_PAGE_LIKE = APIS[`API_${_t}_POST_LIKE`]
 	// const API_PAGE_COMMENT = APIS[`API_${_t}_POST_COMMENT`]
+	document.title = data && data.title ? data.title : document.title
     return data.id ? (
 		<div className="yummy-detail" style={cssObj}>
 
