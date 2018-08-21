@@ -4,6 +4,7 @@ const Index = (props) => {
     const current = location.pathname.split('/')
     const { search, query } = props.location
     const _t = query._t || 'EAT'
+    
     let titleimg = current[1] + _t.toLowerCase()
     // if(titleimg === 'hotelhoteat' && query.tagname){
     //     titleimg = query.tagname
@@ -68,7 +69,7 @@ const Index = (props) => {
     }
     console.log('backUrl', backUrl);
     // console.log('backUrl', backUrl, 'titleimg', titleimg);
-    return (
+    return query.webview==='1'? null:(
         <div className="titleBar">
             <div className="box">
                 <a className="icon back" href={`${window.isHashHistory}${backUrl}`}></a>

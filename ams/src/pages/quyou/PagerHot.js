@@ -44,16 +44,17 @@ const Content = (props) => {
 	const { query } = _location
 	const _t = query._t || 'EAT'
 	const API_MY_DO_FOLLOW = APIS[`API_MY_DO_FOLLOW`]
+	const cssObj = query.webview === '1' ? {paddingTop:0}:{}
 	// const API_PAGE_LIKE = APIS[`API_${_t}_POST_LIKE`]
 	// const API_PAGE_COMMENT = APIS[`API_${_t}_POST_COMMENT`]
     return data.id ? (
-		<div className="yummy-detail">
+		<div className="yummy-detail" style={cssObj}>
 
 			{/*<CommentFixed */}
 				{/*d={data} */}
 				{/*handleLike={me.handleLike.bind(me, { API_PAGE_LIKE, FETCH_PAGE, ID })} */}
 				{/*handleShowCreateComment={me.handleShowCreateComment.bind(me)} />*/}
-			<PostDetail
+			<PaperDetail
 				noShowHeder={true}
 				isVideo={isVideo} 
 				d={data} 

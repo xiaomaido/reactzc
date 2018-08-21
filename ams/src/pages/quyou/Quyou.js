@@ -789,6 +789,86 @@ window.PostList = (props) => {
         </div>
     )
 }
+window.PaperDetail  = (props) => {
+    const {
+        isVideo = false, 
+        d = {
+            imgs:[],
+            is_follow: 0
+        },
+        me,
+        params = { },
+        noShowHeder,
+    } = props
+    let { isDoFollow = false } =  me.state
+    const isFollowed = d.is_follow
+    // const isFollowed = 'isFollowed' in me.state ? me.state.isFollowed : d.is_follow
+    // d.imgs.map((da,i) => <img key={i} className="pic" src={da} />)
+    const { API_MY_DO_FOLLOW, FETCH_PAGE } = params
+    d.imgs = Array.isArray(d.imgs) ? d.imgs : []
+    // d.imgs = d.imgs.length ? d.imgs : (d.cover_img?[d.cover_img]:[])
+    return (
+        <div>
+            {/* <div className="toper"> */}
+            <div className="">
+                {/* <div className="title">{d.title}</div> */}
+                {
+                    noShowHeder
+                        ?
+                        null
+                        :
+                        (
+                            <div className="heder">
+                                <div className={classnames({ follow:true, active: isFollowed })} onClick={me.handleFollow.bind(me, { user_id: d.user_id, isFollowed, API_MY_DO_FOLLOW, FETCH_PAGE })}>
+                                    {
+                                        isDoFollow ? (
+                                            isFollowed ? '取消关注...' : (
+                                                <div>
+                                                    <span>+</span>关注中...
+                                                </div>
+                                            )
+                                        ) : (
+                                            isFollowed ? '已关注' : (
+                                                <div>
+                                                    <span>+</span>关注
+                                                </div>
+                                            )
+                                        )
+                                    }
+                                </div>
+                                <img src={d.headimg} />
+                                <div className="nickname">{d.nickname}<a className="icon"></a></div>
+                                <div className="create">{misc.formatTime(d.create_dt*1000,2)}</div>
+                            </div>
+                        )
+                }
+
+                {
+                    isVideo ? null : (
+                        d.is_rich==="0" ? (
+                            <div>
+                                {
+                                    d.imgs.map((da,i) => <LazyLoad key={i} height={200} offset={100}><img className="pic" src={`${da}${doImg.fw(800)}`} /></LazyLoad> )
+                                }
+                            </div>
+                        ) : null
+                    )
+                }
+                {
+                    isVideo && d.description ? d.description.split('<br>').map((da,i)=><div key={i} className="text">{da}</div>) : null
+                }
+                {
+                    d.is_rich==="0"&&d.description?d.description.split('<br>').map((da,i)=><div key={i} className="text">{da}</div>):''
+                }
+                {
+                    d.is_rich==="1"&&d.content?<div className="text" dangerouslySetInnerHTML={{
+                        __html: d.content
+                    }}/>:null
+                }
+            </div>
+        </div>
+    )
+}
 window.PostDetail  = (props) => {
     const {
         isVideo = false, 

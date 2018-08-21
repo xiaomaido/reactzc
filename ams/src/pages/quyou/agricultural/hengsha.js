@@ -45,7 +45,7 @@ class Content extends React.Component {
                         </a>
                     </li>
                     <li>
-                        <a className="first" href={ true ? `${window.isHashHistory}/`:`https://h5.youzan.com/v2/goods/3nqhvflh1030u?showsku=true`}>
+                        <a className="first" href={ !true ? `${window.isHashHistory}/`:`https://h5.youzan.com/v2/goods/3nqhvflh1030u?showsku=true`}>
                             <div className="zuixie icon"></div>
                             <div className="title">
                                 醉蟹
