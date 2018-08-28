@@ -722,7 +722,7 @@ window.VideoList = (props) => {
     )
 }
 window.PostList = (props) => {
-    const {
+    let {
         isVideo = false, 
         list, 
         me,
@@ -731,6 +731,7 @@ window.PostList = (props) => {
     } = props
     const { pathname } = _location
     // <LazyLoad key={i} height={200} offset={100}>
+    // list = list.filter(d=>d.id!==295)
     return (
         <div className="list">
             {
