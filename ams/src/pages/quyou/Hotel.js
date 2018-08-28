@@ -57,8 +57,7 @@ const Content = (props) => {
         '人气推荐',
         '特惠折扣',
         '生态农庄',
-
-    ];
+    ]
     return (
         <div className="eat">
             <div className="top">

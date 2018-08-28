@@ -80,6 +80,10 @@ const SeasonHot = Loadable({
     loading: Loading,
 })
 
+const CanyinHot = Loadable({
+    loader: () => import('./quyou/CanyinHot'),
+    loading: Loading,
+})
 
 const FoodDetail = Loadable({
     loader: () => import('./quyou/FoodDetail'),
@@ -236,7 +240,8 @@ export {
 	VideoDetail,
 	PostHot,
 	PostDetail,
-	SeasonHot,
+    SeasonHot,
+    CanyinHot,
 	FoodHot,
 	FoodDetail,
 	ShopHot,

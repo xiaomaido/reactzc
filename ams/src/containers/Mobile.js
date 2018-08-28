@@ -123,6 +123,10 @@ window.pageMapRoute={
 		url:'/seasonhot',
 		page:Pages.SeasonHot
 	},
+	canyinhot: {
+		url:'/canyinhot',
+		page:Pages.CanyinHot
+	},
 	videodetail: {
 		url:'/videohot/:id',
 		page:Pages.VideoDetail

@@ -1,8 +1,10 @@
 import quick0 from '../../images/quyou/icon/quick0.png'
 import quick1 from '../../images/quyou/icon/quick1.png'
 import quick2 from '../../images/quyou/icon/quick2.png'
+import quick3 from '../../images/quyou/icon/quick3.png'
+import canyinmingdian from '../../images/quyou/icon/canyinmingdian.png'
 import eatcover from '../../images/quyou/eatcover.png'
-import './eat/eat.scss';
+import './eat/eat.scss'
 const API_PAGE = APIS.API_EAT_INDEX
 const FETCH_PAGE = TYPES.FETCH_EAT_INDEX
 export default class Index extends Quyou{
@@ -55,12 +57,10 @@ const Content = (props) => {
             <div className="top">
                 <TouchSlideBox imgSlideList={banner} />
                 {/* <img className="bar" src={timeBenefits} onClick={me.openPage.bind(me, `/xianshifuli`)} /> */}
-                <ul className="quick">
+                {/* <ul className="quick">
                     <li onClick={me.openPage.bind(me,  `/shophot`)}>
                         <img src={quick0} style={{float:'left'}} />
                         <div style={{textAlign:'left'}}>人气商家</div>
-                        {/* <img src={quick0} />
-                        <div>人气商家</div> */}
                     </li>
                     <li onClick={me.openPage.bind(me,  `/foodhot`)}>
                         <img src={quick1} />
@@ -70,7 +70,28 @@ const Content = (props) => {
                         <img src={quick2} style={{float:'right'}} />
                         <div style={{textAlign:'right'}}>当季推荐</div>
                     </li>
+                </ul> */}
+                <ul className="quickicon">
+                    <li onClick={me.openPage.bind(me,  `/shophot`)}>
+                        <img src={quick0} />
+                        <div>人气商家</div>
+                    </li>
+                    <li onClick={me.openPage.bind(me,  `/foodhot`)}>
+                        <img src={quick1} />
+                        <div>人气美食</div>
+                    </li>
+                    <li onClick={me.openPage.bind(me,  `/seasonhot`)}>
+                        <img src={quick2}/>
+                        <div>当季推荐</div>
+                    </li>
+                    <li onClick={me.openPage.bind(me,  `/tehuihot`)}>
+                        <img src={quick3}/>
+                        <div>特惠专场</div>
+                    </li>
                 </ul>
+            </div>
+            <div className="yummy clearboth">
+                <div className="icon eat-log canyinmingdian" onClick={me.openPage.bind(me,  `/canyinhot`)}></div>
             </div>
             <div className="yummy clearboth">
                 <div className="icon eat-log" onClick={me.openPage.bind(me,  `/posthot`)}></div>

@@ -90,8 +90,9 @@ const Content = (props) => {
                 </div>
                 <div className="row">
                     <a href="javascript:;" className="row_a" style={{right:0}}>
-                        <div className="icon huodong shadow"></div>                        
-                        <div className="text">活动报名</div>                        
+                        {/* <div className="icon huodong shadow"></div>                         */}
+                        <div className="icon huodong "></div>                        
+                        <div className="text">特惠专场</div>                        
                     </a>
                     <a href={ true ? `${window.isHashHistory}/paperhot/213?_t=FAVORD`:`javascript:;`} className="row_a" style={{left:0}}>
                         <div className="icon yingyuan"></div>

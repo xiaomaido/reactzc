@@ -821,13 +821,13 @@ img {
                 display: inline-block;
             }
             .cont:nth-child(1) a{
-                background-image: url('../../images/quyou/zhu/ic-jpjd@3x.png')
+                background-image: url('../../images/quyou/zhu/ic-tsms@3x.png')
             }
             .cont:nth-child(2) a{
                 background-image: url('../../images/quyou/zhu/ic-jjsy@3x.png')
             }
             .cont:nth-child(3) a{
-                background-image: url('../../images/quyou/zhu/ic-tsms@3x.png')
+                background-image: url('../../images/quyou/zhu/ic-jpjd@3x.png')
             }
             .cont:nth-child(4) a{
                 background-image: url('../../images/quyou/zhu/ic-rqtj@3x.png')
@@ -851,6 +851,33 @@ img {
             height: px2rem(100px);
             width: px2rem(666px);
             border-radius: px2rem(100px);
+        }
+    }
+    .quickicon{
+        background-color: $color_ff;
+        display: block;
+        width: px2rem(700px);
+        height: px2rem(96px)+px2rem(14px)+px2rem(24px)+px2rem(28px);
+        margin: px2rem(28px) auto 0;
+        display: flex;
+        justify-content: space-around;
+        li{
+            // float: left;
+            // width: 33.3%;
+            // width: 50%;
+            text-align: center;
+            img{
+                width: px2rem(96px);
+                height: px2rem(96px);
+                display: block;
+                margin: 0 auto;
+            }
+            div{
+                clear: both;
+                padding-top: px2rem(14px);
+                font-size: px2rem(24px);
+                line-height: px2rem(24px);
+            }
         }
     }
     .quick{

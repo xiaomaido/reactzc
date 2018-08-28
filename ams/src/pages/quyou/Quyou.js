@@ -48,9 +48,9 @@ export class Quyou extends React.Component{ // 公共模板
     }
     hotelTags = [
         {
-            title:'精品酒店',
-            name: 'jingpinjiudian',
-            id:12,
+            title:'开心农场',
+            name: 'shengtainongzhuang',
+            id:3,
         },
         {
             title:'特色民宿',
@@ -58,9 +58,9 @@ export class Quyou extends React.Component{ // 公共模板
             id:4,
         },
         {
-            title:'生态农庄',
-            name: 'shengtainongzhuang',
-            id:3,
+            title:'精品酒店',
+            name: 'jingpinjiudian',
+            id:12,
         },
         {
             title:'经济适用',
@@ -73,7 +73,7 @@ export class Quyou extends React.Component{ // 公共模板
             id:10,
         },
         {
-            title:'特惠折扣',
+            title:'特惠专场',
             name: 'tehuizhekou',
             id:11,
         },
@@ -339,7 +339,7 @@ export class Quyou extends React.Component{ // 公共模板
             req[`eara`]=``
             req[`cate`]=``
         // }else if(API_PAGE===`/sleepIndex/sellerSearch`){
-        }else if(~API_PAGE.indexOf(`/sellerSearch`)||~API_PAGE.indexOf(`/foodSearch`)||~API_PAGE.indexOf(`/seasonRecSearch`)){
+        }else if(~API_PAGE.indexOf(`/sellerSearch`)||~API_PAGE.indexOf(`/foodSearch`)||~API_PAGE.indexOf(`/seasonRecSearch`)||~API_PAGE.indexOf(`/canyinRecSearch`)){
             req={
                 ...req,
                 ..._location.query
@@ -583,6 +583,7 @@ window.TYPES={
     FETCH_EAT_TIME_LIST:`FETCH_EAT_TIME_LIST`,
     FETCH_EAT_TIME_DETAIL:`FETCH_EAT_TIME_DETAIL`,
     FETCH_EAT_SEASON_LIST:`FETCH_EAT_SEASON_LIST`,
+    FETCH_EAT_CANYIN_LIST:`FETCH_EAT_CANYIN_LIST`,
     FETCH_SLEEP_INDEX:`FETCH_SLEEP_INDEX`,
     FETCH_SLEEP_SHOP_LIST:`FETCH_SLEEP_SHOP_LIST`,
     FETCH_TOUR_SHOP_LIST:`FETCH_TOUR_SHOP_LIST`,
@@ -651,6 +652,8 @@ window.APIS={
     API_EAT_TIME_LIST:`/eatIndex/timeBenefitsList`,
     API_EAT_TIME_DETAIL:`/eatIndex/timeBenefitsDetail`,
     API_EAT_SEASON_LIST:`/eatIndex/seasonRecSearch`,
+    API_EAT_CANYIN_LIST:`/eatIndex/canyinRecSearch`,
+    API_EAT_CANYIN_LIST:`/eatIndex/seasonRecSearch`,
     API_PLUS_POST_LIST:`/eatIndex/postPlusList`,
     API_PLUS_POST_DETAIL:`/eatIndex/postPlusDetail`,
     API_PLUS_POST_COMMENT:`/eatIndex/postPlusComment`,

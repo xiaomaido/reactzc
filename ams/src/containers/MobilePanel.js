@@ -40,6 +40,7 @@ export default class MobilePanel extends Component{
 			'/foodhot':arr[0],
 			'/shophot':arr[0],
 			'/seasonhot':arr[0],
+			'/canyinhot':arr[0],
 			'/posthot':arr[0],
 			'/videohot':arr[0],
 			'/xianshifuli':arr[0],
