@@ -1586,6 +1586,7 @@ img {
                 width: 10.05rem;
                 height: px2rem(156px);
                 padding-left: px2rem(36px);
+                padding-left: px2rem(27px);
                 position: relative;
                 .name{
                     color: $color_42484e;
@@ -1596,7 +1597,7 @@ img {
                     color: $color_5d666e;
                     font-size: px2rem(24px);
                     line-height: px2rem(30px);
-                    margin-top: px2rem(22px);
+                    margin-top: px2rem(16px);
                     i{
                         float: left;
                         width: px2rem(18px);
@@ -1615,7 +1616,8 @@ img {
                     }
                     li{
                         /* width: 33.3%; */
-                        margin-left: 1rem;
+                        margin-left: 0.75rem;
+                        margin-left: 0.5rem;
                         height: px2rem(30px);
                         float: left;
                         font-size: px2rem(18px);
@@ -2409,21 +2411,29 @@ img {
     }
 }
 
-
+.color0{
+    background-color: #a39178;
+}
 .color1{
-    background-color: #fecf1a
+    background-color: #e49282;
 }
 .color2{
-    background-color: #ffa0a1
+    background-color: #7cd2d0;
 }
 .color3{
-    background-color: #d1c1a5
+    background-color: #6083c6;
 }
 .discountarr{
-    /* margin-top: px2rem(30px); */
-    position: absolute;
+    // position: absolute;
     // bottom: 1rem;
-    bottom: 0;
+    // bottom: 0;
+    width: 6rem;
+    height: 2.4rem;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // height: 1.8rem;
     li{
         color: $color_ff;
         height: px2rem(40px);
@@ -2432,6 +2442,8 @@ img {
         float: left;
         font-size: px2rem(20px);
         max-width: 5.5rem;
+        // margin-right: px2rem(12px);
+        // margin-top: px2rem(12px);
     }
 }
 .search-input{

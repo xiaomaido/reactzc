@@ -127,6 +127,10 @@ window.pageMapRoute={
 		url:'/canyinhot',
 		page:Pages.CanyinHot
 	},
+	tehuihot: {
+		url:'/tehuihot',
+		page:Pages.TehuiHot
+	},
 	videodetail: {
 		url:'/videohot/:id',
 		page:Pages.VideoDetail

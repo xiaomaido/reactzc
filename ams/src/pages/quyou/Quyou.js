@@ -652,8 +652,7 @@ window.APIS={
     API_EAT_TIME_LIST:`/eatIndex/timeBenefitsList`,
     API_EAT_TIME_DETAIL:`/eatIndex/timeBenefitsDetail`,
     API_EAT_SEASON_LIST:`/eatIndex/seasonRecSearch`,
-    API_EAT_CANYIN_LIST:`/eatIndex/canyinRecSearch`,
-    API_EAT_CANYIN_LIST:`/eatIndex/seasonRecSearch`,
+    API_EAT_CANYIN_LIST:`/eatIndex/sellerSearch`,
     API_PLUS_POST_LIST:`/eatIndex/postPlusList`,
     API_PLUS_POST_DETAIL:`/eatIndex/postPlusDetail`,
     API_PLUS_POST_COMMENT:`/eatIndex/postPlusComment`,
@@ -1045,6 +1044,8 @@ window.Intro = (props) => {
     // {
     //     needCover ? data.imgs.map((img,i)=><div key={i} className="icon cover" style={{backgroundImage:`url(${img})`}}></div>) : null
     // }
+    // { data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}
+
     return (
         <div className="shop-header">
             <div className="header-box">
@@ -1061,7 +1062,14 @@ window.Intro = (props) => {
                     )
                 }
                 
-                <div className="name" onClick={handleJump}><i className="icon" />【{data.name}】{ data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}</div>
+                <div className="name" onClick={handleJump}>
+                    <i className="icon" />
+                    【{data.name}】
+                    {
+                        data.tag_name.length ? (
+                            data.tag_name.map((d,i)=><span className="tag" key={i} style={{marginRight: '0.25rem'}}>{d.tagname}</span>)
+                        ) : null}
+                </div>
                 <div className="address" onClick={handleJumpMap}><i className="icon" />{addr}</div>
                 {
                     Composed

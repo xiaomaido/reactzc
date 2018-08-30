@@ -86,6 +86,7 @@ export default class Index extends Quyou{
         })
     }
 }
+
 const List = (props) => {
     const { response, me } = props
     let { 
@@ -101,6 +102,14 @@ const List = (props) => {
                     
                     data.map((d = { imgs: [] },i)=>{
                         d.coupon = Array.isArray(d.coupon) ? d.coupon : []
+                        d.tag_name = Array.isArray(d.tag_name) ? d.tag_name : []
+                        d.tag_name = [
+                            {createtime: 1514872995, id: 5, mode: "0000", status: "0", tagname: "餐饮名店"},
+                            // {createtime: 1514872995, id: 6, mode: "0000", status: "0", tagname: "限时特惠"},
+                            // {createtime: 1514872995, id: 7, mode: "0000", status: "0", tagname: "全场95折"},
+                            {createtime: 1514872995, id: 8, mode: "0000", status: "0", tagname: "买二送一"},
+                        ]
+                        d.tag_name.length = d.tag_name.length<=4 ? d.tag_name.length : 4
                         return (
                             <div key={i}>
                                 <div 
@@ -129,11 +138,18 @@ const List = (props) => {
                                             {/* <li><i className="icon collect"></i>0</li> */}
                                         </ul>
                                         {
-                                            d.coupon.length ? (
+                                            d.tag_name.length ? (
                                                 <ul className="discountarr">
-                                                    <li className={"text-elip color" + [1, 2, 3].sort((a)=>Math.random()<0.5)[0]}>{d.coupon[0].title}</li>
+                                                {
+                                                    d.tag_name.map((d,i)=><li key={i} className={`text-elip color${i}`}>{d.tagname}</li>)
+                                                }
                                                 </ul>
                                             ) : null
+                                            // d.coupon.length ? (
+                                            //     <ul className="discountarr">
+                                            //         <li className={"text-elip color" + [0, 1, 2, 3].sort((a)=>Math.random()<0.5)[0]}>{d.coupon[0].title}</li>
+                                            //     </ul>
+                                            // ) : null
                                         }
                                     </div>
                                     {/* <div className="num">月售<span>{d.sale_count}</span></div> */}
@@ -152,58 +168,3 @@ const List = (props) => {
         </div>
     )
 }
-// const List = (props) => {
-//     const { response, me } = props
-//     const { 
-//         count = 0,
-//         data = [],
-//     } = response.data
-//     const { pathname } = _location
-//     return (
-//         <div> 
-//             <div className="list">
-//                 {
-//                     data.map((d = { imgs: [] },i)=>(
-//                         <div key={i}>
-//                             <div
-//                                 className="item"
-//                                 onClick={()=>{
-//                                     if(sessionStorage) {
-//                                         sessionStorage.setItem(FETCH_PAGE, JSON.stringify({
-//                                             response: me.state[FETCH_PAGE],
-//                                             scrollTop: getScrollTop(),
-//                                             page: me.page
-//                                         }))
-//                                     }
-//                                     me.openPage(`/shophot/${d.id}`)
-//                                 }}
-//                                 // onClick={me.openPage.bind(me,`/shophot/${d.id}`)}
-//                             >
-//                                 <LazyLoad key={i} height={100} offset={100}>
-//                                     <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}></div>
-//                                 </LazyLoad>
-//                                 <div className="box">
-//                                     <div className="name">{d.name}</div>
-//                                     <div className="address text-elip"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
-//                                     {/* <div className="name">{d.season_rec}</div> */}
-//                                     {/* <div className="shop">【{d.name}】</div> */}
-//                                     {/* <div className="address text-elip"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div> */}
-//                                 </div>
-//                                 <div className="good">
-//                                     <i className="icon"></i>
-//                                     <div>{d.like_count}</div>
-//                                 </div>
-//                             </div>
-//                             {
-//                                 i===data.length-1 ? null : <div className="clearboth thinner-border"></div>
-//                             }
-//                         </div>
-//                     ))
-//                 }
-//             </div>
-//             {
-//                 me.page >= Math.ceil(count/me.limit)-1 ?  <NoMoreData /> : <Spin.Spin2 />
-//             }
-//         </div>
-//     )
-// }

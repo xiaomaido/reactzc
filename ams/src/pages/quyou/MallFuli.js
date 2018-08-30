@@ -94,24 +94,35 @@ const List = (props) => {
                 {
                     data.map((d = { imgs: [] },i)=>{
                         d.coupon = Array.isArray(d.coupon) ? d.coupon : []
-                        const idx = Object.keys(Array.apply(null,{length: d.coupon.length})).sort((a,b)=>Math.random()>=0.5)[0]
+                        d.coupon = d.coupon.sort((a,b)=>Math.random()>=0.5)
+                        // const idx = Object.keys(Array.apply(null,{length: d.coupon.length})).sort((a,b)=>Math.random()>=0.5)[0]
                         // console.log(Object.keys(Array.apply(null,{length: d.coupon.length})).sort((a,b)=>Number(b)-Number(a)))
                         // const idx = 0
-                        console.log(idx)
+                        // console.log(idx)
+                        const total = d.coupon.reduce((r,i)=> r+i.reciev_count, 0)
+                        d.coupon.length = d.coupon.length<=2 ? d.coupon.length : 2
                         return (
                             <li key={i}>
                                 <div className="cover-box" onClick={me.openPage.bind(me,`/shophot/${d.id}?_t=${ltypesSet[ltype]}`)}>
                                     <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}></div>
                                     <div className="box">
-                                        <div className="handed"><span>{d.coupon.length ? d.coupon[idx].reciev_count : 0}</span> 人已领取</div>
+                                        {/* <div className="handed"><span>{d.coupon.length && d.coupon[idx] ? d.coupon[idx].reciev_count : 0}</span> 人已领取</div> */}
+                                        <div className="handed"><span>{total || 0}</span> 人已领取</div>
                                         <div className="name">{d.name}</div>
                                         <div className="addr">[{d.addr2+(d.addr3?'·'+d.addr3:'')}店]</div>
                                         {
                                             d.coupon.length ? (
                                                 <ul className="discountarr">
-                                                    <li className={"text-elip color" + [1, 2, 3].sort((a)=>Math.random()<0.5)[0]}>{d.coupon[idx].title}</li>
+                                                {
+                                                    d.coupon.map((d,i)=><li key={i} className={`text-elip color${i}`}>{d.title}</li>)
+                                                }
                                                 </ul>
                                             ) : null
+                                            // d.coupon.length ? (
+                                            //     <ul className="discountarr">
+                                            //         <li className={"text-elip color" + [0, 1, 2, 3].sort((a)=>Math.random()<0.5)[0]}>{d.coupon[idx].title}</li>
+                                            //     </ul>
+                                            // ) : null
                                         }
                                     </div>
                                 </div>

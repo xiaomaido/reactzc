@@ -188,7 +188,7 @@ const ProductList = (props) => {
 									{
 										list.map((d,i)=>{
 											d.imgs=Array.isArray(d.imgs)?d.imgs:[]
-											return (
+											return d ? (
 												<li key={i}>
 													<div className="icon poster" style={{backgroundPosition:'right',backgroundSize:'cover',backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}>
 														{
@@ -199,7 +199,7 @@ const ProductList = (props) => {
 													<div className="price text-elip">{d.desc_title}</div>
 													<div className={classnames({btn:true,enable:d.stock})} onClick={me.openPage.bind(me,`/mycoupons/${d.id}`)}>我要领取</div>
 												</li>
-											)
+											): null
 										})
 									}
 								</ul>
