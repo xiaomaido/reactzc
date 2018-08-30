@@ -103,7 +103,7 @@ const List = (props) => {
                                 <div className="cover-box" onClick={me.openPage.bind(me,`/shophot/${d.id}?_t=${ltypesSet[ltype]}`)}>
                                     <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}></div>
                                     <div className="box">
-                                        <div className="handed"><span>{d.coupon.length ? d.coupon[idx].reciev_count : 0}</span> 人已领取</div>
+                                        <div className="handed"><span>{d.coupon.length && d.coupon[idx] ? d.coupon[idx].reciev_count : 0}</span> 人已领取</div>
                                         <div className="name">{d.name}</div>
                                         <div className="addr">[{d.addr2+(d.addr3?'·'+d.addr3:'')}店]</div>
                                         {

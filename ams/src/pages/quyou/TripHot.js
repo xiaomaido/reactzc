@@ -3,6 +3,7 @@ const initStateResponse = initState()
 const API_PAGE = APIS.API_TOUR_SHOP_LIST
 const FETCH_PAGE = TYPES.FETCH_TOUR_SHOP_LIST
 export default class Index extends Quyou{
+    limit=20
     state={
         [FETCH_PAGE]:{
             response: initStateResponse,
@@ -108,6 +109,7 @@ const List = (props) => {
                     data.map((d = { imgs: [] },i)=>{
                         d.stag_names = Array.isArray(d.stag_names) ? d.stag_names : []
                         d.coupon = Array.isArray(d.coupon) ? d.coupon : []
+                        console.log('buildingIds', buildingIds)
                         return !buildingIds[d.id]?(
                             <div key={i}>
                                 <div
@@ -138,7 +140,7 @@ const List = (props) => {
                                                 d.stag_names.map((d,i)=><li key={i}>{d.tagname}</li>)
                                             }
                                         </ul>
-                                        <div className="address clearboth"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
+                                        <div className="address clearboth"><i className="icon"></i>{d.addr2+d.addr3+d.detail}</div>
                                         {
                                             d.coupon.length ? (
                                                 <ul className="discountarr">

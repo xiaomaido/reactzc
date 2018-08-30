@@ -132,7 +132,7 @@ const List = (props) => {
                                     <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}></div>
                                     <div className="box">
                                         <div className="name">{d.name}</div>
-                                        <div className="address text-elip"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
+                                        <div className="address text-elip"><i className="icon"></i>{d.addr2+d.addr3+d.detail}</div>
                                         
                                         <ul className="shop-sns">
                                             <li><i className="icon good"></i>{d.like_count}</li>
