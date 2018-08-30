@@ -119,7 +119,7 @@ const List = (props) => {
                                 <div className="box">
                                     <div className="name">{d.season_rec}</div>
                                     <div className="shop">【{d.name}】</div>
-                                    <div className="address text-elip"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
+                                    <div className="address text-elip"><i className="icon"></i>{d.addr2+d.addr3+d.detail}</div>
                                 </div>
                                 <div className="good">
                                     <i className="icon"></i>

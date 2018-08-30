@@ -141,7 +141,7 @@ const List = (props) => {
                                                 d.stag_names.map((d,i)=><li key={i}>{d.tagname}</li>)
                                             }
                                         </ul>
-                                        <div className="address clearboth"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
+                                        <div className="address clearboth"><i className="icon"></i>{d.addr2+d.addr3+d.detail}</div>
                                         {
                                             d.coupon.length ? (
                                                 <ul className="discountarr">

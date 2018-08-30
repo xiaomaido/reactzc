@@ -26,7 +26,6 @@ window.buildingIds = {
     202: true,
     203: true,
     204: true,
-    205: true,
     206: true,
     207: true,
     208: true,
@@ -36,6 +35,7 @@ window.buildingIds = {
     212: true,
     213: true,
     214: true,
+    215: true,
 }
 export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
@@ -1037,7 +1037,7 @@ window.Intro = (props) => {
         Composed,
     } = props
     data.tag_name = Array.isArray(data.tag_name) ? data.tag_name : []
-    const addr = data.addr1+data.addr2+data.addr3+data.detail
+    const addr = data.addr2+data.addr3+data.detail
     const handleJumpMap = () => {
         window.location.href=`https://m.amap.com/search/mapview/keywords=崇明${data.name}`
     }

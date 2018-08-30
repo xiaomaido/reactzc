@@ -3,6 +3,7 @@ const initStateResponse = initState()
 const API_PAGE = APIS.API_TOUR_SHOP_LIST
 const FETCH_PAGE = TYPES.FETCH_TOUR_SHOP_LIST
 export default class Index extends Quyou{
+    limit=20
     state={
         [FETCH_PAGE]:{
             response: initStateResponse,
@@ -146,7 +147,7 @@ const List = (props) => {
                                                 d.stag_names.map((d,i)=><li key={i}>{d.tagname}</li>)
                                             }
                                         </ul>
-                                        <div className="address clearboth"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
+                                        <div className="address clearboth"><i className="icon"></i>{d.addr2+d.addr3+d.detail}</div>
                                         {
                                             d.tag_name.length ? (
                                                 <ul className="discountarr" style={{width:'9rem',height:'auto'}}>
