@@ -596,6 +596,7 @@ window.TYPES={
     FETCH_PLUS_DETAIL:`FETCH_PLUS_DETAIL`,
 }
 window.APIS={
+    API_MY_COUPON_RECEIVE_EXCHANGE:`/user/recive_quan_code`,
     API_MY_COUPON_RECEIVE:`/user/recive_coupon`,
     API_MY_COUPON_LIST:`/user/coupon_my`,
     API_MY_COUPON_USE:`/user/coupon_use`,
@@ -1037,6 +1038,8 @@ window.Intro = (props) => {
         Composed,
     } = props
     data.tag_name = Array.isArray(data.tag_name) ? data.tag_name : []
+    data.tag_name = data.tag_name.reverse()
+    data.tag_name.length = data.tag_name.length<=4 ? data.tag_name.length : 4
     const addr = data.addr2+data.addr3+data.detail
     const handleJumpMap = () => {
         window.location.href=`https://m.amap.com/search/mapview/keywords=崇明${data.name}`
@@ -1045,20 +1048,22 @@ window.Intro = (props) => {
     //     needCover ? data.imgs.map((img,i)=><div key={i} className="icon cover" style={{backgroundImage:`url(${img})`}}></div>) : null
     // }
     // { data.tag_name.length ? <span className="tag">{data.tag_name[0].tagname}</span> : null}
-
+    const obj = data.tag_name.length ? {
+        marginTop: '1rem'
+    } : {}
     return (
         <div className="shop-header">
             <div className="header-box">
                 {
                     data.phone === '13248238215' ? null : (
-                        <div className="thin-border-verical-box">
+                        <div className="thin-border-verical-box" style={obj}>
                             <div className="thin-border-verical"></div>
                         </div>
                     )
                 }
                 {
                     data.phone === '13248238215' ? null : (
-                        <a href={`tel:${data.phone}`} className="icon phone"></a>
+                        <a href={`tel:${data.phone}`} className="icon phone" style={obj}></a>
                     )
                 }
                 
@@ -1066,11 +1071,24 @@ window.Intro = (props) => {
                     <i className="icon" />
                     【{data.name}】
                     {
-                        data.tag_name.length ? (
-                            data.tag_name.map((d,i)=><span className="tag" key={i} style={{marginRight: '0.25rem'}}>{d.tagname}</span>)
-                        ) : null}
+                        // data.tag_name.length ? (
+                        //     data.tag_name.map((d,i)=><span className="tag" key={i} style={{marginRight: '0.25rem'}}>{d.tagname}</span>)
+                        // ) : null
+                    }
                 </div>
                 <div className="address" onClick={handleJumpMap}><i className="icon" />{addr}</div>
+                {
+                   data.tag_name.length ? (
+                        <div className="tags">
+                            <i className="icon" />
+                            <div className="text-elip">
+                            {
+                                data.tag_name.map((d,i)=><span className={`tag color${i}`} key={i} style={{marginRight: '0.25rem'}}>{d.tagname}</span>)
+                            }
+                            </div>
+                        </div>
+                    ) : null 
+                }
                 {
                     Composed
                 }

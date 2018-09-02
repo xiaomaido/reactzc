@@ -43,8 +43,16 @@ export default class Index extends Quyou{
                 </div>
                 <div className="thinner-border clearboth"></div>
                 <ul className="link-list">
-                    <li onClick={me.openPage.bind(me,my.uid ? `/mycoupons?ltype=0` : `/signin`)}>
+                    <li onClick={me.openPage.bind(me,my.uid ? `/mycouponexchange` : `/signin`)}>
                         <i className="icon seller" />
+                        <div className="name">兑换码领券</div>
+                        <div className="arrow-box">
+                            <span className="icon" />
+                        </div>
+                        <div className="thinner-border clearboth"></div>
+                    </li>
+                    <li onClick={me.openPage.bind(me,my.uid ? `/mycoupons?ltype=0` : `/signin`)}>
+                        <i className="icon coupon" />
                         <div className="name">我的优惠券</div>
                         <div className="arrow-box">
                             <span className="icon" />
@@ -108,7 +116,7 @@ export default class Index extends Quyou{
                     {
                         my.uid ? (
                             <li onClick={me.signOut.bind(me)}>
-                                <i className="icon seller" />
+                                <i className="icon quit" />
                                 <div className="name">退出登录</div>
                                 <div className="arrow-box">
                                     <span className="icon" />

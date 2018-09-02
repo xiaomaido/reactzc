@@ -95,25 +95,32 @@ export default class Index extends Quyou{
 
 const Content = (props) => {
     const { response, me, handleReceiveCoupon } = props
-    const { data = { imgs: [] }  } = response
+	const { data = { imgs: [] }  } = response
+	data.start_dt = 1538409599
+	data.end_dt = 1538409999
+	const available = Boolean(Date.now() >= data.start_dt*1000 && data.end_dt*1000)
+	console.log('available', available)
     return data.id ? (
-        <div className="xian-shi-fu-li-detail">
+        <div className="xian-shi-fu-li-detail coupon-detail">
             <div className="fixed-footer-xian-shi">
                 <div className="left">
                     <div className="clearboth thinner-border"></div>
                     {/* <div className="price">￥{me.centToYuan(data.realPrice)}<span>￥{me.centToYuan(data.mallPrice)}</span></div> */}
-                    
-                    <div className="price" style={{fontSize:'.6rem'}}>有效期: {misc.formatDateTime(new Date(data.start_dt*1000), misc.formatType['3'])}-{misc.formatDateTime(new Date(data.end_dt*1000), misc.formatType['3'])}</div>
+                    {/* <div className="price" style={{fontSize:'.6rem'}}>有效期: {misc.formatDateTime(new Date(data.start_dt*1000), misc.formatType['3'])}-{misc.formatDateTime(new Date(data.end_dt*1000), misc.formatType['3'])}</div> */}
+                    <div className="price" style={{fontSize:'.6rem',marginTop:'.35rem'}}>开始时间: {misc.formatDateTime(new Date(data.start_dt*1000), misc.formatType['4'])}</div>
+                    <div className="price" style={{fontSize:'.6rem'}}>结束时间: {misc.formatDateTime(new Date(data.end_dt*1000), misc.formatType['4'])}</div>
                     
                 </div>
                 <div
-                    className="right"
+                    className={classnames({right: true, disable: !available})}
                     onClick={
                         ()=>{
-                            handleReceiveCoupon({
-                                coupon_id: data.id,
-                                stock: data.stock,
-                            })
+							if(available){
+								handleReceiveCoupon({
+									coupon_id: data.id,
+									stock: data.stock,
+								})
+							}
                         }
                     }
                  >{data.stock?`立即领取`:`已领取完`}</div>

@@ -91,7 +91,7 @@ const Content = (props) => {
                 </ul>
             </div>
             <div className="yummy clearboth">
-                <div className="icon eat-log canyinmingdian" onClick={me.openPage.bind(me,  `/canyinhot`)}></div>
+                <div className="icon eat-log canyinmingdian" onClick={me.openPage.bind(me,  `/canyinhot?tag=16`)}></div>
             </div>
             <div className="yummy clearboth">
                 <div className="icon eat-log" onClick={me.openPage.bind(me,  `/posthot`)}></div>

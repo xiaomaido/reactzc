@@ -123,12 +123,13 @@ const List = (props) => {
                         d.stag_names = Array.isArray(d.stag_names) ? d.stag_names : []
                         d.coupon = Array.isArray(d.coupon) ? d.coupon : []
                         d.tag_name = Array.isArray(d.tag_name) ? d.tag_name : []
-                        d.tag_name = [
-                            {createtime: 1514872995, id: 5, mode: "0000", status: "0", tagname: "餐饮名店"},
-                            {createtime: 1514872995, id: 6, mode: "0000", status: "0", tagname: "限时特惠"},
-                            // {createtime: 1514872995, id: 7, mode: "0000", status: "0", tagname: "全场95折"},
-                            {createtime: 1514872995, id: 8, mode: "0000", status: "0", tagname: "买二送一"},
-                        ]
+                        d.tag_name = d.tag_name.reverse()
+                        // d.tag_name = [
+                        //     {createtime: 1514872995, id: 5, mode: "0000", status: "0", tagname: "餐饮名店"},
+                        //     {createtime: 1514872995, id: 6, mode: "0000", status: "0", tagname: "限时特惠"},
+                        //     // {createtime: 1514872995, id: 7, mode: "0000", status: "0", tagname: "全场95折"},
+                        //     {createtime: 1514872995, id: 8, mode: "0000", status: "0", tagname: "买二送一"},
+                        // ]
                         d.tag_name.length = d.tag_name.length<=3 ? d.tag_name.length : 3
                         return (
                             <div key={i}>
@@ -163,7 +164,7 @@ const List = (props) => {
                                         <div className="address clearboth text-elip"><i className="icon"></i>{d.addr2+d.addr3+d.detail}</div>
                                         {
                                             d.tag_name.length ? (
-                                                <ul className="discountarr" style={{width:'9rem',height:'auto'}}>
+                                                <ul className="discountarr" style={{width:'10rem',height:'auto'}}>
                                                 {
                                                     d.tag_name.map((d,i)=><li key={i} className={`text-elip color${i}`}>{d.tagname}</li>)
                                                 }

@@ -35,6 +35,10 @@ window.pageMapRoute={
 		url:'/myfollows',
 		page:Pages.MyFollows
 	},
+	mycouponexchange: {
+		url:'/mycouponexchange',
+		page:Pages.MyCouponExchange
+	},
 	mycoupons: {
 		url:'/mycoupons',
 		page:Pages.MyCoupons

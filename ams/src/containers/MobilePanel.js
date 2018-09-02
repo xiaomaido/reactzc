@@ -35,13 +35,13 @@ export default class MobilePanel extends Component{
 		]
 		const objTitleNotNeed= { // 不需要标题条对应的路由
 			'/signin': true,
+			'/tehuihot': true,
 		}
 		const objTitleBack = { // 标题条返回对应的路由
 			'/foodhot':arr[0],
 			'/shophot':arr[0],
 			'/seasonhot':arr[0],
 			'/canyinhot':arr[0],
-			'/tehuihot':arr[0],
 			'/posthot':arr[0],
 			'/videohot':arr[0],
 			'/xianshifuli':arr[0],
@@ -56,6 +56,7 @@ export default class MobilePanel extends Component{
 			'/mallfuli':arr[3],
 			'/myprofile':arr[4],
 			'/mycoupons':arr[4],
+			'/mycouponexchange':arr[4],
 			'/myfollows':arr[4],
 			'/mymsg':arr[4],
             '/agricultural':arr[3],

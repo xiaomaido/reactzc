@@ -595,3 +595,13 @@ var _hmt = _hmt || [];
 https://sentry.io/
 xiaomaido@hotmail.com
 1qazxsw2
+
+
+quan = '/user/recive_quan_code'
+quanQ = {
+    'token': 'rMz8BKWMDgTBZSIktls73/haFrJjTCwG3CDUV2PjYSGk4qxl6OIlBjtcXZV/EYt6/PJWsFHTu3nuYQs2yOs6eg==',
+    'coupon_code': '123456'
+}
+
+url = API_URL + quan
+query = quanQ

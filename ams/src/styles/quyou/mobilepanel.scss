@@ -1,4 +1,5 @@
 @import "../vars.scss";
+
 img {
     max-width: 100%;
 }
@@ -468,7 +469,13 @@ img {
             }  
             i.seller{
                 background-image: url('../../images/quyou/icon/seller.png');
-            }            
+            }  
+            i.quit{
+                background-image: url('../../images/quyou/icon/quit.png');
+            }  
+            i.coupon{
+                background-image: url('../../images/quyou/icon/coupon.png');
+            }          
             .name{
                 float: left;
                 line-height: px2rem(88px);
@@ -1967,6 +1974,28 @@ img {
             height: px2rem(44px);
             background-image: url('../../images/quyou/icon/phone.png')
         }
+        .tags{
+            color: $color_5d666e;
+            font-size: px2rem(24px);
+            font-size: 0;
+            line-height: 1rem;
+            margin-top: 0.55rem;
+            width: 78%;
+            i{
+                float: left;
+                width: px2rem(32px);
+                height: px2rem(32px);
+                margin-right: px2rem(10px);
+                background-image: url('../../images/quyou/icon/itag.png')
+            }
+            .tag{
+                color: #fff;
+                padding: 0 0.2rem;
+                font-size: px2rem(22px);
+                line-height: px2rem(32px);
+                display: inline-block;
+            }
+        }
         .address{
             color: $color_5d666e;
             font-size: px2rem(24px);
@@ -2423,18 +2452,28 @@ img {
 .color3{
     background-color: #6083c6;
 }
+.coupon-detail{
+    .fixed-footer-xian-shi .left .price{
+        line-height: .9rem;
+        color: red;
+    }
+    .fixed-footer-xian-shi .right.disable{
+        background-color: #ccc;
+    }
+}
 .discountarr{
     // position: absolute;
     // bottom: 1rem;
     // bottom: 0;
-    width: 6rem;
+    width: 6.4rem;
     height: 2.4rem;
     flex-wrap: wrap;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
     // height: 1.8rem;
     li{
+        margin-right: 0.3rem;
         color: $color_ff;
         height: px2rem(40px);
         line-height: px2rem(40px);
@@ -2491,3 +2530,157 @@ img {
     }
 }
 
+.tehui-hot{
+    clear: both;
+    ul.userlist{
+        height: auto;
+        background: #ffffff;
+    }
+    ul.userlist li{
+        background-color: #fff;
+        width: 100%;
+        display: block;
+    }
+    ul.userlist li .userarea{
+        position: relative;
+        height: px2rem(228px);
+        padding: 0 px2rem(36px);
+    }
+    
+    ul.userlist li .follow{   
+        position: absolute;
+        right: 0; 
+        bottom: px2rem(54px); 
+        width: 3.6rem;
+        height: 1.3rem;
+        line-height: 1.3rem;
+        color: #fff;
+        text-align: center;
+        font-size: .6rem;
+        font-weight: 400;
+        border-radius: .35rem; 
+        background-color: #ef443c;
+    }
+    .userinfo{
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        padding-left: px2rem(366px);
+    }
+    .objname{
+        margin-top: px2rem(54px);
+        font-size: .8rem;
+        font-weight: 700;
+        line-height: 0.9rem;
+        color: #0b0b0b;
+        margin-bottom: 0.3rem;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-inline-box;
+        word-break: break-word;
+    }
+    .tag{
+        position: absolute;
+        bottom: px2rem(54px);
+        background-color: #a39176;
+        height: 1rem;
+        line-height: 1rem;
+        font-size: 0.5rem;
+        padding: 0 0.25rem;
+        color: #fff;
+    }
+    .logo-img{
+        width: px2rem(346px);
+        height: px2rem(120px);
+        position: absolute;
+        top: px2rem(54px);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .icon-list{
+        padding-top: .5rem;
+        height: px2rem(120px);
+    }
+    .icon-list li{
+        float: left;
+        width: 20%;
+        text-align: center;
+    }
+    .menu-icon-name{
+        padding-top: .3rem;
+        font-weight: 400;
+        font-size: 0.45rem;
+        line-height: 0.5rem;
+        color: #3a3a3a;
+    }
+    .icon-list .icon{
+        width: 2.2rem;
+        height: 2.2rem;
+        margin: 0 auto;
+    }
+    .icon-list .icon.icon1{
+        background-image: url('../../images/quyou/icon/9.9.png');
+    }
+    .icon-list .icon.icon2{
+        background-image: url('../../images/quyou/icon/29.png');
+    }
+    .icon-list .icon.icon3{
+        background-image: url('../../images/quyou/icon/59.png');
+    }
+    .icon-list .icon.icon4{
+        background-image: url('../../images/quyou/icon/99.png');
+    }
+    .icon-list .icon.icon5{
+        background-image: url('../../images/quyou/icon/299.png');
+    }
+}
+
+.my-coupon-exchange{
+    background-color: $color_f5;
+    position: relative;
+    i{
+        display: block;
+        width: .8rem;
+        height: .8rem;
+        position: absolute;
+        top: 2.2rem + px2rem(30px) + px2rem(42px) - 0.4rem;
+        right: .75rem;
+        background-image: url('../../images/quyou/icon/close.png');
+    }
+    input{
+        text-transform:uppercase;
+        border: 0;
+        display: block;
+        background-color: $color_ff;
+        height: px2rem(84px);
+        width: 18rem;
+        padding-left: .75rem;
+        margin: 0 auto;
+        position: absolute;
+        top: 2.2rem + px2rem(30px);
+        font-size: px2rem(28px) !important;
+        line-height: px2rem(84px) !important;
+    }
+    input::placeholder{
+        color: $color_99 !important;
+        font-size: px2rem(24px) !important;
+        line-height: px2rem(84px) !important;
+    }
+    div.active{
+        background-color: #ffce1a;
+    }
+    div{
+        width: 17.25rem;
+        height: px2rem(84px);
+        line-height: px2rem(84px);
+        text-align: center;
+        color: $color_ff;
+        border-radius: 0.3rem;
+        background-color: #ccc;
+        position: absolute;
+        margin-left: .75rem;
+        top: 2.2rem + px2rem(30px) + px2rem(84px) + px2rem(30px);
+    }
+}

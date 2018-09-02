@@ -113,12 +113,13 @@ const List = (props) => {
                     data.map((d = { imgs: [] },i)=>{
                         d.coupon = Array.isArray(d.coupon) ? d.coupon : []
                         d.tag_name = Array.isArray(d.tag_name) ? d.tag_name : []
-                        d.tag_name = [
-                            {createtime: 1514872995, id: 5, mode: "0000", status: "0", tagname: "餐饮名店"},
-                            // {createtime: 1514872995, id: 6, mode: "0000", status: "0", tagname: "限时特惠"},
-                            // {createtime: 1514872995, id: 7, mode: "0000", status: "0", tagname: "全场95折"},
-                            {createtime: 1514872995, id: 8, mode: "0000", status: "0", tagname: "买二送一"},
-                        ]
+                        d.tag_name = d.tag_name.reverse()
+                        // d.tag_name = [
+                        //     {createtime: 1514872995, id: 5, mode: "0000", status: "0", tagname: "餐饮名店"},
+                        //     // {createtime: 1514872995, id: 6, mode: "0000", status: "0", tagname: "限时特惠"},
+                        //     // {createtime: 1514872995, id: 7, mode: "0000", status: "0", tagname: "全场95折"},
+                        //     {createtime: 1514872995, id: 8, mode: "0000", status: "0", tagname: "买二送一"},
+                        // ]
                         d.tag_name.length = d.tag_name.length<=4 ? d.tag_name.length : 4
                         return (
                             <div key={i}>

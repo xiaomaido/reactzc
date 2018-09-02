@@ -1,6 +1,6 @@
 import './index.scss'
 const Index = (props) => {
-    const { location, objTitleBack } = props
+    const { location, objTitleBack, rightComponent } = props
     const current = location.pathname.split('/')
     const { search, query } = props.location
     const _t = query._t || 'EAT'
@@ -44,7 +44,9 @@ const Index = (props) => {
         console.log('pathnameNow', pathnameNow)
         if( 
             pathnameFrom === '/seasonhot'
-            || pathnameFrom === '/canyinhot'
+            || ~pathnameFrom.indexOf('/canyinhot')
+            || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/canyinhot'))
+            || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/tehuihot')
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/guidance')
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/')
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/hotel')
@@ -75,6 +77,9 @@ const Index = (props) => {
             <div className="box">
                 <a className="icon back" href={`${window.isHashHistory}${backUrl}`}></a>
                 <i className={classnames({"icon":true,"title":true,[titleimg]:true})}  />
+                {
+                    React.isValidElement(rightComponent) && <div className="right-component">{rightComponent}</div>
+                }
             </div>
             <div className="clearboth thinner-border" style={{height:1}}></div>
         </div>

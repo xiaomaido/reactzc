@@ -85,6 +85,11 @@ const CanyinHot = Loadable({
     loading: Loading,
 })
 
+const TehuiHot = Loadable({
+    loader: () => import('./quyou/TehuiHot'),
+    loading: Loading,
+})
+
 const FoodDetail = Loadable({
     loader: () => import('./quyou/FoodDetail'),
     loading: Loading,
@@ -150,6 +155,11 @@ const MyCouponDetail = Loadable({
 
 const MyCoupons = Loadable({
     loader: () => import('./quyou/MyCoupons'),
+    loading: Loading,
+})
+
+const MyCouponExchange = Loadable({
+    loader: () => import('./quyou/MyCouponExchange'),
     loading: Loading,
 })
 
@@ -242,6 +252,7 @@ export {
 	PostDetail,
     SeasonHot,
     CanyinHot,
+    TehuiHot,
 	FoodHot,
 	FoodDetail,
 	ShopHot,
@@ -254,7 +265,8 @@ export {
 	My,
 	MyProfile,
 	MyCouponDetail,
-	MyCoupons,
+    MyCoupons,
+    MyCouponExchange,
 	MyMsg,
 	MyFollows,
 	Trip,

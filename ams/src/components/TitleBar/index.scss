@@ -10,6 +10,11 @@
     .box{
         height: $barTop;
         position: relative;
+        .right-component{
+            position: absolute;
+            top: 0.65rem;
+            right: 0.65rem;
+        }
         .back{
             width: px2rem(36px);
             height: px2rem(36px);
@@ -113,6 +118,10 @@
         }
         .title.mycouponseat{
             background-image: url('./images/mycouponseat.png');
+        }
+        .title.mycouponexchangeeat{
+            width: px2rem(231px);
+            background-image: url('./images/mycouponexchangeeat.png');
         }
         .title.mymsgeat{
             background-image: url('./images/mymsgeat.png');
