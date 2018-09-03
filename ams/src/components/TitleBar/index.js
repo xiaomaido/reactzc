@@ -63,6 +63,7 @@ const Index = (props) => {
             || (~pathnameNow.indexOf('/posthot/') && pathnameFrom === '/trip')
             || (~pathnameNow.indexOf('/posthot/') && pathnameFrom === '/hotel')
             || (~pathnameNow.indexOf('/mycoupons/') && ~pathnameFrom.indexOf('/mycoupons'))
+            || (~pathnameNow.indexOf('/mycoupons/') && ~pathnameFrom.indexOf('/shophot/'))
         ) {
             backUrl = pathnameFrom
         }

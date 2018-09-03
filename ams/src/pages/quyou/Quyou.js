@@ -1038,6 +1038,7 @@ window.Intro = (props) => {
         Composed,
     } = props
     data.tag_name = Array.isArray(data.tag_name) ? data.tag_name : []
+    debugger
     data.tag_name = data.tag_name.reverse()
     data.tag_name.length = data.tag_name.length<=4 ? data.tag_name.length : 4
     const addr = data.addr2+data.addr3+data.detail

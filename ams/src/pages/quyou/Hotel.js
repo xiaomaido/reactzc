@@ -73,7 +73,8 @@ const Content = (props) => {
                             //     </a>
                             return <div key={index} className="cont icon">
 
-                                <a key={id} className="icon" href={`${id===11?`${window.isHashHistory}/tehuihot`:`${window.isHashHistory}/hotelhot?tag=${id}`}`}>
+                                {/* <a key={id} className="icon" href={`${id===11?`${window.isHashHistory}/tehuihot`:`${window.isHashHistory}/hotelhot?tag=${id}`}`}> */}
+                                <a key={id} className="icon" href={`${id===11?`${window.isHashHistory}/hotel`:`${window.isHashHistory}/hotelhot?tag=${id}`}`}>
                                 </a>
                                 <div className="wenzi">{title}</div>
                             </div>

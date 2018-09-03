@@ -90,7 +90,8 @@ const Content = (props) => {
                 </div>
                 <div className="row">
                     {/* <a href="javascript:;" className="row_a" style={{right:0}}> */}
-                    <a href={`${window.isHashHistory}/tehuihot`} className="row_a" style={{right:0}}>
+                    {/* <a href={`${window.isHashHistory}/tehuihot`} className="row_a" style={{right:0}}> */}
+                    <a href={`${window.isHashHistory}/trip`} className="row_a" style={{right:0}}>
                         {/* <div className="icon huodong shadow"></div>                         */}
                         <div className="icon huodong "></div>                        
                         <div className="text">特惠专场</div>                        

@@ -16,93 +16,67 @@ export default class Index extends Quyou{
             token: me.user.token,
         },(response={})=>{
             const { code=-1, data="", msg="" } = response
-
-            // 随便输入一个码 {"msg":"","data":false,"code":0}
-
+            // 输入正确的兑换码，{"msg":"","code":0}
+            // 随便输入一个码， {"msg":"","data":false,"code":0}
             // // {"msg":"已经领取","data":"","code":20012}
-            // if(code){
-            // 	const codeMap = {
-            // 		'20012': '您已经领取过该优惠券哦！'
-            // 	}
-            //     Confirm.show({
-            // 		title: '兑换失败',
-            // 		desc: codeMap[code]||msg,
-            // 		callBacks: [
-            // 			{
-            // 				text: '查看优惠券',
-            // 				onClick: () => {
-            // 					Confirm.close()
-            // 					me.openPage(`/mycoupons?ltype=0`)
-            // 				}
-            // 			},
-            // 			{
-            // 				text: '我知道了',
-            // 				onClick: () => {
-            // 					Confirm.close()
-            // 				}
-            // 			},
-            // 		]
-            // 	})
-            // 	return
-            // }
-            // // {"msg":"","data":true,"code":0}
-            // Confirm.show({
-            // 	title: '兑换成功',
-            // 	desc: '快去使用吧~',
-            // 	callBacks: [
-            // 		{
-            // 			text: '查看优惠券',
-            // 			onClick: () => {
-            //                 Confirm.close()
-            //                 me.openPage(`/mycoupons?ltype=0`)
-            // 			}
-            // 		},
-            // 	]
-            // })
-            // const FETCH_TEMP = me.state[FETCH_PAGE]
-            // const temp = FETCH_TEMP.response.data.coupon.find(d=>d.id===coupon_id)
-            // temp.reciev_count += 1
-            // this.setState({
-            // 	[FETCH_PAGE]: FETCH_TEMP
-            // })
+            if(code === 0){
+                if(data === false){
+                    Confirm.show({
+                        title: '兑换失败',
+                        desc: '无效的兑换码',
+                        callBacks: [
+                            // {
+                            //     text: '查看优惠券',
+                            //     onClick: () => {
+                            //         Confirm.close()
+                            //         me.openPage(`/mycoupons?ltype=0`)
+                            //     }
+                            // },
+                            {
+                                text: '我知道了',
+                                onClick: () => {
+                                    Confirm.close()
+                                }
+                            },
+                        ]
+                    })
+                    return
+                }
+                Confirm.show({
+                    title: '兑换成功',
+                    desc: '快去使用吧~',
+                    callBacks: [
+                        {
+                            text: '查看优惠券',
+                            onClick: () => {
+                                Confirm.close()
+                                me.openPage(`/mycoupons?ltype=0`)
+                            }
+                        },
+                    ]
+                })
+            }else if(code){
+                Confirm.show({
+                    title: '兑换失败',
+                    desc: msg || '兑换码错误',
+                    callBacks: [
+                        // {
+                        //     text: '查看优惠券',
+                        //     onClick: () => {
+                        //         Confirm.close()
+                        //         me.openPage(`/mycoupons?ltype=0`)
+                        //     }
+                        // },
+                        {
+                            text: '我知道了',
+                            onClick: () => {
+                                Confirm.close()
+                            }
+                        },
+                    ]
+                })
+            }
         })
-        Confirm.show({
-            title: '兑换成功',
-            desc: '快去使用吧~',
-            callBacks: [
-                {
-                    text: '查看优惠券',
-                    onClick: () => {
-                        Confirm.close()
-                        me.openPage(`/mycoupons?ltype=0`)
-                    }
-                },
-            ]
-        })
-        // const codeMap = {
-        //     '20012': '您已经领取过该优惠券哦！'
-        // }
-        // const code = 0
-        // const msg = '已经领取完'
-        // Confirm.show({
-        //     title: '兑换失败',
-        //     desc: codeMap[code]||msg,
-        //     callBacks: [
-        //         // {
-        //         //     text: '查看优惠券',
-        //         //     onClick: () => {
-        //         //         Confirm.close()
-        //         //         me.openPage(`/mycoupons?ltype=0`)
-        //         //     }
-        //         // },
-        //         {
-        //             text: '我知道了',
-        //             onClick: () => {
-        //                 Confirm.close()
-        //             }
-        //         },
-        //     ]
-        // })
     }
 	handleChangeCode(e){
 		const me = this
