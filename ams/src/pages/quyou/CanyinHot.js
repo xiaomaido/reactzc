@@ -923,8 +923,8 @@ export default class Index extends Quyou{
         // // me.requestList(me,FETCH_PAGE,API_PAGE,true)
         me.shareTextObjSetting({
             title:`餐饮名店`,
-            imgUrl: `http://www.weichongming.com/static/images/canyinmingdian1.png`,
-            desc:'整合崇明全域的餐饮名店！',
+            imgUrl: `http://sfmimg.b0.upaiyun.com/prod_00/67e54e6da72f6fd1.png`,
+            desc:'【趣游崇明】崇明菜餐饮名店——星尚热推！',
         })
     }
 }

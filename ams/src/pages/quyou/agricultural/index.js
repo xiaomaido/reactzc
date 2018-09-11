@@ -43,7 +43,7 @@ class Content extends React.Component {
                         </a>
                     </li>
                     <li>
-                        <a className="first" href={ true ? `${window.isHashHistory}/`:`http://quyou.zenongji.com.cn/mobile/`}>
+                        <a className="first" href={ !true ? `${window.isHashHistory}/`:`http://quyou.zenongji.com.cn/mobile/`}>
                             <div className="tese icon"></div>
                             <div className="title">
                                 特色农产品专区
