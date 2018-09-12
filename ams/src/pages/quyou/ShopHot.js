@@ -109,7 +109,6 @@ const List = (props) => {
         <div>
             <div className="list">
                 {
-                    
                     data.map((d = { imgs: [] },i)=>{
                         d.coupon = Array.isArray(d.coupon) ? d.coupon : []
                         d.tag_name = Array.isArray(d.tag_name) ? d.tag_name : []
@@ -121,7 +120,7 @@ const List = (props) => {
                         //     {createtime: 1514872995, id: 8, mode: "0000", status: "0", tagname: "买二送一"},
                         // ]
                         d.tag_name.length = d.tag_name.length<=4 ? d.tag_name.length : 4
-                        return (
+                        return !buildingIds[d.id]?(
                             <div key={i}>
                                 <div 
                                     className="item"
@@ -169,7 +168,7 @@ const List = (props) => {
                                     i===data.length-1 ? null : <div className="clearboth thinner-border"></div>
                                 }
                             </div>
-                        )
+                        ):null
                     })
                 }
             </div>

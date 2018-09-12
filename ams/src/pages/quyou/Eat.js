@@ -92,7 +92,8 @@ const Content = (props) => {
                 </ul>
             </div>
             <div className="yummy clearboth" style={{height: '5.6rem'}}>
-                <div className="icon eat-log canyinmingdian" onClick={me.openPage.bind(me,  `/canyinhot?tag=16`)}></div>
+                <div className="icon eat-log canyinmingdian" ></div>
+                {/* <div className="icon eat-log canyinmingdian" onClick={me.openPage.bind(me,  `/canyinhot?tag=16`)}></div> */}
             </div>
             <div className="yummy clearboth">
                 <div className="icon eat-log" onClick={me.openPage.bind(me,  `/posthot`)}></div>

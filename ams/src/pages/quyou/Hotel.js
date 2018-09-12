@@ -68,7 +68,7 @@ const Content = (props) => {
                 </div>
                 <div className="hotelCates">
                     {
-                        me.hotelTags.map(({id, name, title}, index)=>{
+                        me.hotelTags.map(({id, title}, index)=>{
                             // return <a key={id} className="icon" href={`${window.isHashHistory}/hotelhot?tag=${id}`}>
                             //     </a>
                             return <div key={index} className="cont icon">

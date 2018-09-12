@@ -23,6 +23,7 @@ window.server=`http://quyou.weichongming.com`
 window.wxconfig={}
 window.jsApiList=['onMenuShareAppMessage','onMenuShareTimeline','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
 window.buildingIds = {
+    // 建筑物ID
     202: true,
     203: true,
     204: true,
@@ -34,8 +35,9 @@ window.buildingIds = {
     211: true,
     212: true,
     213: true,
-    214: true,
-    215: true,
+
+    // 崇明特殊商户ID
+    220: true,
 }
 export class Quyou extends React.Component{ // 公共模板
     initTextOkay='发布'
@@ -50,12 +52,17 @@ export class Quyou extends React.Component{ // 公共模板
         {
             title:'开心农场',
             name: 'shengtainongzhuang',
-            id:3,
+            id:8,
         },
         {
             title:'特色民宿',
             name: 'teseminsu',
             id:4,
+        },
+        {
+            title:'生态农庄',
+            name: 'tehuizhekou',
+            id:3,
         },
         {
             title:'精品酒店',
@@ -67,14 +74,14 @@ export class Quyou extends React.Component{ // 公共模板
             name: 'jingjishiyong',
             id:9,
         },
-        {
-            title:'人气推荐',
-            name: 'renqituijian',
-            id:10,
-        },
+        // {
+        //     title:'人气推荐',
+        //     name: '',
+        //     id:10,
+        // },
         {
             title:'特惠专场',
-            name: 'tehuizhekou',
+            name: 'renqituijian',
             id:11,
         },
     ]
@@ -1038,7 +1045,6 @@ window.Intro = (props) => {
         Composed,
     } = props
     data.tag_name = Array.isArray(data.tag_name) ? data.tag_name : []
-    debugger
     data.tag_name = data.tag_name.reverse()
     data.tag_name.length = data.tag_name.length<=4 ? data.tag_name.length : 4
     const addr = data.addr2+data.addr3+data.detail
