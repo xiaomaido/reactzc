@@ -5,7 +5,7 @@ ExtractTextPlugin=require('extract-text-webpack-plugin') // 提取、合并CSS�
 HtmlWebpackPlugin=require('html-webpack-plugin')
 path_output=path.join(__dirname,'static')
 is_production=process.env.NODE_ENV === 'production'
-is_production=!is_production
+// is_production=!is_production
 entry=[
     './src/index'
 ]

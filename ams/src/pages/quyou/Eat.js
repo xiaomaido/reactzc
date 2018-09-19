@@ -84,8 +84,8 @@ const Content = (props) => {
                         <img src={quick2}/>
                         <div>当季推荐</div>
                     </li>
-                    {/* <li onClick={me.openPage.bind(me,  `/tehuihot`)}> */}
-                    <li>
+                    {/* <li> */}
+                    <li onClick={me.openPage.bind(me,  `/tehuihot`)}>
                         <img src={quick3}/>
                         <div>特惠专场</div>
                     </li>

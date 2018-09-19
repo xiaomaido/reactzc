@@ -1753,19 +1753,24 @@ img {
     padding-top: $barTop;
     background-color: $color_f5;
     .fu-li{
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
         height: px2rem(98px);
-        line-height: px2rem(98px);
+        // line-height: px2rem(98px);
         margin-bottom: px2rem(20px);
         background-color: $color_ff;
-        padding: 0 px2rem(44px);
+        padding: 0 px2rem(24px);
         div{
             font-size: px2rem(26px);
         }
         .name{
-            float: left;
+            // float: left;
+            width: 12rem;
         }
         .remain{
-            float: right;
+            // float: right;
+            line-height: 2.45rem;
             color: $color_99;
             span{
                 color: $color_fe932b;
@@ -2599,6 +2604,7 @@ img {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        background-color: #f5f5f5;
     }
     .icon-list{
         padding-top: .5rem;

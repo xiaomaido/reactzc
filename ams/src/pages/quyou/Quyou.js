@@ -1058,6 +1058,7 @@ window.Intro = (props) => {
     const obj = data.tag_name.length ? {
         marginTop: '1rem'
     } : {}
+    data.imgs = Array.isArray(data.imgs)? data.imgs:[]
     return (
         <div className="shop-header">
             <div className="header-box">
