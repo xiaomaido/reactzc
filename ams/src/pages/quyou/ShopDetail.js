@@ -159,6 +159,7 @@ const Content = (props) => {
 }
 const ProductList = (props) => {
 	let { list, me, activities = [] } = props
+	list = list.sort((a,b)=>b.create_dt-a.create_dt)
     return (
 		<div className="video clearboth">
 			{
