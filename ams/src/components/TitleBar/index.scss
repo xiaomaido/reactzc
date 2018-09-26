@@ -15,6 +15,25 @@
             top: 0.65rem;
             right: 0.65rem;
         }
+        .special{
+            position: absolute;
+            left: 2rem;
+            top: 0.55rem;
+            i{
+                float: left;
+                display: block;
+                width: px2rem(44px);
+                height: px2rem(44px);
+                background-image: url('./images/logo.png')
+            }
+            span{
+                float: left;
+                color: rgba(0, 0, 0, 0.7);
+                font-size: 0.6rem;
+                margin-left: 0.3rem;
+                line-height: px2rem(44px);
+            }
+        }
         .back{
             width: px2rem(36px);
             height: px2rem(36px);
@@ -146,6 +165,12 @@
         }
         .title.paperhotfavord226 {
             background-image: url('./images/zczl.png');
+        }
+        .title.paperhotfavord311 {
+            background-image: url('./images/paperhotfavord311.png');
+        }
+        .title.tehuihoteat {
+            background-image: url('./images/tehuihoteat.png');
         }
     }
 }

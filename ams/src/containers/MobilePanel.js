@@ -35,7 +35,7 @@ export default class MobilePanel extends Component{
 		]
 		const objTitleNotNeed= { // 不需要标题条对应的路由
 			'/signin': true,
-			'/tehuihot': true,
+			// '/tehuihot': true,
 		}
 		const objTitleBack = { // 标题条返回对应的路由
 			'/foodhot':arr[0],

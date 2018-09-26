@@ -218,7 +218,10 @@ export class Quyou extends React.Component{ // 公共模板
 			console.log('err',err)
 		})
 	}
-	componentWillMount(){
+	componentWillUnmount(){
+        document.title='趣游崇明'
+    }
+    componentWillMount(){
         const { API_MY_GET_JSSIGN } = APIS
         const me=this
         const { pathname, search, key } = me.props.location

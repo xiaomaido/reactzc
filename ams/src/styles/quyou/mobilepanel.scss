@@ -2538,6 +2538,7 @@ img {
 
 .tehui-hot{
     clear: both;
+    padding-top: 2.2rem;
     ul.userlist{
         height: auto;
         background: #ffffff;
@@ -2589,7 +2590,7 @@ img {
     .tag{
         position: absolute;
         bottom: px2rem(54px);
-        background-color: #a39176;
+        // background-color: #a39176;
         height: 1rem;
         line-height: 1rem;
         font-size: 0.5rem;

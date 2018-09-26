@@ -27,13 +27,15 @@ const Index = (props) => {
         backUrl = backUrl + '?ltype=0'
     }
     else if(backUrl == '/paperhot') {
+        titleimg = `${titleimg}${current[2]}`
         if (_t === 'FAVORD' && (current[2] == 214 || current[2] == 126 || current[2] == 226)) {
             backUrl = '/mall';
-            titleimg = `${titleimg}${current[2]}`
         }
         if (_t === 'FAVORD' && (current[2] == 213)) {
             backUrl = '/trip';
-            titleimg = `${titleimg}${current[2]}`
+        }
+        if (_t === 'FAVORD' && (current[2] == 311)) {
+            backUrl = '/tehuihot';
         }
     }
     window.locationFrom = window._location
@@ -45,6 +47,7 @@ const Index = (props) => {
         if( 
             pathnameFrom === '/seasonhot'
             || ~pathnameFrom.indexOf('/canyinhot')
+            || (~pathnameNow.indexOf('/tehuihot'))
             || (~pathnameNow.indexOf('/shophot/') && ~pathnameFrom.indexOf('/canyinhot'))
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/tehuihot')
             || (~pathnameNow.indexOf('/shophot/') && pathnameFrom === '/guidance')
@@ -71,11 +74,24 @@ const Index = (props) => {
         //     backUrl = '/agricultural'
         // }
     }
+    backUrl = backUrl || '/'
     console.log('backUrl', backUrl);
     // console.log('backUrl', backUrl, 'titleimg', titleimg);
     return query.webview==='1'? null:(
         <div className="titleBar">
             <div className="box">
+                {
+                    location.pathname==='/tehuihot'?(
+                        <a href={`${window.isHashHistory}${backUrl}`}>
+                            <div
+                                className="special"
+                            >
+                                <i className="icon logo" />
+                                <span>返回首页</span>
+                            </div>
+                        </a>
+                    ):null
+                }
                 <a className="icon back" href={`${window.isHashHistory}${backUrl}`}></a>
                 <i className={classnames({"icon":true,"title":true,[titleimg]:true})}  />
                 {
