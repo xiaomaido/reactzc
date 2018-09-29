@@ -17,10 +17,10 @@ export default class Index extends Quyou{
     }
     ltypes=['未使用','已使用','已过期']
     ltypesEn = ['unused-m', 'used-m', 'expired-m']
-	handleSaveComment({ property = '' }, e){
+	handleSaveComment({ property = '', property2 = '' }, e){
         const me = this
         const { state, initTextOkay } = me
-        const { valueCreateComment, textOkay, coupon_id: couponId } = state
+        const { noteValueCreateComment, valueCreateComment, textOkay, coupon_id: couponId } = state
 		if(textOkay === initTextOkay && valueCreateComment) {
 			me.setState({
 				textOkay: `${initTextOkay}中...`,
@@ -28,6 +28,7 @@ export default class Index extends Quyou{
 			me.requestAPI(API_MY_COUPON_USE,{
                 coupon_id: couponId,
                 [property]: valueCreateComment,
+                [property2]: noteValueCreateComment||'',
                 token: me.user.token,
 			},(response)=>{
                 // {"msg":"口令错误","data":"","code":20015}
@@ -85,14 +86,17 @@ export default class Index extends Quyou{
                 {
 				    showCreateComment ? 
                         <CreateComment
+                            needNote={true}
                             type="password"
                             maxLength={20}
                             textPlaceholder='请商户营业员输入核销口令～'
                             textTitle={textTitle}
                             textOkay={textOkay}
                             handleClickCancel={me.handleShowCreateComment.bind(me)} 
-                            handleClickOkay={me.handleSaveComment.bind(me, { property: 'coupon_code' })} 
-                            handleChangeInput={me.handleChangeCreateComment.bind(me)} /> : null
+                            handleClickOkay={me.handleSaveComment.bind(me, { property: 'coupon_code', property2: 'note' })} 
+                            handleChangeInput={me.handleChangeCreateComment.bind(me)}
+                            handleChangeNote={me.handleChangeCreateCommentNote.bind(me)}
+                        /> : null
 			    }
                 <ul className="types">
                     {

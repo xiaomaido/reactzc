@@ -4,148 +4,6 @@ const initStateResponse = initState()
 const API_PAGE = APIS.API_EAT_CANYIN_LIST
 const FETCH_PAGE = TYPES.FETCH_EAT_CANYIN_LIST
 const hotels = [{
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/8b6643f473656021.jpg"],
-	"custom_avg": 500,
-	"id": 57,
-	"tags": [2, 1, 12, 13],
-	"status": "0000",
-	"extraAddr": "上海市崇明区旭升路",
-	"description": "",
-	"is_like": 0,
-	"geoinfo": "(121.452942,31.65909)",
-	"stag_name": [{
-		"createtime": 1510473351,
-		"id": 5,
-		"mode": "0001",
-		"status": "0",
-		"tagname": "免费停车"
-	}, {
-		"createtime": 1510473371,
-		"id": 6,
-		"mode": "0001",
-		"status": "0",
-		"tagname": "免费wifi"
-	}, {
-		"createtime": 1510473382,
-		"id": 7,
-		"mode": "0001",
-		"status": "0",
-		"tagname": "叫醒服务"
-	}],
-	"detail": "190号",
-	"tag_name": [{
-		"createtime": 1510473289,
-		"id": 1,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "休闲度假"
-	}, {
-		"createtime": 1510473300,
-		"id": 2,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "会议酒店"
-	}, {
-		"createtime": 1514086659,
-		"id": 12,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "精品酒店"
-	}, {
-		"createtime": 1535954528,
-		"id": 13,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "餐饮名店"
-	}],
-	"stags": [5, 6, 7],
-	"coupon": [],
-	"rtype": "0001",
-	"season_rec": "",
-	"name": "崇明瀛通大酒店",
-	"area": 0,
-	"comment_count": 0,
-	"priority": 1,
-	"addr1": "崇明区",
-	"has_promotion": "0",
-	"addr3": "北门路",
-	"sale_count": 0,
-	"phone": "021-69696969",
-	"addr2": "城桥镇",
-	"like_count": 0,
-    "sequence": 2
-}, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/11a7d13a9d190aa3.png"],
-	"custom_avg": 621,
-	"id": 189,
-	"tags": [1, 2, 12, 13],
-	"status": "0000",
-	"extraAddr": "上海市崇明区跃马路",
-	"description": "",
-	"is_like": 0,
-	"geoinfo": "(121.634216,31.574889)",
-	"stag_name": [{
-		"createtime": 1510473351,
-		"id": 5,
-		"mode": "0001",
-		"status": "0",
-		"tagname": "免费停车"
-	}, {
-		"createtime": 1510473371,
-		"id": 6,
-		"mode": "0001",
-		"status": "0",
-		"tagname": "免费wifi"
-	}, {
-		"createtime": 1510473382,
-		"id": 7,
-		"mode": "0001",
-		"status": "0",
-		"tagname": "叫醒服务"
-	}],
-	"detail": "777号（近育麟桥路）",
-	"tag_name": [{
-		"createtime": 1510473289,
-		"id": 1,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "休闲度假"
-	}, {
-		"createtime": 1510473300,
-		"id": 2,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "会议酒店"
-	}, {
-		"createtime": 1514086659,
-		"id": 12,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "精品酒店"
-	}, {
-		"createtime": 1535954528,
-		"id": 13,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "餐饮名店"
-	}],
-	"stags": [5, 6, 7],
-	"coupon": [],
-	"rtype": "0001",
-	"season_rec": "",
-	"name": "新崇大酒店",
-	"area": 0,
-	"comment_count": 0,
-	"priority": 2,
-	"addr1": "崇明区",
-	"has_promotion": "1",
-	"addr3": "鼓浪屿路",
-	"sale_count": 0,
-	"phone": "021-59695969",
-	"addr2": "城桥镇",
-	"like_count": 0,
-    "sequence": 6
-}, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/ee98b860a391e55f.png"],
 	"custom_avg": 300,
 	"id": 187,
@@ -202,73 +60,8 @@ const hotels = [{
 	"sale_count": 0,
 	"phone": "021-)50559888",
 	"addr2": "城桥镇",
-	"like_count": 0,
-    "sequence": 4
-}, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/2f08a9849207ac9b.jpg"],
-	"custom_avg": 450,
-	"id": 190,
-	"tags": [1, 3, 13],
-	"status": "0000",
-	"extraAddr": "上海市崇明区跃马路",
-	"description": "",
-	"is_like": 0,
-	"geoinfo": "(121.634216,31.574889)",
-	"stag_name": [{
-		"createtime": 1510473351,
-		"id": 5,
-		"mode": "0001",
-		"status": "0",
-		"tagname": "免费停车"
-	}, {
-		"createtime": 1510473371,
-		"id": 6,
-		"mode": "0001",
-		"status": "0",
-		"tagname": "免费wifi"
-	}, {
-		"createtime": 1510473382,
-		"id": 7,
-		"mode": "0001",
-		"status": "0",
-		"tagname": "叫醒服务"
-	}],
-	"detail": "188号",
-	"tag_name": [{
-		"createtime": 1510473289,
-		"id": 1,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "休闲度假"
-	}, {
-		"createtime": 1513313338,
-		"id": 3,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "生态农庄"
-	}, {
-		"createtime": 1535954528,
-		"id": 13,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "餐饮名店"
-	}],
-	"stags": [5, 6, 7],
-	"coupon": [],
-	"rtype": "0001",
-	"season_rec": "",
-	"name": "嘉和苑度假村",
-	"area": 0,
-	"comment_count": 0,
-	"priority": 9999,
-	"addr1": "崇明区",
-	"has_promotion": "0",
-	"addr3": "秀林路",
-	"sale_count": 0,
-	"phone": "021-59338808",
-	"addr2": "东平镇",
-	"like_count": 0,
-    "sequence": 10
+	sequence: 1,
+	"like_count": 0
 }, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/b3bf4416596fea5f.png"],
 	"custom_avg": 400,
@@ -316,7 +109,7 @@ const hotels = [{
 	"coupon": [],
 	"rtype": "0001",
 	"season_rec": "",
-	"name": "明珠湖天鹅苑",
+	"name": "西岭酒店",
 	"area": 0,
 	"comment_count": 0,
 	"priority": 9999,
@@ -326,8 +119,8 @@ const hotels = [{
 	"sale_count": 0,
 	"phone": "021- 39633666",
 	"addr2": "绿华镇",
-	"like_count": 0,
-    "sequence": 1
+	sequence: 5,
+	"like_count": 0
 }, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/f8a4ec251f45f044.png"],
 	"custom_avg": 600,
@@ -397,8 +190,8 @@ const hotels = [{
 	"sale_count": 0,
 	"phone": "021- 59338800",
 	"addr2": "东平镇",
-	"like_count": 0,
-    "sequence": 8
+	sequence: 3,
+	"like_count": 0
 }]
 const eats = [{
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/881ce75e00a700f6.png"],
@@ -435,7 +228,7 @@ const eats = [{
 	"coupon": [],
 	"rtype": "0000",
 	"season_rec": "",
-	"name": "凯农生态宴会中心",
+	"name": "凯农生态餐厅",
 	"area": 0,
 	"comment_count": 1,
 	"priority": 1,
@@ -445,8 +238,8 @@ const eats = [{
 	"sale_count": 0,
 	"phone": "021-69678000",
 	"addr2": "港西镇",
-	"like_count": 1,
-    "sequence": 7
+	sequence: 6,
+	"like_count": 1
 }, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/31104e6a3896c8df.jpg"],
 	"custom_avg": 62,
@@ -492,8 +285,8 @@ const eats = [{
 	"sale_count": 0,
 	"phone": "021-59409277",
 	"addr2": "陈家镇",
-	"like_count": 1,
-    "sequence": 13
+	sequence: 8,
+	"like_count": 1
 }, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/423a0e8b95292696.jpg"],
 	"custom_avg": 83,
@@ -539,10 +332,10 @@ const eats = [{
 	"sale_count": 0,
 	"phone": "021-69697979",
 	"addr2": "城桥镇",
-	"like_count": 1,
-    "sequence": 5
+	sequence: 12,
+	"like_count": 1
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/5cbdbcca976db8c4.jpg"],
+	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/31d16d488d2f097c.jpg"],
 	"custom_avg": 63,
 	"id": 87,
 	"tags": [1, 16],
@@ -580,8 +373,8 @@ const eats = [{
 	"sale_count": 0,
 	"phone": "021-59616001",
 	"addr2": "城桥镇",
-	"like_count": 0,
-    "sequence": 3
+	sequence: 7,
+	"like_count": 0
 }, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/c6572b473a4202c6.png"],
 	"custom_avg": 150,
@@ -627,8 +420,8 @@ const eats = [{
 	"sale_count": 0,
 	"phone": "021- 39633818",
 	"addr2": "绿华镇",
-    "like_count": 0,
-    "sequence": 0
+	sequence: 2,
+	"like_count": 0
 }, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/aa6c92a0ae642d42.jpg"],
 	"custom_avg": 80,
@@ -668,8 +461,8 @@ const eats = [{
 	"sale_count": 0,
 	"phone": "021-59339797",
 	"addr2": "东平镇",
-	"like_count": 0,
-    "sequence": 9
+	sequence: 11,
+	"like_count": 0
 }, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/c56019e81c07bb08.jpg"],
 	"custom_avg": 100,
@@ -709,8 +502,8 @@ const eats = [{
 	"sale_count": 0,
 	"phone": "021-69445268",
 	"addr2": "中兴镇",
-	"like_count": 0,
-    "sequence": 12
+	sequence: 9,
+	"like_count": 0
 }, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/3a787d1d32a0f50b.jpg"],
 	"custom_avg": 80,
@@ -750,8 +543,8 @@ const eats = [{
 	"sale_count": 0,
 	"phone": "021-59481777",
 	"addr2": "竖新镇",
-	"like_count": 0,
-    "sequence": 11
+	sequence: 10,
+	"like_count": 0
 }, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/b4d9ecf859fa5c60.jpg"],
 	"custom_avg": 150,
@@ -781,7 +574,7 @@ const eats = [{
 	"coupon": [],
 	"rtype": "0000",
 	"season_rec": "",
-	"name": "瀛东度假村——东湖饭店",
+	"name": "瀛东度假村",
 	"area": 0,
 	"comment_count": 0,
 	"priority": 63,
@@ -791,55 +584,268 @@ const eats = [{
 	"sale_count": 0,
 	"phone": "021-59436276",
 	"addr2": "陈家镇",
-	"like_count": 0,
-    "sequence": 14
-}, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/6dea68d9238b1d94.jpg"],
-	"custom_avg": 150,
-	"id": 219,
-	"tags": [16, 1],
-	"status": "0000",
-	"extraAddr": "上海市崇明区跃马路",
-	"description": "",
-	"addr1": "崇明区",
-	"geoinfo": "(121.634216,31.574889)",
-	"tag_name": [{
-		"createtime": 0,
-		"id": 1,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "中餐"
-	}, {
-		"createtime": 1535878762,
-		"id": 16,
-		"mode": "0000",
-		"status": "0",
-		"tagname": "餐饮名店"
-	}],
-	"detail": "东滩东旺路（风车处）",
-	"is_like": 0,
-	"stags": {},
-	"coupon": [],
-	"rtype": "0000",
-	"season_rec": "",
-	"name": "东滩湿地公园观海楼餐厅",
-	"area": 0,
-	"comment_count": 0,
-	"priority": 64,
-	"products": {},
-	"has_promotion": "0",
-	"addr3": "",
-	"sale_count": 0,
-	"phone": "021-39367000",
-	"addr2": "陈家镇",
-	"like_count": 0,
-    "sequence": 15
+	sequence: 4,
+	"like_count": 0
 }]
 
-const hybrid = [
+let hybrid = [
     ...hotels.map(d=>({...d,flag:'SLEEP'})),
     ...eats.map(d=>({...d,flag:'EAT'}))
+]
+hybrid = [
+	...hybrid,
+	...[{
+		"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/8b6643f473656021.jpg"],
+		"custom_avg": 500,
+		"id": 57,
+		"tags": [2, 1, 12, 14],
+		"status": "0000",
+		"extraAddr": "上海市崇明区旭升路",
+		"description": "",
+		"is_like": 0,
+		"geoinfo": "(121.452942,31.65909)",
+		"stag_name": [{
+			"createtime": 1510473351,
+			"id": 5,
+			"mode": "0001",
+			"status": "0",
+			"tagname": "免费停车"
+		}, {
+			"createtime": 1510473371,
+			"id": 6,
+			"mode": "0001",
+			"status": "0",
+			"tagname": "免费wifi"
+		}, {
+			"createtime": 1510473382,
+			"id": 7,
+			"mode": "0001",
+			"status": "0",
+			"tagname": "叫醒服务"
+		}],
+		"detail": "190号",
+		"tag_name": [{
+			"createtime": 1510473289,
+			"id": 1,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "休闲度假"
+		}, {
+			"createtime": 1510473300,
+			"id": 2,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "会议酒店"
+		}, {
+			"createtime": 1514086659,
+			"id": 12,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "精品酒店"
+		}, {
+			"createtime": 1537850654,
+			"id": 14,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "特色餐饮店"
+		}],
+		"stags": [5, 6, 7],
+		"coupon": [],
+		"rtype": "0001",
+		"season_rec": "",
+		"name": "瀛通大酒店",
+		"area": 0,
+		"comment_count": 0,
+		"priority": 1,
+		"addr1": "崇明区",
+		"has_promotion": "0",
+		"addr3": "北门路",
+		"sale_count": 0,
+		"phone": "021-69696969",
+		"addr2": "城桥镇",
+		sequence: 16,
+		"like_count": 0
+	}, {
+		"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/11a7d13a9d190aa3.png"],
+		"custom_avg": 621,
+		"id": 189,
+		"tags": [1, 2, 12, 14],
+		"status": "0000",
+		"extraAddr": "上海市崇明区跃马路",
+		"description": "",
+		"is_like": 0,
+		"geoinfo": "(121.634216,31.574889)",
+		"stag_name": [{
+			"createtime": 1510473351,
+			"id": 5,
+			"mode": "0001",
+			"status": "0",
+			"tagname": "免费停车"
+		}, {
+			"createtime": 1510473371,
+			"id": 6,
+			"mode": "0001",
+			"status": "0",
+			"tagname": "免费wifi"
+		}, {
+			"createtime": 1510473382,
+			"id": 7,
+			"mode": "0001",
+			"status": "0",
+			"tagname": "叫醒服务"
+		}],
+		"detail": "777号（近育麟桥路）",
+		"tag_name": [{
+			"createtime": 1510473289,
+			"id": 1,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "休闲度假"
+		}, {
+			"createtime": 1510473300,
+			"id": 2,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "会议酒店"
+		}, {
+			"createtime": 1514086659,
+			"id": 12,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "精品酒店"
+		}, {
+			"createtime": 1537850654,
+			"id": 14,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "特色餐饮店"
+		}],
+		"stags": [5, 6, 7],
+		"coupon": [],
+		"rtype": "0001",
+		"season_rec": "",
+		"name": "新崇大酒店",
+		"area": 0,
+		"comment_count": 0,
+		"priority": 2,
+		"addr1": "崇明区",
+		"has_promotion": "1",
+		"addr3": "鼓浪屿路",
+		"sale_count": 0,
+		"phone": "021-59695969",
+		"addr2": "城桥镇",
+		sequence: 15,
+		"like_count": 0
+	}, {
+		"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/2f08a9849207ac9b.jpg"],
+		"custom_avg": 450,
+		"id": 190,
+		"tags": [1, 3, 14],
+		"status": "0000",
+		"extraAddr": "上海市崇明区跃马路",
+		"description": "",
+		"is_like": 0,
+		"geoinfo": "(121.634216,31.574889)",
+		"stag_name": [{
+			"createtime": 1510473351,
+			"id": 5,
+			"mode": "0001",
+			"status": "0",
+			"tagname": "免费停车"
+		}, {
+			"createtime": 1510473371,
+			"id": 6,
+			"mode": "0001",
+			"status": "0",
+			"tagname": "免费wifi"
+		}, {
+			"createtime": 1510473382,
+			"id": 7,
+			"mode": "0001",
+			"status": "0",
+			"tagname": "叫醒服务"
+		}],
+		"detail": "188号",
+		"tag_name": [{
+			"createtime": 1510473289,
+			"id": 1,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "休闲度假"
+		}, {
+			"createtime": 1513313338,
+			"id": 3,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "生态农庄"
+		}, {
+			"createtime": 1537850654,
+			"id": 14,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "特色餐饮店"
+		}],
+		"stags": [5, 6, 7],
+		"coupon": [],
+		"rtype": "0001",
+		"season_rec": "",
+		"name": "嘉和苑度假村",
+		"area": 0,
+		"comment_count": 0,
+		"priority": 9999,
+		"addr1": "崇明区",
+		"has_promotion": "0",
+		"addr3": "秀林路",
+		"sale_count": 0,
+		"phone": "021-59338808",
+		"addr2": "东平镇",
+		sequence: 14,
+		"like_count": 0
+	}],
+	...[{
+		"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/6dea68d9238b1d94.jpg"],
+		"custom_avg": 150,
+		"id": 219,
+		"tags": [1, 17],
+		"status": "0000",
+		"extraAddr": "上海市崇明区跃马路",
+		"description": "",
+		"addr1": "崇明区",
+		"geoinfo": "(121.634216,31.574889)",
+		"tag_name": [{
+			"createtime": 0,
+			"id": 1,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "中餐"
+		}, {
+			"createtime": 1537850493,
+			"id": 17,
+			"mode": "0000",
+			"status": "0",
+			"tagname": "特色餐饮店"
+		}],
+		"detail": "东滩东旺路（风车处）",
+		"is_like": 0,
+		"stags": {},
+		"coupon": [],
+		"rtype": "0000",
+		"season_rec": "",
+		"name": "东滩湿地公园观海楼餐厅",
+		"area": 0,
+		"comment_count": 0,
+		"priority": 64,
+		"products": {},
+		"has_promotion": "0",
+		"addr3": "",
+		"sale_count": 0,
+		"phone": "021-39367000",
+		"addr2": "陈家镇",
+		sequence: 13,
+		"like_count": 0
+	}]
 ].sort((a,b)=>a.sequence-b.sequence)
+
 // .map(d=>console.log('name', d.name + d.flag))
 
 // console.log('hybrid', hybrid)

@@ -1,7 +1,8 @@
 import './index.scss'
 // import Confirm from '../../components/Confirm';
  const Index = (props) => {
-    const { 
+    const {
+        needNote = false,
         type = 'textarea',
         defaultValue = '',
         maxLength = 50,
@@ -21,7 +22,14 @@ import './index.scss'
         handleChangeInput = (e) => {
             alert(e.target.value)
         },
+        handleChangeNote = (e) => {
+            alert(e.target.value)
+        },
+        
     } = props
+    const styleObj = type === 'password' ? {
+        height: '3.75rem'
+    } : {}
     return (
         <div>
             <Mask />
@@ -31,7 +39,10 @@ import './index.scss'
                     <div className="title">{textTitle}</div>
                     <div className="okay" onClick={handleClickOkay}>{textOkay}</div>
                 </div>
-                <div className="write">
+                <div
+                    className="write"
+                    style={styleObj}
+                >
                     {
                         type === 'password' ? (
                             <input 
@@ -46,6 +57,21 @@ import './index.scss'
                                 maxLength={maxLength} defaultValue={defaultValue}></textarea>
                     }
                 </div>
+                {
+                    needNote ? (
+                        <div
+                            className="write"
+                            style={styleObj}
+                        >
+                            <input 
+                                onChange={handleChangeNote} 
+                                placeholder={'请输入备注'} 
+                                maxLength={maxLength}
+                                defaultValue={defaultValue}
+                                type="text" />
+                        </div>
+                    ) : null
+                }
             </div>
         </div>
     )

@@ -429,6 +429,12 @@ export class Quyou extends React.Component{ // 公共模板
             showCreateComment: !showCreateComment,
             ...params
 		})
+    }
+	handleChangeCreateCommentNote(e){
+		const me = this
+		me.setState({
+			noteValueCreateComment: e.target.value
+		})
 	}
 	handleChangeCreateComment(e){
 		const me = this

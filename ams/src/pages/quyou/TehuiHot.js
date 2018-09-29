@@ -32,6 +32,10 @@ const tagMap = {
         num: 3,
         name: '满减优惠'
     },
+    9: {
+        num: 2,
+        name: '特色餐饮店'
+    },
 }
 const shopMap = {
     '9.9': [
@@ -274,15 +278,6 @@ const shopMap = {
             ]
         },
         {
-            id: 117,
-            name: '乐岛宾馆',
-            cover: 'http://sfmimg.b0.upaiyun.com/prod_00/00129bd916c55896.jpeg',
-            _t: 'SLEEP',
-            tags: [
-                8
-            ]
-        },
-        {
             id: 153,
             name: '物华假日酒店',
             cover: 'http://sfmimg.b0.upaiyun.com/prod_00/868eab912fbaafea.jpg',
@@ -333,14 +328,6 @@ const shopMap = {
             ],
         },
         {
-            id: 215,
-            name: '十碗头',
-            cover: 'http://sfmimg.b0.upaiyun.com/prod_00/aa6c92a0ae642d42.jpg',
-            tags: [
-                5
-            ]
-        },
-        {
             id: 56,
             name: '明珠湖生态服务中心',
             cover: 'http://sfmimg.b0.upaiyun.com/prod_00/c6572b473a4202c6.png',
@@ -359,25 +346,9 @@ const shopMap = {
             ],
         },
         {
-            id: 22,
-            name: '宝岛蟹庄',
-            cover: 'http://sfmimg.b0.upaiyun.com/prod_00/c6572b473a4202c6.png',
-            tags: [
-                1
-            ],
-        },
-        {
             id: 225,
             name: '瀛岛屋',
             cover: 'http://sfmimg.b0.upaiyun.com/prod_00/6954518e1b1e2d38.jpg',
-            tags: [
-                3
-            ]
-        },
-        {
-            id: 205,
-            name: '“角艺”蛋糕',
-            cover: 'http://sfmimg.b0.upaiyun.com/prod_00/896f9aff1dad9747.jpg',
             tags: [
                 3
             ]
@@ -429,14 +400,6 @@ const shopMap = {
             _t: 'SLEEP',
             tags: [
                 8
-            ]
-        },
-        {
-            id: 232,
-            name: '悠然农家乐',
-            cover: 'http://sfmimg.b0.upaiyun.com/prod_00/cd1dac8c10d783f1.jpg',
-            tags: [
-                3
             ]
         },
     ],
@@ -512,6 +475,14 @@ const shopMap = {
                 1
             ]
         },
+        {
+            id: 232,
+            name: '悠然农家乐',
+            cover: 'http://sfmimg.b0.upaiyun.com/prod_00/cd1dac8c10d783f1.jpg',
+            tags: [
+                3
+            ]
+        },
     ],
     '99': [
         {
@@ -519,6 +490,7 @@ const shopMap = {
             name: '崇明旅游吉祥物专栏',
             cover: 'http://sfmimg.b0.upaiyun.com/prod_00/07d16abcaf59fdf0.jpeg'
         },
+
         {
             id: 53,
             name: '怡沁园',
@@ -530,7 +502,7 @@ const shopMap = {
         },
         {
             id: 109,
-            name: '凯农大酒店',
+            name: '凯农生态餐厅',
             cover: 'http://sfmimg.b0.upaiyun.com/prod_00/881ce75e00a700f6.png',
             tags: [
                 5
@@ -568,12 +540,29 @@ const shopMap = {
                 1
             ]
         },
+        {
+            id: 117,
+            name: '乐岛宾馆',
+            cover: 'http://sfmimg.b0.upaiyun.com/prod_00/00129bd916c55896.jpeg',
+            _t: 'SLEEP',
+            tags: [
+                8
+            ]
+        },
     ],
     '299': [
         {
             id: 256,
             name: '崇明旅游吉祥物专栏',
             cover: 'http://sfmimg.b0.upaiyun.com/prod_00/07d16abcaf59fdf0.jpeg'
+        },
+        {
+            id: 228,
+            name: '鱼恋虾',
+            cover: 'http://sfmimg.b0.upaiyun.com/prod_00/b3231ebee1efec7e.jpg',
+            tags: [
+                2
+            ]
         },
         {
             id: 53,
@@ -613,7 +602,7 @@ const shopMap = {
         },
         {
             id: 54,
-            name: '明珠湖天鹅苑',
+            name: '西岭酒店',
             cover: 'http://sfmimg.b0.upaiyun.com/prod_00/b3bf4416596fea5f.png',
             _t: 'SLEEP',
             tags: [
@@ -622,7 +611,7 @@ const shopMap = {
         },
         {
             id: 109,
-            name: '凯农大酒店',
+            name: '凯农生态餐厅',
             cover: 'http://sfmimg.b0.upaiyun.com/prod_00/881ce75e00a700f6.png',
             tags: [
                 5
@@ -776,6 +765,22 @@ const shopMap = {
             cover: 'http://sfmimg.b0.upaiyun.com/prod_00/cd1dac8c10d783f1.jpg',
             tags: [
                 3
+            ]
+        },
+        {
+            id: 22,
+            name: '宝岛蟹庄',
+            cover: 'http://sfmimg.b0.upaiyun.com/prod_00/c6572b473a4202c6.png',
+            tags: [
+                1
+            ],
+        },
+        {
+            id: 215,
+            name: '十碗头',
+            cover: 'http://sfmimg.b0.upaiyun.com/prod_00/aa6c92a0ae642d42.jpg',
+            tags: [
+                5
             ]
         },
     ],
