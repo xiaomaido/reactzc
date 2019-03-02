@@ -46,7 +46,7 @@ img {
     background-color: $color_f5;
     padding-bottom: $barTop;
     .slideBox, .slideBox .sample {
-        height: 9rem;
+        height: 9.375rem;
     }
     .menulist{
         background-color: $color_ff;
@@ -1056,6 +1056,9 @@ img {
                 float: left;
                 width: px2rem(240px);
                 height: px2rem(156px);
+                height: px2rem(120px);
+                margin-top: 0.4rem;
+                background-position: top;
                 background-size: cover;
                 background-color: $color_e5;
             }
@@ -1584,7 +1587,10 @@ img {
             .cover{
                 float: left;
                 width: px2rem(240px);
-                height: px2rem(156px);
+                // height: px2rem(156px);
+                height: 3rem;
+                margin-top: 0.4rem;
+                background-position: top;
                 background-color: $color_e5;
                 background-size: cover;
             }

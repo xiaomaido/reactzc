@@ -37,6 +37,24 @@ export default class Index extends Quyou{
 		const _t = query._t || 'EAT'
 		const API_PAGE = APIS[`API_${_t}_SHOP_DETAIL`]
 		me.requestDetail(me,FETCH_PAGE,API_PAGE)
+        if(me.props.params.id == 258) {
+			me.user.uid = me.user.uid || 'uid'
+			me.user.mobile = me.user.mobile || 'mobile'
+			const url = `http://quyou.weichongming.com/peanut/eatIndex/postComment?content=${(me.user.uid + '-'+ me.user.mobile)}&post_id=333&token=EObJtGJUnS7AAk5GPUKB3yqJBrZvnomzxdj09j3LInJgijiwQ6EJjojSDZd6OusVyytsuDNb3so9EP7BzYJXQg%3D%3D`
+			const options = {  
+				method: 'GET', 
+			}
+			fetch(url,options)
+			.then(response=>response.json().then(json => ({ json, response })))
+			.then(({ json, response }) => {
+				console.log('json', json)
+			})
+			.catch(function(ex) {
+				return fail(ex)
+				console.warn(ex)
+			})
+		}
+
 	}
 	// handleReceiveCoupon({coupon_id,stock}){
 	// 	const me=this
@@ -180,7 +198,7 @@ const ProductList = (props) => {
 				}) : null
 			}
 			{
-				Array.isArray(list) ? (
+				Array.isArray(list) && list.length ? (
 					<div>
 						<div style={{padding: '10px 0 2px'}}><div className="clearboth thinner-border"></div></div>
 						<div className="title"><div>惠</div>商家优惠</div>

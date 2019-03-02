@@ -1,6 +1,6 @@
 .slideBox{
 	width: 18.75rem;
-	height: 10.25rem;
+	height: 9.375rem;
 }
 .slideBox {
 	position: relative;
@@ -9,9 +9,10 @@
 }
 .slideBox .sample{
 	width: 18.75rem;
-	height: 10.25rem;
+	height: 9.375rem;
 	background-color: #fff;
 	background-size: cover;
+	background-position: top;
 	display: block;
 }
 .slideBox .hd {

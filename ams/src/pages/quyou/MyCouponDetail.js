@@ -98,7 +98,7 @@ const Content = (props) => {
 	const { data = { imgs: [] }  } = response
 	// data.start_dt = 1538409599
 	// data.end_dt = 1538409999
-	const available = data.status==='0010'?false:Boolean(Date.now() >= data.start_dt*1000 && data.end_dt*1000)
+	const available = data.status==='0010'?false:Boolean(Date.now() >= data.start_dt*1000 && Date.now() <= data.end_dt*1000)
 	console.log('available', available)
     return data.id ? (
         <div className="xian-shi-fu-li-detail coupon-detail">
@@ -123,7 +123,7 @@ const Content = (props) => {
 							}
                         }
                     }
-                 >{data.status==='0010'? ('仅兑换码领取'):(data.stock?`立即领取`:`已领取完`)}</div>
+                 >{data.status==='0010'? ('仅兑换码领取'):(data.stock?(available?`立即领取`:`已结束`):`已领取完`)}</div>
             </div>
             <div className="icon cover" style={{backgroundImage: `url(${data.imgs[0]+doImg.fw(500)})`,backgroundPosition: 'right'}}></div>
 

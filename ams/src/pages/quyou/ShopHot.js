@@ -105,6 +105,7 @@ const List = (props) => {
     } = response.data
     const { pathname } = _location
     data = Array.isArray(data)?data:[]
+    data = data.filter(({id}) => id !== 258)
     return (
         <div>
             <div className="list">

@@ -33,6 +33,7 @@ const Content = (props) => {
         data = [],
     } = response.data
     data = Array.isArray(data) ? data : []
+    data = data.filter(({id}) => id !== 333)
 	const { query } = _location
 	const _t = query._t || 'EAT'
     return (

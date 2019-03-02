@@ -193,7 +193,48 @@ const hotels = [{
 	sequence: 3,
 	"like_count": 0
 }]
-const eats = [{
+const eats = [ {
+	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/c328b5e6cc4eb6f3.jpeg"],
+	"custom_avg": 20,
+	"id": 258,
+	"tags": [22, 21],
+	"status": "0000",
+	"coupon": {},
+	"extraAddr": "上海市崇明区跃马路",
+	"addr1": "崇明区",
+	"geoinfo": "(121.634216,31.574889)",
+	"comments": {},
+	"detail": "",
+	"is_like": 1,
+	"stags": {},
+	"tag_name": [{
+		"createtime": 1542770669,
+		"id": 21,
+		"mode": "0000",
+		"status": "0",
+		"tagname": "人气美食"
+	}, {
+		"createtime": 1542771069,
+		"id": 22,
+		"mode": "0000",
+		"status": "0",
+		"tagname": "好米好锅"
+	}],
+	"rtype": "0000",
+	"season_rec": "",
+	"name": "缤纷养生锅巴饭",
+	"area": 0,
+	"comment_count": 0,
+	"priority": 1,
+	"products": {},
+	"has_promotion": "0",
+	"addr3": "各大崇明菜餐饮名店",
+	"sale_count": 0,
+	sequence: 0,
+	"phone": "",
+	"addr2": "城桥镇",
+	"like_count": 1
+}, {
 	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/881ce75e00a700f6.png"],
 	"custom_avg": 174,
 	"id": 109,
@@ -962,7 +1003,11 @@ const List = (props) => {
                         //     {createtime: 1514872995, id: 7, mode: "0000", status: "0", tagname: "全场95折"},
                         //     {createtime: 1514872995, id: 8, mode: "0000", status: "0", tagname: "买二送一"},
                         // ]
-                        d.tag_name.length = d.tag_name.length<=4 ? d.tag_name.length : 4
+						d.tag_name.length = d.tag_name.length<=4 ? d.tag_name.length : 4
+						let addr = d.addr2+d.addr3+d.detail
+						if(d.id===258){
+							addr = d.addr3+d.detail
+						}
                         return (
                             <div key={i}>
                                 <div 
@@ -983,7 +1028,8 @@ const List = (props) => {
                                     <div className="icon cover" style={{backgroundImage:`url(${d.imgs[0]}${doImg.fw()})`}}></div>
                                     <div className="box">
                                         <div className="name">{d.name}</div>
-                                        <div className="address text-elip"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div>
+                                        {/* <div className="address text-elip"><i className="icon"></i>{d.addr1+d.addr2+d.addr3+d.detail}</div> */}
+                                        <div className="address text-elip"><i className="icon"></i>{addr}</div>
                                         
                                         <ul className="shop-sns">
                                             <li><i className="icon good"></i>{d.like_count}</li>

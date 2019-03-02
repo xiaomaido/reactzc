@@ -16,6 +16,7 @@ import avatar_url from '../../images/quyou/icon/avatar.png'
 import go from '../../images/quyou/go.png'
 import play from '../../images/quyou/icon/play.png'
 import { setTimeout } from 'timers';
+window.fetch=fetch
 window.go=go
 window.avatar_url=avatar_url
 window.play=play
@@ -1056,9 +1057,13 @@ window.Intro = (props) => {
     data.tag_name = Array.isArray(data.tag_name) ? data.tag_name : []
     data.tag_name = data.tag_name.reverse()
     data.tag_name.length = data.tag_name.length<=4 ? data.tag_name.length : 4
-    const addr = data.addr2+data.addr3+data.detail
-    const handleJumpMap = () => {
+    let addr = data.addr2+data.addr3+data.detail
+    let handleJumpMap = () => {
         window.location.href=`https://m.amap.com/search/mapview/keywords=崇明${data.name}`
+    }
+    if(data.id===258){
+        addr = data.addr3+data.detail
+        handleJumpMap = () => {}
     }
     // {
     //     needCover ? data.imgs.map((img,i)=><div key={i} className="icon cover" style={{backgroundImage:`url(${img})`}}></div>) : null

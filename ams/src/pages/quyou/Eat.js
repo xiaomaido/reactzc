@@ -46,12 +46,13 @@ export default class Index extends Quyou{
 } 
 const Content = (props) => {
     const { response, me } = props
-    const { 
+    let { 
         timeBenefits = '',
         banner = [],
         recomm_medias = [],
         post_index = {},
     } = response.data
+    banner = banner.sort(function(a, b){ return b.id - a.id })
     return (
         <div className="eat">
             <div className="top">
