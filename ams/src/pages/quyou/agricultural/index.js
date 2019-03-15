@@ -62,6 +62,17 @@ class Content extends React.Component {
                             </div>
                         </a>
                     </li>
+                    <li>
+                        <a className="first" href={ !true ? `${window.isHashHistory}/hengsha`:`http://haiyan.weichongming.com/index`}>
+                            <div className="hengsha icon" style={{backgroundImage:'url(http://haiyan.weichongming.com/static/images/share/logo.jpg)'}}></div>
+                            <div className="title">
+                                瀛洲香韵
+                                <div className="sub-title">
+                                [崇明烟草直营店购物指南]
+                                </div>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </div>
         )
