@@ -4,7 +4,7 @@ const initStateResponse = initState()
 const API_PAGE = APIS.API_EAT_CANYIN_LIST
 const FETCH_PAGE = TYPES.FETCH_EAT_CANYIN_LIST
 const hotels = [{
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/ee98b860a391e55f.png"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/ee98b860a391e55f.png"],
 	"custom_avg": 300,
 	"id": 187,
 	"tags": [12, 13],
@@ -63,7 +63,7 @@ const hotels = [{
 	sequence: 1,
 	"like_count": 0
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/b3bf4416596fea5f.png"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/b3bf4416596fea5f.png"],
 	"custom_avg": 400,
 	"id": 54,
 	"tags": [1, 12, 13],
@@ -122,7 +122,7 @@ const hotels = [{
 	sequence: 5,
 	"like_count": 0
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/f8a4ec251f45f044.png"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/f8a4ec251f45f044.png"],
 	"custom_avg": 600,
 	"id": 53,
 	"tags": [2, 1, 12, 13],
@@ -194,7 +194,7 @@ const hotels = [{
 	"like_count": 0
 }]
 const eats = [ {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/c328b5e6cc4eb6f3.jpeg"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/c328b5e6cc4eb6f3.jpeg"],
 	"custom_avg": 20,
 	"id": 258,
 	"tags": [22, 21],
@@ -235,7 +235,7 @@ const eats = [ {
 	"addr2": "城桥镇",
 	"like_count": 1
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/881ce75e00a700f6.png"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/881ce75e00a700f6.png"],
 	"custom_avg": 174,
 	"id": 109,
 	"tags": [4, 2, 16],
@@ -282,7 +282,7 @@ const eats = [ {
 	sequence: 6,
 	"like_count": 1
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/31104e6a3896c8df.jpg"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/31104e6a3896c8df.jpg"],
 	"custom_avg": 62,
 	"id": 101,
 	"tags": [1, 4, 16],
@@ -329,7 +329,7 @@ const eats = [ {
 	sequence: 8,
 	"like_count": 1
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/423a0e8b95292696.jpg"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/423a0e8b95292696.jpg"],
 	"custom_avg": 83,
 	"id": 28,
 	"tags": [4, 1, 16],
@@ -376,7 +376,7 @@ const eats = [ {
 	sequence: 12,
 	"like_count": 1
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/31d16d488d2f097c.jpg"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/31d16d488d2f097c.jpg"],
 	"custom_avg": 63,
 	"id": 87,
 	"tags": [1, 16],
@@ -417,7 +417,7 @@ const eats = [ {
 	sequence: 7,
 	"like_count": 0
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/c6572b473a4202c6.png"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/c6572b473a4202c6.png"],
 	"custom_avg": 150,
 	"id": 56,
 	"tags": [1, 3, 16],
@@ -464,7 +464,7 @@ const eats = [ {
 	sequence: 2,
 	"like_count": 0
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/aa6c92a0ae642d42.jpg"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/aa6c92a0ae642d42.jpg"],
 	"custom_avg": 80,
 	"id": 215,
 	"tags": [16, 3],
@@ -505,7 +505,7 @@ const eats = [ {
 	sequence: 11,
 	"like_count": 0
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/c56019e81c07bb08.jpg"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/c56019e81c07bb08.jpg"],
 	"custom_avg": 100,
 	"id": 216,
 	"tags": [2, 16],
@@ -546,7 +546,7 @@ const eats = [ {
 	sequence: 9,
 	"like_count": 0
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/3a787d1d32a0f50b.jpg"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/3a787d1d32a0f50b.jpg"],
 	"custom_avg": 80,
 	"id": 217,
 	"tags": [1, 16],
@@ -587,7 +587,7 @@ const eats = [ {
 	sequence: 10,
 	"like_count": 0
 }, {
-	"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/b4d9ecf859fa5c60.jpg"],
+	"imgs": ["http://upyun.weichongming.com/prod_00/b4d9ecf859fa5c60.jpg"],
 	"custom_avg": 150,
 	"id": 218,
 	"tags": [16, 4],
@@ -636,7 +636,7 @@ let hybrid = [
 hybrid = [
 	...hybrid,
 	...[{
-		"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/8b6643f473656021.jpg"],
+		"imgs": ["http://upyun.weichongming.com/prod_00/8b6643f473656021.jpg"],
 		"custom_avg": 500,
 		"id": 57,
 		"tags": [2, 1, 12, 14],
@@ -707,7 +707,7 @@ hybrid = [
 		sequence: 16,
 		"like_count": 0
 	}, {
-		"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/11a7d13a9d190aa3.png"],
+		"imgs": ["http://upyun.weichongming.com/prod_00/11a7d13a9d190aa3.png"],
 		"custom_avg": 621,
 		"id": 189,
 		"tags": [1, 2, 12, 14],
@@ -778,7 +778,7 @@ hybrid = [
 		sequence: 15,
 		"like_count": 0
 	}, {
-		"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/2f08a9849207ac9b.jpg"],
+		"imgs": ["http://upyun.weichongming.com/prod_00/2f08a9849207ac9b.jpg"],
 		"custom_avg": 450,
 		"id": 190,
 		"tags": [1, 3, 14],
@@ -844,7 +844,7 @@ hybrid = [
 		"like_count": 0
 	}],
 	...[{
-		"imgs": ["http://sfmimg.b0.upaiyun.com/prod_00/6dea68d9238b1d94.jpg"],
+		"imgs": ["http://upyun.weichongming.com/prod_00/6dea68d9238b1d94.jpg"],
 		"custom_avg": 150,
 		"id": 219,
 		"tags": [1, 17],
@@ -970,7 +970,7 @@ export default class Index extends Quyou{
         // // me.requestList(me,FETCH_PAGE,API_PAGE,true)
         me.shareTextObjSetting({
             title:`餐饮名店`,
-            imgUrl: `http://sfmimg.b0.upaiyun.com/prod_00/67e54e6da72f6fd1.png`,
+            imgUrl: `http://upyun.weichongming.com/prod_00/67e54e6da72f6fd1.png`,
             desc:'【趣游崇明】崇明菜餐饮名店——星尚热推！',
         })
     }

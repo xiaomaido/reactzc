@@ -5,7 +5,7 @@ export default class Index extends Quyou{
         this.state={
             user: this.user
         }
-        // misc.setCookie('user','{"nickname":"大胡子哈登","uid":11,"is_v":"0","headimg":"http://sfmimg.b0.upaiyun.com/prod_00/dad34defeb681dc6.jpeg","token":"c/p6F3gJWa/wpFjVAS4zKyZyirfa/s6Gc9SWkfWU1pVRxXg6DpvH+Eki4kWqMrzW3/mmUdW55HujpY+xXKKnpw==","mobile":"13248238215"}')
+        // misc.setCookie('user','{"nickname":"大胡子哈登","uid":11,"is_v":"0","headimg":"http://upyun.weichongming.com/prod_00/dad34defeb681dc6.jpeg","token":"c/p6F3gJWa/wpFjVAS4zKyZyirfa/s6Gc9SWkfWU1pVRxXg6DpvH+Eki4kWqMrzW3/mmUdW55HujpY+xXKKnpw==","mobile":"13248238215"}')
     }
     signOut(){
         misc.clearCookie('user')

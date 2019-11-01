@@ -21,6 +21,8 @@ window.go=go
 window.avatar_url=avatar_url
 window.play=play
 window.server=`http://quyou.weichongming.com`
+window.server=`http://quyou.wocaoapp.com`
+
 window.wxconfig={}
 window.jsApiList=['onMenuShareAppMessage','onMenuShareTimeline','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone']
 window.buildingIds = {
@@ -46,7 +48,7 @@ export class Quyou extends React.Component{ // 公共模板
     limit=10
     page=0
     api={
-        host:`${server}/peanut`,
+        host:`${location.host.includes('localhost')?server:''}/peanut`,
         // host:`http://quyou.weichongming.com/peanut`,
     }
     hotelTags = [
@@ -295,6 +297,9 @@ export class Quyou extends React.Component{ // 公共模板
                 // return Promise.reject(json)
                 return fail(json)
             }
+            json=JSON.stringify(json)
+            // json=json.replace(/sfmimg.b0.upaiyun.com/g, 'upyun.weichongming.com')
+            json=JSON.parse(json)
             return succ(json)
             // return Object.assign({},json)
         })
@@ -681,7 +686,7 @@ window.APIS={
 window.STATE={
     coupons: [{
         "desc_title": "周末不可用周末不可用周末不可用",
-        "imgs": ["http:\/\/sfmimg.b0.upaiyun.com\/prod_00\/4cdbdb7209e2a99e.png"],
+        "imgs": ["http:\/\/upyun.weichongming.com\/prod_00\/4cdbdb7209e2a99e.png"],
         "id": 3,
         "coupon_code": "123",
         "stock": 19,
