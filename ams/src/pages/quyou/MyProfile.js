@@ -170,7 +170,7 @@ export default class Index extends Quyou{
             console.log(oReq)
             if (oReq.status === 200) {
                 // debugger
-                // const res = {url: "http://upyun.weichongming.com/prod_00/2caa03cd39ecd102.png", code: 0}
+                // const res = {url: "http://upyun.wocaoapp.com.com/prod_00/2caa03cd39ecd102.png", code: 0}
                 const res=JSON.parse(oReq.response)
                 // console.log(res)
                 if(res.code === 0){

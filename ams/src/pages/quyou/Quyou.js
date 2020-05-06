@@ -298,7 +298,8 @@ export class Quyou extends React.Component{ // 公共模板
                 return fail(json)
             }
             json=JSON.stringify(json)
-            // json=json.replace(/sfmimg.b0.upaiyun.com/g, 'upyun.weichongming.com')
+            json=json.replace(/sfmimg.b0.upaiyun.com/g, 'upyun.wocaoapp.com')
+            json=json.replace(/upyun.weichongming.com/g, 'upyun.wocaoapp.com')
             json=JSON.parse(json)
             return succ(json)
             // return Object.assign({},json)
@@ -686,7 +687,7 @@ window.APIS={
 window.STATE={
     coupons: [{
         "desc_title": "周末不可用周末不可用周末不可用",
-        "imgs": ["http:\/\/upyun.weichongming.com\/prod_00\/4cdbdb7209e2a99e.png"],
+        "imgs": ["http:\/\/upyun.wocaoapp.com.com\/prod_00\/4cdbdb7209e2a99e.png"],
         "id": 3,
         "coupon_code": "123",
         "stock": 19,

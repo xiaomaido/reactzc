@@ -15,6 +15,57 @@
             });
         </script>
         <script type="text/javascript">
+            particlesJS("particles-js2", {
+                "particles": {
+                    "number": {
+                        "value": 80
+                    },
+                    "shape": {
+                        "type": "image",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#ff0000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "./snow.png",
+                            "width": 96,
+                            "height": 83
+                        }
+                    },
+                    "size": {
+                        "value": 15,
+                        "random": true
+                    },
+                    "line_linked": {
+                        "enable": false,
+                        "distance": 0,
+                        "opaity": 1,
+                        "width": 0
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 5,
+                        "direction": "bottom",
+                        "straight": false
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": false
+                        }
+                    },
+                    "modes": {
+                        "push": {
+                            "particles_nb": 0
+                        }
+                    }
+                }
+            })
             // particlesJS("particles-js2", {
             //     "particles": {
             //         "number": {
@@ -236,6 +287,7 @@
             // },
             // "retina_detect": true
             // });
+        
         </script>
     </body>
 </html>

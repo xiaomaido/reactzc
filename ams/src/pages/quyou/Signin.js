@@ -171,7 +171,7 @@ export default class Index extends Quyou{
                 <div className="input-list">
                     <div className="input-item">
                         <div className="txt">手机号</div>
-                        <input type="tel" placeholder="点此输入手机号码" maxLength="11" ref="mobile" defaultValue="" autoFocus/>
+                        <input onBlur={() => { document.documentElement.scrollTop=document.body.scrollTop=0 }} type="tel" placeholder="点此输入手机号码" maxLength="11" ref="mobile" defaultValue="" autoFocus/>
                     </div>
                     <div className="clearboth thinner-border"></div>
                     <div className="input-item">
@@ -182,7 +182,7 @@ export default class Index extends Quyou{
                             }
                         </div>
                         <div className="txt">验证码</div>
-                        <input type="tel" placeholder="点此输入短信验证码" maxLength={smsLength} ref="sms" defaultValue=""/>
+                        <input onBlur={() => { document.documentElement.scrollTop=document.body.scrollTop=0 }} type="tel" placeholder="点此输入短信验证码" maxLength={smsLength} ref="sms" defaultValue=""/>
                     </div>
                     <div className="clearboth thinner-border"></div>
                 </div>

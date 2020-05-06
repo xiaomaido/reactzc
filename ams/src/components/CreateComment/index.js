@@ -45,13 +45,15 @@ import './index.scss'
                 >
                     {
                         type === 'password' ? (
-                            <input 
+                            <input
+                                onBlur={() => { document.documentElement.scrollTop=document.body.scrollTop=0 }}
                                 onChange={handleChangeInput} 
                                 placeholder={textPlaceholder} 
                                 maxLength={maxLength}
                                 defaultValue={defaultValue}
                                 type="password" />
-                        ) : <textarea 
+                        ) : <textarea
+                                onBlur={() => { document.documentElement.scrollTop=document.body.scrollTop=0 }}
                                 onChange={handleChangeInput} 
                                 placeholder={textPlaceholder} 
                                 maxLength={maxLength} defaultValue={defaultValue}></textarea>

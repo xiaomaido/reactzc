@@ -552,7 +552,7 @@ postPlusDetailQ = {
 }
 
 // 水印
-http://upyun.weichongming.com/prod_00/53a2bd9f859fa229.png!/watermark/url/L3Byb2RfMDAvOGRhZWNmNGRlM2EyNmEyZi5wbmc=/percent/8
+http://upyun.wocaoapp.com.com/prod_00/53a2bd9f859fa229.png!/watermark/url/L3Byb2RfMDAvOGRhZWNmNGRlM2EyNmEyZi5wbmc=/percent/8
 L3Byb2RfMDAvOGRhZWNmNGRlM2EyNmEyZi5wbmc=
 
 
